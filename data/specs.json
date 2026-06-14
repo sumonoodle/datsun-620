@@ -1,32 +1,312 @@
 [
   {
-    "id": "us-1977-1979-kingcab",
-    "market": "US",
+    "id": "jp-620-standard",
+    "market": "Japan",
+    "years": "1972 to 1979",
+    "body_style": "standard cab",
+    "bed_length": "short",
+    "engine": {
+      "value": {
+        "code": "J15",
+        "power_hp": 77
+      },
+      "citations": [
+        {
+          "value": "J15",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        },
+        {
+          "value": "77 hp (57 kW)",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        }
+      ]
+    },
+    "dimensions": {
+      "value": {
+        "length_mm": 4297.7,
+        "width_mm": 1587.5,
+        "height_mm": 1544.3,
+        "wheelbase_mm": 2567.9,
+        "ground_clearance_mm": 200.7
+      },
+      "citations": [
+        {
+          "value": "169.2 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "62.5 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "60.8 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "101.1 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "7.9 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        }
+      ]
+    },
+    "weights": {
+      "value": {
+        "kerb_kg": 1036.9,
+        "payload_kg": 653.6
+      },
+      "citations": [
+        {
+          "value": "2286 lbs",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "1441 lbs",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "jp-620-longbed",
+    "market": "Japan",
+    "years": "1975 to 1979",
+    "body_style": "standard cab",
+    "bed_length": "long",
+    "engine": {
+      "value": {
+        "code": "J15",
+        "power_hp": 77
+      },
+      "citations": [
+        {
+          "value": "J15",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        },
+        {
+          "value": "77 hp (57 kW)",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        }
+      ]
+    }
+  },
+  {
+    "id": "jp-620-kingcab",
+    "market": "Japan",
     "years": "1977 to 1979",
     "body_style": "King Cab",
     "bed_length": "short",
     "engine": {
-      "value": { "code": "L20B", "displacement_cc": 1952, "power_hp": 92, "torque_nm": 156 },
+      "value": {
+        "code": "J15",
+        "power_hp": 77
+      },
       "citations": [
-        { "value": "L20B 1952cc", "source_url": "https://example.com/placeholder-source", "source_name": "PLACEHOLDER source, replaced in M2" }
+        {
+          "value": "J15",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        },
+        {
+          "value": "77 hp (57 kW)",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        }
       ]
-    },
-    "transmission": {
-      "value": ["4-speed manual", "5-speed manual"],
+    }
+  },
+  {
+    "id": "jp-620-doublecab",
+    "market": "Japan",
+    "years": "1972 to 1979",
+    "body_style": "double cab",
+    "bed_length": "short",
+    "engine": {
+      "value": {
+        "code": "J15",
+        "power_hp": 77
+      },
       "citations": [
-        { "value": "4/5-speed manual", "source_url": "https://example.com/placeholder-source", "source_name": "PLACEHOLDER source, replaced in M2" }
+        {
+          "value": "J15",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        },
+        {
+          "value": "77 hp (57 kW)",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        }
+      ]
+    }
+  },
+  {
+    "id": "au-620-ute",
+    "market": "Australia",
+    "years": "1972 to 1979",
+    "body_style": "standard cab",
+    "bed_length": "short",
+    "engine": {
+      "value": {
+        "code": "J15",
+        "power_hp": 77,
+        "displacement_cc": 1483
+      },
+      "citations": [
+        {
+          "value": "J15",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        },
+        {
+          "value": "77 hp (57 kW)",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        },
+        {
+          "value": "1500 cc (J15)",
+          "source_url": "https://www.carsales.com.au/research/datsun/620/1978/",
+          "source_name": "CarsGuide / carsales (Australia)"
+        }
       ]
     },
     "dimensions": {
-      "value": { "length_mm": null, "width_mm": null, "height_mm": null, "wheelbase_mm": null, "track_front_mm": null, "track_rear_mm": null, "ground_clearance_mm": null, "bed_length_mm": null, "bed_width_mm": null },
-      "citations": []
+      "value": {
+        "width_mm": 1587.5,
+        "height_mm": 1544.3,
+        "ground_clearance_mm": 200.7
+      },
+      "citations": [
+        {
+          "value": "62.5 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "1590 mm (5 ft 3 in)",
+          "source_url": "https://www.carsguide.com.au/datsun/620/car-dimensions/1978",
+          "source_name": "CarsGuide (Australia), 620 dimensions 1978"
+        },
+        {
+          "value": "60.8 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "1545 mm (5 ft 1 in)",
+          "source_url": "https://www.carsguide.com.au/datsun/620/car-dimensions/1978",
+          "source_name": "CarsGuide (Australia), 620 dimensions 1978"
+        },
+        {
+          "value": "7.9 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        }
+      ]
     },
     "weights": {
-      "value": { "kerb_kg": null, "gvm_kg": null, "payload_kg": null },
-      "citations": []
+      "value": {
+        "payload_kg": 653.6
+      },
+      "citations": [
+        {
+          "value": "1441 lbs",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "uk-620",
+    "market": "UK",
+    "years": "1972 to 1979",
+    "body_style": "standard cab",
+    "bed_length": "short",
+    "engine": {
+      "value": {
+        "code": "J15",
+        "power_hp": 77
+      },
+      "citations": [
+        {
+          "value": "J15",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        },
+        {
+          "value": "77 hp (57 kW)",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        }
+      ]
     },
-    "wheels_tyres": { "value": null, "citations": [] },
-    "trim_levels": { "value": [], "citations": [] },
-    "production_changes": { "value": [], "citations": [] }
+    "dimensions": {
+      "value": {
+        "length_mm": 4297.7,
+        "width_mm": 1587.5,
+        "height_mm": 1544.3,
+        "wheelbase_mm": 2567.9,
+        "ground_clearance_mm": 200.7
+      },
+      "citations": [
+        {
+          "value": "169.2 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "62.5 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "60.8 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "101.1 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "7.9 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        }
+      ]
+    },
+    "weights": {
+      "value": {
+        "kerb_kg": 1036.9,
+        "payload_kg": 653.6
+      },
+      "citations": [
+        {
+          "value": "2286 lbs",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "1441 lbs",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        }
+      ]
+    }
   }
 ]

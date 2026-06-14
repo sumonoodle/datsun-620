@@ -13,8 +13,18 @@ Two views:
 
 ## Status
 
-**M1 (scaffolding) complete.** The pipeline is live with placeholder data. Real
-specs arrive in M2 to M3, real listings in M4 to M5.
+**M2 (specs v1) complete.** Specs are live for UK, Japan, and Australia, collected
+from multiple sources, reconciled, with a citation per value and a conflicts queue
+for fields where sources disagree. Remaining markets come in M3; real listings in
+M4 to M5.
+
+Refresh specs locally:
+
+```
+python scrapers/run_specs.py     # collect, reconcile, write data/specs*.json
+```
+
+In CI, run the "Specs refresh" workflow manually from the Actions tab.
 
 ## Layout
 

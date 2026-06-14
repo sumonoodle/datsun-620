@@ -1,0 +1,53 @@
+{
+  "_note": "Cited facts captured by hand from sources that block automated scraping (e.g. CarsGuide, which returns HTTP 403 to scripts). This is the PRD's documented fallback: when a source can't be scraped, capture the value manually and keep the citation. Values are canonical units; raw is the source's wording.",
+  "observations": [
+    {
+      "variant_id": "au-620-ute",
+      "field": "dimensions.length_mm",
+      "value": 4609,
+      "raw": "4609 mm (15 ft 1 in)",
+      "source_name": "CarsGuide (Australia), 620 dimensions 1978",
+      "source_url": "https://www.carsguide.com.au/datsun/620/car-dimensions/1978"
+    },
+    {
+      "variant_id": "au-620-ute",
+      "field": "dimensions.width_mm",
+      "value": 1590,
+      "raw": "1590 mm (5 ft 3 in)",
+      "source_name": "CarsGuide (Australia), 620 dimensions 1978",
+      "source_url": "https://www.carsguide.com.au/datsun/620/car-dimensions/1978"
+    },
+    {
+      "variant_id": "au-620-ute",
+      "field": "dimensions.height_mm",
+      "value": 1545,
+      "raw": "1545 mm (5 ft 1 in)",
+      "source_name": "CarsGuide (Australia), 620 dimensions 1978",
+      "source_url": "https://www.carsguide.com.au/datsun/620/car-dimensions/1978"
+    },
+    {
+      "variant_id": "au-620-ute",
+      "field": "dimensions.wheelbase_mm",
+      "value": 2785,
+      "raw": "2785 mm (9 ft 2 in)",
+      "source_name": "CarsGuide (Australia), 620 dimensions 1978",
+      "source_url": "https://www.carsguide.com.au/datsun/620/car-dimensions/1978"
+    },
+    {
+      "variant_id": "au-620-ute",
+      "field": "weights.kerb_kg",
+      "value": 1065,
+      "raw": "1065 kg (2348 lbs)",
+      "source_name": "CarsGuide (Australia), 620 dimensions 1978",
+      "source_url": "https://www.carsguide.com.au/datsun/620/car-dimensions/1978"
+    },
+    {
+      "variant_id": "au-620-ute",
+      "field": "engine.displacement_cc",
+      "value": 1483,
+      "raw": "1500 cc (J15)",
+      "source_name": "CarsGuide / carsales (Australia)",
+      "source_url": "https://www.carsales.com.au/research/datsun/620/1978/"
+    }
+  ]
+}

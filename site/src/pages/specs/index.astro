@@ -1,39 +1,95 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { getSpecs } from "../../lib/data.ts";
+import { getSpecs, getConflicts, getSpecsReport, FIELDS, leaf, fmt } from "../../lib/data.ts";
+const base = import.meta.env.BASE_URL;
 const specs = getSpecs();
+const conflicts = getConflicts();
+const report = getSpecsReport();
+
+const conflictKeys = new Set(conflicts.map((c) => `${c.variant_id}|${c.field}`));
+const isConflict = (vid: string, group: string, key: string) => conflictKeys.has(`${vid}|${group}.${key}`);
 ---
 
 <Base title="Specs - Datsun 620 Tracker">
   <h1>Specs</h1>
-  <div class="note">
-    Comparison-first layout (placeholder). In M2 to M3 this fills with every market
-    variant, a citation per fact, and side-by-side comparison.
-  </div>
-  <table>
-    <thead>
-      <tr>
-        <th>Variant</th>
-        <th>Market</th>
-        <th>Years</th>
-        <th>Body style</th>
-        <th>Bed</th>
-        <th>Engine</th>
-      </tr>
-    </thead>
-    <tbody>
-      {
-        specs.map((s) => (
+  <p>
+    Comparing {specs.length} variants across {report.markets.join(", ")}. Every value is
+    sourced; hover or open a variant to see citations. Gaps are blank, and fields where
+    sources disagree are flagged for review below.
+  </p>
+
+  {conflicts.length > 0 && (
+    <div class="note">
+      <strong>{conflicts.length} field(s) need review</strong> &mdash; sources disagree. See
+      "Needs review" below. (A resolve flow comes in a later milestone.)
+    </div>
+  )}
+
+  <div style="overflow-x:auto">
+    <table>
+      <thead>
+        <tr>
+          <th>Spec</th>
+          {specs.map((v) => (
+            <th>
+              <a href={`${base}/specs/${v.id}`}>{v.market}</a>
+              <div style="font-weight:normal;font-size:0.85rem;color:#555">
+                {v.body_style}{v.bed_length ? `, ${v.bed_length} bed` : ""}
+              </div>
+            </th>
+          ))}
+        </tr>
+        <tr>
+          <th>Years</th>
+          {specs.map((v) => <td>{v.years}</td>)}
+        </tr>
+      </thead>
+      <tbody>
+        {FIELDS.map((f) => (
           <tr>
-            <td>{s.id}</td>
-            <td>{s.market}</td>
-            <td>{s.years}</td>
-            <td>{s.body_style}</td>
-            <td>{s.bed_length ?? "-"}</td>
-            <td>{s.engine?.value?.code ?? "-"}</td>
+            <th>{f.label}{f.unit ? ` (${f.unit})` : ""}</th>
+            {specs.map((v) => {
+              const val = leaf(v, f.group, f.key);
+              if (isConflict(v.id, f.group, f.key)) {
+                return <td><span class="flag">conflict</span></td>;
+              }
+              const text = fmt(val, f);
+              return <td>{text === "" ? <span class="gap">&mdash;</span> : text}</td>;
+            })}
           </tr>
-        ))
-      }
-    </tbody>
-  </table>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  {conflicts.length > 0 && (
+    <>
+      <h2 id="needs-review">Needs review</h2>
+      {conflicts.map((c) => (
+        <div class="card">
+          <strong>{c.variant_id}</strong> &middot; <code>{c.field}</code>
+          <ul>
+            {c.candidates.map((cand) => (
+              <li>{String(cand.value)} <span style="color:#777">&mdash; {cand.source}</span></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </>
+  )}
+
+  <h2>Data sources</h2>
+  <ul>
+    {report.sources.map((s) => (
+      <li>
+        {s.ok ? "✓" : "✗ skipped"} <strong>{s.source}</strong> &mdash; {s.facts} facts
+        {s.note ? ` (${s.note})` : ""}
+      </li>
+    ))}
+  </ul>
+
+  <style>
+    .flag { background:#fde2e1; color:#8a1c13; border-radius:4px; padding:0.05rem 0.4rem; font-size:0.85rem; }
+    .gap { color:#bbb; }
+  </style>
 </Base>

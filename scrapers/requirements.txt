@@ -1,1 +1,3 @@
 jsonschema>=4.21
+httpx>=0.27
+beautifulsoup4>=4.12

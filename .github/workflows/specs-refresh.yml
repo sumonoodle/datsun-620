@@ -1,10 +1,14 @@
-name: Specs refresh (placeholder)
+name: Specs refresh
 
-# M1 placeholder. Manual trigger only. Real spec collectors and the
-# conflict-reconciliation step arrive in M2.
+# Manual trigger. Runs the spec collectors, reconciles against recorded
+# decisions, writes specs.json / specs-conflicts.json / specs-report.json,
+# and commits any changes. The push then triggers the site deploy.
 
 on:
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   refresh:
@@ -12,6 +16,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Placeholder specs refresh step
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scrapers/requirements.txt
+
+      - name: Run tests
         run: |
-          echo "M1 placeholder: specs collectors arrive in M2."
+          python scrapers/tests/test_reconcile.py
+          python scrapers/tests/test_schema.py
+
+      - name: Collect and reconcile specs
+        run: python scrapers/run_specs.py
+
+      - name: Validate output against schema
+        run: python scrapers/tests/test_schema.py
+
+      - name: Commit updated specs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/specs.json data/specs-conflicts.json data/specs-report.json
+          git commit -m "data: specs refresh" || echo "no spec changes"
+          git push

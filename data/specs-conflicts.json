@@ -1,1 +1,47 @@
-[]
+[
+  {
+    "variant_id": "au-620-ute",
+    "field": "dimensions.length_mm",
+    "candidates": [
+      {
+        "value": 4297.7,
+        "source": "datsuntrucks.com (620 general specs)"
+      },
+      {
+        "value": 4609,
+        "source": "CarsGuide (Australia), 620 dimensions 1978"
+      }
+    ],
+    "status": "open"
+  },
+  {
+    "variant_id": "au-620-ute",
+    "field": "dimensions.wheelbase_mm",
+    "candidates": [
+      {
+        "value": 2567.9,
+        "source": "datsuntrucks.com (620 general specs)"
+      },
+      {
+        "value": 2785,
+        "source": "CarsGuide (Australia), 620 dimensions 1978"
+      }
+    ],
+    "status": "open"
+  },
+  {
+    "variant_id": "au-620-ute",
+    "field": "weights.kerb_kg",
+    "candidates": [
+      {
+        "value": 1036.9,
+        "source": "datsuntrucks.com (620 general specs)"
+      },
+      {
+        "value": 1065,
+        "source": "CarsGuide (Australia), 620 dimensions 1978"
+      }
+    ],
+    "status": "open"
+  }
+]

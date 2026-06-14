@@ -1,0 +1,80 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getSpecs, getConflicts, FIELDS, leaf, fmt, type SpecVariant } from "../../lib/data.ts";
+
+export function getStaticPaths() {
+  return getSpecs().map((v) => ({ params: { id: v.id }, props: { variant: v } }));
+}
+const { variant } = Astro.props as { variant: SpecVariant };
+const base = import.meta.env.BASE_URL;
+const conflicts = getConflicts().filter((c) => c.variant_id === variant.id);
+const conflictFields = new Set(conflicts.map((c) => c.field));
+
+// All citations for this variant, de-duplicated by URL, for a sources list.
+const citations = new Map<string, string>();
+for (const group of ["engine", "dimensions", "weights"]) {
+  const g = variant[group] as { citations?: { source_url: string; source_name: string }[] } | undefined;
+  for (const c of g?.citations ?? []) citations.set(c.source_url, c.source_name);
+}
+---
+
+<Base title={`${variant.market} ${variant.body_style} - Datsun 620`}>
+  <p><a href={`${base}/specs`}>&larr; All specs</a></p>
+  <h1>{variant.market} &middot; {variant.body_style}{variant.bed_length ? `, ${variant.bed_length} bed` : ""}</h1>
+  <p>{variant.years} &middot; <code>{variant.id}</code></p>
+
+  {conflicts.length > 0 && (
+    <div class="note">
+      <strong>{conflicts.length} field(s) need review.</strong> Sources disagree on the values marked below.
+    </div>
+  )}
+
+  <table>
+    <tbody>
+      {FIELDS.map((f) => {
+        const inConflict = conflictFields.has(`${f.group}.${f.key}`);
+        const val = leaf(variant, f.group, f.key);
+        const text = fmt(val, f);
+        return (
+          <tr>
+            <th>{f.label}</th>
+            <td>
+              {inConflict
+                ? <span class="flag">needs review</span>
+                : text === "" ? <span class="gap">not recorded</span> : text}
+            </td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+
+  {conflicts.length > 0 && (
+    <>
+      <h2>Conflicting values</h2>
+      {conflicts.map((c) => (
+        <div class="card">
+          <code>{c.field}</code>
+          <ul>
+            {c.candidates.map((cand) => (
+              <li>{String(cand.value)} <span style="color:#777">&mdash; {cand.source}</span></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </>
+  )}
+
+  <h2>Sources</h2>
+  <ul>
+    {[...citations.entries()].map(([url, name]) => (
+      <li><a href={url}>{name}</a></li>
+    ))}
+  </ul>
+
+  <style>
+    .flag { background:#fde2e1; color:#8a1c13; border-radius:4px; padding:0.05rem 0.4rem; font-size:0.85rem; }
+    .gap { color:#bbb; }
+    th { width: 12rem; }
+  </style>
+</Base>

@@ -1,0 +1,50 @@
+{
+  "_note": "Canonical list of 620 variants to fill, for the M2 markets (UK, Japan, Australia). Identity fields are human-defined; collectors fill the rest. US and others arrive in M3.",
+  "variants": [
+    {
+      "id": "jp-620-standard",
+      "market": "Japan",
+      "years": "1972 to 1979",
+      "body_style": "standard cab",
+      "bed_length": "short",
+      "base_body": true
+    },
+    {
+      "id": "jp-620-longbed",
+      "market": "Japan",
+      "years": "1975 to 1979",
+      "body_style": "standard cab",
+      "bed_length": "long"
+    },
+    {
+      "id": "jp-620-kingcab",
+      "market": "Japan",
+      "years": "1977 to 1979",
+      "body_style": "King Cab",
+      "bed_length": "short"
+    },
+    {
+      "id": "jp-620-doublecab",
+      "market": "Japan",
+      "years": "1972 to 1979",
+      "body_style": "double cab",
+      "bed_length": "short"
+    },
+    {
+      "id": "au-620-ute",
+      "market": "Australia",
+      "years": "1972 to 1979",
+      "body_style": "standard cab",
+      "bed_length": "short",
+      "base_body": true
+    },
+    {
+      "id": "uk-620",
+      "market": "UK",
+      "years": "1972 to 1979",
+      "body_style": "standard cab",
+      "bed_length": "short",
+      "base_body": true
+    }
+  ]
+}

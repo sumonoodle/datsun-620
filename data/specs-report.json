@@ -1,0 +1,29 @@
+{
+  "variant_count": 6,
+  "markets": [
+    "Australia",
+    "Japan",
+    "UK"
+  ],
+  "conflict_count": 3,
+  "sources": [
+    {
+      "source": "Wikipedia, Datsun Truck",
+      "ok": true,
+      "note": "",
+      "facts": 12
+    },
+    {
+      "source": "datsuntrucks.com (620 general specs)",
+      "ok": true,
+      "note": "",
+      "facts": 21
+    },
+    {
+      "source": "manual seed (blocked sources)",
+      "ok": true,
+      "note": "",
+      "facts": 6
+    }
+  ]
+}
