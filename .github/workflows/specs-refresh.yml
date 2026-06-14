@@ -1,0 +1,16 @@
+name: Specs refresh (placeholder)
+
+# M1 placeholder. Manual trigger only. Real spec collectors and the
+# conflict-reconciliation step arrive in M2.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Placeholder specs refresh step
+        run: echo "M1 placeholder: specs collectors arrive in M2."

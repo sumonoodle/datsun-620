@@ -1,0 +1,41 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getListings } from "../../lib/data.ts";
+// Recall-first: show everything, ranked by King Cab likelihood (highest first).
+const listings = getListings().sort((a, b) => b.king_cab_score - a.king_cab_score);
+const gbp = (n: number | null) => (n == null ? "-" : `£${n.toLocaleString("en-GB")}`);
+---
+
+<Base title="Listings - Datsun 620 Tracker">
+  <h1>Listings</h1>
+  <div class="note">
+    Recall-first and ranked by King Cab likelihood (placeholder). In M4 to M5 this
+    fills with real listings from eBay and Goo-net first, then best-effort sources.
+  </div>
+  {
+    listings.map((l) => (
+      <article class="card">
+        <h2>
+          <a href={l.source_url}>{l.title}</a>
+        </h2>
+        <p>
+          <span class="badge">King Cab likelihood {Math.round(l.king_cab_score * 100)}%</span>
+        </p>
+        <p>
+          {gbp(l.price_gbp)}
+          {l.price_original != null && l.currency
+            ? ` (${l.price_original.toLocaleString()} ${l.currency})`
+            : ""}
+          {" · "}
+          {l.country ?? "?"}
+          {l.region ? `, ${l.region}` : ""}
+          {" · "}
+          {l.drive_side}
+          {l.year ? ` · ${l.year}` : ""}
+          {" · "}
+          {l.source}
+        </p>
+      </article>
+    ))
+  }
+</Base>

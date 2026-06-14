@@ -1,0 +1,39 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getSpecs } from "../../lib/data.ts";
+const specs = getSpecs();
+---
+
+<Base title="Specs - Datsun 620 Tracker">
+  <h1>Specs</h1>
+  <div class="note">
+    Comparison-first layout (placeholder). In M2 to M3 this fills with every market
+    variant, a citation per fact, and side-by-side comparison.
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Variant</th>
+        <th>Market</th>
+        <th>Years</th>
+        <th>Body style</th>
+        <th>Bed</th>
+        <th>Engine</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        specs.map((s) => (
+          <tr>
+            <td>{s.id}</td>
+            <td>{s.market}</td>
+            <td>{s.years}</td>
+            <td>{s.body_style}</td>
+            <td>{s.bed_length ?? "-"}</td>
+            <td>{s.engine?.value?.code ?? "-"}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</Base>

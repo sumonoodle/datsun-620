@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://datsun-620/schema/spec-decision.schema.json",
+  "title": "SpecDecision",
+  "description": "A recorded human decision on a conflicted spec field, replayed on refresh.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["variant_id", "field", "chosen_value", "decided_on"],
+  "properties": {
+    "variant_id": { "type": "string" },
+    "field": { "type": "string" },
+    "chosen_value": {},
+    "decided_on": { "type": "string", "format": "date" }
+  }
+}

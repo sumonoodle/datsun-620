@@ -1,0 +1,32 @@
+[
+  {
+    "id": "us-1977-1979-kingcab",
+    "market": "US",
+    "years": "1977 to 1979",
+    "body_style": "King Cab",
+    "bed_length": "short",
+    "engine": {
+      "value": { "code": "L20B", "displacement_cc": 1952, "power_hp": 92, "torque_nm": 156 },
+      "citations": [
+        { "value": "L20B 1952cc", "source_url": "https://example.com/placeholder-source", "source_name": "PLACEHOLDER source, replaced in M2" }
+      ]
+    },
+    "transmission": {
+      "value": ["4-speed manual", "5-speed manual"],
+      "citations": [
+        { "value": "4/5-speed manual", "source_url": "https://example.com/placeholder-source", "source_name": "PLACEHOLDER source, replaced in M2" }
+      ]
+    },
+    "dimensions": {
+      "value": { "length_mm": null, "width_mm": null, "height_mm": null, "wheelbase_mm": null, "track_front_mm": null, "track_rear_mm": null, "ground_clearance_mm": null, "bed_length_mm": null, "bed_width_mm": null },
+      "citations": []
+    },
+    "weights": {
+      "value": { "kerb_kg": null, "gvm_kg": null, "payload_kg": null },
+      "citations": []
+    },
+    "wheels_tyres": { "value": null, "citations": [] },
+    "trim_levels": { "value": [], "citations": [] },
+    "production_changes": { "value": [], "citations": [] }
+  }
+]

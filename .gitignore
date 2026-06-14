@@ -1,0 +1,17 @@
+# Node / Astro
+node_modules/
+dist/
+.astro/
+.output/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+
+# Local Claude Code settings
+.claude/

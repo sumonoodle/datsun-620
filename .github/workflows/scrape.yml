@@ -1,0 +1,33 @@
+name: Listings check (placeholder)
+
+# M1 placeholder. Proves the scheduled job fires and can commit back to the repo.
+# Real scrapers and notify-on-change logic arrive in M4.
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily at 06:00 UTC (07:00 Jersey in summer)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Placeholder scrape step
+        run: |
+          echo "M1 placeholder: real scrapers arrive in M4."
+          mkdir -p data/run-logs
+          echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) placeholder run, no scrapers yet" >> data/run-logs/scrape.log
+
+      - name: Commit run log
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/run-logs/scrape.log
+          git commit -m "chore: placeholder scrape run log [skip ci]" || echo "nothing to commit"
+          git push

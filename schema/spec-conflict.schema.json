@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://datsun-620/schema/spec-conflict.schema.json",
+  "title": "SpecConflict",
+  "description": "A spec field where sources disagree and a human decision is needed.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["variant_id", "field", "candidates", "status"],
+  "properties": {
+    "variant_id": { "type": "string" },
+    "field": { "type": "string", "description": "Dotted path, e.g. 'weights.kerb_kg'." },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["value", "source"],
+        "properties": {
+          "value": {},
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "status": { "type": "string", "enum": ["open", "resolved"] }
+  }
+}

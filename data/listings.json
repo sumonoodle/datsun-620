@@ -1,0 +1,32 @@
+[
+  {
+    "id": "placeholder-001",
+    "source": "placeholder",
+    "source_url": "https://example.com/placeholder-listing",
+    "title": "PLACEHOLDER 1978 Datsun 620 King Cab (sample row, not a real listing)",
+    "price_original": 12000,
+    "currency": "USD",
+    "price_gbp": 9450,
+    "fx_rate_used": 0.7875,
+    "fx_date": "2026-06-14",
+    "country": "US",
+    "region": "California",
+    "drive_side": "LHD",
+    "drive_side_inferred": true,
+    "year": 1978,
+    "trim": null,
+    "mileage": 86000,
+    "mileage_unit": "mi",
+    "condition_notes": "Sample data used to prove the pipeline. Replaced by real scrapers in M4.",
+    "king_cab_score": 0.95,
+    "king_cab_signals": ["title:King Cab"],
+    "photo_urls": [],
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "price_history": [
+      { "date": "2026-06-14", "price_original": 12000, "price_gbp": 9450 }
+    ],
+    "status": "active",
+    "relisted_from": null
+  }
+]
