@@ -13,4 +13,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Placeholder specs refresh step
-        run: echo "M1 placeholder: specs collectors arrive in M2."
+        run: |
+          echo "M1 placeholder: specs collectors arrive in M2."
