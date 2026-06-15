@@ -22,7 +22,7 @@ UA = "datsun620-tracker/0.1 (+https://github.com/sumonoodle/datsun-620)"
 
 # Wikipedia states the 620 used the J15 in most of the world; North America got
 # the L-series. Our M2 markets are all rest-of-world, so J15 applies.
-ROW_MARKETS = {"Japan", "Australia", "UK", "Europe"}
+ROW_MARKETS = {"Japan", "Australia", "UK", "Europe", "South Africa"}
 
 
 def _extract(text: str) -> list[tuple[str, str, object, str]]:

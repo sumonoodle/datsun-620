@@ -1,6 +1,6 @@
 [
   {
-    "variant_id": "au-620-ute",
+    "variant_id": "us-620-standard",
     "field": "dimensions.length_mm",
     "candidates": [
       {
@@ -8,29 +8,14 @@
         "source": "datsuntrucks.com (620 general specs)"
       },
       {
-        "value": 4609,
-        "source": "CarsGuide (Australia), 620 dimensions 1978"
+        "value": 4610,
+        "source": "FastestLaps (620, L20B)"
       }
     ],
     "status": "open"
   },
   {
-    "variant_id": "au-620-ute",
-    "field": "dimensions.wheelbase_mm",
-    "candidates": [
-      {
-        "value": 2567.9,
-        "source": "datsuntrucks.com (620 general specs)"
-      },
-      {
-        "value": 2785,
-        "source": "CarsGuide (Australia), 620 dimensions 1978"
-      }
-    ],
-    "status": "open"
-  },
-  {
-    "variant_id": "au-620-ute",
+    "variant_id": "us-620-standard",
     "field": "weights.kerb_kg",
     "candidates": [
       {
@@ -39,7 +24,172 @@
       },
       {
         "value": 1065,
-        "source": "CarsGuide (Australia), 620 dimensions 1978"
+        "source": "FastestLaps (620, L20B)"
+      }
+    ],
+    "status": "open"
+  },
+  {
+    "variant_id": "us-620-standard",
+    "field": "engine.torque_nm",
+    "candidates": [
+      {
+        "value": 146.4,
+        "source": "datsuntrucks.com (620 general specs)"
+      },
+      {
+        "value": 152,
+        "source": "FastestLaps (620, L20B)"
+      }
+    ],
+    "status": "open"
+  },
+  {
+    "variant_id": "us-620-longbed",
+    "field": "engine.torque_nm",
+    "candidates": [
+      {
+        "value": 146.4,
+        "source": "datsuntrucks.com (620 general specs)"
+      },
+      {
+        "value": 152,
+        "source": "FastestLaps (620, L20B)"
+      }
+    ],
+    "status": "open"
+  },
+  {
+    "variant_id": "us-620-kingcab",
+    "field": "engine.torque_nm",
+    "candidates": [
+      {
+        "value": 146.4,
+        "source": "datsuntrucks.com (620 general specs)"
+      },
+      {
+        "value": 152,
+        "source": "FastestLaps (620, L20B)"
+      }
+    ],
+    "status": "open"
+  },
+  {
+    "variant_id": "za-620",
+    "field": "dimensions.length_mm",
+    "candidates": [
+      {
+        "value": 4297.7,
+        "source": "datsuntrucks.com (620 general specs)"
+      },
+      {
+        "value": 4610,
+        "source": "FastestLaps (620, L20B)"
+      }
+    ],
+    "status": "open"
+  },
+  {
+    "variant_id": "za-620",
+    "field": "weights.kerb_kg",
+    "candidates": [
+      {
+        "value": 1036.9,
+        "source": "datsuntrucks.com (620 general specs)"
+      },
+      {
+        "value": 1065,
+        "source": "FastestLaps (620, L20B)"
+      }
+    ],
+    "status": "open"
+  },
+  {
+    "variant_id": "eu-620",
+    "field": "dimensions.length_mm",
+    "candidates": [
+      {
+        "value": 4297.7,
+        "source": "datsuntrucks.com (620 general specs)"
+      },
+      {
+        "value": 4610,
+        "source": "FastestLaps (620, L20B)"
+      }
+    ],
+    "status": "open"
+  },
+  {
+    "variant_id": "eu-620",
+    "field": "weights.kerb_kg",
+    "candidates": [
+      {
+        "value": 1036.9,
+        "source": "datsuntrucks.com (620 general specs)"
+      },
+      {
+        "value": 1065,
+        "source": "FastestLaps (620, L20B)"
+      }
+    ],
+    "status": "open"
+  },
+  {
+    "variant_id": "jp-620-standard",
+    "field": "dimensions.length_mm",
+    "candidates": [
+      {
+        "value": 4297.7,
+        "source": "datsuntrucks.com (620 general specs)"
+      },
+      {
+        "value": 4610,
+        "source": "FastestLaps (620, L20B)"
+      }
+    ],
+    "status": "open"
+  },
+  {
+    "variant_id": "jp-620-standard",
+    "field": "weights.kerb_kg",
+    "candidates": [
+      {
+        "value": 1036.9,
+        "source": "datsuntrucks.com (620 general specs)"
+      },
+      {
+        "value": 1065,
+        "source": "FastestLaps (620, L20B)"
+      }
+    ],
+    "status": "open"
+  },
+  {
+    "variant_id": "uk-620",
+    "field": "dimensions.length_mm",
+    "candidates": [
+      {
+        "value": 4297.7,
+        "source": "datsuntrucks.com (620 general specs)"
+      },
+      {
+        "value": 4610,
+        "source": "FastestLaps (620, L20B)"
+      }
+    ],
+    "status": "open"
+  },
+  {
+    "variant_id": "uk-620",
+    "field": "weights.kerb_kg",
+    "candidates": [
+      {
+        "value": 1036.9,
+        "source": "datsuntrucks.com (620 general specs)"
+      },
+      {
+        "value": 1065,
+        "source": "FastestLaps (620, L20B)"
       }
     ],
     "status": "open"

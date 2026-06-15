@@ -1,23 +1,33 @@
 {
-  "variant_count": 6,
+  "generated_at": "2026-06-14",
+  "variant_count": 11,
   "markets": [
     "Australia",
+    "Europe",
     "Japan",
-    "UK"
+    "South Africa",
+    "UK",
+    "US"
   ],
-  "conflict_count": 3,
+  "conflict_count": 13,
   "sources": [
     {
       "source": "Wikipedia, Datsun Truck",
       "ok": true,
       "note": "",
-      "facts": 12
+      "facts": 16
     },
     {
       "source": "datsuntrucks.com (620 general specs)",
       "ok": true,
       "note": "",
-      "facts": 21
+      "facts": 54
+    },
+    {
+      "source": "FastestLaps (620, L20B)",
+      "ok": true,
+      "note": "",
+      "facts": 42
     },
     {
       "source": "manual seed (blocked sources)",

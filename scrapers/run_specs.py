@@ -14,16 +14,17 @@ from __future__ import annotations
 
 import json
 import sys
+from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common.specs_reconcile import reconcile  # noqa: E402
-from specs import datsuntrucks, manual_seed, wikipedia  # noqa: E402
+from specs import datsuntrucks, fastestlaps, manual_seed, wikipedia  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[1]
 DATA = REPO / "data"
-COLLECTORS = [wikipedia, datsuntrucks, manual_seed]
+COLLECTORS = [wikipedia, datsuntrucks, fastestlaps, manual_seed]
 
 
 def main() -> int:
@@ -44,6 +45,7 @@ def main() -> int:
     (DATA / "specs.json").write_text(json.dumps(variants, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (DATA / "specs-conflicts.json").write_text(json.dumps(conflicts, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     report = {
+        "generated_at": date.today().isoformat(),
         "variant_count": len(variants),
         "markets": sorted({v["market"] for v in variants}),
         "conflict_count": len(conflicts),

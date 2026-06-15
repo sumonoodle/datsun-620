@@ -65,6 +65,7 @@ export interface SourceStatus {
   facts: number;
 }
 export interface SpecsReport {
+  generated_at?: string;
   variant_count: number;
   markets: string[];
   conflict_count: number;

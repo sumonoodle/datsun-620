@@ -13,10 +13,11 @@ Two views:
 
 ## Status
 
-**M2 (specs v1) complete.** Specs are live for UK, Japan, and Australia, collected
-from multiple sources, reconciled, with a citation per value and a conflicts queue
-for fields where sources disagree. Remaining markets come in M3; real listings in
-M4 to M5.
+**M3 (specs complete).** Specs are live for all six markets (UK, Japan, Australia,
+US, South Africa, Europe), collected from multiple sources (Wikipedia, datsuntrucks,
+FastestLaps, and a manual seed for blocked sources), reconciled, with a citation per
+value, a conflicts queue, and recorded decisions that resolve conflicts on refresh.
+Real listings come in M4 to M5.
 
 Refresh specs locally:
 

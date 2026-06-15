@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "variant_id": "au-620-ute",
+    "field": "dimensions.length_mm",
+    "chosen_value": 4609,
+    "decided_on": "2026-06-14"
+  },
+  {
+    "variant_id": "au-620-ute",
+    "field": "dimensions.wheelbase_mm",
+    "chosen_value": 2785,
+    "decided_on": "2026-06-14"
+  },
+  {
+    "variant_id": "au-620-ute",
+    "field": "weights.kerb_kg",
+    "chosen_value": 1065,
+    "decided_on": "2026-06-14"
+  }
+]

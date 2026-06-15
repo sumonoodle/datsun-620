@@ -15,7 +15,7 @@ import httpx
 from bs4 import BeautifulSoup
 
 from common.observations import CollectorResult, Observation
-from common.units import inch_to_mm, lb_to_kg
+from common.units import ftlb_to_nm, inch_to_mm, lb_to_kg
 
 URL = "https://datsuntrucks.com/620-specifications/"
 SOURCE = "datsuntrucks.com (620 general specs)"
@@ -43,6 +43,8 @@ def collect(registry: dict) -> CollectorResult:
 
     text = re.sub(r"\s+", " ", BeautifulSoup(r.text, "html.parser").get_text(" "))
     obs: list[Observation] = []
+
+    # Shared body dimensions -> the base-body variant of each market.
     for pattern, (field, conv) in DIMENSION_FIELDS.items():
         m = re.search(pattern, text)
         if not m:
@@ -50,6 +52,23 @@ def collect(registry: dict) -> CollectorResult:
         raw = m.group(0).split(":", 1)[1].strip()
         value = conv(float(m.group(1)))
         for vid in targets:
+            obs.append(Observation(vid, field, value, SOURCE, URL, raw))
+
+    # L20B engine (the US engine, 1975-1979) -> US variants only. The engine
+    # table lists L16/L18/L20b in column order; L20b is the third value.
+    us_targets = [v["id"] for v in registry["variants"] if v["market"] == "US"]
+    hp = re.search(r"HorsePower @ RPM\s+\d+ @ \d+\s+\d+ @ \d+\s+(\d+) @ \d+", text)
+    tq = re.search(r"Torque @ RMP\s+\d+ @ \d+\s+\d+ @ \d+\s+(\d+) @ \d+", text)
+    engine = []
+    engine.append(("engine.code", "L20B", "L20b"))
+    if re.search(r"\(\s*1952\s*\)", text):
+        engine.append(("engine.displacement_cc", 1952, "119.1 cu.in (1952 cc)"))
+    if hp:
+        engine.append(("engine.power_hp", int(hp.group(1)), f"{hp.group(1)} hp @ 5600"))
+    if tq:
+        engine.append(("engine.torque_nm", ftlb_to_nm(float(tq.group(1))), f"{tq.group(1)} ft-lb"))
+    for field, value, raw in engine:
+        for vid in us_targets:
             obs.append(Observation(vid, field, value, SOURCE, URL, raw))
 
     if not obs:

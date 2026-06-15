@@ -1,5 +1,364 @@
 [
   {
+    "id": "us-620-standard",
+    "market": "US",
+    "years": "1972 to 1979",
+    "body_style": "standard cab",
+    "bed_length": "short",
+    "engine": {
+      "value": {
+        "code": "L20B",
+        "displacement_cc": 1952,
+        "power_hp": 112
+      },
+      "citations": [
+        {
+          "value": "L20b",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "L20B",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "119.1 cu.in (1952 cc)",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "1952 cc)",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "112 hp @ 5600",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "Power 112 ps (110 bhp",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        }
+      ]
+    },
+    "dimensions": {
+      "value": {
+        "width_mm": 1587.5,
+        "height_mm": 1544.3,
+        "wheelbase_mm": 2567.9,
+        "ground_clearance_mm": 200.7
+      },
+      "citations": [
+        {
+          "value": "62.5 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "1.59 m (63 in) wide",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "60.8 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "1.55 m (61 in) high",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "101.1 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "Wheelbase 2.54 m",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "7.9 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        }
+      ]
+    },
+    "weights": {
+      "value": {
+        "payload_kg": 653.6
+      },
+      "citations": [
+        {
+          "value": "1441 lbs",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "us-620-longbed",
+    "market": "US",
+    "years": "1975 to 1979",
+    "body_style": "standard cab",
+    "bed_length": "long",
+    "engine": {
+      "value": {
+        "code": "L20B",
+        "displacement_cc": 1952,
+        "power_hp": 112
+      },
+      "citations": [
+        {
+          "value": "L20b",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "L20B",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "119.1 cu.in (1952 cc)",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "1952 cc)",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "112 hp @ 5600",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "Power 112 ps (110 bhp",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "us-620-kingcab",
+    "market": "US",
+    "years": "1977 to 1979",
+    "body_style": "King Cab",
+    "bed_length": "short",
+    "engine": {
+      "value": {
+        "code": "L20B",
+        "displacement_cc": 1952,
+        "power_hp": 112
+      },
+      "citations": [
+        {
+          "value": "L20b",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "L20B",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "119.1 cu.in (1952 cc)",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "1952 cc)",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "112 hp @ 5600",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "Power 112 ps (110 bhp",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "za-620",
+    "market": "South Africa",
+    "years": "1972 to 1979",
+    "body_style": "standard cab",
+    "bed_length": "short",
+    "engine": {
+      "value": {
+        "code": "J15",
+        "power_hp": 77
+      },
+      "citations": [
+        {
+          "value": "J15",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        },
+        {
+          "value": "77 hp (57 kW)",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        }
+      ]
+    },
+    "dimensions": {
+      "value": {
+        "width_mm": 1587.5,
+        "height_mm": 1544.3,
+        "wheelbase_mm": 2567.9,
+        "ground_clearance_mm": 200.7
+      },
+      "citations": [
+        {
+          "value": "62.5 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "1.59 m (63 in) wide",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "60.8 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "1.55 m (61 in) high",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "101.1 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "Wheelbase 2.54 m",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "7.9 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        }
+      ]
+    },
+    "weights": {
+      "value": {
+        "payload_kg": 653.6
+      },
+      "citations": [
+        {
+          "value": "1441 lbs",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eu-620",
+    "market": "Europe",
+    "years": "1972 to 1979",
+    "body_style": "standard cab",
+    "bed_length": "short",
+    "engine": {
+      "value": {
+        "code": "J15",
+        "power_hp": 77
+      },
+      "citations": [
+        {
+          "value": "J15",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        },
+        {
+          "value": "77 hp (57 kW)",
+          "source_url": "https://en.wikipedia.org/wiki/Datsun_Truck",
+          "source_name": "Wikipedia, Datsun Truck"
+        }
+      ]
+    },
+    "dimensions": {
+      "value": {
+        "width_mm": 1587.5,
+        "height_mm": 1544.3,
+        "wheelbase_mm": 2567.9,
+        "ground_clearance_mm": 200.7
+      },
+      "citations": [
+        {
+          "value": "62.5 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "1.59 m (63 in) wide",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "60.8 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "1.55 m (61 in) high",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "101.1 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "Wheelbase 2.54 m",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "7.9 in",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        }
+      ]
+    },
+    "weights": {
+      "value": {
+        "payload_kg": 653.6
+      },
+      "citations": [
+        {
+          "value": "1441 lbs",
+          "source_url": "https://datsuntrucks.com/620-specifications/",
+          "source_name": "datsuntrucks.com (620 general specs)"
+        }
+      ]
+    }
+  },
+  {
     "id": "jp-620-standard",
     "market": "Japan",
     "years": "1972 to 1979",
@@ -25,7 +384,6 @@
     },
     "dimensions": {
       "value": {
-        "length_mm": 4297.7,
         "width_mm": 1587.5,
         "height_mm": 1544.3,
         "wheelbase_mm": 2567.9,
@@ -33,14 +391,14 @@
       },
       "citations": [
         {
-          "value": "169.2 in",
+          "value": "62.5 in",
           "source_url": "https://datsuntrucks.com/620-specifications/",
           "source_name": "datsuntrucks.com (620 general specs)"
         },
         {
-          "value": "62.5 in",
-          "source_url": "https://datsuntrucks.com/620-specifications/",
-          "source_name": "datsuntrucks.com (620 general specs)"
+          "value": "1.59 m (63 in) wide",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
         },
         {
           "value": "60.8 in",
@@ -48,9 +406,19 @@
           "source_name": "datsuntrucks.com (620 general specs)"
         },
         {
+          "value": "1.55 m (61 in) high",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
           "value": "101.1 in",
           "source_url": "https://datsuntrucks.com/620-specifications/",
           "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "Wheelbase 2.54 m",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
         },
         {
           "value": "7.9 in",
@@ -61,15 +429,9 @@
     },
     "weights": {
       "value": {
-        "kerb_kg": 1036.9,
         "payload_kg": 653.6
       },
       "citations": [
-        {
-          "value": "2286 lbs",
-          "source_url": "https://datsuntrucks.com/620-specifications/",
-          "source_name": "datsuntrucks.com (620 general specs)"
-        },
         {
           "value": "1441 lbs",
           "source_url": "https://datsuntrucks.com/620-specifications/",
@@ -185,15 +547,27 @@
     },
     "dimensions": {
       "value": {
+        "length_mm": 4609,
         "width_mm": 1587.5,
         "height_mm": 1544.3,
+        "wheelbase_mm": 2785,
         "ground_clearance_mm": 200.7
       },
       "citations": [
         {
+          "value": "4609 mm (15 ft 1 in)",
+          "source_url": "https://www.carsguide.com.au/datsun/620/car-dimensions/1978",
+          "source_name": "CarsGuide (Australia), 620 dimensions 1978"
+        },
+        {
           "value": "62.5 in",
           "source_url": "https://datsuntrucks.com/620-specifications/",
           "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "1.59 m (63 in) wide",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
         },
         {
           "value": "1590 mm (5 ft 3 in)",
@@ -206,7 +580,17 @@
           "source_name": "datsuntrucks.com (620 general specs)"
         },
         {
+          "value": "1.55 m (61 in) high",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
           "value": "1545 mm (5 ft 1 in)",
+          "source_url": "https://www.carsguide.com.au/datsun/620/car-dimensions/1978",
+          "source_name": "CarsGuide (Australia), 620 dimensions 1978"
+        },
+        {
+          "value": "2785 mm (9 ft 2 in)",
           "source_url": "https://www.carsguide.com.au/datsun/620/car-dimensions/1978",
           "source_name": "CarsGuide (Australia), 620 dimensions 1978"
         },
@@ -219,9 +603,20 @@
     },
     "weights": {
       "value": {
+        "kerb_kg": 1065,
         "payload_kg": 653.6
       },
       "citations": [
+        {
+          "value": "Curb weight 1065 kg",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
+          "value": "1065 kg (2348 lbs)",
+          "source_url": "https://www.carsguide.com.au/datsun/620/car-dimensions/1978",
+          "source_name": "CarsGuide (Australia), 620 dimensions 1978"
+        },
         {
           "value": "1441 lbs",
           "source_url": "https://datsuntrucks.com/620-specifications/",
@@ -256,7 +651,6 @@
     },
     "dimensions": {
       "value": {
-        "length_mm": 4297.7,
         "width_mm": 1587.5,
         "height_mm": 1544.3,
         "wheelbase_mm": 2567.9,
@@ -264,14 +658,14 @@
       },
       "citations": [
         {
-          "value": "169.2 in",
+          "value": "62.5 in",
           "source_url": "https://datsuntrucks.com/620-specifications/",
           "source_name": "datsuntrucks.com (620 general specs)"
         },
         {
-          "value": "62.5 in",
-          "source_url": "https://datsuntrucks.com/620-specifications/",
-          "source_name": "datsuntrucks.com (620 general specs)"
+          "value": "1.59 m (63 in) wide",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
         },
         {
           "value": "60.8 in",
@@ -279,9 +673,19 @@
           "source_name": "datsuntrucks.com (620 general specs)"
         },
         {
+          "value": "1.55 m (61 in) high",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
+        },
+        {
           "value": "101.1 in",
           "source_url": "https://datsuntrucks.com/620-specifications/",
           "source_name": "datsuntrucks.com (620 general specs)"
+        },
+        {
+          "value": "Wheelbase 2.54 m",
+          "source_url": "https://fastestlaps.com/models/datsun-620",
+          "source_name": "FastestLaps (620, L20B)"
         },
         {
           "value": "7.9 in",
@@ -292,15 +696,9 @@
     },
     "weights": {
       "value": {
-        "kerb_kg": 1036.9,
         "payload_kg": 653.6
       },
       "citations": [
-        {
-          "value": "2286 lbs",
-          "source_url": "https://datsuntrucks.com/620-specifications/",
-          "source_name": "datsuntrucks.com (620 general specs)"
-        },
         {
           "value": "1441 lbs",
           "source_url": "https://datsuntrucks.com/620-specifications/",

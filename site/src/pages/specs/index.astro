@@ -14,9 +14,10 @@ const isConflict = (vid: string, group: string, key: string) => conflictKeys.has
   <h1>Specs</h1>
   <p>
     Comparing {specs.length} variants across {report.markets.join(", ")}. Every value is
-    sourced; hover or open a variant to see citations. Gaps are blank, and fields where
+    sourced; open a variant to see citations. Gaps are blank, and fields where
     sources disagree are flagged for review below.
   </p>
+  {report.generated_at && <p style="color:#777;font-size:0.9rem">Last refreshed {report.generated_at}.</p>}
 
   {conflicts.length > 0 && (
     <div class="note">

@@ -1,6 +1,44 @@
 {
-  "_note": "Canonical list of 620 variants to fill, for the M2 markets (UK, Japan, Australia). Identity fields are human-defined; collectors fill the rest. US and others arrive in M3.",
+  "_note": "Canonical list of 620 variants to fill across all six markets (UK, Japan, Australia, US, South Africa, Europe). Identity fields are human-defined; collectors fill the rest. base_body marks the variant that carries the shared body dimensions for its market.",
   "variants": [
+    {
+      "id": "us-620-standard",
+      "market": "US",
+      "years": "1972 to 1979",
+      "body_style": "standard cab",
+      "bed_length": "short",
+      "base_body": true
+    },
+    {
+      "id": "us-620-longbed",
+      "market": "US",
+      "years": "1975 to 1979",
+      "body_style": "standard cab",
+      "bed_length": "long"
+    },
+    {
+      "id": "us-620-kingcab",
+      "market": "US",
+      "years": "1977 to 1979",
+      "body_style": "King Cab",
+      "bed_length": "short"
+    },
+    {
+      "id": "za-620",
+      "market": "South Africa",
+      "years": "1972 to 1979",
+      "body_style": "standard cab",
+      "bed_length": "short",
+      "base_body": true
+    },
+    {
+      "id": "eu-620",
+      "market": "Europe",
+      "years": "1972 to 1979",
+      "body_style": "standard cab",
+      "bed_length": "short",
+      "base_body": true
+    },
     {
       "id": "jp-620-standard",
       "market": "Japan",
