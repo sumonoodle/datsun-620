@@ -1,9 +1,11 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { getListings, getListingsReport } from "../../lib/data.ts";
+const base = import.meta.env.BASE_URL;
 // Recall-first: show everything, ranked by King Cab likelihood (highest first).
 const listings = getListings().sort((a, b) => b.king_cab_score - a.king_cab_score);
 const report = getListingsReport();
+const countries = [...new Set(listings.map((l) => l.country).filter(Boolean))].sort();
 const gbp = (n: number | null) => (n == null ? null : `£${n.toLocaleString("en-GB", { maximumFractionDigits: 0 })}`);
 const orig = (l: { price_original: number | null; currency: string | null }) =>
   l.price_original == null || !l.currency ? null : `${l.price_original.toLocaleString()} ${l.currency}`;
@@ -18,34 +20,53 @@ const orig = (l: { price_original: number | null; currency: string | null }) =>
 
   {listings.length === 0 && (
     <div class="note">
-      No listings yet. The pipeline is live (FX, scoring, change detection, notify-on-change
-      all working) and checks daily. The 620 King Cab is rare, so an empty list is normal.
-      eBay switches on once your developer credentials are added.
+      No listings yet. The pipeline is live (FX, scoring, history, relisted detection,
+      notify-on-change) and checks daily across six sources. The 620 King Cab is rare, so
+      an empty list is normal. eBay and the other sources fill in as access allows.
     </div>
   )}
 
-  {listings.map((l) => (
-    <article class="card">
-      <h2><a href={l.source_url}>{l.title}</a></h2>
-      <p>
-        <span class="badge">King Cab {Math.round(l.king_cab_score * 100)}%</span>
-        {l.status !== "active" && <span class="badge" style="background:#eee;color:#555"> {l.status}</span>}
-      </p>
-      <p>
-        {gbp(l.price_gbp) ?? "price n/a"}
-        {orig(l) ? ` (${orig(l)})` : ""}
-        {" · "}{l.country ?? "?"}{l.region ? `, ${l.region}` : ""}
-        {" · "}{l.drive_side}{l.year ? ` · ${l.year}` : ""}
-        {" · "}{l.source}
-      </p>
-      {l.king_cab_signals && l.king_cab_signals.length > 0 && (
-        <p style="font-size:0.85rem;color:#777">signals: {l.king_cab_signals.join(", ")}</p>
-      )}
-      {l.relisted_from && (
-        <p style="font-size:0.85rem;color:#8a1c13">relisted from a prior listing ({l.relisted_from})</p>
-      )}
-    </article>
-  ))}
+  {listings.length > 0 && (
+    <div class="filters">
+      <label>Country
+        <select id="f-country"><option value="">All</option>{countries.map((c) => <option value={c}>{c}</option>)}</select>
+      </label>
+      <label>Drive
+        <select id="f-drive"><option value="">All</option><option>RHD</option><option>LHD</option><option>unknown</option></select>
+      </label>
+      <label>Year from <input id="f-yearmin" type="number" min="1972" max="1979" placeholder="1972" /></label>
+      <label>Year to <input id="f-yearmax" type="number" min="1972" max="1979" placeholder="1979" /></label>
+      <label>Max £ <input id="f-pricemax" type="number" min="0" step="500" placeholder="any" /></label>
+      <label>Min King Cab % <input id="f-score" type="number" min="0" max="100" step="5" placeholder="0" /></label>
+      <button id="f-reset" type="button">Reset</button>
+      <span id="f-count"></span>
+    </div>
+  )}
+
+  <div id="cards">
+    {listings.map((l) => (
+      <article class="card listing"
+        data-country={l.country ?? ""} data-drive={l.drive_side}
+        data-year={l.year ?? ""} data-gbp={l.price_gbp ?? ""}
+        data-score={Math.round(l.king_cab_score * 100)}>
+        <h2><a href={`${base}/listings/${l.id}`}>{l.title}</a></h2>
+        <p>
+          <span class="badge">King Cab {Math.round(l.king_cab_score * 100)}%</span>
+          {l.status !== "active" && <span class="badge" style="background:#eee;color:#555"> {l.status}</span>}
+        </p>
+        <p>
+          {gbp(l.price_gbp) ?? "price n/a"}
+          {orig(l) ? ` (${orig(l)})` : ""}
+          {" · "}{l.country ?? "?"}{l.region ? `, ${l.region}` : ""}
+          {" · "}{l.drive_side}{l.year ? ` · ${l.year}` : ""}
+          {" · "}<a href={l.source_url}>{l.source}</a>
+        </p>
+        {l.relisted_from && (
+          <p style="font-size:0.85rem;color:#8a1c13">relisted from a prior listing</p>
+        )}
+      </article>
+    ))}
+  </div>
 
   <h2>Data sources</h2>
   <ul>
@@ -53,4 +74,49 @@ const orig = (l: { price_original: number | null; currency: string | null }) =>
       <li>{s.ok ? "✓" : "✗ skipped"} <strong>{s.source}</strong> &mdash; {s.records ?? 0} records{s.note ? ` (${s.note})` : ""}</li>
     ))}
   </ul>
+
+  <style>
+    .filters { display:flex; flex-wrap:wrap; gap:0.75rem; align-items:end; background:#fff; border:1px solid #ddd; border-radius:8px; padding:0.75rem 1rem; margin-bottom:1rem; }
+    .filters label { display:flex; flex-direction:column; font-size:0.8rem; color:#555; gap:0.2rem; }
+    .filters input { width:6rem; }
+    #f-count { color:#777; font-size:0.85rem; }
+  </style>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const cards = [...document.querySelectorAll(".listing")];
+    const num = (v) => (v === "" || v == null ? null : Number(v));
+    function apply() {
+      const country = $("f-country").value;
+      const drive = $("f-drive").value;
+      const ymin = num($("f-yearmin").value), ymax = num($("f-yearmax").value);
+      const pmax = num($("f-pricemax").value), smin = num($("f-score").value);
+      let shown = 0;
+      for (const c of cards) {
+        const d = c.dataset;
+        const year = num(d.year), price = num(d.gbp), score = num(d.score);
+        const ok =
+          (!country || d.country === country) &&
+          (!drive || d.drive === drive) &&
+          (ymin == null || (year != null && year >= ymin)) &&
+          (ymax == null || (year != null && year <= ymax)) &&
+          (pmax == null || (price != null && price <= pmax)) &&
+          (smin == null || (score != null && score >= smin));
+        c.style.display = ok ? "" : "none";
+        if (ok) shown++;
+      }
+      const cnt = $("f-count");
+      if (cnt) cnt.textContent = `${shown} of ${cards.length} shown`;
+    }
+    if (cards.length) {
+      ["f-country","f-drive","f-yearmin","f-yearmax","f-pricemax","f-score"].forEach((id) => {
+        $(id).addEventListener("input", apply);
+      });
+      $("f-reset").addEventListener("click", () => {
+        ["f-country","f-drive","f-yearmin","f-yearmax","f-pricemax","f-score"].forEach((id) => ($(id).value = ""));
+        apply();
+      });
+      apply();
+    }
+  </script>
 </Base>

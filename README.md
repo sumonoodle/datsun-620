@@ -29,6 +29,12 @@ Two things need your input to switch fully on:
   `data/digest-sample.html`, then set repo variable `NOTIFY_LIVE=1`. Until then
   the digest is written to `data/digest-latest.html` (dry-run) and not emailed.
 
+**Polish (M6).** Listings view has filters (country, drive side, year, price,
+King Cab likelihood) and per-vehicle history pages with the full price timeline.
+
+See [docs/OPS.md](docs/OPS.md) for how to turn on eBay and email, resolve spec
+conflicts, and run things locally.
+
 Run a listings refresh locally:
 
 ```
