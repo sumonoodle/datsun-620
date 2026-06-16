@@ -20,13 +20,17 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import listings_store  # noqa: E402
 from common.fx import fetch_rates  # noqa: E402
 from common.listings_common import build_listing  # noqa: E402
-from listings import bat, ebay  # noqa: E402
+from listings import bat, best_effort, ebay  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "emailer"))
 import send_notification  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[1]
 DATA = REPO / "data"
-COLLECTORS = [ebay.collect, bat.collect]
+# Core sources first (eBay, BaT), then best-effort sources that often block.
+COLLECTORS = [
+    ebay.collect, bat.collect,
+    best_effort.cars_and_bids, best_effort.hemmings, best_effort.goonet, best_effort.yahoo_buyee,
+]
 
 
 def _load(path: Path, fallback):
@@ -70,6 +74,7 @@ def main() -> int:
         "price_changed": [{**_compact(c["listing"]), "old": c["old"], "new": c["new"]} for c in changes["price_changed"]],
         "status_changed": [{**_compact(c["listing"]), "old": c["old"], "new": c["new"]} for c in changes["status_changed"]],
         "withdrawn": [_compact(c["listing"]) for c in changes["withdrawn"]],
+        "relisted": [{**_compact(c["listing"]), "relisted_from": c["relisted_from"]} for c in changes["relisted"]],
     }
     (DATA / "listings-changes.json").write_text(json.dumps(changes_out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
@@ -80,7 +85,7 @@ def main() -> int:
     }
     (DATA / "listings-report.json").write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
-    n_changes = sum(len(changes_out[k]) for k in ("new", "price_changed", "status_changed", "withdrawn"))
+    n_changes = sum(len(changes_out[k]) for k in ("new", "price_changed", "status_changed", "withdrawn", "relisted"))
     print(f"\n{len(merged)} listings ({active} active); {n_changes} changes this run.")
     send_notification.notify(changes_out, report)
     return 0

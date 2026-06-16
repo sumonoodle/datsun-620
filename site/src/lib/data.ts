@@ -32,6 +32,7 @@ export interface Listing {
   first_seen?: string;
   last_seen?: string;
   status: string;
+  relisted_from?: string | null;
 }
 export interface ListingsReport {
   generated_at?: string;

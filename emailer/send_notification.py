@@ -49,6 +49,8 @@ def build_html(changes: dict, report: dict) -> str:
                  lambda r: f'{_line(r)}<br><small>{r.get("old")} &rarr; {r.get("new")}</small>'),
         _section("Status changes", changes.get("status_changed", []),
                  lambda r: f'{_line(r)}<br><small>{r.get("old")} &rarr; {r.get("new")}</small>'),
+        _section("Relisted", changes.get("relisted", []),
+                 lambda r: f'{_line(r)}<br><small>relisted from {r.get("relisted_from")}</small>'),
         _section("Withdrawn", changes.get("withdrawn", []), _line),
     ]
     skipped = [s for s in report.get("sources", []) if not s["ok"]]
@@ -61,7 +63,7 @@ def build_html(changes: dict, report: dict) -> str:
 
 
 def has_changes(changes: dict) -> bool:
-    return any(changes.get(k) for k in ("new", "price_changed", "status_changed", "withdrawn"))
+    return any(changes.get(k) for k in ("new", "price_changed", "status_changed", "withdrawn", "relisted"))
 
 
 def notify(changes: dict, report: dict) -> None:

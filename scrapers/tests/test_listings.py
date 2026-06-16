@@ -68,6 +68,21 @@ def test_merge_marks_withdrawn_when_disappeared():
     assert len(changes["withdrawn"]) == 1 and merged2[0]["status"] == "withdrawn"
 
 
+def test_relisted_detection():
+    today = "2026-06-15"
+    # A prior BaT listing that sold.
+    sold = build_listing({**RAW_BAT, "status": "sold"}, FX, today)
+    sold["status"] = "sold"
+    base, _ = merge([], [sold], {"bringatrailer"}, today)
+    # Later: a near-identical listing reappears (same year, similar price, similar title).
+    relist = build_listing({**RAW_BAT,
+                            "source_url": "https://bringatrailer.com/listing/1978-datsun-620-king-cab-2/",
+                            "title": "1978 Datsun 620 King Cab", "price_original": 11000}, FX, "2026-07-01")
+    merged, changes = merge(base, [relist], {"bringatrailer"}, "2026-07-01")
+    assert len(changes["relisted"]) == 1
+    assert changes["relisted"][0]["relisted_from"] == sold["id"]
+
+
 def test_digest_only_has_content_when_changes():
     assert send_notification.has_changes({"new": [], "price_changed": [], "status_changed": [], "withdrawn": []}) is False
     changes = {"new": [build_listing(RAW_BAT, FX)], "price_changed": [], "status_changed": [], "withdrawn": []}

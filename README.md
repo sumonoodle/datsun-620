@@ -13,11 +13,27 @@ Two views:
 
 ## Status
 
-**M3 (specs complete).** Specs are live for all six markets (UK, Japan, Australia,
-US, South Africa, Europe), collected from multiple sources (Wikipedia, datsuntrucks,
-FastestLaps, and a manual seed for blocked sources), reconciled, with a citation per
-value, a conflicts queue, and recorded decisions that resolve conflicts on refresh.
-Real listings come in M4 to M5.
+**Specs complete (M3)** for all six markets, reconciled with citations and a
+conflicts queue.
+
+**Listings complete (M5).** Daily sweep across six sources: eBay (Browse API) and
+Bring a Trailer as the core, plus Cars & Bids, Hemmings, Goo-net, and Yahoo/Buyee
+as best-effort (skipped and flagged when blocked). Recall-first multilingual King
+Cab scoring, GBP conversion (Frankfurter), full price/status history, fuzzy
+relisted detection, and a notify-on-change email digest.
+
+Two things need your input to switch fully on:
+- **eBay**: add `EBAY_CLIENT_ID` / `EBAY_CLIENT_SECRET` as repo secrets (pending
+  developer approval). Until then eBay skips and flags itself.
+- **Email go-live**: add `GMAIL_USER` / `GMAIL_APP_PASSWORD` secrets, review
+  `data/digest-sample.html`, then set repo variable `NOTIFY_LIVE=1`. Until then
+  the digest is written to `data/digest-latest.html` (dry-run) and not emailed.
+
+Run a listings refresh locally:
+
+```
+python scrapers/run_listings.py
+```
 
 Refresh specs locally:
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16",
+  "generated_at": "2026-06-15",
   "total": 0,
   "active": 0,
   "by_country": {},
@@ -14,6 +14,30 @@
       "source": "bringatrailer",
       "ok": true,
       "note": "",
+      "records": 0
+    },
+    {
+      "source": "carsandbids",
+      "ok": true,
+      "note": "",
+      "records": 0
+    },
+    {
+      "source": "hemmings",
+      "ok": false,
+      "note": "HTTP 403 (bot protection / blocked)",
+      "records": 0
+    },
+    {
+      "source": "goonet",
+      "ok": false,
+      "note": "HTTP 404 (bot protection / blocked)",
+      "records": 0
+    },
+    {
+      "source": "yahoo_buyee",
+      "ok": false,
+      "note": "HTTP 404 (bot protection / blocked)",
       "records": 0
     }
   ]

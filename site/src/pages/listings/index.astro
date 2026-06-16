@@ -41,6 +41,9 @@ const orig = (l: { price_original: number | null; currency: string | null }) =>
       {l.king_cab_signals && l.king_cab_signals.length > 0 && (
         <p style="font-size:0.85rem;color:#777">signals: {l.king_cab_signals.join(", ")}</p>
       )}
+      {l.relisted_from && (
+        <p style="font-size:0.85rem;color:#8a1c13">relisted from a prior listing ({l.relisted_from})</p>
+      )}
     </article>
   ))}
 

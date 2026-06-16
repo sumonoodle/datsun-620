@@ -8,19 +8,51 @@ price actually moves. Fuzzy relisted-detection is deferred to M5.
 
 from __future__ import annotations
 
+import re
 from datetime import date
+from difflib import SequenceMatcher
+
+
+def _norm_title(t: str) -> str:
+    return re.sub(r"[^a-z0-9 ]", "", (t or "").lower())
+
+
+def find_relisted(rec: dict, candidates: list[dict]) -> dict | None:
+    """Find a prior ended (sold/withdrawn) listing that this new one likely is a
+    relist of: similar title, same year, and price within 25%. Cross-source is
+    allowed. Returns the matched prior, or None."""
+    rt = _norm_title(rec.get("title", ""))
+    ry, rp = rec.get("year"), rec.get("price_original")
+    best, best_ratio = None, 0.0
+    for c in candidates:
+        if c["id"] == rec.get("id") or c.get("status") not in ("sold", "withdrawn"):
+            continue
+        if ry and c.get("year") and ry != c["year"]:
+            continue
+        if rp and c.get("price_original"):
+            hi = max(rp, c["price_original"])
+            if hi and abs(rp - c["price_original"]) / hi > 0.25:
+                continue
+        ratio = SequenceMatcher(None, rt, _norm_title(c.get("title", ""))).ratio()
+        if ratio > best_ratio:
+            best, best_ratio = c, ratio
+    return best if best_ratio >= 0.6 else None
 
 
 def merge(existing: list[dict], incoming: list[dict], scraped_sources: set[str], today: str | None = None):
     today = today or date.today().isoformat()
     by_id = {r["id"]: r for r in existing}
     seen_ids = set()
-    changes = {"new": [], "price_changed": [], "status_changed": [], "withdrawn": []}
+    changes = {"new": [], "price_changed": [], "status_changed": [], "withdrawn": [], "relisted": []}
 
     for rec in incoming:
         seen_ids.add(rec["id"])
         prior = by_id.get(rec["id"])
         if prior is None:
+            match = find_relisted(rec, list(by_id.values()))
+            if match is not None:
+                rec["relisted_from"] = match["id"]
+                changes["relisted"].append({"listing": rec, "relisted_from": match["id"]})
             by_id[rec["id"]] = rec
             changes["new"].append(rec)
             continue
