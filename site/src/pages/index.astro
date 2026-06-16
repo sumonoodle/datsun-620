@@ -9,14 +9,15 @@ const specs = getSpecs();
 <Base title="Datsun 620 Tracker">
   <h1>Datsun 620 Tracker</h1>
   <div class="note">
-    <strong>M3.</strong> Specs are live for all six markets, sourced and reconciled with
-    a conflicts queue. Listings are still placeholder until M4.
+    <strong>M4.</strong> Specs live for all six markets. The listings pipeline is live too
+    (FX, recall-first scoring, change detection, notify-on-change), checking daily.
+    eBay switches on once developer credentials are added.
   </div>
   <p>
     Two views:
   </p>
   <ul>
     <li><a href={`${base}/specs`}>Specs</a> &mdash; comparative reference of {specs.length} 620 variants, every value cited.</li>
-    <li><a href={`${base}/listings`}>Listings</a> &mdash; King Cab listings worldwide ({listings.length} placeholder listing, real feed in M4).</li>
+    <li><a href={`${base}/listings`}>Listings</a> &mdash; King Cab listings worldwide, ranked by likelihood ({listings.length} currently active).</li>
   </ul>
 </Base>

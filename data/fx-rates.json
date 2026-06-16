@@ -2,7 +2,27 @@
   {
     "date": "2026-06-14",
     "base": "GBP",
-    "rates": { "USD": 1.27, "JPY": 198.4, "EUR": 1.17, "AUD": 1.93 },
+    "rates": {
+      "USD": 1.27,
+      "JPY": 198.4,
+      "EUR": 1.17,
+      "AUD": 1.93
+    },
     "source": "placeholder, replaced by Frankfurter in M4"
+  },
+  {
+    "date": "2026-06-15",
+    "base": "GBP",
+    "rates": {
+      "GBP": 1.0,
+      "AUD": 1.8991,
+      "CAD": 1.8764,
+      "EUR": 1.1563,
+      "JPY": 214.99,
+      "NZD": 2.2989,
+      "USD": 1.3421,
+      "ZAR": 21.761
+    },
+    "source": "Frankfurter (ECB)"
   }
 ]

@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-15",
+  "total": 0,
+  "active": 0,
+  "by_country": {},
+  "sources": [
+    {
+      "source": "ebay",
+      "ok": false,
+      "note": "no credentials set (awaiting eBay developer approval)",
+      "records": 0
+    },
+    {
+      "source": "bringatrailer",
+      "ok": true,
+      "note": "",
+      "records": 0
+    }
+  ]
+}

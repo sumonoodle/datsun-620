@@ -1,41 +1,53 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { getListings } from "../../lib/data.ts";
+import { getListings, getListingsReport } from "../../lib/data.ts";
 // Recall-first: show everything, ranked by King Cab likelihood (highest first).
 const listings = getListings().sort((a, b) => b.king_cab_score - a.king_cab_score);
-const gbp = (n: number | null) => (n == null ? "-" : `£${n.toLocaleString("en-GB")}`);
+const report = getListingsReport();
+const gbp = (n: number | null) => (n == null ? null : `£${n.toLocaleString("en-GB", { maximumFractionDigits: 0 })}`);
+const orig = (l: { price_original: number | null; currency: string | null }) =>
+  l.price_original == null || !l.currency ? null : `${l.price_original.toLocaleString()} ${l.currency}`;
 ---
 
 <Base title="Listings - Datsun 620 Tracker">
   <h1>Listings</h1>
-  <div class="note">
-    Recall-first and ranked by King Cab likelihood (placeholder). In M4 to M5 this
-    fills with real listings from eBay and Goo-net first, then best-effort sources.
-  </div>
-  {
-    listings.map((l) => (
-      <article class="card">
-        <h2>
-          <a href={l.source_url}>{l.title}</a>
-        </h2>
-        <p>
-          <span class="badge">King Cab likelihood {Math.round(l.king_cab_score * 100)}%</span>
-        </p>
-        <p>
-          {gbp(l.price_gbp)}
-          {l.price_original != null && l.currency
-            ? ` (${l.price_original.toLocaleString()} ${l.currency})`
-            : ""}
-          {" · "}
-          {l.country ?? "?"}
-          {l.region ? `, ${l.region}` : ""}
-          {" · "}
-          {l.drive_side}
-          {l.year ? ` · ${l.year}` : ""}
-          {" · "}
-          {l.source}
-        </p>
-      </article>
-    ))
-  }
+  <p>
+    Datsun 620 King Cab listings worldwide, cast wide and ranked by King Cab likelihood.
+    {report.generated_at && ` Last checked ${report.generated_at}.`}
+  </p>
+
+  {listings.length === 0 && (
+    <div class="note">
+      No listings yet. The pipeline is live (FX, scoring, change detection, notify-on-change
+      all working) and checks daily. The 620 King Cab is rare, so an empty list is normal.
+      eBay switches on once your developer credentials are added.
+    </div>
+  )}
+
+  {listings.map((l) => (
+    <article class="card">
+      <h2><a href={l.source_url}>{l.title}</a></h2>
+      <p>
+        <span class="badge">King Cab {Math.round(l.king_cab_score * 100)}%</span>
+        {l.status !== "active" && <span class="badge" style="background:#eee;color:#555"> {l.status}</span>}
+      </p>
+      <p>
+        {gbp(l.price_gbp) ?? "price n/a"}
+        {orig(l) ? ` (${orig(l)})` : ""}
+        {" · "}{l.country ?? "?"}{l.region ? `, ${l.region}` : ""}
+        {" · "}{l.drive_side}{l.year ? ` · ${l.year}` : ""}
+        {" · "}{l.source}
+      </p>
+      {l.king_cab_signals && l.king_cab_signals.length > 0 && (
+        <p style="font-size:0.85rem;color:#777">signals: {l.king_cab_signals.join(", ")}</p>
+      )}
+    </article>
+  ))}
+
+  <h2>Data sources</h2>
+  <ul>
+    {report.sources.map((s) => (
+      <li>{s.ok ? "✓" : "✗ skipped"} <strong>{s.source}</strong> &mdash; {s.records ?? 0} records{s.note ? ` (${s.note})` : ""}</li>
+    ))}
+  </ul>
 </Base>

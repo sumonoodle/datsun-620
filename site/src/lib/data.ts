@@ -13,7 +13,7 @@ function readJson<T>(filename: string, fallback: T): T {
   }
 }
 
-// ---- Listings (placeholder until M4) ----
+// ---- Listings ----
 export interface Listing {
   id: string;
   source: string;
@@ -27,9 +27,22 @@ export interface Listing {
   drive_side: "LHD" | "RHD" | "unknown";
   year: number | null;
   king_cab_score: number;
+  king_cab_signals?: string[];
+  photo_urls?: string[];
+  first_seen?: string;
+  last_seen?: string;
   status: string;
 }
+export interface ListingsReport {
+  generated_at?: string;
+  total: number;
+  active: number;
+  by_country: Record<string, number>;
+  sources: SourceStatus[];
+}
 export const getListings = () => readJson<Listing[]>("listings.json", []);
+export const getListingsReport = () =>
+  readJson<ListingsReport>("listings-report.json", { total: 0, active: 0, by_country: {}, sources: [] });
 
 // ---- Specs ----
 export interface Citation {
@@ -62,7 +75,8 @@ export interface SourceStatus {
   source: string;
   ok: boolean;
   note: string;
-  facts: number;
+  facts?: number; // specs collectors
+  records?: number; // listings collectors
 }
 export interface SpecsReport {
   generated_at?: string;
