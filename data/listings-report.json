@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22",
+  "generated_at": "2026-06-23",
   "total": 0,
   "active": 0,
   "by_country": {},
@@ -37,7 +37,7 @@
     {
       "source": "yahoo_buyee",
       "ok": false,
-      "note": "HTTP 403 (bot protection / blocked)",
+      "note": "HTTP 404 (bot protection / blocked)",
       "records": 0
     }
   ]
