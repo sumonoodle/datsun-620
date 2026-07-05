@@ -1,20 +1,6 @@
 {
-  "generated_at": "2026-07-04",
-  "new": [
-    {
-      "id": "bringatrailer-1978-datsun-620-3",
-      "title": "1978 Datsun 620 King Cab Deluxe Pickup",
-      "source": "bringatrailer",
-      "source_url": "https://bringatrailer.com/listing/1978-datsun-620-3/",
-      "price_gbp": 9359.79,
-      "currency": "USD",
-      "price_original": 12500,
-      "country": "United States",
-      "drive_side": "LHD",
-      "king_cab_score": 0.95,
-      "status": "sold"
-    }
-  ],
+  "generated_at": "2026-07-05",
+  "new": [],
   "price_changed": [],
   "status_changed": [],
   "withdrawn": [],
