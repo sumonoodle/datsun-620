@@ -309,5 +309,20 @@
       "ZAR": 21.908
     },
     "source": "Frankfurter (ECB)"
+  },
+  {
+    "date": "2026-07-13",
+    "base": "GBP",
+    "rates": {
+      "GBP": 1.0,
+      "AUD": 1.9283,
+      "CAD": 1.8924,
+      "EUR": 1.1719,
+      "JPY": 217.07,
+      "NZD": 2.3169,
+      "USD": 1.3388,
+      "ZAR": 21.908
+    },
+    "source": "Frankfurter (ECB)"
   }
 ]
