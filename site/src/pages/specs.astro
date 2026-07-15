@@ -19,14 +19,17 @@ interface Variant {
   };
   dimensions_mm?: Record<string, number | null>;
   weight_kg?: number | null;
-  transmission?: string;
+  transmission?: string | null;
   notes?: string;
+  confidence?: string;
+  unresolved?: string[];
   citations: Citation[];
 }
 interface Market {
   market: string;
   name: string;
   notes?: string;
+  unresolved?: string[];
   variants: Variant[];
 }
 
@@ -128,6 +131,11 @@ function hostname(url: string): string {
                   )}
                 </dl>
                 {v.notes && <p class="variant-notes">{v.notes}</p>}
+                {v.confidence && (
+                  <p class={`confidence confidence-${v.confidence}`}>
+                    Data confidence: {v.confidence}
+                  </p>
+                )}
                 <details>
                   <summary>Sources ({v.citations.length})</summary>
                   <ul>
@@ -145,6 +153,16 @@ function hostname(url: string): string {
                     ))}
                   </ul>
                 </details>
+                {v.unresolved && v.unresolved.length > 0 && (
+                  <details>
+                    <summary>Open questions ({v.unresolved.length})</summary>
+                    <ul>
+                      {v.unresolved.map((u) => (
+                        <li>{u}</li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
               </article>
             ))}
           </section>
@@ -209,6 +227,25 @@ function hostname(url: string): string {
     .fine {
       color: #666;
       font-size: 0.85em;
+    }
+    .confidence {
+      display: inline-block;
+      font-size: 0.8rem;
+      border-radius: 1rem;
+      padding: 0.15rem 0.7rem;
+      margin: 0.5rem 0 0;
+    }
+    .confidence-high {
+      background: #e2efda;
+      color: #2e5e2e;
+    }
+    .confidence-medium {
+      background: #fdf3d8;
+      color: #7a5b16;
+    }
+    .confidence-low {
+      background: #fbe4e4;
+      color: #8a3030;
     }
     details {
       margin-top: 0.75rem;
