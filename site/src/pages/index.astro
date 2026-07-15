@@ -1,0 +1,46 @@
+---
+import { readFileSync } from "node:fs";
+import Base from "../layouts/Base.astro";
+
+// Read pipeline data at build time: if this renders, data flows end to end.
+let fxLine = "FX data not yet generated.";
+try {
+  const fx = JSON.parse(readFileSync("../data/fx-rates.json", "utf8"));
+  const r = fx.latest.rates;
+  fxLine = `FX rates for ${fx.latest.date}: £1 = $${r.USD} / €${r.EUR} / ¥${r.JPY}`;
+} catch {
+  /* placeholder text stands */
+}
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<Base title="Datsun 620 Tracker">
+  <h1>Datsun 620 Tracker</h1>
+  <p>
+    A reference for every Datsun 620 pickup variant (1972 to 1979) and a daily
+    tracker of King Cab listings worldwide.
+  </p>
+  <p class="status">
+    <strong>Site status: scaffolding (M1).</strong> The specs reference arrives
+    in M2, live listings in M3.
+  </p>
+  <p class="fx">{fxLine}</p>
+  <ul>
+    <li><a href={`${base}/specs/`}>Specs</a> — variant reference, coming in M2</li>
+    <li><a href={`${base}/listings/`}>Listings</a> — King Cab tracker, coming in M3</li>
+  </ul>
+  <style>
+    .status {
+      background: #eef2e6;
+      border-left: 4px solid #21351f;
+      padding: 0.75rem 1rem;
+    }
+    .fx {
+      color: #555;
+      font-size: 0.9rem;
+    }
+    li {
+      margin: 0.5rem 0;
+    }
+  </style>
+</Base>
