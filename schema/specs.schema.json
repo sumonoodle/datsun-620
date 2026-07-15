@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sumonoodle.github.io/datsun-620/schema/specs.schema.json",
+  "title": "Specs database",
+  "description": "Curated Datsun 620 variant specs across markets, populated once in M2. Every variant carries at least one citation. Corrections are edits to this file.",
+  "type": "object",
+  "required": ["version", "markets"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "string" },
+    "updated": { "type": "string", "format": "date" },
+    "markets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["market", "name", "variants"],
+        "additionalProperties": false,
+        "properties": {
+          "market": { "type": "string", "enum": ["US", "UK", "AU", "JP", "ZA", "EU"] },
+          "name": { "type": "string" },
+          "notes": { "type": "string" },
+          "variants": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "name", "years", "citations"],
+              "additionalProperties": false,
+              "properties": {
+                "id": { "type": "string", "description": "Stable slug, e.g. 'us-king-cab-1977'." },
+                "name": { "type": "string" },
+                "years": {
+                  "type": "object",
+                  "required": ["from", "to"],
+                  "properties": { "from": { "type": "integer" }, "to": { "type": "integer" } }
+                },
+                "body": { "type": "string", "description": "e.g. standard cab, King Cab, double cab, ute/tray." },
+                "engine": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "code": { "type": "string" },
+                    "displacement_cc": { "type": "integer" },
+                    "power_hp": { "type": ["number", "null"] },
+                    "power_note": { "type": "string" }
+                  }
+                },
+                "dimensions_mm": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "length": { "type": ["integer", "null"] },
+                    "width": { "type": ["integer", "null"] },
+                    "height": { "type": ["integer", "null"] },
+                    "wheelbase": { "type": ["integer", "null"] },
+                    "bed_length": { "type": ["integer", "null"] }
+                  }
+                },
+                "weight_kg": { "type": ["integer", "null"] },
+                "transmission": { "type": "string" },
+                "notes": { "type": "string" },
+                "citations": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "required": ["ref"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "ref": { "type": "string", "description": "URL or publication reference." },
+                      "note": { "type": "string", "description": "What this citation supports." }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

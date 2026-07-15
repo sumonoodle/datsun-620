@@ -1,86 +1,58 @@
 # Datsun 620 Tracker
 
-A reference site for Datsun 620 specs and a worldwide King Cab listings tracker.
-Runs autonomously on GitHub Actions, hosted free on GitHub Pages. See
-[datsun_620_prd_v1.1.md](datsun_620_prd_v1.1.md) for the full product spec.
+A reference site for Datsun 620 pickup specs (1972 to 1979) and a daily tracker
+of King Cab listings worldwide. Runs autonomously on GitHub Actions, hosted free
+on GitHub Pages. Full product spec: [prd.md](prd.md) (v1.1).
 
-Two views:
-
-- **Specs**: comparative reference of every 620 variant across markets, collected
-  automatically with a human-in-the-loop where sources disagree.
-- **Listings**: King Cab listings worldwide, cast as a wide net then ranked by
-  likelihood, with email notification only when something new or changed appears.
+Live site: https://sumonoodle.github.io/datsun-620/
 
 ## Status
 
-**Specs complete (M3)** for all six markets, reconciled with citations and a
-conflicts queue.
+**M1 (scaffolding).** Schema contract in place, daily pipeline running (FX only,
+no scrapers yet), placeholder site deploying to Pages. This is a ground-up
+rebuild against PRD v1.1; the previous build's collected data is preserved in
+`data/legacy/` and gets imported when listings go live in M3.
 
-**Listings complete (M5).** Daily sweep across six sources: eBay (Browse API) and
-Bring a Trailer as the core, plus Cars & Bids, Hemmings, Goo-net, and Yahoo/Buyee
-as best-effort (skipped and flagged when blocked). Recall-first multilingual King
-Cab scoring, GBP conversion (Frankfurter), full price/status history, fuzzy
-relisted detection, and a notify-on-change email digest.
-
-Two things need your input to switch fully on:
-- **eBay**: add `EBAY_CLIENT_ID` / `EBAY_CLIENT_SECRET` as repo secrets (pending
-  developer approval). Until then eBay skips and flags itself.
-- **Email go-live**: add `GMAIL_USER` / `GMAIL_APP_PASSWORD` secrets, review
-  `data/digest-sample.html`, then set repo variable `NOTIFY_LIVE=1`. Until then
-  the digest is written to `data/digest-latest.html` (dry-run) and not emailed.
-
-**Polish (M6).** Listings view has filters (country, drive side, year, price,
-King Cab likelihood) and per-vehicle history pages with the full price timeline.
-
-See [docs/OPS.md](docs/OPS.md) for how to turn on eBay and email, resolve spec
-conflicts, and run things locally.
-
-Run a listings refresh locally:
-
-```
-python scrapers/run_listings.py
-```
-
-Refresh specs locally:
-
-```
-python scrapers/run_specs.py     # collect, reconcile, write data/specs*.json
-```
-
-In CI, run the "Specs refresh" workflow manually from the Actions tab.
+Milestones: M2 curated specs, M3 tier 1 listings (eBay, Bring a Trailer),
+M4 tier 2 + email digest, M5 Japan experiments, M6 polish.
 
 ## Layout
 
 ```
-.github/workflows/   deploy (site to Pages), scrape (scheduled), specs-refresh (manual)
+.github/workflows/   daily-scrape (cron pipeline), deploy (site to Pages)
 schema/              the data contract, as JSON Schema. Edit here first.
-data/                JSON data files (placeholder in M1)
-scrapers/            Python scrapers + shared schema helper + tests
-site/                Astro site (the front end)
-emailer/             notification sender (M5)
+data/                pipeline output: listings, changes, run log, FX log
+data/legacy/         frozen data from the v1.0 build, imported in M3
+scrapers/            Python: run_daily.py orchestrator, common/, listings/, tests/
+site/                Astro site, mobile-first (390px primary viewport)
+emailer/             daily digest sender (built in M4)
 ```
+
+## Daily flow
+
+1. Cron fires at 05:17 UTC (digest must land before ~08:00 Jersey time).
+2. FX fetched once from Frankfurter, appended to `data/fx-rates.json`.
+3. Listing scrapers run, each isolated: a failed source is logged, never fatal.
+4. Results reconciled into `data/listings.json`; changes and run health written.
+5. Data committed, site rebuilt and deployed.
+6. Digest emailed (from M4; dry-run to `data/digest-latest.html` until sign-off).
 
 ## Working locally
 
-Build the site:
-
 ```
+pip install -r scrapers/requirements.txt
+python scrapers/tests/test_fx.py        # offline tests
+python scrapers/tests/test_schema.py
+python scrapers/run_daily.py            # real run (fetches FX)
+
 cd site
 npm install
-npm run build      # outputs to site/dist
-npm run dev        # local preview at http://localhost:4321/datsun-620
+npm run build                           # outputs site/dist
+npm run dev                             # http://localhost:4321/datsun-620
 ```
 
-Validate the data files against the schema contract:
+## Secrets (GitHub Actions)
 
-```
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r scrapers/requirements.txt
-python scrapers/tests/test_schema.py
-```
-
-## How it deploys
-
-Any push to `main` triggers `.github/workflows/deploy.yml`, which builds the Astro
-site and publishes it to GitHub Pages. The scheduled `scrape.yml` runs daily and
-(from M4) updates the listings data, which the next build renders.
+Needed from M3/M4, none needed yet: `EBAY_CLIENT_ID`, `EBAY_CLIENT_SECRET`,
+`GMAIL_USER`, `GMAIL_APP_PASSWORD`, `DEEPL_API_KEY`. Email stays in dry-run
+until the repo variable `DIGEST_LIVE` is set to `1`.

@@ -3,114 +3,61 @@ interface Props {
   title: string;
 }
 const { title } = Astro.props;
-const base = import.meta.env.BASE_URL;
-const nav = [
-  { href: base, label: "Home" },
-  { href: `${base}/specs`, label: "Specs" },
-  { href: `${base}/listings`, label: "Listings" },
-];
+// BASE_URL has no trailing slash here; normalise so joins are always "<base>/x/".
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex" />
     <title>{title}</title>
   </head>
   <body>
     <header>
-      <strong>Datsun 620 Tracker</strong>
+      <a href={`${base}/`}><strong>Datsun 620</strong></a>
       <nav>
-        {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+        <a href={`${base}/specs/`}>Specs</a>
+        <a href={`${base}/listings/`}>Listings</a>
       </nav>
     </header>
     <main>
       <slot />
     </main>
-    <footer>
-      <small>M1 scaffolding. Placeholder data. Built with Astro, hosted on GitHub Pages.</small>
-    </footer>
-
     <style is:global>
-      :root {
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-        line-height: 1.5;
-        color: #1a1a1a;
+      /* Mobile-first: designed at 390px, everything single column. */
+      * {
+        box-sizing: border-box;
       }
       body {
         margin: 0;
-        background: #fafafa;
+        font-family: system-ui, -apple-system, sans-serif;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #1a1a1a;
+        background: #fafaf7;
       }
       header {
         display: flex;
-        gap: 1.5rem;
         align-items: center;
-        padding: 1rem 1.5rem;
-        background: #14213d;
-        color: #fff;
-        flex-wrap: wrap;
-      }
-      header nav {
-        display: flex;
-        gap: 1rem;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        background: #21351f;
       }
       header a {
-        color: #e5e5e5;
+        color: #f2f0e6;
         text-decoration: none;
+        /* Thumb-sized tap targets */
+        padding: 0.5rem 0.5rem;
       }
-      header a:hover {
-        color: #fff;
-        text-decoration: underline;
+      nav {
+        display: flex;
+        gap: 0.25rem;
       }
       main {
-        max-width: 960px;
+        max-width: 40rem;
         margin: 0 auto;
-        padding: 1.5rem;
-      }
-      footer {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 1.5rem;
-        color: #777;
-      }
-      table {
-        border-collapse: collapse;
-        width: 100%;
-        background: #fff;
-      }
-      th,
-      td {
-        border: 1px solid #ddd;
-        padding: 0.5rem 0.75rem;
-        text-align: left;
-        vertical-align: top;
-      }
-      th {
-        background: #f0f0f0;
-      }
-      .card {
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 1rem 1.25rem;
-        margin-bottom: 1rem;
-      }
-      .badge {
-        display: inline-block;
-        background: #e8f0e8;
-        color: #234d23;
-        border-radius: 999px;
-        padding: 0.1rem 0.6rem;
-        font-size: 0.85rem;
-      }
-      .note {
-        background: #fff7e6;
-        border: 1px solid #ffe1a8;
-        border-radius: 8px;
-        padding: 0.75rem 1rem;
-        margin-bottom: 1.25rem;
+        padding: 1rem;
       }
     </style>
   </body>

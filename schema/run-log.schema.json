@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sumonoodle.github.io/datsun-620/schema/run-log.schema.json",
+  "title": "Daily run log",
+  "description": "Outcome of one daily pipeline run: per-source health plus summary stats. Feeds the digest's source-health section.",
+  "type": "object",
+  "required": ["date", "started_at", "sources", "totals"],
+  "additionalProperties": false,
+  "properties": {
+    "date": { "type": "string", "format": "date" },
+    "started_at": { "type": "string", "format": "date-time" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "ok", "records"],
+        "additionalProperties": false,
+        "properties": {
+          "source": { "type": "string" },
+          "ok": { "type": "boolean" },
+          "records": { "type": "integer", "minimum": 0 },
+          "note": { "type": "string", "description": "Why a source was skipped or failed. Empty when ok." },
+          "consecutive_failures": { "type": "integer", "minimum": 0, "description": "Days in a row this source has failed; drives the 7-day escalation rule for Japan sources." }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "required": ["active", "by_country", "median_gbp"],
+      "additionalProperties": false,
+      "properties": {
+        "active": { "type": "integer", "minimum": 0 },
+        "by_country": { "type": "object", "additionalProperties": { "type": "integer" } },
+        "median_gbp": { "type": ["number", "null"] }
+      }
+    }
+  }
+}

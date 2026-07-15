@@ -1,66 +1,105 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://datsun-620/schema/listing.schema.json",
+  "$id": "https://sumonoodle.github.io/datsun-620/schema/listing.schema.json",
   "title": "Listing",
-  "description": "One Datsun 620 vehicle for sale, captured from a source.",
+  "description": "One Datsun 620 King Cab listing, normalised from any source. This is the contract every scraper, the site, and the emailer code against.",
   "type": "object",
+  "required": ["id", "source", "url", "title", "price", "country", "drive_side", "king_cab", "status", "first_seen", "last_seen", "history"],
   "additionalProperties": false,
-  "required": [
-    "id",
-    "source",
-    "source_url",
-    "title",
-    "price_original",
-    "currency",
-    "drive_side",
-    "drive_side_inferred",
-    "king_cab_score",
-    "first_seen",
-    "last_seen",
-    "status"
-  ],
   "properties": {
-    "id": { "type": "string", "description": "Stable unique id for this listing." },
-    "source": { "type": "string", "description": "Source key, e.g. ebay, goonet, bringatrailer." },
-    "source_url": { "type": "string", "format": "uri" },
-    "title": { "type": "string" },
-    "price_original": { "type": ["number", "null"] },
-    "currency": { "type": ["string", "null"], "description": "ISO 4217 code, e.g. USD, JPY, GBP." },
-    "price_gbp": { "type": ["number", "null"] },
-    "fx_rate_used": { "type": ["number", "null"] },
-    "fx_date": { "type": ["string", "null"], "format": "date" },
-    "country": { "type": ["string", "null"] },
-    "region": { "type": ["string", "null"] },
-    "drive_side": { "type": "string", "enum": ["LHD", "RHD", "unknown"] },
-    "drive_side_inferred": { "type": "boolean" },
-    "year": { "type": ["integer", "null"] },
-    "trim": { "type": ["string", "null"] },
-    "mileage": { "type": ["number", "null"] },
-    "mileage_unit": { "type": ["string", "null"], "enum": ["mi", "km", null] },
-    "condition_notes": { "type": ["string", "null"] },
-    "king_cab_score": { "type": "number", "minimum": 0, "maximum": 1, "description": "Likelihood this is a King Cab. 1 is certain." },
-    "king_cab_signals": {
-      "type": "array",
-      "items": { "type": "string" },
-      "description": "What drove the score, e.g. 'title:King Cab', 'jp:キングキャブ'."
+    "id": {
+      "type": "string",
+      "description": "Stable identifier: '<source>:<source_listing_id>'.",
+      "pattern": "^[a-z_]+:.+$"
     },
-    "photo_urls": { "type": "array", "items": { "type": "string", "format": "uri" } },
-    "first_seen": { "type": "string", "format": "date" },
-    "last_seen": { "type": "string", "format": "date" },
-    "price_history": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": ["date", "price_original"],
-        "properties": {
-          "date": { "type": "string", "format": "date" },
-          "price_original": { "type": ["number", "null"] },
-          "price_gbp": { "type": ["number", "null"] }
+    "source": {
+      "type": "string",
+      "enum": ["ebay", "bringatrailer", "carsandbids", "hemmings", "goonet", "yahoo_buyee"]
+    },
+    "source_listing_id": { "type": "string" },
+    "url": { "type": "string", "format": "uri" },
+    "title": { "type": "string" },
+    "title_translated": {
+      "type": ["string", "null"],
+      "description": "English translation for Japanese listings; null if translation failed or not needed."
+    },
+    "description_snippet": { "type": ["string", "null"], "maxLength": 500 },
+    "year": { "type": ["integer", "null"], "minimum": 1971, "maximum": 1980 },
+    "country": {
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2, or 'XX' when the source gives no location.",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "region": { "type": ["string", "null"], "description": "State / prefecture / county, as given by the source." },
+    "drive_side": { "type": "string", "enum": ["LHD", "RHD", "unknown"] },
+    "king_cab": {
+      "type": "object",
+      "required": ["matched", "matched_terms", "body_style_check"],
+      "additionalProperties": false,
+      "properties": {
+        "matched": { "type": "boolean" },
+        "matched_terms": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Which filter terms hit (e.g. 'king cab', 'extended cab')."
+        },
+        "body_style_check": {
+          "type": "string",
+          "enum": ["pass", "fail", "unavailable"],
+          "description": "Sanity check against the source's body-style field, where one exists."
         }
       }
     },
-    "status": { "type": "string", "enum": ["active", "sold", "withdrawn", "relisted"] },
-    "relisted_from": { "type": ["string", "null"], "description": "id of a prior listing this was relisted from." }
+    "price": { "$ref": "#/$defs/price" },
+    "images": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" },
+      "description": "Image URLs, first one is the thumbnail."
+    },
+    "status": { "type": "string", "enum": ["active", "sold", "withdrawn"] },
+    "first_seen": { "type": "string", "format": "date" },
+    "last_seen": { "type": "string", "format": "date" },
+    "history": {
+      "type": "array",
+      "description": "One entry per observed change (including the first sighting), oldest first.",
+      "items": {
+        "type": "object",
+        "required": ["date", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "date": { "type": "string", "format": "date" },
+          "status": { "type": "string", "enum": ["active", "sold", "withdrawn"] },
+          "price": { "$ref": "#/$defs/price" }
+        }
+      }
+    },
+    "relist": {
+      "type": "object",
+      "required": ["possible"],
+      "additionalProperties": false,
+      "properties": {
+        "possible": { "type": "boolean" },
+        "prior_id": { "type": ["string", "null"] },
+        "reasons": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Why the heuristic fired (price proximity, title similarity, location). Presented as 'possible relist', never asserted."
+        }
+      }
+    }
+  },
+  "$defs": {
+    "price": {
+      "type": "object",
+      "required": ["amount", "currency", "gbp", "fx_rate", "fx_date"],
+      "additionalProperties": false,
+      "properties": {
+        "amount": { "type": ["number", "null"], "description": "Null when the source hides the price (e.g. auction without a visible bid)." },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "gbp": { "type": ["number", "null"], "description": "Converted at the fx_rate captured that day; never recomputed later." },
+        "fx_rate": { "type": ["number", "null"], "description": "Units of 'currency' per 1 GBP on fx_date." },
+        "fx_date": { "type": "string", "format": "date" }
+      }
+    }
   }
 }

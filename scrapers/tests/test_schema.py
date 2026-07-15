@@ -1,57 +1,103 @@
-"""Validate the placeholder data files against the schema contract.
+"""Contract tests: a golden listing must validate, obvious breakage must not,
+and the data files in data/ must match their schemas."""
 
-Run from the repo root:
-    python -m pytest scrapers/tests
-or without pytest:
-    python scrapers/tests/test_schema.py
-"""
-
-from __future__ import annotations
-
+import copy
+import json
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from common.schema import load_data, validate  # noqa: E402
+import jsonschema
+
+from common.schema import DATA_DIR, validate
+
+GOLDEN_LISTING = {
+    "id": "bringatrailer:datsun-620-example",
+    "source": "bringatrailer",
+    "source_listing_id": "datsun-620-example",
+    "url": "https://bringatrailer.com/listing/datsun-620-example/",
+    "title": "1978 Datsun 620 King Cab",
+    "title_translated": None,
+    "description_snippet": "Restored King Cab with L20B engine.",
+    "year": 1978,
+    "country": "US",
+    "region": "Oregon",
+    "drive_side": "LHD",
+    "king_cab": {
+        "matched": True,
+        "matched_terms": ["king cab"],
+        "body_style_check": "unavailable"
+    },
+    "price": {
+        "amount": 12500,
+        "currency": "USD",
+        "gbp": 9315.84,
+        "fx_rate": 1.3418,
+        "fx_date": "2026-07-14"
+    },
+    "images": ["https://example.com/thumb.jpg"],
+    "status": "active",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "history": [
+        {
+            "date": "2026-07-14",
+            "status": "active",
+            "price": {
+                "amount": 12500,
+                "currency": "USD",
+                "gbp": 9315.84,
+                "fx_rate": 1.3418,
+                "fx_date": "2026-07-14"
+            }
+        }
+    ],
+    "relist": {"possible": False, "prior_id": None, "reasons": []}
+}
 
 
-def check(data_file: str, schema_name: str, *, each: bool) -> list[str]:
-    data = load_data(data_file)
-    errors: list[str] = []
-    if each:
-        for i, item in enumerate(data):
-            for msg in validate(item, schema_name):
-                errors.append(f"{data_file}[{i}] {msg}")
-    else:
-        for msg in validate(data, schema_name):
-            errors.append(f"{data_file} {msg}")
-    return errors
+def test_golden_listing_validates():
+    validate(GOLDEN_LISTING, "listing")
+    print("ok test_golden_listing_validates")
 
 
-CASES = [
-    ("listings.json", "listing", True),
-    ("specs.json", "spec-variant", True),
-    ("fx-rates.json", "fx-rate", True),
-    ("specs-conflicts.json", "spec-conflict", True),
-    ("specs-decisions.json", "spec-decision", True),
-]
+def test_bad_listings_rejected():
+    cases = {
+        "unknown source": ("source", "craigslist"),
+        "bad status": ("status", "pending"),
+        "bad drive side": ("drive_side", "left"),
+        "bad country": ("country", "USA"),
+    }
+    for label, (field, value) in cases.items():
+        bad = copy.deepcopy(GOLDEN_LISTING)
+        bad[field] = value
+        try:
+            validate(bad, "listing")
+        except jsonschema.ValidationError:
+            continue
+        raise AssertionError(f"schema accepted invalid listing: {label}")
+    print("ok test_bad_listings_rejected")
 
 
-def test_placeholder_data_matches_schema():
-    all_errors: list[str] = []
-    for data_file, schema_name, each in CASES:
-        all_errors.extend(check(data_file, schema_name, each=each))
-    assert not all_errors, "Schema validation failed:\n" + "\n".join(all_errors)
+def test_data_files_match_contract():
+    for filename, schema_name in [
+        ("fx-rates.json", "fx-rates"),
+        ("changes-latest.json", "changes"),
+        ("run-log.json", "run-log"),
+    ]:
+        path = DATA_DIR / filename
+        if path.exists():
+            validate(json.loads(path.read_text()), schema_name)
+    listings_path = DATA_DIR / "listings.json"
+    if listings_path.exists():
+        for listing in json.loads(listings_path.read_text())["listings"]:
+            validate(listing, "listing")
+    print("ok test_data_files_match_contract")
 
 
 if __name__ == "__main__":
-    errors: list[str] = []
-    for data_file, schema_name, each in CASES:
-        errors.extend(check(data_file, schema_name, each=each))
-    if errors:
-        print("FAIL: schema validation errors:")
-        for e in errors:
-            print("  -", e)
-        sys.exit(1)
-    print("OK: all placeholder data validates against the schema contract.")
+    test_golden_listing_validates()
+    test_bad_listings_rejected()
+    test_data_files_match_contract()
+    print("all schema tests passed")
