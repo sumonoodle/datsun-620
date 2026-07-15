@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sumonoodle.github.io/datsun-620/schema/changes.schema.json",
+  "title": "Daily changes",
+  "description": "What changed since the previous run. The digest is rendered from this file and nothing else, so a dry-run digest and a live digest always agree.",
+  "type": "object",
+  "required": ["date", "new", "price_changed", "status_changed", "possible_relists"],
+  "additionalProperties": false,
+  "properties": {
+    "date": { "type": "string", "format": "date" },
+    "new": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Listing ids first seen this run."
+    },
+    "price_changed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "old_gbp", "new_gbp", "pct"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "old_gbp": { "type": ["number", "null"] },
+          "new_gbp": { "type": ["number", "null"] },
+          "pct": { "type": ["number", "null"], "description": "Percentage change, negative for a drop." }
+        }
+      }
+    },
+    "status_changed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "old_status", "new_status"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "old_status": { "type": "string", "enum": ["active", "sold", "withdrawn"] },
+          "new_status": { "type": "string", "enum": ["active", "sold", "withdrawn"] }
+        }
+      }
+    },
+    "possible_relists": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "prior_id", "reasons"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "prior_id": { "type": "string" },
+          "reasons": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

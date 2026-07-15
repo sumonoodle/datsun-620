@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sumonoodle.github.io/datsun-620/schema/fx-rates.schema.json",
+  "title": "FX rates log",
+  "description": "Daily FX snapshot from Frankfurter (ECB rates), base GBP. One history entry per run day; listings store the rate they were converted at, so this log is the audit trail.",
+  "type": "object",
+  "required": ["latest", "history"],
+  "additionalProperties": false,
+  "properties": {
+    "latest": { "$ref": "#/$defs/day" },
+    "history": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/day" },
+      "description": "Oldest first. At most one entry per date."
+    }
+  },
+  "$defs": {
+    "day": {
+      "type": "object",
+      "required": ["date", "base", "rates"],
+      "additionalProperties": false,
+      "properties": {
+        "date": { "type": "string", "format": "date", "description": "Date the rate was published (ECB reference date), not the fetch date." },
+        "fetched_at": { "type": "string", "format": "date-time" },
+        "base": { "type": "string", "const": "GBP" },
+        "rates": {
+          "type": "object",
+          "description": "Units of each currency per 1 GBP.",
+          "required": ["USD", "EUR", "JPY", "AUD", "ZAR"],
+          "additionalProperties": { "type": "number" }
+        }
+      }
+    }
+  }
+}
