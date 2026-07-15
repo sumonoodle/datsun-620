@@ -1,11 +1,269 @@
 ---
+import { readFileSync } from "node:fs";
 import Base from "../layouts/Base.astro";
+
+interface Citation {
+  ref: string;
+  note?: string;
+}
+interface Variant {
+  id: string;
+  name: string;
+  years: { from: number; to: number };
+  body?: string;
+  engine?: {
+    code?: string;
+    displacement_cc?: number;
+    power_hp?: number | null;
+    power_note?: string;
+  };
+  dimensions_mm?: Record<string, number | null>;
+  weight_kg?: number | null;
+  transmission?: string | null;
+  notes?: string;
+  confidence?: string;
+  unresolved?: string[];
+  citations: Citation[];
+}
+interface Market {
+  market: string;
+  name: string;
+  notes?: string;
+  unresolved?: string[];
+  variants: Variant[];
+}
+
+let markets: Market[] = [];
+let updated = "";
+try {
+  const specs = JSON.parse(readFileSync("../data/specs.json", "utf8"));
+  markets = specs.markets;
+  updated = specs.updated ?? "";
+} catch {
+  /* renders the empty state below */
+}
+
+const dimLabels: Record<string, string> = {
+  length: "Length",
+  width: "Width",
+  height: "Height",
+  wheelbase: "Wheelbase",
+  bed_length: "Bed length",
+};
+
+function engineLine(v: Variant): string | null {
+  const e = v.engine;
+  if (!e || !e.code) return null;
+  const parts = [e.code];
+  if (e.displacement_cc) parts.push(`${(e.displacement_cc / 1000).toFixed(1)}L`);
+  if (e.power_hp) parts.push(`${e.power_hp} hp`);
+  return parts.join(", ");
+}
+
+function hostname(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+}
 ---
 
 <Base title="Specs — Datsun 620 Tracker">
   <h1>Specs</h1>
-  <p>
-    The variant reference for all six markets (US, UK, Australia, Japan, South
-    Africa, Europe) is curated in milestone M2 and will render here.
-  </p>
+  {
+    markets.length === 0 ? (
+      <p>The specs database has not been generated yet.</p>
+    ) : (
+      <>
+        <p class="intro">
+          Every Datsun 620 variant by market, curated once with citations.
+          {updated && ` Last updated ${updated}.`}
+        </p>
+        <nav class="markets-nav">
+          {markets.map((m) => (
+            <a href={`#${m.market}`}>{m.name}</a>
+          ))}
+        </nav>
+        {markets.map((m) => (
+          <section id={m.market}>
+            <h2>{m.name}</h2>
+            {m.notes && <p class="market-notes">{m.notes}</p>}
+            {m.variants.map((v) => (
+              <article class="variant">
+                <h3>{v.name}</h3>
+                <p class="years">
+                  {v.years.from} to {v.years.to}
+                  {v.body && ` · ${v.body}`}
+                </p>
+                <dl>
+                  {engineLine(v) && (
+                    <>
+                      <dt>Engine</dt>
+                      <dd>
+                        {engineLine(v)}
+                        {v.engine?.power_note && (
+                          <span class="fine"> ({v.engine.power_note})</span>
+                        )}
+                      </dd>
+                    </>
+                  )}
+                  {v.dimensions_mm &&
+                    Object.entries(v.dimensions_mm)
+                      .filter(([, val]) => val != null)
+                      .map(([k, val]) => (
+                        <>
+                          <dt>{dimLabels[k] ?? k}</dt>
+                          <dd>{val} mm</dd>
+                        </>
+                      ))}
+                  {v.weight_kg != null && (
+                    <>
+                      <dt>Kerb weight</dt>
+                      <dd>{v.weight_kg} kg</dd>
+                    </>
+                  )}
+                  {v.transmission && (
+                    <>
+                      <dt>Transmission</dt>
+                      <dd>{v.transmission}</dd>
+                    </>
+                  )}
+                </dl>
+                {v.notes && <p class="variant-notes">{v.notes}</p>}
+                {v.confidence && (
+                  <p class={`confidence confidence-${v.confidence}`}>
+                    Data confidence: {v.confidence}
+                  </p>
+                )}
+                <details>
+                  <summary>Sources ({v.citations.length})</summary>
+                  <ul>
+                    {v.citations.map((c) => (
+                      <li>
+                        {c.ref.startsWith("http") ? (
+                          <a href={c.ref} rel="noopener">
+                            {hostname(c.ref)}
+                          </a>
+                        ) : (
+                          c.ref
+                        )}
+                        {c.note && <span class="fine"> — {c.note}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+                {v.unresolved && v.unresolved.length > 0 && (
+                  <details>
+                    <summary>Open questions ({v.unresolved.length})</summary>
+                    <ul>
+                      {v.unresolved.map((u) => (
+                        <li>{u}</li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
+              </article>
+            ))}
+          </section>
+        ))}
+      </>
+    )
+  }
+  <style>
+    .intro,
+    .market-notes {
+      color: #444;
+    }
+    .markets-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    .markets-nav a {
+      background: #eef2e6;
+      border-radius: 1rem;
+      padding: 0.5rem 0.9rem;
+      text-decoration: none;
+      color: #21351f;
+    }
+    section {
+      margin-top: 1.5rem;
+    }
+    h2 {
+      border-bottom: 2px solid #21351f;
+      padding-bottom: 0.25rem;
+    }
+    .variant {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    .variant h3 {
+      margin: 0;
+    }
+    .years {
+      color: #666;
+      margin: 0.25rem 0 0.75rem;
+    }
+    dl {
+      display: grid;
+      grid-template-columns: minmax(7rem, auto) 1fr;
+      gap: 0.25rem 0.75rem;
+      margin: 0;
+    }
+    dt {
+      color: #666;
+    }
+    dd {
+      margin: 0;
+    }
+    .variant-notes {
+      font-size: 0.95rem;
+    }
+    .fine {
+      color: #666;
+      font-size: 0.85em;
+    }
+    .confidence {
+      display: inline-block;
+      font-size: 0.8rem;
+      border-radius: 1rem;
+      padding: 0.15rem 0.7rem;
+      margin: 0.5rem 0 0;
+    }
+    .confidence-high {
+      background: #e2efda;
+      color: #2e5e2e;
+    }
+    .confidence-medium {
+      background: #fdf3d8;
+      color: #7a5b16;
+    }
+    .confidence-low {
+      background: #fbe4e4;
+      color: #8a3030;
+    }
+    details {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+    }
+    summary {
+      cursor: pointer;
+      color: #21351f;
+      /* thumb-sized tap target */
+      padding: 0.4rem 0;
+    }
+    details ul {
+      margin: 0.25rem 0 0;
+      padding-left: 1.25rem;
+    }
+    details li {
+      overflow-wrap: anywhere;
+      margin: 0.3rem 0;
+    }
+  </style>
 </Base>
