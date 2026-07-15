@@ -85,6 +85,7 @@ def test_data_files_match_contract():
         ("fx-rates.json", "fx-rates"),
         ("changes-latest.json", "changes"),
         ("run-log.json", "run-log"),
+        ("specs.json", "specs"),
     ]:
         path = DATA_DIR / filename
         if path.exists():
