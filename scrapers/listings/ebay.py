@@ -102,6 +102,7 @@ def collect(fx_day: dict) -> list[dict]:
     records: list[dict] = []
     seen: set[str] = set()
     failures: list[str] = []
+    raw_total = 0
     with httpx.Client(timeout=30) as client:
         for marketplace, country in MARKETPLACES:
             # One failing marketplace must not take down the other three.
@@ -116,7 +117,9 @@ def collect(fx_day: dict) -> list[dict]:
                         },
                     )
                     resp.raise_for_status()
-                    for rec in parse_items(resp.json(), country, fx_day):
+                    payload = resp.json()
+                    raw_total += len(payload.get("itemSummaries", []))
+                    for rec in parse_items(payload, country, fx_day):
                         if rec["id"] not in seen:  # items repeat across queries/marketplaces
                             seen.add(rec["id"])
                             records.append(rec)
@@ -126,4 +129,9 @@ def collect(fx_day: dict) -> list[dict]:
         raise RuntimeError(f"all marketplaces failed ({failures[0]})")
     if failures:
         print(f"ebay: partial failure, continuing without {failures}")
+    # Canary: "datsun 620" always has thousands of parts hits, so zero raw
+    # items across every marketplace means the API or auth is broken in a way
+    # that would otherwise masquerade as "ok, no King Cabs today".
+    if raw_total == 0:
+        raise RuntimeError("canary: broad search returned zero raw items on all marketplaces")
     return records
