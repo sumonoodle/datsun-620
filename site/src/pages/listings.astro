@@ -1,11 +1,214 @@
 ---
+import { readFileSync } from "node:fs";
 import Base from "../layouts/Base.astro";
+
+interface Price {
+  amount: number | null;
+  currency: string;
+  gbp: number | null;
+}
+interface Listing {
+  id: string;
+  source: string;
+  url: string;
+  title: string;
+  year?: number | null;
+  country: string;
+  region?: string | null;
+  drive_side: string;
+  price: Price;
+  images: string[];
+  status: string;
+  first_seen: string;
+  last_seen: string;
+  history: { date: string; status: string }[];
+  relist?: { possible: boolean; prior_id?: string | null };
+}
+
+let listings: Listing[] = [];
+let generated = "";
+let sourceHealth: { source: string; ok: boolean; note?: string }[] = [];
+try {
+  const data = JSON.parse(readFileSync("../data/listings.json", "utf8"));
+  listings = data.listings;
+  generated = data.generated_at;
+} catch {
+  /* empty state below */
+}
+try {
+  sourceHealth = JSON.parse(readFileSync("../data/run-log.json", "utf8")).sources;
+} catch {
+  /* optional */
+}
+
+const active = listings.filter((l) => l.status === "active");
+const ended = listings.filter((l) => l.status !== "active");
+
+const SOURCE_NAMES: Record<string, string> = {
+  ebay: "eBay",
+  bringatrailer: "Bring a Trailer",
+  carsandbids: "Cars & Bids",
+  hemmings: "Hemmings",
+  goonet: "Goo-net",
+  yahoo_buyee: "Yahoo (Buyee)",
+};
+const COUNTRY_NAMES: Record<string, string> = {
+  US: "USA", GB: "UK", DE: "Germany", AU: "Australia", JP: "Japan",
+  ZA: "South Africa", CA: "Canada", NL: "Netherlands", XX: "location unknown",
+};
+
+function money(p: Price): string {
+  if (p.amount == null) return "no price shown";
+  const sym: Record<string, string> = { USD: "$", GBP: "£", EUR: "€", JPY: "¥", AUD: "A$", ZAR: "R" };
+  const orig = `${sym[p.currency] ?? p.currency + " "}${p.amount.toLocaleString("en-GB")}`;
+  if (p.currency === "GBP" || p.gbp == null) return orig;
+  return `${orig} · £${Math.round(p.gbp).toLocaleString("en-GB")}`;
+}
 ---
 
 <Base title="Listings — Datsun 620 Tracker">
   <h1>Listings</h1>
-  <p>
-    The daily King Cab listings feed goes live in milestone M3, starting with
-    eBay and Bring a Trailer.
-  </p>
+  {
+    listings.length === 0 ? (
+      <p>No listings collected yet. The daily sweep populates this page.</p>
+    ) : (
+      <>
+        <p class="intro">
+          King Cab listings worldwide, refreshed daily. {active.length} active,
+          {" "}{ended.length} ended. Updated {generated}.
+        </p>
+        {active.length > 0 && <h2>Active</h2>}
+        {active.map((l) => (
+          <article class="card">
+            {l.images[0] && (
+              <a href={l.url} rel="noopener">
+                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" />
+              </a>
+            )}
+            <div class="body">
+              <h3><a href={l.url} rel="noopener">{l.title}</a></h3>
+              <p class="price">{money(l.price)}</p>
+              <p class="meta">
+                {COUNTRY_NAMES[l.country] ?? l.country}
+                {l.region && ` (${l.region})`} · {l.drive_side}
+                {" "}· {SOURCE_NAMES[l.source] ?? l.source}
+              </p>
+              {l.relist?.possible && <p class="relist">possible relist</p>}
+            </div>
+          </article>
+        ))}
+        {ended.length > 0 && <h2>Recently ended</h2>}
+        {ended.map((l) => (
+          <article class="card ended">
+            {l.images[0] && (
+              <a href={l.url} rel="noopener">
+                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" />
+              </a>
+            )}
+            <div class="body">
+              <h3><a href={l.url} rel="noopener">{l.title}</a></h3>
+              <p class="price">
+                {money(l.price)} · <span class={`status status-${l.status}`}>{l.status}</span>
+              </p>
+              <p class="meta">
+                {COUNTRY_NAMES[l.country] ?? l.country} · {l.drive_side}
+                {" "}· {SOURCE_NAMES[l.source] ?? l.source} · last seen {l.last_seen}
+              </p>
+            </div>
+          </article>
+        ))}
+      </>
+    )
+  }
+  {
+    sourceHealth.length > 0 && (
+      <details class="health">
+        <summary>Source health</summary>
+        <ul>
+          {sourceHealth.map((s) => (
+            <li>
+              {s.ok ? "✓" : "✗"} {SOURCE_NAMES[s.source] ?? s.source}
+              {!s.ok && s.note && <span class="fine"> — {s.note}</span>}
+            </li>
+          ))}
+        </ul>
+      </details>
+    )
+  }
+  <style>
+    .intro {
+      color: #444;
+    }
+    h2 {
+      border-bottom: 2px solid #21351f;
+      padding-bottom: 0.25rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card .body {
+      padding: 0.75rem 1rem 1rem;
+    }
+    .card h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.05rem;
+    }
+    .card h3 a {
+      color: #21351f;
+      text-decoration: none;
+    }
+    .price {
+      font-weight: 600;
+      margin: 0.25rem 0;
+    }
+    .meta {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 0.25rem 0 0;
+    }
+    .relist {
+      display: inline-block;
+      background: #fdf3d8;
+      color: #7a5b16;
+      font-size: 0.8rem;
+      border-radius: 1rem;
+      padding: 0.15rem 0.7rem;
+      margin: 0.5rem 0 0;
+    }
+    .ended {
+      opacity: 0.75;
+    }
+    .status {
+      text-transform: uppercase;
+      font-size: 0.8em;
+      letter-spacing: 0.03em;
+    }
+    .status-sold {
+      color: #2e5e2e;
+    }
+    .status-withdrawn {
+      color: #8a3030;
+    }
+    .health {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    .health summary {
+      cursor: pointer;
+      padding: 0.4rem 0;
+      color: #21351f;
+    }
+    .fine {
+      color: #666;
+    }
+  </style>
 </Base>

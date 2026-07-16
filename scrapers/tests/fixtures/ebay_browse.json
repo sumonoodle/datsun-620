@@ -1,0 +1,49 @@
+{
+  "total": 4,
+  "itemSummaries": [
+    {
+      "itemId": "v1|256001001001|0",
+      "legacyItemId": "256001001001",
+      "title": "1978 Datsun 620 King Cab Pickup L20B - Restored",
+      "shortDescription": "Beautifully restored King Cab, five speed.",
+      "price": { "value": "14500.00", "currency": "USD" },
+      "itemWebUrl": "https://www.ebay.com/itm/256001001001",
+      "image": { "imageUrl": "https://i.ebayimg.com/images/g/abc/s-l1600.jpg" },
+      "itemLocation": { "country": "US", "stateOrProvince": "California" },
+      "categories": [ { "categoryName": "Cars & Trucks" } ]
+    },
+    {
+      "itemId": "v1|256001001002|0",
+      "legacyItemId": "256001001002",
+      "title": "1975 Datsun 620 Pickup - standard cab short bed",
+      "shortDescription": "Solid driver.",
+      "price": { "value": "8000.00", "currency": "USD" },
+      "itemWebUrl": "https://www.ebay.com/itm/256001001002",
+      "image": { "imageUrl": "https://i.ebayimg.com/images/g/def/s-l1600.jpg" },
+      "itemLocation": { "country": "US" },
+      "categories": [ { "categoryName": "Cars & Trucks" } ]
+    },
+    {
+      "itemId": "v1|256001001003|0",
+      "legacyItemId": "256001001003",
+      "title": "Tail Light for Datsun 620 King Cab 1977-1979 NOS",
+      "shortDescription": "New old stock taillight.",
+      "price": { "value": "95.00", "currency": "USD" },
+      "itemWebUrl": "https://www.ebay.com/itm/256001001003",
+      "image": { "imageUrl": "https://i.ebayimg.com/images/g/ghi/s-l1600.jpg" },
+      "itemLocation": { "country": "US" },
+      "categories": [ { "categoryName": "Parts & Accessories" } ]
+    },
+    {
+      "itemId": "v1|256001001004|0",
+      "legacyItemId": "256001001004",
+      "title": "Datsun 620 Kingcab 1977 - project RHD",
+      "shortDescription": "Right hand drive import project.",
+      "price": { "value": "5250.00", "currency": "GBP" },
+      "itemWebUrl": "https://www.ebay.co.uk/itm/256001001004",
+      "image": { "imageUrl": "https://i.ebayimg.com/images/g/jkl/s-l1600.jpg" },
+      "itemLocation": { "country": "GB" },
+      "categories": [ { "categoryName": "Classic Cars" } ]
+    }
+  ]
+}
