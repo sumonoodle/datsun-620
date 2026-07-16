@@ -46,6 +46,15 @@ log for the failed step is the place to look.
 | `EBAY_CLIENT_ID` / `EBAY_CLIENT_SECRET` | eBay collector | developer.ebay.com → Application Keys |
 | `GMAIL_USER` / `GMAIL_APP_PASSWORD` | digest send | Google app passwords page |
 | `DEEPL_API_KEY` (optional) | Japanese translation | deepl.com account; without it the fallback translator is used |
+| `HEALTHCHECK_PING_URL` (optional) | dead-man's switch | healthchecks.io check settings |
+
+## Dead-man's switch (optional)
+
+GitHub emails you when a run fails, but not when runs stop happening at all.
+To cover that: create a free check at https://healthchecks.io (period: 1 day,
+grace: 6 hours), copy its ping URL, add it as secret `HEALTHCHECK_PING_URL`.
+Every successful daily run then pings it; if pings stop, healthchecks emails
+you. Skipping this is fine; the symptom would be the digest going quiet.
 
 ## Local development
 

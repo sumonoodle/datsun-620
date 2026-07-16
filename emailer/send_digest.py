@@ -159,9 +159,13 @@ def build_html(changes: dict, run_log: dict, listings_by_id: dict, site_url: str
     t = run_log["totals"]
     by_country = ", ".join(f"{c}: {n}" for c, n in sorted(t["by_country"].items())) or "none"
     median = f"£{t['median_gbp']:,.0f}" if t["median_gbp"] is not None else "n/a"
+    # Run start time surfaces GitHub's cron delay without opening Actions:
+    # the digest must keep landing before ~08:00 Jersey.
+    started = run_log.get("started_at", "")
+    started_line = f"<br>Run started: {started[11:16]} UTC" if len(started) >= 16 else ""
     parts.append(_section("Summary", (
         f'<p style="font-size:14px;">Active listings: <b>{t["active"]}</b><br>'
-        f'By country: {by_country}<br>Median price: {median}</p>')))
+        f'By country: {by_country}<br>Median price: {median}{started_line}</p>')))
 
     body = "".join(parts)
     return f"""<!doctype html>

@@ -78,9 +78,23 @@ jobs:
             # main may have advanced since checkout (manual commits, deploys)
             for i in 1 2 3; do
               git pull --rebase origin main && git push && break
+              git rebase --abort 2>/dev/null || true
               echo "push attempt $i failed, retrying"
               sleep $((i * 5))
             done
+          fi
+
+      # Dead-man's switch: healthchecks.io emails the owner if this ping goes
+      # quiet, catching the failure mode where the cron itself stops firing.
+      # No-op until the HEALTHCHECK_PING_URL secret exists.
+      - name: Heartbeat ping
+        env:
+          PING_URL: ${{ secrets.HEALTHCHECK_PING_URL }}
+        run: |
+          if [ -n "$PING_URL" ]; then
+            curl -fsS -m 10 --retry 3 "$PING_URL" >/dev/null && echo "heartbeat sent"
+          else
+            echo "no ping URL configured, skipping"
           fi
 
       - name: Surface digest failure
