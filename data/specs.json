@@ -1,11 +1,11 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "updated": "2026-07-16",
   "markets": [
     {
       "market": "US",
       "name": "United States",
-      "notes": "The Datsun 620 was sold in the US from 1972-1979, marketed as the 'Li'l Hustler', arriving just before the 1973 oil crisis and becoming a key player in the compact pickup boom. Engine progression for the US market was L16 1.6L (96 hp, 1972-73), L18 1.8L (100 hp, 1974), then L20B 2.0L (110 hp gross, ~97 hp net in later years) from 1975-79. A 7-foot long bed on the 2785 mm wheelbase arrived in 1975, and the industry-first extended King Cab (cab stretched ~10 in / 24 cm, on the long chassis with the standard 6-ft bed) arrived for 1977.",
+      "notes": "The Datsun 620 was sold in the US from 1972-1979, marketed as the 'Li'l Hustler', arriving just before the 1973 oil crisis and becoming a key player in the compact pickup boom. Engine progression for the US market was L16 1.6L (96 hp, 1972-73), L18 1.8L (100 hp, 1974), then L20B 2.0L (110 hp gross, ~97 hp net in later years) from 1975-79. A 7-foot long bed on the 2785 mm wheelbase arrived in 1975, and the industry-first extended King Cab (cab stretched ~10 in / 24 cm, on the long chassis with the standard 6-ft bed) arrived for 1977. Swatch hex values are approximations from the colour names and period photos, not measured paint values; codes are the factory paint codes.",
       "variants": [
         {
           "id": "us-standard-bed",
@@ -47,11 +47,116 @@
             {
               "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1972-79-datsun-620-long-bed/",
               "note": "standard 6-foot bed; two wheelbase lengths 100.2 in / 109.6 in"
+            },
+            {
+              "ref": "https://importarchive.com/datsun/truck/1972-1979",
+              "note": "US-market 620 paint colours by year: the 1977-79 set (663/505/637/617/647/618/524/510/307) and 1978 confirmations"
+            },
+            {
+              "ref": "https://datsuntrucks.com/paint-codes/",
+              "note": "620 paint codes from period PPG/Dupont brochures: 102/103/104/052/524/617/630/931/940"
+            },
+            {
+              "ref": "https://www.paintscratch.com/touch_up_paint/Nissan/620.html",
+              "note": "paint supplier's 620 colour stock corroborating names and codes"
             }
           ],
           "confidence": "high",
           "unresolved": [
-            "Kerb weight 1037 kg (2286 lb) adopted for early US short bed vs 1065 kg (CarsGuide/fastestlaps, likely later or other-market body); weight grew over the model run"
+            "Kerb weight 1037 kg (2286 lb) adopted for early US short bed vs 1065 kg (CarsGuide/fastestlaps, likely later or other-market body); weight grew over the model run",
+            "Exact model-year windows for several colours (Saddle/Buckskin/Desert Gold/Kelly Green era; whether 505/510/307 predate 1979)",
+            "Factory Datsun code for early-620 white (PPG cross-refs 8895/8889 known; possibly 018 Snow White, unconfirmed for the truck)"
+          ],
+          "colors": [
+            {
+              "name": "White",
+              "hex": "#f2f1ec"
+            },
+            {
+              "name": "Mellow Yellow",
+              "code": "102",
+              "hex": "#e8c84a"
+            },
+            {
+              "name": "True Blue",
+              "code": "103",
+              "hex": "#2b4f81"
+            },
+            {
+              "name": "Cactus Green",
+              "code": "104",
+              "hex": "#7a8f5a"
+            },
+            {
+              "name": "Sunset Orange",
+              "code": "052",
+              "hex": "#d45e2c"
+            },
+            {
+              "name": "Pagoda Red",
+              "code": "524",
+              "hex": "#b02818"
+            },
+            {
+              "name": "Saddle",
+              "code": "617",
+              "hex": "#8a5a2b"
+            },
+            {
+              "name": "Buckskin",
+              "code": "630",
+              "hex": "#c2a97a"
+            },
+            {
+              "name": "Desert Gold",
+              "code": "931",
+              "hex": "#c9a44a"
+            },
+            {
+              "name": "Kelly Green",
+              "code": "940",
+              "hex": "#2e7d46"
+            },
+            {
+              "name": "Hustler Red",
+              "code": "524",
+              "hex": "#b02818"
+            },
+            {
+              "name": "Chrome Yellow",
+              "code": "618",
+              "hex": "#e3a715"
+            },
+            {
+              "name": "Eggshell",
+              "code": "637",
+              "hex": "#ece5d2"
+            },
+            {
+              "name": "Autumn Brown",
+              "code": "647",
+              "hex": "#5c3a24"
+            },
+            {
+              "name": "Thunder Black",
+              "code": "505",
+              "hex": "#1b1b1b"
+            },
+            {
+              "name": "Diamond Mist Metallic",
+              "code": "663",
+              "hex": "#b9bcb6"
+            },
+            {
+              "name": "Sky Blue Metallic",
+              "code": "510",
+              "hex": "#7da7c9"
+            },
+            {
+              "name": "Pacific Blue Metallic",
+              "code": "307",
+              "hex": "#33567d"
+            }
           ]
         },
         {
@@ -90,12 +195,93 @@
             {
               "ref": "https://www.carsguide.com.au/datsun/620/car-dimensions/1976",
               "note": "length 4609 mm, width 1590 mm, height 1545 mm (corroborates the ~4610 mm long-body length)"
+            },
+            {
+              "ref": "https://importarchive.com/datsun/truck/1972-1979",
+              "note": "US-market 620 paint colours by year: the 1977-79 set (663/505/637/617/647/618/524/510/307) and 1978 confirmations"
+            },
+            {
+              "ref": "https://datsuntrucks.com/paint-codes/",
+              "note": "620 paint codes from period PPG/Dupont brochures: 102/103/104/052/524/617/630/931/940"
+            },
+            {
+              "ref": "https://www.paintscratch.com/touch_up_paint/Nissan/620.html",
+              "note": "paint supplier's 620 colour stock corroborating names and codes"
             }
           ],
           "confidence": "medium",
           "unresolved": [
             "Long-bed kerb weight not verified for US spec",
-            "Exact inside bed length unconfirmed (7 ft adopted; one source reportedly lists 7 ft 5 in box)"
+            "Exact inside bed length unconfirmed (7 ft adopted; one source reportedly lists 7 ft 5 in box)",
+            "Exact model-year windows for several colours (Saddle/Buckskin/Desert Gold/Kelly Green era; whether 505/510/307 predate 1979)",
+            "Factory Datsun code for early-620 white (PPG cross-refs 8895/8889 known; possibly 018 Snow White, unconfirmed for the truck)"
+          ],
+          "colors": [
+            {
+              "name": "Saddle",
+              "code": "617",
+              "hex": "#8a5a2b"
+            },
+            {
+              "name": "Buckskin",
+              "code": "630",
+              "hex": "#c2a97a"
+            },
+            {
+              "name": "Desert Gold",
+              "code": "931",
+              "hex": "#c9a44a"
+            },
+            {
+              "name": "Kelly Green",
+              "code": "940",
+              "hex": "#2e7d46"
+            },
+            {
+              "name": "Hustler Red",
+              "code": "524",
+              "hex": "#b02818"
+            },
+            {
+              "name": "Chrome Yellow",
+              "code": "618",
+              "hex": "#e3a715"
+            },
+            {
+              "name": "Eggshell",
+              "code": "637",
+              "hex": "#ece5d2"
+            },
+            {
+              "name": "Autumn Brown",
+              "code": "647",
+              "hex": "#5c3a24"
+            },
+            {
+              "name": "Thunder Black",
+              "code": "505",
+              "hex": "#1b1b1b"
+            },
+            {
+              "name": "Diamond Mist Metallic",
+              "code": "663",
+              "hex": "#b9bcb6"
+            },
+            {
+              "name": "Sky Blue Metallic",
+              "code": "510",
+              "hex": "#7da7c9"
+            },
+            {
+              "name": "Pacific Blue Metallic",
+              "code": "307",
+              "hex": "#33567d"
+            },
+            {
+              "name": "True Blue",
+              "code": "103",
+              "hex": "#2b4f81"
+            }
           ]
         },
         {
@@ -134,13 +320,79 @@
             {
               "ref": "https://www.jdpower.com/cars/1977/nissan-datsun/620/pickup-king-cab",
               "note": "confirms 1977 US-market King Cab body style listing"
+            },
+            {
+              "ref": "https://importarchive.com/datsun/truck/1972-1979",
+              "note": "US-market 620 paint colours by year: the 1977-79 set (663/505/637/617/647/618/524/510/307) and 1978 confirmations"
+            },
+            {
+              "ref": "https://datsuntrucks.com/paint-codes/",
+              "note": "620 paint codes from period PPG/Dupont brochures: 102/103/104/052/524/617/630/931/940"
+            },
+            {
+              "ref": "https://www.paintscratch.com/touch_up_paint/Nissan/620.html",
+              "note": "paint supplier's 620 colour stock corroborating names and codes"
             }
           ],
           "confidence": "medium",
           "unresolved": [
             "Overall length not verified from any surfaced source",
             "Kerb weight not verified",
-            "Introduction year 1977 (Wikipedia, Curbside Classic, JDPower) vs 'from 1976' (en.datsun-club.com, likely Japan introduction) -- 1977 adopted for US market"
+            "Introduction year 1977 (Wikipedia, Curbside Classic, JDPower) vs 'from 1976' (en.datsun-club.com, likely Japan introduction) -- 1977 adopted for US market",
+            "Exact model-year windows for several colours (Saddle/Buckskin/Desert Gold/Kelly Green era; whether 505/510/307 predate 1979)",
+            "Factory Datsun code for early-620 white (PPG cross-refs 8895/8889 known; possibly 018 Snow White, unconfirmed for the truck)"
+          ],
+          "colors": [
+            {
+              "name": "Hustler Red",
+              "code": "524",
+              "hex": "#b02818"
+            },
+            {
+              "name": "Chrome Yellow",
+              "code": "618",
+              "hex": "#e3a715"
+            },
+            {
+              "name": "Eggshell",
+              "code": "637",
+              "hex": "#ece5d2"
+            },
+            {
+              "name": "Saddle",
+              "code": "617",
+              "hex": "#8a5a2b"
+            },
+            {
+              "name": "Autumn Brown",
+              "code": "647",
+              "hex": "#5c3a24"
+            },
+            {
+              "name": "Thunder Black",
+              "code": "505",
+              "hex": "#1b1b1b"
+            },
+            {
+              "name": "Diamond Mist Metallic",
+              "code": "663",
+              "hex": "#b9bcb6"
+            },
+            {
+              "name": "Sky Blue Metallic",
+              "code": "510",
+              "hex": "#7da7c9"
+            },
+            {
+              "name": "Pacific Blue Metallic",
+              "code": "307",
+              "hex": "#33567d"
+            },
+            {
+              "name": "True Blue",
+              "code": "103",
+              "hex": "#2b4f81"
+            }
           ]
         }
       ]
@@ -219,6 +471,9 @@
             "Full text/figures of the Commercial Motor 1 July 1977 road test (kerb weight, GVW, dimensions) could not be retrieved via search excerpts"
           ]
         }
+      ],
+      "unresolved": [
+        "Factory colours: scanned Datsun UK colour charts for 1973-75 exist (jdmjunkies.ch) but the pickup column needs direct reading; no colours asserted yet"
       ]
     },
     {
@@ -383,7 +638,8 @@
       "unresolved": [
         "Local assembly: Motor Producers Ltd (Clayton, VIC) assembled Datsun passenger cars from 1968 and Nissan took it over in 1972 (https://en.wikipedia.org/wiki/Nissan_Motor_Australia), but no source found stating the 620 ute was assembled in Australia; it was most likely fully imported - unverified either way",
         "1600/1800 badging: no evidence of L16/L18 or 'Datsun 1600/1800' 620 utes sold new in Australia; all AU sources show J15/1500 only (L18 documented for Middle East, L16/L18/L20B for North America per https://en.wikipedia.org/wiki/Datsun_truck)",
-        "Diesel: Wikipedia mentions a 2200cc (SD22) diesel in connection with the Australian entry, but other excerpts state the diesel was not imported to Australia; competing claims, treated as not offered in AU"
+        "Diesel: Wikipedia mentions a 2200cc (SD22) diesel in connection with the Australian entry, but other excerpts state the diesel was not imported to Australia; competing claims, treated as not offered in AU",
+        "Factory colours: uniquecarsandparts.com.au hosts 1969-1980 Datsun paint charts, but the 620 ute's colours are not broken out in search excerpts; no colours asserted yet"
       ]
     },
     {
@@ -561,6 +817,9 @@
             "Exact launch month in 1976 vs. early 1977 not pinned down"
           ]
         }
+      ],
+      "unresolved": [
+        "Factory colours: no market-specific colour documentation surfaced (2026-07-16 research round); needs period brochures"
       ]
     },
     {
@@ -658,7 +917,8 @@
         }
       ],
       "unresolved": [
-        "Second research round (2026-07-16, incl. Afrikaans and CAR magazine SA searches) surfaced no SA-specific engine, dimensions or assembly evidence for the 620/680; gaps stand"
+        "Second research round (2026-07-16, incl. Afrikaans and CAR magazine SA searches) surfaced no SA-specific engine, dimensions or assembly evidence for the 620/680; gaps stand",
+        "Factory colours: no market-specific colour documentation surfaced (2026-07-16 research round); needs period brochures"
       ]
     },
     {
@@ -789,6 +1049,9 @@
             "All dimensions, weight and transmission details for the diesel variant"
           ]
         }
+      ],
+      "unresolved": [
+        "Factory colours: no market-specific colour documentation surfaced (2026-07-16 research round); needs period brochures"
       ]
     }
   ]
