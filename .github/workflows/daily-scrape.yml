@@ -42,6 +42,7 @@ jobs:
           python scrapers/tests/test_king_cab.py
           python scrapers/tests/test_listings.py
           python scrapers/tests/test_tier2.py
+          python scrapers/tests/test_japan.py
           python scrapers/tests/test_isolation.py
           python scrapers/tests/test_digest.py
 
@@ -49,6 +50,7 @@ jobs:
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: python scrapers/run_daily.py
 
       - name: Build and send digest (dry run until DIGEST_LIVE=1)

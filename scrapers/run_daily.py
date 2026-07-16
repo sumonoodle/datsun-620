@@ -20,9 +20,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from common import fx, store as store_mod
+from common import fx, store as store_mod, translate
 from common.schema import DATA_DIR, validate
-from listings import bat, carsandbids, ebay, hemmings
+from listings import bat, carsandbids, ebay, goonet, hemmings, yahoo_buyee
 
 # (source_name, callable(fx_day) -> [listing records])
 SOURCES: list[tuple] = [
@@ -30,6 +30,8 @@ SOURCES: list[tuple] = [
     ("bringatrailer", bat.collect),
     ("carsandbids", carsandbids.collect),
     ("hemmings", hemmings.collect),
+    ("goonet", goonet.collect),
+    ("yahoo_buyee", yahoo_buyee.collect),
 ]
 
 
@@ -73,6 +75,11 @@ def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None) -> int
                 {"source": name, "ok": False, "records": 0, "note": str(exc)[:200],
                  "consecutive_failures": prev_failures + 1}
             )
+
+    # Translation pass: best-effort, per PRD never fatal and never blocking.
+    for rec in all_records:
+        if rec.get("title_translated") is None and translate.needs_translation(rec["title"]):
+            rec["title_translated"] = translate.translate(rec["title"])
 
     listings_path = data_dir / "listings.json"
     if listings_path.exists():

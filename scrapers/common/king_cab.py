@@ -9,7 +9,7 @@ vetoes the match.
 
 from __future__ import annotations
 
-TERMS = ["king cab", "kingcab", "king-cab", "extended cab"]
+TERMS = ["king cab", "kingcab", "king-cab", "extended cab", "キングキャブ"]
 
 # Body styles that positively confirm an extended cab.
 _BODY_POSITIVE = ["king", "extended", "extra cab", "xtracab"]
