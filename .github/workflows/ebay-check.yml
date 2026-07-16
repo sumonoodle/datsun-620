@@ -40,6 +40,13 @@ jobs:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: python scrapers/listings/ebay_auth.py --self-test
+      - name: Buyee Playwright probe (one-shot PRD 4.4 experiment)
+        continue-on-error: true
+        run: |
+          pip install playwright
+          playwright install chromium --with-deps
+          python scrapers/experiments/buyee_playwright_probe.py
+
       - name: Run full pipeline live (no commit)
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
