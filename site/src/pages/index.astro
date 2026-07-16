@@ -2,112 +2,335 @@
 import { readFileSync } from "node:fs";
 import Base from "../layouts/Base.astro";
 
-// Read pipeline data at build time: if this renders, data flows end to end.
-let fxLine = "";
-try {
-  const fx = JSON.parse(readFileSync("../data/fx-rates.json", "utf8"));
-  const r = fx.latest.rates;
-  fxLine = `FX ${fx.latest.date}: £1 = $${r.USD} / €${r.EUR} / ¥${r.JPY}`;
-} catch {
-  /* line simply not shown */
+interface Price {
+  amount: number | null;
+  currency: string;
+  gbp: number | null;
 }
-let counts = { active: 0, total: 0 };
-try {
-  const listings = JSON.parse(readFileSync("../data/listings.json", "utf8")).listings ?? [];
-  counts = {
-    active: listings.filter((l: any) => l.status === "active").length,
-    total: listings.length,
-  };
-} catch {
-  /* zeros */
+interface Listing {
+  id: string;
+  source: string;
+  url: string;
+  title: string;
+  title_translated?: string | null;
+  year?: number | null;
+  country: string;
+  region?: string | null;
+  drive_side: string;
+  price: Price;
+  images: string[];
+  status: string;
+  first_seen: string;
+  last_seen: string;
+  history: { date: string; status: string }[];
+  relist?: { possible: boolean; prior_id?: string | null };
 }
+
+let listings: Listing[] = [];
+let generated = "";
+try {
+  const data = JSON.parse(readFileSync("../data/listings.json", "utf8"));
+  listings = data.listings ?? [];
+  generated = data.generated_at ?? "";
+} catch {
+  /* empty state below */
+}
+
+const active = listings.filter((l) => l.status === "active");
+const ended = listings.filter((l) => l.status !== "active");
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const countries = [...new Set(listings.map((l) => l.country))].sort();
+
+const SOURCE_NAMES: Record<string, string> = {
+  ebay: "eBay",
+  bringatrailer: "Bring a Trailer",
+  carsandbids: "Cars & Bids",
+  hemmings: "Hemmings",
+  goonet: "Goo-net",
+  yahoo_buyee: "Yahoo (Buyee)",
+};
+const COUNTRY_NAMES: Record<string, string> = {
+  US: "USA", GB: "UK", DE: "Germany", AU: "Australia", JP: "Japan",
+  ZA: "South Africa", CA: "Canada", NL: "Netherlands", XX: "location unknown",
+};
+
+function money(p: Price): string {
+  if (p.amount == null) return "no price shown";
+  const sym: Record<string, string> = { USD: "$", GBP: "£", EUR: "€", JPY: "¥", AUD: "A$", ZAR: "R" };
+  const orig = `${sym[p.currency] ?? p.currency + " "}${p.amount.toLocaleString("en-GB")}`;
+  if (p.currency === "GBP" || p.gbp == null) return orig;
+  return `${orig} · £${Math.round(p.gbp).toLocaleString("en-GB")}`;
+}
+
+function vehicleHref(l: Listing): string {
+  return `${base}/vehicle/${l.id.replaceAll(":", "--")}/`;
+}
 ---
 
 <Base title="Datsun 620 Tracker">
-  <h1>The Datsun 620 King Cab tracker</h1>
-  <p class="supporting">
-    Every variant, every market, cited. Every King Cab for sale worldwide,
-    swept daily.
-  </p>
-
-  <a class="card elevated tile" href={`${base}/specs/`}>
-    <span class="icon icon-primary">📋</span>
-    <span class="txt">
-      <b>Specs</b>
-      <span>Six markets, fifteen variants, sources on every fact</span>
-    </span>
-    <span class="chev" aria-hidden="true">›</span>
-  </a>
-  <a class="card elevated tile" href={`${base}/listings/`}>
-    <span class="icon icon-secondary">🚚</span>
-    <span class="txt">
-      <b>Listings</b>
-      <span>{counts.active} active now, {counts.total} tracked with price history</span>
-    </span>
-    <span class="chev" aria-hidden="true">›</span>
-  </a>
-  <a class="card elevated tile" href={`${base}/digest.html`}>
-    <span class="icon icon-tertiary">✉️</span>
-    <span class="txt">
-      <b>Latest digest</b>
-      <span>This morning's sweep, as it lands in the inbox</span>
-    </span>
-    <span class="chev" aria-hidden="true">›</span>
-  </a>
-
-  {fxLine && <p class="fx supporting">{fxLine}</p>}
-
+  <h1>Listings</h1>
+  {
+    listings.length === 0 ? (
+      <p>No listings collected yet. The daily sweep populates this page.</p>
+    ) : (
+      <>
+        <p class="supporting">
+          King Cab listings worldwide, refreshed daily.
+          {" "}{active.length} active, {ended.length} ended. Updated {generated}.
+        </p>
+        <form class="filters" id="filters">
+          <select class="fchip" name="country" aria-label="Country">
+            <option value="">All countries</option>
+            {countries.map((c) => (
+              <option value={c}>{COUNTRY_NAMES[c] ?? c}</option>
+            ))}
+          </select>
+          <select class="fchip" name="drive" aria-label="Drive side">
+            <option value="">LHD + RHD</option>
+            <option value="LHD">LHD</option>
+            <option value="RHD">RHD</option>
+            <option value="unknown">unknown</option>
+          </select>
+          <select class="fchip" name="yearmin" aria-label="Year from">
+            <option value="">Year from</option>
+            {[1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979].map((y) => (
+              <option value={y}>{y}</option>
+            ))}
+          </select>
+          <select class="fchip" name="yearmax" aria-label="Year to">
+            <option value="">Year to</option>
+            {[1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979].map((y) => (
+              <option value={y}>{y}</option>
+            ))}
+          </select>
+          <input class="fchip" type="number" name="pricemax" inputmode="numeric" placeholder="Max £" aria-label="Maximum price in GBP" />
+        </form>
+        <p class="count supporting" id="filter-count"></p>
+        {active.length > 0 && <h2 class="section">Active</h2>}
+        {active.map((l) => (
+          <article class="card elevated listing" data-country={l.country} data-drive={l.drive_side}
+                   data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}>
+            {l.images[0] && (
+              <a class="photo" href={vehicleHref(l)}>
+                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.parentElement.style.display='none'" />
+                <span class="chip chip-primary price-badge">{money(l.price)}</span>
+              </a>
+            )}
+            <div class="content">
+              <h3><a href={vehicleHref(l)}>{l.title_translated ?? l.title}</a></h3>
+              {l.title_translated && <p class="original">{l.title}</p>}
+              {!l.images[0] && <p class="price-line">{money(l.price)}</p>}
+              <p class="meta supporting">
+                {SOURCE_NAMES[l.source] ?? l.source}
+                {l.region && ` · ${l.region}`}
+              </p>
+            </div>
+            <div class="assist-row">
+              {l.year && <span class="chip chip-outlined">{l.year}</span>}
+              <span class="chip chip-outlined">{COUNTRY_NAMES[l.country] ?? l.country}</span>
+              <span class="chip chip-outlined">{l.drive_side}</span>
+              {l.relist?.possible && <span class="chip chip-error">possible relist</span>}
+            </div>
+            <div class="actions">
+              <a class="btn-text" href={l.url} rel="noopener">View on {SOURCE_NAMES[l.source] ?? l.source}</a>
+            </div>
+          </article>
+        ))}
+        {ended.length > 0 && <h2 class="section">Recently ended</h2>}
+        {ended.map((l) => (
+          <article class="card elevated listing ended" data-country={l.country} data-drive={l.drive_side}
+                   data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}>
+            {l.images[0] && (
+              <a class="photo" href={vehicleHref(l)}>
+                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.parentElement.style.display='none'" />
+                <span class="chip chip-primary price-badge">{money(l.price)}</span>
+                <span class={`chip status-badge status-${l.status}`}>{l.status}</span>
+              </a>
+            )}
+            <div class="content">
+              <h3><a href={vehicleHref(l)}>{l.title_translated ?? l.title}</a></h3>
+              {!l.images[0] && (
+                <p class="price-line">
+                  {money(l.price)} <span class={`chip chip-tertiary`}>{l.status}</span>
+                </p>
+              )}
+              <p class="meta supporting">
+                {SOURCE_NAMES[l.source] ?? l.source} · last seen {l.last_seen}
+              </p>
+            </div>
+            <div class="assist-row">
+              {l.year && <span class="chip chip-outlined">{l.year}</span>}
+              <span class="chip chip-outlined">{COUNTRY_NAMES[l.country] ?? l.country}</span>
+              <span class="chip chip-outlined">{l.drive_side}</span>
+            </div>
+          </article>
+        ))}
+        <script>
+          const form = document.getElementById("filters") as HTMLFormElement | null;
+          const cards = Array.from(document.querySelectorAll("article.listing")) as HTMLElement[];
+          const count = document.getElementById("filter-count");
+          function apply() {
+            if (!form) return;
+            const data = new FormData(form);
+            const country = data.get("country") as string;
+            const drive = data.get("drive") as string;
+            const ymin = Number(data.get("yearmin")) || 0;
+            const ymax = Number(data.get("yearmax")) || 9999;
+            const pmax = Number(data.get("pricemax")) || Infinity;
+            const yearBound = Boolean(data.get("yearmin") || data.get("yearmax"));
+            const priceBound = Boolean(data.get("pricemax"));
+            let shown = 0;
+            for (const el of cards) {
+              const year = Number(el.dataset.year) || null;
+              const gbp = Number(el.dataset.gbp) || null;
+              // A listing with an unknown year/price is hidden when that
+              // filter is in use: "max £5000" must not surface no-price cards.
+              const ok =
+                (!country || el.dataset.country === country) &&
+                (!drive || el.dataset.drive === drive) &&
+                (year === null ? !yearBound : year >= ymin && year <= ymax) &&
+                (gbp === null ? !priceBound : gbp <= pmax);
+              el.style.display = ok ? "" : "none";
+              if (ok) shown++;
+            }
+            if (count) count.textContent = `showing ${shown} of ${cards.length}`;
+            // Mark active selects so they read as selected filter chips.
+            for (const el of form.querySelectorAll("select, input")) {
+              (el as HTMLElement).classList.toggle("fchip-active", Boolean((el as HTMLInputElement).value));
+            }
+            // Hide a section heading when everything under it is filtered out.
+            for (const h2 of document.querySelectorAll("main h2.section")) {
+              let el = h2.nextElementSibling;
+              let any = false;
+              while (el && el.tagName !== "H2") {
+                if (el.matches("article.listing") && (el as HTMLElement).style.display !== "none") {
+                  any = true;
+                  break;
+                }
+                el = el.nextElementSibling;
+              }
+              (h2 as HTMLElement).style.display = any ? "" : "none";
+            }
+          }
+          form?.addEventListener("input", apply);
+          apply();
+        </script>
+      </>
+    )
+  }
   <style>
-    .tile {
+    /* M3 filter chips: functional selects dressed as chips, one scroll row. */
+    .filters {
       display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.1rem 1rem;
-      margin: 0.8rem 0;
-      text-decoration: none;
-      color: var(--on-surface);
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding: 0.25rem 0;
+      -webkit-overflow-scrolling: touch;
     }
-    .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 1.25rem;
+    .fchip {
       flex: none;
-    }
-    .icon-primary {
-      background: var(--primary-container);
-    }
-    .icon-secondary {
-      background: var(--secondary-container);
-    }
-    .icon-tertiary {
-      background: var(--tertiary-container);
-    }
-    .txt {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.1rem;
-    }
-    .txt b {
-      font-size: 1rem;
+      appearance: none;
+      -webkit-appearance: none;
+      border: 1px solid var(--outline-variant);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--on-surface-variant);
+      font-size: 0.875rem;
       font-weight: 500;
+      font-family: inherit;
+      padding: 0.5rem 1.7rem 0.5rem 0.9rem;
+      background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+        linear-gradient(135deg, currentColor 50%, transparent 50%);
+      background-position: calc(100% - 0.95rem) 55%, calc(100% - 0.65rem) 55%;
+      background-size: 0.3rem 0.3rem;
+      background-repeat: no-repeat;
     }
-    .txt span:last-child {
-      color: var(--on-surface-variant);
-      font-size: 0.85rem;
+    input.fchip {
+      background-image: none;
+      padding-right: 0.9rem;
+      width: 7.5rem;
     }
-    .chev {
-      color: var(--on-surface-variant);
-      font-size: 1.3rem;
+    .fchip-active {
+      background-color: var(--secondary-container);
+      color: var(--on-secondary-container);
+      border-color: transparent;
     }
-    .fx {
-      text-align: center;
+    .count {
+      text-align: right;
       font-size: 0.8rem;
-      margin-top: 1.6rem;
+      margin: 0.15rem 0 0;
     }
-  </style>
+    .listing {
+      margin: 0.9rem 0;
+    }
+    .photo {
+      position: relative;
+      display: block;
+    }
+    .photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .price-badge {
+      position: absolute;
+      left: 0.75rem;
+      bottom: 0.75rem;
+      font-size: 0.9rem;
+      box-shadow: var(--elev-1);
+    }
+    .status-badge {
+      position: absolute;
+      right: 0.75rem;
+      top: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.72rem;
+    }
+    .status-sold {
+      background: var(--tertiary-container);
+      color: var(--on-tertiary-container);
+    }
+    .status-withdrawn {
+      background: var(--error-container);
+      color: var(--on-error-container);
+    }
+    .content {
+      padding: 0.9rem 1rem 0.15rem;
+    }
+    .content h3 {
+      margin: 0 0 0.2rem;
+    }
+    .content h3 a {
+      color: var(--on-surface);
+      text-decoration: none;
+    }
+    .original {
+      color: var(--on-surface-variant);
+      font-size: 0.78rem;
+      margin: 0 0 0.3rem;
+    }
+    .price-line {
+      font-weight: 500;
+      margin: 0.25rem 0;
+    }
+    .meta {
+      margin: 0.1rem 0 0;
+      font-size: 0.82rem;
+    }
+    .assist-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      padding: 0.55rem 1rem 0.4rem;
+    }
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 0.5rem 0.5rem;
+    }
+    .ended {
+      opacity: 0.85;
+    }
+                              </style>
 </Base>

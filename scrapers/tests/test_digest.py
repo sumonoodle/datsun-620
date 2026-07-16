@@ -55,7 +55,7 @@ def test_digest_render():
         "Possible relist (not certain)",     # heuristic framing
         "3 days running",                    # failure streak
         "Median price: £8,199",
-        "https://example.test/listings/",
+        "https://example.test/",
     ]:
         assert expected in html, f"digest missing: {expected!r}"
     assert "tracking" not in html.lower()

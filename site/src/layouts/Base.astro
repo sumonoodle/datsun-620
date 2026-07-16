@@ -6,8 +6,9 @@ const { title } = Astro.props;
 // BASE_URL has no trailing slash here; normalise so joins are always "<base>/x/".
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const path = Astro.url.pathname;
-const isHome = path === `${base}/` || path === base;
 const isActive = (p: string) => path.startsWith(`${base}/${p}`);
+// Listings is the front page; vehicle pages belong to it.
+const isListings = path === `${base}/` || path === base || isActive("vehicle");
 ---
 
 <html lang="en">
@@ -37,14 +38,14 @@ const isActive = (p: string) => path.startsWith(`${base}/${p}`);
       <slot />
     </main>
     <nav class="navbar" aria-label="Main">
-      <a class:list={["nav-item", { active: isHome }]} href={`${base}/`}>
-        <span class="ind">🏠</span>Home
+      <a class:list={["nav-item", { active: isListings }]} href={`${base}/`}>
+        <span class="ind">🚚</span>Listings
+      </a>
+      <a class:list={["nav-item", { active: isActive("updates") }]} href={`${base}/updates/`}>
+        <span class="ind">🗞️</span>Updates
       </a>
       <a class:list={["nav-item", { active: isActive("specs") }]} href={`${base}/specs/`}>
         <span class="ind">📋</span>Specs
-      </a>
-      <a class:list={["nav-item", { active: isActive("listings") || isActive("vehicle") }]} href={`${base}/listings/`}>
-        <span class="ind">🚚</span>Listings
       </a>
     </nav>
     <style is:global>
