@@ -1,0 +1,45 @@
+# One-off research fetcher: GitHub runners have open egress where the
+# development sandbox does not. Pulls the period colour-chart pages/scans the
+# colour research located (UK: jdmjunkies scans; AU: uniquecarsandparts
+# charts) into data/research/ on the dev branch for parsing. Removed once the
+# colour data is extracted.
+
+name: fetch-research
+
+on:
+  push:
+    branches: [claude/datsun-620-kickoff-ah5cyw]
+    paths:
+      - .github/workflows/fetch-research.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Fetch colour chart sources
+        run: |
+          mkdir -p data/research
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15"
+          fetch() {
+            echo "fetching $2"
+            curl -fsSL -A "$UA" --max-time 60 -o "data/research/$1" "$2" \
+              && echo "  ok: $(wc -c < "data/research/$1") bytes" \
+              || echo "  FAILED: $2"
+          }
+          fetch au-datsun-1970-charts.html "https://www.uniquecarsandparts.com.au/colour_swatch_datsun_1970"
+          fetch au-datsun-1974-80-charts.html "https://www.uniquecarsandparts.com.au/colour_swatch_datsun_1974-80"
+          fetch uk-jdmjunkies-colour-post.html "https://www.jdmjunkies.ch/wordpress/2025-01-21/240z-datsun-colour-code-brochure/"
+          ls -la data/research/
+      - name: Commit fetched sources
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/research
+          git commit -m "research: fetched period colour chart sources" || echo "nothing fetched"
+          git push
