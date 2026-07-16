@@ -116,7 +116,7 @@ function vehicleHref(l: Listing): string {
             <option value="price-desc">Price: high to low</option>
           </select>
         </form>
-        <p class="count supporting" id="filter-count"></p>
+        <p class="count supporting" id="filter-count" aria-live="polite"></p>
         {active.length > 0 && <h2 class="section">Active</h2>}
         <div class="cards">
         {active.map((l) => (
@@ -155,7 +155,7 @@ function vehicleHref(l: Listing): string {
         {ended.map((l) => (
           <article class="card elevated listing ended" data-country={l.country} data-drive={l.drive_side}
                    data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}
-                   data-source={l.source} data-seen={l.first_seen}>
+                   data-source={l.source} data-seen={l.first_seen} data-ended={l.last_seen}>
             {l.images[0] && (
               <a class="photo" href={vehicleHref(l)}>
                 <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.parentElement.style.display='none'" />
@@ -217,9 +217,11 @@ function vehicleHref(l: Listing): string {
             const sort = data.get("sort") as string;
             const ymin = Number(data.get("yearmin")) || 0;
             const ymax = Number(data.get("yearmax")) || 9999;
-            const pmax = Number(data.get("pricemax")) || Infinity;
+            // "0" must apply as a real ceiling, not fall back to Infinity.
+            const rawPmax = (data.get("pricemax") as string) ?? "";
+            const pmax = rawPmax !== "" && !isNaN(Number(rawPmax)) ? Number(rawPmax) : Infinity;
             const yearBound = Boolean(data.get("yearmin") || data.get("yearmax"));
-            const priceBound = Boolean(data.get("pricemax"));
+            const priceBound = pmax !== Infinity;
             let shown = 0;
             for (const el of cards) {
               const year = Number(el.dataset.year) || null;
@@ -248,7 +250,11 @@ function vehicleHref(l: Listing): string {
                     return sort === "price-asc" ? pa - pb : pb - pa;
                   }
                 }
-                return (b.dataset.seen ?? "").localeCompare(a.dataset.seen ?? "");
+                // "Newest first" means listing date for active cards and END
+                // date for ended ones.
+                const ka = a.dataset.ended || a.dataset.seen || "";
+                const kb = b.dataset.ended || b.dataset.seen || "";
+                return kb.localeCompare(ka);
               });
               for (const k of kids) box.appendChild(k);
             }

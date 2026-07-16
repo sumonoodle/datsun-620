@@ -77,11 +77,14 @@ function hostname(url: string): string {
 
 // Filterable facets, derived from the data.
 function bodyType(v: Variant): string {
-  const b = (v.body ?? "").replace(/\(.*?\)/g, "").toLowerCase();
+  // Name + body, parentheticals stripped. "long bed"/"long body" is a bed
+  // type; bare "long wheelbase" is NOT (the UK truck is a standard cab on a
+  // long chassis).
+  const b = `${v.name} ${v.body ?? ""}`.replace(/\(.*?\)/g, "").toLowerCase();
   if (b.includes("king") || b.includes("extended")) return "King Cab";
   if (b.includes("double")) return "Double cab";
   if (b.includes("ute") || b.includes("tray") || b.includes("utility")) return "Ute";
-  if (b.includes("long")) return "Long bed / LWB";
+  if (/long[ -]?(bed|body)/.test(b)) return "Long bed";
   return "Standard cab";
 }
 function engineCodes(v: Variant): string[] {
@@ -140,7 +143,10 @@ const years = [1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980];
             ))}
           </select>
         </form>
-        <p class="count supporting" id="filter-count"></p>
+        <p class="count supporting" id="filter-count" aria-live="polite"></p>
+        <p class="compare-link">
+          <a class="btn-text" href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/compare/`}>Compare two variants side by side →</a>
+        </p>
         {markets.map((m) => (
           <section id={m.market} data-market={m.market}>
             <h2>{m.name}</h2>

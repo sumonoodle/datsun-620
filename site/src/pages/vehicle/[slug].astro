@@ -40,6 +40,41 @@ const prior = l.relist?.possible && l.relist.prior_id
   ? all.find((x: any) => x.id === l.relist.prior_id)
   : null;
 const title = l.title_translated ?? l.title;
+
+// Price-over-time chart, built at compile time. Only rendered once there are
+// two or more priced observations; the history table below is the data view.
+const pricePoints = (l.history ?? [])
+  .filter((h: any) => h.price?.gbp != null)
+  .map((h: any) => ({ date: h.date as string, gbp: h.price.gbp as number }));
+const W = 640, H = 220, PAD = { t: 26, r: 26, b: 34, l: 26 };
+let chart: {
+  path: string;
+  dots: { x: number; y: number; date: string; gbp: number; label: boolean }[];
+  gridY: { y: number; value: number }[];
+} | null = null;
+if (pricePoints.length >= 2) {
+  const times = pricePoints.map((p: any) => Date.parse(p.date));
+  const t0 = Math.min(...times), t1 = Math.max(...times);
+  const vMin = Math.min(...pricePoints.map((p: any) => p.gbp));
+  const vMax = Math.max(...pricePoints.map((p: any) => p.gbp));
+  const span = vMax - vMin || vMax * 0.1 || 1;
+  const lo = vMin - span * 0.15, hi = vMax + span * 0.15;
+  const x = (t: number) => t1 === t0 ? W / 2 : PAD.l + ((t - t0) / (t1 - t0)) * (W - PAD.l - PAD.r);
+  const y = (v: number) => PAD.t + (1 - (v - lo) / (hi - lo)) * (H - PAD.t - PAD.b);
+  const dots = pricePoints.map((p: any, i: number) => ({
+    x: x(Date.parse(p.date)),
+    y: y(p.gbp),
+    date: p.date,
+    gbp: p.gbp,
+    // Selective labels: first and last observation only.
+    label: i === 0 || i === pricePoints.length - 1,
+  }));
+  chart = {
+    path: dots.map((d, i) => `${i === 0 ? "M" : "L"}${d.x.toFixed(1)},${d.y.toFixed(1)}`).join(" "),
+    dots,
+    gridY: [vMin, (vMin + vMax) / 2, vMax].map((v) => ({ y: y(v), value: Math.round(v) })),
+  };
+}
 ---
 
 <Base title={`${title} — Datsun 620 Tracker`}>
@@ -83,6 +118,66 @@ const title = l.title_translated ?? l.title;
       </a>
       . Signals: {(l.relist?.reasons ?? []).join("; ")}. Heuristic only, not certain.
     </p>
+  )}
+
+  {chart && (
+    <>
+      <h2>Price over time (GBP)</h2>
+      <div class="card elevated chart-box">
+        <svg id="price-chart" viewBox={`0 0 ${W} ${H}`} role="img"
+             aria-label={`Price history: ${chart.dots.length} observations from £${Math.round(chart.dots[0].gbp).toLocaleString("en-GB")} to £${Math.round(chart.dots[chart.dots.length - 1].gbp).toLocaleString("en-GB")}`}>
+          {chart.gridY.map((g) => (
+            <>
+              <line x1={PAD.l} x2={W - PAD.r} y1={g.y} y2={g.y} class="grid" />
+              <text x={W - PAD.r} y={g.y - 5} class="axis-label" text-anchor="end">£{g.value.toLocaleString("en-GB")}</text>
+            </>
+          ))}
+          <line id="crosshair" y1={PAD.t} y2={H - PAD.b} class="crosshair" style="display:none" />
+          <path d={chart.path} class="series" />
+          {chart.dots.map((d) => (
+            <>
+              <circle cx={d.x} cy={d.y} r="7" class="dot" />
+              {d.label && (
+                <text x={d.x} y={d.y - 14} class="dot-label"
+                      text-anchor={d.x < 320 ? "start" : "end"}>
+                  £{Math.round(d.gbp).toLocaleString("en-GB")}
+                </text>
+              )}
+              <circle cx={d.x} cy={d.y} r="22" class="hit" data-date={d.date} data-gbp={d.gbp} data-x={d.x} />
+            </>
+          ))}
+          <text x={PAD.l} y={H - 10} class="axis-label">{chart.dots[0].date}</text>
+          <text x={W - PAD.r} y={H - 10} class="axis-label" text-anchor="end">{chart.dots[chart.dots.length - 1].date}</text>
+        </svg>
+        <div id="chart-tip" class="chip chip-tonal" style="display:none"></div>
+      </div>
+      <script>
+        const svg = document.getElementById("price-chart");
+        const tip = document.getElementById("chart-tip");
+        const cross = document.getElementById("crosshair");
+        function show(hit: Element) {
+          const el = hit as SVGCircleElement;
+          if (!tip || !cross || !svg) return;
+          const gbp = Math.round(Number(el.dataset.gbp)).toLocaleString("en-GB");
+          tip.textContent = `${el.dataset.date}: £${gbp}`;
+          tip.style.display = "";
+          const frac = Number(el.dataset.x) / 640;
+          tip.style.left = `${Math.min(Math.max(frac * 100, 12), 88)}%`;
+          cross.setAttribute("x1", el.dataset.x ?? "0");
+          cross.setAttribute("x2", el.dataset.x ?? "0");
+          cross.style.display = "";
+        }
+        function hide() {
+          if (tip) tip.style.display = "none";
+          if (cross) cross.style.display = "none";
+        }
+        for (const hit of document.querySelectorAll("#price-chart .hit")) {
+          hit.addEventListener("pointerenter", () => show(hit));
+          hit.addEventListener("pointerdown", () => show(hit));
+        }
+        svg?.addEventListener("pointerleave", hide);
+      </script>
+    </>
   )}
 
   <h2>History</h2>
@@ -166,6 +261,56 @@ const title = l.title_translated ?? l.title;
     .relist-note a {
       color: inherit;
       font-weight: 500;
+    }
+    .chart-box {
+      position: relative;
+      padding: 0.5rem 0.5rem 0.25rem;
+    }
+    .chart-box svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .grid {
+      stroke: var(--outline-variant);
+      stroke-width: 1;
+    }
+    .series {
+      fill: none;
+      stroke: var(--chart-line);
+      stroke-width: 3.5; /* ~2px at rendered size */
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    .dot {
+      fill: var(--chart-line);
+      stroke: var(--surface-container-high);
+      stroke-width: 3;
+    }
+    .hit {
+      fill: transparent;
+      cursor: pointer;
+    }
+    .crosshair {
+      stroke: var(--outline);
+      stroke-width: 1.5;
+      stroke-dasharray: 4 4;
+    }
+    .axis-label,
+    .dot-label {
+      font-size: 13px;
+      fill: var(--on-surface-variant);
+    }
+    .dot-label {
+      font-weight: 600;
+      fill: var(--on-surface);
+    }
+    #chart-tip {
+      position: absolute;
+      top: 0.4rem;
+      transform: translateX(-50%);
+      pointer-events: none;
+      font-size: 0.8rem;
     }
     table {
       width: 100%;
