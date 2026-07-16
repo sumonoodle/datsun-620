@@ -32,9 +32,10 @@ jobs:
               && echo "  ok: $(wc -c < "data/research/$1") bytes" \
               || echo "  FAILED: $2"
           }
-          fetch au-datsun-1970-charts.html "https://www.uniquecarsandparts.com.au/colour_swatch_datsun_1970"
-          fetch au-datsun-1974-80-charts.html "https://www.uniquecarsandparts.com.au/colour_swatch_datsun_1974-80"
-          fetch uk-jdmjunkies-colour-post.html "https://www.jdmjunkies.ch/wordpress/2025-01-21/240z-datsun-colour-code-brochure/"
+          fetch uk-1971-chart.pdf "https://www.jdmjunkies.ch/wordpress/wp-content/uploads/2021/05/1971.10-DATSUN-UK-Colour-chart-www.JDMjunkies.ch_.pdf"
+          fetch uk-1973-chart.pdf "https://www.jdmjunkies.ch/wordpress/wp-content/uploads/2014/11/1973-DATSUN-Colour-Chart-www.JDMjunkies.ch_.pdf"
+          fetch uk-1974-chart.pdf "https://www.jdmjunkies.ch/wordpress/wp-content/uploads/2014/11/1974-DATSUN-Colour-Chart-UK-www.JDMjunkies.ch_.pdf"
+          rm -f data/research/au-*.html  # fingerprint-walled redirect shells, useless
           ls -la data/research/
       - name: Commit fetched sources
         run: |
