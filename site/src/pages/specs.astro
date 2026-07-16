@@ -143,9 +143,15 @@ function hostname(url: string): string {
                     <p class="colors-label">Factory colours</p>
                     <ul class="swatches">
                       {v.colors.map((c) => (
-                        <li>
-                          <span class="swatch" style={c.hex ? `background:${c.hex}` : ""} data-unknown={c.hex ? undefined : "true"} />
-                          <span class="swatch-name">{c.name}{c.code && <span class="fine"> ({c.code})</span>}</span>
+                        <li class="swatch-tile">
+                          <span
+                            class="swatch-block"
+                            style={c.hex ? `background:${c.hex}` : ""}
+                            data-unknown={c.hex ? undefined : "true"}
+                            aria-hidden="true"
+                          />
+                          <span class="swatch-name">{c.name}</span>
+                          {c.code && <span class="swatch-code">{c.code}</span>}
                         </li>
                       ))}
                     </ul>
@@ -263,25 +269,32 @@ function hostname(url: string): string {
       list-style: none;
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem 0.9rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(6.4rem, 1fr));
+      gap: 0.6rem;
     }
-    .swatches li {
+    .swatch-tile {
       display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.9rem;
+      flex-direction: column;
     }
-    .swatch {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
+    .swatch-block {
+      display: block;
+      height: 3.4rem;
+      border-radius: 12px;
       border: 1px solid var(--outline-variant);
-      display: inline-block;
     }
-    .swatch[data-unknown] {
-      background: repeating-linear-gradient(45deg, var(--surface-container), var(--surface-container) 3px, var(--outline-variant) 3px, var(--outline-variant) 6px);
+    .swatch-block[data-unknown] {
+      background: repeating-linear-gradient(45deg, var(--surface-container), var(--surface-container) 5px, var(--outline-variant) 5px, var(--outline-variant) 10px);
+    }
+    .swatch-name {
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-top: 0.35rem;
+      line-height: 1.25;
+    }
+    .swatch-code {
+      font-size: 0.72rem;
+      color: var(--on-surface-variant);
     }
     .variant-notes {
       font-size: 0.9rem;
