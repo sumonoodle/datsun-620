@@ -3,6 +3,7 @@ node_modules/
 dist/
 .astro/
 .output/
+site/public/digest.html
 
 # Python
 __pycache__/
