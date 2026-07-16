@@ -1,5 +1,5 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "updated": "2026-07-16",
   "markets": [
     {
@@ -439,7 +439,7 @@
           },
           "weight_kg": null,
           "transmission": "4-speed manual (only transmission offered in UK per ex-Datsun UK staff account; no automatic or 5-speed documented)",
-          "notes": "Payload 1,000 kg ('one-tonner'), hence the commercial positioning. Ex-Datsun UK employee (joined 1976) recalls UK 620s came in three colours only (blue, red, white) with no option packs. Commercial Motor road-tested the Datsun one-ton pick-up on 1 July 1977 and still listed the 1,483 cc one-tonner in its September 1979 lightweights survey; King Cab and 4WD were never UK-market 620 offerings (the 'UK only received the long wheelbase 1-Tonner with L18 or 4WD 2.2 King Cab' line in Wikipedia's Datsun Truck article describes the later 720). Prior collected data (wheelbase 2567.9 mm, J15 77 hp from en.wikipedia.org/wiki/Datsun_Truck) mixed the correct UK engine with SHORT-wheelbase (2,545 mm/100.2 in) dimensions; the UK one-tonner was the long-wheelbase chassis, 2,785 mm (109.6 in). UK survivors: a 1978 T-registration UK truck documented on Retro Rides; a 1974 example auctioned by Hampson was a South African museum import, not UK-supplied.",
+          "notes": "Payload 1,000 kg ('one-tonner'), hence the commercial positioning. Ex-Datsun UK employee (joined 1976) recalls UK 620s came in three colours only (blue, red, white) with no option packs. Commercial Motor road-tested the Datsun one-ton pick-up on 1 July 1977 and still listed the 1,483 cc one-tonner in its September 1979 lightweights survey; King Cab and 4WD were never UK-market 620 offerings (the 'UK only received the long wheelbase 1-Tonner with L18 or 4WD 2.2 King Cab' line in Wikipedia's Datsun Truck article describes the later 720). Prior collected data (wheelbase 2567.9 mm, J15 77 hp from en.wikipedia.org/wiki/Datsun_Truck) mixed the correct UK engine with SHORT-wheelbase (2,545 mm/100.2 in) dimensions; the UK one-tonner was the long-wheelbase chassis, 2,785 mm (109.6 in). UK survivors: a 1978 T-registration UK truck documented on Retro Rides; a 1974 example auctioned by Hampson was a South African museum import, not UK-supplied. Colours per the ex-Datsun UK staff account: sold in three colours only (blue, red, white) with no options; formal paint names, codes and shades unknown, hence placeholder swatches.",
           "citations": [
             {
               "ref": "https://archive.commercialmotor.com/article/14th-september-1979/60/lightweights-fit-all-forms-of-work",
@@ -483,11 +483,25 @@
             "Bed length: US long-wheelbase trucks had a ~7 ft bed, but UK one-tonner bed dimensions unverified",
             "Whether any UK 620 was sold with the L18 engine: no period evidence found; all period UK sources say 1,483 cc (the L18 '1-Tonner' reference relates to the 720)",
             "Full text/figures of the Commercial Motor 1 July 1977 road test (kerb weight, GVW, dimensions) could not be retrieved via search excerpts"
+          ],
+          "colors": [
+            {
+              "name": "White",
+              "hex": null
+            },
+            {
+              "name": "Red",
+              "hex": null
+            },
+            {
+              "name": "Blue",
+              "hex": null
+            }
           ]
         }
       ],
       "unresolved": [
-        "Factory colours: scanned Datsun UK colour charts for 1973-75 exist (jdmjunkies.ch) but the pickup column needs direct reading; no colours asserted yet"
+        "Factory colour names/codes: the 1971/1973/1974 Datsun UK colour charts (jdmjunkies scans, archived in data/research/) cover the passenger-car range only; the commercial pickup is not listed. Best evidence remains the staff recollection of blue/red/white."
       ]
     },
     {
@@ -662,7 +676,7 @@
         "Local assembly: Motor Producers Ltd (Clayton, VIC) assembled Datsun passenger cars from 1968 and Nissan took it over in 1972 (https://en.wikipedia.org/wiki/Nissan_Motor_Australia), but no source found stating the 620 ute was assembled in Australia; it was most likely fully imported - unverified either way",
         "1600/1800 badging: no evidence of L16/L18 or 'Datsun 1600/1800' 620 utes sold new in Australia; all AU sources show J15/1500 only (L18 documented for Middle East, L16/L18/L20B for North America per https://en.wikipedia.org/wiki/Datsun_truck)",
         "Diesel: Wikipedia mentions a 2200cc (SD22) diesel in connection with the Australian entry, but other excerpts state the diesel was not imported to Australia; competing claims, treated as not offered in AU",
-        "Factory colours: uniquecarsandparts.com.au hosts 1969-1980 Datsun paint charts, but the 620 ute's colours are not broken out in search excerpts; no colours asserted yet"
+        "Factory colours: uniquecarsandparts.com.au hosts 1969-1980 Datsun charts but serves a fingerprint bot-wall even to GitHub runners (verified 2026-07-16); needs a human browser session or another source."
       ]
     },
     {
