@@ -45,6 +45,37 @@ def test_buyee_parser():
     print("ok test_buyee_parser")
 
 
+def test_translation_spot_check():
+    """PRD 9 asks for translation spot-checked on three Japanese listings.
+    With both Japan sources IP-blocked there are no live listings to use, so
+    this pins the mechanism against a canned DeepL response instead: three
+    realistic titles must round-trip through the DeepL code path."""
+    import os
+    from unittest.mock import patch
+
+    titles = {
+        "ダットサン 620 キングキャブ 1978年 レストア済": "Datsun 620 King Cab 1978, restored",
+        "ダットサントラック カスタム 昭和52年": "Datsun Truck Custom, 1977",
+        "日産 ダットサン 620 ピックアップ 実働": "Nissan Datsun 620 pickup, running",
+    }
+
+    class FakeResponse:
+        status_code = 200
+        def __init__(self, text):
+            self._text = text
+        def json(self):
+            return {"translations": [{"text": self._text}]}
+
+    def fake_post(url, headers=None, data=None, timeout=None):
+        return FakeResponse(titles[data["text"]])
+
+    with patch.dict(os.environ, {"DEEPL_API_KEY": "test-key"}), \
+         patch.object(translate.httpx, "post", fake_post):
+        for ja, en in titles.items():
+            assert translate.translate(ja) == en, f"spot check failed for {ja!r}"
+    print("ok test_translation_spot_check (3 titles)")
+
+
 def test_translate_never_fails():
     assert translate.needs_translation("ダットサン 620 キングキャブ")
     assert not translate.needs_translation("1978 Datsun 620 King Cab")
@@ -58,5 +89,6 @@ def test_translate_never_fails():
 if __name__ == "__main__":
     test_goonet_parser()
     test_buyee_parser()
+    test_translation_spot_check()
     test_translate_never_fails()
     print("all japan tests passed")
