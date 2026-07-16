@@ -1,7 +1,7 @@
 // Light offline support: network-first so daily data is always fresh when
 // online; fall back to the last cached copy of any page already visited.
 // Cache name is bumped by hand if the strategy ever changes shape.
-const CACHE = "datsun620-v1";
+const CACHE = "datsun620-v2";
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
