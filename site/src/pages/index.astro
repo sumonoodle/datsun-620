@@ -104,12 +104,25 @@ function vehicleHref(l: Listing): string {
             ))}
           </select>
           <input class="fchip" type="number" name="pricemax" inputmode="numeric" placeholder="Max £" aria-label="Maximum price in GBP" />
+          <select class="fchip" name="source" aria-label="Source">
+            <option value="">All sources</option>
+            {[...new Set(listings.map((l) => l.source))].sort().map((src) => (
+              <option value={src}>{SOURCE_NAMES[src] ?? src}</option>
+            ))}
+          </select>
+          <select class="fchip" name="sort" aria-label="Sort order">
+            <option value="">Newest first</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+          </select>
         </form>
         <p class="count supporting" id="filter-count"></p>
         {active.length > 0 && <h2 class="section">Active</h2>}
+        <div class="cards">
         {active.map((l) => (
           <article class="card elevated listing" data-country={l.country} data-drive={l.drive_side}
-                   data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}>
+                   data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}
+                   data-source={l.source} data-seen={l.first_seen}>
             {l.images[0] && (
               <a class="photo" href={vehicleHref(l)}>
                 <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.parentElement.style.display='none'" />
@@ -136,10 +149,13 @@ function vehicleHref(l: Listing): string {
             </div>
           </article>
         ))}
+        </div>
         {ended.length > 0 && <h2 class="section">Recently ended</h2>}
+        <div class="cards">
         {ended.map((l) => (
           <article class="card elevated listing ended" data-country={l.country} data-drive={l.drive_side}
-                   data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}>
+                   data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}
+                   data-source={l.source} data-seen={l.first_seen}>
             {l.images[0] && (
               <a class="photo" href={vehicleHref(l)}>
                 <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.parentElement.style.display='none'" />
@@ -165,15 +181,40 @@ function vehicleHref(l: Listing): string {
             </div>
           </article>
         ))}
+        </div>
         <script>
           const form = document.getElementById("filters") as HTMLFormElement | null;
           const cards = Array.from(document.querySelectorAll("article.listing")) as HTMLElement[];
           const count = document.getElementById("filter-count");
+
+          // Filters live in the URL so state survives back-navigation and
+          // filtered views can be bookmarked or shared.
+          function loadFromUrl() {
+            if (!form) return;
+            const params = new URLSearchParams(location.search);
+            for (const el of form.querySelectorAll("select, input")) {
+              const input = el as HTMLInputElement;
+              if (params.has(input.name)) input.value = params.get(input.name) ?? "";
+            }
+          }
+          function saveToUrl() {
+            if (!form) return;
+            const params = new URLSearchParams();
+            for (const el of form.querySelectorAll("select, input")) {
+              const input = el as HTMLInputElement;
+              if (input.value) params.set(input.name, input.value);
+            }
+            const qs = params.toString();
+            history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
+          }
+
           function apply() {
             if (!form) return;
             const data = new FormData(form);
             const country = data.get("country") as string;
             const drive = data.get("drive") as string;
+            const source = data.get("source") as string;
+            const sort = data.get("sort") as string;
             const ymin = Number(data.get("yearmin")) || 0;
             const ymax = Number(data.get("yearmax")) || 9999;
             const pmax = Number(data.get("pricemax")) || Infinity;
@@ -188,78 +229,50 @@ function vehicleHref(l: Listing): string {
               const ok =
                 (!country || el.dataset.country === country) &&
                 (!drive || el.dataset.drive === drive) &&
+                (!source || el.dataset.source === source) &&
                 (year === null ? !yearBound : year >= ymin && year <= ymax) &&
                 (gbp === null ? !priceBound : gbp <= pmax);
               el.style.display = ok ? "" : "none";
               if (ok) shown++;
             }
+            // Sort within each section container; unknown prices sink to the end.
+            for (const box of document.querySelectorAll("div.cards")) {
+              const kids = Array.from(box.querySelectorAll("article.listing")) as HTMLElement[];
+              kids.sort((a, b) => {
+                if (sort === "price-asc" || sort === "price-desc") {
+                  const pa = Number(a.dataset.gbp) || null;
+                  const pb = Number(b.dataset.gbp) || null;
+                  if (pa === null && pb !== null) return 1; // unknown price sinks
+                  if (pb === null && pa !== null) return -1;
+                  if (pa !== null && pb !== null && pa !== pb) {
+                    return sort === "price-asc" ? pa - pb : pb - pa;
+                  }
+                }
+                return (b.dataset.seen ?? "").localeCompare(a.dataset.seen ?? "");
+              });
+              for (const k of kids) box.appendChild(k);
+            }
             if (count) count.textContent = `showing ${shown} of ${cards.length}`;
-            // Mark active selects so they read as selected filter chips.
             for (const el of form.querySelectorAll("select, input")) {
               (el as HTMLElement).classList.toggle("fchip-active", Boolean((el as HTMLInputElement).value));
             }
             // Hide a section heading when everything under it is filtered out.
             for (const h2 of document.querySelectorAll("main h2.section")) {
-              let el = h2.nextElementSibling;
-              let any = false;
-              while (el && el.tagName !== "H2") {
-                if (el.matches("article.listing") && (el as HTMLElement).style.display !== "none") {
-                  any = true;
-                  break;
-                }
-                el = el.nextElementSibling;
-              }
+              const box = h2.nextElementSibling;
+              const any = box && Array.from(box.querySelectorAll("article.listing"))
+                .some((c) => (c as HTMLElement).style.display !== "none");
               (h2 as HTMLElement).style.display = any ? "" : "none";
             }
+            saveToUrl();
           }
           form?.addEventListener("input", apply);
+          loadFromUrl();
           apply();
         </script>
       </>
     )
   }
   <style>
-    /* M3 filter chips: functional selects dressed as chips, one scroll row. */
-    .filters {
-      display: flex;
-      gap: 0.5rem;
-      overflow-x: auto;
-      padding: 0.25rem 0;
-      -webkit-overflow-scrolling: touch;
-    }
-    .fchip {
-      flex: none;
-      appearance: none;
-      -webkit-appearance: none;
-      border: 1px solid var(--outline-variant);
-      border-radius: 8px;
-      background: transparent;
-      color: var(--on-surface-variant);
-      font-size: 0.875rem;
-      font-weight: 500;
-      font-family: inherit;
-      padding: 0.5rem 1.7rem 0.5rem 0.9rem;
-      background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
-        linear-gradient(135deg, currentColor 50%, transparent 50%);
-      background-position: calc(100% - 0.95rem) 55%, calc(100% - 0.65rem) 55%;
-      background-size: 0.3rem 0.3rem;
-      background-repeat: no-repeat;
-    }
-    input.fchip {
-      background-image: none;
-      padding-right: 0.9rem;
-      width: 7.5rem;
-    }
-    .fchip-active {
-      background-color: var(--secondary-container);
-      color: var(--on-secondary-container);
-      border-color: transparent;
-    }
-    .count {
-      text-align: right;
-      font-size: 0.8rem;
-      margin: 0.15rem 0 0;
-    }
     .listing {
       margin: 0.9rem 0;
     }
