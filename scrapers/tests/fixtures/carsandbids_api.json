@@ -1,0 +1,26 @@
+{
+  "auctions": [
+    {
+      "id": 90311,
+      "slug": "abc123-1978-datsun-620-king-cab",
+      "title": "1978 Datsun 620 King Cab Pickup",
+      "sub_title": "L20B, 5-Speed, California truck",
+      "year": 1978,
+      "current_bid": { "amount": 7200 },
+      "location": { "country": "US", "state": "CA" },
+      "main_photo": { "url": "https://media.carsandbids.com/abc123.jpg" },
+      "ended": false
+    },
+    {
+      "id": 90312,
+      "slug": "def456-1976-datsun-620-pickup",
+      "title": "1976 Datsun 620 Pickup",
+      "sub_title": "Standard cab short bed",
+      "year": 1976,
+      "current_bid": { "amount": 5100 },
+      "location": { "country": "US", "state": "TX" },
+      "main_photo": { "url": "https://media.carsandbids.com/def456.jpg" },
+      "ended": false
+    }
+  ]
+}

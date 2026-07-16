@@ -2,16 +2,15 @@
 # detection, data commit, then site deploy. Digest send is added in M4.
 #
 # Cron timing: the digest must land before ~08:00 in Jersey (UTC+1 in summer,
-# UTC in winter). GitHub delays on-the-hour crons heavily (the old build's
-# 06:00 UTC cron often started 07:00 to 08:45 UTC), so this runs at 05:17 UTC,
-# an off-peak minute. Even with typical delay the run finishes before 07:30
-# Jersey time in summer, earlier in winter.
+# UTC in winter). GitHub delays crons heavily (the first 05:17 UTC run started
+# 07:32 UTC, which would be 08:32 Jersey), so this runs at 04:17 UTC: even
+# with a two-hour delay the digest lands before 07:30 Jersey year-round.
 
 name: daily-scrape
 
 on:
   schedule:
-    - cron: "17 5 * * *"
+    - cron: "17 4 * * *"
   workflow_dispatch:
 
 permissions:
@@ -40,9 +39,24 @@ jobs:
         run: |
           python scrapers/tests/test_fx.py
           python scrapers/tests/test_schema.py
+          python scrapers/tests/test_king_cab.py
+          python scrapers/tests/test_listings.py
+          python scrapers/tests/test_tier2.py
+          python scrapers/tests/test_isolation.py
+          python scrapers/tests/test_digest.py
 
       - name: Run daily pipeline
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: python scrapers/run_daily.py
+
+      - name: Build and send digest (dry run until DIGEST_LIVE=1)
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          DIGEST_LIVE: ${{ vars.DIGEST_LIVE }}
+        run: python emailer/send_digest.py
 
       - name: Commit data
         run: |

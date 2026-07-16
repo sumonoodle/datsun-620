@@ -22,12 +22,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import fx, store as store_mod
 from common.schema import DATA_DIR, validate
-from listings import bat, ebay
+from listings import bat, carsandbids, ebay, hemmings
 
 # (source_name, callable(fx_day) -> [listing records])
 SOURCES: list[tuple] = [
     ("ebay", ebay.collect),
     ("bringatrailer", bat.collect),
+    ("carsandbids", carsandbids.collect),
+    ("hemmings", hemmings.collect),
 ]
 
 
