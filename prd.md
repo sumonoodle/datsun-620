@@ -13,6 +13,29 @@ app ID as the section 11 checklist assumed.
 
 **Changes from v1.0:** public repo decision made explicit; spec scrapers replaced with a one-off research and curation milestone; listing sources resequenced by scraping reliability; Japan sources defined as degradable experiments; relisted detection scoped as best-effort heuristic; mobile-first requirements added for the site, the digest, and the build process itself.
 
+**As-built amendments (agreed during the build; the body below is kept as
+written, these notes override it where they conflict):**
+
+- Storage is JSON files (`data/listings.json`), not SQLite: readable diffs in
+  git are the owner's review surface. References to `listings.db` and the
+  SQLite risk row read accordingly.
+- FX comes from Frankfurter (ECB rates, no key), not exchangerate.host, which
+  now requires an API key.
+- Section 11 secrets as implemented: `EBAY_CLIENT_ID`, `EBAY_CLIENT_SECRET`,
+  `GMAIL_USER`, `GMAIL_APP_PASSWORD`, `DEEPL_API_KEY` (optional), plus the
+  optional `HEALTHCHECK_PING_URL` heartbeat.
+- The 4.2 King Cab filter also matches the katakana term キングキャブ, needed
+  for Japanese listings, with a Japanese parts-word exclusion.
+- The 5.3 daily order as run: data written, digest built and sent, data
+  committed, site deployed last. Deploy after digest is deliberate: the
+  digest must not wait on a Pages build.
+- Section 9's "translation spot-checked on three Japanese listings" is
+  satisfied by a fixture-based test of the DeepL path (three realistic
+  Japanese titles), because both Japan sources block GitHub's IP ranges and
+  provide no live listings; see docs/japan-sources.md.
+- The site is installable as a web app (manifest, icon, offline fallback),
+  an owner-requested addition beyond section 6.
+
 ## 1. Purpose
 
 A single web app with two views:
