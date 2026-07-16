@@ -144,6 +144,9 @@ const years = [1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980];
           </select>
         </form>
         <p class="count supporting" id="filter-count" aria-live="polite"></p>
+        <p class="compare-link">
+          <a class="btn-text" href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/compare/`}>Compare two variants side by side →</a>
+        </p>
         {markets.map((m) => (
           <section id={m.market} data-market={m.market}>
             <h2>{m.name}</h2>

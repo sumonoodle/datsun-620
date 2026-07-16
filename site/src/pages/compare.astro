@@ -1,0 +1,160 @@
+---
+import { readFileSync } from "node:fs";
+import Base from "../layouts/Base.astro";
+
+// Side-by-side variant comparison. Data is embedded at build time and the
+// table renders client-side from the two picker selects (state in the URL).
+let markets: any[] = [];
+try {
+  markets = JSON.parse(readFileSync("../data/specs.json", "utf8")).markets ?? [];
+} catch {
+  /* empty state below */
+}
+
+const variants = markets.flatMap((m: any) =>
+  m.variants.map((v: any) => ({
+    id: v.id,
+    name: v.name,
+    market: m.name,
+    years: `${v.years.from}–${v.years.to}`,
+    body: v.body ?? "—",
+    engine: v.engine?.code
+      ? `${v.engine.code}${v.engine.displacement_cc ? `, ${(v.engine.displacement_cc / 1000).toFixed(1)}L` : ""}`
+      : "not verified",
+    power: v.engine?.power_hp ? `${v.engine.power_hp} hp` : "—",
+    length: v.dimensions_mm?.length ? `${v.dimensions_mm.length} mm` : "—",
+    width: v.dimensions_mm?.width ? `${v.dimensions_mm.width} mm` : "—",
+    height: v.dimensions_mm?.height ? `${v.dimensions_mm.height} mm` : "—",
+    wheelbase: v.dimensions_mm?.wheelbase ? `${v.dimensions_mm.wheelbase} mm` : "—",
+    bed: v.dimensions_mm?.bed_length ? `${v.dimensions_mm.bed_length} mm` : "—",
+    weight: v.weight_kg ? `${v.weight_kg} kg` : "—",
+    transmission: v.transmission ?? "—",
+    colours: (v.colors ?? []).length ? `${v.colors.length} documented` : "—",
+    confidence: v.confidence ?? "—",
+  }))
+);
+
+const ROWS: [string, string][] = [
+  ["years", "Years"], ["body", "Body"], ["engine", "Engine"], ["power", "Power"],
+  ["length", "Length"], ["width", "Width"], ["height", "Height"],
+  ["wheelbase", "Wheelbase"], ["bed", "Bed length"], ["weight", "Kerb weight"],
+  ["transmission", "Transmission"], ["colours", "Factory colours"],
+  ["confidence", "Data confidence"],
+];
+---
+
+<Base title="Compare — Datsun 620 Tracker">
+  <p class="back"><a href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/specs/`}>← Specs</a></p>
+  <h1>Compare variants</h1>
+  {
+    variants.length === 0 ? (
+      <p>The specs database has not been generated yet.</p>
+    ) : (
+      <>
+        <form class="filters" id="pickers">
+          <select class="fchip" name="a" aria-label="First variant">
+            {variants.map((v) => (
+              <option value={v.id}>{v.name}</option>
+            ))}
+          </select>
+          <select class="fchip" name="b" aria-label="Second variant">
+            {variants.map((v, i) => (
+              <option value={v.id} selected={i === 1}>{v.name}</option>
+            ))}
+          </select>
+        </form>
+        <table class="card elevated" id="compare-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th id="head-a"></th>
+              <th id="head-b"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {ROWS.map(([key, label]) => (
+              <tr data-row={key}>
+                <th>{label}</th>
+                <td></td>
+                <td></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <script is:inline define:vars={{ variants }}>
+          const byId = Object.fromEntries(variants.map((v) => [v.id, v]));
+          const form = document.getElementById("pickers");
+          const selA = form.querySelector('select[name="a"]');
+          const selB = form.querySelector('select[name="b"]');
+
+          const params = new URLSearchParams(location.search);
+          if (params.get("a") && byId[params.get("a")]) selA.value = params.get("a");
+          if (params.get("b") && byId[params.get("b")]) selB.value = params.get("b");
+
+          function render() {
+            const a = byId[selA.value] ?? variants[0];
+            const b = byId[selB.value] ?? variants[1] ?? variants[0];
+            document.getElementById("head-a").textContent = `${a.name} (${a.market})`;
+            document.getElementById("head-b").textContent = `${b.name} (${b.market})`;
+            for (const tr of document.querySelectorAll("tr[data-row]")) {
+              const key = tr.dataset.row;
+              const cells = tr.querySelectorAll("td");
+              cells[0].textContent = a[key];
+              cells[1].textContent = b[key];
+              // Emphasise genuine differences, ignoring shared unknowns.
+              const differs = a[key] !== b[key] && a[key] !== "—" && b[key] !== "—";
+              tr.classList.toggle("differs", differs);
+            }
+            history.replaceState(null, "", `?a=${encodeURIComponent(a.id)}&b=${encodeURIComponent(b.id)}`);
+          }
+          form.addEventListener("input", render);
+          render();
+        </script>
+      </>
+    )
+  }
+  <style>
+    .back {
+      margin: 1rem 0 0;
+    }
+    .back a {
+      color: var(--on-surface-variant);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.75rem;
+      table-layout: fixed;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.55rem 0.6rem;
+      border-bottom: 1px solid var(--outline-variant);
+      font-size: 0.82rem;
+      overflow-wrap: break-word;
+    }
+    thead th {
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    thead th:first-child {
+      width: 6.2rem;
+    }
+    tbody th {
+      font-weight: 400;
+      color: var(--on-surface-variant);
+      font-size: 0.78rem;
+    }
+    tbody tr:last-child th,
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+    tr.differs td {
+      font-weight: 600;
+    }
+  </style>
+</Base>
