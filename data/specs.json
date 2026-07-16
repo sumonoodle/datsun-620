@@ -1,6 +1,6 @@
 {
-  "version": "1.0",
-  "updated": "2026-07-15",
+  "version": "1.1",
+  "updated": "2026-07-16",
   "markets": [
     {
       "market": "US",
@@ -548,6 +548,10 @@
             {
               "ref": "https://nosweb.jp/nostalgichero/articles/detail/3609",
               "note": "King Cab name/history context; US-market 620 King Cab (1977+) with L20B, AT and disc brakes was a North American product"
+            },
+            {
+              "ref": "https://ameblo.jp/porsche356a911s/entry-12080388932.html",
+              "note": "Aug 1977 JDM catalog (No.7081K): Custom cab extended by 150 mm with small side windows"
             }
           ],
           "confidence": "medium",
@@ -652,6 +656,9 @@
             "Whether the 680 was locally assembled at Rosslyn or imported built-up"
           ]
         }
+      ],
+      "unresolved": [
+        "Second research round (2026-07-16, incl. Afrikaans and CAR magazine SA searches) surfaced no SA-specific engine, dimensions or assembly evidence for the 620/680; gaps stand"
       ]
     },
     {
@@ -715,6 +722,14 @@
             {
               "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1972-79-datsun-620-long-bed/",
               "note": "Period recollection that European-delivered (UK dealer, 1976) 620s came only with 1500 cc petrol engine and 4-speed manual"
+            },
+            {
+              "ref": "https://www.pickuptrucks.de/forum/43-andere-pickups/16437-datsun-620",
+              "note": "1976 620 re-imported to Germany from Greece; European survivors are typically re-imports"
+            },
+            {
+              "ref": "https://www.hecktrieb.de/thread/39825-technische-fahrzeugdaten-datsun-620-pickup-truck-woher/",
+              "note": "German owners unable to source official period technical data, confirming EU-market spec scarcity"
             }
           ],
           "confidence": "medium",
@@ -725,7 +740,8 @@
             "Kerb weight: ~1,036 kg cited for US L-series trucks; no European J15 kerb weight found, left null",
             "Wheelbase: 2545 mm (short) / 2785 mm (long) commonly cited for the 620 range vs. prior recorded 2567.9 mm (=101.1 in), which looks like a converted US figure; European trucks assumed short-wheelbase but not proven",
             "Whether the L16/L18 petrol engines were ever officially offered in continental Europe (Middle East got L18; Europe evidence points to J15 only)",
-            "King Cab in Europe: introduced 1977 but all sales evidence found is North American; a King Cab pictured at a Dutch classic dealer (ruylclassics.nl, April 1979 truck) is most plausibly a later US import - no evidence of official European King Cab sales"
+            "King Cab in Europe: introduced 1977 but all sales evidence found is North American; a King Cab pictured at a Dutch classic dealer (ruylclassics.nl, April 1979 truck) is most plausibly a later US import - no evidence of official European King Cab sales",
+            "Second research round (2026-07-16, ~25 searches incl. German/Dutch/French/Scandinavian) found no period European price lists, brochures or road tests; length, weight and badging remain open"
           ]
         },
         {
