@@ -23,6 +23,7 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -53,7 +54,12 @@ jobs:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: python scrapers/run_daily.py
 
+      # continue-on-error so a mail failure cannot discard the day's data
+      # commit below; the last step re-fails the run so the owner still gets
+      # GitHub's failure email (the PRD's alerting path for a dead digest).
       - name: Build and send digest (dry run until DIGEST_LIVE=1)
+        id: digest
+        continue-on-error: true
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
@@ -69,8 +75,19 @@ jobs:
             echo "no data changes"
           else
             git commit -m "data: daily run $(date -u +%F)"
-            git push
+            # main may have advanced since checkout (manual commits, deploys)
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              echo "push attempt $i failed, retrying"
+              sleep $((i * 5))
+            done
           fi
+
+      - name: Surface digest failure
+        if: steps.digest.outcome == 'failure'
+        run: |
+          echo "Digest send failed; data was still committed. See the digest step log."
+          exit 1
 
   # Pushes made with GITHUB_TOKEN do not trigger other workflows, so the data
   # commit above would never kick off deploy.yml on its own. Call it directly.

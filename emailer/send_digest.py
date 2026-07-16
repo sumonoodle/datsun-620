@@ -81,8 +81,12 @@ def _section(heading: str, body: str) -> str:
 def build_html(changes: dict, run_log: dict, listings_by_id: dict, site_url: str) -> str:
     parts = []
 
+    # A brand-new listing flagged as a possible relist shows once, in the
+    # relists section, not twice.
+    relist_ids = {r["id"] for r in changes["possible_relists"]}
     new_cards = [
-        _card(listings_by_id[i]) for i in changes["new"] if i in listings_by_id
+        _card(listings_by_id[i]) for i in changes["new"]
+        if i in listings_by_id and i not in relist_ids
     ]
     if new_cards:
         parts.append(_section(f"New listings ({len(new_cards)})", "".join(new_cards)))

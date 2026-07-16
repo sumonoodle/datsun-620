@@ -41,9 +41,20 @@ def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None) -> int
     started_at = dt.datetime.now(dt.timezone.utc)
     today = started_at.date().isoformat()
 
-    fx_day = fx_fetch()
-    fx_log = fx.append_rates(data_dir / "fx-rates.json", fx_day)
-    validate(fx_log, "fx-rates")
+    # FX must not be a single point of failure: on any fetch/parse problem,
+    # fall back to the most recent cached rates (each listing stores the rate
+    # it was converted at, so a stale day is accurate, just dated).
+    fx_path = data_dir / "fx-rates.json"
+    try:
+        fx_day = fx_fetch()
+        fx_log = fx.append_rates(fx_path, fx_day)
+        validate(fx_log, "fx-rates")
+    except Exception:
+        traceback.print_exc()
+        if not fx_path.exists():
+            raise  # first ever run: no cache to fall back to
+        fx_day = json.loads(fx_path.read_text())["latest"]
+        print(f"fx: fetch failed, using cached rates from {fx_day['date']}")
 
     source_results = []
     all_records: list[dict] = []
@@ -59,16 +70,29 @@ def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None) -> int
         prev_failures = prev_log.get(name, {}).get("consecutive_failures", 0)
         try:
             records = collect(fx_day)
+            # One malformed record must not discard the source's good ones.
+            valid = []
             for rec in records:
-                validate(rec | {"first_seen": today, "last_seen": today,
-                                "history": [{"date": today, "status": rec["status"]}]},
-                         "listing")
+                try:
+                    validate(rec | {"first_seen": today, "last_seen": today,
+                                    "history": [{"date": today, "status": rec["status"]}]},
+                             "listing")
+                    valid.append(rec)
+                except Exception:
+                    traceback.print_exc()
+                    print(f"{name}: dropped one schema-invalid record")
+            dropped = len(records) - len(valid)
             source_results.append(
-                {"source": name, "ok": True, "records": len(records), "note": "",
+                {"source": name, "ok": True, "records": len(valid),
+                 "note": f"{dropped} invalid record(s) dropped" if dropped else "",
                  "consecutive_failures": 0}
             )
-            seen_sources.add(name)
-            all_records.extend(records)
+            # Only sources that actually returned records drive withdrawal
+            # ageing: an empty-but-"successful" scrape is more likely a silent
+            # parser break than a genuinely emptied market.
+            if valid:
+                seen_sources.add(name)
+            all_records.extend(valid)
         except Exception as exc:  # per-source isolation: never fail the run
             traceback.print_exc()
             source_results.append(

@@ -31,13 +31,13 @@ let generated = "";
 let sourceHealth: { source: string; ok: boolean; note?: string }[] = [];
 try {
   const data = JSON.parse(readFileSync("../data/listings.json", "utf8"));
-  listings = data.listings;
-  generated = data.generated_at;
+  listings = data.listings ?? [];
+  generated = data.generated_at ?? "";
 } catch {
   /* empty state below */
 }
 try {
-  sourceHealth = JSON.parse(readFileSync("../data/run-log.json", "utf8")).sources;
+  sourceHealth = JSON.parse(readFileSync("../data/run-log.json", "utf8")).sources ?? [];
 } catch {
   /* optional */
 }
@@ -177,6 +177,19 @@ function money(p: Price): string {
               if (ok) shown++;
             }
             if (count) count.textContent = `showing ${shown} of ${cards.length}`;
+            // Hide a section heading when everything under it is filtered out.
+            for (const h2 of document.querySelectorAll("main h2")) {
+              let el = h2.nextElementSibling;
+              let any = false;
+              while (el && el.tagName !== "H2") {
+                if (el.matches("article.card") && (el as HTMLElement).style.display !== "none") {
+                  any = true;
+                  break;
+                }
+                el = el.nextElementSibling;
+              }
+              (h2 as HTMLElement).style.display = any ? "" : "none";
+            }
           }
           form?.addEventListener("input", apply);
           apply();

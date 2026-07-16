@@ -67,8 +67,11 @@ def reconcile(store: dict, incoming: list[dict], seen_sources: set[str], today: 
         )
         status_moved = old_status != new_status
 
-        # Refresh volatile fields from the source.
+        # Refresh volatile fields from the source. Translation may arrive on a
+        # later run than the listing (e.g. DeepL key added afterwards).
         existing["title"] = rec["title"]
+        if rec.get("title_translated"):
+            existing["title_translated"] = rec["title_translated"]
         existing["images"] = rec["images"] or existing["images"]
         existing["price"] = new_price
         existing["status"] = new_status
