@@ -248,6 +248,49 @@ const isListings = path === `${base}/` || path === base || isActive("vehicle");
         color: var(--on-surface-variant);
         font-size: 0.9rem;
       }
+
+      /* Filter chips: functional selects dressed as M3 chips, one scroll row.
+         Shared by the listings and specs pages. */
+      .filters {
+        display: flex;
+        gap: 0.5rem;
+        overflow-x: auto;
+        padding: 0.25rem 0;
+        -webkit-overflow-scrolling: touch;
+      }
+      .fchip {
+        flex: none;
+        appearance: none;
+        -webkit-appearance: none;
+        border: 1px solid var(--outline-variant);
+        border-radius: 8px;
+        background: transparent;
+        color: var(--on-surface-variant);
+        font-size: 0.875rem;
+        font-weight: 500;
+        font-family: inherit;
+        padding: 0.5rem 1.7rem 0.5rem 0.9rem;
+        background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+          linear-gradient(135deg, currentColor 50%, transparent 50%);
+        background-position: calc(100% - 0.95rem) 55%, calc(100% - 0.65rem) 55%;
+        background-size: 0.3rem 0.3rem;
+        background-repeat: no-repeat;
+      }
+      input.fchip {
+        background-image: none;
+        padding-right: 0.9rem;
+        width: 7.5rem;
+      }
+      .fchip-active {
+        background-color: var(--secondary-container);
+        color: var(--on-secondary-container);
+        border-color: transparent;
+      }
+      .count {
+        text-align: right;
+        font-size: 0.8rem;
+        margin: 0.15rem 0 0;
+      }
     </style>
   </body>
 </html>

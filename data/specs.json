@@ -19,7 +19,12 @@
             "code": "L20B",
             "displacement_cc": 1952,
             "power_hp": 110,
-            "power_note": "engine changed by year: L16 1595cc 96 hp (1972-73), L18 1770cc 100 hp (1974), L20B 1952cc 110 hp SAE gross (1975-79; net rating ~97 hp in later years)"
+            "power_note": "engine changed by year: L16 1595cc 96 hp (1972-73), L18 1770cc 100 hp (1974), L20B 1952cc 110 hp SAE gross (1975-79; net rating ~97 hp in later years)",
+            "codes": [
+              "L16",
+              "L18",
+              "L20B"
+            ]
           },
           "dimensions_mm": {
             "length": 4298,
@@ -171,7 +176,10 @@
             "code": "L20B",
             "displacement_cc": 1952,
             "power_hp": 110,
-            "power_note": "L20B only for its entire run (long bed introduced 1975, same year as L20B); 110 hp SAE gross, ~97 hp net in later years"
+            "power_note": "L20B only for its entire run (long bed introduced 1975, same year as L20B); 110 hp SAE gross, ~97 hp net in later years",
+            "codes": [
+              "L20B"
+            ]
           },
           "dimensions_mm": {
             "length": 4610,
@@ -296,7 +304,10 @@
             "code": "L20B",
             "displacement_cc": 1952,
             "power_hp": 110,
-            "power_note": "L20B only; 110 hp SAE gross rating (net ~97 hp in 1977-78 tune)"
+            "power_note": "L20B only; 110 hp SAE gross rating (net ~97 hp in 1977-78 tune)",
+            "codes": [
+              "L20B"
+            ]
           },
           "dimensions_mm": {
             "length": null,
@@ -414,7 +425,10 @@
             "code": "J15",
             "displacement_cc": 1483,
             "power_hp": 77,
-            "power_note": "Period UK source (Commercial Motor, 14 Sep 1979) quotes 57 kW / 77 bhp from the 1,483 cc engine; Wikipedia gives the J15 as 77 PS (76 hp), so the figure is likely PS/DIN. Confirms UK trucks did NOT get the L16/L18/L20B fitted in North America."
+            "power_note": "Period UK source (Commercial Motor, 14 Sep 1979) quotes 57 kW / 77 bhp from the 1,483 cc engine; Wikipedia gives the J15 as 77 PS (76 hp), so the figure is likely PS/DIN. Confirms UK trucks did NOT get the L16/L18/L20B fitted in North America.",
+            "codes": [
+              "J15"
+            ]
           },
           "dimensions_mm": {
             "length": null,
@@ -493,7 +507,10 @@
             "code": "J15",
             "displacement_cc": 1483,
             "power_hp": 77,
-            "power_note": "57 kW (77 PS) at 5200 rpm, 118 Nm at 3200 rpm; the OHV J15 (also used in forklifts) was fitted in most non-US markets including Australia, badged 'Datsun 1500'"
+            "power_note": "57 kW (77 PS) at 5200 rpm, 118 Nm at 3200 rpm; the OHV J15 (also used in forklifts) was fitted in most non-US markets including Australia, badged 'Datsun 1500'",
+            "codes": [
+              "J15"
+            ]
           },
           "dimensions_mm": {
             "length": 4609,
@@ -558,7 +575,10 @@
             "code": "J15",
             "displacement_cc": 1483,
             "power_hp": 77,
-            "power_note": "Assumed same J15 as standard AU ute; no AU source shows a different engine"
+            "power_note": "Assumed same J15 as standard AU ute; no AU source shows a different engine",
+            "codes": [
+              "J15"
+            ]
           },
           "dimensions_mm": {
             "length": null,
@@ -602,7 +622,10 @@
             "code": "J15",
             "displacement_cc": 1483,
             "power_hp": 77,
-            "power_note": "Assumed same J15 as standard AU ute"
+            "power_note": "Assumed same J15 as standard AU ute",
+            "codes": [
+              "J15"
+            ]
           },
           "dimensions_mm": {
             "length": null,
@@ -659,7 +682,12 @@
             "code": "J15",
             "displacement_cc": 1483,
             "power_hp": 77,
-            "power_note": "77 PS/5200 rpm, 12.0 kg-m/3200 rpm (JIS gross); base 1300 grade with J13 1.3L 62 PS also offered; SD22 2.2L 65 PS diesel added 1978 (JDM only, short-lived)"
+            "power_note": "77 PS/5200 rpm, 12.0 kg-m/3200 rpm (JIS gross); base 1300 grade with J13 1.3L 62 PS also offered; SD22 2.2L 65 PS diesel added 1978 (JDM only, short-lived)",
+            "codes": [
+              "J13",
+              "J15",
+              "SD22"
+            ]
           },
           "dimensions_mm": {
             "length": 4300,
@@ -703,7 +731,10 @@
             "code": "J15",
             "displacement_cc": 1483,
             "power_hp": 77,
-            "power_note": "77 PS/5200 rpm JIS gross, same J15 as standard body"
+            "power_note": "77 PS/5200 rpm JIS gross, same J15 as standard body",
+            "codes": [
+              "J15"
+            ]
           },
           "dimensions_mm": {
             "length": 4690,
@@ -743,7 +774,10 @@
             "code": "J15",
             "displacement_cc": 1483,
             "power_hp": 77,
-            "power_note": "77 PS/5200 rpm JIS gross; double cab was offered only with the 1.5L J15 (not the 1.3L J13)"
+            "power_note": "77 PS/5200 rpm JIS gross; double cab was offered only with the 1.5L J15 (not the 1.3L J13)",
+            "codes": [
+              "J15"
+            ]
           },
           "dimensions_mm": {
             "length": 4350,
@@ -784,7 +818,10 @@
             "code": "J15",
             "displacement_cc": 1483,
             "power_hp": 77,
-            "power_note": "77 PS/5200 rpm JIS gross (JDM extended cab kept the J15; the L20B King Cab was a North American model)"
+            "power_note": "77 PS/5200 rpm JIS gross (JDM extended cab kept the J15; the L20B King Cab was a North American model)",
+            "codes": [
+              "J15"
+            ]
           },
           "dimensions_mm": {
             "length": null,
@@ -839,7 +876,8 @@
             "code": null,
             "displacement_cc": null,
             "power_hp": null,
-            "power_note": "Not verified for SA. Wikipedia's generic statement 'in most of the world the 620 was equipped with the J15 (57 kW / 77 hp)' is the likely origin of the prior J15/77hp record, but no SA-specific source confirms which engine(s) were fitted locally; J-series (J15/J16) and L-series (L16/L18) were all offered in various export markets."
+            "power_note": "Not verified for SA. Wikipedia's generic statement 'in most of the world the 620 was equipped with the J15 (57 kW / 77 hp)' is the likely origin of the prior J15/77hp record, but no SA-specific source confirms which engine(s) were fitted locally; J-series (J15/J16) and L-series (L16/L18) were all offered in various export markets.",
+            "codes": []
           },
           "dimensions_mm": {
             "length": null,
@@ -885,7 +923,8 @@
             "code": null,
             "displacement_cc": null,
             "power_hp": null,
-            "power_note": "Unverified. Its successor, the SA-market Datsun 720 of 1980, used the 1.8-litre OHC L18, suggesting L-series availability locally by then, but no source states the 680's own engine."
+            "power_note": "Unverified. Its successor, the SA-market Datsun 720 of 1980, used the 1.8-litre OHC L18, suggesting L-series availability locally by then, but no source states the 680's own engine.",
+            "codes": []
           },
           "dimensions_mm": {
             "length": null,
@@ -938,7 +977,10 @@
             "code": "J15",
             "displacement_cc": 1483,
             "power_hp": 77,
-            "power_note": "77 PS / 57 kW, OHV carbureted inline-4; top speed approx. 135 km/h. German sources quote 1471 cm3 but Nissan J15 references give 1483 cc (78 x 77.6 mm)."
+            "power_note": "77 PS / 57 kW, OHV carbureted inline-4; top speed approx. 135 km/h. German sources quote 1471 cm3 but Nissan J15 references give 1483 cc (78 x 77.6 mm).",
+            "codes": [
+              "J15"
+            ]
           },
           "dimensions_mm": {
             "length": null,
@@ -1016,7 +1058,10 @@
             "code": "SD22",
             "displacement_cc": 2164,
             "power_hp": 65,
-            "power_note": "Sources give 65 PS (48 kW) at 4,000 rpm; English Wikipedia states 49 kW / 66 hp"
+            "power_note": "Sources give 65 PS (48 kW) at 4,000 rpm; English Wikipedia states 49 kW / 66 hp",
+            "codes": [
+              "SD22"
+            ]
           },
           "dimensions_mm": {
             "length": null,

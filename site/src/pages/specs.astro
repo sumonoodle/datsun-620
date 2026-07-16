@@ -18,6 +18,7 @@ interface Variant {
   body?: string;
   engine?: {
     code?: string | null;
+    codes?: string[];
     displacement_cc?: number | null;
     power_hp?: number | null;
     power_note?: string;
@@ -73,6 +74,27 @@ function hostname(url: string): string {
     return url;
   }
 }
+
+// Filterable facets, derived from the data.
+function bodyType(v: Variant): string {
+  const b = (v.body ?? "").replace(/\(.*?\)/g, "").toLowerCase();
+  if (b.includes("king") || b.includes("extended")) return "King Cab";
+  if (b.includes("double")) return "Double cab";
+  if (b.includes("ute") || b.includes("tray") || b.includes("utility")) return "Ute";
+  if (b.includes("long")) return "Long bed / LWB";
+  return "Standard cab";
+}
+function engineCodes(v: Variant): string[] {
+  // Curated fitment list; falls back to the headline code only (never prose,
+  // which mentions engines a variant did NOT have).
+  if (v.engine?.codes) return v.engine.codes;
+  return v.engine?.code ? [v.engine.code] : [];
+}
+const allVariants = markets.flatMap((m) => m.variants);
+const bodyTypes = [...new Set(allVariants.map(bodyType))].sort();
+const allEngines = [...new Set(allVariants.flatMap(engineCodes))].sort();
+const allColors = [...new Set(allVariants.flatMap((v) => (v.colors ?? []).map((c) => c.name)))].sort();
+const years = [1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980];
 ---
 
 <Base title="Specs — Datsun 620 Tracker">
@@ -86,17 +108,48 @@ function hostname(url: string): string {
           Every Datsun 620 variant by market, curated once with citations.
           {updated && ` Last updated ${updated}.`}
         </p>
-        <nav class="markets-nav">
-          {markets.map((m) => (
-            <a href={`#${m.market}`}>{m.name}</a>
-          ))}
-        </nav>
+        <form class="filters" id="filters">
+          <select class="fchip" name="region" aria-label="Region">
+            <option value="">All regions</option>
+            {markets.map((m) => (
+              <option value={m.market}>{m.name}</option>
+            ))}
+          </select>
+          <select class="fchip" name="body" aria-label="Model type">
+            <option value="">All types</option>
+            {bodyTypes.map((b) => (
+              <option value={b}>{b}</option>
+            ))}
+          </select>
+          <select class="fchip" name="year" aria-label="Available in year">
+            <option value="">Any year</option>
+            {years.map((y) => (
+              <option value={y}>{y}</option>
+            ))}
+          </select>
+          <select class="fchip" name="engine" aria-label="Engine">
+            <option value="">All engines</option>
+            {allEngines.map((e) => (
+              <option value={e}>{e}</option>
+            ))}
+          </select>
+          <select class="fchip" name="color" aria-label="Colour">
+            <option value="">All colours</option>
+            {allColors.map((c) => (
+              <option value={c}>{c}</option>
+            ))}
+          </select>
+        </form>
+        <p class="count supporting" id="filter-count"></p>
         {markets.map((m) => (
-          <section id={m.market}>
+          <section id={m.market} data-market={m.market}>
             <h2>{m.name}</h2>
             {m.notes && <p class="market-notes">{m.notes}</p>}
             {m.variants.map((v) => (
-              <article class="card elevated variant">
+              <article class="card elevated variant" data-market={m.market}
+                       data-body={bodyType(v)} data-from={v.years.from} data-to={v.years.to}
+                       data-engines={engineCodes(v).join("|")}
+                       data-colors={(v.colors ?? []).map((c) => c.name).join("|")}>
                 <div class="variant-head">
                   <h3>{v.name}</h3>
                   <p class="years">
@@ -194,6 +247,69 @@ function hostname(url: string): string {
             ))}
           </section>
         ))}
+        <script>
+          const form = document.getElementById("filters") as HTMLFormElement | null;
+          const variants = Array.from(document.querySelectorAll("article.variant")) as HTMLElement[];
+          const count = document.getElementById("filter-count");
+
+          function loadFromUrl() {
+            if (!form) return;
+            const params = new URLSearchParams(location.search);
+            for (const el of form.querySelectorAll("select")) {
+              const input = el as HTMLSelectElement;
+              if (params.has(input.name)) input.value = params.get(input.name) ?? "";
+            }
+          }
+          function saveToUrl() {
+            if (!form) return;
+            const params = new URLSearchParams();
+            for (const el of form.querySelectorAll("select")) {
+              const input = el as HTMLSelectElement;
+              if (input.value) params.set(input.name, input.value);
+            }
+            const qs = params.toString();
+            history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
+          }
+
+          function apply() {
+            if (!form) return;
+            const data = new FormData(form);
+            const region = data.get("region") as string;
+            const body = data.get("body") as string;
+            const year = Number(data.get("year")) || null;
+            const engine = data.get("engine") as string;
+            const color = data.get("color") as string;
+            let shown = 0;
+            for (const el of variants) {
+              const from = Number(el.dataset.from);
+              const to = Number(el.dataset.to);
+              const engines = (el.dataset.engines ?? "").split("|");
+              const colors = (el.dataset.colors ?? "").split("|");
+              const ok =
+                (!region || el.dataset.market === region) &&
+                (!body || el.dataset.body === body) &&
+                (year === null || (from <= year && year <= to)) &&
+                (!engine || engines.includes(engine)) &&
+                (!color || colors.includes(color));
+              el.style.display = ok ? "" : "none";
+              if (ok) shown++;
+            }
+            // A market section disappears entirely when none of its variants match.
+            for (const section of document.querySelectorAll("main section[data-market]")) {
+              const any = Array.from(section.querySelectorAll("article.variant"))
+                .some((v) => (v as HTMLElement).style.display !== "none");
+              (section as HTMLElement).style.display = any ? "" : "none";
+            }
+            if (count) count.textContent = `showing ${shown} of ${variants.length} variants`;
+            for (const el of form.querySelectorAll("select")) {
+              (el as HTMLElement).classList.toggle("fchip-active", Boolean((el as HTMLSelectElement).value));
+            }
+            saveToUrl();
+          }
+          form?.addEventListener("input", apply);
+          loadFromUrl();
+          apply();
+        </script>
       </>
     )
   }
@@ -205,23 +321,6 @@ function hostname(url: string): string {
     }
     .intro {
       margin-top: 0;
-    }
-    .markets-nav {
-      display: flex;
-      gap: 0.5rem;
-      overflow-x: auto;
-      padding: 0.25rem 0;
-      -webkit-overflow-scrolling: touch;
-    }
-    .markets-nav a {
-      flex: none;
-      background: var(--secondary-container);
-      color: var(--on-secondary-container);
-      border-radius: 8px;
-      padding: 0.5rem 0.9rem;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.875rem;
     }
     section {
       margin-top: 1.25rem;
