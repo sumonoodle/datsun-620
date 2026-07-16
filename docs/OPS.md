@@ -18,6 +18,8 @@ Prerequisites: `GMAIL_USER` and `GMAIL_APP_PASSWORD` secrets (set 2026-07-16).
 
 - ON: repo Settings → Secrets and variables → Actions → Variables tab →
   New repository variable: name `DIGEST_LIVE`, value `1`.
+- The digest goes to `GMAIL_USER` by default; set repo variable `DIGEST_TO`
+  to send it somewhere else.
 - OFF: set `DIGEST_LIVE` to `0` (or delete it). Dry-run digests keep being
   written to the repo and site regardless.
 - Compromised app password: revoke at https://myaccount.google.com/apppasswords,

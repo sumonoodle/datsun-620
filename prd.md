@@ -2,52 +2,48 @@
 
 **Version:** 1.1
 **Owner:** Matt
-**Status:** Draft for Claude Code kickoff
+**Status:** Ready for Claude Code kickoff
 
-## 0. Changelog (1.0 to 1.1)
+**Amendments agreed during the build (owner sign-off, July 2026):** storage is
+JSON files rather than SQLite (diffable in git, readable from GitHub mobile,
+matches the legacy data format); FX comes from Frankfurter rather than
+exchangerate.host (which now requires an API key). eBay credentials are a
+client ID + secret pair (`EBAY_CLIENT_ID`/`EBAY_CLIENT_SECRET`), not a single
+app ID as the section 11 checklist assumed.
 
-Updated after kickoff Q&A and a fitness-for-purpose review against the stated goal (comparative specs site plus a wide-net, low-volume King Cab listings tracker with notify-on-appearance).
-
-- **Hosting:** public repo with an unlisted Pages URL. Confirms zero cost; accepts that repo, data, and site are technically public but obscure.
-- **Listings filter:** reoptimised from precision-first ("strict, zero false positives") to **recall-first** (wide net on any Datsun 620, then score and rank likelihood of being a King Cab, multilingual). Rationale: for a rare car the costly mistake is missing a real one, not seeing a wrong one.
-- **Notification:** changed from a fixed daily digest to **notify-on-change only**. Checks run frequently; email is sent only when there is something new or changed. Silent runs send nothing.
-- **Specs:** automated collection with a **conflict-reconciliation** step. Agreeing sources auto-accept; disagreements or weak sources go to a conflicts queue for a human decision, and decisions are remembered.
-- **Specs presentation:** comparison-first (side by side across years and markets), not isolated per-variant sheets.
-- **Storage:** JSON / NDJSON instead of a committed SQLite binary. Simpler, diffable, right-sized for the volume.
-- **FX:** switched from exchangerate.host (now requires a key) to a keyless source (Frankfurter, ECB-backed).
-- **eBay:** use the current **Browse API** (the Finding API was decommissioned Feb 2025).
-- **Source scope:** reliable core first (eBay + Goo-net) proven end to end, then the harder auction/proxy sources as best-effort with explicit "source skipped" flagging.
-- **Relisted detection:** simple fuzzy matching, not VIN/photo matching.
+**Changes from v1.0:** public repo decision made explicit; spec scrapers replaced with a one-off research and curation milestone; listing sources resequenced by scraping reliability; Japan sources defined as degradable experiments; relisted detection scoped as best-effort heuristic; mobile-first requirements added for the site, the digest, and the build process itself.
 
 ## 1. Purpose
 
 A single web app with two views:
 
-1. **Specs**: a comparative reference of every Datsun 620 pickup variant across major markets (1972 to 1979), with dimensions and specifications, collected automatically from public sources with a human-in-the-loop where sources conflict. Presented comparison-first so variants can be read side by side.
-2. **Listings**: a frequently-refreshed feed of Datsun 620 King Cab listings worldwide, cast as a wide net (any 620, then scored for King Cab likelihood across languages), with price (original currency and GBP), location, LHD/RHD, and history (price changes, time on market, relisted detection). An email notification is sent only when a new or changed listing appears.
+1. **Specs**: a reference overview of every Datsun 620 pickup variant across major markets (1972 to 1979), with dimensions and specifications. Data is researched and curated once, stored as versioned JSON with source citations. Specs for a truck out of production since 1979 do not change; there is no refresh pipeline.
+2. **Listings**: a daily-refreshed feed of Datsun 620 King Cab listings globally, with price (original currency and GBP), location, LHD/RHD, and price history. A daily email digest summarises new and changed listings.
 
-The build runs autonomously via GitHub Actions on a free tier, with no paid infrastructure.
+The build runs autonomously via GitHub Actions on a free tier, with no paid infrastructure. The owner operates entirely from mobile devices; every review, sign-off, and verification step must work from a phone.
 
 ## 2. Goals and non-goals
 
 ### Goals
-- Comprehensive, accurate, comparative spec sheet for every 620 market variant, with a citation per fact.
-- Wide-net King Cab listing sweep across the highest signal-to-noise global sources, optimised for recall so genuine cars are not missed.
-- Multilingual King Cab detection and scoring (handles "King Cab", "Kingcab", "extended cab", キングキャブ, and listings that only show the body style in photos).
-- Full price and listing history per vehicle, so trends and relisted cars are visible.
-- Notification only when something changes. No empty or routine emails.
+- Accurate, cited spec sheet for every 620 market variant.
+- Daily King Cab listing sweep, prioritised by source reliability.
+- Strict King Cab filtering (no false positives from standard cabs).
+- Price and listing history per vehicle, with best-effort relisted detection.
+- Daily email digest, readable in a mobile mail client.
+- Mobile-first site design.
 - Zero recurring cost.
 
 ### Non-goals
-- Real-time alerts.
-- Routine or scheduled emails when nothing has changed.
-- Buying or bidding on my behalf.
-- Coverage of every possible listing source on day one (Facebook Marketplace, Craigslist, niche regional sites deferred).
-- A mobile app.
+- Real-time alerts (daily is fine).
+- Buying or bidding on the owner's behalf.
+- Guaranteed Japan source coverage in v1 (they are experiments, see 4.4).
+- Cross-source relisted matching (v1 matches within a source only).
+- A spec refresh pipeline.
+- A mobile app (the site is mobile-first web).
 
 ## 3. Users
 
-One user: me. The site is public but unlisted (unguessable URL is sufficient; no auth needed for v1). Nothing in the data is sensitive.
+One user: the owner. The repo and site are public. Accepted tradeoff: GitHub Pages on a free personal account requires a public repository, and Pages URLs are guessable, so privacy is not achievable at zero cost. Nothing sensitive lives in the repo; credentials are GitHub Actions secrets only. Public repos also get unlimited Actions minutes.
 
 ## 4. Scope
 
@@ -62,82 +58,51 @@ Coverage: all major markets where the 620 was sold.
 - **South Africa**: locally assembled variants under Datsun and Nissan branding.
 - **Europe**: continental variants where they differed from UK.
 
-Per-variant data fields:
-- Market and years sold
-- Body style (standard cab, King Cab, double cab, chassis cab)
-- Bed length (short, long, where applicable)
-- Engine code, displacement, power, torque
-- Transmission options
-- Dimensions: overall length, width, height, wheelbase, track, ground clearance, bed dimensions
-- Weights: kerb, GVM, payload
-- Wheels and tyres (factory)
-- Trim levels
-- Notable production changes year by year
-- Source citations per fact
-
-**Collection and reconciliation.** Data is collected automatically from multiple public sources, then reconciled:
-1. The same field is gathered from more than one source where possible.
-2. If sources agree, the value is auto-accepted with its citations.
-3. If sources disagree, or only a weak source exists, the field goes to a **conflicts queue** (`data/specs-conflicts.json`) listing each candidate value and its source.
-4. I review the queue and pick; my decision is recorded (`data/specs-decisions.json`) so the same conflict is not re-raised on the next refresh.
-
-Specs collection runs on manual trigger, not a schedule. Output is committed as structured JSON.
-
-**Presentation.** Comparison-first: the primary view lets variants be compared side by side across years and markets (comparison table plus selector/filter), with per-variant detail behind it. Citations visible per fact.
+Data model: one JSON file (`data/specs.json`), versioned in git, with a citation (URL or publication reference) per variant. Populated by a research and curation milestone (M2), not by scrapers. Corrections are made by editing the JSON and rebuilding.
 
 ### 4.2 Listings view
 
-Refreshed on a frequent schedule. v1 source plan, core first:
+Sources, in build order by reliability:
 
-| Tier | Source | Method | Coverage |
+| Tier | Source | Method | Expectation |
 |---|---|---|---|
-| Core | eBay (US, UK, DE, AU) | Official Browse API | Multi-country |
-| Core | Goo-net Exchange | HTML scrape, auto-translated | Japan |
-| Best-effort | Bring a Trailer | HTML scrape | US auctions |
-| Best-effort | Cars & Bids | HTML scrape | US auctions |
-| Best-effort | Hemmings | HTML scrape | US classifieds |
-| Best-effort | Yahoo Auctions Japan (via Buyee or ZenMarket) | HTML scrape of proxy | Japan |
+| 1 | eBay (US/UK/DE/AU) | Official Browse API | Reliable |
+| 1 | Bring a Trailer | HTML scrape | Reliable |
+| 2 | Cars & Bids | HTML scrape | Likely reliable |
+| 2 | Hemmings | HTML scrape | Likely reliable |
+| 3 | Goo-net Exchange | HTML scrape | Experiment (see 4.4) |
+| 3 | Yahoo Japan via Buyee or ZenMarket | HTML scrape, Playwright if needed | Experiment (see 4.4) |
 
-The core sources are proven end to end first. Best-effort sources are added once the core works; they may be blocked by datacenter-IP filtering or bot protection, in which case the run continues and the skipped source is flagged.
+**King Cab filter**: title or description must contain "King Cab", "Kingcab", "King-Cab", or "extended cab" (case-insensitive), with a sanity check on body style fields where present to catch unrelated mentions.
 
-**Filtering: recall-first, not strict.** The goal is to not miss genuine cars, accepting that I will eyeball edge cases.
-- Cast a wide net: pull anything matching **Datsun 620** from each source.
-- Score each listing for King Cab likelihood using multilingual signals: "King Cab", "Kingcab", "King-Cab", "extended cab", キングキャブ, and other market terms, plus body-style fields and structural hints where present.
-- Present everything, ranked: likely King Cabs surfaced first, a "possible / unconfirmed" bucket below. I can confirm or dismiss; the wrong ones are cheap to discard.
+**FX**: a daily fixed rate fetched once per run from exchangerate.host (no key required). Stored alongside each listing snapshot so historical GBP values remain consistent.
 
-Per-listing data captured:
-- Title, source, source URL
-- Asking or current bid price (original currency)
-- Price converted to GBP using the day's fixed rate
-- Currency code
-- Country and region (where available)
-- LHD or RHD (inferred from country and listing details; flagged as inferred where not explicit; manual override allowed)
-- Year, model trim
-- Mileage
-- Condition notes (extracted text)
-- King Cab likelihood score and the signals behind it
-- Photos (URL only, not stored)
-- First seen date, last seen date
-- Price history (timestamped)
-- Status: active, sold, withdrawn, relisted
-- Relisted-from reference (if matched to a prior listing by fuzzy match on title, price, location, and key details)
+**Relisted detection (best-effort heuristic)**: within the same source only, match on price proximity, title similarity, and location. Flagged as "possible relist" in the UI and digest, never asserted as fact. VINs are rarely listed; cross-source matching is out of scope for v1.
 
-**FX**: a daily fixed rate fetched once per run from a keyless source (Frankfurter, ECB-backed). Stored alongside each listing snapshot so historical GBP values remain consistent.
+**Translation**: DeepL free API (key stored as a secret) for Japanese listings, with the deep-translator library as unofficial fallback. If both fail, show original text; never fail the run over translation.
 
-**Storage**: JSON / NDJSON committed to the repo (`data/listings.json` plus per-run snapshots). Human-readable, diffable, right-sized for the expected volume (tens of listings, not thousands).
+### 4.3 Daily email digest
 
-### 4.3 Email notification
+Sent via Gmail SMTP from a Google account using an app password, stored as a GitHub Actions secret.
 
-Sent via Gmail SMTP from a Google account using an app password, stored as a GitHub Actions secret. **Sent only when there is something to report.** A run with no new or changed listings sends nothing.
-
-Notification contents (only the non-empty sections appear):
-- New listings since last run (with thumbnail, price in original + GBP, country, LHD/RHD, King Cab likelihood, link)
+Contents:
+- New listings since last run (thumbnail, price in original + GBP, country, LHD/RHD, link)
 - Price changes (old to new, percentage delta)
-- Relisted detections (with link to prior listing in history)
+- Possible relists (with link to prior listing)
 - Status changes (sold, withdrawn)
-- Any sources skipped this run (blocked or errored)
+- Source health: which sources succeeded, which were skipped and why
+- Summary stats: total active, count by country, median GBP price
 
-Plain HTML email, no tracking pixels.
+Plain HTML, no tracking pixels, single column, large tap targets, tested against mobile mail rendering (Gmail and Apple Mail on phone).
+
+### 4.4 Japan sources are degradable experiments
+
+Goo-net and Yahoo Japan proxies are JS-heavy and likely to block GitHub Actions datacenter IPs. Rules:
+
+- Each scraper runs in isolation; a blocked or failed source never fails the daily run.
+- A skipped source is reported in the digest's source health section.
+- If a Japan source is blocked for 7 consecutive days, Claude Code proposes options (alternative source, proxy, or dropping it) rather than silently retrying forever.
+- v1 success does not depend on Japan sources working.
 
 ## 5. Architecture
 
@@ -145,138 +110,126 @@ Plain HTML email, no tracking pixels.
 
 | Layer | Choice | Why |
 |---|---|---|
-| Site framework | Astro (static site generator) | Fast static output, easy to host on GitHub Pages, good for content-heavy and comparison-table sites |
-| Site hosting | GitHub Pages (public repo, unlisted URL) | Free, in the same repo as scrapers |
-| Scrape runner | GitHub Actions, scheduled (cron) | Free for public repos |
-| Storage | JSON / NDJSON committed to repo | Simple, version-controlled, diffable, right-sized for this volume |
-| Language | Python 3.12 for scrapers, TypeScript for site | Python has the best scraping ecosystem; Astro uses TS |
-| Scraping libraries | httpx, BeautifulSoup, Playwright only for JS-heavy sites | Playwright only where necessary, since it is slower and more bot-detectable |
-| eBay | Browse API (OAuth) | Finding API decommissioned Feb 2025; Browse is the current path |
-| Translation | DeepL free tier or Google Translate via deep-translator | Japanese listings and multilingual King Cab detection |
-| Email | Gmail SMTP via Python smtplib | Free, no third-party service |
-| FX | Frankfurter (ECB-backed) | Free, no key |
+| Site framework | Astro (static) | Fast static output, GitHub Pages friendly |
+| Site hosting | GitHub Pages (public repo) | Free, same repo as scrapers |
+| Scrape runner | GitHub Actions cron | Free and unlimited on public repos |
+| Storage | SQLite committed to repo | Simple, version-controlled, right for this volume. Known tradeoff: slow git history growth from binary churn; acceptable for years at this scale |
+| Language | Python 3.12 scrapers, TypeScript site | Best scraping ecosystem; Astro uses TS |
+| Scraping | httpx, BeautifulSoup, Playwright only where required | Playwright is slow; use sparingly |
+| Translation | DeepL free API, deep-translator fallback | See 4.2 |
+| Email | Gmail SMTP via smtplib | Free, no third party |
+| FX | exchangerate.host | Free, no key |
 
-### 5.2 Repo layout (proposed)
+### 5.2 Repo layout
 
 ```
 datsun-620/
-├── .github/
-│   └── workflows/
-│       ├── scrape.yml             # cron: frequent listings check, notify on change
-│       └── specs-refresh.yml      # manual trigger
+├── .github/workflows/
+│   └── daily-scrape.yml          # cron: daily, timed so the digest lands before ~08:00 Jersey time
 ├── scrapers/
-│   ├── specs/                     # one collector per spec source + reconciler
-│   ├── listings/                  # one scraper per listing source
-│   ├── common/                    # FX, dedup, translation, King Cab scoring, schema
-│   └── tests/
+│   ├── listings/                 # one module per source, isolated failures
+│   ├── common/                   # FX, dedup, translation, schema, relist heuristic
+│   └── tests/                    # fixtures + golden listings
 ├── data/
-│   ├── specs.json                 # reconciled spec database
-│   ├── specs-conflicts.json       # fields needing a human decision
-│   ├── specs-decisions.json       # my recorded decisions, replayed on refresh
-│   ├── listings.json              # current listings + history
-│   ├── snapshots/                 # per-run listing snapshots
-│   └── fx-rates.json              # daily FX log
-├── site/                          # Astro app
-│   ├── src/
-│   │   ├── pages/
-│   │   │   ├── index.astro        # landing
-│   │   │   ├── specs/             # comparison-first specs view
-│   │   │   └── listings/          # ranked listings view
-│   │   └── components/
-│   └── astro.config.mjs
+│   ├── specs.json                # curated spec database with citations
+│   ├── listings.db               # SQLite listing history
+│   └── fx-rates.json             # daily FX log
+├── site/                         # Astro app (mobile-first)
 ├── emailer/
-│   └── send_notification.py
+│   └── send_digest.py
 ├── prd.md
 └── README.md
 ```
 
-### 5.3 Listings flow (scheduled)
+(specs-refresh.yml and scrapers/specs/ from v1.0 are deleted: no spec pipeline.)
 
-1. GitHub Actions cron triggers the listings check.
-2. FX rate fetched once; written to `fx-rates.json`.
-3. Core scrapers run (eBay, Goo-net); best-effort scrapers run if reachable, otherwise skipped and flagged.
-4. Results normalised to common schema, scored for King Cab likelihood (multilingual), deduped against `listings.json`.
-5. Changes computed: new, price changed, status changed, relisted matches.
-6. Data updated; site rebuilt; deployed to GitHub Pages.
-7. **If and only if there are changes**, email notification generated and sent via Gmail SMTP.
-8. Run summary committed back to repo for audit trail.
+### 5.3 Daily flow
 
-### 5.4 Specs refresh flow (manual)
+1. Cron triggers (schedule set so the digest arrives before the owner's working day in Jersey; mind UTC vs local offset).
+2. FX rate fetched once, written to `fx-rates.json`.
+3. Listing scrapers run with per-source isolation; failures are logged, not fatal.
+4. Results normalised, deduped against `listings.db`.
+5. Changes computed: new, price changed, status changed, possible relists.
+6. Database updated, site rebuilt, deployed.
+7. Digest generated and sent, including source health.
+8. Run summary committed for audit trail.
 
-Manually triggered via GitHub Actions UI button. Runs all spec collectors, reconciles against `specs-decisions.json`, writes `specs.json` and any new entries to `specs-conflicts.json`, rebuilds site. No email. I review the conflicts queue and record decisions, which are applied on the next refresh.
+## 6. Mobile-first requirements
 
-## 6. Multi-agent build plan for Claude Code
+The owner reviews everything on a phone. This binds the product and the build process.
+
+**Site**: single-column layouts, readable without zooming, filters usable with a thumb, listing cards over dense tables, images lazy-loaded. Test viewport 390px width as primary.
+
+**Digest**: renders correctly in Gmail and Apple Mail mobile clients.
+
+**Build process**: plans and summaries short enough to read on a phone; one sign-off question at a time; verification via things checkable from a phone (deploy URL, email in inbox, green tick on an Actions run in the GitHub mobile app); clear, descriptive commit messages since review happens in GitHub mobile.
+
+## 7. Multi-agent build plan
 
 | Agent | Responsibility |
 |---|---|
-| **Architect** | Repo scaffolding, GitHub Actions workflows, shared schema definitions, FX module, SMTP module |
-| **Specs collector** | Per-market collectors, normalisation to common spec schema, source citation tracking, the reconciler and conflicts queue |
-| **Listings scraper** | Per-source listing scrapers (core first), common normalisation, multilingual King Cab scoring, LHD/RHD inference, fuzzy relisted detection |
-| **Frontend** | Astro site, comparison-first specs view, ranked listings view with filters, vehicle history pages |
-| **Notifier** | Notification template, change detection, send-only-on-change logic, Gmail SMTP send |
-| **QA** | Schema validation, end-to-end tests against fixtures, FX sanity checks, regression tests for King Cab scoring (recall on golden listings) |
-| **Product (me, in plain language)** | Review output at each milestone, steer scope, decide spec conflicts; Claude Code flags tradeoffs rather than guessing |
+| **Architect** | Repo scaffolding, workflow, shared schema, FX module, SMTP module |
+| **Researcher** | M2 specs research: gather, verify, and cite spec data across six markets into specs.json |
+| **Listings scraper** | Per-source scrapers, normalisation, King Cab filter, LHD/RHD inference, relist heuristic, failure isolation |
+| **Frontend** | Astro site, mobile-first Specs and Listings views, vehicle history pages |
+| **Emailer** | Digest template, change detection, source health, Gmail SMTP send |
+| **QA** | Fixture tests, golden listings, FX sanity checks, King Cab filter regression, mobile rendering checks |
+| **Product (owner, plain language)** | Reviews at each milestone; Claude Code flags tradeoffs rather than guessing |
 
-Architect goes first; the shared schema is the contract. Other agents run concurrently once the schema is frozen.
+Architect first; everything else parallelises against the shared schema.
 
-## 7. Milestones
+## 8. Milestones
 
 | # | Milestone | Definition of done |
 |---|---|---|
-| M1 | Scaffolding | Repo created, workflows defined (not yet running real scrapers), schema files in place, deploy pipeline confirmed with a placeholder site |
-| M2 | Specs v1 | At least three of six markets collected, reconciler and conflicts queue working, comparison view renders, citations visible |
-| M3 | Specs complete | All six markets, manual refresh works, conflicts queue and recorded decisions working end to end |
-| M4 | Listings core | eBay + Goo-net scraping, recall-first scoring, ranked listings view renders, FX working, scheduled run end to end, notify-on-change working |
-| M5 | Listings complete | Best-effort sources added (with skip flagging), full history, fuzzy relisted detection |
-| M6 | Polish | Filters on listings view (country, LHD/RHD, year, price range, King Cab likelihood), per-vehicle history pages, README and ops notes |
+| M1 | Scaffolding | Repo created, workflow defined (not yet scraping), schema in place, placeholder site deploys to GitHub Pages |
+| M2 | Specs curated | specs.json populated for all six markets with citations, specs view renders mobile-first, owner spot-checks five variants |
+| M3 | Listings tier 1 | eBay API + BaT scraping, listings view renders, FX working, daily cron runs end to end, failure isolation proven by test |
+| M4 | Listings tier 2 + digest | Cars & Bids + Hemmings live; digest in dry-run mode (written to repo for review), then live send after sign-off |
+| M5 | Japan experiments | Goo-net and Yahoo Japan attempted under the 4.4 rules; outcome documented either way |
+| M6 | Polish | Filters (country, LHD/RHD, year, price), per-vehicle history pages, mobile QA pass, README and ops notes |
 
-## 8. Verification approach
+## 9. Verification
 
-Before any scraper or collector is "done":
-- Unit tests against saved HTML / API fixtures, so they can be re-run when sites change.
-- Golden listings per source, including at least one that does not use the words "King Cab" but is one, to test recall.
-- King Cab scoring checked for recall on the golden set (genuine cars must not be dropped) and reasonableness on near-misses.
-- FX conversion verified against the Frankfurter response.
-- Translation and multilingual detection spot-checked on three Japanese listings.
-- Specs reconciler checked: agreeing sources auto-accept, disagreeing sources land in the conflicts queue, recorded decisions are replayed.
+Before any scraper is done:
+- Unit tests against saved HTML fixtures.
+- One golden listing per source (known King Cab) checked end to end.
+- FX verified against the exchangerate.host response.
+- Translation spot-checked on three Japanese listings.
 
-Before notifications go live:
-- Dry-run mode that writes the notification to a file in the repo for me to review.
-- Once I sign off, switch to live send.
+Before the digest goes live:
+- Dry-run digest written to the repo for owner review on a phone.
+- Live send only after sign-off.
 
-## 9. Risks and mitigations
+Every milestone's proof must be checkable from a phone.
+
+## 10. Risks
 
 | Risk | Likelihood | Mitigation |
 |---|---|---|
-| Source sites change HTML and break scrapers | High over time | Fixtures + clear error logs; each scraper isolated so one failure does not kill the run |
-| Best-effort sources block GitHub Actions datacenter IPs / bot protection | High on those sources | Core sources do not depend on them; run continues and flags the skip; revisit paid proxy only if coverage there becomes important (would break zero cost) |
-| King Cab cars missed (false negatives) | Moderate | Recall-first wide net + scoring + golden recall tests; I review the "possible" bucket |
-| LHD/RHD inference wrong | Low to moderate | Default by country, flag as inferred, allow manual override per listing |
-| GitHub Actions free usage exceeded | Low | Public repo; runs are short and low-volume |
-| Gmail SMTP flagged as spam | Low | Send to myself only; whitelist sender |
-| Translation API rate limits | Low | Free tiers are generous; cache translations per listing |
-| Spec sources contradict each other | Moderate | Reconciler routes conflicts to me; decisions recorded and replayed |
+| Japan sources block Actions IPs | Moderate to high | Degradable design (4.4); v1 success does not depend on them |
+| Any scraper breaks on site redesign | Certain, eventually | Fixture tests catch it; source health in digest surfaces it same day |
+| eBay API approval friction | Low to moderate | Owner starts signup before M3 (see checklist) |
+| Gmail app password revoked or rate limited | Low | Digest failure alerts via Actions failure email |
+| SQLite git history bloat | Low, slow burn | Accepted; revisit if repo passes ~500MB |
+| Relist heuristic false positives | Moderate | Framed as "possible relist", never asserted |
 
-## 10. Open items for after kickoff
+## 11. Owner checklist (all doable from a mobile browser)
 
-Not blocking the start; flag when reached:
-- Whether to add a "watchlist" for specific listings I want extra attention on.
-- Whether to track sold prices for market value analysis (harder on some sources).
-- Whether to invest in getting the best-effort sources reliable (likely needs a paid proxy).
+Before M1:
+- [ ] GitHub account ready; confirm repo name.
 
-## 11. Out of scope for v1 (explicitly)
+Before M3:
+- [ ] eBay developer account signup started (approval can take days).
+- [ ] Gmail app password created (requires 2FA on the Google account).
+- [ ] DeepL free API key created.
+- [ ] All three stored as GitHub Actions secrets: `EBAY_APP_ID`, `GMAIL_APP_PASSWORD`, `DEEPL_API_KEY`.
 
-- Facebook Marketplace, Craigslist.
-- Mobile app or PWA.
-- Multi-user accounts.
-- Bidding or buying automation.
-- Image storage or analysis.
-- Notifications outside email-on-change.
+## 12. v1 success criteria
 
-## 12. Kickoff checklist (before Claude Code starts)
-
-- [ ] GitHub account ready
-- [ ] eBay Developer Program account, credentials for the **Browse API** (OAuth) in hand
-- [ ] Gmail account with 2FA and an app password generated
-- [ ] Personal preferences confirmed: site name, repo name (repo will be **public**)
-- [ ] PRD reviewed and signed off
+- Site live on GitHub Pages, mobile-first, with Specs and Listings views.
+- Daily cron scraping all tier 1 and 2 sources reliably; Japan sources attempted and their status documented.
+- Curated, cited specs for all six markets.
+- Strict King Cab filtering with zero obvious false positives in a sample of 20 listings.
+- Digest arrives each morning before the owner starts work in Jersey, readable on a phone.
+- Total cost: zero.
