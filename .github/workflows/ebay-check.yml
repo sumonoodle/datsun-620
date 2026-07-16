@@ -32,6 +32,8 @@ jobs:
           python scrapers/tests/test_schema.py
           python scrapers/tests/test_king_cab.py
           python scrapers/tests/test_listings.py
+          python scrapers/tests/test_tier2.py
+          python scrapers/tests/test_japan.py
           python scrapers/tests/test_isolation.py
       - name: eBay credential self-test
         env:

@@ -50,7 +50,11 @@ def _card(listing: dict, extra: str = "") -> str:
     if listing.get("images"):
         img = (f'<img src="{html.escape(listing["images"][0])}" alt="" width="120" '
                f'style="border-radius:6px;display:block;max-width:120px;height:auto;">')
-    title = html.escape(listing["title"])
+    title = html.escape(listing.get("title_translated") or listing["title"])
+    original = ""
+    if listing.get("title_translated"):
+        original = (f'<br><span style="color:{MUTED};font-size:12px;">'
+                    f'{html.escape(listing["title"])}</span>')
     url = html.escape(listing["url"])
     meta = f"{listing['country']} · {listing['drive_side']} · {SOURCE_NAMES.get(listing['source'], listing['source'])}"
     return f"""
@@ -60,7 +64,7 @@ def _card(listing: dict, extra: str = "") -> str:
         {'<td style="padding:12px 0 12px 12px;" valign="top" width="132">' + img + '</td>' if img else ''}
         <td style="padding:12px;" valign="top">
           <a href="{url}" style="color:{GREEN};font-weight:bold;text-decoration:none;
-             font-size:16px;line-height:1.4;display:inline-block;padding:2px 0;">{title}</a><br>
+             font-size:16px;line-height:1.4;display:inline-block;padding:2px 0;">{title}</a>{original}<br>
           <span style="font-size:15px;">{_money(listing["price"])}</span><br>
           <span style="color:{MUTED};font-size:13px;">{meta}</span>
           {extra}
@@ -138,8 +142,13 @@ def build_html(changes: dict, run_log: dict, listings_by_id: dict, site_url: str
             note = html.escape(s.get("note", ""))
             streak = s.get("consecutive_failures", 0)
             streak_txt = f" ({streak} days running)" if streak > 1 else ""
+            # PRD 4.4: 7 consecutive blocked days escalates to a decision,
+            # never silent retrying forever.
+            escalation = (
+                f'<br><b style="color:#8a3030;">Blocked {streak} days: decision needed '
+                f'(alternative source, proxy, or drop it).</b>' if streak >= 7 else "")
             health_items.append(
-                f'<li style="margin:4px 0;">&#10060; {name}: skipped — {note}{streak_txt}</li>')
+                f'<li style="margin:4px 0;">&#10060; {name}: skipped — {note}{streak_txt}{escalation}</li>')
     parts.append(_section("Source health",
                           f'<ul style="padding-left:20px;font-size:14px;">{"".join(health_items)}</ul>'))
 
