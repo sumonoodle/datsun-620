@@ -37,7 +37,7 @@ let markets: Market[] = [];
 let updated = "";
 try {
   const specs = JSON.parse(readFileSync("../data/specs.json", "utf8"));
-  markets = specs.markets;
+  markets = specs.markets ?? [];
   updated = specs.updated ?? "";
 } catch {
   /* renders the empty state below */

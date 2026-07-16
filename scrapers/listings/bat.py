@@ -54,7 +54,8 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
             "title": title,
             "title_translated": None,
             "description_snippet": (excerpt[:500] or None),
-            "year": it.get("year") or normalize.extract_year(title),
+            "year": (it.get("year") if isinstance(it.get("year"), int)
+                     and 1971 <= it["year"] <= 1980 else normalize.extract_year(title)),
             "country": country,
             "region": None,
             "drive_side": normalize.infer_drive_side(country, f"{title} {excerpt}"),

@@ -44,8 +44,11 @@ def test_digest_render():
     }
 
     html = send_digest.build_html(changes, run_log, by_id, "https://example.test")
+    # The new listing is also flagged as a possible relist, so it must appear
+    # ONLY in the relists section, not duplicated under "New listings".
+    assert "New listings" not in html
     for expected in [
-        "New listings (1)", "Price changes (1)", "Possible relists (1)",
+        "Price changes (1)", "Possible relists (1)",
         "Status changes (1)", "Source health", "Summary",
         "1977 Datsun 620 King Cab",          # new listing card
         "£8,000 &rarr; <b>£8,944</b>",       # price movement

@@ -73,6 +73,8 @@ def parse_items(payload: dict, marketplace_country: str, fx_day: dict) -> list[d
             (it.get("itemLocation") or {}).get("country") or marketplace_country
         )
         item_id = it.get("legacyItemId") or it.get("itemId", "")
+        if not item_id:
+            continue  # no stable identity, cannot track it
         image = (it.get("image") or {}).get("imageUrl")
 
         records.append({
