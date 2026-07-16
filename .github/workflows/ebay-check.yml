@@ -1,0 +1,32 @@
+# One-off credential check for the eBay Browse API keys. Runs on pushes to the
+# development branch only; removed once M3's real eBay module is in place.
+
+name: ebay-check
+
+on:
+  push:
+    branches: [claude/datsun-620-kickoff-ah5cyw]
+    paths:
+      - .github/workflows/ebay-check.yml
+      - scrapers/listings/ebay_auth.py
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install httpx
+      - name: Mint token and call Browse API
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: python scrapers/listings/ebay_auth.py --self-test
