@@ -28,8 +28,10 @@ def _history_entry(date: str, status: str, price: dict | None) -> dict:
 def reconcile(store: dict, incoming: list[dict], seen_sources: set[str], today: str) -> tuple[dict, dict]:
     """Merge incoming records into the store. Returns (store, changes).
 
-    `seen_sources` are sources that reported successfully this run; listings
-    from failed/skipped sources are left untouched (no false withdrawals).
+    `seen_sources` are sources that reported successfully AND returned at
+    least one record this run; only their listings age toward withdrawal.
+    Failed, skipped, and zero-record sources are left untouched, so neither
+    an outage nor a silently broken parser can mass-withdraw an inventory.
     """
     changes = {
         "date": today,
