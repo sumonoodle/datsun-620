@@ -46,7 +46,6 @@ const active = listings.filter((l) => l.status === "active");
 const ended = listings.filter((l) => l.status !== "active");
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const countries = [...new Set(listings.map((l) => l.country))].sort();
-const years = listings.map((l) => l.year).filter((y): y is number => y != null);
 
 const SOURCE_NAMES: Record<string, string> = {
   ebay: "eBay",
@@ -68,6 +67,10 @@ function money(p: Price): string {
   if (p.currency === "GBP" || p.gbp == null) return orig;
   return `${orig} · £${Math.round(p.gbp).toLocaleString("en-GB")}`;
 }
+
+function vehicleHref(l: Listing): string {
+  return `${base}/vehicle/${l.id.replaceAll(":", "--")}/`;
+}
 ---
 
 <Base title="Listings — Datsun 620 Tracker">
@@ -77,84 +80,100 @@ function money(p: Price): string {
       <p>No listings collected yet. The daily sweep populates this page.</p>
     ) : (
       <>
-        <p class="intro">
-          King Cab listings worldwide, refreshed daily. {active.length} active,
-          {" "}{ended.length} ended. Updated {generated}.
+        <p class="supporting">
+          King Cab listings worldwide, refreshed daily.
+          {" "}{active.length} active, {ended.length} ended. Updated {generated}.
         </p>
         <form class="filters" id="filters">
-          <select name="country" aria-label="Country">
+          <select class="fchip" name="country" aria-label="Country">
             <option value="">All countries</option>
             {countries.map((c) => (
               <option value={c}>{COUNTRY_NAMES[c] ?? c}</option>
             ))}
           </select>
-          <select name="drive" aria-label="Drive side">
+          <select class="fchip" name="drive" aria-label="Drive side">
             <option value="">LHD + RHD</option>
             <option value="LHD">LHD</option>
             <option value="RHD">RHD</option>
             <option value="unknown">unknown</option>
           </select>
-          <select name="yearmin" aria-label="Year from">
+          <select class="fchip" name="yearmin" aria-label="Year from">
             <option value="">Year from</option>
             {[1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979].map((y) => (
               <option value={y}>{y}</option>
             ))}
           </select>
-          <select name="yearmax" aria-label="Year to">
+          <select class="fchip" name="yearmax" aria-label="Year to">
             <option value="">Year to</option>
             {[1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979].map((y) => (
               <option value={y}>{y}</option>
             ))}
           </select>
-          <input type="number" name="pricemax" inputmode="numeric" placeholder="Max price £" aria-label="Maximum price in GBP" />
-          <span class="count" id="filter-count"></span>
+          <input class="fchip" type="number" name="pricemax" inputmode="numeric" placeholder="Max £" aria-label="Maximum price in GBP" />
         </form>
+        <p class="count supporting" id="filter-count"></p>
         {active.length > 0 && <h2 class="section">Active</h2>}
         {active.map((l) => (
-          <article class="card" data-country={l.country} data-drive={l.drive_side}
+          <article class="card elevated listing" data-country={l.country} data-drive={l.drive_side}
                    data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}>
             {l.images[0] && (
-              <a href={`${base}/vehicle/${l.id.replaceAll(":", "--")}/`}>
-                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.style.display='none'" />
+              <a class="photo" href={vehicleHref(l)}>
+                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.parentElement.style.display='none'" />
+                <span class="chip chip-primary price-badge">{money(l.price)}</span>
               </a>
             )}
-            <div class="body">
-              <h3><a href={`${base}/vehicle/${l.id.replaceAll(":", "--")}/`}>{l.title_translated ?? l.title}</a></h3>
+            <div class="content">
+              <h3><a href={vehicleHref(l)}>{l.title_translated ?? l.title}</a></h3>
               {l.title_translated && <p class="original">{l.title}</p>}
-              <p class="price">{money(l.price)}</p>
-              <p class="meta">
-                {COUNTRY_NAMES[l.country] ?? l.country}
-                {l.region && ` (${l.region})`} · {l.drive_side}
-                {" "}· <a href={l.url} rel="noopener">{SOURCE_NAMES[l.source] ?? l.source}</a>
+              {!l.images[0] && <p class="price-line">{money(l.price)}</p>}
+              <p class="meta supporting">
+                {SOURCE_NAMES[l.source] ?? l.source}
+                {l.region && ` · ${l.region}`}
               </p>
-              {l.relist?.possible && <p class="relist">possible relist</p>}
+            </div>
+            <div class="assist-row">
+              {l.year && <span class="chip chip-outlined">{l.year}</span>}
+              <span class="chip chip-outlined">{COUNTRY_NAMES[l.country] ?? l.country}</span>
+              <span class="chip chip-outlined">{l.drive_side}</span>
+              {l.relist?.possible && <span class="chip chip-error">possible relist</span>}
+            </div>
+            <div class="actions">
+              <a class="btn-text" href={l.url} rel="noopener">View on {SOURCE_NAMES[l.source] ?? l.source}</a>
             </div>
           </article>
         ))}
         {ended.length > 0 && <h2 class="section">Recently ended</h2>}
         {ended.map((l) => (
-          <article class="card ended" data-country={l.country} data-drive={l.drive_side}
+          <article class="card elevated listing ended" data-country={l.country} data-drive={l.drive_side}
                    data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}>
             {l.images[0] && (
-              <a href={`${base}/vehicle/${l.id.replaceAll(":", "--")}/`}>
-                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.style.display='none'" />
+              <a class="photo" href={vehicleHref(l)}>
+                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.parentElement.style.display='none'" />
+                <span class="chip chip-primary price-badge">{money(l.price)}</span>
+                <span class={`chip status-badge status-${l.status}`}>{l.status}</span>
               </a>
             )}
-            <div class="body">
-              <h3><a href={`${base}/vehicle/${l.id.replaceAll(":", "--")}/`}>{l.title_translated ?? l.title}</a></h3>
-              <p class="price">
-                {money(l.price)} · <span class={`status status-${l.status}`}>{l.status}</span>
+            <div class="content">
+              <h3><a href={vehicleHref(l)}>{l.title_translated ?? l.title}</a></h3>
+              {!l.images[0] && (
+                <p class="price-line">
+                  {money(l.price)} <span class={`chip chip-tertiary`}>{l.status}</span>
+                </p>
+              )}
+              <p class="meta supporting">
+                {SOURCE_NAMES[l.source] ?? l.source} · last seen {l.last_seen}
               </p>
-              <p class="meta">
-                {COUNTRY_NAMES[l.country] ?? l.country} · {l.drive_side}
-                {" "}· <a href={l.url} rel="noopener">{SOURCE_NAMES[l.source] ?? l.source}</a> · last seen {l.last_seen}
-              </p>
+            </div>
+            <div class="assist-row">
+              {l.year && <span class="chip chip-outlined">{l.year}</span>}
+              <span class="chip chip-outlined">{COUNTRY_NAMES[l.country] ?? l.country}</span>
+              <span class="chip chip-outlined">{l.drive_side}</span>
             </div>
           </article>
         ))}
         <script>
           const form = document.getElementById("filters") as HTMLFormElement | null;
-          const cards = Array.from(document.querySelectorAll("article.card")) as HTMLElement[];
+          const cards = Array.from(document.querySelectorAll("article.listing")) as HTMLElement[];
           const count = document.getElementById("filter-count");
           function apply() {
             if (!form) return;
@@ -181,12 +200,16 @@ function money(p: Price): string {
               if (ok) shown++;
             }
             if (count) count.textContent = `showing ${shown} of ${cards.length}`;
+            // Mark active selects so they read as selected filter chips.
+            for (const el of form.querySelectorAll("select, input")) {
+              (el as HTMLElement).classList.toggle("fchip-active", Boolean((el as HTMLInputElement).value));
+            }
             // Hide a section heading when everything under it is filtered out.
             for (const h2 of document.querySelectorAll("main h2.section")) {
               let el = h2.nextElementSibling;
               let any = false;
               while (el && el.tagName !== "H2") {
-                if (el.matches("article.card") && (el as HTMLElement).style.display !== "none") {
+                if (el.matches("article.listing") && (el as HTMLElement).style.display !== "none") {
                   any = true;
                   break;
                 }
@@ -203,13 +226,13 @@ function money(p: Price): string {
   }
   {
     sourceHealth.length > 0 && (
-      <details class="health">
+      <details class="card health">
         <summary>Source health</summary>
         <ul>
           {sourceHealth.map((s) => (
             <li>
-              {s.ok ? "✓" : "✗"} {SOURCE_NAMES[s.source] ?? s.source}
-              {!s.ok && s.note && <span class="fine"> — {s.note}</span>}
+              <span class={`dot ${s.ok ? "dot-ok" : "dot-bad"}`} /> {SOURCE_NAMES[s.source] ?? s.source}
+              {!s.ok && s.note && <span class="supporting"> — {s.note}</span>}
             </li>
           ))}
         </ul>
@@ -217,108 +240,149 @@ function money(p: Price): string {
     )
   }
   <style>
-    .intro {
-      color: #444;
-    }
+    /* M3 filter chips: functional selects dressed as chips, one scroll row. */
     .filters {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
       gap: 0.5rem;
-      background: #eef2e6;
-      border-radius: 0.5rem;
-      padding: 0.75rem;
-      align-items: center;
+      overflow-x: auto;
+      padding: 0.25rem 0;
+      -webkit-overflow-scrolling: touch;
     }
-    .filters select,
-    .filters input {
-      font-size: 1rem;
-      padding: 0.6rem 0.5rem; /* thumb-sized */
-      border: 1px solid #ccc;
-      border-radius: 0.4rem;
-      background: #fff;
-      width: 100%;
+    .fchip {
+      flex: none;
+      appearance: none;
+      -webkit-appearance: none;
+      border: 1px solid var(--outline-variant);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--on-surface-variant);
+      font-size: 0.875rem;
+      font-weight: 500;
+      font-family: inherit;
+      padding: 0.5rem 1.7rem 0.5rem 0.9rem;
+      background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+        linear-gradient(135deg, currentColor 50%, transparent 50%);
+      background-position: calc(100% - 0.95rem) 55%, calc(100% - 0.65rem) 55%;
+      background-size: 0.3rem 0.3rem;
+      background-repeat: no-repeat;
+    }
+    input.fchip {
+      background-image: none;
+      padding-right: 0.9rem;
+      width: 7.5rem;
+    }
+    .fchip-active {
+      background-color: var(--secondary-container);
+      color: var(--on-secondary-container);
+      border-color: transparent;
     }
     .count {
-      color: #555;
-      font-size: 0.85rem;
-      grid-column: span 2;
       text-align: right;
+      font-size: 0.8rem;
+      margin: 0.15rem 0 0;
     }
-    h2 {
-      border-bottom: 2px solid #21351f;
-      padding-bottom: 0.25rem;
+    .listing {
+      margin: 0.9rem 0;
     }
-    .card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      margin: 1rem 0;
+    .photo {
+      position: relative;
+      display: block;
     }
-    .card img {
+    .photo img {
       width: 100%;
       height: auto;
       display: block;
     }
-    .card .body {
-      padding: 0.75rem 1rem 1rem;
-    }
-    .card h3 {
-      margin: 0 0 0.25rem;
-      font-size: 1.05rem;
-    }
-    .card h3 a {
-      color: #21351f;
-      text-decoration: none;
-    }
-    .price {
-      font-weight: 600;
-      margin: 0.25rem 0;
-    }
-    .original {
-      color: #666;
-      font-size: 0.8rem;
-      margin: 0 0 0.25rem;
-    }
-    .meta {
-      color: #666;
+    .price-badge {
+      position: absolute;
+      left: 0.75rem;
+      bottom: 0.75rem;
       font-size: 0.9rem;
-      margin: 0.25rem 0 0;
+      box-shadow: var(--elev-1);
     }
-    .relist {
-      display: inline-block;
-      background: #fdf3d8;
-      color: #7a5b16;
-      font-size: 0.8rem;
-      border-radius: 1rem;
-      padding: 0.15rem 0.7rem;
-      margin: 0.5rem 0 0;
-    }
-    .ended {
-      opacity: 0.75;
-    }
-    .status {
+    .status-badge {
+      position: absolute;
+      right: 0.75rem;
+      top: 0.75rem;
       text-transform: uppercase;
-      font-size: 0.8em;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
+      font-size: 0.72rem;
     }
     .status-sold {
-      color: #2e5e2e;
+      background: var(--tertiary-container);
+      color: var(--on-tertiary-container);
     }
     .status-withdrawn {
-      color: #8a3030;
+      background: var(--error-container);
+      color: var(--on-error-container);
+    }
+    .content {
+      padding: 0.9rem 1rem 0.15rem;
+    }
+    .content h3 {
+      margin: 0 0 0.2rem;
+    }
+    .content h3 a {
+      color: var(--on-surface);
+      text-decoration: none;
+    }
+    .original {
+      color: var(--on-surface-variant);
+      font-size: 0.78rem;
+      margin: 0 0 0.3rem;
+    }
+    .price-line {
+      font-weight: 500;
+      margin: 0.25rem 0;
+    }
+    .meta {
+      margin: 0.1rem 0 0;
+      font-size: 0.82rem;
+    }
+    .assist-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      padding: 0.55rem 1rem 0.4rem;
+    }
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 0.5rem 0.5rem;
+    }
+    .ended {
+      opacity: 0.85;
     }
     .health {
-      margin-top: 2rem;
+      margin-top: 1.8rem;
       font-size: 0.9rem;
+      padding: 0.25rem 1rem;
     }
     .health summary {
       cursor: pointer;
-      padding: 0.4rem 0;
-      color: #21351f;
+      padding: 0.7rem 0;
+      font-weight: 500;
     }
-    .fine {
-      color: #666;
+    .health ul {
+      list-style: none;
+      margin: 0 0 0.75rem;
+      padding: 0;
+    }
+    .health li {
+      margin: 0.5rem 0;
+    }
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 0.45rem;
+    }
+    .dot-ok {
+      background: var(--tertiary);
+    }
+    .dot-bad {
+      background: var(--error);
     }
   </style>
 </Base>

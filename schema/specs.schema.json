@@ -73,6 +73,20 @@
                   "items": { "type": "string" },
                   "description": "Open questions and competing source values, recorded rather than silently resolved."
                 },
+                "colors": {
+                  "type": "array",
+                  "description": "Factory colours offered for this variant, curated with citations like every other fact. hex is a best-effort modern rendering; null shows a placeholder swatch.",
+                  "items": {
+                    "type": "object",
+                    "required": ["name"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": { "type": "string" },
+                      "code": { "type": "string", "description": "Factory paint code where known." },
+                      "hex": { "type": ["string", "null"], "pattern": "^#[0-9a-fA-F]{6}$" }
+                    }
+                  }
+                },
                 "citations": {
                   "type": "array",
                   "minItems": 1,

@@ -5,6 +5,9 @@ interface Props {
 const { title } = Astro.props;
 // BASE_URL has no trailing slash here; normalise so joins are always "<base>/x/".
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const path = Astro.url.pathname;
+const isHome = path === `${base}/` || path === base;
+const isActive = (p: string) => path.startsWith(`${base}/${p}`);
 ---
 
 <html lang="en">
@@ -15,9 +18,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     <link rel="manifest" href={`${base}/manifest.webmanifest`} />
     <link rel="icon" href={`${base}/icons/icon.svg`} type="image/svg+xml" />
     <link rel="apple-touch-icon" href={`${base}/icons/apple-touch-icon.png`} />
-    <meta name="theme-color" content="#21351f" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbeee4" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#261e18" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Datsun 620" />
     <script is:inline define:vars={{ base }}>
       if ("serviceWorker" in navigator) {
@@ -26,50 +30,219 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </script>
   </head>
   <body>
-    <header>
-      <a href={`${base}/`}><strong>Datsun 620</strong></a>
-      <nav>
-        <a href={`${base}/specs/`}>Specs</a>
-        <a href={`${base}/listings/`}>Listings</a>
-      </nav>
+    <header class="appbar">
+      <a class="brand" href={`${base}/`}>Datsun <b>620</b></a>
     </header>
     <main>
       <slot />
     </main>
+    <nav class="navbar" aria-label="Main">
+      <a class:list={["nav-item", { active: isHome }]} href={`${base}/`}>
+        <span class="ind">🏠</span>Home
+      </a>
+      <a class:list={["nav-item", { active: isActive("specs") }]} href={`${base}/specs/`}>
+        <span class="ind">📋</span>Specs
+      </a>
+      <a class:list={["nav-item", { active: isActive("listings") || isActive("vehicle") }]} href={`${base}/listings/`}>
+        <span class="ind">🚚</span>Listings
+      </a>
+    </nav>
     <style is:global>
-      /* Mobile-first: designed at 390px, everything single column. */
+      /* ── Material Design 3 tokens, Datsun-toned ───────────────────────
+         The 1970s palette carries the identity; the components are pure M3:
+         tonal surfaces, 16px cards, chips, bottom navigation. 390px first. */
+      :root {
+        --primary: #b04a1a;
+        --on-primary: #ffffff;
+        --primary-container: #ffdbc9;
+        --on-primary-container: #380d00;
+        --secondary: #77592c;
+        --secondary-container: #ffdfa8;
+        --on-secondary-container: #271900;
+        --tertiary: #5c6136;
+        --tertiary-container: #e1e6b0;
+        --on-tertiary-container: #1a1d00;
+        --surface: #fff8f4;
+        --surface-container: #fbeee4;
+        --surface-container-high: #f5e8de;
+        --on-surface: #221a15;
+        --on-surface-variant: #52443c;
+        --outline: #85736b;
+        --outline-variant: #d7c2b8;
+        --error: #ba1a1a;
+        --error-container: #ffdad6;
+        --on-error-container: #410002;
+        --elev-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --primary: #ffb68d;
+          --on-primary: #582103;
+          --primary-container: #7c3717;
+          --on-primary-container: #ffdbc9;
+          --secondary: #e8c188;
+          --secondary-container: #5d4218;
+          --on-secondary-container: #ffdfa8;
+          --tertiary: #c5ca96;
+          --tertiary-container: #44491d;
+          --on-tertiary-container: #e1e6b0;
+          --surface: #19120d;
+          --surface-container: #261e18;
+          --surface-container-high: #312822;
+          --on-surface: #f0dfd7;
+          --on-surface-variant: #d7c2b8;
+          --outline: #a08d84;
+          --outline-variant: #52443c;
+          --error: #ffb4ab;
+          --error-container: #93000a;
+          --on-error-container: #ffdad6;
+        }
+      }
+
       * {
         box-sizing: border-box;
       }
+      html {
+        background: var(--surface);
+      }
       body {
         margin: 0;
-        font-family: system-ui, -apple-system, sans-serif;
+        font-family: Roboto, system-ui, -apple-system, "Segoe UI", sans-serif;
         font-size: 1rem;
         line-height: 1.5;
-        color: #1a1a1a;
-        background: #fafaf7;
+        color: var(--on-surface);
+        background: var(--surface);
+        padding-bottom: 96px; /* clears the bottom navigation bar */
       }
-      header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.75rem 1rem;
-        background: #21351f;
+
+      /* M3 type scale (regular-weight headlines) */
+      h1 {
+        font-size: 1.75rem;
+        font-weight: 400;
+        line-height: 1.25;
+        margin: 1.25rem 0 0.35rem;
       }
-      header a {
-        color: #f2f0e6;
+      h2 {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--primary);
+        margin: 1.6rem 0 0.7rem;
+      }
+      h3 {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      a {
+        color: var(--primary);
+      }
+
+      .appbar {
+        background: var(--surface-container);
+        padding: 0.9rem 1rem;
+      }
+      .brand {
+        color: var(--on-surface);
         text-decoration: none;
-        /* Thumb-sized tap targets */
-        padding: 0.5rem 0.5rem;
+        font-size: 1.35rem;
+        font-weight: 400;
       }
-      nav {
-        display: flex;
-        gap: 0.25rem;
+      .brand b {
+        font-weight: 500;
+        color: var(--primary);
       }
+
       main {
         max-width: 40rem;
         margin: 0 auto;
-        padding: 1rem;
+        padding: 0.25rem 1rem 1.5rem;
+      }
+
+      /* M3 bottom navigation bar */
+      .navbar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        background: var(--surface-container);
+        padding: 0.6rem 0.5rem calc(0.85rem + env(safe-area-inset-bottom));
+        z-index: 10;
+      }
+      .nav-item {
+        flex: 1;
+        text-align: center;
+        text-decoration: none;
+        color: var(--on-surface-variant);
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+      .nav-item .ind {
+        display: block;
+        width: 56px;
+        height: 30px;
+        margin: 0 auto 4px;
+        border-radius: 15px;
+        line-height: 30px;
+        font-size: 1.05rem;
+      }
+      .nav-item.active {
+        color: var(--on-surface);
+      }
+      .nav-item.active .ind {
+        background: var(--secondary-container);
+      }
+
+      /* Shared M3 components */
+      .card {
+        background: var(--surface-container);
+        border-radius: 16px;
+        overflow: hidden;
+      }
+      .card.elevated {
+        background: var(--surface-container-high);
+        box-shadow: var(--elev-1);
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.8rem;
+        font-weight: 500;
+        border-radius: 8px;
+        padding: 0.3rem 0.75rem;
+      }
+      .chip-outlined {
+        border: 1px solid var(--outline-variant);
+        color: var(--on-surface-variant);
+        background: transparent;
+      }
+      .chip-primary {
+        background: var(--primary);
+        color: var(--on-primary);
+      }
+      .chip-tonal {
+        background: var(--secondary-container);
+        color: var(--on-secondary-container);
+      }
+      .chip-tertiary {
+        background: var(--tertiary-container);
+        color: var(--on-tertiary-container);
+      }
+      .chip-error {
+        background: var(--error-container);
+        color: var(--on-error-container);
+      }
+      .btn-text {
+        display: inline-block;
+        color: var(--primary);
+        font-weight: 500;
+        font-size: 0.9rem;
+        padding: 0.6rem 0.75rem;
+        border-radius: 20px;
+        text-decoration: none;
+      }
+      .supporting {
+        color: var(--on-surface-variant);
+        font-size: 0.9rem;
       }
     </style>
   </body>

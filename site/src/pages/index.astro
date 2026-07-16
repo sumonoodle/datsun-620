@@ -3,45 +3,111 @@ import { readFileSync } from "node:fs";
 import Base from "../layouts/Base.astro";
 
 // Read pipeline data at build time: if this renders, data flows end to end.
-let fxLine = "FX data not yet generated.";
+let fxLine = "";
 try {
   const fx = JSON.parse(readFileSync("../data/fx-rates.json", "utf8"));
   const r = fx.latest.rates;
-  fxLine = `FX rates for ${fx.latest.date}: £1 = $${r.USD} / €${r.EUR} / ¥${r.JPY}`;
+  fxLine = `FX ${fx.latest.date}: £1 = $${r.USD} / €${r.EUR} / ¥${r.JPY}`;
 } catch {
-  /* placeholder text stands */
+  /* line simply not shown */
+}
+let counts = { active: 0, total: 0 };
+try {
+  const listings = JSON.parse(readFileSync("../data/listings.json", "utf8")).listings ?? [];
+  counts = {
+    active: listings.filter((l: any) => l.status === "active").length,
+    total: listings.length,
+  };
+} catch {
+  /* zeros */
 }
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Base title="Datsun 620 Tracker">
-  <h1>Datsun 620 Tracker</h1>
-  <p>
-    A reference for every Datsun 620 pickup variant (1972 to 1979) and a daily
-    tracker of King Cab listings worldwide.
+  <h1>The Datsun 620 King Cab tracker</h1>
+  <p class="supporting">
+    Every variant, every market, cited. Every King Cab for sale worldwide,
+    swept daily.
   </p>
-  <p class="status">
-    <strong>Site status: listings live (M4).</strong> Daily sweep of eBay,
-    Bring a Trailer, Cars &amp; Bids and Hemmings; Japan sources arrive in M5.
-  </p>
-  <p class="fx">{fxLine}</p>
-  <ul>
-    <li><a href={`${base}/specs/`}>Specs</a> — every variant across six markets, with citations</li>
-    <li><a href={`${base}/listings/`}>Listings</a> — King Cab tracker, refreshed daily</li>
-    <li><a href={`${base}/digest.html`}>Latest digest</a> — what the daily email looks like</li>
-  </ul>
+
+  <a class="card elevated tile" href={`${base}/specs/`}>
+    <span class="icon icon-primary">📋</span>
+    <span class="txt">
+      <b>Specs</b>
+      <span>Six markets, fifteen variants, sources on every fact</span>
+    </span>
+    <span class="chev" aria-hidden="true">›</span>
+  </a>
+  <a class="card elevated tile" href={`${base}/listings/`}>
+    <span class="icon icon-secondary">🚚</span>
+    <span class="txt">
+      <b>Listings</b>
+      <span>{counts.active} active now, {counts.total} tracked with price history</span>
+    </span>
+    <span class="chev" aria-hidden="true">›</span>
+  </a>
+  <a class="card elevated tile" href={`${base}/digest.html`}>
+    <span class="icon icon-tertiary">✉️</span>
+    <span class="txt">
+      <b>Latest digest</b>
+      <span>This morning's sweep, as it lands in the inbox</span>
+    </span>
+    <span class="chev" aria-hidden="true">›</span>
+  </a>
+
+  {fxLine && <p class="fx supporting">{fxLine}</p>}
+
   <style>
-    .status {
-      background: #eef2e6;
-      border-left: 4px solid #21351f;
-      padding: 0.75rem 1rem;
+    .tile {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1rem;
+      margin: 0.8rem 0;
+      text-decoration: none;
+      color: var(--on-surface);
+    }
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      flex: none;
+    }
+    .icon-primary {
+      background: var(--primary-container);
+    }
+    .icon-secondary {
+      background: var(--secondary-container);
+    }
+    .icon-tertiary {
+      background: var(--tertiary-container);
+    }
+    .txt {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    .txt b {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .txt span:last-child {
+      color: var(--on-surface-variant);
+      font-size: 0.85rem;
+    }
+    .chev {
+      color: var(--on-surface-variant);
+      font-size: 1.3rem;
     }
     .fx {
-      color: #555;
-      font-size: 0.9rem;
-    }
-    li {
-      margin: 0.5rem 0;
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 1.6rem;
     }
   </style>
 </Base>

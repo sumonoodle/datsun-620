@@ -5,7 +5,7 @@ import Base from "../../layouts/Base.astro";
 export function getStaticPaths() {
   let listings: any[] = [];
   try {
-    listings = JSON.parse(readFileSync("../data/listings.json", "utf8")).listings;
+    listings = JSON.parse(readFileSync("../data/listings.json", "utf8")).listings ?? [];
   } catch {
     /* no data yet: no vehicle pages */
   }
@@ -43,19 +43,19 @@ const title = l.title_translated ?? l.title;
 ---
 
 <Base title={`${title} — Datsun 620 Tracker`}>
-  <p><a href={`${base}/listings/`}>&larr; All listings</a></p>
+  <p class="back"><a href={`${base}/listings/`}>← All listings</a></p>
   <h1 class="vehicle-title">{title}</h1>
   {l.title_translated && <p class="original">{l.title}</p>}
+  <p class="chips">
+    <span class="chip chip-primary">{money(l.price)}</span>
+    <span class={`chip status-chip-${l.status}`}>{l.status}</span>
+  </p>
   {l.images?.[0] && (
-    <img class="hero" src={l.images[0]} alt={title} width="640" height="420"
+    <img class="hero card elevated" src={l.images[0]} alt={title} width="640" height="420"
          fetchpriority="high" onerror="this.style.display='none'" />
   )}
 
-  <dl>
-    <dt>Price</dt>
-    <dd>{money(l.price)}</dd>
-    <dt>Status</dt>
-    <dd class={`status-${l.status}`}>{l.status}</dd>
+  <dl class="card elevated facts">
     <dt>Location</dt>
     <dd>{COUNTRY_NAMES[l.country] ?? l.country}{l.region && ` (${l.region})`}</dd>
     <dt>Drive side</dt>
@@ -76,7 +76,7 @@ const title = l.title_translated ?? l.title;
   </dl>
 
   {prior && (
-    <p class="relist">
+    <p class="relist-note">
       Possible relist of{" "}
       <a href={`${base}/vehicle/${prior.id.replaceAll(":", "--")}/`}>
         {prior.title_translated ?? prior.title}
@@ -86,7 +86,7 @@ const title = l.title_translated ?? l.title;
   )}
 
   <h2>History</h2>
-  <table>
+  <table class="card elevated">
     <thead><tr><th>Date</th><th>Status</th><th>Price</th></tr></thead>
     <tbody>
       {l.history.map((h: any) => (
@@ -102,68 +102,91 @@ const title = l.title_translated ?? l.title;
   {l.description_snippet && <p class="desc">{l.description_snippet}</p>}
 
   <style>
+    .back {
+      margin: 1rem 0 0;
+    }
+    .back a {
+      color: var(--on-surface-variant);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
     .vehicle-title {
-      font-size: 1.4rem;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
     }
     .original {
-      color: #666;
+      color: var(--on-surface-variant);
       font-size: 0.85rem;
       margin-top: 0;
+    }
+    .chips {
+      display: flex;
+      gap: 0.4rem;
+      margin: 0.6rem 0 1rem;
+    }
+    .chips .chip {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.9rem;
+    }
+    .status-chip-active,
+    .status-chip-sold {
+      background: var(--tertiary-container);
+      color: var(--on-tertiary-container);
+    }
+    .status-chip-withdrawn {
+      background: var(--error-container);
+      color: var(--on-error-container);
     }
     .hero {
       width: 100%;
       height: auto;
-      border-radius: 0.5rem;
     }
-    dl {
+    .facts {
       display: grid;
       grid-template-columns: minmax(7rem, auto) 1fr;
-      gap: 0.35rem 0.75rem;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 0.5rem;
+      gap: 0.45rem 0.75rem;
       padding: 1rem;
+      margin: 1rem 0;
+      font-size: 0.95rem;
     }
-    dt {
-      color: #666;
+    .facts dt {
+      color: var(--on-surface-variant);
     }
-    dd {
+    .facts dd {
       margin: 0;
       overflow-wrap: anywhere;
     }
-    .status-sold {
-      color: #2e5e2e;
-      font-weight: 600;
+    .relist-note {
+      background: var(--secondary-container);
+      color: var(--on-secondary-container);
+      border-radius: 16px;
+      padding: 0.85rem 1rem;
+      font-size: 0.9rem;
     }
-    .status-withdrawn {
-      color: #8a3030;
-      font-weight: 600;
-    }
-    .relist {
-      background: #fdf3d8;
-      border-radius: 0.5rem;
-      padding: 0.75rem 1rem;
-      font-size: 0.95rem;
+    .relist-note a {
+      color: inherit;
+      font-weight: 500;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 0.5rem;
+    }
+    th {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--on-surface-variant);
     }
     th, td {
       text-align: left;
-      padding: 0.6rem 0.75rem;
-      border-bottom: 1px solid #eee;
-      font-size: 0.95rem;
+      padding: 0.65rem 0.9rem;
+      border-bottom: 1px solid var(--outline-variant);
+      font-size: 0.92rem;
     }
     tbody tr:last-child td {
       border-bottom: none;
     }
     .desc {
-      color: #444;
+      color: var(--on-surface-variant);
     }
   </style>
 </Base>

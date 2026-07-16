@@ -31,8 +31,9 @@ SOURCE_NAMES = {
     "ebay": "eBay", "bringatrailer": "Bring a Trailer", "carsandbids": "Cars & Bids",
     "hemmings": "Hemmings", "goonet": "Goo-net", "yahoo_buyee": "Yahoo (Buyee)",
 }
-GREEN = "#21351f"
-MUTED = "#666666"
+BROWN = "#3b2b1d"
+ORANGE = "#b04a1a"
+MUTED = "#75634f"
 
 
 def _money(price: dict) -> str:
@@ -63,7 +64,7 @@ def _card(listing: dict, extra: str = "") -> str:
       <tr>
         {'<td style="padding:12px 0 12px 12px;" valign="top" width="132">' + img + '</td>' if img else ''}
         <td style="padding:12px;" valign="top">
-          <a href="{url}" style="color:{GREEN};font-weight:bold;text-decoration:none;
+          <a href="{url}" style="color:{ORANGE};font-weight:bold;text-decoration:none;
              font-size:16px;line-height:1.4;display:inline-block;padding:2px 0;">{title}</a>{original}<br>
           <span style="font-size:15px;">{_money(listing["price"])}</span><br>
           <span style="color:{MUTED};font-size:13px;">{meta}</span>
@@ -74,7 +75,7 @@ def _card(listing: dict, extra: str = "") -> str:
 
 
 def _section(heading: str, body: str) -> str:
-    return (f'<h2 style="font-size:17px;color:{GREEN};border-bottom:2px solid {GREEN};'
+    return (f'<h2 style="font-size:17px;color:{BROWN};border-bottom:2px solid {ORANGE};'
             f'padding-bottom:4px;margin:24px 0 12px;">{heading}</h2>{body}')
 
 
@@ -112,7 +113,7 @@ def build_html(changes: dict, run_log: dict, listings_by_id: dict, site_url: str
         if not l:
             continue
         why = html.escape("; ".join(r["reasons"]))
-        prior_link = (f' Prior: <a href="{html.escape(prior["url"])}" style="color:{GREEN};">'
+        prior_link = (f' Prior: <a href="{html.escape(prior["url"])}" style="color:{ORANGE};">'
                       f'{html.escape(prior["title"])}</a>.' if prior else "")
         extra = (f'<br><span style="color:#7a5b16;font-size:13px;">Possible relist '
                  f'(not certain): {why}.{prior_link}</span>')
@@ -170,17 +171,17 @@ def build_html(changes: dict, run_log: dict, listings_by_id: dict, site_url: str
     body = "".join(parts)
     return f"""<!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#fafaf7;">
+<body style="margin:0;padding:0;background:#f7f1e3;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
-           style="max-width:600px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#1a1a1a;">
-      <tr><td style="background:{GREEN};padding:14px 16px;">
-        <span style="color:#f2f0e6;font-size:18px;font-weight:bold;">Datsun 620 digest</span>
-        <span style="color:#c9cbb8;font-size:14px;"> — {changes["date"]}</span>
+           style="max-width:600px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#33261a;">
+      <tr><td style="background:{BROWN};padding:14px 16px;">
+        <span style="color:#f7f1e3;font-size:18px;font-weight:bold;">Datsun 620 digest</span>
+        <span style="color:#cbb99a;font-size:14px;"> — {changes["date"]}</span>
       </td></tr>
       <tr><td style="padding:16px;">{body}
         <p style="margin-top:28px;">
-          <a href="{site_url}/listings/" style="background:{GREEN};color:#f2f0e6;text-decoration:none;
+          <a href="{site_url}/listings/" style="background:{ORANGE};color:#fff8ee;text-decoration:none;
              padding:12px 20px;border-radius:8px;font-size:15px;display:inline-block;">Open the tracker</a>
         </p>
       </td></tr>
