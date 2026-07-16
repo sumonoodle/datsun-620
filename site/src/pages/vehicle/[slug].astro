@@ -1,0 +1,166 @@
+---
+import { readFileSync } from "node:fs";
+import Base from "../../layouts/Base.astro";
+
+export function getStaticPaths() {
+  let listings: any[] = [];
+  try {
+    listings = JSON.parse(readFileSync("../data/listings.json", "utf8")).listings;
+  } catch {
+    /* no data yet: no vehicle pages */
+  }
+  return listings.map((l) => ({
+    // ':' is awkward in URLs; '--' cannot appear in source names or ids.
+    params: { slug: l.id.replace(":", "--") },
+    props: { listing: l, all: listings },
+  }));
+}
+
+const { listing: l, all } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const SOURCE_NAMES: Record<string, string> = {
+  ebay: "eBay", bringatrailer: "Bring a Trailer", carsandbids: "Cars & Bids",
+  hemmings: "Hemmings", goonet: "Goo-net", yahoo_buyee: "Yahoo (Buyee)",
+};
+const COUNTRY_NAMES: Record<string, string> = {
+  US: "USA", GB: "UK", DE: "Germany", AU: "Australia", JP: "Japan",
+  ZA: "South Africa", CA: "Canada", NL: "Netherlands", XX: "location unknown",
+};
+
+function money(p: any): string {
+  if (!p || p.amount == null) return "no price shown";
+  const sym: Record<string, string> = { USD: "$", GBP: "£", EUR: "€", JPY: "¥", AUD: "A$", ZAR: "R" };
+  const orig = `${sym[p.currency] ?? p.currency + " "}${p.amount.toLocaleString("en-GB")}`;
+  if (p.currency === "GBP" || p.gbp == null) return orig;
+  return `${orig} · £${Math.round(p.gbp).toLocaleString("en-GB")}`;
+}
+
+const prior = l.relist?.possible && l.relist.prior_id
+  ? all.find((x: any) => x.id === l.relist.prior_id)
+  : null;
+const title = l.title_translated ?? l.title;
+---
+
+<Base title={`${title} — Datsun 620 Tracker`}>
+  <p><a href={`${base}/listings/`}>&larr; All listings</a></p>
+  <h1 class="vehicle-title">{title}</h1>
+  {l.title_translated && <p class="original">{l.title}</p>}
+  {l.images[0] && <img class="hero" src={l.images[0]} alt={title} loading="lazy" />}
+
+  <dl>
+    <dt>Price</dt>
+    <dd>{money(l.price)}</dd>
+    <dt>Status</dt>
+    <dd class={`status-${l.status}`}>{l.status}</dd>
+    <dt>Location</dt>
+    <dd>{COUNTRY_NAMES[l.country] ?? l.country}{l.region && ` (${l.region})`}</dd>
+    <dt>Drive side</dt>
+    <dd>{l.drive_side}</dd>
+    {l.year && <><dt>Year</dt><dd>{l.year}</dd></>}
+    <dt>Source</dt>
+    <dd><a href={l.url} rel="noopener">{SOURCE_NAMES[l.source] ?? l.source}</a></dd>
+    <dt>First seen</dt>
+    <dd>{l.first_seen}</dd>
+    <dt>Last seen</dt>
+    <dd>{l.last_seen}</dd>
+    <dt>King Cab match</dt>
+    <dd>
+      {l.king_cab.matched_terms.join(", ") || "none"}
+      {l.king_cab.body_style_check !== "unavailable" &&
+        ` (body style check: ${l.king_cab.body_style_check})`}
+    </dd>
+  </dl>
+
+  {prior && (
+    <p class="relist">
+      Possible relist of{" "}
+      <a href={`${base}/vehicle/${prior.id.replace(":", "--")}/`}>
+        {prior.title_translated ?? prior.title}
+      </a>
+      . Signals: {l.relist.reasons.join("; ")}. Heuristic only, not certain.
+    </p>
+  )}
+
+  <h2>History</h2>
+  <table>
+    <thead><tr><th>Date</th><th>Status</th><th>Price</th></tr></thead>
+    <tbody>
+      {l.history.map((h: any) => (
+        <tr>
+          <td>{h.date}</td>
+          <td>{h.status}</td>
+          <td>{h.price ? money(h.price) : "—"}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  {l.description_snippet && <p class="desc">{l.description_snippet}</p>}
+
+  <style>
+    .vehicle-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.25rem;
+    }
+    .original {
+      color: #888;
+      font-size: 0.85rem;
+      margin-top: 0;
+    }
+    .hero {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+    }
+    dl {
+      display: grid;
+      grid-template-columns: minmax(7rem, auto) 1fr;
+      gap: 0.35rem 0.75rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }
+    dt {
+      color: #666;
+    }
+    dd {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+    .status-sold {
+      color: #2e5e2e;
+      font-weight: 600;
+    }
+    .status-withdrawn {
+      color: #8a3030;
+      font-weight: 600;
+    }
+    .relist {
+      background: #fdf3d8;
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid #eee;
+      font-size: 0.95rem;
+    }
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .desc {
+      color: #444;
+    }
+  </style>
+</Base>
