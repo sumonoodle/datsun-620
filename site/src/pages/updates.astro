@@ -1,0 +1,246 @@
+---
+import { readFileSync } from "node:fs";
+import Base from "../layouts/Base.astro";
+
+interface Listing {
+  id: string;
+  url: string;
+  title: string;
+  title_translated?: string | null;
+  country: string;
+  drive_side: string;
+  source: string;
+  images: string[];
+  price: { amount: number | null; currency: string; gbp: number | null };
+  status: string;
+}
+
+let changes: any = null;
+let runLog: any = null;
+let listingsById: Record<string, Listing> = {};
+let fxLine = "";
+try {
+  changes = JSON.parse(readFileSync("../data/changes-latest.json", "utf8"));
+  runLog = JSON.parse(readFileSync("../data/run-log.json", "utf8"));
+  const listings: Listing[] = JSON.parse(readFileSync("../data/listings.json", "utf8")).listings ?? [];
+  listingsById = Object.fromEntries(listings.map((l) => [l.id, l]));
+} catch {
+  /* empty state below */
+}
+try {
+  const fx = JSON.parse(readFileSync("../data/fx-rates.json", "utf8"));
+  const r = fx.latest.rates;
+  fxLine = `FX ${fx.latest.date}: £1 = $${r.USD} / €${r.EUR} / ¥${r.JPY}`;
+} catch {
+  /* optional */
+}
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const SOURCE_NAMES: Record<string, string> = {
+  ebay: "eBay", bringatrailer: "Bring a Trailer", carsandbids: "Cars & Bids",
+  hemmings: "Hemmings", goonet: "Goo-net", yahoo_buyee: "Yahoo (Buyee)",
+};
+
+function money(p: Listing["price"]): string {
+  if (!p || p.amount == null) return "no price shown";
+  const sym: Record<string, string> = { USD: "$", GBP: "£", EUR: "€", JPY: "¥", AUD: "A$", ZAR: "R" };
+  const orig = `${sym[p.currency] ?? p.currency + " "}${p.amount.toLocaleString("en-GB")}`;
+  if (p.currency === "GBP" || p.gbp == null) return orig;
+  return `${orig} · £${Math.round(p.gbp).toLocaleString("en-GB")}`;
+}
+function href(id: string): string {
+  return `${base}/vehicle/${id.replaceAll(":", "--")}/`;
+}
+function gbp(n: number | null): string {
+  return n == null ? "?" : `£${Math.round(n).toLocaleString("en-GB")}`;
+}
+
+const relistIds = new Set((changes?.possible_relists ?? []).map((r: any) => r.id));
+const newListings = (changes?.new ?? [])
+  .filter((id: string) => !relistIds.has(id))
+  .map((id: string) => listingsById[id])
+  .filter(Boolean);
+const priceChanges = (changes?.price_changed ?? []).filter((c: any) => listingsById[c.id]);
+const statusChanges = (changes?.status_changed ?? []).filter((c: any) => listingsById[c.id]);
+const relists = (changes?.possible_relists ?? []).filter((r: any) => listingsById[r.id]);
+const quiet = !newListings.length && !priceChanges.length && !statusChanges.length && !relists.length;
+const t = runLog?.totals;
+const started = (runLog?.started_at ?? "").slice(11, 16);
+---
+
+<Base title="Updates — Datsun 620 Tracker">
+  <h1>Updates</h1>
+  {
+    !changes ? (
+      <p>No run data yet. The first daily sweep populates this page.</p>
+    ) : (
+      <>
+        <p class="supporting">Daily sweep for {changes.date}.{started && ` Run started ${started} UTC.`}</p>
+
+        {quiet && (
+          <div class="card quiet">
+            <p>No new or changed listings today. The sweep ran and found the market unchanged.</p>
+          </div>
+        )}
+
+        {newListings.length > 0 && <h2>New listings ({newListings.length})</h2>}
+        {newListings.map((l: Listing) => (
+          <a class="card elevated row" href={href(l.id)}>
+            {l.images[0] && <img src={l.images[0]} alt="" width="96" height="72" loading="lazy" onerror="this.style.display='none'" />}
+            <span class="row-txt">
+              <b>{l.title_translated ?? l.title}</b>
+              <span class="supporting">{money(l.price)} · {l.country} · {l.drive_side}</span>
+            </span>
+          </a>
+        ))}
+
+        {priceChanges.length > 0 && <h2>Price changes ({priceChanges.length})</h2>}
+        {priceChanges.map((c: any) => {
+          const l = listingsById[c.id];
+          const drop = (c.pct ?? 0) < 0;
+          return (
+            <a class="card elevated row" href={href(c.id)}>
+              {l.images[0] && <img src={l.images[0]} alt="" width="96" height="72" loading="lazy" onerror="this.style.display='none'" />}
+              <span class="row-txt">
+                <b>{l.title_translated ?? l.title}</b>
+                <span class="supporting">
+                  {gbp(c.old_gbp)} → <b>{gbp(c.new_gbp)}</b>
+                  {c.pct != null && (
+                    <span class={drop ? "delta-down" : "delta-up"}> {drop ? "▼" : "▲"} {Math.abs(c.pct).toFixed(0)}%</span>
+                  )}
+                </span>
+              </span>
+            </a>
+          );
+        })}
+
+        {relists.length > 0 && <h2>Possible relists ({relists.length})</h2>}
+        {relists.map((r: any) => {
+          const l = listingsById[r.id];
+          return (
+            <a class="card elevated row" href={href(r.id)}>
+              {l.images[0] && <img src={l.images[0]} alt="" width="96" height="72" loading="lazy" onerror="this.style.display='none'" />}
+              <span class="row-txt">
+                <b>{l.title_translated ?? l.title}</b>
+                <span class="supporting">Possible relist (not certain): {r.reasons.join("; ")}</span>
+              </span>
+            </a>
+          );
+        })}
+
+        {statusChanges.length > 0 && <h2>Status changes ({statusChanges.length})</h2>}
+        {statusChanges.map((c: any) => {
+          const l = listingsById[c.id];
+          return (
+            <a class="card elevated row" href={href(c.id)}>
+              {l.images[0] && <img src={l.images[0]} alt="" width="96" height="72" loading="lazy" onerror="this.style.display='none'" />}
+              <span class="row-txt">
+                <b>{l.title_translated ?? l.title}</b>
+                <span class="supporting">{c.old_status} → <b>{c.new_status}</b></span>
+              </span>
+            </a>
+          );
+        })}
+
+        {runLog?.sources?.length > 0 && (
+          <>
+            <h2>Source health</h2>
+            <ul class="card health">
+              {runLog.sources.map((s: any) => (
+                <li>
+                  <span class={`dot ${s.ok ? "dot-ok" : "dot-bad"}`} /> {SOURCE_NAMES[s.source] ?? s.source}
+                  {s.ok
+                    ? <span class="supporting"> — {s.records} listing(s)</span>
+                    : <span class="supporting"> — {s.note}{s.consecutive_failures > 1 && ` (${s.consecutive_failures} days)`}</span>}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        {t && (
+          <p class="supporting stats">
+            Active: <b>{t.active}</b>
+            {t.median_gbp != null && <> · median {gbp(t.median_gbp)}</>}
+            {fxLine && <><br />{fxLine}</>}
+          </p>
+        )}
+        <p class="email-link">
+          <a class="btn-text" href={`${base}/digest.html`}>Email preview →</a>
+        </p>
+      </>
+    )
+  }
+  <style>
+    .quiet {
+      padding: 0.5rem 1rem;
+      color: var(--on-surface-variant);
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.7rem 0.85rem;
+      margin: 0.6rem 0;
+      text-decoration: none;
+      color: var(--on-surface);
+    }
+    .row img {
+      border-radius: 10px;
+      object-fit: cover;
+      flex: none;
+    }
+    .row-txt {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      min-width: 0;
+    }
+    .row-txt b {
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .row-txt .supporting {
+      font-size: 0.83rem;
+    }
+    .delta-down {
+      color: var(--tertiary);
+      font-weight: 500;
+    }
+    .delta-up {
+      color: var(--error);
+      font-weight: 500;
+    }
+    .health {
+      list-style: none;
+      margin: 0;
+      padding: 0.85rem 1rem;
+      font-size: 0.9rem;
+    }
+    .health li {
+      margin: 0.45rem 0;
+    }
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 0.45rem;
+    }
+    .dot-ok {
+      background: var(--tertiary);
+    }
+    .dot-bad {
+      background: var(--error);
+    }
+    .stats {
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 1.5rem;
+    }
+    .email-link {
+      text-align: center;
+      margin: 0.5rem 0 0;
+    }
+  </style>
+</Base>

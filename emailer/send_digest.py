@@ -181,7 +181,7 @@ def build_html(changes: dict, run_log: dict, listings_by_id: dict, site_url: str
       </td></tr>
       <tr><td style="padding:16px;">{body}
         <p style="margin-top:28px;">
-          <a href="{site_url}/listings/" style="background:{ORANGE};color:#fff8ee;text-decoration:none;
+          <a href="{site_url}/" style="background:{ORANGE};color:#fff8ee;text-decoration:none;
              padding:12px 20px;border-radius:8px;font-size:15px;display:inline-block;">Open the tracker</a>
         </p>
       </td></tr>
