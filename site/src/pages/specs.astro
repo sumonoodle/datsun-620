@@ -6,14 +6,19 @@ interface Citation {
   ref: string;
   note?: string;
 }
+interface Color {
+  name: string;
+  hex?: string | null;
+  code?: string;
+}
 interface Variant {
   id: string;
   name: string;
   years: { from: number; to: number };
   body?: string;
   engine?: {
-    code?: string;
-    displacement_cc?: number;
+    code?: string | null;
+    displacement_cc?: number | null;
     power_hp?: number | null;
     power_note?: string;
   };
@@ -23,6 +28,7 @@ interface Variant {
   notes?: string;
   confidence?: string;
   unresolved?: string[];
+  colors?: Color[];
   citations: Citation[];
 }
 interface Market {
@@ -90,12 +96,14 @@ function hostname(url: string): string {
             <h2>{m.name}</h2>
             {m.notes && <p class="market-notes">{m.notes}</p>}
             {m.variants.map((v) => (
-              <article class="variant">
-                <h3>{v.name}</h3>
-                <p class="years">
-                  {v.years.from} to {v.years.to}
-                  {v.body && ` · ${v.body}`}
-                </p>
+              <article class="card variant">
+                <div class="variant-head">
+                  <h3>{v.name}</h3>
+                  <p class="years">
+                    <span class="chip chip-orange">{v.years.from}–{v.years.to}</span>
+                    {v.body && <span class="body-note">{v.body}</span>}
+                  </p>
+                </div>
                 <dl>
                   {engineLine(v) && (
                     <>
@@ -130,10 +138,23 @@ function hostname(url: string): string {
                     </>
                   )}
                 </dl>
+                {v.colors && v.colors.length > 0 && (
+                  <div class="colors">
+                    <p class="colors-label">Factory colours</p>
+                    <ul class="swatches">
+                      {v.colors.map((c) => (
+                        <li>
+                          <span class="swatch" style={c.hex ? `background:${c.hex}` : ""} data-unknown={c.hex ? undefined : "true"} />
+                          <span class="swatch-name">{c.name}{c.code && <span class="fine"> ({c.code})</span>}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 {v.notes && <p class="variant-notes">{v.notes}</p>}
                 {v.confidence && (
-                  <p class={`confidence confidence-${v.confidence}`}>
-                    Data confidence: {v.confidence}
+                  <p class={`chip confidence-${v.confidence}`}>
+                    data confidence: {v.confidence}
                   </p>
                 )}
                 <details>
@@ -173,7 +194,10 @@ function hostname(url: string): string {
   <style>
     .intro,
     .market-notes {
-      color: #444;
+      color: var(--ink-muted);
+    }
+    .intro {
+      margin-top: 0;
     }
     .markets-nav {
       display: flex;
@@ -182,70 +206,101 @@ function hostname(url: string): string {
       margin: 1rem 0;
     }
     .markets-nav a {
-      background: #eef2e6;
-      border-radius: 1rem;
+      background: var(--mustard-soft);
+      border: 1px solid var(--line);
+      border-radius: 999px;
       padding: 0.5rem 0.9rem;
       text-decoration: none;
-      color: #21351f;
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.9rem;
     }
     section {
       margin-top: 1.5rem;
     }
-    h2 {
-      border-bottom: 2px solid #21351f;
-      padding-bottom: 0.25rem;
-    }
     .variant {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 0.5rem;
       padding: 1rem;
       margin: 1rem 0;
+      border-top: 4px solid var(--orange);
     }
     .variant h3 {
       margin: 0;
     }
     .years {
-      color: #666;
-      margin: 0.25rem 0 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.4rem 0 0.9rem;
+    }
+    .body-note {
+      color: var(--ink-muted);
+      font-size: 0.9rem;
     }
     dl {
       display: grid;
       grid-template-columns: minmax(7rem, auto) 1fr;
-      gap: 0.25rem 0.75rem;
+      gap: 0.3rem 0.75rem;
       margin: 0;
     }
     dt {
-      color: #666;
+      color: var(--ink-muted);
     }
     dd {
       margin: 0;
+    }
+    .colors {
+      margin-top: 0.9rem;
+    }
+    .colors-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      margin: 0 0 0.4rem;
+    }
+    .swatches {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.9rem;
+    }
+    .swatches li {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+    }
+    .swatch {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      display: inline-block;
+    }
+    .swatch[data-unknown] {
+      background: repeating-linear-gradient(45deg, var(--surface-2), var(--surface-2) 3px, var(--line) 3px, var(--line) 6px);
     }
     .variant-notes {
       font-size: 0.95rem;
     }
     .fine {
-      color: #666;
+      color: var(--ink-muted);
       font-size: 0.85em;
     }
-    .confidence {
-      display: inline-block;
-      font-size: 0.8rem;
-      border-radius: 1rem;
-      padding: 0.15rem 0.7rem;
-      margin: 0.5rem 0 0;
-    }
     .confidence-high {
-      background: #e2efda;
-      color: #2e5e2e;
+      background: var(--ok-soft);
+      color: var(--ok);
     }
     .confidence-medium {
-      background: #fdf3d8;
-      color: #7a5b16;
+      background: var(--mustard-soft);
+      color: var(--ink);
     }
     .confidence-low {
-      background: #fbe4e4;
-      color: #8a3030;
+      background: var(--warn-soft);
+      color: var(--warn);
     }
     details {
       margin-top: 0.75rem;
@@ -253,9 +308,9 @@ function hostname(url: string): string {
     }
     summary {
       cursor: pointer;
-      color: #21351f;
-      /* thumb-sized tap target */
-      padding: 0.4rem 0;
+      color: var(--orange-deep);
+      font-weight: 600;
+      padding: 0.4rem 0; /* thumb-sized tap target */
     }
     details ul {
       margin: 0.25rem 0 0;

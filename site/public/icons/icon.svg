@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="96" fill="#21351f"/>
+  <rect width="512" height="512" rx="96" fill="#d2622a"/>
   <!-- 620 pickup silhouette, side profile facing left -->
   
-  <g fill="#f2f0e6">
+  <g fill="#f7f1e3">
     <!-- bed -->
     <rect x="288" y="232" width="150" height="64" rx="8"/>
     <!-- cab body -->
@@ -10,16 +10,16 @@
     <!-- cab upper -->
     <path d="M110 240 L126 184 Q130 172 143 172 L214 172 Q226 172 226 184 L226 240 Z"/>
     <!-- window cutout -->
-    <path d="M126 228 L138 190 Q140 184 147 184 L206 184 Q212 184 212 190 L212 228 Z" fill="#21351f"/>
+    <path d="M126 228 L138 190 Q140 184 147 184 L206 184 Q212 184 212 190 L212 228 Z" fill="#d2622a"/>
   </g>
   <!-- wheels -->
-  <circle cx="150" cy="304" r="40" fill="#21351f"/>
-  <circle cx="150" cy="304" r="30" fill="#f2f0e6"/>
-  <circle cx="150" cy="304" r="14" fill="#21351f"/>
-  <circle cx="386" cy="304" r="40" fill="#21351f"/>
-  <circle cx="386" cy="304" r="30" fill="#f2f0e6"/>
-  <circle cx="386" cy="304" r="14" fill="#21351f"/>
+  <circle cx="150" cy="304" r="40" fill="#d2622a"/>
+  <circle cx="150" cy="304" r="30" fill="#f7f1e3"/>
+  <circle cx="150" cy="304" r="14" fill="#d2622a"/>
+  <circle cx="386" cy="304" r="40" fill="#d2622a"/>
+  <circle cx="386" cy="304" r="30" fill="#f7f1e3"/>
+  <circle cx="386" cy="304" r="14" fill="#d2622a"/>
   <!-- 620 badge -->
   <text x="256" y="420" font-family="system-ui, sans-serif" font-size="88" font-weight="700"
-        fill="#f2f0e6" text-anchor="middle">620</text>
+        fill="#f7f1e3" text-anchor="middle">620</text>
 </svg>

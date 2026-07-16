@@ -46,7 +46,6 @@ const active = listings.filter((l) => l.status === "active");
 const ended = listings.filter((l) => l.status !== "active");
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const countries = [...new Set(listings.map((l) => l.country))].sort();
-const years = listings.map((l) => l.year).filter((y): y is number => y != null);
 
 const SOURCE_NAMES: Record<string, string> = {
   ebay: "eBay",
@@ -68,6 +67,10 @@ function money(p: Price): string {
   if (p.currency === "GBP" || p.gbp == null) return orig;
   return `${orig} · £${Math.round(p.gbp).toLocaleString("en-GB")}`;
 }
+
+function vehicleHref(l: Listing): string {
+  return `${base}/vehicle/${l.id.replaceAll(":", "--")}/`;
+}
 ---
 
 <Base title="Listings — Datsun 620 Tracker">
@@ -78,8 +81,8 @@ function money(p: Price): string {
     ) : (
       <>
         <p class="intro">
-          King Cab listings worldwide, refreshed daily. {active.length} active,
-          {" "}{ended.length} ended. Updated {generated}.
+          King Cab listings worldwide, refreshed daily.
+          {" "}{active.length} active, {ended.length} ended. Updated {generated}.
         </p>
         <form class="filters" id="filters">
           <select name="country" aria-label="Country">
@@ -111,50 +114,62 @@ function money(p: Price): string {
         </form>
         {active.length > 0 && <h2 class="section">Active</h2>}
         {active.map((l) => (
-          <article class="card" data-country={l.country} data-drive={l.drive_side}
+          <article class="card listing" data-country={l.country} data-drive={l.drive_side}
                    data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}>
             {l.images[0] && (
-              <a href={`${base}/vehicle/${l.id.replaceAll(":", "--")}/`}>
-                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.style.display='none'" />
+              <a class="photo" href={vehicleHref(l)}>
+                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.parentElement.style.display='none'" />
+                <span class="price-tag">{money(l.price)}</span>
               </a>
             )}
             <div class="body">
-              <h3><a href={`${base}/vehicle/${l.id.replaceAll(":", "--")}/`}>{l.title_translated ?? l.title}</a></h3>
+              <h3><a href={vehicleHref(l)}>{l.title_translated ?? l.title}</a></h3>
               {l.title_translated && <p class="original">{l.title}</p>}
-              <p class="price">{money(l.price)}</p>
+              {!l.images[0] && <p class="price-line">{money(l.price)}</p>}
               <p class="meta">
-                {COUNTRY_NAMES[l.country] ?? l.country}
-                {l.region && ` (${l.region})`} · {l.drive_side}
-                {" "}· <a href={l.url} rel="noopener">{SOURCE_NAMES[l.source] ?? l.source}</a>
+                {l.year && <span class="chip chip-mustard">{l.year}</span>}
+                <span class="chip chip-mustard">{COUNTRY_NAMES[l.country] ?? l.country}</span>
+                <span class="chip chip-mustard">{l.drive_side}</span>
+                {l.relist?.possible && <span class="chip chip-warn">possible relist</span>}
               </p>
-              {l.relist?.possible && <p class="relist">possible relist</p>}
+              <p class="source-line">
+                <a href={l.url} rel="noopener">View on {SOURCE_NAMES[l.source] ?? l.source} →</a>
+              </p>
             </div>
           </article>
         ))}
         {ended.length > 0 && <h2 class="section">Recently ended</h2>}
         {ended.map((l) => (
-          <article class="card ended" data-country={l.country} data-drive={l.drive_side}
+          <article class="card listing ended" data-country={l.country} data-drive={l.drive_side}
                    data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}>
             {l.images[0] && (
-              <a href={`${base}/vehicle/${l.id.replaceAll(":", "--")}/`}>
-                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.style.display='none'" />
+              <a class="photo" href={vehicleHref(l)}>
+                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.parentElement.style.display='none'" />
+                <span class="price-tag">{money(l.price)}</span>
+                <span class={`status-tag status-${l.status}`}>{l.status}</span>
               </a>
             )}
             <div class="body">
-              <h3><a href={`${base}/vehicle/${l.id.replaceAll(":", "--")}/`}>{l.title_translated ?? l.title}</a></h3>
-              <p class="price">
-                {money(l.price)} · <span class={`status status-${l.status}`}>{l.status}</span>
-              </p>
+              <h3><a href={vehicleHref(l)}>{l.title_translated ?? l.title}</a></h3>
+              {!l.images[0] && (
+                <p class="price-line">
+                  {money(l.price)} <span class={`chip status-chip-${l.status}`}>{l.status}</span>
+                </p>
+              )}
               <p class="meta">
-                {COUNTRY_NAMES[l.country] ?? l.country} · {l.drive_side}
-                {" "}· <a href={l.url} rel="noopener">{SOURCE_NAMES[l.source] ?? l.source}</a> · last seen {l.last_seen}
+                {l.year && <span class="chip chip-mustard">{l.year}</span>}
+                <span class="chip chip-mustard">{COUNTRY_NAMES[l.country] ?? l.country}</span>
+                <span class="chip chip-mustard">{l.drive_side}</span>
+              </p>
+              <p class="source-line">
+                {SOURCE_NAMES[l.source] ?? l.source} · last seen {l.last_seen}
               </p>
             </div>
           </article>
         ))}
         <script>
           const form = document.getElementById("filters") as HTMLFormElement | null;
-          const cards = Array.from(document.querySelectorAll("article.card")) as HTMLElement[];
+          const cards = Array.from(document.querySelectorAll("article.listing")) as HTMLElement[];
           const count = document.getElementById("filter-count");
           function apply() {
             if (!form) return;
@@ -186,7 +201,7 @@ function money(p: Price): string {
               let el = h2.nextElementSibling;
               let any = false;
               while (el && el.tagName !== "H2") {
-                if (el.matches("article.card") && (el as HTMLElement).style.display !== "none") {
+                if (el.matches("article.listing") && (el as HTMLElement).style.display !== "none") {
                   any = true;
                   break;
                 }
@@ -208,7 +223,7 @@ function money(p: Price): string {
         <ul>
           {sourceHealth.map((s) => (
             <li>
-              {s.ok ? "✓" : "✗"} {SOURCE_NAMES[s.source] ?? s.source}
+              <span class={`dot ${s.ok ? "dot-ok" : "dot-bad"}`} /> {SOURCE_NAMES[s.source] ?? s.source}
               {!s.ok && s.note && <span class="fine"> — {s.note}</span>}
             </li>
           ))}
@@ -218,14 +233,16 @@ function money(p: Price): string {
   }
   <style>
     .intro {
-      color: #444;
+      color: var(--ink-muted);
+      margin-top: 0;
     }
     .filters {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.5rem;
-      background: #eef2e6;
-      border-radius: 0.5rem;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
       padding: 0.75rem;
       align-items: center;
     }
@@ -233,92 +250,141 @@ function money(p: Price): string {
     .filters input {
       font-size: 1rem;
       padding: 0.6rem 0.5rem; /* thumb-sized */
-      border: 1px solid #ccc;
-      border-radius: 0.4rem;
-      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--ink);
       width: 100%;
     }
     .count {
-      color: #555;
+      color: var(--ink-muted);
       font-size: 0.85rem;
       grid-column: span 2;
       text-align: right;
     }
-    h2 {
-      border-bottom: 2px solid #21351f;
-      padding-bottom: 0.25rem;
-    }
-    .card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 0.5rem;
-      overflow: hidden;
+    .listing {
       margin: 1rem 0;
     }
-    .card img {
+    .photo {
+      position: relative;
+      display: block;
+    }
+    .photo img {
       width: 100%;
       height: auto;
       display: block;
     }
-    .card .body {
-      padding: 0.75rem 1rem 1rem;
+    .price-tag {
+      position: absolute;
+      left: 0.75rem;
+      bottom: 0.75rem;
+      background: var(--orange);
+      color: #fff8ee;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
     }
-    .card h3 {
-      margin: 0 0 0.25rem;
-      font-size: 1.05rem;
-    }
-    .card h3 a {
-      color: #21351f;
-      text-decoration: none;
-    }
-    .price {
-      font-weight: 600;
-      margin: 0.25rem 0;
-    }
-    .original {
-      color: #666;
+    .status-tag {
+      position: absolute;
+      right: 0.75rem;
+      top: 0.75rem;
+      font-weight: 800;
       font-size: 0.8rem;
-      margin: 0 0 0.25rem;
-    }
-    .meta {
-      color: #666;
-      font-size: 0.9rem;
-      margin: 0.25rem 0 0;
-    }
-    .relist {
-      display: inline-block;
-      background: #fdf3d8;
-      color: #7a5b16;
-      font-size: 0.8rem;
-      border-radius: 1rem;
-      padding: 0.15rem 0.7rem;
-      margin: 0.5rem 0 0;
-    }
-    .ended {
-      opacity: 0.75;
-    }
-    .status {
       text-transform: uppercase;
-      font-size: 0.8em;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.06em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      color: #fff8ee;
     }
     .status-sold {
-      color: #2e5e2e;
+      background: var(--ok);
     }
     .status-withdrawn {
-      color: #8a3030;
+      background: var(--warn);
+    }
+    .body {
+      padding: 0.85rem 1rem 1rem;
+    }
+    .body h3 {
+      margin: 0 0 0.35rem;
+    }
+    .body h3 a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .original {
+      color: var(--ink-muted);
+      font-size: 0.8rem;
+      margin: 0 0 0.35rem;
+    }
+    .price-line {
+      font-weight: 800;
+      margin: 0.25rem 0;
+    }
+    .status-chip-sold {
+      background: var(--ok-soft);
+      color: var(--ok);
+    }
+    .status-chip-withdrawn {
+      background: var(--warn-soft);
+      color: var(--warn);
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin: 0.5rem 0 0.35rem;
+    }
+    .source-line {
+      margin: 0.4rem 0 0;
+      font-size: 0.9rem;
+    }
+    .source-line,
+    .source-line a {
+      color: var(--ink-muted);
+    }
+    .ended {
+      opacity: 0.82;
     }
     .health {
       margin-top: 2rem;
       font-size: 0.9rem;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 0.25rem 1rem;
     }
     .health summary {
       cursor: pointer;
-      padding: 0.4rem 0;
-      color: #21351f;
+      padding: 0.6rem 0;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .health ul {
+      list-style: none;
+      margin: 0 0 0.75rem;
+      padding: 0;
+    }
+    .health li {
+      margin: 0.45rem 0;
+    }
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 0.4rem;
+    }
+    .dot-ok {
+      background: var(--ok);
+    }
+    .dot-bad {
+      background: var(--warn);
     }
     .fine {
-      color: #666;
+      color: var(--ink-muted);
     }
   </style>
 </Base>

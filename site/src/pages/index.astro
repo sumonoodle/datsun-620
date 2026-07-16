@@ -3,45 +3,130 @@ import { readFileSync } from "node:fs";
 import Base from "../layouts/Base.astro";
 
 // Read pipeline data at build time: if this renders, data flows end to end.
-let fxLine = "FX data not yet generated.";
+let fxLine = "";
 try {
   const fx = JSON.parse(readFileSync("../data/fx-rates.json", "utf8"));
   const r = fx.latest.rates;
-  fxLine = `FX rates for ${fx.latest.date}: £1 = $${r.USD} / €${r.EUR} / ¥${r.JPY}`;
+  fxLine = `FX ${fx.latest.date}: £1 = $${r.USD} / €${r.EUR} / ¥${r.JPY}`;
 } catch {
-  /* placeholder text stands */
+  /* line simply not shown */
+}
+let counts = { active: 0, total: 0 };
+try {
+  const listings = JSON.parse(readFileSync("../data/listings.json", "utf8")).listings ?? [];
+  counts = {
+    active: listings.filter((l: any) => l.status === "active").length,
+    total: listings.length,
+  };
+} catch {
+  /* zeros */
 }
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Base title="Datsun 620 Tracker">
-  <h1>Datsun 620 Tracker</h1>
-  <p>
-    A reference for every Datsun 620 pickup variant (1972 to 1979) and a daily
-    tracker of King Cab listings worldwide.
-  </p>
-  <p class="status">
-    <strong>Site status: listings live (M4).</strong> Daily sweep of eBay,
-    Bring a Trailer, Cars &amp; Bids and Hemmings; Japan sources arrive in M5.
-  </p>
-  <p class="fx">{fxLine}</p>
-  <ul>
-    <li><a href={`${base}/specs/`}>Specs</a> — every variant across six markets, with citations</li>
-    <li><a href={`${base}/listings/`}>Listings</a> — King Cab tracker, refreshed daily</li>
-    <li><a href={`${base}/digest.html`}>Latest digest</a> — what the daily email looks like</li>
-  </ul>
+  <div class="hero">
+    <p class="kicker">1972–1979</p>
+    <h1>The Datsun 620<br />King Cab tracker</h1>
+    <p class="sub">
+      Every variant, every market, cited. Every King Cab for sale worldwide,
+      swept daily.
+    </p>
+  </div>
+
+  <a class="tile card" href={`${base}/specs/`}>
+    <span class="tile-accent" aria-hidden="true"></span>
+    <span class="tile-body">
+      <strong>Specs</strong>
+      <span>Six markets, fifteen variants, sources on every fact</span>
+    </span>
+    <span class="tile-arrow" aria-hidden="true">→</span>
+  </a>
+  <a class="tile card" href={`${base}/listings/`}>
+    <span class="tile-accent accent-mustard" aria-hidden="true"></span>
+    <span class="tile-body">
+      <strong>Listings</strong>
+      <span>{counts.active} active now, {counts.total} tracked with price history</span>
+    </span>
+    <span class="tile-arrow" aria-hidden="true">→</span>
+  </a>
+  <a class="tile card" href={`${base}/digest.html`}>
+    <span class="tile-accent accent-green" aria-hidden="true"></span>
+    <span class="tile-body">
+      <strong>Latest digest</strong>
+      <span>This morning's sweep, as it lands in the inbox</span>
+    </span>
+    <span class="tile-arrow" aria-hidden="true">→</span>
+  </a>
+
+  {fxLine && <p class="fx">{fxLine}</p>}
+
   <style>
-    .status {
-      background: #eef2e6;
-      border-left: 4px solid #21351f;
-      padding: 0.75rem 1rem;
+    .hero {
+      padding: 1.2rem 0 0.8rem;
+    }
+    .kicker {
+      color: var(--orange-deep);
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      margin: 0;
+    }
+    .hero h1 {
+      margin: 0.2rem 0 0.5rem;
+      font-size: 2.1rem;
+    }
+    .sub {
+      color: var(--ink-muted);
+      font-size: 1.05rem;
+      margin: 0;
+    }
+    .tile {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      margin: 0.9rem 0;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .tile-accent {
+      width: 8px;
+      flex: none;
+      background: var(--orange);
+    }
+    .accent-mustard {
+      background: var(--mustard);
+    }
+    .accent-green {
+      background: var(--ok);
+    }
+    .tile-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding: 1rem 1.1rem;
+      flex: 1;
+    }
+    .tile-body strong {
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+    }
+    .tile-body span:last-child {
+      color: var(--ink-muted);
+      font-size: 0.92rem;
+    }
+    .tile-arrow {
+      align-self: center;
+      padding-right: 1.1rem;
+      color: var(--orange-deep);
+      font-weight: 800;
+      font-size: 1.2rem;
     }
     .fx {
-      color: #555;
-      font-size: 0.9rem;
-    }
-    li {
-      margin: 0.5rem 0;
+      color: var(--ink-muted);
+      font-size: 0.82rem;
+      text-align: center;
+      margin-top: 1.6rem;
     }
   </style>
 </Base>
