@@ -44,6 +44,9 @@ try {
 
 const active = listings.filter((l) => l.status === "active");
 const ended = listings.filter((l) => l.status !== "active");
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const countries = [...new Set(listings.map((l) => l.country))].sort();
+const years = listings.map((l) => l.year).filter((y): y is number => y != null);
 
 const SOURCE_NAMES: Record<string, string> = {
   ebay: "eBay",
@@ -78,22 +81,51 @@ function money(p: Price): string {
           King Cab listings worldwide, refreshed daily. {active.length} active,
           {" "}{ended.length} ended. Updated {generated}.
         </p>
+        <form class="filters" id="filters">
+          <select name="country" aria-label="Country">
+            <option value="">All countries</option>
+            {countries.map((c) => (
+              <option value={c}>{COUNTRY_NAMES[c] ?? c}</option>
+            ))}
+          </select>
+          <select name="drive" aria-label="Drive side">
+            <option value="">LHD + RHD</option>
+            <option value="LHD">LHD</option>
+            <option value="RHD">RHD</option>
+            <option value="unknown">unknown</option>
+          </select>
+          <select name="yearmin" aria-label="Year from">
+            <option value="">Year from</option>
+            {[1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979].map((y) => (
+              <option value={y}>{y}</option>
+            ))}
+          </select>
+          <select name="yearmax" aria-label="Year to">
+            <option value="">Year to</option>
+            {[1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979].map((y) => (
+              <option value={y}>{y}</option>
+            ))}
+          </select>
+          <input type="number" name="pricemax" inputmode="numeric" placeholder="Max price £" aria-label="Maximum price in GBP" />
+          <span class="count" id="filter-count"></span>
+        </form>
         {active.length > 0 && <h2>Active</h2>}
         {active.map((l) => (
-          <article class="card">
+          <article class="card" data-country={l.country} data-drive={l.drive_side}
+                   data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}>
             {l.images[0] && (
-              <a href={l.url} rel="noopener">
+              <a href={`${base}/vehicle/${l.id.replace(":", "--")}/`}>
                 <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" />
               </a>
             )}
             <div class="body">
-              <h3><a href={l.url} rel="noopener">{l.title_translated ?? l.title}</a></h3>
+              <h3><a href={`${base}/vehicle/${l.id.replace(":", "--")}/`}>{l.title_translated ?? l.title}</a></h3>
               {l.title_translated && <p class="original">{l.title}</p>}
               <p class="price">{money(l.price)}</p>
               <p class="meta">
                 {COUNTRY_NAMES[l.country] ?? l.country}
                 {l.region && ` (${l.region})`} · {l.drive_side}
-                {" "}· {SOURCE_NAMES[l.source] ?? l.source}
+                {" "}· <a href={l.url} rel="noopener">{SOURCE_NAMES[l.source] ?? l.source}</a>
               </p>
               {l.relist?.possible && <p class="relist">possible relist</p>}
             </div>
@@ -101,24 +133,54 @@ function money(p: Price): string {
         ))}
         {ended.length > 0 && <h2>Recently ended</h2>}
         {ended.map((l) => (
-          <article class="card ended">
+          <article class="card ended" data-country={l.country} data-drive={l.drive_side}
+                   data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}>
             {l.images[0] && (
-              <a href={l.url} rel="noopener">
+              <a href={`${base}/vehicle/${l.id.replace(":", "--")}/`}>
                 <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" />
               </a>
             )}
             <div class="body">
-              <h3><a href={l.url} rel="noopener">{l.title}</a></h3>
+              <h3><a href={`${base}/vehicle/${l.id.replace(":", "--")}/`}>{l.title_translated ?? l.title}</a></h3>
               <p class="price">
                 {money(l.price)} · <span class={`status status-${l.status}`}>{l.status}</span>
               </p>
               <p class="meta">
                 {COUNTRY_NAMES[l.country] ?? l.country} · {l.drive_side}
-                {" "}· {SOURCE_NAMES[l.source] ?? l.source} · last seen {l.last_seen}
+                {" "}· <a href={l.url} rel="noopener">{SOURCE_NAMES[l.source] ?? l.source}</a> · last seen {l.last_seen}
               </p>
             </div>
           </article>
         ))}
+        <script>
+          const form = document.getElementById("filters") as HTMLFormElement | null;
+          const cards = Array.from(document.querySelectorAll("article.card")) as HTMLElement[];
+          const count = document.getElementById("filter-count");
+          function apply() {
+            if (!form) return;
+            const data = new FormData(form);
+            const country = data.get("country") as string;
+            const drive = data.get("drive") as string;
+            const ymin = Number(data.get("yearmin")) || 0;
+            const ymax = Number(data.get("yearmax")) || 9999;
+            const pmax = Number(data.get("pricemax")) || Infinity;
+            let shown = 0;
+            for (const el of cards) {
+              const year = Number(el.dataset.year) || null;
+              const gbp = Number(el.dataset.gbp) || null;
+              const ok =
+                (!country || el.dataset.country === country) &&
+                (!drive || el.dataset.drive === drive) &&
+                (year === null || (year >= ymin && year <= ymax)) &&
+                (gbp === null || gbp <= pmax);
+              el.style.display = ok ? "" : "none";
+              if (ok) shown++;
+            }
+            if (count) count.textContent = `showing ${shown} of ${cards.length}`;
+          }
+          form?.addEventListener("input", apply);
+          apply();
+        </script>
       </>
     )
   }
@@ -140,6 +202,30 @@ function money(p: Price): string {
   <style>
     .intro {
       color: #444;
+    }
+    .filters {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      background: #eef2e6;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      align-items: center;
+    }
+    .filters select,
+    .filters input {
+      font-size: 1rem;
+      padding: 0.6rem 0.5rem; /* thumb-sized */
+      border: 1px solid #ccc;
+      border-radius: 0.4rem;
+      background: #fff;
+      width: 100%;
+    }
+    .count {
+      color: #555;
+      font-size: 0.85rem;
+      grid-column: span 2;
+      text-align: right;
     }
     h2 {
       border-bottom: 2px solid #21351f;
