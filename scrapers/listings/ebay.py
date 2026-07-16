@@ -81,7 +81,7 @@ def parse_items(payload: dict, marketplace_country: str, fx_day: dict) -> list[d
             "id": f"ebay:{item_id}",
             "source": SOURCE,
             "source_listing_id": str(item_id),
-            "url": it.get("itemWebUrl", ""),
+            "url": normalize.safe_url(it.get("itemWebUrl")),
             "title": title,
             "title_translated": None,
             "description_snippet": (desc or None) if not desc or len(desc) <= 500 else desc[:500],

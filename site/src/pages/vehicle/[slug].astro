@@ -11,7 +11,7 @@ export function getStaticPaths() {
   }
   return listings.map((l) => ({
     // ':' is awkward in URLs; '--' cannot appear in source names or ids.
-    params: { slug: l.id.replace(":", "--") },
+    params: { slug: l.id.replaceAll(":", "--") },
     props: { listing: l, all: listings },
   }));
 }
@@ -46,7 +46,10 @@ const title = l.title_translated ?? l.title;
   <p><a href={`${base}/listings/`}>&larr; All listings</a></p>
   <h1 class="vehicle-title">{title}</h1>
   {l.title_translated && <p class="original">{l.title}</p>}
-  {l.images[0] && <img class="hero" src={l.images[0]} alt={title} loading="lazy" />}
+  {l.images?.[0] && (
+    <img class="hero" src={l.images[0]} alt={title} width="640" height="420"
+         fetchpriority="high" onerror="this.style.display='none'" />
+  )}
 
   <dl>
     <dt>Price</dt>
@@ -75,10 +78,10 @@ const title = l.title_translated ?? l.title;
   {prior && (
     <p class="relist">
       Possible relist of{" "}
-      <a href={`${base}/vehicle/${prior.id.replace(":", "--")}/`}>
+      <a href={`${base}/vehicle/${prior.id.replaceAll(":", "--")}/`}>
         {prior.title_translated ?? prior.title}
       </a>
-      . Signals: {l.relist.reasons.join("; ")}. Heuristic only, not certain.
+      . Signals: {(l.relist?.reasons ?? []).join("; ")}. Heuristic only, not certain.
     </p>
   )}
 
@@ -104,7 +107,7 @@ const title = l.title_translated ?? l.title;
       margin-bottom: 0.25rem;
     }
     .original {
-      color: #888;
+      color: #666;
       font-size: 0.85rem;
       margin-top: 0;
     }

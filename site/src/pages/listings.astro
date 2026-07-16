@@ -109,17 +109,17 @@ function money(p: Price): string {
           <input type="number" name="pricemax" inputmode="numeric" placeholder="Max price £" aria-label="Maximum price in GBP" />
           <span class="count" id="filter-count"></span>
         </form>
-        {active.length > 0 && <h2>Active</h2>}
+        {active.length > 0 && <h2 class="section">Active</h2>}
         {active.map((l) => (
           <article class="card" data-country={l.country} data-drive={l.drive_side}
                    data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}>
             {l.images[0] && (
-              <a href={`${base}/vehicle/${l.id.replace(":", "--")}/`}>
-                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" />
+              <a href={`${base}/vehicle/${l.id.replaceAll(":", "--")}/`}>
+                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.style.display='none'" />
               </a>
             )}
             <div class="body">
-              <h3><a href={`${base}/vehicle/${l.id.replace(":", "--")}/`}>{l.title_translated ?? l.title}</a></h3>
+              <h3><a href={`${base}/vehicle/${l.id.replaceAll(":", "--")}/`}>{l.title_translated ?? l.title}</a></h3>
               {l.title_translated && <p class="original">{l.title}</p>}
               <p class="price">{money(l.price)}</p>
               <p class="meta">
@@ -131,17 +131,17 @@ function money(p: Price): string {
             </div>
           </article>
         ))}
-        {ended.length > 0 && <h2>Recently ended</h2>}
+        {ended.length > 0 && <h2 class="section">Recently ended</h2>}
         {ended.map((l) => (
           <article class="card ended" data-country={l.country} data-drive={l.drive_side}
                    data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}>
             {l.images[0] && (
-              <a href={`${base}/vehicle/${l.id.replace(":", "--")}/`}>
-                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" />
+              <a href={`${base}/vehicle/${l.id.replaceAll(":", "--")}/`}>
+                <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.style.display='none'" />
               </a>
             )}
             <div class="body">
-              <h3><a href={`${base}/vehicle/${l.id.replace(":", "--")}/`}>{l.title_translated ?? l.title}</a></h3>
+              <h3><a href={`${base}/vehicle/${l.id.replaceAll(":", "--")}/`}>{l.title_translated ?? l.title}</a></h3>
               <p class="price">
                 {money(l.price)} · <span class={`status status-${l.status}`}>{l.status}</span>
               </p>
@@ -164,21 +164,25 @@ function money(p: Price): string {
             const ymin = Number(data.get("yearmin")) || 0;
             const ymax = Number(data.get("yearmax")) || 9999;
             const pmax = Number(data.get("pricemax")) || Infinity;
+            const yearBound = Boolean(data.get("yearmin") || data.get("yearmax"));
+            const priceBound = Boolean(data.get("pricemax"));
             let shown = 0;
             for (const el of cards) {
               const year = Number(el.dataset.year) || null;
               const gbp = Number(el.dataset.gbp) || null;
+              // A listing with an unknown year/price is hidden when that
+              // filter is in use: "max £5000" must not surface no-price cards.
               const ok =
                 (!country || el.dataset.country === country) &&
                 (!drive || el.dataset.drive === drive) &&
-                (year === null || (year >= ymin && year <= ymax)) &&
-                (gbp === null || gbp <= pmax);
+                (year === null ? !yearBound : year >= ymin && year <= ymax) &&
+                (gbp === null ? !priceBound : gbp <= pmax);
               el.style.display = ok ? "" : "none";
               if (ok) shown++;
             }
             if (count) count.textContent = `showing ${shown} of ${cards.length}`;
             // Hide a section heading when everything under it is filtered out.
-            for (const h2 of document.querySelectorAll("main h2")) {
+            for (const h2 of document.querySelectorAll("main h2.section")) {
               let el = h2.nextElementSibling;
               let any = false;
               while (el && el.tagName !== "H2") {
@@ -272,7 +276,7 @@ function money(p: Price): string {
       margin: 0.25rem 0;
     }
     .original {
-      color: #888;
+      color: #666;
       font-size: 0.8rem;
       margin: 0 0 0.25rem;
     }

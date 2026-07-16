@@ -53,6 +53,14 @@ def make_price(amount: float | None, currency: str, fx_day: dict) -> dict:
     }
 
 
+def safe_url(url: str | None) -> str:
+    """Only http(s) URLs may enter the data files: they end up as tappable
+    links on the site and in the digest, so no javascript:/data: schemes."""
+    if url and url.lower().startswith(("http://", "https://")):
+        return url
+    return ""
+
+
 def extract_year(title: str) -> int | None:
     m = re.search(r"\b(19(?:7[0-9]|6[89]|80))\b", title or "")
     if not m:

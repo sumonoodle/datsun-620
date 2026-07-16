@@ -40,7 +40,7 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         if not kc["matched"]:
             continue
 
-        url = it.get("url", "")
+        url = normalize.safe_url(it.get("url"))
         slug = url.rstrip("/").rsplit("/", 1)[-1] if url else title.lower().replace(" ", "-")
         country = normalize.to_country_code(it.get("country_code") or "US")
         amount = it.get("current_bid")
