@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-07-16",
+  "listings": [
+    {
+      "id": "bringatrailer:1978-datsun-620-3",
+      "source": "bringatrailer",
+      "source_listing_id": "1978-datsun-620-3",
+      "url": "https://bringatrailer.com/listing/1978-datsun-620-3/",
+      "title": "1978 Datsun 620 King Cab Deluxe Pickup",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1978,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": true,
+        "matched_terms": [
+          "king cab"
+        ],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 12500,
+        "currency": "USD",
+        "gbp": 9359.79,
+        "fx_rate": 1.3355,
+        "fx_date": "2026-07-03"
+      },
+      "images": [
+        "https://bringatrailer.com/wp-content/uploads/2026/06/20260508_225442411_iOS-copy-2026-06-12-7cj-98980-scaled.jpg?w=470&h=318&crop=1"
+      ],
+      "status": "sold",
+      "first_seen": "2026-07-04",
+      "last_seen": "2026-07-15",
+      "history": [
+        {
+          "date": "2026-07-04",
+          "status": "active",
+          "price": {
+            "amount": 12500,
+            "currency": "USD",
+            "gbp": 9359.79,
+            "fx_rate": 1.3355,
+            "fx_date": "2026-07-04"
+          }
+        },
+        {
+          "date": "2026-07-15",
+          "status": "sold"
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    }
+  ]
+}

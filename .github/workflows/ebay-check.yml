@@ -1,20 +1,21 @@
-# One-off credential check for the eBay Browse API keys. Runs on pushes to the
-# development branch only; removed once M3's real eBay module is in place.
+# Live pipeline test on the development branch: runs the full daily pipeline
+# (real eBay + BaT collection, real FX) in the workflow workspace WITHOUT
+# committing data. Proves collectors work before changes reach main.
 
-name: ebay-check
+name: branch-pipeline-test
 
 on:
   push:
     branches: [claude/datsun-620-kickoff-ah5cyw]
     paths:
       - .github/workflows/ebay-check.yml
-      - scrapers/listings/ebay_auth.py
+      - scrapers/**
 
 permissions:
   contents: read
 
 jobs:
-  check:
+  live-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,9 +25,26 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        run: pip install httpx
-      - name: Mint token and call Browse API
+        run: pip install -r scrapers/requirements.txt
+      - name: Run tests
+        run: |
+          python scrapers/tests/test_fx.py
+          python scrapers/tests/test_schema.py
+          python scrapers/tests/test_king_cab.py
+          python scrapers/tests/test_listings.py
+          python scrapers/tests/test_isolation.py
+      - name: eBay credential self-test
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: python scrapers/listings/ebay_auth.py --self-test
+      - name: Run full pipeline live (no commit)
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: |
+          python scrapers/run_daily.py
+          echo "--- run log ---"
+          cat data/run-log.json
+          echo "--- changes ---"
+          cat data/changes-latest.json
