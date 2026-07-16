@@ -113,7 +113,9 @@ const isListings = path === `${base}/` || path === base || isActive("vehicle");
         line-height: 1.5;
         color: var(--on-surface);
         background: var(--surface);
-        padding-bottom: 96px; /* clears the bottom navigation bar */
+        /* Clears the bottom navigation bar, which grows by the home-indicator
+           inset on notched phones. */
+        padding-bottom: calc(96px + env(safe-area-inset-bottom));
       }
 
       /* M3 type scale (regular-weight headlines) */
