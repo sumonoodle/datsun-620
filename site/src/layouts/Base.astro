@@ -14,7 +14,8 @@ const isListings = path === `${base}/` || path === base || isActive("vehicle");
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- viewport-fit=cover is required or env(safe-area-inset-*) is always 0 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
     <link rel="manifest" href={`${base}/manifest.webmanifest`} />
     <link rel="icon" href={`${base}/icons/icon.svg`} type="image/svg+xml" />
@@ -113,7 +114,9 @@ const isListings = path === `${base}/` || path === base || isActive("vehicle");
         line-height: 1.5;
         color: var(--on-surface);
         background: var(--surface);
-        padding-bottom: 96px; /* clears the bottom navigation bar */
+        /* Clears the bottom navigation bar, which grows by the home-indicator
+           inset on notched phones. */
+        padding-bottom: calc(96px + env(safe-area-inset-bottom));
       }
 
       /* M3 type scale (regular-weight headlines) */
