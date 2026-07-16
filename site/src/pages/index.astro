@@ -25,107 +25,88 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Base title="Datsun 620 Tracker">
-  <div class="hero">
-    <p class="kicker">1972–1979</p>
-    <h1>The Datsun 620<br />King Cab tracker</h1>
-    <p class="sub">
-      Every variant, every market, cited. Every King Cab for sale worldwide,
-      swept daily.
-    </p>
-  </div>
+  <h1>The Datsun 620 King Cab tracker</h1>
+  <p class="supporting">
+    Every variant, every market, cited. Every King Cab for sale worldwide,
+    swept daily.
+  </p>
 
-  <a class="tile card" href={`${base}/specs/`}>
-    <span class="tile-accent" aria-hidden="true"></span>
-    <span class="tile-body">
-      <strong>Specs</strong>
+  <a class="card elevated tile" href={`${base}/specs/`}>
+    <span class="icon icon-primary">📋</span>
+    <span class="txt">
+      <b>Specs</b>
       <span>Six markets, fifteen variants, sources on every fact</span>
     </span>
-    <span class="tile-arrow" aria-hidden="true">→</span>
+    <span class="chev" aria-hidden="true">›</span>
   </a>
-  <a class="tile card" href={`${base}/listings/`}>
-    <span class="tile-accent accent-mustard" aria-hidden="true"></span>
-    <span class="tile-body">
-      <strong>Listings</strong>
+  <a class="card elevated tile" href={`${base}/listings/`}>
+    <span class="icon icon-secondary">🚚</span>
+    <span class="txt">
+      <b>Listings</b>
       <span>{counts.active} active now, {counts.total} tracked with price history</span>
     </span>
-    <span class="tile-arrow" aria-hidden="true">→</span>
+    <span class="chev" aria-hidden="true">›</span>
   </a>
-  <a class="tile card" href={`${base}/digest.html`}>
-    <span class="tile-accent accent-green" aria-hidden="true"></span>
-    <span class="tile-body">
-      <strong>Latest digest</strong>
+  <a class="card elevated tile" href={`${base}/digest.html`}>
+    <span class="icon icon-tertiary">✉️</span>
+    <span class="txt">
+      <b>Latest digest</b>
       <span>This morning's sweep, as it lands in the inbox</span>
     </span>
-    <span class="tile-arrow" aria-hidden="true">→</span>
+    <span class="chev" aria-hidden="true">›</span>
   </a>
 
-  {fxLine && <p class="fx">{fxLine}</p>}
+  {fxLine && <p class="fx supporting">{fxLine}</p>}
 
   <style>
-    .hero {
-      padding: 1.2rem 0 0.8rem;
-    }
-    .kicker {
-      color: var(--orange-deep);
-      font-weight: 800;
-      font-size: 0.85rem;
-      letter-spacing: 0.18em;
-      margin: 0;
-    }
-    .hero h1 {
-      margin: 0.2rem 0 0.5rem;
-      font-size: 2.1rem;
-    }
-    .sub {
-      color: var(--ink-muted);
-      font-size: 1.05rem;
-      margin: 0;
-    }
     .tile {
       display: flex;
-      align-items: stretch;
-      gap: 0;
-      margin: 0.9rem 0;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1rem;
+      margin: 0.8rem 0;
       text-decoration: none;
-      color: var(--ink);
+      color: var(--on-surface);
     }
-    .tile-accent {
-      width: 8px;
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
       flex: none;
-      background: var(--orange);
     }
-    .accent-mustard {
-      background: var(--mustard);
+    .icon-primary {
+      background: var(--primary-container);
     }
-    .accent-green {
-      background: var(--ok);
+    .icon-secondary {
+      background: var(--secondary-container);
     }
-    .tile-body {
+    .icon-tertiary {
+      background: var(--tertiary-container);
+    }
+    .txt {
+      flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 0.15rem;
-      padding: 1rem 1.1rem;
-      flex: 1;
+      gap: 0.1rem;
     }
-    .tile-body strong {
-      font-size: 1.15rem;
-      letter-spacing: -0.01em;
+    .txt b {
+      font-size: 1rem;
+      font-weight: 500;
     }
-    .tile-body span:last-child {
-      color: var(--ink-muted);
-      font-size: 0.92rem;
+    .txt span:last-child {
+      color: var(--on-surface-variant);
+      font-size: 0.85rem;
     }
-    .tile-arrow {
-      align-self: center;
-      padding-right: 1.1rem;
-      color: var(--orange-deep);
-      font-weight: 800;
-      font-size: 1.2rem;
+    .chev {
+      color: var(--on-surface-variant);
+      font-size: 1.3rem;
     }
     .fx {
-      color: var(--ink-muted);
-      font-size: 0.82rem;
       text-align: center;
+      font-size: 0.8rem;
       margin-top: 1.6rem;
     }
   </style>

@@ -96,11 +96,11 @@ function hostname(url: string): string {
             <h2>{m.name}</h2>
             {m.notes && <p class="market-notes">{m.notes}</p>}
             {m.variants.map((v) => (
-              <article class="card variant">
+              <article class="card elevated variant">
                 <div class="variant-head">
                   <h3>{v.name}</h3>
                   <p class="years">
-                    <span class="chip chip-orange">{v.years.from}–{v.years.to}</span>
+                    <span class="chip chip-tonal">{v.years.from}–{v.years.to}</span>
                     {v.body && <span class="body-note">{v.body}</span>}
                   </p>
                 </div>
@@ -194,34 +194,35 @@ function hostname(url: string): string {
   <style>
     .intro,
     .market-notes {
-      color: var(--ink-muted);
+      color: var(--on-surface-variant);
+      font-size: 0.92rem;
     }
     .intro {
       margin-top: 0;
     }
     .markets-nav {
       display: flex;
-      flex-wrap: wrap;
       gap: 0.5rem;
-      margin: 1rem 0;
+      overflow-x: auto;
+      padding: 0.25rem 0;
+      -webkit-overflow-scrolling: touch;
     }
     .markets-nav a {
-      background: var(--mustard-soft);
-      border: 1px solid var(--line);
-      border-radius: 999px;
+      flex: none;
+      background: var(--secondary-container);
+      color: var(--on-secondary-container);
+      border-radius: 8px;
       padding: 0.5rem 0.9rem;
       text-decoration: none;
-      color: var(--ink);
-      font-weight: 600;
-      font-size: 0.9rem;
+      font-weight: 500;
+      font-size: 0.875rem;
     }
     section {
-      margin-top: 1.5rem;
+      margin-top: 1.25rem;
     }
     .variant {
       padding: 1rem;
-      margin: 1rem 0;
-      border-top: 4px solid var(--orange);
+      margin: 0.9rem 0;
     }
     .variant h3 {
       margin: 0;
@@ -233,17 +234,18 @@ function hostname(url: string): string {
       margin: 0.4rem 0 0.9rem;
     }
     .body-note {
-      color: var(--ink-muted);
-      font-size: 0.9rem;
+      color: var(--on-surface-variant);
+      font-size: 0.85rem;
     }
     dl {
       display: grid;
       grid-template-columns: minmax(7rem, auto) 1fr;
       gap: 0.3rem 0.75rem;
       margin: 0;
+      font-size: 0.95rem;
     }
     dt {
-      color: var(--ink-muted);
+      color: var(--on-surface-variant);
     }
     dd {
       margin: 0;
@@ -253,10 +255,8 @@ function hostname(url: string): string {
     }
     .colors-label {
       font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--ink-muted);
+      font-weight: 500;
+      color: var(--primary);
       margin: 0 0 0.4rem;
     }
     .swatches {
@@ -277,30 +277,31 @@ function hostname(url: string): string {
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      border: 1px solid var(--line);
+      border: 1px solid var(--outline-variant);
       display: inline-block;
     }
     .swatch[data-unknown] {
-      background: repeating-linear-gradient(45deg, var(--surface-2), var(--surface-2) 3px, var(--line) 3px, var(--line) 6px);
+      background: repeating-linear-gradient(45deg, var(--surface-container), var(--surface-container) 3px, var(--outline-variant) 3px, var(--outline-variant) 6px);
     }
     .variant-notes {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      color: var(--on-surface-variant);
     }
     .fine {
-      color: var(--ink-muted);
+      color: var(--on-surface-variant);
       font-size: 0.85em;
     }
     .confidence-high {
-      background: var(--ok-soft);
-      color: var(--ok);
+      background: var(--tertiary-container);
+      color: var(--on-tertiary-container);
     }
     .confidence-medium {
-      background: var(--mustard-soft);
-      color: var(--ink);
+      background: var(--secondary-container);
+      color: var(--on-secondary-container);
     }
     .confidence-low {
-      background: var(--warn-soft);
-      color: var(--warn);
+      background: var(--error-container);
+      color: var(--on-error-container);
     }
     details {
       margin-top: 0.75rem;
@@ -308,9 +309,9 @@ function hostname(url: string): string {
     }
     summary {
       cursor: pointer;
-      color: var(--orange-deep);
-      font-weight: 600;
-      padding: 0.4rem 0; /* thumb-sized tap target */
+      color: var(--primary);
+      font-weight: 500;
+      padding: 0.45rem 0; /* thumb-sized tap target */
     }
     details ul {
       margin: 0.25rem 0 0;
