@@ -1,0 +1,473 @@
+{
+  "date": "2026-07-17",
+  "results": [
+    {
+      "site": "goo-net-exchange",
+      "region": "JP export",
+      "root": {
+        "url": "https://www.goo-net-exchange.com/",
+        "status": 200,
+        "final_url": "https://www.goo-net-exchange.com/",
+        "bytes": 108263,
+        "mentions_datsun": false,
+        "elapsed_ms": 515
+      },
+      "search": {
+        "url": "https://www.goo-net-exchange.com/usedcars/NISSAN/DATSUN_TRUCK/",
+        "status": 200,
+        "final_url": "https://www.goo-net-exchange.com/usedcars/NISSAN/DATSUN_TRUCK/",
+        "bytes": 315125,
+        "mentions_datsun": true,
+        "elapsed_ms": 970
+      }
+    },
+    {
+      "site": "tcv",
+      "region": "JP export",
+      "root": {
+        "url": "https://www.tc-v.com/",
+        "status": 200,
+        "final_url": "https://www.tc-v.com/local/United%20States",
+        "bytes": 153763,
+        "mentions_datsun": false,
+        "elapsed_ms": 795
+      },
+      "search": {
+        "url": "https://www.tc-v.com/used_car/nissan/datsun%20pickup/",
+        "status": 200,
+        "final_url": "https://www.tc-v.com/used_car/nissan/datsun%20pickup/",
+        "bytes": 134745,
+        "mentions_datsun": true,
+        "elapsed_ms": 1126
+      }
+    },
+    {
+      "site": "carfromjapan",
+      "region": "JP export",
+      "root": {
+        "url": "https://carfromjapan.com/",
+        "status": 202,
+        "final_url": "https://carfromjapan.com/",
+        "bytes": 2035,
+        "mentions_datsun": false,
+        "elapsed_ms": 40
+      },
+      "search": {
+        "url": "https://carfromjapan.com/cheap-used-nissan-datsun-pickup-for-sale",
+        "status": 202,
+        "final_url": "https://carfromjapan.com/cheap-used-nissan-datsun-pickup-for-sale",
+        "bytes": 2035,
+        "mentions_datsun": false,
+        "elapsed_ms": 4
+      }
+    },
+    {
+      "site": "jdmexport",
+      "region": "JP export",
+      "root": {
+        "url": "https://www.jdmexport.com/",
+        "status": 200,
+        "final_url": "https://www.jdmexport.com/",
+        "bytes": 39163,
+        "mentions_datsun": false,
+        "elapsed_ms": 760
+      },
+      "search": {
+        "url": "https://www.jdmexport.com/nissan-datsun-pickup-for-sale",
+        "status": 200,
+        "final_url": "https://www.jdmexport.com/nissan-datsun-pickup-for-sale",
+        "bytes": 321678,
+        "mentions_datsun": true,
+        "elapsed_ms": 1248
+      }
+    },
+    {
+      "site": "beforward",
+      "region": "JP export",
+      "root": {
+        "url": "https://www.beforward.jp/",
+        "status": 202,
+        "final_url": "https://www.beforward.jp/",
+        "bytes": 2004,
+        "mentions_datsun": false,
+        "elapsed_ms": 442
+      },
+      "search": {
+        "url": "https://www.beforward.jp/stocklist/make=3/model=386",
+        "status": 202,
+        "final_url": "https://www.beforward.jp/stocklist/make=3/model=386",
+        "bytes": 2004,
+        "mentions_datsun": false,
+        "elapsed_ms": 107
+      }
+    },
+    {
+      "site": "sbtjapan",
+      "region": "JP export",
+      "root": {
+        "url": "https://www.sbtjapan.com/",
+        "status": 200,
+        "final_url": "https://www.sbtjapan.com/",
+        "bytes": 288271,
+        "mentions_datsun": false,
+        "elapsed_ms": 949
+      },
+      "search": {
+        "url": "https://www.sbtjapan.com/used-cars/nissan/datsun-truck/",
+        "status": 200,
+        "final_url": "https://www.sbtjapan.com/used-cars/search?make_id=3&model%5B%5D=DATSUN-TRUCK&isModel=1",
+        "bytes": 772095,
+        "mentions_datsun": true,
+        "elapsed_ms": 1587
+      }
+    },
+    {
+      "site": "japan-partner",
+      "region": "JP export",
+      "root": {
+        "url": "https://www.japan-partner.com/",
+        "status": 200,
+        "final_url": "https://www.japan-partner.com/",
+        "bytes": 125989,
+        "mentions_datsun": false,
+        "elapsed_ms": 1181
+      },
+      "search": {
+        "url": "https://www.japan-partner.com/auction/Nissan/DATSUN+TRUCK/cars-for-sale.html",
+        "status": 200,
+        "final_url": "https://www.japan-partner.com/auction/Nissan/DATSUN+TRUCK/cars-for-sale.html",
+        "bytes": 107010,
+        "mentions_datsun": true,
+        "elapsed_ms": 288
+      }
+    },
+    {
+      "site": "japanesecartrade",
+      "region": "JP export",
+      "root": {
+        "url": "https://www.japanesecartrade.com/",
+        "status": 403,
+        "final_url": "https://www.japanesecartrade.com/",
+        "bytes": 5735,
+        "mentions_datsun": false,
+        "elapsed_ms": 35
+      },
+      "search": {
+        "url": "https://www.japanesecartrade.com/stock_list.php?make_id=8&model_str=DATSUN%20TRUCK",
+        "status": 403,
+        "final_url": "https://www.japanesecartrade.com/stock_list.php?make_id=8&model_str=DATSUN%20TRUCK",
+        "bytes": 5970,
+        "mentions_datsun": true,
+        "elapsed_ms": 25
+      }
+    },
+    {
+      "site": "carsensor",
+      "region": "JP domestic",
+      "root": {
+        "url": "https://www.carsensor.net/",
+        "status": 200,
+        "final_url": "https://www.carsensor.net/",
+        "bytes": 198052,
+        "mentions_datsun": false,
+        "elapsed_ms": 717
+      },
+      "search": {
+        "url": "https://www.carsensor.net/usedcar/freeword/%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF/index.html",
+        "status": 200,
+        "final_url": "https://www.carsensor.net/usedcar/freeword/%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF/index.html",
+        "bytes": 695838,
+        "mentions_datsun": true,
+        "elapsed_ms": 475
+      }
+    },
+    {
+      "site": "goo-net",
+      "region": "JP domestic",
+      "root": {
+        "url": "https://www.goo-net.com/",
+        "status": 200,
+        "final_url": "https://www.goo-net.com/",
+        "bytes": 493919,
+        "mentions_datsun": false,
+        "elapsed_ms": 772
+      },
+      "search": {
+        "url": "https://www.goo-net.com/usedcar/brand-NISSAN/car-DATSUN_TRUCK/",
+        "status": 200,
+        "final_url": "https://www.goo-net.com/usedcar/brand-NISSAN/car-DATSUN_TRUCK/",
+        "bytes": 1082429,
+        "mentions_datsun": true,
+        "elapsed_ms": 348
+      }
+    },
+    {
+      "site": "yahoo-auctions",
+      "region": "JP domestic",
+      "root": {
+        "url": "https://auctions.yahoo.co.jp/",
+        "status": 200,
+        "final_url": "https://auctions.yahoo.co.jp/",
+        "bytes": 122344,
+        "mentions_datsun": false,
+        "elapsed_ms": 1163
+      },
+      "search": {
+        "url": "https://auctions.yahoo.co.jp/search/search?p=%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%20620",
+        "status": 200,
+        "final_url": "https://auctions.yahoo.co.jp/search/search?p=%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%20620",
+        "bytes": 816005,
+        "mentions_datsun": true,
+        "elapsed_ms": 516
+      }
+    },
+    {
+      "site": "yahoo-closed",
+      "region": "JP domestic",
+      "root": {
+        "url": "https://auctions.yahoo.co.jp/",
+        "status": 200,
+        "final_url": "https://auctions.yahoo.co.jp/",
+        "bytes": 394957,
+        "mentions_datsun": false,
+        "elapsed_ms": 1867
+      },
+      "search": {
+        "url": "https://auctions.yahoo.co.jp/closedsearch/closedsearch?p=%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%20620",
+        "status": 200,
+        "final_url": "https://auctions.yahoo.co.jp/closedsearch/closedsearch?p=%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%20620",
+        "bytes": 784449,
+        "mentions_datsun": true,
+        "elapsed_ms": 455
+      }
+    },
+    {
+      "site": "jimoty",
+      "region": "JP domestic",
+      "root": {
+        "url": "https://jmty.jp/",
+        "status": 200,
+        "final_url": "https://jmty.jp/",
+        "bytes": 168627,
+        "mentions_datsun": false,
+        "elapsed_ms": 317
+      },
+      "search": {
+        "url": "https://jmty.jp/all/car-kw-%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF",
+        "status": 200,
+        "final_url": "https://jmty.jp/all/car-kw-%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF",
+        "bytes": 329522,
+        "mentions_datsun": true,
+        "elapsed_ms": 528
+      }
+    },
+    {
+      "site": "rockyauto",
+      "region": "JP dealer",
+      "root": {
+        "url": "https://www.rockyauto.co.jp/",
+        "status": null,
+        "error": "ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.rockyauto.co.jp'. (_ssl.c:1010)",
+        "elapsed_ms": 444
+      },
+      "search": {
+        "url": "https://www.rockyauto.co.jp/stock/",
+        "status": null,
+        "error": "ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.rockyauto.co.jp'. (_ssl.c:1010)",
+        "elapsed_ms": 434
+      }
+    },
+    {
+      "site": "japan-vintage",
+      "region": "JP dealer",
+      "root": {
+        "url": "https://japan-vintage.com/",
+        "status": null,
+        "error": "ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'japan-vintage.com'. (_ssl.c:1010)",
+        "elapsed_ms": 411
+      },
+      "search": {
+        "url": "https://japan-vintage.com/stocklist/",
+        "status": null,
+        "error": "ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'japan-vintage.com'. (_ssl.c:1010)",
+        "elapsed_ms": 390
+      }
+    },
+    {
+      "site": "nosweb",
+      "region": "JP dealer",
+      "root": {
+        "url": "https://ucar.nosweb.jp/",
+        "status": 200,
+        "final_url": "https://ucar.nosweb.jp/",
+        "bytes": 15382,
+        "mentions_datsun": false,
+        "elapsed_ms": 353
+      },
+      "search": {
+        "url": "https://ucar.nosweb.jp/searchlist.html?mk=3&md=29",
+        "status": 200,
+        "final_url": "https://ucar.nosweb.jp/?mk=3&md=29",
+        "bytes": 15382,
+        "mentions_datsun": false,
+        "elapsed_ms": 227
+      }
+    },
+    {
+      "site": "truck2hand",
+      "region": "TH",
+      "root": {
+        "url": "https://www.truck2hand.com/",
+        "status": 200,
+        "final_url": "https://www.truck2hand.com/",
+        "bytes": 178883,
+        "mentions_datsun": false,
+        "elapsed_ms": 447
+      },
+      "search": {
+        "url": "https://www.truck2hand.com/search?keyword=datsun%20620",
+        "status": 200,
+        "final_url": "https://www.truck2hand.com/search/?keyword=datsun%20620",
+        "bytes": 1804275,
+        "mentions_datsun": true,
+        "elapsed_ms": 1408
+      }
+    },
+    {
+      "site": "kaidee",
+      "region": "TH",
+      "root": {
+        "url": "https://www.kaidee.com/",
+        "status": 200,
+        "final_url": "https://www.kaidee.com/",
+        "bytes": 540850,
+        "mentions_datsun": false,
+        "elapsed_ms": 1626
+      },
+      "search": {
+        "url": "https://rod.kaidee.com/c12-auto-pickup?q=datsun",
+        "status": 200,
+        "final_url": "https://www.kaidee.com/c12-motorcycle-motorcycle?q=datsun",
+        "bytes": 662948,
+        "mentions_datsun": true,
+        "elapsed_ms": 1717
+      }
+    },
+    {
+      "site": "one2car",
+      "region": "TH",
+      "root": {
+        "url": "https://www.one2car.com/",
+        "status": 403,
+        "final_url": "https://www.one2car.com/",
+        "bytes": 5790,
+        "mentions_datsun": false,
+        "elapsed_ms": 38
+      },
+      "search": {
+        "url": "https://www.one2car.com/en/cars-for-sale/datsun/620",
+        "status": 403,
+        "final_url": "https://www.one2car.com/en/cars-for-sale/datsun/620",
+        "bytes": 5914,
+        "mentions_datsun": true,
+        "elapsed_ms": 22
+      }
+    },
+    {
+      "site": "chobrod",
+      "region": "TH",
+      "root": {
+        "url": "https://www.chobrod.com/",
+        "status": null,
+        "error": "ConnectTimeout: timed out",
+        "elapsed_ms": 25051
+      },
+      "search": {
+        "url": "https://www.chobrod.com/car-datsun-620-pickup/",
+        "status": null,
+        "error": "ConnectTimeout: timed out",
+        "elapsed_ms": 25031
+      }
+    },
+    {
+      "site": "bahtsold",
+      "region": "TH",
+      "root": {
+        "url": "https://www.bahtsold.com/",
+        "status": 200,
+        "final_url": "https://www.bahtsold.com/",
+        "bytes": 540845,
+        "mentions_datsun": false,
+        "elapsed_ms": 1370
+      },
+      "search": {
+        "url": "https://www.bahtsold.com/search/result?search_text=datsun",
+        "status": 404,
+        "final_url": "https://www.bahtsold.com/search/result?search_text=datsun",
+        "bytes": 13123,
+        "mentions_datsun": true,
+        "elapsed_ms": 186
+      }
+    },
+    {
+      "site": "mudah",
+      "region": "MY",
+      "root": {
+        "url": "https://www.mudah.my/",
+        "status": 200,
+        "final_url": "https://www.mudah.my/",
+        "bytes": 229299,
+        "mentions_datsun": false,
+        "elapsed_ms": 1244
+      },
+      "search": {
+        "url": "https://www.mudah.my/malaysia/cars-for-sale/datsun",
+        "status": 200,
+        "final_url": "https://www.mudah.my/malaysia/cars-for-sale/datsun",
+        "bytes": 317323,
+        "mentions_datsun": true,
+        "elapsed_ms": 2753
+      }
+    },
+    {
+      "site": "carlist",
+      "region": "MY",
+      "root": {
+        "url": "https://www.carlist.my/",
+        "status": 403,
+        "final_url": "https://www.carlist.my/",
+        "bytes": 5789,
+        "mentions_datsun": false,
+        "elapsed_ms": 34
+      },
+      "search": {
+        "url": "https://www.carlist.my/cars/datsun",
+        "status": 403,
+        "final_url": "https://www.carlist.my/cars/datsun",
+        "bytes": 5822,
+        "mentions_datsun": true,
+        "elapsed_ms": 20
+      }
+    },
+    {
+      "site": "carmudi-id",
+      "region": "ID",
+      "root": {
+        "url": "https://www.carmudi.co.id/",
+        "status": 403,
+        "final_url": "https://www.carmudi.co.id/",
+        "bytes": 5771,
+        "mentions_datsun": false,
+        "elapsed_ms": 157
+      },
+      "search": {
+        "url": "https://www.carmudi.co.id/mobil-dijual/datsun/",
+        "status": 403,
+        "final_url": "https://www.carmudi.co.id/mobil-dijual/datsun/",
+        "bytes": 5873,
+        "mentions_datsun": true,
+        "elapsed_ms": 26
+      }
+    }
+  ]
+}
