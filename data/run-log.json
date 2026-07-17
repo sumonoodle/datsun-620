@@ -5,8 +5,8 @@
     {
       "source": "ebay",
       "ok": true,
-      "records": 1,
-      "note": "",
+      "records": 0,
+      "note": "one vintage-ad record purged; fixed-price floor added",
       "consecutive_failures": 0
     },
     {
@@ -46,10 +46,8 @@
     }
   ],
   "totals": {
-    "active": 1,
-    "by_country": {
-      "US": 1
-    },
-    "median_gbp": 8.87
+    "active": 0,
+    "by_country": {},
+    "median_gbp": null
   }
 }
