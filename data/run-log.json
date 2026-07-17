@@ -1,12 +1,12 @@
 {
   "date": "2026-07-17",
-  "started_at": "2026-07-17T06:29:18+00:00",
+  "started_at": "2026-07-17T08:44:23+00:00",
   "sources": [
     {
       "source": "ebay",
       "ok": true,
-      "records": 0,
-      "note": "166 memorabilia records purged after ingest (filter hardened)",
+      "records": 1,
+      "note": "",
       "consecutive_failures": 0
     },
     {
@@ -21,33 +21,35 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 1
+      "consecutive_failures": 2
     },
     {
       "source": "hemmings",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 1
+      "consecutive_failures": 2
     },
     {
       "source": "goonet",
       "ok": false,
       "records": 0,
       "note": "HTTP 404 (bot protection / blocked)",
-      "consecutive_failures": 1
+      "consecutive_failures": 2
     },
     {
       "source": "yahoo_buyee",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 1
+      "consecutive_failures": 2
     }
   ],
   "totals": {
-    "active": 0,
-    "by_country": {},
-    "median_gbp": null
+    "active": 1,
+    "by_country": {
+      "US": 1
+    },
+    "median_gbp": 8.87
   }
 }
