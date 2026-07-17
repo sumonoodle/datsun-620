@@ -1,0 +1,55 @@
+# One-off research probe: can GitHub's runners reach the candidate Asian
+# listing sites at all? Runs when the probe script changes on the dev branch
+# and commits its status report back, so results are readable without shell
+# access. Deleted (like fetch-research.yml before it) once the source
+# decision is made.
+name: probe-asia-sources
+
+on:
+  push:
+    branches:
+      - claude/datsun-620-kickoff-ah5cyw
+    paths:
+      - scrapers/experiments/asia_probe.py
+      - .github/workflows/probe-asia.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe-asia
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scrapers/requirements.txt
+
+      - name: Probe candidate sites
+        run: python scrapers/experiments/asia_probe.py
+
+      - name: Commit probe results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/research/asia-probe.json
+          if git diff --cached --quiet; then
+            echo "no changes"
+            exit 0
+          fi
+          git commit -m "research: Asia source reachability probe results"
+          for i in 1 2 3 4; do
+            git push && exit 0
+            git pull --rebase || git rebase --abort
+            sleep $((2 ** i))
+          done
+          git push
