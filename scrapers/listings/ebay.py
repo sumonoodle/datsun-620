@@ -7,6 +7,7 @@ are split so tests can run the parser against saved fixture responses.
 
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
@@ -32,7 +33,8 @@ MARKETPLACES = [
 QUERIES = ["datsun king cab", "datsun 620 king cab", "datsun 620"]
 LIMIT = 200
 
-# Titles matching King Cab terms but clearly not whole vehicles.
+# Titles matching King Cab terms but clearly not whole vehicles. The 2026-07-17
+# incident: 166 print ads, posters and Tomica toys ingested in one run.
 _PARTS_WORDS = [
     "for datsun", "fits datsun", "fit datsun", "carburetor", "carb ", "fender",
     "grille", "emblem", "badge", "decal", "sticker", "brochure", "manual",
@@ -40,15 +42,25 @@ _PARTS_WORDS = [
     "keychain", "mug", "t-shirt", "shirt", "poster", "tail light", "taillight",
     "headlight", "bumper", "mirror", "door handle", "weatherstrip", "seal kit",
     "gasket", "bearing", "brake", "clutch", "radiator", "tailgate",
+    "print ad", "advertisement", "magazine", "photo", "blueprint", "promo",
+    "art", "man cave", "banner", "sign", "patch", "keyring", "tomica",
+    "tomytec", "hot wheels", "matchbox", "1/43", "1:43", "greenlight",
 ]
+
+# When eBay tells us the category, only vehicle categories count as trucks;
+# memorabilia lives in Collectibles / Art / Toys & Hobbies.
+_VEHICLE_CATEGORIES = ["cars & trucks", "classic cars", "automobiles", "other vehicles", "pickup"]
 
 
 def _looks_like_part(title: str, categories: list[str]) -> bool:
     t = (title or "").lower()
     if any(w in t for w in _PARTS_WORDS):
         return True
-    cats = " ".join(categories).lower()
-    return "parts" in cats or "accessories" in cats or "toys" in cats
+    if categories:
+        cats = " ".join(categories).lower()
+        # Not listed in any vehicle category => not a truck for sale.
+        return not any(v in cats for v in _VEHICLE_CATEGORIES)
+    return False
 
 
 def parse_items(payload: dict, marketplace_country: str, fx_day: dict) -> list[dict]:
@@ -61,6 +73,11 @@ def parse_items(payload: dict, marketplace_country: str, fx_day: dict) -> list[d
 
         kc = king_cab.check(title, desc)
         if not kc["matched"]:
+            continue
+        # This is a 620 tracker: the targeted "datsun king cab" query also
+        # surfaces 720-era trucks and memorabilia. Title only: a 720 listing's
+        # description may well mention the 620 it succeeded.
+        if not re.search(r"\b620\b", title):
             continue
         if _looks_like_part(title, categories):
             continue

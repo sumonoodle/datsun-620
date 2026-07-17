@@ -5,8 +5,8 @@
     {
       "source": "ebay",
       "ok": true,
-      "records": 166,
-      "note": "",
+      "records": 0,
+      "note": "166 memorabilia records purged after ingest (filter hardened)",
       "consecutive_failures": 0
     },
     {
@@ -46,19 +46,8 @@
     }
   ],
   "totals": {
-    "active": 166,
-    "by_country": {
-      "US": 94,
-      "CA": 19,
-      "JP": 20,
-      "GB": 14,
-      "DE": 10,
-      "AU": 3,
-      "TH": 3,
-      "AE": 1,
-      "FR": 1,
-      "HK": 1
-    },
-    "median_gbp": 10.35
+    "active": 0,
+    "by_country": {},
+    "median_gbp": null
   }
 }
