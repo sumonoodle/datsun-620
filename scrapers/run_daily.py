@@ -6,7 +6,9 @@ compute changes, and write everything. Digest sending is emailer/send_digest.py
 (from M4).
 
 Sources by milestone: M3 eBay + Bring a Trailer; M4 Cars & Bids + Hemmings;
-M5 Goo-net + Yahoo/Buyee.
+M5 Goo-net + Yahoo/Buyee (both IP-blocked, retired); Asia expansion
+2026-07-17: Goo-net Exchange, Carsensor, Yahoo Auctions direct (supersedes
+Buyee) and Kaidee, per docs/asia-sources.md.
 """
 
 from __future__ import annotations
@@ -22,7 +24,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import fx, store as store_mod, translate
 from common.schema import DATA_DIR, validate
-from listings import bat, carsandbids, ebay, goonet, hemmings, yahoo_buyee
+from listings import (bat, carsandbids, carsensor, ebay, goonet_exchange,
+                      hemmings, kaidee, yahoo_auctions)
 
 # (source_name, callable(fx_day) -> [listing records])
 SOURCES: list[tuple] = [
@@ -30,8 +33,10 @@ SOURCES: list[tuple] = [
     ("bringatrailer", bat.collect),
     ("carsandbids", carsandbids.collect),
     ("hemmings", hemmings.collect),
-    ("goonet", goonet.collect),
-    ("yahoo_buyee", yahoo_buyee.collect),
+    ("goonet_exchange", goonet_exchange.collect),
+    ("carsensor", carsensor.collect),
+    ("yahoo_auctions", yahoo_auctions.collect),
+    ("kaidee", kaidee.collect),
 ]
 
 

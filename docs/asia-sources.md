@@ -100,17 +100,29 @@ Auctions, TCV, Truck2Hand, Kaidee, mudah) or offers saved-search email
 alerts as a fallback (CAR FROM JAPAN, One2car, carlist, carmudi). The paid
 route stays on the shelf per `japan-sources.md`.
 
-### Build plan
+### Build plan (status 2026-07-17)
 
-- **Phase A (Japan):** Goo-net Exchange collector (English, replaces the
-  dead v1 path), Carsensor, Yahoo Auctions search. Retire the Buyee
-  collector: Yahoo direct supersedes it.
-- **Phase B (Thailand):** Truck2Hand, Kaidee. Requires the Thai-badge
-  matching rules above (Datsun 1300/1500, ช้างเหยียบ, BE years).
-- **Phase C (email alerts):** dedicated alerts-only Gmail account (owner
-  action), saved searches on CAR FROM JAPAN / BE FORWARD / One2car /
-  TCV / Carsensor as belt-and-braces, IMAP reader in the daily run,
-  one parser per alert format, built only against real received samples.
+- **Phase A (Japan): SHIPPED.** Goo-net Exchange, Carsensor and Yahoo
+  Auctions (open + closed/sold search) collectors, built against real
+  fetched pages. The old goonet and yahoo_buyee collectors are retired:
+  Yahoo direct supersedes Buyee, and the Exchange path supersedes the
+  dead domestic path. Key filter learned from the real pages: "Datsun
+  Truck" stayed a JDM model name until 2002, so Japanese sources demand
+  King Cab term AND a 1971-1980 year; Yahoo sold items additionally
+  require the 中古車・新車 (whole vehicle) category tree.
+- **Phase B (Thailand): Kaidee SHIPPED** with the Thai-badge rules
+  (Datsun marker + คิงแค็บ/king cab, 520/720 generation exclusions with
+  digit boundaries so BE years like ปี 2520 survive, no year filtering).
+  **Truck2Hand DEFERRED:** four fetch rounds proved its search is fully
+  client-side (SSR and the _next/data route both ignore the keyword; the
+  API endpoint is not visible in any shipped JS chunk). Follow-up angles
+  if wanted: the categories-pickup sitemap + category pages, Playwright
+  from a runner, or manual browsing.
+- **Phase C (email alerts): NEXT, blocked on owner.** Dedicated
+  alerts-only Gmail account, saved searches on CAR FROM JAPAN /
+  BE FORWARD / One2car / TCV / Carsensor as belt-and-braces, IMAP reader
+  in the daily run, one parser per alert format, built only against real
+  received samples.
 
 A 200 today is not a contract: every new collector keeps the degradable
 per-source pattern (failures logged, digest health line, 7-day escalation),

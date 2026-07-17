@@ -9,7 +9,10 @@ vetoes the match.
 
 from __future__ import annotations
 
-TERMS = ["king cab", "kingcab", "king-cab", "extended cab", "キングキャブ"]
+# คิงแค็บ is the Thai rendering of King Cab (แค็บ pickups are a Thai staple);
+# คิงแคป and คิงเเค็บ are common listing misspellings.
+TERMS = ["king cab", "kingcab", "king-cab", "extended cab", "キングキャブ",
+         "คิงแค็บ", "คิงแคป", "คิงเเค็บ"]
 
 # Body styles that positively confirm an extended cab.
 _BODY_POSITIVE = ["king", "extended", "extra cab", "xtracab"]

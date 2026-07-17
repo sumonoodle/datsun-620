@@ -29,7 +29,9 @@ from common.schema import DATA_DIR
 
 SOURCE_NAMES = {
     "ebay": "eBay", "bringatrailer": "Bring a Trailer", "carsandbids": "Cars & Bids",
-    "hemmings": "Hemmings", "goonet": "Goo-net", "yahoo_buyee": "Yahoo (Buyee)",
+    "hemmings": "Hemmings", "goonet_exchange": "Goo-net Exchange",
+    "carsensor": "Carsensor", "yahoo_auctions": "Yahoo Auctions JP",
+    "truck2hand": "Truck2Hand", "kaidee": "Kaidee",
 }
 BROWN = "#3b2b1d"
 ORANGE = "#b04a1a"
@@ -39,7 +41,7 @@ MUTED = "#75634f"
 def _money(price: dict) -> str:
     if not price or price.get("amount") is None:
         return "no price shown"
-    sym = {"USD": "$", "GBP": "£", "EUR": "€", "JPY": "¥", "AUD": "A$", "ZAR": "R"}
+    sym = {"USD": "$", "GBP": "£", "EUR": "€", "JPY": "¥", "AUD": "A$", "ZAR": "R", "THB": "฿"}
     orig = f"{sym.get(price['currency'], price['currency'] + ' ')}{price['amount']:,.0f}"
     if price["currency"] == "GBP" or price.get("gbp") is None:
         return orig

@@ -35,6 +35,14 @@ written, these notes override it where they conflict):**
   provide no live listings; see docs/japan-sources.md.
 - The site is installable as a web app (manifest, icon, offline fallback),
   an owner-requested addition beyond section 6.
+- Asia expansion (owner-requested, July 2026): the section 4.4 Japan
+  experiments concluded and were replaced by working collectors — Goo-net
+  Exchange, Carsensor and Yahoo Auctions direct (reachable from GitHub
+  runners, probe-proven), retiring the blocked goonet/yahoo_buyee pair.
+  Thailand added: Kaidee collector with Thai matching rules (Datsun
+  1300/1500 badges, คิงแค็บ, ช้างเหยียบ, Buddhist-Era year caution) and a
+  TH market in specs (Thai assembly confirmed: Siam Motors & Nissan 1962,
+  Siam Nissan Automobile 1977). FX gains THB. See docs/asia-sources.md.
 
 ## 1. Purpose
 

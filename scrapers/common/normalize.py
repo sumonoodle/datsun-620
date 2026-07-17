@@ -11,9 +11,11 @@ COUNTRY_NAMES = {
     "great britain": "GB", "germany": "DE", "deutschland": "DE", "australia": "AU",
     "japan": "JP", "south africa": "ZA", "canada": "CA", "netherlands": "NL",
     "france": "FR", "new zealand": "NZ", "belgium": "BE", "ireland": "IE",
+    "thailand": "TH", "ประเทศไทย": "TH", "ไทย": "TH",
+    "malaysia": "MY", "indonesia": "ID",
 }
 
-_RHD_COUNTRIES = {"GB", "JP", "AU", "NZ", "ZA", "IE"}
+_RHD_COUNTRIES = {"GB", "JP", "AU", "NZ", "ZA", "IE", "TH", "MY", "ID"}
 _LHD_COUNTRIES = {"US", "CA", "DE", "FR", "NL", "BE", "IT", "ES", "SE", "CH", "AT", "MX", "PL"}
 
 
@@ -67,3 +69,17 @@ def extract_year(title: str) -> int | None:
         return None
     year = int(m.group(1))
     return year if 1971 <= year <= 1980 else None
+
+
+_SHOWA_RE = re.compile(r"昭和\s*(4[6-9]|5[0-5])年")
+
+
+def extract_year_jp(title: str) -> int | None:
+    """Japanese listings date the era as 昭和XX年 (Showa 46-55 = 1971-1980)
+    at least as often as a Western year. Bare S46-style codes are NOT parsed:
+    S13/S20 are Nissan chassis/engine codes and constant false positives."""
+    year = extract_year(title)
+    if year:
+        return year
+    m = _SHOWA_RE.search(title or "")
+    return 1925 + int(m.group(1)) if m else None
