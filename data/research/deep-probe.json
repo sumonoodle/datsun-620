@@ -1,0 +1,799 @@
+{
+  "date": "2026-07-17",
+  "results": [
+    {
+      "site": "classic-com",
+      "group": "aggregator",
+      "root": {
+        "url": "https://www.classic.com/",
+        "status": 403,
+        "final_url": "https://www.classic.com/",
+        "bytes": 5704,
+        "mentions_datsun": false,
+        "elapsed_ms": 107
+      },
+      "search": {
+        "url": "https://www.classic.com/m/nissan/truck/620/",
+        "status": 403,
+        "final_url": "https://www.classic.com/m/nissan/truck/620/",
+        "bytes": 5782,
+        "mentions_datsun": false,
+        "elapsed_ms": 16
+      }
+    },
+    {
+      "site": "glenmarch",
+      "group": "aggregator",
+      "root": {
+        "url": "https://www.glenmarch.com/",
+        "status": 403,
+        "final_url": "https://www.glenmarch.com/",
+        "bytes": 5599,
+        "mentions_datsun": false,
+        "elapsed_ms": 41
+      },
+      "search": {
+        "url": "https://www.glenmarch.com/cars/results/quick/Datsun/620",
+        "status": 403,
+        "final_url": "https://www.glenmarch.com/cars/results/quick/Datsun/620",
+        "bytes": 5729,
+        "mentions_datsun": true,
+        "elapsed_ms": 29
+      }
+    },
+    {
+      "site": "barnfinds",
+      "group": "aggregator",
+      "root": {
+        "url": "https://barnfinds.com/",
+        "status": 200,
+        "final_url": "https://barnfinds.com/",
+        "bytes": 66868,
+        "mentions_datsun": false,
+        "elapsed_ms": 116
+      },
+      "search": {
+        "url": "https://barnfinds.com/tag/datsun-620/",
+        "status": 200,
+        "final_url": "https://barnfinds.com/tag/datsun-620/",
+        "bytes": 43849,
+        "mentions_datsun": true,
+        "elapsed_ms": 414
+      }
+    },
+    {
+      "site": "theparking",
+      "group": "aggregator",
+      "root": {
+        "url": "https://www.theparking-cars.com/",
+        "status": 403,
+        "final_url": "https://www.theparking-cars.com/",
+        "bytes": 5649,
+        "mentions_datsun": false,
+        "elapsed_ms": 44
+      },
+      "search": {
+        "url": "https://www.theparking-cars.com/used-cars/datsun-pick-up.html",
+        "status": 403,
+        "final_url": "https://www.theparking-cars.com/used-cars/datsun-pick-up.html",
+        "bytes": 5778,
+        "mentions_datsun": true,
+        "elapsed_ms": 17
+      }
+    },
+    {
+      "site": "classicdriver",
+      "group": "aggregator",
+      "root": {
+        "url": "https://www.classicdriver.com/",
+        "status": 403,
+        "final_url": "https://www.classicdriver.com/",
+        "bytes": 5732,
+        "mentions_datsun": false,
+        "elapsed_ms": 51
+      },
+      "search": {
+        "url": "https://www.classicdriver.com/en/cars/datsun/620",
+        "status": 403,
+        "final_url": "https://www.classicdriver.com/en/cars/datsun/620",
+        "bytes": 5807,
+        "mentions_datsun": true,
+        "elapsed_ms": 44
+      }
+    },
+    {
+      "site": "ccfs-uk",
+      "group": "aggregator",
+      "root": {
+        "url": "https://www.classiccarsforsale.co.uk/",
+        "status": 200,
+        "final_url": "https://www.iconicauctioneers.com/",
+        "bytes": 257427,
+        "mentions_datsun": false,
+        "elapsed_ms": 27531
+      },
+      "search": {
+        "url": "https://www.classiccarsforsale.co.uk/datsun/620",
+        "status": null,
+        "error": "ConnectError: [Errno 104] Connection reset by peer",
+        "elapsed_ms": 30
+      }
+    },
+    {
+      "site": "carandclassic",
+      "group": "classifieds",
+      "root": {
+        "url": "https://www.carandclassic.com/",
+        "status": 403,
+        "final_url": "https://www.carandclassic.com/",
+        "bytes": 5732,
+        "mentions_datsun": false,
+        "elapsed_ms": 47
+      },
+      "search": {
+        "url": "https://www.carandclassic.com/list/68/620/",
+        "status": 403,
+        "final_url": "https://www.carandclassic.com/list/68/620/",
+        "bytes": 5789,
+        "mentions_datsun": false,
+        "elapsed_ms": 37
+      }
+    },
+    {
+      "site": "classiccars-com",
+      "group": "classifieds",
+      "root": {
+        "url": "https://classiccars.com/",
+        "status": 200,
+        "final_url": "https://classiccars.com/",
+        "bytes": 160983,
+        "mentions_datsun": true,
+        "elapsed_ms": 121
+      },
+      "search": {
+        "url": "https://classiccars.com/listings/find/all-years/datsun/620",
+        "status": 200,
+        "final_url": "https://classiccars.com/listings/find/all-years/datsun/620",
+        "bytes": 111790,
+        "mentions_datsun": true,
+        "elapsed_ms": 46
+      }
+    },
+    {
+      "site": "autotrader-classics",
+      "group": "classifieds",
+      "root": {
+        "url": "https://classics.autotrader.com/",
+        "status": 403,
+        "final_url": "https://classics.autotrader.com/",
+        "bytes": 377,
+        "mentions_datsun": false,
+        "elapsed_ms": 103
+      },
+      "search": {
+        "url": "https://classics.autotrader.com/classic-cars-for-sale/datsun-620-for-sale",
+        "status": 403,
+        "final_url": "https://classics.autotrader.com/classic-cars-for-sale/datsun-620-for-sale",
+        "bytes": 446,
+        "mentions_datsun": true,
+        "elapsed_ms": 24
+      }
+    },
+    {
+      "site": "hagerty",
+      "group": "classifieds",
+      "root": {
+        "url": "https://www.hagerty.com/",
+        "status": 200,
+        "final_url": "https://www.hagerty.com/",
+        "bytes": 254679,
+        "mentions_datsun": false,
+        "elapsed_ms": 57
+      },
+      "search": {
+        "url": "https://www.hagerty.com/marketplace/search?q=datsun%20620",
+        "status": 200,
+        "final_url": "https://www.hagerty.com/marketplace/search?q=datsun%20620",
+        "bytes": 378452,
+        "mentions_datsun": false,
+        "elapsed_ms": 1460
+      }
+    },
+    {
+      "site": "kijiji",
+      "group": "classifieds",
+      "root": {
+        "url": "https://www.kijiji.ca/",
+        "status": 200,
+        "final_url": "https://www.kijiji.ca/",
+        "bytes": 232419,
+        "mentions_datsun": false,
+        "elapsed_ms": 579
+      },
+      "search": {
+        "url": "https://www.kijiji.ca/b-canada/datsun-620/k0l0",
+        "status": 200,
+        "final_url": "https://www.kijiji.ca/b-canada/datsun-620/k0l0",
+        "bytes": 374891,
+        "mentions_datsun": true,
+        "elapsed_ms": 640
+      }
+    },
+    {
+      "site": "mercadolibre-mx",
+      "group": "classifieds",
+      "root": {
+        "url": "https://www.mercadolibre.com.mx/",
+        "status": 200,
+        "final_url": "https://www.mercadolibre.com.mx/",
+        "bytes": 515675,
+        "mentions_datsun": false,
+        "elapsed_ms": 652
+      },
+      "search": {
+        "url": "https://listado.mercadolibre.com.mx/datsun-620",
+        "status": 200,
+        "final_url": "https://www.mercadolibre.com.mx/gz/account-verification?go=https%3A%2F%2Flistado.mercadolibre.com.mx%2Fdatsun-620&tid=d827d7eb-d95e-4fce-8c64-e8d8ad31cd77",
+        "bytes": 23202,
+        "mentions_datsun": true,
+        "elapsed_ms": 284
+      }
+    },
+    {
+      "site": "gumtree-au",
+      "group": "classifieds",
+      "root": {
+        "url": "https://www.gumtree.com.au/",
+        "status": 403,
+        "final_url": "https://www.gumtree.com.au/",
+        "bytes": 0,
+        "mentions_datsun": false,
+        "elapsed_ms": 617
+      },
+      "search": {
+        "url": "https://www.gumtree.com.au/s-automotive/datsun+620/k0c9299",
+        "status": 403,
+        "final_url": "https://www.gumtree.com.au/s-automotive/datsun+620/k0c9299",
+        "bytes": 0,
+        "mentions_datsun": false,
+        "elapsed_ms": 140
+      }
+    },
+    {
+      "site": "trademe",
+      "group": "classifieds",
+      "root": {
+        "url": "https://www.trademe.co.nz/",
+        "status": 406,
+        "final_url": "https://www.trademe.co.nz/",
+        "bytes": 0,
+        "mentions_datsun": false,
+        "elapsed_ms": 121
+      },
+      "search": {
+        "url": "https://www.trademe.co.nz/a/motors/search?search_string=datsun%20620",
+        "status": 406,
+        "final_url": "https://www.trademe.co.nz/a/motors/search?search_string=datsun%20620",
+        "bytes": 0,
+        "mentions_datsun": false,
+        "elapsed_ms": 48
+      }
+    },
+    {
+      "site": "carsales-au",
+      "group": "classifieds",
+      "root": {
+        "url": "https://www.carsales.com.au/",
+        "status": 403,
+        "final_url": "https://www.carsales.com.au/",
+        "bytes": 774,
+        "mentions_datsun": false,
+        "elapsed_ms": 49
+      },
+      "search": {
+        "url": "https://www.carsales.com.au/cars/datsun/620/ute-bodystyle/",
+        "status": 403,
+        "final_url": "https://www.carsales.com.au/cars/datsun/620/ute-bodystyle/",
+        "bytes": 775,
+        "mentions_datsun": false,
+        "elapsed_ms": 24
+      }
+    },
+    {
+      "site": "justcars-au",
+      "group": "classifieds",
+      "root": {
+        "url": "https://www.justcars.com.au/",
+        "status": 200,
+        "final_url": "https://www.justcars.com.au/",
+        "bytes": 94823,
+        "mentions_datsun": false,
+        "elapsed_ms": 305
+      },
+      "search": {
+        "url": "https://www.justcars.com.au/cars-for-sale/search?taxonomy%5B0%5D%5B0%5D=datsun",
+        "status": 200,
+        "final_url": "https://www.justcars.com.au/cars-for-sale/search?taxonomy%5B0%5D%5B0%5D=datsun",
+        "bytes": 106371,
+        "mentions_datsun": true,
+        "elapsed_ms": 565
+      }
+    },
+    {
+      "site": "craigslist-la",
+      "group": "classifieds",
+      "root": {
+        "url": "https://losangeles.craigslist.org/",
+        "status": 200,
+        "final_url": "https://www.craigslist.org/area/losangeles",
+        "bytes": 61347,
+        "mentions_datsun": false,
+        "elapsed_ms": 306
+      },
+      "search": {
+        "url": "https://losangeles.craigslist.org/search/cta?query=datsun+620",
+        "status": 200,
+        "final_url": "https://www.craigslist.org/search/area/losangeles?cat=cta&query=datsun%20620",
+        "bytes": 9127,
+        "mentions_datsun": true,
+        "elapsed_ms": 31
+      }
+    },
+    {
+      "site": "duncanimports",
+      "group": "dealer",
+      "root": {
+        "url": "https://www.duncanimports.com/",
+        "status": 403,
+        "final_url": "https://www.duncanimports.com/",
+        "bytes": 375,
+        "mentions_datsun": false,
+        "elapsed_ms": 93
+      },
+      "search": {
+        "url": "https://www.duncanimports.com/jdm-inventory.htm",
+        "status": 403,
+        "final_url": "https://www.duncanimports.com/jdm-inventory.htm",
+        "bytes": 398,
+        "mentions_datsun": false,
+        "elapsed_ms": 32
+      }
+    },
+    {
+      "site": "japaneseclassics",
+      "group": "dealer",
+      "root": {
+        "url": "https://www.japaneseclassics.com/",
+        "status": 200,
+        "final_url": "https://www.japaneseclassics.com/",
+        "bytes": 12455,
+        "mentions_datsun": false,
+        "elapsed_ms": 364
+      },
+      "search": {
+        "url": "https://www.japaneseclassics.com/shop-cars/",
+        "status": 200,
+        "final_url": "https://www.japaneseclassics.com/shop-cars/",
+        "bytes": 12470,
+        "mentions_datsun": false,
+        "elapsed_ms": 73
+      }
+    },
+    {
+      "site": "toprank-us",
+      "group": "dealer",
+      "root": {
+        "url": "https://www.importavehicle.com/",
+        "status": 202,
+        "final_url": "https://www.importavehicle.com/",
+        "bytes": 2395,
+        "mentions_datsun": false,
+        "elapsed_ms": 294
+      },
+      "search": {
+        "url": "https://www.importavehicle.com/vehicles",
+        "status": 202,
+        "final_url": "https://www.importavehicle.com/vehicles",
+        "bytes": 2007,
+        "mentions_datsun": false,
+        "elapsed_ms": 68
+      }
+    },
+    {
+      "site": "jdm-expo",
+      "group": "dealer",
+      "root": {
+        "url": "https://jdm-expo.com/",
+        "status": 200,
+        "final_url": "https://jdm-expo.com/",
+        "bytes": 78255,
+        "mentions_datsun": false,
+        "elapsed_ms": 801
+      },
+      "search": {
+        "url": "https://jdm-expo.com/11-nissan",
+        "status": 200,
+        "final_url": "https://jdm-expo.com/11-nissan",
+        "bytes": 103934,
+        "mentions_datsun": false,
+        "elapsed_ms": 495
+      }
+    },
+    {
+      "site": "tokyocarz",
+      "group": "dealer",
+      "root": {
+        "url": "https://www.tokyocarz.com/",
+        "status": 200,
+        "final_url": "https://www.tokyocarz.com/",
+        "bytes": 662298,
+        "mentions_datsun": false,
+        "elapsed_ms": 106
+      },
+      "search": {
+        "url": "https://www.tokyocarz.com/listop/cheap-used-nissan-datsun-for-sale",
+        "status": 200,
+        "final_url": "https://www.tokyocarz.com/cheap-used-nissan-datsun-for-sale",
+        "bytes": 463543,
+        "mentions_datsun": true,
+        "elapsed_ms": 5229
+      }
+    },
+    {
+      "site": "aucfree",
+      "group": "jp-sold-data",
+      "root": {
+        "url": "https://aucfree.com/",
+        "status": 403,
+        "final_url": "https://aucfree.com/",
+        "bytes": 520,
+        "mentions_datsun": false,
+        "elapsed_ms": 503
+      },
+      "search": {
+        "url": "https://aucfree.com/search?q=%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%20620",
+        "status": 403,
+        "final_url": "https://aucfree.com/search?q=%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%20620",
+        "bytes": 520,
+        "mentions_datsun": false,
+        "elapsed_ms": 107
+      }
+    },
+    {
+      "site": "aleado",
+      "group": "jp-auction",
+      "root": {
+        "url": "https://yahoo.aleado.com/",
+        "status": null,
+        "error": "ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)",
+        "elapsed_ms": 5950
+      },
+      "search": {
+        "url": "https://yahoo.aleado.com/26360-catlist.html",
+        "status": null,
+        "error": "ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)",
+        "elapsed_ms": 482
+      }
+    },
+    {
+      "site": "ts-export",
+      "group": "jp-auction",
+      "root": {
+        "url": "https://www.ts-export.com/",
+        "status": 403,
+        "final_url": "https://www.ts-export.com/",
+        "bytes": 520,
+        "mentions_datsun": false,
+        "elapsed_ms": 533
+      },
+      "search": {
+        "url": "https://www.ts-export.com/page.php?page=about_classic_nissan_cars",
+        "status": 403,
+        "final_url": "https://www.ts-export.com/page.php?page=about_classic_nissan_cars",
+        "bytes": 520,
+        "mentions_datsun": false,
+        "elapsed_ms": 108
+      }
+    },
+    {
+      "site": "jpauc",
+      "group": "jp-auction",
+      "root": {
+        "url": "https://jpauc.com/",
+        "status": 200,
+        "final_url": "https://jpauc.com/",
+        "bytes": 6272,
+        "mentions_datsun": false,
+        "elapsed_ms": 728
+      },
+      "search": {
+        "url": "https://jpauc.com/auction/past",
+        "status": 200,
+        "final_url": "https://jpauc.com/auction/past",
+        "bytes": 11456,
+        "mentions_datsun": false,
+        "elapsed_ms": 1217
+      }
+    },
+    {
+      "site": "aaajapan",
+      "group": "jp-auction",
+      "root": {
+        "url": "https://aaajapan.com/",
+        "status": 200,
+        "final_url": "https://aaajapan.com/",
+        "bytes": 81588,
+        "mentions_datsun": false,
+        "elapsed_ms": 1329
+      },
+      "search": {
+        "url": "https://aaajapan.com/auctions",
+        "status": 200,
+        "final_url": "https://aaajapan.com/auctions",
+        "bytes": 38689,
+        "mentions_datsun": false,
+        "elapsed_ms": 1445
+      }
+    },
+    {
+      "site": "flex-kyusha",
+      "group": "jp-dealer",
+      "root": {
+        "url": "https://www.flexnet.co.jp/",
+        "status": 200,
+        "final_url": "https://www.flexnet.co.jp/",
+        "bytes": 355711,
+        "mentions_datsun": false,
+        "elapsed_ms": 3586
+      },
+      "search": {
+        "url": "https://www.flexnet.co.jp/search/freeword/%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3",
+        "status": 200,
+        "final_url": "https://www.flexnet.co.jp/search/freeword/%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3",
+        "bytes": 340682,
+        "mentions_datsun": true,
+        "elapsed_ms": 398
+      }
+    },
+    {
+      "site": "kuruma-ex",
+      "group": "jp-portal",
+      "root": {
+        "url": "https://kuruma-ex.jp/",
+        "status": 200,
+        "final_url": "https://kuruma-ex.jp/",
+        "bytes": 49868,
+        "mentions_datsun": false,
+        "elapsed_ms": 229
+      },
+      "search": {
+        "url": "https://kuruma-ex.jp/usedcar/search/result/maker/NI/shashu/S061",
+        "status": 200,
+        "final_url": "https://kuruma-ex.jp/usedcar/search/result/maker/NI/shashu/S061",
+        "bytes": 256288,
+        "mentions_datsun": true,
+        "elapsed_ms": 2202
+      }
+    },
+    {
+      "site": "carview",
+      "group": "jp-portal",
+      "root": {
+        "url": "https://ucar.carview.yahoo.co.jp/",
+        "status": 200,
+        "final_url": "https://ucar.carview.yahoo.co.jp/",
+        "bytes": 426977,
+        "mentions_datsun": false,
+        "elapsed_ms": 764
+      },
+      "search": {
+        "url": "https://ucar.carview.yahoo.co.jp/model/nissan/datsun/",
+        "status": 200,
+        "final_url": "https://ucar.carview.yahoo.co.jp/model/nissan/datsun/",
+        "bytes": 624598,
+        "mentions_datsun": true,
+        "elapsed_ms": 592
+      }
+    },
+    {
+      "site": "kurumaerabi",
+      "group": "jp-portal",
+      "root": {
+        "url": "https://www.kurumaerabi.com/",
+        "status": 200,
+        "final_url": "https://www.kurumaerabi.com/",
+        "bytes": 261939,
+        "mentions_datsun": false,
+        "elapsed_ms": 883
+      },
+      "search": {
+        "url": "https://www.kurumaerabi.com/usedcar/nissan/926-2659/",
+        "status": 200,
+        "final_url": "https://www.kurumaerabi.com/usedcar/nissan/926-2659/",
+        "bytes": 243767,
+        "mentions_datsun": true,
+        "elapsed_ms": 304
+      }
+    },
+    {
+      "site": "kakaku-used",
+      "group": "jp-portal",
+      "root": {
+        "url": "https://kakaku.com/",
+        "status": 200,
+        "final_url": "https://kakaku.com/",
+        "bytes": 108018,
+        "mentions_datsun": false,
+        "elapsed_ms": 149
+      },
+      "search": {
+        "url": "https://kakaku.com/kuruma/used/spec/Maker=3/Model=30345/",
+        "status": 200,
+        "final_url": "https://kakaku.com/kuruma/used/spec/Maker=3/Model=30345/",
+        "bytes": 297001,
+        "mentions_datsun": true,
+        "elapsed_ms": 282
+      }
+    },
+    {
+      "site": "webcartop",
+      "group": "jp-portal",
+      "root": {
+        "url": "https://www.webcartop.jp/",
+        "status": 200,
+        "final_url": "https://www.webcartop.jp/",
+        "bytes": 392158,
+        "mentions_datsun": false,
+        "elapsed_ms": 678
+      },
+      "search": {
+        "url": "https://www.webcartop.jp/usedcar-search/?brand_cd=1015&car_cd=10154614",
+        "status": 200,
+        "final_url": "https://www.webcartop.jp/usedcar-search/?brand_cd=1015&car_cd=10154614",
+        "bytes": 295126,
+        "mentions_datsun": true,
+        "elapsed_ms": 434
+      }
+    },
+    {
+      "site": "picknbuy24",
+      "group": "jp-export",
+      "root": {
+        "url": "https://www.picknbuy24.com/",
+        "status": 200,
+        "final_url": "https://www.picknbuy24.com/",
+        "bytes": 0,
+        "mentions_datsun": false,
+        "elapsed_ms": 757
+      },
+      "search": {
+        "url": "https://www.picknbuy24.com/usedcar/?maker=nissan&model=datsun+truck",
+        "status": 200,
+        "final_url": "https://www.picknbuy24.com/usedcar/?maker=nissan&model=datsun+truck",
+        "bytes": 0,
+        "mentions_datsun": false,
+        "elapsed_ms": 231
+      }
+    },
+    {
+      "site": "cardealpage",
+      "group": "jp-export",
+      "root": {
+        "url": "https://www.cardealpage.com/",
+        "status": 200,
+        "final_url": "https://www.cardealpage.com/",
+        "bytes": 139198,
+        "mentions_datsun": false,
+        "elapsed_ms": 168
+      },
+      "search": {
+        "url": "https://www.cardealpage.com/nissan/datsun%20truck/",
+        "status": 200,
+        "final_url": "https://www.cardealpage.com/nissan/datsun%20truck/",
+        "bytes": 170,
+        "mentions_datsun": true,
+        "elapsed_ms": 1124
+      }
+    },
+    {
+      "site": "everycar",
+      "group": "jp-export",
+      "root": {
+        "url": "https://www.everycar.jp/",
+        "status": 200,
+        "final_url": "https://www.everycar.jp/",
+        "bytes": 130959,
+        "mentions_datsun": false,
+        "elapsed_ms": 1173
+      },
+      "search": {
+        "url": "https://www.everycar.jp/nissan/datsun/",
+        "status": 200,
+        "final_url": "https://www.everycar.jp/nissan/datsun/",
+        "bytes": 171999,
+        "mentions_datsun": true,
+        "elapsed_ms": 903
+      }
+    },
+    {
+      "site": "satjapan",
+      "group": "jp-export",
+      "root": {
+        "url": "https://satjapan.com/",
+        "status": 403,
+        "final_url": "https://satjapan.com/",
+        "bytes": 5701,
+        "mentions_datsun": false,
+        "elapsed_ms": 139
+      },
+      "search": {
+        "url": "https://satjapan.com/used-cars/mk_nissan/md_datsun-pickup",
+        "status": 403,
+        "final_url": "https://satjapan.com/used-cars/mk_nissan/md_datsun-pickup",
+        "bytes": 5873,
+        "mentions_datsun": true,
+        "elapsed_ms": 21
+      }
+    },
+    {
+      "site": "nikkyo",
+      "group": "jp-export",
+      "root": {
+        "url": "https://www.nikkyocars.com/",
+        "status": 200,
+        "final_url": "https://www.nikkyocars.com/",
+        "bytes": 101614,
+        "mentions_datsun": false,
+        "elapsed_ms": 1177
+      },
+      "search": {
+        "url": "https://www.nikkyocars.com/m/stock/?maker=NISSAN&cars=DATSUN+PICKUP",
+        "status": 200,
+        "final_url": "https://www.nikkyocars.com/m/stock/?maker=NISSAN&cars=DATSUN+PICKUP",
+        "bytes": 131077,
+        "mentions_datsun": true,
+        "elapsed_ms": 1498
+      }
+    },
+    {
+      "site": "carused",
+      "group": "jp-export",
+      "root": {
+        "url": "https://carused.jp/",
+        "status": 200,
+        "final_url": "https://carused.jp/recaptcha?url=https%3A%2F%2Fcarused.jp%2F",
+        "bytes": 806,
+        "mentions_datsun": false,
+        "elapsed_ms": 622
+      },
+      "search": {
+        "url": "https://carused.jp/car-list/nissan/datsun-pickup",
+        "status": 200,
+        "final_url": "https://carused.jp/car-list/nissan/datsun-pickup",
+        "bytes": 676396,
+        "mentions_datsun": true,
+        "elapsed_ms": 1336
+      }
+    },
+    {
+      "site": "carjunction",
+      "group": "jp-export",
+      "root": {
+        "url": "https://www.carjunction.com/",
+        "status": 200,
+        "final_url": "https://www.carjunction.com/",
+        "bytes": 127419,
+        "mentions_datsun": false,
+        "elapsed_ms": 2312
+      },
+      "search": {
+        "url": "https://www.carjunction.com/category/trucks.html",
+        "status": 200,
+        "final_url": "https://www.carjunction.com/category/trucks.html",
+        "bytes": 225814,
+        "mentions_datsun": false,
+        "elapsed_ms": 523
+      }
+    }
+  ]
+}
