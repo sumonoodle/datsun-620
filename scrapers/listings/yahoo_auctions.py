@@ -56,7 +56,12 @@ _620_RE = re.compile(r"(?<![\dA-Za-z])620(?!\d)")
 # spanning 520/521/720/D21/D22 is a part that fits many trucks. Caught live
 # on the first run: a 720 diff keyword-stuffed with "620 520 521 D21".
 _OTHER_GEN_RE = re.compile(r"(?<!\d)(?:520|521|720)(?!\d)|D2[12]", re.I)
-_FIXED_PRICE_FLOOR_JPY = 100_000
+# Unscoped queries floor EVERY format, auctions included: the first
+# all-620s live run leaked a ¥6,666 slot car, a ¥631 diecast and a ¥1,650
+# oil seal, all auctions with titles the word list can't enumerate. Cheap
+# real trucks are not lost by this — the category-scoped vehicle queries
+# below run with no floor at all and carry that recall duty.
+_UNSCOPED_FLOOR_JPY = 100_000
 
 # Parts/memorabilia words, extended from the retired Buyee collector's list
 # and hardened again when the King Cab gate was removed (2026-07-17: the
@@ -154,11 +159,7 @@ def parse_open(html: str, fx_day: dict,
 
         raw_price = a.get("data-auction-price")
         amount = float(raw_price) if raw_price and raw_price.isdigit() else None
-        # 現在 = current bid (auction running); 即決 only = fixed price.
-        labels = {el.get_text(strip=True) for el in p.select(".Product__label")}
-        is_fixed_only = "即決" in labels and "現在" not in labels
-        if not vehicle_scoped and is_fixed_only and amount is not None \
-                and amount < _FIXED_PRICE_FLOOR_JPY:
+        if not vehicle_scoped and amount is not None and amount < _UNSCOPED_FLOOR_JPY:
             continue
 
         records.append(_record(auction_id, title, amount,

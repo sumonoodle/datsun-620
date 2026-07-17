@@ -66,14 +66,17 @@ def test_carsensor_parser():
 def test_yahoo_open_parser():
     records, raw = yahoo_auctions.parse_open(
         (FIXTURES / "yahoo_open_page.html").read_text(), FX_DAY)
-    assert raw == 6, raw
+    assert raw == 9, raw
     ids = [r["id"] for r in records]
-    # Excluded: the real lowering-block part, the cheap fixed-price item
-    # (price floor), the 720 King Cab, the A16205 part number, and the
-    # first live run's escapee — a 720 diff keyword-stuffed with
-    # "620 520 521 D21" (cross-generation rule).
+    # Excluded: the real lowering-block part, the cheap fixed-price item,
+    # the 720 King Cab, the A16205 part number, the keyword-stuffed 720
+    # diff (cross-generation rule), and the all-620s first run's three
+    # live leaks — slot car, cased diecast, oil seal — which the all-format
+    # unscoped price floor now removes.
     assert ids == ["yahoo_auctions:x9000000001"], ids
     assert "yahoo_auctions:d1234126705" not in ids, "keyword-stuffed part leaked"
+    for leak in ("d1236911238", "u1206189077", "s1235401261"):
+        assert f"yahoo_auctions:{leak}" not in ids, f"cheap junk leaked: {leak}"
     golden = records[0]
     assert golden["year"] == 1978  # 昭和53年
     assert golden["price"]["amount"] == 1_500_000
