@@ -6,7 +6,9 @@ compute changes, and write everything. Digest sending is emailer/send_digest.py
 (from M4).
 
 Sources by milestone: M3 eBay + Bring a Trailer; M4 Cars & Bids + Hemmings;
-M5 Goo-net + Yahoo/Buyee.
+M5 Goo-net + Yahoo/Buyee (both IP-blocked, retired); Asia expansion
+2026-07-17: Goo-net Exchange, Carsensor, Yahoo Auctions direct (supersedes
+Buyee) and Kaidee, per docs/asia-sources.md.
 """
 
 from __future__ import annotations
@@ -22,7 +24,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import fx, store as store_mod, translate
 from common.schema import DATA_DIR, validate
-from listings import bat, carsandbids, ebay, goonet, hemmings, yahoo_buyee
+from listings import (bat, carsandbids, carsensor, ebay, goonet_exchange,
+                      hemmings, kaidee, yahoo_auctions)
 
 # (source_name, callable(fx_day) -> [listing records])
 SOURCES: list[tuple] = [
@@ -30,8 +33,10 @@ SOURCES: list[tuple] = [
     ("bringatrailer", bat.collect),
     ("carsandbids", carsandbids.collect),
     ("hemmings", hemmings.collect),
-    ("goonet", goonet.collect),
-    ("yahoo_buyee", yahoo_buyee.collect),
+    ("goonet_exchange", goonet_exchange.collect),
+    ("carsensor", carsensor.collect),
+    ("yahoo_auctions", yahoo_auctions.collect),
+    ("kaidee", kaidee.collect),
 ]
 
 
@@ -136,6 +141,16 @@ def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None) -> int
     listings_path.write_text(json.dumps(listing_store, indent=2, ensure_ascii=False) + "\n")
     (data_dir / "changes-latest.json").write_text(json.dumps(changes, indent=2) + "\n")
     (data_dir / "run-log.json").write_text(json.dumps(run_log, indent=2) + "\n")
+
+    # Titles of new catches go to stdout so the Actions log answers "what
+    # did it find?" without opening the data files (the branch live-test
+    # workflow never commits them).
+    by_id = {l["id"]: l for l in listing_store["listings"]}
+    for new_id in changes["new"]:
+        l = by_id.get(new_id)
+        if l:
+            print(f"new: {new_id} | {l['title'][:90]} | "
+                  f"{l['price']['amount']} {l['price']['currency']} | {l['url']}")
 
     ok = sum(1 for s in source_results if s["ok"])
     print(

@@ -29,12 +29,15 @@ Prerequisites: `GMAIL_USER` and `GMAIL_APP_PASSWORD` secrets (set 2026-07-16).
 
 The digest's Source health section shows every source daily. Expected states:
 
-- **eBay, Bring a Trailer**: normally green. A parse failure here usually
-  means a site redesign; the fixture tests in `scrapers/tests/` pin the
-  expected format, so ask Claude Code to refresh the fixture and parser.
-- **Cars & Bids, Hemmings, Goo-net, Yahoo (Buyee)**: blocked (403/404) most
-  days; that is documented, not broken. See `docs/japan-sources.md` for the
-  evidence and the options if coverage matters later.
+- **eBay, Bring a Trailer, Goo-net Exchange, Carsensor, Yahoo Auctions,
+  Kaidee**: normally green. A parse failure here usually means a site
+  redesign; the fixture tests in `scrapers/tests/` pin the expected format,
+  so ask Claude Code to refresh the fixture and parser.
+- **Cars & Bids, Hemmings**: blocked (403/404) most days; that is
+  documented, not broken. See `docs/japan-sources.md` and
+  `docs/asia-sources.md` for the evidence and options. (The old Goo-net
+  and Buyee collectors were retired 2026-07-17: Yahoo Auctions is now
+  scraped directly and Goo-net via its Exchange export portal.)
 - Any source blocked 7+ days shows "decision needed" in the digest.
 
 A failing source NEVER fails the run; if the daily-scrape tick itself goes

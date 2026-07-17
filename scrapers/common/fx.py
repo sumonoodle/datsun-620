@@ -17,7 +17,7 @@ from pathlib import Path
 import httpx
 
 FRANKFURTER_URL = "https://api.frankfurter.dev/v1/latest"
-SYMBOLS = ["USD", "EUR", "JPY", "AUD", "ZAR"]
+SYMBOLS = ["USD", "EUR", "JPY", "AUD", "ZAR", "THB"]
 BASE = "GBP"
 
 

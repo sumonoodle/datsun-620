@@ -1,1117 +1,1224 @@
 {
-  "version": "1.3",
-  "updated": "2026-07-16",
-  "markets": [
+ "version": "1.4",
+ "updated": "2026-07-17",
+ "markets": [
+  {
+   "market": "US",
+   "name": "United States",
+   "notes": "The Datsun 620 was sold in the US from 1972-1979, marketed as the 'Li'l Hustler', arriving just before the 1973 oil crisis and becoming a key player in the compact pickup boom. Engine progression for the US market was L16 1.6L (96 hp, 1972-73), L18 1.8L (100 hp, 1974), then L20B 2.0L (110 hp gross, ~97 hp net in later years) from 1975-79. A 7-foot long bed on the 2785 mm wheelbase arrived in 1975, and the industry-first extended King Cab (cab stretched ~10 in / 24 cm, on the long chassis with the standard 6-ft bed) arrived for 1977. Swatch hex values are approximations from the colour names and period photos, not measured paint values; codes are the factory paint codes.",
+   "variants": [
     {
-      "market": "US",
-      "name": "United States",
-      "notes": "The Datsun 620 was sold in the US from 1972-1979, marketed as the 'Li'l Hustler', arriving just before the 1973 oil crisis and becoming a key player in the compact pickup boom. Engine progression for the US market was L16 1.6L (96 hp, 1972-73), L18 1.8L (100 hp, 1974), then L20B 2.0L (110 hp gross, ~97 hp net in later years) from 1975-79. A 7-foot long bed on the 2785 mm wheelbase arrived in 1975, and the industry-first extended King Cab (cab stretched ~10 in / 24 cm, on the long chassis with the standard 6-ft bed) arrived for 1977. Swatch hex values are approximations from the colour names and period photos, not measured paint values; codes are the factory paint codes.",
-      "variants": [
-        {
-          "id": "us-standard-bed",
-          "name": "Datsun 620 Li'l Hustler (standard bed)",
-          "years": {
-            "from": 1972,
-            "to": 1979
-          },
-          "body": "standard cab, short bed (6-ft)",
-          "engine": {
-            "code": "L20B",
-            "displacement_cc": 1952,
-            "power_hp": 110,
-            "power_note": "engine changed by year: L16 1595cc 96 hp (1972-73), L18 1770cc 100 hp (1974), L20B 1952cc 110 hp SAE gross (1975-79; net rating ~97 hp in later years)",
-            "codes": [
-              "L16",
-              "L18",
-              "L20B"
-            ]
-          },
-          "dimensions_mm": {
-            "length": 4298,
-            "width": 1590,
-            "height": 1545,
-            "wheelbase": 2545,
-            "bed_length": 1829
-          },
-          "weight_kg": 1037,
-          "transmission": "F4W63 4-speed manual (1972-73), F4W71 4-speed manual (1974-79); 3N71 3-speed automatic optional from mid-1972; FS5W71B 5-speed manual optional from 1977",
-          "notes": "Torsion-bar independent front suspension, leaf-sprung solid rear axle. Length conflict resolved: 4297.7 mm is the short bed; ~4610 mm is the long bed. Prior-recorded wheelbase 2567.9 mm was a conversion artifact; correct short-bed wheelbase is 2545 mm (100.2 in).",
-          "citations": [
-            {
-              "ref": "https://en.wikipedia.org/wiki/Datsun_Truck",
-              "note": "engine progression L16 96hp/L18 100hp/L20B 110hp by year; wheelbases 2545mm and 2785mm; transmissions incl. FS5W71B 5-speed from 1977; Li'l Hustler name"
-            },
-            {
-              "ref": "https://datsuntrucks.com/620-specifications/",
-              "note": "620 specifications page (4297.7mm length, width/height figures)"
-            },
-            {
-              "ref": "https://rickalva.tripod.com/id5.html",
-              "note": "PL620 Li'l Hustler weight 2286 lb (=1036.9 kg), L16 four-cylinder"
-            },
-            {
-              "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1972-79-datsun-620-long-bed/",
-              "note": "standard 6-foot bed; two wheelbase lengths 100.2 in / 109.6 in"
-            },
-            {
-              "ref": "https://importarchive.com/datsun/truck/1972-1979",
-              "note": "US-market 620 paint colours by year: the 1977-79 set (663/505/637/617/647/618/524/510/307) and 1978 confirmations"
-            },
-            {
-              "ref": "https://datsuntrucks.com/paint-codes/",
-              "note": "620 paint codes from period PPG/Dupont brochures: 102/103/104/052/524/617/630/931/940"
-            },
-            {
-              "ref": "https://www.paintscratch.com/touch_up_paint/Nissan/620.html",
-              "note": "paint supplier's 620 colour stock corroborating names and codes"
-            }
-          ],
-          "confidence": "high",
-          "unresolved": [
-            "Kerb weight 1037 kg (2286 lb) adopted for early US short bed vs 1065 kg (CarsGuide/fastestlaps, likely later or other-market body); weight grew over the model run",
-            "Exact model-year windows for several colours (Saddle/Buckskin/Desert Gold/Kelly Green era; whether 505/510/307 predate 1979)",
-            "Factory Datsun code for early-620 white (PPG cross-refs 8895/8889 known; possibly 018 Snow White, unconfirmed for the truck)"
-          ],
-          "colors": [
-            {
-              "name": "White",
-              "hex": "#f2f1ec"
-            },
-            {
-              "name": "Mellow Yellow",
-              "code": "102",
-              "hex": "#e8c84a"
-            },
-            {
-              "name": "True Blue",
-              "code": "103",
-              "hex": "#2b4f81"
-            },
-            {
-              "name": "Cactus Green",
-              "code": "104",
-              "hex": "#7a8f5a"
-            },
-            {
-              "name": "Sunset Orange",
-              "code": "052",
-              "hex": "#d45e2c"
-            },
-            {
-              "name": "Pagoda Red",
-              "code": "524",
-              "hex": "#b02818"
-            },
-            {
-              "name": "Saddle",
-              "code": "617",
-              "hex": "#8a5a2b"
-            },
-            {
-              "name": "Buckskin",
-              "code": "630",
-              "hex": "#c2a97a"
-            },
-            {
-              "name": "Desert Gold",
-              "code": "931",
-              "hex": "#c9a44a"
-            },
-            {
-              "name": "Kelly Green",
-              "code": "940",
-              "hex": "#2e7d46"
-            },
-            {
-              "name": "Hustler Red",
-              "code": "524",
-              "hex": "#b02818"
-            },
-            {
-              "name": "Chrome Yellow",
-              "code": "618",
-              "hex": "#e3a715"
-            },
-            {
-              "name": "Eggshell",
-              "code": "637",
-              "hex": "#ece5d2"
-            },
-            {
-              "name": "Autumn Brown",
-              "code": "647",
-              "hex": "#5c3a24"
-            },
-            {
-              "name": "Thunder Black",
-              "code": "505",
-              "hex": "#1b1b1b"
-            },
-            {
-              "name": "Diamond Mist Metallic",
-              "code": "663",
-              "hex": "#b9bcb6"
-            },
-            {
-              "name": "Sky Blue Metallic",
-              "code": "510",
-              "hex": "#7da7c9"
-            },
-            {
-              "name": "Pacific Blue Metallic",
-              "code": "307",
-              "hex": "#33567d"
-            }
-          ]
-        },
-        {
-          "id": "us-long-bed",
-          "name": "Datsun 620 Li'l Hustler Long Bed",
-          "years": {
-            "from": 1975,
-            "to": 1979
-          },
-          "body": "standard cab, long bed (7-ft)",
-          "engine": {
-            "code": "L20B",
-            "displacement_cc": 1952,
-            "power_hp": 110,
-            "power_note": "L20B only for its entire run (long bed introduced 1975, same year as L20B); 110 hp SAE gross, ~97 hp net in later years",
-            "codes": [
-              "L20B"
-            ]
-          },
-          "dimensions_mm": {
-            "length": 4610,
-            "width": 1590,
-            "height": 1545,
-            "wheelbase": 2785,
-            "bed_length": 2134
-          },
-          "weight_kg": null,
-          "transmission": "F4W71 4-speed manual standard; 3N71 3-speed automatic optional; FS5W71B 5-speed manual optional from 1977",
-          "notes": "Long bed introduced in the US for 1975 on the 2785 mm (109.6 in) wheelbase with extra rear overhang, giving a 7-foot bed vs the standard 6-foot.",
-          "citations": [
-            {
-              "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1972-79-datsun-620-long-bed/",
-              "note": "'The Long Bed didn't come out until 1975 (in the US anyway)'; 109.6 in wheelbase plus extra overhang = seven-foot bed"
-            },
-            {
-              "ref": "https://en.wikipedia.org/wiki/Datsun_Truck",
-              "note": "2785 mm (109.6 in) wheelbase for long-wheelbase models"
-            },
-            {
-              "ref": "https://www.carsguide.com.au/datsun/620/car-dimensions/1976",
-              "note": "length 4609 mm, width 1590 mm, height 1545 mm (corroborates the ~4610 mm long-body length)"
-            },
-            {
-              "ref": "https://importarchive.com/datsun/truck/1972-1979",
-              "note": "US-market 620 paint colours by year: the 1977-79 set (663/505/637/617/647/618/524/510/307) and 1978 confirmations"
-            },
-            {
-              "ref": "https://datsuntrucks.com/paint-codes/",
-              "note": "620 paint codes from period PPG/Dupont brochures: 102/103/104/052/524/617/630/931/940"
-            },
-            {
-              "ref": "https://www.paintscratch.com/touch_up_paint/Nissan/620.html",
-              "note": "paint supplier's 620 colour stock corroborating names and codes"
-            }
-          ],
-          "confidence": "medium",
-          "unresolved": [
-            "Long-bed kerb weight not verified for US spec",
-            "Exact inside bed length unconfirmed (7 ft adopted; one source reportedly lists 7 ft 5 in box)",
-            "Exact model-year windows for several colours (Saddle/Buckskin/Desert Gold/Kelly Green era; whether 505/510/307 predate 1979)",
-            "Factory Datsun code for early-620 white (PPG cross-refs 8895/8889 known; possibly 018 Snow White, unconfirmed for the truck)"
-          ],
-          "colors": [
-            {
-              "name": "Saddle",
-              "code": "617",
-              "hex": "#8a5a2b"
-            },
-            {
-              "name": "Buckskin",
-              "code": "630",
-              "hex": "#c2a97a"
-            },
-            {
-              "name": "Desert Gold",
-              "code": "931",
-              "hex": "#c9a44a"
-            },
-            {
-              "name": "Kelly Green",
-              "code": "940",
-              "hex": "#2e7d46"
-            },
-            {
-              "name": "Hustler Red",
-              "code": "524",
-              "hex": "#b02818"
-            },
-            {
-              "name": "Chrome Yellow",
-              "code": "618",
-              "hex": "#e3a715"
-            },
-            {
-              "name": "Eggshell",
-              "code": "637",
-              "hex": "#ece5d2"
-            },
-            {
-              "name": "Autumn Brown",
-              "code": "647",
-              "hex": "#5c3a24"
-            },
-            {
-              "name": "Thunder Black",
-              "code": "505",
-              "hex": "#1b1b1b"
-            },
-            {
-              "name": "Diamond Mist Metallic",
-              "code": "663",
-              "hex": "#b9bcb6"
-            },
-            {
-              "name": "Sky Blue Metallic",
-              "code": "510",
-              "hex": "#7da7c9"
-            },
-            {
-              "name": "Pacific Blue Metallic",
-              "code": "307",
-              "hex": "#33567d"
-            },
-            {
-              "name": "True Blue",
-              "code": "103",
-              "hex": "#2b4f81"
-            }
-          ]
-        },
-        {
-          "id": "us-king-cab",
-          "name": "Datsun 620 King Cab",
-          "years": {
-            "from": 1977,
-            "to": 1979
-          },
-          "body": "extended King Cab, standard 6-ft bed on long-wheelbase chassis",
-          "engine": {
-            "code": "L20B",
-            "displacement_cc": 1952,
-            "power_hp": 110,
-            "power_note": "L20B only; 110 hp SAE gross rating (net ~97 hp in 1977-78 tune)",
-            "codes": [
-              "L20B"
-            ]
-          },
-          "dimensions_mm": {
-            "length": null,
-            "width": 1590,
-            "height": 1545,
-            "wheelbase": 2785,
-            "bed_length": 1829
-          },
-          "weight_kg": null,
-          "transmission": "F4W71 4-speed manual standard; FS5W71B 5-speed manual optional (introduced 1977); 3N71 3-speed automatic optional",
-          "notes": "First extended-cab compact pickup sold in the US, added for model year 1977. Cabin stretched by 24 cm (10 in) versus the standard cab, combined with the standard bed on the long 2785 mm wheelbase chassis.",
-          "citations": [
-            {
-              "ref": "https://en.wikipedia.org/wiki/Datsun_Truck",
-              "note": "King Cab from 1977; cabin stretched by 24 cm (10 in); used the bed from the normal 620"
-            },
-            {
-              "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1977-datsun-king-cab-pickup-620-yes-we-have-long-legs-in-america/",
-              "note": "1977 US King Cab feature article, first Datsun extended cab"
-            },
-            {
-              "ref": "https://www.jdpower.com/cars/1977/nissan-datsun/620/pickup-king-cab",
-              "note": "confirms 1977 US-market King Cab body style listing"
-            },
-            {
-              "ref": "https://importarchive.com/datsun/truck/1972-1979",
-              "note": "US-market 620 paint colours by year: the 1977-79 set (663/505/637/617/647/618/524/510/307) and 1978 confirmations"
-            },
-            {
-              "ref": "https://datsuntrucks.com/paint-codes/",
-              "note": "620 paint codes from period PPG/Dupont brochures: 102/103/104/052/524/617/630/931/940"
-            },
-            {
-              "ref": "https://www.paintscratch.com/touch_up_paint/Nissan/620.html",
-              "note": "paint supplier's 620 colour stock corroborating names and codes"
-            }
-          ],
-          "confidence": "medium",
-          "unresolved": [
-            "Overall length not verified from any surfaced source",
-            "Kerb weight not verified",
-            "Introduction year 1977 (Wikipedia, Curbside Classic, JDPower) vs 'from 1976' (en.datsun-club.com, likely Japan introduction) -- 1977 adopted for US market",
-            "Exact model-year windows for several colours (Saddle/Buckskin/Desert Gold/Kelly Green era; whether 505/510/307 predate 1979)",
-            "Factory Datsun code for early-620 white (PPG cross-refs 8895/8889 known; possibly 018 Snow White, unconfirmed for the truck)"
-          ],
-          "colors": [
-            {
-              "name": "Hustler Red",
-              "code": "524",
-              "hex": "#b02818"
-            },
-            {
-              "name": "Chrome Yellow",
-              "code": "618",
-              "hex": "#e3a715"
-            },
-            {
-              "name": "Eggshell",
-              "code": "637",
-              "hex": "#ece5d2"
-            },
-            {
-              "name": "Saddle",
-              "code": "617",
-              "hex": "#8a5a2b"
-            },
-            {
-              "name": "Autumn Brown",
-              "code": "647",
-              "hex": "#5c3a24"
-            },
-            {
-              "name": "Thunder Black",
-              "code": "505",
-              "hex": "#1b1b1b"
-            },
-            {
-              "name": "Diamond Mist Metallic",
-              "code": "663",
-              "hex": "#b9bcb6"
-            },
-            {
-              "name": "Sky Blue Metallic",
-              "code": "510",
-              "hex": "#7da7c9"
-            },
-            {
-              "name": "Pacific Blue Metallic",
-              "code": "307",
-              "hex": "#33567d"
-            },
-            {
-              "name": "True Blue",
-              "code": "103",
-              "hex": "#2b4f81"
-            }
-          ]
-        }
+     "id": "us-standard-bed",
+     "name": "Datsun 620 Li'l Hustler (standard bed)",
+     "years": {
+      "from": 1972,
+      "to": 1979
+     },
+     "body": "standard cab, short bed (6-ft)",
+     "engine": {
+      "code": "L20B",
+      "displacement_cc": 1952,
+      "power_hp": 110,
+      "power_note": "engine changed by year: L16 1595cc 96 hp (1972-73), L18 1770cc 100 hp (1974), L20B 1952cc 110 hp SAE gross (1975-79; net rating ~97 hp in later years)",
+      "codes": [
+       "L16",
+       "L18",
+       "L20B"
       ]
+     },
+     "dimensions_mm": {
+      "length": 4298,
+      "width": 1590,
+      "height": 1545,
+      "wheelbase": 2545,
+      "bed_length": 1829
+     },
+     "weight_kg": 1037,
+     "transmission": "F4W63 4-speed manual (1972-73), F4W71 4-speed manual (1974-79); 3N71 3-speed automatic optional from mid-1972; FS5W71B 5-speed manual optional from 1977",
+     "notes": "Torsion-bar independent front suspension, leaf-sprung solid rear axle. Length conflict resolved: 4297.7 mm is the short bed; ~4610 mm is the long bed. Prior-recorded wheelbase 2567.9 mm was a conversion artifact; correct short-bed wheelbase is 2545 mm (100.2 in).",
+     "citations": [
+      {
+       "ref": "https://en.wikipedia.org/wiki/Datsun_Truck",
+       "note": "engine progression L16 96hp/L18 100hp/L20B 110hp by year; wheelbases 2545mm and 2785mm; transmissions incl. FS5W71B 5-speed from 1977; Li'l Hustler name"
+      },
+      {
+       "ref": "https://datsuntrucks.com/620-specifications/",
+       "note": "620 specifications page (4297.7mm length, width/height figures)"
+      },
+      {
+       "ref": "https://rickalva.tripod.com/id5.html",
+       "note": "PL620 Li'l Hustler weight 2286 lb (=1036.9 kg), L16 four-cylinder"
+      },
+      {
+       "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1972-79-datsun-620-long-bed/",
+       "note": "standard 6-foot bed; two wheelbase lengths 100.2 in / 109.6 in"
+      },
+      {
+       "ref": "https://importarchive.com/datsun/truck/1972-1979",
+       "note": "US-market 620 paint colours by year: the 1977-79 set (663/505/637/617/647/618/524/510/307) and 1978 confirmations"
+      },
+      {
+       "ref": "https://datsuntrucks.com/paint-codes/",
+       "note": "620 paint codes from period PPG/Dupont brochures: 102/103/104/052/524/617/630/931/940"
+      },
+      {
+       "ref": "https://www.paintscratch.com/touch_up_paint/Nissan/620.html",
+       "note": "paint supplier's 620 colour stock corroborating names and codes"
+      }
+     ],
+     "confidence": "high",
+     "unresolved": [
+      "Kerb weight 1037 kg (2286 lb) adopted for early US short bed vs 1065 kg (CarsGuide/fastestlaps, likely later or other-market body); weight grew over the model run",
+      "Exact model-year windows for several colours (Saddle/Buckskin/Desert Gold/Kelly Green era; whether 505/510/307 predate 1979)",
+      "Factory Datsun code for early-620 white (PPG cross-refs 8895/8889 known; possibly 018 Snow White, unconfirmed for the truck)"
+     ],
+     "colors": [
+      {
+       "name": "White",
+       "hex": "#f2f1ec"
+      },
+      {
+       "name": "Mellow Yellow",
+       "code": "102",
+       "hex": "#e8c84a"
+      },
+      {
+       "name": "True Blue",
+       "code": "103",
+       "hex": "#2b4f81"
+      },
+      {
+       "name": "Cactus Green",
+       "code": "104",
+       "hex": "#7a8f5a"
+      },
+      {
+       "name": "Sunset Orange",
+       "code": "052",
+       "hex": "#d45e2c"
+      },
+      {
+       "name": "Pagoda Red",
+       "code": "524",
+       "hex": "#b02818"
+      },
+      {
+       "name": "Saddle",
+       "code": "617",
+       "hex": "#8a5a2b"
+      },
+      {
+       "name": "Buckskin",
+       "code": "630",
+       "hex": "#c2a97a"
+      },
+      {
+       "name": "Desert Gold",
+       "code": "931",
+       "hex": "#c9a44a"
+      },
+      {
+       "name": "Kelly Green",
+       "code": "940",
+       "hex": "#2e7d46"
+      },
+      {
+       "name": "Hustler Red",
+       "code": "524",
+       "hex": "#b02818"
+      },
+      {
+       "name": "Chrome Yellow",
+       "code": "618",
+       "hex": "#e3a715"
+      },
+      {
+       "name": "Eggshell",
+       "code": "637",
+       "hex": "#ece5d2"
+      },
+      {
+       "name": "Autumn Brown",
+       "code": "647",
+       "hex": "#5c3a24"
+      },
+      {
+       "name": "Thunder Black",
+       "code": "505",
+       "hex": "#1b1b1b"
+      },
+      {
+       "name": "Diamond Mist Metallic",
+       "code": "663",
+       "hex": "#b9bcb6"
+      },
+      {
+       "name": "Sky Blue Metallic",
+       "code": "510",
+       "hex": "#7da7c9"
+      },
+      {
+       "name": "Pacific Blue Metallic",
+       "code": "307",
+       "hex": "#33567d"
+      }
+     ]
     },
     {
-      "market": "UK",
-      "name": "United Kingdom",
-      "notes": "The 620 was officially imported in small numbers by Datsun UK (Octav Botnar's Worthing-based operation, importing Datsuns since 1968), sold as a commercial 'one-ton pick-up' badged Datsun 1500 rather than under the 620 name. Period UK evidence (Commercial Motor road test of 1 July 1977, show reports of 1978-1979) consistently describes a single spartan variant: long-wheelbase single-cab pickup, 1,483 cc J15 petrol engine, 77 bhp, 1,000 kg payload, four-speed manual, RHD, offered with no option packs. It was always a marginal seller next to Datsun's UK car range; DVLA-derived survivor data (howmanyleft.co.uk lists it as 'DATSUN G620 PICK-UP') shows only a handful remain, and many UK 620s seen today are later personal imports from South Africa, Australia or the US.",
-      "variants": [
-        {
-          "id": "uk-pickup",
-          "name": "Datsun 1500 one-ton pick-up (620, long wheelbase G620)",
-          "years": {
-            "from": 1976,
-            "to": 1979
-          },
-          "body": "2-door single-cab pickup, long wheelbase, standard drop-side bed, RHD",
-          "engine": {
-            "code": "J15",
-            "displacement_cc": 1483,
-            "power_hp": 77,
-            "power_note": "Period UK source (Commercial Motor, 14 Sep 1979) quotes 57 kW / 77 bhp from the 1,483 cc engine; Wikipedia gives the J15 as 77 PS (76 hp), so the figure is likely PS/DIN. Confirms UK trucks did NOT get the L16/L18/L20B fitted in North America.",
-            "codes": [
-              "J15"
-            ]
-          },
-          "dimensions_mm": {
-            "length": null,
-            "width": null,
-            "height": null,
-            "wheelbase": 2785,
-            "bed_length": null
-          },
-          "weight_kg": null,
-          "transmission": "4-speed manual (only transmission offered in UK per ex-Datsun UK staff account; no automatic or 5-speed documented)",
-          "notes": "Payload 1,000 kg ('one-tonner'), hence the commercial positioning. Ex-Datsun UK employee (joined 1976) recalls UK 620s came in three colours only (blue, red, white) with no option packs. Commercial Motor road-tested the Datsun one-ton pick-up on 1 July 1977 and still listed the 1,483 cc one-tonner in its September 1979 lightweights survey; King Cab and 4WD were never UK-market 620 offerings (the 'UK only received the long wheelbase 1-Tonner with L18 or 4WD 2.2 King Cab' line in Wikipedia's Datsun Truck article describes the later 720). Prior collected data (wheelbase 2567.9 mm, J15 77 hp from en.wikipedia.org/wiki/Datsun_Truck) mixed the correct UK engine with SHORT-wheelbase (2,545 mm/100.2 in) dimensions; the UK one-tonner was the long-wheelbase chassis, 2,785 mm (109.6 in). UK survivors: a 1978 T-registration UK truck documented on Retro Rides; a 1974 example auctioned by Hampson was a South African museum import, not UK-supplied. Colours per the ex-Datsun UK staff account: sold in three colours only (blue, red, white) with no options; formal paint names, codes and shades unknown, hence placeholder swatches.",
-          "citations": [
-            {
-              "ref": "https://archive.commercialmotor.com/article/14th-september-1979/60/lightweights-fit-all-forms-of-work",
-              "note": "Period UK trade press: Datsun one-tonne pick-up, 1,000 kg payload, 57 kW (77 bhp) 1,483 cc engine; references CM road test of 1.7.77"
-            },
-            {
-              "ref": "https://archive.commercialmotor.com/article/20th-october-1978/180/lightweight-choiet",
-              "note": "1978 UK show report: Datsun exhibited a one-ton pick-up with 1,483 cc petrol engine"
-            },
-            {
-              "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1972-79-datsun-620-long-bed/",
-              "note": "Ex-Datsun UK (1976) staff account: UK 620s in three colours (blue/red/white), no options, 4-speed manual, 1500 cc petrol; article notes Datsun was the largest Japanese brand in the UK at the time"
-            },
-            {
-              "ref": "https://en.wikipedia.org/wiki/Datsun_truck",
-              "note": "620 built Feb 1972-1979; outside North America most markets received the J15 1.5 (57 kW/77 hp); two wheelbases, long = G620; the L18 1-Tonner / 4WD 2.2 King Cab UK sentence belongs to the 720 successor section"
-            },
-            {
-              "ref": "https://www.howmanyleft.co.uk/vehicle/datsun_g620_pick-up",
-              "note": "DVLA registration data lists the model as 'DATSUN G620 PICK-UP', confirming long-wheelbase G620 chassis code on UK registrations and present-day scarcity"
-            },
-            {
-              "ref": "https://datsuntrucks.com/620-specifications/",
-              "note": "620 wheelbase figures: 2,545 mm (100.2 in) standard, 2,785 mm (109.6 in) long-wheelbase G/GN620"
-            },
-            {
-              "ref": "https://forum.retro-rides.org/thread/225770/datsun-pickup-resto-project-sussex",
-              "note": "Surviving UK-registered 1978 (T-plate) Datsun 620 pickup, Sussex — evidence of period UK sales"
-            },
-            {
-              "ref": "https://auctions.hampsonauctions.com/auction/lot/lot-80---1974-datsun-620-pick-up/?lot=1661&sd=1",
-              "note": "UK-auctioned 1974 620 explicitly documented as a recent South African import — illustrates that many UK survivors are not UK-supplied trucks"
-            }
-          ],
-          "confidence": "medium",
-          "unresolved": [
-            "Exact UK on-sale start year: 620 production began Feb 1972 and Datsun UK was active from 1968, but earliest UK-specific 620 evidence found is the 1976 staff account and the 1 July 1977 Commercial Motor road test; UK sales may have started 1972-1975 (years.from=1976 is 'earliest confirmed', not launch)",
-            "Exact UK sales end: CM still listed the 1,483 cc one-tonner in Sep 1979; whether stock sold into 1980 before the 720 replaced it is unverified",
-            "Official UK model name on price lists: badged 'Datsun 1500' / sold as 'one-ton pick-up'; whether literature said 'Datsun 1500 Pick-up' vs 'Datsun 1 Ton Pick-Up' unverified (the '1 Ton Pick-Up' name is confirmed in CM only from 1981, i.e. 720 era)",
-            "Overall length/width/height and kerb weight for the UK long-wheelbase spec: prior data (width 1587.5, height 1544.3, wheelbase 2567.9) appears to be generic short-wheelbase US-conversion figures and was not confirmed for the UK truck; only the 2,785 mm LWB wheelbase is supported",
-            "Bed length: US long-wheelbase trucks had a ~7 ft bed, but UK one-tonner bed dimensions unverified",
-            "Whether any UK 620 was sold with the L18 engine: no period evidence found; all period UK sources say 1,483 cc (the L18 '1-Tonner' reference relates to the 720)",
-            "Full text/figures of the Commercial Motor 1 July 1977 road test (kerb weight, GVW, dimensions) could not be retrieved via search excerpts"
-          ],
-          "colors": [
-            {
-              "name": "White",
-              "hex": null
-            },
-            {
-              "name": "Red",
-              "hex": null
-            },
-            {
-              "name": "Blue",
-              "hex": null
-            }
-          ]
-        }
-      ],
-      "unresolved": [
-        "Factory colour names/codes: the 1971/1973/1974 Datsun UK colour charts (jdmjunkies scans, archived in data/research/) cover the passenger-car range only; the commercial pickup is not listed. Best evidence remains the staff recollection of blue/red/white."
+     "id": "us-long-bed",
+     "name": "Datsun 620 Li'l Hustler Long Bed",
+     "years": {
+      "from": 1975,
+      "to": 1979
+     },
+     "body": "standard cab, long bed (7-ft)",
+     "engine": {
+      "code": "L20B",
+      "displacement_cc": 1952,
+      "power_hp": 110,
+      "power_note": "L20B only for its entire run (long bed introduced 1975, same year as L20B); 110 hp SAE gross, ~97 hp net in later years",
+      "codes": [
+       "L20B"
       ]
+     },
+     "dimensions_mm": {
+      "length": 4610,
+      "width": 1590,
+      "height": 1545,
+      "wheelbase": 2785,
+      "bed_length": 2134
+     },
+     "weight_kg": null,
+     "transmission": "F4W71 4-speed manual standard; 3N71 3-speed automatic optional; FS5W71B 5-speed manual optional from 1977",
+     "notes": "Long bed introduced in the US for 1975 on the 2785 mm (109.6 in) wheelbase with extra rear overhang, giving a 7-foot bed vs the standard 6-foot.",
+     "citations": [
+      {
+       "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1972-79-datsun-620-long-bed/",
+       "note": "'The Long Bed didn't come out until 1975 (in the US anyway)'; 109.6 in wheelbase plus extra overhang = seven-foot bed"
+      },
+      {
+       "ref": "https://en.wikipedia.org/wiki/Datsun_Truck",
+       "note": "2785 mm (109.6 in) wheelbase for long-wheelbase models"
+      },
+      {
+       "ref": "https://www.carsguide.com.au/datsun/620/car-dimensions/1976",
+       "note": "length 4609 mm, width 1590 mm, height 1545 mm (corroborates the ~4610 mm long-body length)"
+      },
+      {
+       "ref": "https://importarchive.com/datsun/truck/1972-1979",
+       "note": "US-market 620 paint colours by year: the 1977-79 set (663/505/637/617/647/618/524/510/307) and 1978 confirmations"
+      },
+      {
+       "ref": "https://datsuntrucks.com/paint-codes/",
+       "note": "620 paint codes from period PPG/Dupont brochures: 102/103/104/052/524/617/630/931/940"
+      },
+      {
+       "ref": "https://www.paintscratch.com/touch_up_paint/Nissan/620.html",
+       "note": "paint supplier's 620 colour stock corroborating names and codes"
+      }
+     ],
+     "confidence": "medium",
+     "unresolved": [
+      "Long-bed kerb weight not verified for US spec",
+      "Exact inside bed length unconfirmed (7 ft adopted; one source reportedly lists 7 ft 5 in box)",
+      "Exact model-year windows for several colours (Saddle/Buckskin/Desert Gold/Kelly Green era; whether 505/510/307 predate 1979)",
+      "Factory Datsun code for early-620 white (PPG cross-refs 8895/8889 known; possibly 018 Snow White, unconfirmed for the truck)"
+     ],
+     "colors": [
+      {
+       "name": "Saddle",
+       "code": "617",
+       "hex": "#8a5a2b"
+      },
+      {
+       "name": "Buckskin",
+       "code": "630",
+       "hex": "#c2a97a"
+      },
+      {
+       "name": "Desert Gold",
+       "code": "931",
+       "hex": "#c9a44a"
+      },
+      {
+       "name": "Kelly Green",
+       "code": "940",
+       "hex": "#2e7d46"
+      },
+      {
+       "name": "Hustler Red",
+       "code": "524",
+       "hex": "#b02818"
+      },
+      {
+       "name": "Chrome Yellow",
+       "code": "618",
+       "hex": "#e3a715"
+      },
+      {
+       "name": "Eggshell",
+       "code": "637",
+       "hex": "#ece5d2"
+      },
+      {
+       "name": "Autumn Brown",
+       "code": "647",
+       "hex": "#5c3a24"
+      },
+      {
+       "name": "Thunder Black",
+       "code": "505",
+       "hex": "#1b1b1b"
+      },
+      {
+       "name": "Diamond Mist Metallic",
+       "code": "663",
+       "hex": "#b9bcb6"
+      },
+      {
+       "name": "Sky Blue Metallic",
+       "code": "510",
+       "hex": "#7da7c9"
+      },
+      {
+       "name": "Pacific Blue Metallic",
+       "code": "307",
+       "hex": "#33567d"
+      },
+      {
+       "name": "True Blue",
+       "code": "103",
+       "hex": "#2b4f81"
+      }
+     ]
     },
     {
-      "market": "AU",
-      "name": "Australia",
-      "notes": "In Australia the 620 was sold from 1972 to 1979 badged simply as the 'Datsun 1500' ute (numeric model-variant badging was not used locally), powered by the 1483cc J15 engine rather than the L-series units fitted in North America. It was offered as a single-cab ute, with wellside and flat/tray-back bodies known, and a small number of long-wheelbase examples exist locally. Passenger Datsuns were assembled at Clayton (Motor Producers) in this era, but no source confirms local assembly of the 620, which appears to have been fully imported from Japan.",
-      "variants": [
-        {
-          "id": "au-ute",
-          "name": "Datsun 1500 ute (620) single cab, wellside",
-          "years": {
-            "from": 1972,
-            "to": 1979
-          },
-          "body": "2-door single-cab utility (wellside/style-side bed), 3 seats",
-          "engine": {
-            "code": "J15",
-            "displacement_cc": 1483,
-            "power_hp": 77,
-            "power_note": "57 kW (77 PS) at 5200 rpm, 118 Nm at 3200 rpm; the OHV J15 (also used in forklifts) was fitted in most non-US markets including Australia, badged 'Datsun 1500'",
-            "codes": [
-              "J15"
-            ]
-          },
-          "dimensions_mm": {
-            "length": 4609,
-            "width": 1590,
-            "height": 1545,
-            "wheelbase": 2785,
-            "bed_length": null
-          },
-          "weight_kg": 1065,
-          "transmission": "4-speed manual (CarsGuide lists Single Cab 1.5L 4 SP Manual; bench seat with floor-shift cut-out documented)",
-          "notes": "Called 'Datsun 1500' in Australia because numeric variant badging was not used; the 'Hustler' name used elsewhere was avoided due to the Hillman Hustler already on the Australian market. New price range AUD $2,640-$4,070 (CarsGuide). Sold Jan 1972 to Jan 1979 per Australian windscreen fitment data. Dimensions/weight are the 1978 CarsGuide single-cab figures.",
-          "citations": [
-            {
-              "ref": "https://www.carsguide.com.au/datsun/620/car-dimensions/1978",
-              "note": "1978 AU dimensions: length 4609, width 1590, height 1545, wheelbase 2785, kerb 1065 kg"
-            },
-            {
-              "ref": "https://www.carsguide.com.au/datsun/620/price",
-              "note": "AU price range $2,640-$4,070, Single Cab body, 1.5L 4-speed manual, leaded petrol"
-            },
-            {
-              "ref": "https://en.wikipedia.org/wiki/Datsun_truck",
-              "note": "J15 1483cc 57 kW/77 hp in most of the world; Australia received the 1500cc engine; 620 produced Feb 1972-1979"
-            },
-            {
-              "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1972-79-datsun-620-long-bed/",
-              "note": "In Australia/NZ the 620 utes were badged Datsun 1500; Hustler name avoided in AU due to Hillman Hustler"
-            },
-            {
-              "ref": "https://www.streetmachine.com.au/events/little-big-truck-datsun-1500-ute",
-              "note": "Australian 'Datsun 1500 ute' with Nissan J15 engine (engine also famous for forklift use)"
-            },
-            {
-              "ref": "https://datsunpartsshop.com.au/products/datsun-620-1500-ute-sales-flyer",
-              "note": "Australian-market 'Datsun 620 1500 Ute' sales flyer confirming 1500 badging"
-            },
-            {
-              "ref": "https://www.autoglasswarehouse.com.au/datsun-620-1500-1-1972-to-1-1979-ute-front-windscr",
-              "note": "Australian fitment listing 'Datsun 620 1500, 1/1972 to 1/1979, ute' supporting AU sale years"
-            },
-            {
-              "ref": "https://www.carsales.com.au/research/datsun/620/1978/",
-              "note": "1978 AU market: Ute body, 3 seats, petrol; Redbook-sourced specifications"
-            }
-          ],
-          "confidence": "high",
-          "unresolved": [
-            "Bed length for Australian wellside not found in AU sources (US short bed ~1855mm not verified for AU)",
-            "Whether early AU deliveries had column-shift 3-speed option; only 4-speed manual is documented",
-            "Exact AU launch month: Wikipedia says 620 released Feb 1972; CarsGuide/carsales AU listings begin 1972-1974 depending on page"
-          ]
-        },
-        {
-          "id": "au-ute-lwb",
-          "name": "Datsun 1500 ute (620) long-wheelbase",
-          "years": {
-            "from": 1972,
-            "to": 1979
-          },
-          "body": "2-door single-cab utility on the longer of the two 620 wheelbases (100.2 in / 109.6 in globally), long bed",
-          "engine": {
-            "code": "J15",
-            "displacement_cc": 1483,
-            "power_hp": 77,
-            "power_note": "Assumed same J15 as standard AU ute; no AU source shows a different engine",
-            "codes": [
-              "J15"
-            ]
-          },
-          "dimensions_mm": {
-            "length": null,
-            "width": null,
-            "height": null,
-            "wheelbase": null,
-            "bed_length": null
-          },
-          "weight_kg": null,
-          "transmission": "4-speed manual (assumed, unverified for LWB)",
-          "notes": "Australian owner-forum (OZDAT) threads document long-wheelbase 620 utes in Australia (e.g. a 1975 620 LWB), consistent with the two global wheelbase lengths, but official AU-market specifications and sales volumes were not found. Treated as a rare/possible AU variant.",
-          "citations": [
-            {
-              "ref": "http://ozdat.com.au/forum/viewtopic.php?t=17485",
-              "note": "OZDAT (Australian Datsun forum) thread 'Info on Datsun 620 long-wheelbase ute'"
-            },
-            {
-              "ref": "https://ozdat.com.au/forum/viewtopic.php?t=18266",
-              "note": "OZDAT thread on a 1975 Datsun 620 LWB in Australia"
-            },
-            {
-              "ref": "https://en.wikipedia.org/wiki/Datsun_truck",
-              "note": "620 offered in two wheelbases (100.2 in and 109.6 in) globally"
-            }
-          ],
-          "confidence": "low",
-          "unresolved": [
-            "Whether LWB was officially sold new in Australia or only present via later imports",
-            "LWB wheelbase in mm for AU spec (global long wheelbase 109.6 in = ~2784mm vs short 100.2 in = ~2545mm; note the CarsGuide 1978 AU wheelbase of 2785mm actually matches the LONG global wheelbase, so the CarsGuide figure may describe the long-wheelbase/long-bed model or be a data error - competing values 2545mm vs 2785mm unresolved)"
-          ]
-        },
-        {
-          "id": "au-tray",
-          "name": "Datsun 1500 (620) flat/tray-back",
-          "years": {
-            "from": 1972,
-            "to": 1979
-          },
-          "body": "Single-cab with flat tray body ('flat body' in period brochures) instead of wellside bed",
-          "engine": {
-            "code": "J15",
-            "displacement_cc": 1483,
-            "power_hp": 77,
-            "power_note": "Assumed same J15 as standard AU ute",
-            "codes": [
-              "J15"
-            ]
-          },
-          "dimensions_mm": {
-            "length": null,
-            "width": null,
-            "height": null,
-            "wheelbase": null,
-            "bed_length": null
-          },
-          "weight_kg": null,
-          "transmission": "4-speed manual (assumed)",
-          "notes": "A tray-top/'flat body' variant was brochured for the 620 and flat-back Datsun 1500 utes exist in Australia (classifieds and owner accounts), but no AU source explicitly documents a factory cab-chassis-with-tray model line, price, or specs. Could equally be a factory flat body or locally fitted tray on a cab-chassis.",
-          "citations": [
-            {
-              "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1972-79-datsun-620-long-bed/",
-              "note": "Notes a tray top was available and brochured as the 'flat body' for the 620"
-            },
-            {
-              "ref": "https://www.gumtree.com.au/s-ad/robina/cars-vans-utes/rare-1970-datsun-1500-tray-back-ute/1199729344",
-              "note": "Australian classified for a 'rare Datsun 1500 tray back ute' showing tray-back 1500s in AU (listed year 1970 suggests it may be a 521-series, illustrating the ambiguity)"
-            },
-            {
-              "ref": "https://trappasaurus.wordpress.com/2018/01/16/datsun-1500/",
-              "note": "Australian owner account of a flat-back tray Datsun 1500 (620) used as a work ute in Brisbane"
-            }
-          ],
-          "confidence": "low",
-          "unresolved": [
-            "Whether Nissan officially sold a 620 cab-chassis/tray model new in Australia vs trays being aftermarket/coachbuilt",
-            "Tray dimensions and tare weight"
-          ]
-        }
-      ],
-      "unresolved": [
-        "Local assembly: Motor Producers Ltd (Clayton, VIC) assembled Datsun passenger cars from 1968 and Nissan took it over in 1972 (https://en.wikipedia.org/wiki/Nissan_Motor_Australia), but no source found stating the 620 ute was assembled in Australia; it was most likely fully imported - unverified either way",
-        "1600/1800 badging: no evidence of L16/L18 or 'Datsun 1600/1800' 620 utes sold new in Australia; all AU sources show J15/1500 only (L18 documented for Middle East, L16/L18/L20B for North America per https://en.wikipedia.org/wiki/Datsun_truck)",
-        "Diesel: Wikipedia mentions a 2200cc (SD22) diesel in connection with the Australian entry, but other excerpts state the diesel was not imported to Australia; competing claims, treated as not offered in AU",
-        "Factory colours: uniquecarsandparts.com.au hosts 1969-1980 Datsun charts but serves a fingerprint bot-wall even to GitHub runners (verified 2026-07-16); needs a human browser session or another source."
+     "id": "us-king-cab",
+     "name": "Datsun 620 King Cab",
+     "years": {
+      "from": 1977,
+      "to": 1979
+     },
+     "body": "extended King Cab, standard 6-ft bed on long-wheelbase chassis",
+     "engine": {
+      "code": "L20B",
+      "displacement_cc": 1952,
+      "power_hp": 110,
+      "power_note": "L20B only; 110 hp SAE gross rating (net ~97 hp in 1977-78 tune)",
+      "codes": [
+       "L20B"
       ]
-    },
-    {
-      "market": "JP",
-      "name": "Japan (JDM)",
-      "notes": "The 7th-generation Datsun Truck (620) was sold in Japan from February 1972 to 1979 as a 1-ton-class small pickup. Unlike North American models (OHC L16/L18/L20B, optional automatic), home-market trucks carried over the Austin-derived OHV J-series engines (J13 1.3L and J15 1.5L) from the 520/521 and were manual-transmission only. The line-up comprised short- and long-wheelbase single-cab trucks and a 6-seat double cab (Wピック); an extended cab sold domestically as 'Custom' (export name: King Cab) was added in 1976, and a short-lived SD22 diesel appeared in 1978.",
-      "variants": [
-        {
-          "id": "jp-standard",
-          "name": "Datsun Truck 1500 Standard Body (標準ボデー)",
-          "years": {
-            "from": 1972,
-            "to": 1979
-          },
-          "body": "2-door single cab, short wheelbase, styleside bed, 2-seater",
-          "engine": {
-            "code": "J15",
-            "displacement_cc": 1483,
-            "power_hp": 77,
-            "power_note": "77 PS/5200 rpm, 12.0 kg-m/3200 rpm (JIS gross); base 1300 grade with J13 1.3L 62 PS also offered; SD22 2.2L 65 PS diesel added 1978 (JDM only, short-lived)",
-            "codes": [
-              "J13",
-              "J15",
-              "SD22"
-            ]
-          },
-          "dimensions_mm": {
-            "length": 4300,
-            "width": 1590,
-            "height": 1545,
-            "wheelbase": 2545,
-            "bed_length": 1860
-          },
-          "weight_kg": 1000,
-          "transmission": "4-speed manual (column or floor shift); no automatic offered in Japan",
-          "notes": "1972 catalog specs for 1500 Standard Deluxe floor-shift (N620T): payload 1000 kg, curb weight 1000 kg, top speed 135 km/h. Sept 1977 minor change added front disc brakes (NA models had them from launch).",
-          "citations": [
-            {
-              "ref": "https://ameblo.jp/porsche356a911s/entry-12080388932.html",
-              "note": "1972 JDM catalog: J15 1483cc 77ps/5200rpm, 12.0kg-m/3200rpm, 4MT, length 4300, width 1590, height 1545, WB 2545, bed 1860, payload/curb 1000kg; J-type 1.3L 62ps option"
-            },
-            {
-              "ref": "https://ja.wikipedia.org/wiki/%E6%97%A5%E7%94%A3%E3%83%BB%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF",
-              "note": "JDM 620 used carried-over J13/J15 OHV engines, 1-ton payload, MT only; Sept 1977 front disc brakes; 1978 SD22 diesel added"
-            },
-            {
-              "ref": "https://harada-shoukai.com/lineup/%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%80%80620/",
-              "note": "1972 standard model: payload 1000kg, bed length 1860mm, 2 seats, top speed 135 km/h"
-            }
-          ],
-          "confidence": "high",
-          "unresolved": [
-            "Exact availability window of the J13 1300 grade within 1972-1979 (en.wikipedia claims J13 production ended ~1969, ja.wikipedia says J13 was carried over into the JDM 620)",
-            "Curb weight varies by grade; 1000 kg is the 1500 Standard Deluxe figure"
-          ]
-        },
-        {
-          "id": "jp-longbed",
-          "name": "Datsun Truck 1500 Long Body (ロングボデー)",
-          "years": {
-            "from": 1972,
-            "to": 1979
-          },
-          "body": "2-door single cab, long wheelbase, styleside bed, 2-seater",
-          "engine": {
-            "code": "J15",
-            "displacement_cc": 1483,
-            "power_hp": 77,
-            "power_note": "77 PS/5200 rpm JIS gross, same J15 as standard body",
-            "codes": [
-              "J15"
-            ]
-          },
-          "dimensions_mm": {
-            "length": 4690,
-            "width": 1590,
-            "height": 1545,
-            "wheelbase": 2785,
-            "bed_length": 2250
-          },
-          "weight_kg": null,
-          "transmission": "4-speed manual (column or floor shift)",
-          "notes": "Long-wheelbase single cab offered from launch in Feb 1972 alongside the short body. Payload 1000 kg (1-ton class); no higher long-bed payload rating found.",
-          "citations": [
-            {
-              "ref": "https://ameblo.jp/porsche356a911s/entry-12080388932.html",
-              "note": "1972 catalog long body: length 4690mm, wheelbase 2785mm, bed length 2250mm; payload 1000kg"
-            },
-            {
-              "ref": "https://ja.wikipedia.org/wiki/%E6%97%A5%E7%94%A3%E3%83%BB%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF",
-              "note": "Line-up at launch: single cab in two wheelbases (short/long) plus 6-seat W-pickup; 1-ton payload, MT only"
-            }
-          ],
-          "confidence": "medium",
-          "unresolved": [
-            "Curb weight not found for long body",
-            "Width/height assumed shared with standard body (catalog excerpt gave them only for the standard)"
-          ]
-        },
-        {
-          "id": "jp-doublecab",
-          "name": "Datsun Truck W-Pick / Double Cab (Wピック, ダブルピックアップ)",
-          "years": {
-            "from": 1972,
-            "to": 1979
-          },
-          "body": "4-door double cab pickup, 6-seater, short wheelbase",
-          "engine": {
-            "code": "J15",
-            "displacement_cc": 1483,
-            "power_hp": 77,
-            "power_note": "77 PS/5200 rpm JIS gross; double cab was offered only with the 1.5L J15 (not the 1.3L J13)",
-            "codes": [
-              "J15"
-            ]
-          },
-          "dimensions_mm": {
-            "length": 4350,
-            "width": 1590,
-            "height": 1545,
-            "wheelbase": 2545,
-            "bed_length": 860
-          },
-          "weight_kg": null,
-          "transmission": "4-speed manual",
-          "notes": "6-seat double-cab 'W-Pick' offered from launch (Feb 1972); the light van body of the previous 520 generation was dropped, leaving the W-Pick as the passenger-oriented body. 1972 catalog notes the pickup was available only with the 1500 engine.",
-          "citations": [
-            {
-              "ref": "https://ja.wikipedia.org/wiki/%E6%97%A5%E7%94%A3%E3%83%BB%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF",
-              "note": "Launch line-up included a 6-seat W-pickup; light van dropped for the first time"
-            },
-            {
-              "ref": "https://ameblo.jp/porsche356a911s/entry-12080388932.html",
-              "note": "1972 catalog pickup type: length 4350mm, wheelbase 2545mm, bed length 860mm; 1.5L only"
-            }
-          ],
-          "confidence": "medium",
-          "unresolved": [
-            "Bed length 860 mm comes from a search excerpt of the catalog blog and looks unusually short - could not cross-check against a second source",
-            "Payload rating for the 6-seat double cab not found (likely below the single cab's 1000 kg, but unverified)",
-            "Curb weight not found"
-          ]
-        },
-        {
-          "id": "jp-kingcab",
-          "name": "Datsun Truck Custom (カスタム) - extended cab, export name King Cab",
-          "years": {
-            "from": 1976,
-            "to": 1979
-          },
-          "body": "2-door extended cab (cab lengthened 150 mm with small rear side windows), styleside bed",
-          "engine": {
-            "code": "J15",
-            "displacement_cc": 1483,
-            "power_hp": 77,
-            "power_note": "77 PS/5200 rpm JIS gross (JDM extended cab kept the J15; the L20B King Cab was a North American model)",
-            "codes": [
-              "J15"
-            ]
-          },
-          "dimensions_mm": {
-            "length": null,
-            "width": null,
-            "height": null,
-            "wheelbase": null,
-            "bed_length": null
-          },
-          "weight_kg": null,
-          "transmission": "4-speed manual",
-          "notes": "A JDM extended-cab 620 did exist, but it was sold domestically as 'Custom' rather than 'King Cab' (King Cab was the export/US name). Added in 1976 (the year Kyushu plant 620 production started, Dec 23 1976), with a 150 mm longer cab, reclining seats, car-like equipment and side moldings. Widely photographed JDM 'King Cab' survivors are typically re-imported US-spec L20B trucks.",
-          "citations": [
-            {
-              "ref": "https://ja.wikipedia.org/wiki/%E6%97%A5%E7%94%A3%E3%83%BB%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF",
-              "note": "1976: extended-cab model with reclining seats added, domestic name Custom, export name King Cab; cab extended 150 mm with small side windows (per 1977 catalog reference); Kyushu plant production from Dec 23 1976"
-            },
-            {
-              "ref": "https://nosweb.jp/nostalgichero/articles/detail/3609",
-              "note": "King Cab name/history context; US-market 620 King Cab (1977+) with L20B, AT and disc brakes was a North American product"
-            },
-            {
-              "ref": "https://ameblo.jp/porsche356a911s/entry-12080388932.html",
-              "note": "Aug 1977 JDM catalog (No.7081K): Custom cab extended by 150 mm with small side windows"
-            }
-          ],
-          "confidence": "medium",
-          "unresolved": [
-            "No JDM catalog dimensions, curb weight or payload found for the Custom extended cab",
-            "Whether the 150 mm JDM cab stretch is identical to the US King Cab stretch is unconfirmed",
-            "Exact launch month in 1976 vs. early 1977 not pinned down"
-          ]
-        }
-      ],
-      "unresolved": [
-        "Factory colours: no market-specific colour documentation surfaced (2026-07-16 research round); needs period brochures"
-      ]
-    },
-    {
-      "market": "ZA",
-      "name": "South Africa",
-      "notes": "In South Africa the 620 was sold without a model number, simply as the 'Datsun One-Ton Pick-Up', and was renamed 'Datsun 680' with the 1978 facelift. Datsun-Nissan assembled CKD Datsuns at the Rosslyn plant near Pretoria (full-scale manufacturing from 1973) and was the country's top-selling marque in 1976-1978, but per-model assembly confirmation for the 620 is scarce in online sources. Unlike the half-ton Datsun 1200/1400 (B140), which is a separate vehicle built locally until 2008, the 620/680 did NOT have an extended local run: SA sources describe the 680 as 'not so successful' and it was replaced by the Datsun 720 in 1980.",
-      "variants": [
-        {
-          "id": "za-one-ton",
-          "name": "Datsun One-Ton Pick-Up (620)",
-          "years": {
-            "from": 1972,
-            "to": 1977
-          },
-          "body": "2-door pickup, regular cab",
-          "engine": {
-            "code": null,
-            "displacement_cc": null,
-            "power_hp": null,
-            "power_note": "Not verified for SA. Wikipedia's generic statement 'in most of the world the 620 was equipped with the J15 (57 kW / 77 hp)' is the likely origin of the prior J15/77hp record, but no SA-specific source confirms which engine(s) were fitted locally; J-series (J15/J16) and L-series (L16/L18) were all offered in various export markets.",
-            "codes": []
-          },
-          "dimensions_mm": {
-            "length": null,
-            "width": null,
-            "height": null,
-            "wheelbase": null,
-            "bed_length": null
-          },
-          "weight_kg": null,
-          "transmission": null,
-          "notes": "Marketed on its nominal one-ton (approx. 1000 kg) payload class, hence the market name; a rating the prior recorded payload of 653.6 kg contradicts (that figure matches a US half-ton spec converted from pounds). The prior width/height/wheelbase values (1587.5 / 1544.3 / 2567.9 mm) are inch-to-mm conversion artifacts from US-market data, not SA-verified.",
-          "citations": [
-            {
-              "ref": "https://en.wikipedia.org/wiki/Datsun_truck",
-              "note": "620 sold in South Africa as the 'Datsun One-Ton Pick-Up'; global 620 production Feb 1972-1979; J15 77 hp described only as the 'most of the world' engine, not SA-specific"
-            },
-            {
-              "ref": "https://en.wikipedia.org/wiki/Nissan_South_Africa",
-              "note": "Rosslyn plant opened 1966 assembling CKD Datsun models; company renamed Datsun Nissan South Africa Ltd in 1973; Datsun was SA's leading brand 1976-1978"
-            },
-            {
-              "ref": "https://en.wikipedia.org/wiki/Nissan_1400",
-              "note": "Confirms the long-running (1971-2008) locally built Datsun 1200/1400 half-ton bakkie is a separate model, not the 620"
-            }
-          ],
-          "confidence": "low",
-          "unresolved": [
-            "SA engine fitment: J15 (77 hp) vs J16 vs L16/L18 — no SA-specific source found; prior J15 claim traces to Wikipedia's generic non-SA sentence",
-            "Whether the 620 was assembled CKD at Rosslyn: Rosslyn assembled 'mainly Datsun models' from 1966 and the 1200 bakkie line is confirmed, but no source explicitly names the 620/One-Ton as Rosslyn-built",
-            "Exact SA introduction year (global launch Feb 1972; SA on-sale date unverified)",
-            "All dimensions, weight, transmission, and exact payload rating (nominal 'one ton' per market name, but no rated figure found)"
-          ]
-        },
-        {
-          "id": "za-680",
-          "name": "Datsun 680 (facelifted 620)",
-          "years": {
-            "from": 1978,
-            "to": 1980
-          },
-          "body": "2-door pickup, regular cab",
-          "engine": {
-            "code": null,
-            "displacement_cc": null,
-            "power_hp": null,
-            "power_note": "Unverified. Its successor, the SA-market Datsun 720 of 1980, used the 1.8-litre OHC L18, suggesting L-series availability locally by then, but no source states the 680's own engine.",
-            "codes": []
-          },
-          "dimensions_mm": {
-            "length": null,
-            "width": null,
-            "height": null,
-            "wheelbase": null,
-            "bed_length": null
-          },
-          "weight_kg": null,
-          "transmission": null,
-          "notes": "The 1978 facelift (new grille, front bumper, tracks widened 30 mm) coincided with the SA rename from 'One-Ton Pick-Up' to 'Datsun 680'. SA retrospective coverage calls the 680 'not so successful' against the Toyota Hilux; it was replaced by the Datsun 720 in 1980, so the SA 620/680 had no extended local production run after the global model ended in 1979.",
-          "citations": [
-            {
-              "ref": "https://en.wikipedia.org/wiki/Datsun_truck",
-              "note": "1978 name change in South Africa to 'Datsun 680'; 1978 facelift details; Datsun 720 introduced October 1979 as global successor"
-            },
-            {
-              "ref": "https://www.changecars.co.za/motoring-news/what-went-wrong-nissan",
-              "note": "SA history article: 720 introduced in 1980 to replace the 'not-so-successful 680'; 720 used the OHC L18 engine; Datsun was SA's top seller 1976-1978"
-            }
-          ],
-          "confidence": "medium",
-          "unresolved": [
-            "680 engine code, displacement, and power output — no SA source found",
-            "Exact SA end-of-sale date (720 arrived 1980; whether 680 stock sold into 1980/81 unverified)",
-            "All dimensions, kerb weight, and rated payload",
-            "Whether the 680 was locally assembled at Rosslyn or imported built-up"
-          ]
-        }
-      ],
-      "unresolved": [
-        "Second research round (2026-07-16, incl. Afrikaans and CAR magazine SA searches) surfaced no SA-specific engine, dimensions or assembly evidence for the 620/680; gaps stand",
-        "Factory colours: no market-specific colour documentation surfaced (2026-07-16 research round); needs period brochures"
-      ]
-    },
-    {
-      "market": "EU",
-      "name": "Europe (continental)",
-      "notes": "The Datsun 620 (1972-1979) was sold in continental Europe primarily as a light 1-tonne-class commercial pickup, with documented period presence in Germany, the Netherlands and France (German Wikipedia entry, Dutch parts specialists covering 'Datsun Pickup 620 1972-1979', and French Datsun club/technical archives). Unlike North America, which got L16/L18/L20B engines, European (and most rest-of-world) trucks used the 1.5-litre J15 OHV petrol engine with 77 PS, in LHD single-cab form with 4-speed manual gearbox. Scandinavian and Swiss sales, exact local badging ('1500'/'1600'), and any official European King Cab offering could not be verified from available sources.",
-      "variants": [
-        {
-          "id": "eu-pickup",
-          "name": "Datsun 620 Pick-up (J15, single cab)",
-          "years": {
-            "from": 1972,
-            "to": 1979
-          },
-          "body": "2-door single cab pickup, LHD; short-bed standard (long-bed/second wheelbase existed in the model range but Europe-specific availability unverified)",
-          "engine": {
-            "code": "J15",
-            "displacement_cc": 1483,
-            "power_hp": 77,
-            "power_note": "77 PS / 57 kW, OHV carbureted inline-4; top speed approx. 135 km/h. German sources quote 1471 cm3 but Nissan J15 references give 1483 cc (78 x 77.6 mm).",
-            "codes": [
-              "J15"
-            ]
-          },
-          "dimensions_mm": {
-            "length": null,
-            "width": 1590,
-            "height": 1545,
-            "wheelbase": 2545,
-            "bed_length": null
-          },
-          "weight_kg": null,
-          "transmission": "4-speed manual standard (column shift common in Europe); 3-speed automatic existed in the 620 range but European availability unverified",
-          "notes": "Sold as a light commercial in the roughly 1-tonne payload class (pick-up-trucks.de cites payload up to about 1,000 kg depending on configuration); widely used as a work vehicle in the Netherlands. Width/height/wheelbase figures are for the standard-wheelbase 620 body shared across J15 markets (CarsGuide lists 1590/1545 mm for the 1975-76 J15-engined 620); they were not confirmed from a continental-European homologation document. Prior recorded values width 1587.5 / height 1544.3 / wheelbase 2567.9 appear to be inch-to-mm conversions (62.5 in / 60.8 in / 101.1 in) and the 2567.9 wheelbase conflicts with the commonly cited 2545 mm short wheelbase.",
-          "citations": [
-            {
-              "ref": "https://en.wikipedia.org/wiki/Datsun_Truck",
-              "note": "620 built Feb 1972-1979; outside North America equipped with J15, 77 hp (57 kW), ~135 km/h; two wheelbases; King Cab from 1977; 2.2L diesel later in many markets"
-            },
-            {
-              "ref": "https://de.wikipedia.org/wiki/Datsun_620",
-              "note": "German-market Wikipedia entry: 620 produced 1972-1979, four-cylinder 57 kW / 77 PS (listed there as 1471 cm3), 135 km/h; confirms German-language market documentation"
-            },
-            {
-              "ref": "https://pick-up-trucks.de/datsun-620/",
-              "note": "German reference site: J15 57 kW/77 PS, payload around 1,000 kg depending on configuration, SD22 diesel 48 kW/65 PS offered in some markets"
-            },
-            {
-              "ref": "https://www.engine-specs.net/nissan/j15.html",
-              "note": "J15 displacement 1,483 cc, 78 x 77.6 mm bore/stroke, 8.3:1 CR, 77 PS (57 kW)"
-            },
-            {
-              "ref": "https://www.nissan-autoparts.nl/c-7752396/datsun-pickup-620-1972-1979/",
-              "note": "Dutch Nissan/Datsun parts specialist with dedicated Datsun Pickup 620 1972-1979 catalog section, supporting Netherlands market presence"
-            },
-            {
-              "ref": "https://www.zonedatsun.fr/modeles/pick-up/pickup-620/",
-              "note": "French Datsun club model page and technical manual archive for the Pickup 620 (1972 and 1977 manuals), supporting French market presence"
-            },
-            {
-              "ref": "https://www.carsguide.com.au/datsun/620/car-dimensions/1976",
-              "note": "620 dimensions for J15-engined market version: width 1590 mm, height 1545 mm (length listed 4609 mm for that market's body); used as proxy for shared body dimensions"
-            },
-            {
-              "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1972-79-datsun-620-long-bed/",
-              "note": "Period recollection that European-delivered (UK dealer, 1976) 620s came only with 1500 cc petrol engine and 4-speed manual"
-            },
-            {
-              "ref": "https://www.pickuptrucks.de/forum/43-andere-pickups/16437-datsun-620",
-              "note": "1976 620 re-imported to Germany from Greece; European survivors are typically re-imports"
-            },
-            {
-              "ref": "https://www.hecktrieb.de/thread/39825-technische-fahrzeugdaten-datsun-620-pickup-truck-woher/",
-              "note": "German owners unable to source official period technical data, confirming EU-market spec scarcity"
-            }
-          ],
-          "confidence": "medium",
-          "unresolved": [
-            "Exact continental-European badging: side badges read 'DATSUN 1600' or plain 'DATSUN' per Wikipedia (US-oriented); whether European J15 trucks were badged 'Datsun 1500' (as in Australia) or simply 'Datsun Pick-up' was not confirmed",
-            "Scandinavian (Sweden/Norway/Denmark) and Swiss market sales: no market-specific source surfaced; presence unverified",
-            "Overall length and bed length for European-spec trucks: 4609 mm appears on CarsGuide for the Australian J15 version; European short-bed figure unverified, so length left null",
-            "Kerb weight: ~1,036 kg cited for US L-series trucks; no European J15 kerb weight found, left null",
-            "Wheelbase: 2545 mm (short) / 2785 mm (long) commonly cited for the 620 range vs. prior recorded 2567.9 mm (=101.1 in), which looks like a converted US figure; European trucks assumed short-wheelbase but not proven",
-            "Whether the L16/L18 petrol engines were ever officially offered in continental Europe (Middle East got L18; Europe evidence points to J15 only)",
-            "King Cab in Europe: introduced 1977 but all sales evidence found is North American; a King Cab pictured at a Dutch classic dealer (ruylclassics.nl, April 1979 truck) is most plausibly a later US import - no evidence of official European King Cab sales",
-            "Second research round (2026-07-16, ~25 searches incl. German/Dutch/French/Scandinavian) found no period European price lists, brochures or road tests; length, weight and badging remain open"
-          ]
-        },
-        {
-          "id": "eu-pickup-diesel",
-          "name": "Datsun 620 Pick-up Diesel (SD22)",
-          "years": {
-            "from": 1977,
-            "to": 1979
-          },
-          "body": "2-door single cab pickup, LHD",
-          "engine": {
-            "code": "SD22",
-            "displacement_cc": 2164,
-            "power_hp": 65,
-            "power_note": "Sources give 65 PS (48 kW) at 4,000 rpm; English Wikipedia states 49 kW / 66 hp",
-            "codes": [
-              "SD22"
-            ]
-          },
-          "dimensions_mm": {
-            "length": null,
-            "width": null,
-            "height": null,
-            "wheelbase": null,
-            "bed_length": null
-          },
-          "weight_kg": null,
-          "transmission": "4-speed manual (assumed, unverified)",
-          "notes": "English Wikipedia says a 2.2 L diesel was 'later made available in many markets' for the 620, and German-language sources (de.wikipedia, pick-up-trucks.de) describe the SD22 diesel option in the 620 context, suggesting European relevance; however, no source explicitly confirming continental European sales of the 620 diesel or its introduction year was found. The SD22 is better documented in the successor 720.",
-          "citations": [
-            {
-              "ref": "https://en.wikipedia.org/wiki/Datsun_Truck",
-              "note": "2.2 L diesel with 49 kW (66 hp) later made available in many markets for the 620"
-            },
-            {
-              "ref": "https://pick-up-trucks.de/datsun-620/",
-              "note": "German reference: Nissan SD22 inline-4 diesel, 48 kW / 65 PS at 4,000 rpm, offered for some markets"
-            },
-            {
-              "ref": "https://www.engine-specs.net/nissan/sd22.html",
-              "note": "SD22 is a 2,164 cc naturally aspirated inline-4 diesel, 65 PS (48 kW) at 4,000 rpm"
-            }
-          ],
-          "confidence": "low",
-          "unresolved": [
-            "Whether the SD22 diesel 620 was actually sold in continental Europe, and from which model year (SD22 saloon use began June 1977; some sources associate SD22 pickups mainly with the 1980-83 Datsun 720)",
-            "Power rating discrepancy: 65 PS/48 kW vs 66 hp/49 kW",
-            "All dimensions, weight and transmission details for the diesel variant"
-          ]
-        }
-      ],
-      "unresolved": [
-        "Factory colours: no market-specific colour documentation surfaced (2026-07-16 research round); needs period brochures"
-      ]
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": 1590,
+      "height": 1545,
+      "wheelbase": 2785,
+      "bed_length": 1829
+     },
+     "weight_kg": null,
+     "transmission": "F4W71 4-speed manual standard; FS5W71B 5-speed manual optional (introduced 1977); 3N71 3-speed automatic optional",
+     "notes": "First extended-cab compact pickup sold in the US, added for model year 1977. Cabin stretched by 24 cm (10 in) versus the standard cab, combined with the standard bed on the long 2785 mm wheelbase chassis.",
+     "citations": [
+      {
+       "ref": "https://en.wikipedia.org/wiki/Datsun_Truck",
+       "note": "King Cab from 1977; cabin stretched by 24 cm (10 in); used the bed from the normal 620"
+      },
+      {
+       "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1977-datsun-king-cab-pickup-620-yes-we-have-long-legs-in-america/",
+       "note": "1977 US King Cab feature article, first Datsun extended cab"
+      },
+      {
+       "ref": "https://www.jdpower.com/cars/1977/nissan-datsun/620/pickup-king-cab",
+       "note": "confirms 1977 US-market King Cab body style listing"
+      },
+      {
+       "ref": "https://importarchive.com/datsun/truck/1972-1979",
+       "note": "US-market 620 paint colours by year: the 1977-79 set (663/505/637/617/647/618/524/510/307) and 1978 confirmations"
+      },
+      {
+       "ref": "https://datsuntrucks.com/paint-codes/",
+       "note": "620 paint codes from period PPG/Dupont brochures: 102/103/104/052/524/617/630/931/940"
+      },
+      {
+       "ref": "https://www.paintscratch.com/touch_up_paint/Nissan/620.html",
+       "note": "paint supplier's 620 colour stock corroborating names and codes"
+      }
+     ],
+     "confidence": "medium",
+     "unresolved": [
+      "Overall length not verified from any surfaced source",
+      "Kerb weight not verified",
+      "Introduction year 1977 (Wikipedia, Curbside Classic, JDPower) vs 'from 1976' (en.datsun-club.com, likely Japan introduction) -- 1977 adopted for US market",
+      "Exact model-year windows for several colours (Saddle/Buckskin/Desert Gold/Kelly Green era; whether 505/510/307 predate 1979)",
+      "Factory Datsun code for early-620 white (PPG cross-refs 8895/8889 known; possibly 018 Snow White, unconfirmed for the truck)"
+     ],
+     "colors": [
+      {
+       "name": "Hustler Red",
+       "code": "524",
+       "hex": "#b02818"
+      },
+      {
+       "name": "Chrome Yellow",
+       "code": "618",
+       "hex": "#e3a715"
+      },
+      {
+       "name": "Eggshell",
+       "code": "637",
+       "hex": "#ece5d2"
+      },
+      {
+       "name": "Saddle",
+       "code": "617",
+       "hex": "#8a5a2b"
+      },
+      {
+       "name": "Autumn Brown",
+       "code": "647",
+       "hex": "#5c3a24"
+      },
+      {
+       "name": "Thunder Black",
+       "code": "505",
+       "hex": "#1b1b1b"
+      },
+      {
+       "name": "Diamond Mist Metallic",
+       "code": "663",
+       "hex": "#b9bcb6"
+      },
+      {
+       "name": "Sky Blue Metallic",
+       "code": "510",
+       "hex": "#7da7c9"
+      },
+      {
+       "name": "Pacific Blue Metallic",
+       "code": "307",
+       "hex": "#33567d"
+      },
+      {
+       "name": "True Blue",
+       "code": "103",
+       "hex": "#2b4f81"
+      }
+     ]
     }
-  ]
+   ]
+  },
+  {
+   "market": "UK",
+   "name": "United Kingdom",
+   "notes": "The 620 was officially imported in small numbers by Datsun UK (Octav Botnar's Worthing-based operation, importing Datsuns since 1968), sold as a commercial 'one-ton pick-up' badged Datsun 1500 rather than under the 620 name. Period UK evidence (Commercial Motor road test of 1 July 1977, show reports of 1978-1979) consistently describes a single spartan variant: long-wheelbase single-cab pickup, 1,483 cc J15 petrol engine, 77 bhp, 1,000 kg payload, four-speed manual, RHD, offered with no option packs. It was always a marginal seller next to Datsun's UK car range; DVLA-derived survivor data (howmanyleft.co.uk lists it as 'DATSUN G620 PICK-UP') shows only a handful remain, and many UK 620s seen today are later personal imports from South Africa, Australia or the US.",
+   "variants": [
+    {
+     "id": "uk-pickup",
+     "name": "Datsun 1500 one-ton pick-up (620, long wheelbase G620)",
+     "years": {
+      "from": 1976,
+      "to": 1979
+     },
+     "body": "2-door single-cab pickup, long wheelbase, standard drop-side bed, RHD",
+     "engine": {
+      "code": "J15",
+      "displacement_cc": 1483,
+      "power_hp": 77,
+      "power_note": "Period UK source (Commercial Motor, 14 Sep 1979) quotes 57 kW / 77 bhp from the 1,483 cc engine; Wikipedia gives the J15 as 77 PS (76 hp), so the figure is likely PS/DIN. Confirms UK trucks did NOT get the L16/L18/L20B fitted in North America.",
+      "codes": [
+       "J15"
+      ]
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2785,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual (only transmission offered in UK per ex-Datsun UK staff account; no automatic or 5-speed documented)",
+     "notes": "Payload 1,000 kg ('one-tonner'), hence the commercial positioning. Ex-Datsun UK employee (joined 1976) recalls UK 620s came in three colours only (blue, red, white) with no option packs. Commercial Motor road-tested the Datsun one-ton pick-up on 1 July 1977 and still listed the 1,483 cc one-tonner in its September 1979 lightweights survey; King Cab and 4WD were never UK-market 620 offerings (the 'UK only received the long wheelbase 1-Tonner with L18 or 4WD 2.2 King Cab' line in Wikipedia's Datsun Truck article describes the later 720). Prior collected data (wheelbase 2567.9 mm, J15 77 hp from en.wikipedia.org/wiki/Datsun_Truck) mixed the correct UK engine with SHORT-wheelbase (2,545 mm/100.2 in) dimensions; the UK one-tonner was the long-wheelbase chassis, 2,785 mm (109.6 in). UK survivors: a 1978 T-registration UK truck documented on Retro Rides; a 1974 example auctioned by Hampson was a South African museum import, not UK-supplied. Colours per the ex-Datsun UK staff account: sold in three colours only (blue, red, white) with no options; formal paint names, codes and shades unknown, hence placeholder swatches.",
+     "citations": [
+      {
+       "ref": "https://archive.commercialmotor.com/article/14th-september-1979/60/lightweights-fit-all-forms-of-work",
+       "note": "Period UK trade press: Datsun one-tonne pick-up, 1,000 kg payload, 57 kW (77 bhp) 1,483 cc engine; references CM road test of 1.7.77"
+      },
+      {
+       "ref": "https://archive.commercialmotor.com/article/20th-october-1978/180/lightweight-choiet",
+       "note": "1978 UK show report: Datsun exhibited a one-ton pick-up with 1,483 cc petrol engine"
+      },
+      {
+       "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1972-79-datsun-620-long-bed/",
+       "note": "Ex-Datsun UK (1976) staff account: UK 620s in three colours (blue/red/white), no options, 4-speed manual, 1500 cc petrol; article notes Datsun was the largest Japanese brand in the UK at the time"
+      },
+      {
+       "ref": "https://en.wikipedia.org/wiki/Datsun_truck",
+       "note": "620 built Feb 1972-1979; outside North America most markets received the J15 1.5 (57 kW/77 hp); two wheelbases, long = G620; the L18 1-Tonner / 4WD 2.2 King Cab UK sentence belongs to the 720 successor section"
+      },
+      {
+       "ref": "https://www.howmanyleft.co.uk/vehicle/datsun_g620_pick-up",
+       "note": "DVLA registration data lists the model as 'DATSUN G620 PICK-UP', confirming long-wheelbase G620 chassis code on UK registrations and present-day scarcity"
+      },
+      {
+       "ref": "https://datsuntrucks.com/620-specifications/",
+       "note": "620 wheelbase figures: 2,545 mm (100.2 in) standard, 2,785 mm (109.6 in) long-wheelbase G/GN620"
+      },
+      {
+       "ref": "https://forum.retro-rides.org/thread/225770/datsun-pickup-resto-project-sussex",
+       "note": "Surviving UK-registered 1978 (T-plate) Datsun 620 pickup, Sussex — evidence of period UK sales"
+      },
+      {
+       "ref": "https://auctions.hampsonauctions.com/auction/lot/lot-80---1974-datsun-620-pick-up/?lot=1661&sd=1",
+       "note": "UK-auctioned 1974 620 explicitly documented as a recent South African import — illustrates that many UK survivors are not UK-supplied trucks"
+      }
+     ],
+     "confidence": "medium",
+     "unresolved": [
+      "Exact UK on-sale start year: 620 production began Feb 1972 and Datsun UK was active from 1968, but earliest UK-specific 620 evidence found is the 1976 staff account and the 1 July 1977 Commercial Motor road test; UK sales may have started 1972-1975 (years.from=1976 is 'earliest confirmed', not launch)",
+      "Exact UK sales end: CM still listed the 1,483 cc one-tonner in Sep 1979; whether stock sold into 1980 before the 720 replaced it is unverified",
+      "Official UK model name on price lists: badged 'Datsun 1500' / sold as 'one-ton pick-up'; whether literature said 'Datsun 1500 Pick-up' vs 'Datsun 1 Ton Pick-Up' unverified (the '1 Ton Pick-Up' name is confirmed in CM only from 1981, i.e. 720 era)",
+      "Overall length/width/height and kerb weight for the UK long-wheelbase spec: prior data (width 1587.5, height 1544.3, wheelbase 2567.9) appears to be generic short-wheelbase US-conversion figures and was not confirmed for the UK truck; only the 2,785 mm LWB wheelbase is supported",
+      "Bed length: US long-wheelbase trucks had a ~7 ft bed, but UK one-tonner bed dimensions unverified",
+      "Whether any UK 620 was sold with the L18 engine: no period evidence found; all period UK sources say 1,483 cc (the L18 '1-Tonner' reference relates to the 720)",
+      "Full text/figures of the Commercial Motor 1 July 1977 road test (kerb weight, GVW, dimensions) could not be retrieved via search excerpts"
+     ],
+     "colors": [
+      {
+       "name": "White",
+       "hex": null
+      },
+      {
+       "name": "Red",
+       "hex": null
+      },
+      {
+       "name": "Blue",
+       "hex": null
+      }
+     ]
+    }
+   ],
+   "unresolved": [
+    "Factory colour names/codes: the 1971/1973/1974 Datsun UK colour charts (jdmjunkies scans, archived in data/research/) cover the passenger-car range only; the commercial pickup is not listed. Best evidence remains the staff recollection of blue/red/white.",
+    "Factory colours: the scanned Datsun UK colour charts (1973 and April 1974, jdmjunkies.ch) were obtained and read in full; they cover the passenger car range only and never list the pickup, so UK 620 colours remain undocumented. The commercial one-tonner likely shipped in the fleet colours (blue/red/white per the ex-Datsun UK staff account) but no chart confirms codes."
+   ]
+  },
+  {
+   "market": "AU",
+   "name": "Australia",
+   "notes": "In Australia the 620 was sold from 1972 to 1979 badged simply as the 'Datsun 1500' ute (numeric model-variant badging was not used locally), powered by the 1483cc J15 engine rather than the L-series units fitted in North America. It was offered as a single-cab ute, with wellside and flat/tray-back bodies known, and a small number of long-wheelbase examples exist locally. Passenger Datsuns were assembled at Clayton (Motor Producers) in this era, but no source confirms local assembly of the 620, which appears to have been fully imported from Japan.",
+   "variants": [
+    {
+     "id": "au-ute",
+     "name": "Datsun 1500 ute (620) single cab, wellside",
+     "years": {
+      "from": 1972,
+      "to": 1979
+     },
+     "body": "2-door single-cab utility (wellside/style-side bed), 3 seats",
+     "engine": {
+      "code": "J15",
+      "displacement_cc": 1483,
+      "power_hp": 77,
+      "power_note": "57 kW (77 PS) at 5200 rpm, 118 Nm at 3200 rpm; the OHV J15 (also used in forklifts) was fitted in most non-US markets including Australia, badged 'Datsun 1500'",
+      "codes": [
+       "J15"
+      ]
+     },
+     "dimensions_mm": {
+      "length": 4609,
+      "width": 1590,
+      "height": 1545,
+      "wheelbase": 2785,
+      "bed_length": null
+     },
+     "weight_kg": 1065,
+     "transmission": "4-speed manual (CarsGuide lists Single Cab 1.5L 4 SP Manual; bench seat with floor-shift cut-out documented)",
+     "notes": "Called 'Datsun 1500' in Australia because numeric variant badging was not used; the 'Hustler' name used elsewhere was avoided due to the Hillman Hustler already on the Australian market. New price range AUD $2,640-$4,070 (CarsGuide). Sold Jan 1972 to Jan 1979 per Australian windscreen fitment data. Dimensions/weight are the 1978 CarsGuide single-cab figures.",
+     "citations": [
+      {
+       "ref": "https://www.carsguide.com.au/datsun/620/car-dimensions/1978",
+       "note": "1978 AU dimensions: length 4609, width 1590, height 1545, wheelbase 2785, kerb 1065 kg"
+      },
+      {
+       "ref": "https://www.carsguide.com.au/datsun/620/price",
+       "note": "AU price range $2,640-$4,070, Single Cab body, 1.5L 4-speed manual, leaded petrol"
+      },
+      {
+       "ref": "https://en.wikipedia.org/wiki/Datsun_truck",
+       "note": "J15 1483cc 57 kW/77 hp in most of the world; Australia received the 1500cc engine; 620 produced Feb 1972-1979"
+      },
+      {
+       "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1972-79-datsun-620-long-bed/",
+       "note": "In Australia/NZ the 620 utes were badged Datsun 1500; Hustler name avoided in AU due to Hillman Hustler"
+      },
+      {
+       "ref": "https://www.streetmachine.com.au/events/little-big-truck-datsun-1500-ute",
+       "note": "Australian 'Datsun 1500 ute' with Nissan J15 engine (engine also famous for forklift use)"
+      },
+      {
+       "ref": "https://datsunpartsshop.com.au/products/datsun-620-1500-ute-sales-flyer",
+       "note": "Australian-market 'Datsun 620 1500 Ute' sales flyer confirming 1500 badging"
+      },
+      {
+       "ref": "https://www.autoglasswarehouse.com.au/datsun-620-1500-1-1972-to-1-1979-ute-front-windscr",
+       "note": "Australian fitment listing 'Datsun 620 1500, 1/1972 to 1/1979, ute' supporting AU sale years"
+      },
+      {
+       "ref": "https://www.carsales.com.au/research/datsun/620/1978/",
+       "note": "1978 AU market: Ute body, 3 seats, petrol; Redbook-sourced specifications"
+      }
+     ],
+     "confidence": "high",
+     "unresolved": [
+      "Bed length for Australian wellside not found in AU sources (US short bed ~1855mm not verified for AU)",
+      "Whether early AU deliveries had column-shift 3-speed option; only 4-speed manual is documented",
+      "Exact AU launch month: Wikipedia says 620 released Feb 1972; CarsGuide/carsales AU listings begin 1972-1974 depending on page"
+     ]
+    },
+    {
+     "id": "au-ute-lwb",
+     "name": "Datsun 1500 ute (620) long-wheelbase",
+     "years": {
+      "from": 1972,
+      "to": 1979
+     },
+     "body": "2-door single-cab utility on the longer of the two 620 wheelbases (100.2 in / 109.6 in globally), long bed",
+     "engine": {
+      "code": "J15",
+      "displacement_cc": 1483,
+      "power_hp": 77,
+      "power_note": "Assumed same J15 as standard AU ute; no AU source shows a different engine",
+      "codes": [
+       "J15"
+      ]
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual (assumed, unverified for LWB)",
+     "notes": "Australian owner-forum (OZDAT) threads document long-wheelbase 620 utes in Australia (e.g. a 1975 620 LWB), consistent with the two global wheelbase lengths, but official AU-market specifications and sales volumes were not found. Treated as a rare/possible AU variant.",
+     "citations": [
+      {
+       "ref": "http://ozdat.com.au/forum/viewtopic.php?t=17485",
+       "note": "OZDAT (Australian Datsun forum) thread 'Info on Datsun 620 long-wheelbase ute'"
+      },
+      {
+       "ref": "https://ozdat.com.au/forum/viewtopic.php?t=18266",
+       "note": "OZDAT thread on a 1975 Datsun 620 LWB in Australia"
+      },
+      {
+       "ref": "https://en.wikipedia.org/wiki/Datsun_truck",
+       "note": "620 offered in two wheelbases (100.2 in and 109.6 in) globally"
+      }
+     ],
+     "confidence": "low",
+     "unresolved": [
+      "Whether LWB was officially sold new in Australia or only present via later imports",
+      "LWB wheelbase in mm for AU spec (global long wheelbase 109.6 in = ~2784mm vs short 100.2 in = ~2545mm; note the CarsGuide 1978 AU wheelbase of 2785mm actually matches the LONG global wheelbase, so the CarsGuide figure may describe the long-wheelbase/long-bed model or be a data error - competing values 2545mm vs 2785mm unresolved)"
+     ]
+    },
+    {
+     "id": "au-tray",
+     "name": "Datsun 1500 (620) flat/tray-back",
+     "years": {
+      "from": 1972,
+      "to": 1979
+     },
+     "body": "Single-cab with flat tray body ('flat body' in period brochures) instead of wellside bed",
+     "engine": {
+      "code": "J15",
+      "displacement_cc": 1483,
+      "power_hp": 77,
+      "power_note": "Assumed same J15 as standard AU ute",
+      "codes": [
+       "J15"
+      ]
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual (assumed)",
+     "notes": "A tray-top/'flat body' variant was brochured for the 620 and flat-back Datsun 1500 utes exist in Australia (classifieds and owner accounts), but no AU source explicitly documents a factory cab-chassis-with-tray model line, price, or specs. Could equally be a factory flat body or locally fitted tray on a cab-chassis.",
+     "citations": [
+      {
+       "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1972-79-datsun-620-long-bed/",
+       "note": "Notes a tray top was available and brochured as the 'flat body' for the 620"
+      },
+      {
+       "ref": "https://www.gumtree.com.au/s-ad/robina/cars-vans-utes/rare-1970-datsun-1500-tray-back-ute/1199729344",
+       "note": "Australian classified for a 'rare Datsun 1500 tray back ute' showing tray-back 1500s in AU (listed year 1970 suggests it may be a 521-series, illustrating the ambiguity)"
+      },
+      {
+       "ref": "https://trappasaurus.wordpress.com/2018/01/16/datsun-1500/",
+       "note": "Australian owner account of a flat-back tray Datsun 1500 (620) used as a work ute in Brisbane"
+      }
+     ],
+     "confidence": "low",
+     "unresolved": [
+      "Whether Nissan officially sold a 620 cab-chassis/tray model new in Australia vs trays being aftermarket/coachbuilt",
+      "Tray dimensions and tare weight"
+     ]
+    }
+   ],
+   "unresolved": [
+    "Local assembly: Motor Producers Ltd (Clayton, VIC) assembled Datsun passenger cars from 1968 and Nissan took it over in 1972 (https://en.wikipedia.org/wiki/Nissan_Motor_Australia), but no source found stating the 620 ute was assembled in Australia; it was most likely fully imported - unverified either way",
+    "1600/1800 badging: no evidence of L16/L18 or 'Datsun 1600/1800' 620 utes sold new in Australia; all AU sources show J15/1500 only (L18 documented for Middle East, L16/L18/L20B for North America per https://en.wikipedia.org/wiki/Datsun_truck)",
+    "Diesel: Wikipedia mentions a 2200cc (SD22) diesel in connection with the Australian entry, but other excerpts state the diesel was not imported to Australia; competing claims, treated as not offered in AU",
+    "Factory colours: uniquecarsandparts.com.au hosts 1969-1980 Datsun charts but serves a fingerprint bot-wall even to GitHub runners (verified 2026-07-16); needs a human browser session or another source."
+   ]
+  },
+  {
+   "market": "JP",
+   "name": "Japan (JDM)",
+   "notes": "The 7th-generation Datsun Truck (620) was sold in Japan from February 1972 to 1979 as a 1-ton-class small pickup. Unlike North American models (OHC L16/L18/L20B, optional automatic), home-market trucks carried over the Austin-derived OHV J-series engines (J13 1.3L and J15 1.5L) from the 520/521 and were manual-transmission only. The line-up comprised short- and long-wheelbase single-cab trucks and a 6-seat double cab (Wピック); an extended cab sold domestically as 'Custom' (export name: King Cab) was added in 1976, and a short-lived SD22 diesel appeared in 1978.",
+   "variants": [
+    {
+     "id": "jp-standard",
+     "name": "Datsun Truck 1500 Standard Body (標準ボデー)",
+     "years": {
+      "from": 1972,
+      "to": 1979
+     },
+     "body": "2-door single cab, short wheelbase, styleside bed, 2-seater",
+     "engine": {
+      "code": "J15",
+      "displacement_cc": 1483,
+      "power_hp": 77,
+      "power_note": "77 PS/5200 rpm, 12.0 kg-m/3200 rpm (JIS gross); base 1300 grade with J13 1.3L 62 PS also offered; SD22 2.2L 65 PS diesel added 1978 (JDM only, short-lived)",
+      "codes": [
+       "J13",
+       "J15",
+       "SD22"
+      ]
+     },
+     "dimensions_mm": {
+      "length": 4300,
+      "width": 1590,
+      "height": 1545,
+      "wheelbase": 2545,
+      "bed_length": 1860
+     },
+     "weight_kg": 1000,
+     "transmission": "4-speed manual (column or floor shift); no automatic offered in Japan",
+     "notes": "1972 catalog specs for 1500 Standard Deluxe floor-shift (N620T): payload 1000 kg, curb weight 1000 kg, top speed 135 km/h. Sept 1977 minor change added front disc brakes (NA models had them from launch).",
+     "citations": [
+      {
+       "ref": "https://ameblo.jp/porsche356a911s/entry-12080388932.html",
+       "note": "1972 JDM catalog: J15 1483cc 77ps/5200rpm, 12.0kg-m/3200rpm, 4MT, length 4300, width 1590, height 1545, WB 2545, bed 1860, payload/curb 1000kg; J-type 1.3L 62ps option"
+      },
+      {
+       "ref": "https://ja.wikipedia.org/wiki/%E6%97%A5%E7%94%A3%E3%83%BB%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF",
+       "note": "JDM 620 used carried-over J13/J15 OHV engines, 1-ton payload, MT only; Sept 1977 front disc brakes; 1978 SD22 diesel added"
+      },
+      {
+       "ref": "https://harada-shoukai.com/lineup/%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%80%80620/",
+       "note": "1972 standard model: payload 1000kg, bed length 1860mm, 2 seats, top speed 135 km/h"
+      }
+     ],
+     "confidence": "high",
+     "unresolved": [
+      "Exact availability window of the J13 1300 grade within 1972-1979 (en.wikipedia claims J13 production ended ~1969, ja.wikipedia says J13 was carried over into the JDM 620)",
+      "Curb weight varies by grade; 1000 kg is the 1500 Standard Deluxe figure"
+     ]
+    },
+    {
+     "id": "jp-longbed",
+     "name": "Datsun Truck 1500 Long Body (ロングボデー)",
+     "years": {
+      "from": 1972,
+      "to": 1979
+     },
+     "body": "2-door single cab, long wheelbase, styleside bed, 2-seater",
+     "engine": {
+      "code": "J15",
+      "displacement_cc": 1483,
+      "power_hp": 77,
+      "power_note": "77 PS/5200 rpm JIS gross, same J15 as standard body",
+      "codes": [
+       "J15"
+      ]
+     },
+     "dimensions_mm": {
+      "length": 4690,
+      "width": 1590,
+      "height": 1545,
+      "wheelbase": 2785,
+      "bed_length": 2250
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual (column or floor shift)",
+     "notes": "Long-wheelbase single cab offered from launch in Feb 1972 alongside the short body. Payload 1000 kg (1-ton class); no higher long-bed payload rating found.",
+     "citations": [
+      {
+       "ref": "https://ameblo.jp/porsche356a911s/entry-12080388932.html",
+       "note": "1972 catalog long body: length 4690mm, wheelbase 2785mm, bed length 2250mm; payload 1000kg"
+      },
+      {
+       "ref": "https://ja.wikipedia.org/wiki/%E6%97%A5%E7%94%A3%E3%83%BB%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF",
+       "note": "Line-up at launch: single cab in two wheelbases (short/long) plus 6-seat W-pickup; 1-ton payload, MT only"
+      }
+     ],
+     "confidence": "medium",
+     "unresolved": [
+      "Curb weight not found for long body",
+      "Width/height assumed shared with standard body (catalog excerpt gave them only for the standard)"
+     ]
+    },
+    {
+     "id": "jp-doublecab",
+     "name": "Datsun Truck W-Pick / Double Cab (Wピック, ダブルピックアップ)",
+     "years": {
+      "from": 1972,
+      "to": 1979
+     },
+     "body": "4-door double cab pickup, 6-seater, short wheelbase",
+     "engine": {
+      "code": "J15",
+      "displacement_cc": 1483,
+      "power_hp": 77,
+      "power_note": "77 PS/5200 rpm JIS gross; double cab was offered only with the 1.5L J15 (not the 1.3L J13)",
+      "codes": [
+       "J15"
+      ]
+     },
+     "dimensions_mm": {
+      "length": 4350,
+      "width": 1590,
+      "height": 1545,
+      "wheelbase": 2545,
+      "bed_length": 860
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual",
+     "notes": "6-seat double-cab 'W-Pick' offered from launch (Feb 1972); the light van body of the previous 520 generation was dropped, leaving the W-Pick as the passenger-oriented body. 1972 catalog notes the pickup was available only with the 1500 engine.",
+     "citations": [
+      {
+       "ref": "https://ja.wikipedia.org/wiki/%E6%97%A5%E7%94%A3%E3%83%BB%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF",
+       "note": "Launch line-up included a 6-seat W-pickup; light van dropped for the first time"
+      },
+      {
+       "ref": "https://ameblo.jp/porsche356a911s/entry-12080388932.html",
+       "note": "1972 catalog pickup type: length 4350mm, wheelbase 2545mm, bed length 860mm; 1.5L only"
+      }
+     ],
+     "confidence": "medium",
+     "unresolved": [
+      "Bed length 860 mm comes from a search excerpt of the catalog blog and looks unusually short - could not cross-check against a second source",
+      "Payload rating for the 6-seat double cab not found (likely below the single cab's 1000 kg, but unverified)",
+      "Curb weight not found"
+     ]
+    },
+    {
+     "id": "jp-kingcab",
+     "name": "Datsun Truck Custom (カスタム) - extended cab, export name King Cab",
+     "years": {
+      "from": 1976,
+      "to": 1979
+     },
+     "body": "2-door extended cab (cab lengthened 150 mm with small rear side windows), styleside bed",
+     "engine": {
+      "code": "J15",
+      "displacement_cc": 1483,
+      "power_hp": 77,
+      "power_note": "77 PS/5200 rpm JIS gross (JDM extended cab kept the J15; the L20B King Cab was a North American model)",
+      "codes": [
+       "J15"
+      ]
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual",
+     "notes": "A JDM extended-cab 620 did exist, but it was sold domestically as 'Custom' rather than 'King Cab' (King Cab was the export/US name). Added in 1976 (the year Kyushu plant 620 production started, Dec 23 1976), with a 150 mm longer cab, reclining seats, car-like equipment and side moldings. Widely photographed JDM 'King Cab' survivors are typically re-imported US-spec L20B trucks.",
+     "citations": [
+      {
+       "ref": "https://ja.wikipedia.org/wiki/%E6%97%A5%E7%94%A3%E3%83%BB%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF",
+       "note": "1976: extended-cab model with reclining seats added, domestic name Custom, export name King Cab; cab extended 150 mm with small side windows (per 1977 catalog reference); Kyushu plant production from Dec 23 1976"
+      },
+      {
+       "ref": "https://nosweb.jp/nostalgichero/articles/detail/3609",
+       "note": "King Cab name/history context; US-market 620 King Cab (1977+) with L20B, AT and disc brakes was a North American product"
+      },
+      {
+       "ref": "https://ameblo.jp/porsche356a911s/entry-12080388932.html",
+       "note": "Aug 1977 JDM catalog (No.7081K): Custom cab extended by 150 mm with small side windows"
+      }
+     ],
+     "confidence": "medium",
+     "unresolved": [
+      "No JDM catalog dimensions, curb weight or payload found for the Custom extended cab",
+      "Whether the 150 mm JDM cab stretch is identical to the US King Cab stretch is unconfirmed",
+      "Exact launch month in 1976 vs. early 1977 not pinned down"
+     ]
+    }
+   ],
+   "unresolved": [
+    "Factory colours: no market-specific colour documentation surfaced (2026-07-16 research round); needs period brochures"
+   ]
+  },
+  {
+   "market": "TH",
+   "name": "Thailand",
+   "notes": "Thailand built the 620, and it is a cornerstone of the country's pickup history. Nissan's first overseas assembly operation, Siam Motors & Nissan Co., was founded in 1962 (a joint venture with Siam Motors), and in 1977 a dedicated pickup plant, Siam Nissan Automobile Co., Ltd., was established. Thai-assembled 620s were not badged '620': they were sold as the Datsun 1300 and Datsun 1500 after their J13/J15 engines. The truck earned the enduring Thai nickname ช้างเหยียบ ('chang yiap', roughly 'elephant stomp'), a reference to its load-carrying toughness, and survivors remain in rural use. Thai listings state years in the Buddhist Era (BE 2515-2522 spans 1972-1979) and BE/CE conversion errors are common, so advertised years should be treated loosely.",
+   "unresolved": [
+    "Exact Thai assembly start and end years for the 620 (global run Feb 1972-1979; Thai CKD assembly within that window not pinned to exact dates by available sources)",
+    "Whether the King Cab body was assembled or officially sold in Thailand (King Cab launched 1977, the same year the Siam Nissan pickup plant opened, but no Thai-market King Cab source found)",
+    "Local specification details: payload rating, transmissions, and any Thai-market equipment differences"
+   ],
+   "variants": [
+    {
+     "id": "th-1300",
+     "name": "Datsun 1300 (620, J13)",
+     "years": {
+      "from": 1972,
+      "to": 1979
+     },
+     "body": "2-door pickup, regular cab",
+     "engine": {
+      "code": "J13",
+      "displacement_cc": 1299,
+      "power_hp": null,
+      "power_note": "J13 1.3-litre petrol; Thai-market power rating not verified.",
+      "codes": [
+       "J13"
+      ]
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": null,
+     "notes": "Entry Thai variant, badged by engine displacement rather than the 620 model code. Assembled CKD by Siam Motors & Nissan Co. Known colloquially, along with the 1500, as 'chang yiap'.",
+     "citations": [
+      {
+       "ref": "https://en.wikipedia.org/wiki/Automotive_industry_in_Thailand",
+       "note": "Siam Motors & Nissan Co. founded 1962, Nissan's first overseas assembly operation, assembling Datsun models CKD"
+      },
+      {
+       "ref": "https://www.roorod.com/datsun-1300-10062018/",
+       "note": "Thai motoring article on the Datsun 1300: 620-generation truck sold in Thailand under its engine-displacement badge"
+      },
+      {
+       "ref": "https://www.drivedd.net/datsun-l620",
+       "note": "Thai article on the L620: 'chang yiap' nickname and the truck's place in Thai pickup history"
+      }
+     ],
+     "confidence": "low",
+     "unresolved": [
+      "Thai-market power rating and detailed specs for the J13",
+      "Exact years the 1300 badge was offered"
+     ]
+    },
+    {
+     "id": "th-1500",
+     "name": "Datsun 1500 (620, J15)",
+     "years": {
+      "from": 1972,
+      "to": 1979
+     },
+     "body": "2-door pickup, regular cab",
+     "engine": {
+      "code": "J15",
+      "displacement_cc": 1483,
+      "power_hp": 77,
+      "power_note": "J15 1.5-litre petrol; 77 hp is the widely quoted global J15 figure, not a Thai-specific rating.",
+      "codes": [
+       "J15"
+      ]
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": null,
+     "notes": "The larger-engined Thai variant. From 1977 Thai pickup production was concentrated in the new Siam Nissan Automobile Co. plant, which built pickups exclusively. Thai classifieds for these trucks typically say 'Datsun 1500' or 'ช้างเหยียบ', not '620'.",
+     "citations": [
+      {
+       "ref": "https://www.siammotors.com/en/company/nissan-motor-thailand/",
+       "note": "Siam Motors group history: 1962 Siam Motors & Nissan Co. assembly venture; 1977 Siam Nissan Automobile Co. established"
+      },
+      {
+       "ref": "https://www.busandtruckmedia.com/27313/",
+       "note": "Thai commercial-vehicle press on Nissan Thailand history: 1977 Siam Nissan Automobile pickup plant"
+      },
+      {
+       "ref": "https://en.wikipedia.org/wiki/Datsun_truck",
+       "note": "620 global production Feb 1972-1979; J15 the common export engine (77 hp)"
+      }
+     ],
+     "confidence": "low",
+     "unresolved": [
+      "Whether any Thai 620s carried the L-series engines offered elsewhere",
+      "Split of assembly between the original Siam Motors & Nissan line and the 1977 Siam Nissan plant"
+     ]
+    }
+   ]
+  },
+  {
+   "market": "ZA",
+   "name": "South Africa",
+   "notes": "In South Africa the 620 was sold without a model number, simply as the 'Datsun One-Ton Pick-Up', and was renamed 'Datsun 680' with the 1978 facelift. Datsun-Nissan assembled CKD Datsuns at the Rosslyn plant near Pretoria (full-scale manufacturing from 1973) and was the country's top-selling marque in 1976-1978, but per-model assembly confirmation for the 620 is scarce in online sources. Unlike the half-ton Datsun 1200/1400 (B140), which is a separate vehicle built locally until 2008, the 620/680 did NOT have an extended local run: SA sources describe the 680 as 'not so successful' and it was replaced by the Datsun 720 in 1980.",
+   "variants": [
+    {
+     "id": "za-one-ton",
+     "name": "Datsun One-Ton Pick-Up (620)",
+     "years": {
+      "from": 1972,
+      "to": 1977
+     },
+     "body": "2-door pickup, regular cab",
+     "engine": {
+      "code": null,
+      "displacement_cc": null,
+      "power_hp": null,
+      "power_note": "Not verified for SA. Wikipedia's generic statement 'in most of the world the 620 was equipped with the J15 (57 kW / 77 hp)' is the likely origin of the prior J15/77hp record, but no SA-specific source confirms which engine(s) were fitted locally; J-series (J15/J16) and L-series (L16/L18) were all offered in various export markets.",
+      "codes": []
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": null,
+     "notes": "Marketed on its nominal one-ton (approx. 1000 kg) payload class, hence the market name; a rating the prior recorded payload of 653.6 kg contradicts (that figure matches a US half-ton spec converted from pounds). The prior width/height/wheelbase values (1587.5 / 1544.3 / 2567.9 mm) are inch-to-mm conversion artifacts from US-market data, not SA-verified.",
+     "citations": [
+      {
+       "ref": "https://en.wikipedia.org/wiki/Datsun_truck",
+       "note": "620 sold in South Africa as the 'Datsun One-Ton Pick-Up'; global 620 production Feb 1972-1979; J15 77 hp described only as the 'most of the world' engine, not SA-specific"
+      },
+      {
+       "ref": "https://en.wikipedia.org/wiki/Nissan_South_Africa",
+       "note": "Rosslyn plant opened 1966 assembling CKD Datsun models; company renamed Datsun Nissan South Africa Ltd in 1973; Datsun was SA's leading brand 1976-1978"
+      },
+      {
+       "ref": "https://en.wikipedia.org/wiki/Nissan_1400",
+       "note": "Confirms the long-running (1971-2008) locally built Datsun 1200/1400 half-ton bakkie is a separate model, not the 620"
+      }
+     ],
+     "confidence": "low",
+     "unresolved": [
+      "SA engine fitment: J15 (77 hp) vs J16 vs L16/L18 — no SA-specific source found; prior J15 claim traces to Wikipedia's generic non-SA sentence",
+      "Whether the 620 was assembled CKD at Rosslyn: Rosslyn assembled 'mainly Datsun models' from 1966 and the 1200 bakkie line is confirmed, but no source explicitly names the 620/One-Ton as Rosslyn-built",
+      "Exact SA introduction year (global launch Feb 1972; SA on-sale date unverified)",
+      "All dimensions, weight, transmission, and exact payload rating (nominal 'one ton' per market name, but no rated figure found)"
+     ]
+    },
+    {
+     "id": "za-680",
+     "name": "Datsun 680 (facelifted 620)",
+     "years": {
+      "from": 1978,
+      "to": 1980
+     },
+     "body": "2-door pickup, regular cab",
+     "engine": {
+      "code": null,
+      "displacement_cc": null,
+      "power_hp": null,
+      "power_note": "Unverified. Its successor, the SA-market Datsun 720 of 1980, used the 1.8-litre OHC L18, suggesting L-series availability locally by then, but no source states the 680's own engine.",
+      "codes": []
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": null,
+     "notes": "The 1978 facelift (new grille, front bumper, tracks widened 30 mm) coincided with the SA rename from 'One-Ton Pick-Up' to 'Datsun 680'. SA retrospective coverage calls the 680 'not so successful' against the Toyota Hilux; it was replaced by the Datsun 720 in 1980, so the SA 620/680 had no extended local production run after the global model ended in 1979.",
+     "citations": [
+      {
+       "ref": "https://en.wikipedia.org/wiki/Datsun_truck",
+       "note": "1978 name change in South Africa to 'Datsun 680'; 1978 facelift details; Datsun 720 introduced October 1979 as global successor"
+      },
+      {
+       "ref": "https://www.changecars.co.za/motoring-news/what-went-wrong-nissan",
+       "note": "SA history article: 720 introduced in 1980 to replace the 'not-so-successful 680'; 720 used the OHC L18 engine; Datsun was SA's top seller 1976-1978"
+      }
+     ],
+     "confidence": "medium",
+     "unresolved": [
+      "680 engine code, displacement, and power output — no SA source found",
+      "Exact SA end-of-sale date (720 arrived 1980; whether 680 stock sold into 1980/81 unverified)",
+      "All dimensions, kerb weight, and rated payload",
+      "Whether the 680 was locally assembled at Rosslyn or imported built-up"
+     ]
+    }
+   ],
+   "unresolved": [
+    "Second research round (2026-07-16, incl. Afrikaans and CAR magazine SA searches) surfaced no SA-specific engine, dimensions or assembly evidence for the 620/680; gaps stand",
+    "Factory colours: no market-specific colour documentation surfaced (2026-07-16 research round); needs period brochures"
+   ]
+  },
+  {
+   "market": "EU",
+   "name": "Europe (continental)",
+   "notes": "The Datsun 620 (1972-1979) was sold in continental Europe primarily as a light 1-tonne-class commercial pickup, with documented period presence in Germany, the Netherlands and France (German Wikipedia entry, Dutch parts specialists covering 'Datsun Pickup 620 1972-1979', and French Datsun club/technical archives). Unlike North America, which got L16/L18/L20B engines, European (and most rest-of-world) trucks used the 1.5-litre J15 OHV petrol engine with 77 PS, in LHD single-cab form with 4-speed manual gearbox. Scandinavian and Swiss sales, exact local badging ('1500'/'1600'), and any official European King Cab offering could not be verified from available sources.",
+   "variants": [
+    {
+     "id": "eu-pickup",
+     "name": "Datsun 620 Pick-up (J15, single cab)",
+     "years": {
+      "from": 1972,
+      "to": 1979
+     },
+     "body": "2-door single cab pickup, LHD; short-bed standard (long-bed/second wheelbase existed in the model range but Europe-specific availability unverified)",
+     "engine": {
+      "code": "J15",
+      "displacement_cc": 1483,
+      "power_hp": 77,
+      "power_note": "77 PS / 57 kW, OHV carbureted inline-4; top speed approx. 135 km/h. German sources quote 1471 cm3 but Nissan J15 references give 1483 cc (78 x 77.6 mm).",
+      "codes": [
+       "J15"
+      ]
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": 1590,
+      "height": 1545,
+      "wheelbase": 2545,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual standard (column shift common in Europe); 3-speed automatic existed in the 620 range but European availability unverified",
+     "notes": "Sold as a light commercial in the roughly 1-tonne payload class (pick-up-trucks.de cites payload up to about 1,000 kg depending on configuration); widely used as a work vehicle in the Netherlands. Width/height/wheelbase figures are for the standard-wheelbase 620 body shared across J15 markets (CarsGuide lists 1590/1545 mm for the 1975-76 J15-engined 620); they were not confirmed from a continental-European homologation document. Prior recorded values width 1587.5 / height 1544.3 / wheelbase 2567.9 appear to be inch-to-mm conversions (62.5 in / 60.8 in / 101.1 in) and the 2567.9 wheelbase conflicts with the commonly cited 2545 mm short wheelbase.",
+     "citations": [
+      {
+       "ref": "https://en.wikipedia.org/wiki/Datsun_Truck",
+       "note": "620 built Feb 1972-1979; outside North America equipped with J15, 77 hp (57 kW), ~135 km/h; two wheelbases; King Cab from 1977; 2.2L diesel later in many markets"
+      },
+      {
+       "ref": "https://de.wikipedia.org/wiki/Datsun_620",
+       "note": "German-market Wikipedia entry: 620 produced 1972-1979, four-cylinder 57 kW / 77 PS (listed there as 1471 cm3), 135 km/h; confirms German-language market documentation"
+      },
+      {
+       "ref": "https://pick-up-trucks.de/datsun-620/",
+       "note": "German reference site: J15 57 kW/77 PS, payload around 1,000 kg depending on configuration, SD22 diesel 48 kW/65 PS offered in some markets"
+      },
+      {
+       "ref": "https://www.engine-specs.net/nissan/j15.html",
+       "note": "J15 displacement 1,483 cc, 78 x 77.6 mm bore/stroke, 8.3:1 CR, 77 PS (57 kW)"
+      },
+      {
+       "ref": "https://www.nissan-autoparts.nl/c-7752396/datsun-pickup-620-1972-1979/",
+       "note": "Dutch Nissan/Datsun parts specialist with dedicated Datsun Pickup 620 1972-1979 catalog section, supporting Netherlands market presence"
+      },
+      {
+       "ref": "https://www.zonedatsun.fr/modeles/pick-up/pickup-620/",
+       "note": "French Datsun club model page and technical manual archive for the Pickup 620 (1972 and 1977 manuals), supporting French market presence"
+      },
+      {
+       "ref": "https://www.carsguide.com.au/datsun/620/car-dimensions/1976",
+       "note": "620 dimensions for J15-engined market version: width 1590 mm, height 1545 mm (length listed 4609 mm for that market's body); used as proxy for shared body dimensions"
+      },
+      {
+       "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-1972-79-datsun-620-long-bed/",
+       "note": "Period recollection that European-delivered (UK dealer, 1976) 620s came only with 1500 cc petrol engine and 4-speed manual"
+      },
+      {
+       "ref": "https://www.pickuptrucks.de/forum/43-andere-pickups/16437-datsun-620",
+       "note": "1976 620 re-imported to Germany from Greece; European survivors are typically re-imports"
+      },
+      {
+       "ref": "https://www.hecktrieb.de/thread/39825-technische-fahrzeugdaten-datsun-620-pickup-truck-woher/",
+       "note": "German owners unable to source official period technical data, confirming EU-market spec scarcity"
+      }
+     ],
+     "confidence": "medium",
+     "unresolved": [
+      "Exact continental-European badging: side badges read 'DATSUN 1600' or plain 'DATSUN' per Wikipedia (US-oriented); whether European J15 trucks were badged 'Datsun 1500' (as in Australia) or simply 'Datsun Pick-up' was not confirmed",
+      "Scandinavian (Sweden/Norway/Denmark) and Swiss market sales: no market-specific source surfaced; presence unverified",
+      "Overall length and bed length for European-spec trucks: 4609 mm appears on CarsGuide for the Australian J15 version; European short-bed figure unverified, so length left null",
+      "Kerb weight: ~1,036 kg cited for US L-series trucks; no European J15 kerb weight found, left null",
+      "Wheelbase: 2545 mm (short) / 2785 mm (long) commonly cited for the 620 range vs. prior recorded 2567.9 mm (=101.1 in), which looks like a converted US figure; European trucks assumed short-wheelbase but not proven",
+      "Whether the L16/L18 petrol engines were ever officially offered in continental Europe (Middle East got L18; Europe evidence points to J15 only)",
+      "King Cab in Europe: introduced 1977 but all sales evidence found is North American; a King Cab pictured at a Dutch classic dealer (ruylclassics.nl, April 1979 truck) is most plausibly a later US import - no evidence of official European King Cab sales",
+      "Second research round (2026-07-16, ~25 searches incl. German/Dutch/French/Scandinavian) found no period European price lists, brochures or road tests; length, weight and badging remain open"
+     ]
+    },
+    {
+     "id": "eu-pickup-diesel",
+     "name": "Datsun 620 Pick-up Diesel (SD22)",
+     "years": {
+      "from": 1977,
+      "to": 1979
+     },
+     "body": "2-door single cab pickup, LHD",
+     "engine": {
+      "code": "SD22",
+      "displacement_cc": 2164,
+      "power_hp": 65,
+      "power_note": "Sources give 65 PS (48 kW) at 4,000 rpm; English Wikipedia states 49 kW / 66 hp",
+      "codes": [
+       "SD22"
+      ]
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual (assumed, unverified)",
+     "notes": "English Wikipedia says a 2.2 L diesel was 'later made available in many markets' for the 620, and German-language sources (de.wikipedia, pick-up-trucks.de) describe the SD22 diesel option in the 620 context, suggesting European relevance; however, no source explicitly confirming continental European sales of the 620 diesel or its introduction year was found. The SD22 is better documented in the successor 720.",
+     "citations": [
+      {
+       "ref": "https://en.wikipedia.org/wiki/Datsun_Truck",
+       "note": "2.2 L diesel with 49 kW (66 hp) later made available in many markets for the 620"
+      },
+      {
+       "ref": "https://pick-up-trucks.de/datsun-620/",
+       "note": "German reference: Nissan SD22 inline-4 diesel, 48 kW / 65 PS at 4,000 rpm, offered for some markets"
+      },
+      {
+       "ref": "https://www.engine-specs.net/nissan/sd22.html",
+       "note": "SD22 is a 2,164 cc naturally aspirated inline-4 diesel, 65 PS (48 kW) at 4,000 rpm"
+      }
+     ],
+     "confidence": "low",
+     "unresolved": [
+      "Whether the SD22 diesel 620 was actually sold in continental Europe, and from which model year (SD22 saloon use began June 1977; some sources associate SD22 pickups mainly with the 1980-83 Datsun 720)",
+      "Power rating discrepancy: 65 PS/48 kW vs 66 hp/49 kW",
+      "All dimensions, weight and transmission details for the diesel variant"
+     ]
+    }
+   ],
+   "unresolved": [
+    "Factory colours: no market-specific colour documentation surfaced (2026-07-16 research round); needs period brochures"
+   ]
+  }
+ ]
 }

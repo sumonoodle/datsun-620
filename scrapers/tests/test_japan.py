@@ -1,5 +1,12 @@
-"""Japan experiment tests: parse contracts for Goo-net and Buyee (offline
-fixtures) and the never-fail translation module."""
+"""Japan collector tests: Goo-net Exchange, Carsensor and Yahoo Auctions
+parse contracts (offline fixtures trimmed from real 2026-07-17 pages) plus
+the never-fail translation module.
+
+The retired goonet/yahoo_buyee collectors' lessons carry over: fixtures
+include a King Cab of the WRONG era (D21/D22 trucks kept the Datsun Truck
+name until 2002 and had King Cab grades of their own) and Japanese parts
+titled with King Cab terms.
+"""
 
 import json
 import sys
@@ -9,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import fx, translate
 from common.schema import validate
-from listings import goonet, yahoo_buyee
+from listings import carsensor, goonet_exchange, yahoo_auctions
 
 FIXTURES = Path(__file__).parent / "fixtures"
 FX_DAY = fx.parse_rates(json.loads((FIXTURES / "frankfurter.json").read_text()))
@@ -20,36 +27,72 @@ def _full(rec, day="2026-07-14"):
                   "history": [{"date": day, "status": rec["status"], "price": rec["price"]}]}
 
 
-def test_goonet_parser():
-    records = goonet.parse_page((FIXTURES / "goonet_page.html").read_text(), FX_DAY)
-    assert len(records) == 1, [r["id"] for r in records]
+def test_goonet_exchange_parser():
+    records = goonet_exchange.parse_page(
+        (FIXTURES / "goonet_exchange_page.html").read_text(), FX_DAY)
+    ids = [r["id"] for r in records]
+    assert ids == ["goonet_exchange:988000000000000000001"], ids
     golden = records[0]
-    assert golden["id"] == "goonet:700123456"
-    assert golden["price"]["amount"] == 15800 and golden["price"]["currency"] == "USD"
+    assert golden["year"] == 1978
+    assert golden["price"]["amount"] == 2850000 and golden["price"]["currency"] == "JPY"
+    assert golden["price"]["gbp"] == round(2850000 / FX_DAY["rates"]["JPY"], 2)
     assert golden["country"] == "JP" and golden["drive_side"] == "RHD"
     validate(_full(golden), "listing")
-    print("ok test_goonet_parser")
+    print("ok test_goonet_exchange_parser")
 
 
-def test_buyee_parser():
-    records = yahoo_buyee.parse_page((FIXTURES / "buyee_page.html").read_text(), FX_DAY)
+def test_carsensor_parser():
+    records = carsensor.parse_page((FIXTURES / "carsensor_page.html").read_text(), FX_DAY)
     ids = [r["id"] for r in records]
-    assert ids == ["yahoo_buyee:x1234567890"], ids
-    # katakana King Cab matched; standard cab skipped; the tail lamp sold
-    # FOR a King Cab (King Cab 用) excluded by the Japanese parts filter.
-    golden = next(r for r in records if r["id"] == "yahoo_buyee:x1234567890")
-    assert golden["price"]["amount"] == 550000 and golden["price"]["currency"] == "JPY"
-    assert golden["price"]["gbp"] == round(550000 / FX_DAY["rates"]["JPY"], 2)
-    assert golden["images"] == ["https://auctions.c.yimg.jp/images/x1234567890.jpg"]
+    # 2001 double cab out (era), 1990 D21 King Cab out (era), 1978 620 in.
+    assert ids == ["carsensor:AU0000000001"], ids
+    golden = records[0]
+    assert golden["year"] == 1978
+    assert golden["price"]["amount"] == 3_500_000, golden["price"]  # 350万円
     validate(_full(golden), "listing")
-    print("ok test_buyee_parser")
+    print("ok test_carsensor_parser")
+
+
+def test_yahoo_open_parser():
+    records, raw = yahoo_auctions.parse_open(
+        (FIXTURES / "yahoo_open_page.html").read_text(), FX_DAY)
+    assert raw == 6, raw
+    ids = [r["id"] for r in records]
+    # Excluded: the real lowering-block part, the cheap fixed-price item
+    # (price floor), the 720 King Cab, the A16205 part number, and the
+    # first live run's escapee — a 720 diff keyword-stuffed with
+    # "620 520 521 D21" (cross-generation rule).
+    assert ids == ["yahoo_auctions:x9000000001"], ids
+    assert "yahoo_auctions:d1234126705" not in ids, "keyword-stuffed part leaked"
+    golden = records[0]
+    assert golden["year"] == 1978  # 昭和53年
+    assert golden["price"]["amount"] == 1_500_000
+    assert golden["status"] == "active"
+    validate(_full(golden), "listing")
+    print("ok test_yahoo_open_parser")
+
+
+def test_yahoo_closed_parser():
+    records, raw = yahoo_auctions.parse_closed(
+        (FIXTURES / "yahoo_closed_page.html").read_text(), FX_DAY)
+    assert raw == 3, raw
+    ids = [r["id"] for r in records]
+    # The real fender mirror (parts tree) and the door panel sold from the
+    # parts tree despite its truck-like title must both be excluded: only
+    # the 中古車・新車 (whole vehicle) category item survives.
+    assert ids == ["yahoo_auctions:c9000000010"], ids
+    golden = records[0]
+    assert golden["status"] == "sold"
+    assert golden["year"] == 1977  # 昭和52年
+    assert golden["price"]["amount"] == 820000
+    validate(_full(golden), "listing")
+    print("ok test_yahoo_closed_parser")
 
 
 def test_translation_spot_check():
     """PRD 9 asks for translation spot-checked on three Japanese listings.
-    With both Japan sources IP-blocked there are no live listings to use, so
-    this pins the mechanism against a canned DeepL response instead: three
-    realistic titles must round-trip through the DeepL code path."""
+    Pins the mechanism against a canned DeepL response: three realistic
+    titles must round-trip through the DeepL code path."""
     import os
     from unittest.mock import patch
 
@@ -87,8 +130,10 @@ def test_translate_never_fails():
 
 
 if __name__ == "__main__":
-    test_goonet_parser()
-    test_buyee_parser()
+    test_goonet_exchange_parser()
+    test_carsensor_parser()
+    test_yahoo_open_parser()
+    test_yahoo_closed_parser()
     test_translation_spot_check()
     test_translate_never_fails()
     print("all japan tests passed")
