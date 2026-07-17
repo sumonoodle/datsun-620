@@ -16,7 +16,7 @@
         "required": ["market", "name", "variants"],
         "additionalProperties": false,
         "properties": {
-          "market": { "type": "string", "enum": ["US", "UK", "AU", "JP", "ZA", "EU"] },
+          "market": { "type": "string", "enum": ["US", "UK", "AU", "JP", "TH", "ZA", "EU"] },
           "name": { "type": "string" },
           "notes": { "type": "string" },
           "unresolved": {
