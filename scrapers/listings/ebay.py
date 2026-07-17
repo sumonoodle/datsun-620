@@ -52,9 +52,14 @@ _PARTS_WORDS = [
 _VEHICLE_CATEGORIES = ["cars & trucks", "classic cars", "automobiles", "other vehicles", "pickup"]
 
 
+_AD_RE = re.compile(r"\bads?\b|\badvert\b", re.I)
+
+
 def _looks_like_part(title: str, categories: list[str]) -> bool:
     t = (title or "").lower()
     if any(w in t for w in _PARTS_WORDS):
+        return True
+    if _AD_RE.search(t):
         return True
     if categories:
         cats = " ".join(categories).lower()
@@ -85,6 +90,15 @@ def parse_items(payload: dict, marketplace_country: str, fx_day: dict) -> list[d
         price_block = it.get("price") or {}
         amount = float(price_block["value"]) if price_block.get("value") else None
         currency = price_block.get("currency", "USD")
+
+        # A fixed-price whole vehicle is never $12; cheap Buy-It-Nows are
+        # memorabilia that dodged the word/category nets (2026-07-17 escapee:
+        # an $11.99 'Vintage Ad' served without category data). Auctions are
+        # exempt: real trucks legitimately start at low opening bids.
+        buying = it.get("buyingOptions") or []
+        if "FIXED_PRICE" in buying and "AUCTION" not in buying \
+                and amount is not None and amount < 500:
+            continue
 
         country = normalize.to_country_code(
             (it.get("itemLocation") or {}).get("country") or marketplace_country

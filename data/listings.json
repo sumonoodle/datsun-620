@@ -2,57 +2,6 @@
   "generated_at": "2026-07-17",
   "listings": [
     {
-      "id": "ebay:307001030373",
-      "source": "ebay",
-      "source_listing_id": "307001030373",
-      "url": "https://www.ebay.com/itm/307001030373?_skw=datsun+king+cab&hash=item477aaff6e5:g:2F0AAOSwjChjT1g9",
-      "title": "1977 Datsun 620 King Cab Pickup Truck Vintage Ad \"Only Datsun\"",
-      "title_translated": null,
-      "description_snippet": null,
-      "year": 1977,
-      "country": "US",
-      "region": null,
-      "drive_side": "LHD",
-      "king_cab": {
-        "matched": true,
-        "matched_terms": [
-          "king cab"
-        ],
-        "body_style_check": "unavailable"
-      },
-      "price": {
-        "amount": 11.99,
-        "currency": "USD",
-        "gbp": 8.87,
-        "fx_rate": 1.3511,
-        "fx_date": "2026-07-16"
-      },
-      "images": [
-        "https://i.ebayimg.com/images/g/2F0AAOSwjChjT1g9/s-l225.jpg"
-      ],
-      "status": "active",
-      "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17",
-      "history": [
-        {
-          "date": "2026-07-17",
-          "status": "active",
-          "price": {
-            "amount": 11.99,
-            "currency": "USD",
-            "gbp": 8.87,
-            "fx_rate": 1.3511,
-            "fx_date": "2026-07-16"
-          }
-        }
-      ],
-      "relist": {
-        "possible": false,
-        "prior_id": null,
-        "reasons": []
-      }
-    },
-    {
       "id": "bringatrailer:1978-datsun-620-3",
       "source": "bringatrailer",
       "source_listing_id": "1978-datsun-620-3",

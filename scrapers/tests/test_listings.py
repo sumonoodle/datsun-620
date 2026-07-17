@@ -34,6 +34,7 @@ def test_ebay_parser():
     assert "ebay:256001001005" not in ids, "print ad leaked through"
     assert "ebay:256001001006" not in ids, "toy model leaked through"
     assert "ebay:256001001007" not in ids, "non-620 truck leaked through"
+    assert "ebay:256001001008" not in ids, "category-less vintage ad leaked through"
 
     golden = next(r for r in records if r["id"] == "ebay:256001001001")
     assert golden["year"] == 1978

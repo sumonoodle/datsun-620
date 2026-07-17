@@ -1,5 +1,5 @@
 {
-  "total": 7,
+  "total": 8,
   "itemSummaries": [
     {
       "itemId": "v1|256001001001|0",
@@ -149,6 +149,23 @@
           "categoryName": "Cars & Trucks"
         }
       ]
+    },
+    {
+      "itemId": "v1|256001001008|0",
+      "legacyItemId": "256001001008",
+      "title": "1977 Datsun 620 King Cab Pickup Truck Vintage Ad \"Only Datsun\"",
+      "shortDescription": "Original 1977 page.",
+      "price": {
+        "value": "11.99",
+        "currency": "USD"
+      },
+      "buyingOptions": [
+        "FIXED_PRICE"
+      ],
+      "itemWebUrl": "https://www.ebay.com/itm/256001001008",
+      "itemLocation": {
+        "country": "US"
+      }
     }
   ]
 }
