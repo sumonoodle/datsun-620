@@ -1,0 +1,54 @@
+# One-off research probe, round 2: can GitHub's runners reach the deep-dive
+# source candidates (global classifieds, JDM dealers, Japan auction layer)?
+# Same pattern as the retired probe-asia workflow. Deleted once the
+# integration decision is made.
+name: deep-probe-sources
+
+on:
+  push:
+    branches:
+      - claude/datsun-620-kickoff-ah5cyw
+    paths:
+      - scrapers/experiments/deep_probe.py
+      - .github/workflows/deep-probe.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deep-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scrapers/requirements.txt
+
+      - name: Probe candidate sites
+        run: python scrapers/experiments/deep_probe.py
+
+      - name: Commit probe results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/research/deep-probe.json
+          if git diff --cached --quiet; then
+            echo "no changes"
+            exit 0
+          fi
+          git commit -m "research: deep-dive source reachability probe results"
+          for i in 1 2 3 4; do
+            git push && exit 0
+            git pull --rebase || git rebase --abort
+            sleep $((2 ** i))
+          done
+          git push
