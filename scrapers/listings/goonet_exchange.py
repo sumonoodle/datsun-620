@@ -61,9 +61,8 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         details = [d.get_text(" ", strip=True) for d in li.select("ul.details li")]
         year = _card_year(details)
 
+        # All 620 variants tracked; kc recorded for highlighting, not gating.
         kc = king_cab.check(title)
-        if not kc["matched"]:
-            continue
         if year is None or not 1971 <= year <= 1980:
             continue  # 620 era only; the model page runs to 2002 (D21/D22)
 

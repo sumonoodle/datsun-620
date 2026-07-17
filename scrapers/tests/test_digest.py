@@ -22,7 +22,8 @@ def test_digest_render():
         r["first_seen"] = r["last_seen"] = "2026-07-14"
         r["history"] = []
     by_id = {r["id"]: r for r in records}
-    active_id = next(r["id"] for r in records if r["status"] == "active")
+    active_id = next(r["id"] for r in records
+                     if r["status"] == "active" and r["king_cab"]["matched"])
     sold = next(r for r in records if r["status"] == "sold")
 
     changes = {
@@ -56,6 +57,7 @@ def test_digest_render():
         "3 days running",                    # failure streak
         "Median price: £8,199",
         "https://example.test/",
+        "KING CAB",                          # all-620s policy: KCs are tagged
     ]:
         assert expected in html, f"digest missing: {expected!r}"
     assert "tracking" not in html.lower()

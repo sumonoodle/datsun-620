@@ -61,13 +61,12 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         title = re.split(r"支払総額|本体価格|応談|年式", text)[0]
         title = " ".join(title.split())[:120]
 
+        # All 620 variants tracked; kc recorded for highlighting, not gating.
         kc = king_cab.check(title, text[:300])
-        if not kc["matched"]:
-            continue
         ym = _YEAR_RE.search(text)
         year = int(ym.group(1)) if ym else None
         if year is None or not 1971 <= year <= 1980:
-            continue  # D21/D22 King Cab grades otherwise leak in
+            continue  # D21/D22 trucks otherwise leak in
         seen.add(listing_id)
 
         pm = _MAN_YEN_RE.search(text)

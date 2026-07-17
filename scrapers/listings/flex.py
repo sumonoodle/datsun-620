@@ -57,10 +57,12 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         blurb = blurb_el.get_text(" ", strip=True) if blurb_el else ""
         text = f"{title} {blurb}"
 
+        # All 620 variants tracked; kc recorded for highlighting, not gating.
+        # A 620 at FLEX may be titled ダットサントラック with no "620", so an
+        # era-gated model-name match counts too (the era gate below vetoes
+        # the D21/D22 trucks that share the name).
         kc = king_cab.check(title, blurb)
-        if not kc["matched"]:
-            continue
-        if not _620_RE.search(text):
+        if not (_620_RE.search(text) or "ダットサントラック" in title):
             continue
         # 年式 from the details table; the model year gate keeps later
         # Datsun-badged trucks out, same reasoning as Carsensor.

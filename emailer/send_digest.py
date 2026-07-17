@@ -51,6 +51,16 @@ def _money(price: dict) -> str:
     return f"{orig} (£{price['gbp']:,.0f})"
 
 
+def _kc_tag(listing: dict) -> str:
+    """All 620 variants flow through the tracker; confirmed King Cabs get
+    the orange tag so the owner can screen at a glance."""
+    if (listing.get("king_cab") or {}).get("matched"):
+        return (f'<span style="background:{ORANGE};color:#fff8ee;font-size:11px;'
+                f'font-weight:bold;padding:2px 7px;border-radius:6px;'
+                f'letter-spacing:0.4px;">KING CAB</span> ')
+    return ""
+
+
 def _card(listing: dict, extra: str = "") -> str:
     img = ""
     if listing.get("images"):
@@ -69,7 +79,7 @@ def _card(listing: dict, extra: str = "") -> str:
       <tr>
         {'<td style="padding:12px 0 12px 12px;" valign="top" width="132">' + img + '</td>' if img else ''}
         <td style="padding:12px;" valign="top">
-          <a href="{url}" style="color:{ORANGE};font-weight:bold;text-decoration:none;
+          {_kc_tag(listing)}<a href="{url}" style="color:{ORANGE};font-weight:bold;text-decoration:none;
              font-size:16px;line-height:1.4;display:inline-block;padding:2px 0;">{title}</a>{original}<br>
           <span style="font-size:15px;">{_money(listing["price"])}</span><br>
           <span style="color:{MUTED};font-size:13px;">{meta}</span>
@@ -90,12 +100,17 @@ def build_html(changes: dict, run_log: dict, listings_by_id: dict, site_url: str
     # A brand-new listing flagged as a possible relist shows once, in the
     # relists section, not twice.
     relist_ids = {r["id"] for r in changes["possible_relists"]}
-    new_cards = [
-        _card(listings_by_id[i]) for i in changes["new"]
+    new_listings = [
+        listings_by_id[i] for i in changes["new"]
         if i in listings_by_id and i not in relist_ids
     ]
+    # King Cabs lead the section; the tracker carries every 620 variant.
+    new_listings.sort(key=lambda l: not (l.get("king_cab") or {}).get("matched"))
+    new_cards = [_card(l) for l in new_listings]
     if new_cards:
-        parts.append(_section(f"New listings ({len(new_cards)})", "".join(new_cards)))
+        n_kc = sum(1 for l in new_listings if (l.get("king_cab") or {}).get("matched"))
+        kc_note = f", {n_kc} King Cab" if n_kc else ""
+        parts.append(_section(f"New listings ({len(new_cards)}{kc_note})", "".join(new_cards)))
 
     price_rows = []
     for ch in changes["price_changed"]:
@@ -216,7 +231,12 @@ def main() -> int:
         return 0
 
     n_new, n_price = len(changes["new"]), len(changes["price_changed"])
-    if n_new or n_price:
+    n_kc = sum(1 for i in changes["new"]
+               if (listings_by_id.get(i, {}).get("king_cab") or {}).get("matched"))
+    if n_kc:
+        subject = (f"Datsun 620: {n_kc} KING CAB of {n_new} new, "
+                   f"{n_price} price change(s) — {changes['date']}")
+    elif n_new or n_price:
         subject = f"Datsun 620: {n_new} new, {n_price} price change(s) — {changes['date']}"
     else:
         subject = f"Datsun 620 digest — {changes['date']}"

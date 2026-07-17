@@ -13,6 +13,7 @@ interface Listing {
   images: string[];
   price: { amount: number | null; currency: string; gbp: number | null };
   status: string;
+  king_cab?: { matched: boolean };
 }
 
 let changes: any = null;
@@ -92,7 +93,7 @@ const started = (runLog?.started_at ?? "").slice(11, 16);
           <a class="card elevated row" href={href(l.id)}>
             {l.images[0] && <img src={l.images[0]} alt="" width="96" height="72" loading="lazy" onerror="this.style.display='none'" />}
             <span class="row-txt">
-              <b>{l.title_translated ?? l.title}</b>
+              <b>{l.king_cab?.matched && <span class="chip chip-primary kc-chip">KING CAB</span>}{l.title_translated ?? l.title}</b>
               <span class="supporting">{money(l.price)} · {l.country} · {l.drive_side}</span>
             </span>
           </a>
@@ -199,6 +200,12 @@ const started = (runLog?.started_at ?? "").slice(11, 16);
       flex-direction: column;
       gap: 0.1rem;
       min-width: 0;
+    }
+    .kc-chip {
+      font-size: 0.68rem;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+      padding: 0.1rem 0.5rem;
     }
     .row-txt b {
       font-weight: 500;

@@ -46,6 +46,13 @@ _DATSUN_MARKERS = ["datsun", "ดัทสัน", "ดัทซัน", "ช้
 # and "ปี 2520" (= 1977) must not trip the 520 exclusion.
 _OTHER_GEN_NUM_RE = re.compile(r"(?<!\d)(520|521|720)(?!\d)")
 _OTHER_GEN_WORDS = ["d21", "d22", "big m", "big-m", "navara", "frontier", "จูเนียร์"]
+# All 620 variants are tracked, so instead of the King Cab gate a TRUCK
+# marker separates 620-family pickups from Datsun saloons (Bluebird, Sunny,
+# 510...) that a bare "datsun" query also returns. Thai-built 620s were
+# badged Datsun 1300/1500; กระบะ = pickup truck.
+_TRUCK_MARKER_RE = re.compile(
+    r"(?<![\dA-Za-z])620(?!\d)|(?<!\d)(?:1300|1500)(?!\d)|กระบะ|ช้างเหยียบ|truck|pickup|pick-up",
+    re.I)
 
 _NEXT_DATA_RE = re.compile(
     r'<script[^>]*id="__NEXT_DATA__"[^>]*>(.*?)</script>', re.S)
@@ -57,7 +64,7 @@ def _wanted(title: str) -> bool:
         return False
     if _OTHER_GEN_NUM_RE.search(t) or any(g in t for g in _OTHER_GEN_WORDS):
         return False
-    return king_cab.check(title)["matched"]
+    return bool(_TRUCK_MARKER_RE.search(title))
 
 
 def parse_page(html: str, fx_day: dict) -> list[dict]:

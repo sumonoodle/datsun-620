@@ -34,10 +34,16 @@ from common import king_cab, normalize
 
 SOURCE = "yahoo_auctions"
 OPEN_URL = "https://auctions.yahoo.co.jp/search/search?p={}"
+# auccat=26360 = 中古車・新車 (whole used/new vehicles) — verified against a
+# live scoped page whose title reads 「ダットサン 620」の中古車・新車一覧.
+OPEN_VEHICLE_URL = OPEN_URL + "&auccat=26360"
 CLOSED_URL = "https://auctions.yahoo.co.jp/closedsearch/closedsearch?p={}"
-# Targeted King Cab query plus the broad 620 query (also the canary: parts
-# hits for "ダットサン 620" always exist, so zero raw items = broken/blocked).
+# The broad unscoped query doubles as the canary: parts hits for
+# "ダットサン 620" always exist, so zero raw items = broken/blocked.
 QUERIES = ["ダットサン キングキャブ", "ダットサン 620"]
+# Category-scoped queries trust the vehicle category instead of the word
+# list, so a real truck whose title mentions e.g. 新品ホイール isn't lost.
+VEHICLE_QUERIES = ["ダットサン 620", "ダットサントラック"]
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                    "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"),
@@ -50,9 +56,17 @@ _620_RE = re.compile(r"(?<![\dA-Za-z])620(?!\d)")
 # spanning 520/521/720/D21/D22 is a part that fits many trucks. Caught live
 # on the first run: a 720 diff keyword-stuffed with "620 520 521 D21".
 _OTHER_GEN_RE = re.compile(r"(?<!\d)(?:520|521|720)(?!\d)|D2[12]", re.I)
-_FIXED_PRICE_FLOOR_JPY = 100_000
+# Unscoped queries floor EVERY format, auctions included: the first
+# all-620s live run leaked a ¥6,666 slot car, a ¥631 diecast and a ¥1,650
+# oil seal, all auctions with titles the word list can't enumerate. Cheap
+# real trucks are not lost by this — the category-scoped vehicle queries
+# below run with no floor at all and carry that recall duty.
+_UNSCOPED_FLOOR_JPY = 100_000
 
-# Parts/memorabilia words, extended from the retired Buyee collector's list.
+# Parts/memorabilia words, extended from the retired Buyee collector's list
+# and hardened again when the King Cab gate was removed (2026-07-17: the
+# degated broad query leaked Hot Wheels, spark plug sets and an ignition
+# switch — every one of those titles is pinned in the fixture now).
 # 用 = "for (use with)": a "キングキャブ用テールランプ" is a lamp FOR a King Cab.
 _PARTS_WORDS = [
     "用", "パーツ", "部品", "テールランプ", "ヘッドライト", "フェンダー", "グリル",
@@ -63,11 +77,20 @@ _PARTS_WORDS = [
     "レンズ", "ガスケット", "ブレーキ", "クラッチ", "ワイパー", "ベアリング",
     "テールゲート", "ボンネット", "荷台", "メーター", "ウインカー", "ランプ",
     "ガラス", "モール", "ノベルティ", "パンフレット", "取扱説明書",
+    # toys / diecast
+    "ホットウィール", "ホットウイール", "hot wheels", "ポップレース", "pop race",
+    "jdm tuners", "ダイキャスト", "ルース", "未開封", "1/64", "1:64", "1/43",
+    "1:43", "1/24", "1:24",
+    # ignition / service parts
+    "スパークプラグ", "プラグ", "イグニッション", "キーシリンダー", "スイッチ",
+    "デスビ", "ローター", "コンデンサー", "ファンベルト", "ホース", "フィルター",
+    "エアクリーナー", "点火",
 ]
 
 
 def _looks_like_part(title: str) -> bool:
-    return any(w in title for w in _PARTS_WORDS)
+    t = title.lower()  # the English toy brands appear in either case
+    return any(w in t for w in _PARTS_WORDS)
 
 
 def _record(auction_id: str, title: str, amount: float | None, image: str | None,
@@ -92,10 +115,10 @@ def _record(auction_id: str, title: str, amount: float | None, image: str | None
 
 
 def _passes_filters(title: str) -> bool:
-    if not king_cab.check(title)["matched"]:
-        return False
+    # All 620 variants tracked (King Cab highlighted downstream, not gated);
+    # the layers below carry the whole anti-junk burden.
     if not _620_RE.search(title):
-        return False  # D21/D22 King Cabs and unrelated trucks must not leak
+        return False  # D21/D22 and unrelated trucks must not leak
     if _OTHER_GEN_RE.search(title):
         return False  # cross-generation title = multi-fit part, not a truck
     if _looks_like_part(title):
@@ -103,9 +126,15 @@ def _passes_filters(title: str) -> bool:
     return True
 
 
-def parse_open(html: str, fx_day: dict) -> tuple[list[dict], int]:
+def parse_open(html: str, fx_day: dict,
+               vehicle_scoped: bool = False) -> tuple[list[dict], int]:
     """Active auctions from the server-rendered open search page.
-    Returns (records, raw_item_count) — the raw count feeds the canary."""
+    Returns (records, raw_item_count) — the raw count feeds the canary.
+
+    vehicle_scoped: the request was restricted to the whole-vehicle
+    category, so the parts word list and price floor are skipped (the
+    category did that work) and a 620-era ダットサントラック title counts
+    even without a literal "620"."""
     soup = BeautifulSoup(html, "html.parser")
     products = soup.select("li.Product")
     records = []
@@ -115,15 +144,22 @@ def parse_open(html: str, fx_day: dict) -> tuple[list[dict], int]:
             continue
         auction_id = a.get("data-auction-id", "")
         title = a.get("data-auction-title") or a.get_text(" ", strip=True)
-        if not auction_id or not _passes_filters(title):
+        if not auction_id:
             continue
+        if vehicle_scoped:
+            if _OTHER_GEN_RE.search(title):
+                continue
+            era = normalize.extract_year_jp(title)
+            if not (_620_RE.search(title)
+                    or ("ダットサントラック" in title and era and 1971 <= era <= 1980)):
+                continue
+        else:
+            if not _passes_filters(title):
+                continue
 
         raw_price = a.get("data-auction-price")
         amount = float(raw_price) if raw_price and raw_price.isdigit() else None
-        # 現在 = current bid (auction running); 即決 only = fixed price.
-        labels = {el.get_text(strip=True) for el in p.select(".Product__label")}
-        is_fixed_only = "即決" in labels and "現在" not in labels
-        if is_fixed_only and amount is not None and amount < _FIXED_PRICE_FLOOR_JPY:
+        if not vehicle_scoped and amount is not None and amount < _UNSCOPED_FLOOR_JPY:
             continue
 
         records.append(_record(auction_id, title, amount,
@@ -165,21 +201,26 @@ def collect(fx_day: dict) -> list[dict]:
     failures: list[str] = []
     fetches = 0
     raw_total = 0
+    plan = (
+        [(OPEN_URL, q, lambda h, f: parse_open(h, f)) for q in QUERIES]
+        + [(OPEN_VEHICLE_URL, q, lambda h, f: parse_open(h, f, vehicle_scoped=True))
+           for q in VEHICLE_QUERIES]
+        + [(CLOSED_URL, q, parse_closed) for q in QUERIES]
+    )
     with httpx.Client(timeout=30, headers=HEADERS, follow_redirects=True) as client:
-        for template, parser in ((OPEN_URL, parse_open), (CLOSED_URL, parse_closed)):
-            for query in QUERIES:
-                fetches += 1
-                try:
-                    resp = client.get(template.format(quote(query)))
-                    resp.raise_for_status()
-                    recs, raw = parser(resp.text, fx_day)
-                    raw_total += raw
-                    for rec in recs:
-                        if rec["id"] not in seen:  # sold and active never collide;
-                            seen.add(rec["id"])   # queries do
-                            records.append(rec)
-                except Exception as exc:
-                    failures.append(f"{query}: {exc}")
+        for template, query, parser in plan:
+            fetches += 1
+            try:
+                resp = client.get(template.format(quote(query)))
+                resp.raise_for_status()
+                recs, raw = parser(resp.text, fx_day)
+                raw_total += raw
+                for rec in recs:
+                    if rec["id"] not in seen:  # sold and active never collide;
+                        seen.add(rec["id"])   # queries do
+                        records.append(rec)
+            except Exception as exc:
+                failures.append(f"{query}: {exc}")
     if failures and len(failures) == fetches:
         raise RuntimeError(f"all Yahoo fetches failed ({failures[0]})")
     if failures:

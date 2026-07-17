@@ -36,9 +36,8 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         excerpt = it.get("excerpt", "")
         if not re.search(r"\b620\b", title):
             continue
+        # All 620 variants tracked; kc recorded for highlighting, not gating.
         kc = king_cab.check(title, excerpt)
-        if not kc["matched"]:
-            continue
 
         url = normalize.safe_url(it.get("url"))
         slug = url.rstrip("/").rsplit("/", 1)[-1] if url else title.lower().replace(" ", "-")

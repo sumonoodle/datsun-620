@@ -23,7 +23,9 @@ def _full(rec, day="2026-07-14"):
 
 def test_hemmings_parser():
     records = hemmings.parse_page((FIXTURES / "hemmings_page.html").read_text(), FX_DAY)
-    assert len(records) == 1, [r["id"] for r in records]
+    # All-620s policy: the 1973 standard cab is included too, unflagged.
+    assert [r["id"] for r in records] == ["hemmings:2789001", "hemmings:2789002"]
+    assert records[1]["king_cab"]["matched"] is False
     golden = records[0]
     assert golden["id"] == "hemmings:2789001"
     assert golden["price"]["amount"] == 13995
@@ -36,7 +38,10 @@ def test_hemmings_parser():
 def test_carsandbids_parser():
     payload = json.loads((FIXTURES / "carsandbids_api.json").read_text())
     records = carsandbids.parse_auctions(payload, FX_DAY)
-    assert len(records) == 1, [r["id"] for r in records]
+    # All-620s policy: the 1976 standard cab is included too, unflagged.
+    assert [r["id"] for r in records] == ["carsandbids:abc123-1978-datsun-620-king-cab",
+                                          "carsandbids:def456-1976-datsun-620-pickup"]
+    assert records[1]["king_cab"]["matched"] is False
     golden = records[0]
     assert golden["id"] == "carsandbids:abc123-1978-datsun-620-king-cab"
     assert golden["price"]["amount"] == 7200

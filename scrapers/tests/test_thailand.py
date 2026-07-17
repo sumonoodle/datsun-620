@@ -36,10 +36,13 @@ def test_thai_king_cab_terms():
 def test_kaidee_parser():
     records = kaidee.parse_page((FIXTURES / "kaidee_page.html").read_text(), FX_DAY)
     ids = [r["id"] for r in records]
-    # The real Datsun 520 (other generation, no King Cab), the promoted
-    # Honda, and the 720 คิงแค็บ are all excluded; the Thai-badged and the
-    # English-badged 620 King Cabs both pass.
-    assert ids == ["kaidee:900000001", "kaidee:900000002"], ids
+    # The real Datsun 520 (other generation), the promoted Honda and the
+    # 720 คิงแค็บ are all excluded; the two King Cabs pass, and under the
+    # all-620s policy so does the standard-cab ดัทสัน 1500 ช้างเหยียบ.
+    assert ids == ["kaidee:900000001", "kaidee:900000002", "kaidee:900000004"], ids
+    std = records[2]
+    assert std["king_cab"]["matched"] is False
+    validate(_full(std), "listing")
 
     thai = records[0]
     assert thai["country"] == "TH" and thai["drive_side"] == "RHD"

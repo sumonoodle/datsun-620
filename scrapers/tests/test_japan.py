@@ -31,13 +31,23 @@ def test_goonet_exchange_parser():
     records = goonet_exchange.parse_page(
         (FIXTURES / "goonet_exchange_page.html").read_text(), FX_DAY)
     ids = [r["id"] for r in records]
-    assert ids == ["goonet_exchange:988000000000000000001"], ids
+    # All-620s policy: the era gate does the work — the 1996 LONG and the
+    # 1990 D21 KING CAB stay out, the 1978 King Cab AND the 1975 standard
+    # DX both come in (only the former KC-flagged).
+    assert ids == ["goonet_exchange:988000000000000000001",
+                   "goonet_exchange:988000000000000000003"], ids
     golden = records[0]
     assert golden["year"] == 1978
     assert golden["price"]["amount"] == 2850000 and golden["price"]["currency"] == "JPY"
     assert golden["price"]["gbp"] == round(2850000 / FX_DAY["rates"]["JPY"], 2)
     assert golden["country"] == "JP" and golden["drive_side"] == "RHD"
+    assert golden["king_cab"]["matched"] is True
     validate(_full(golden), "listing")
+
+    std = records[1]
+    assert std["year"] == 1975
+    assert std["king_cab"]["matched"] is False
+    validate(_full(std), "listing")
     print("ok test_goonet_exchange_parser")
 
 
@@ -56,20 +66,50 @@ def test_carsensor_parser():
 def test_yahoo_open_parser():
     records, raw = yahoo_auctions.parse_open(
         (FIXTURES / "yahoo_open_page.html").read_text(), FX_DAY)
-    assert raw == 6, raw
+    assert raw == 9, raw
     ids = [r["id"] for r in records]
-    # Excluded: the real lowering-block part, the cheap fixed-price item
-    # (price floor), the 720 King Cab, the A16205 part number, and the
-    # first live run's escapee — a 720 diff keyword-stuffed with
-    # "620 520 521 D21" (cross-generation rule).
+    # Excluded: the real lowering-block part, the cheap fixed-price item,
+    # the 720 King Cab, the A16205 part number, the keyword-stuffed 720
+    # diff (cross-generation rule), and the all-620s first run's three
+    # live leaks — slot car, cased diecast, oil seal — which the all-format
+    # unscoped price floor now removes.
     assert ids == ["yahoo_auctions:x9000000001"], ids
     assert "yahoo_auctions:d1234126705" not in ids, "keyword-stuffed part leaked"
+    for leak in ("d1236911238", "u1206189077", "s1235401261"):
+        assert f"yahoo_auctions:{leak}" not in ids, f"cheap junk leaked: {leak}"
     golden = records[0]
     assert golden["year"] == 1978  # 昭和53年
     assert golden["price"]["amount"] == 1_500_000
     assert golden["status"] == "active"
     validate(_full(golden), "listing")
     print("ok test_yahoo_open_parser")
+
+
+def test_yahoo_vehicle_scoped_parser():
+    """Category-scoped (auccat=26360) queries trust the vehicle category:
+    no word list, no floor, and an era-dated ダットサントラック counts
+    without a literal 620 — but other generations still never pass."""
+    def product(pid, title, price):
+        return (f'<li class="Product"><a class="Product__titleLink" '
+                f'data-auction-id="{pid}" data-auction-title="{title}" '
+                f'data-auction-price="{price}" '
+                f'href="https://auctions.yahoo.co.jp/jp/auction/{pid}">{title}</a>'
+                f'<span class="Product__price"><span class="Product__label">現在</span>'
+                f'<span class="Product__priceValue">{price}円</span></span></li>')
+    html = "<ul>" + "".join([
+        product("v9000000001", "昭和53年 ダットサントラック 実働 新品ホイール付", 350000),
+        product("v9000000002", "日産 ダットサントラック DX 平成8年", 800000),   # D21 era
+        product("v9000000003", "ダットサン 620 キングキャブ レストアベース", 90000),
+    ]) + "</ul>"
+    records, raw = yahoo_auctions.parse_open(html, FX_DAY, vehicle_scoped=True)
+    ids = [r["id"] for r in records]
+    assert raw == 3, raw
+    # The era-dated truck passes despite the parts word ホイール and no "620";
+    # the 平成8年 (1996) truck is out; the cheap 620 KC passes (no floor in
+    # the vehicle category — real trucks can sit at low bids).
+    assert ids == ["yahoo_auctions:v9000000001", "yahoo_auctions:v9000000003"], ids
+    validate(_full(records[0]), "listing")
+    print("ok test_yahoo_vehicle_scoped_parser")
 
 
 def test_yahoo_closed_parser():
@@ -133,6 +173,7 @@ if __name__ == "__main__":
     test_goonet_exchange_parser()
     test_carsensor_parser()
     test_yahoo_open_parser()
+    test_yahoo_vehicle_scoped_parser()
     test_yahoo_closed_parser()
     test_translation_spot_check()
     test_translate_never_fails()

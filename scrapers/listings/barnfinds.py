@@ -61,8 +61,6 @@ def parse_feed(xml: str, fx_day: dict) -> list[dict]:
         slug = link.rstrip("/").rsplit("/", 1)[-1]
 
         kc = king_cab.check(title, desc)
-        if not kc["matched"]:
-            continue
 
         pm = _PRICE_RE.search(desc)
         amount = float(pm.group(1).replace(",", "")) if pm else None

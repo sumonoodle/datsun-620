@@ -41,8 +41,6 @@ def parse_auctions(payload: dict, fx_day: dict) -> list[dict]:
         if not re.search(r"\b620\b", title):
             continue
         kc = king_cab.check(title, subtitle)
-        if not kc["matched"]:
-            continue
 
         slug = a.get("slug") or str(a.get("id", ""))
         bid = (a.get("current_bid") or {})

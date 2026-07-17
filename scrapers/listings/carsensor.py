@@ -82,11 +82,10 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         title = " ".join(title_el.get_text(" ", strip=True).split()) if title_el else ""
         year = _reg_year(card)
 
+        # All 620 variants tracked; kc recorded for highlighting, not gating.
         kc = king_cab.check(title)
-        if not kc["matched"]:
-            continue
         if year is None or not 1971 <= year <= 1980:
-            continue  # 620 era only; D21/D22 King Cab grades otherwise leak in
+            continue  # 620 era only; D21/D22 trucks otherwise leak in
 
         img = card.find("img")
         image = (img.get("data-src") or img.get("src") or "") if img else ""
