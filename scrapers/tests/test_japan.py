@@ -56,11 +56,14 @@ def test_carsensor_parser():
 def test_yahoo_open_parser():
     records, raw = yahoo_auctions.parse_open(
         (FIXTURES / "yahoo_open_page.html").read_text(), FX_DAY)
-    assert raw == 5, raw
+    assert raw == 6, raw
     ids = [r["id"] for r in records]
-    # The real lowering-block part, the cheap fixed-price novelty, the 720
-    # King Cab and the A16205 part number must all be excluded.
+    # Excluded: the real lowering-block part, the cheap fixed-price item
+    # (price floor), the 720 King Cab, the A16205 part number, and the
+    # first live run's escapee — a 720 diff keyword-stuffed with
+    # "620 520 521 D21" (cross-generation rule).
     assert ids == ["yahoo_auctions:x9000000001"], ids
+    assert "yahoo_auctions:d1234126705" not in ids, "keyword-stuffed part leaked"
     golden = records[0]
     assert golden["year"] == 1978  # 昭和53年
     assert golden["price"]["amount"] == 1_500_000

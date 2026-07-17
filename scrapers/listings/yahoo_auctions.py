@@ -46,6 +46,10 @@ HEADERS = {
 
 # "620" not embedded in a longer number (part numbers, "1620", "S620x" SKUs).
 _620_RE = re.compile(r"(?<![\dA-Za-z])620(?!\d)")
+# A real 620 for sale never name-drops other truck generations; a title
+# spanning 520/521/720/D21/D22 is a part that fits many trucks. Caught live
+# on the first run: a 720 diff keyword-stuffed with "620 520 521 D21".
+_OTHER_GEN_RE = re.compile(r"(?<!\d)(?:520|521|720)(?!\d)|D2[12]", re.I)
 _FIXED_PRICE_FLOOR_JPY = 100_000
 
 # Parts/memorabilia words, extended from the retired Buyee collector's list.
@@ -92,6 +96,8 @@ def _passes_filters(title: str) -> bool:
         return False
     if not _620_RE.search(title):
         return False  # D21/D22 King Cabs and unrelated trucks must not leak
+    if _OTHER_GEN_RE.search(title):
+        return False  # cross-generation title = multi-fit part, not a truck
     if _looks_like_part(title):
         return False
     return True
