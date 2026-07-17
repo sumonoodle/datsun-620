@@ -21,11 +21,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const SOURCE_NAMES: Record<string, string> = {
   ebay: "eBay", bringatrailer: "Bring a Trailer", carsandbids: "Cars & Bids",
-  hemmings: "Hemmings", goonet: "Goo-net", yahoo_buyee: "Yahoo (Buyee)",
+  hemmings: "Hemmings", goonet_exchange: "Goo-net Exchange", carsensor: "Carsensor",
+  yahoo_auctions: "Yahoo Auctions JP", kaidee: "Kaidee",
+  classiccars: "ClassicCars.com", kijiji: "Kijiji", barnfinds: "Barn Finds",
+  flex: "FLEX (JP)", kuruma_ex: "Kuruma-EX", mercadolibre: "MercadoLibre MX",
+  justcars: "JUST CARS", tokyocarz: "TokyoCarZ",
 };
 const COUNTRY_NAMES: Record<string, string> = {
   US: "USA", GB: "UK", DE: "Germany", AU: "Australia", JP: "Japan",
-  ZA: "South Africa", CA: "Canada", NL: "Netherlands", XX: "location unknown",
+  TH: "Thailand", ZA: "South Africa", CA: "Canada", MX: "Mexico",
+  NZ: "New Zealand", NL: "Netherlands", XX: "location unknown",
 };
 
 function money(p: any): string {

@@ -30,11 +30,13 @@ def to_country_code(value: str | None) -> str:
 
 
 def infer_drive_side(country: str, text: str | None = None) -> str:
-    """Explicit mention in the text wins; otherwise infer from country."""
+    """Explicit mention in the text wins; otherwise infer from country.
+    Japanese listings state it as 右ハンドル/左ハンドル — needed because
+    left-hand-drive US reimports do circulate in Japan's classic market."""
     t = (text or "").lower()
-    if re.search(r"\brhd\b|right[ -]hand[ -]drive", t):
+    if re.search(r"\brhd\b|right[ -]hand[ -]drive", t) or "右ハンドル" in t:
         return "RHD"
-    if re.search(r"\blhd\b|left[ -]hand[ -]drive", t):
+    if re.search(r"\blhd\b|left[ -]hand[ -]drive", t) or "左ハンドル" in t:
         return "LHD"
     if country in _RHD_COUNTRIES:
         return "RHD"

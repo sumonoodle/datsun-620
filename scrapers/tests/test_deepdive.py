@@ -86,13 +86,21 @@ def test_kuruma_ex_parser():
     records = kuruma_ex.parse_page((FIXTURES / "kuruma_ex_page.html").read_text(), FX_DAY)
     ids = [r["id"] for r in records]
     # The real 1987 pickup (era) and the real D21 SEV6 King Cab Hardbody
-    # (era) are out; the synthetic 1978 620 King Cab passes.
-    assert ids == ["kuruma_ex:ccZZ9000000001"], ids
+    # (era) are out; the synthetic 1978 620 King Cab passes, as does the
+    # 応談 (negotiable, no-price) 1977 card.
+    assert ids == ["kuruma_ex:ccZZ9000000001", "kuruma_ex:ccZZ9000000002"], ids
     golden = records[0]
     assert golden["year"] == 1978
     assert golden["country"] == "JP" and golden["drive_side"] == "RHD"
     assert golden["price"]["currency"] == "JPY"
     validate(_full(golden), "listing")
+
+    ondan = records[1]
+    # A negotiable-price card must not swallow the spec table into the
+    # title (the pre-fix behaviour when 支払総額 was absent).
+    assert ondan["price"]["amount"] is None
+    assert "年式" not in ondan["title"] and "走行距離" not in ondan["title"], ondan["title"]
+    validate(_full(ondan), "listing")
     print("ok test_kuruma_ex_parser")
 
 

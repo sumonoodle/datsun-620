@@ -30,9 +30,10 @@ Prerequisites: `GMAIL_USER` and `GMAIL_APP_PASSWORD` secrets (set 2026-07-16).
 The digest's Source health section shows every source daily. Expected states:
 
 - **eBay, Bring a Trailer, Goo-net Exchange, Carsensor, Yahoo Auctions,
-  Kaidee**: normally green. A parse failure here usually means a site
-  redesign; the fixture tests in `scrapers/tests/` pin the expected format,
-  so ask Claude Code to refresh the fixture and parser.
+  Kaidee, ClassicCars.com, Kijiji, Barn Finds, FLEX, Kuruma-EX**: normally
+  green. A parse failure here usually means a site redesign; the fixture
+  tests in `scrapers/tests/` pin the expected format, so ask Claude Code
+  to refresh the fixture and parser.
 - **Cars & Bids, Hemmings**: blocked (403/404) most days; that is
   documented, not broken. See `docs/japan-sources.md` and
   `docs/asia-sources.md` for the evidence and options. (The old Goo-net
