@@ -30,17 +30,24 @@ HEADERS = {
 DATSUN_TRUCK_JA = "ダットサントラック"
 DATSUN_620_JA = "ダットサン 620"
 
-# Round 3: Truck2Hand's server ignores search keywords entirely (round 2
-# proved SSR and the _next/data route both return the generic feed), so the
-# real search API must be hiding in the client bundle. Pull the search page
-# chunk and the app chunk to grep for the endpoint.
+# Round 4 (final Truck2Hand attempt): the API client wasn't in the page
+# chunks, so it lives in a shared numbered chunk. Pull them all plus
+# robots/sitemap; if the endpoint still doesn't surface, T2H is deferred.
+_T2H = "https://www.truck2hand.com"
 PAGES = [
-    ("t2h-chunk-search.js.gz",
-     "https://www.truck2hand.com/_next/static/chunks/pages/search-b032079d39a3479c.js"),
-    ("t2h-chunk-app.js.gz",
-     "https://www.truck2hand.com/_next/static/chunks/pages/_app-bb6bb48efc3ea868.js"),
-    ("t2h-chunk-main.js.gz",
-     "https://www.truck2hand.com/_next/static/chunks/main-74d0177e299a9876.js"),
+    (f"t2h-shared-{name.split('-')[0].split('.')[0]}.js.gz",
+     f"{_T2H}/_next/static/chunks/{name}")
+    for name in [
+        "2624-baaa5ab3dcbecf93.js", "3416-0c6ea0c94d93d0e6.js",
+        "450-74657f62ba267987.js", "4900-311a696856e86804.js",
+        "6069-063ef278331e6352.js", "6131.3ee8ac93c70fa06f.js",
+        "7373-62308ce18f69d13f.js", "9034-0ce2cc1183b93086.js",
+        "9250-69fca050068b7768.js", "9497-333959e68a8f6d6d.js",
+        "9948-c0d3ef38e04e827f.js", "webpack-e7de7a0c643c1a66.js",
+    ]
+] + [
+    ("t2h-robots.txt.gz", f"{_T2H}/robots.txt"),
+    ("t2h-sitemap.xml.gz", f"{_T2H}/sitemap.xml"),
 ]
 
 
