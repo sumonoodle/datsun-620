@@ -24,8 +24,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import fx, store as store_mod, translate
 from common.schema import DATA_DIR, validate
-from listings import (bat, carsandbids, carsensor, ebay, goonet_exchange,
-                      hemmings, kaidee, yahoo_auctions)
+from listings import (barnfinds, bat, carsandbids, carsensor, classiccars,
+                      ebay, flex, goonet_exchange, hemmings, kaidee, kijiji,
+                      kuruma_ex, yahoo_auctions)
 
 # (source_name, callable(fx_day) -> [listing records])
 SOURCES: list[tuple] = [
@@ -37,6 +38,11 @@ SOURCES: list[tuple] = [
     ("carsensor", carsensor.collect),
     ("yahoo_auctions", yahoo_auctions.collect),
     ("kaidee", kaidee.collect),
+    ("classiccars", classiccars.collect),
+    ("kijiji", kijiji.collect),
+    ("barnfinds", barnfinds.collect),
+    ("flex", flex.collect),
+    ("kuruma_ex", kuruma_ex.collect),
 ]
 
 

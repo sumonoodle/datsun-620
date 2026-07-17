@@ -49,6 +49,13 @@ automation path. **SKIP** = not worth covering, with reason.
 | 8 | JUST CARS (AU) | Classic-specialist AU classifieds, 620 facet | 200, 106 KB |
 | 9 | TokyoCarZ (JP export) | Indexed page claims a 620 in stock | 200, 464 KB |
 
+**Build outcome (2026-07-17):** five of the nine shipped — ClassicCars.com,
+Kijiji, Barn Finds, FLEX and kuruma-ex. Three demoted on close inspection:
+MercadoLibre's 200 was a bot-challenge shell ("suspicious-traffic"
+frontend) — alert route, official API a future option; JUST CARS and
+TokyoCarZ render results client-side (empty SSR) — JUST CARS to the alert
+route, TokyoCarZ to manual. Car & Classic was always alert-route.
+
 Reachable but deferred (thin 620 value today, cheap to add later):
 Japanese Classics (200, sold-archive diffing), JDM Expo (200), everycar.jp /
 Nikkyo / Carused / Car Junction / CardealPage / PicknBuy24 (all 200 —

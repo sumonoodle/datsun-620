@@ -12,7 +12,7 @@ COUNTRY_NAMES = {
     "japan": "JP", "south africa": "ZA", "canada": "CA", "netherlands": "NL",
     "france": "FR", "new zealand": "NZ", "belgium": "BE", "ireland": "IE",
     "thailand": "TH", "ประเทศไทย": "TH", "ไทย": "TH",
-    "malaysia": "MY", "indonesia": "ID",
+    "malaysia": "MY", "indonesia": "ID", "mexico": "MX", "méxico": "MX",
 }
 
 _RHD_COUNTRIES = {"GB", "JP", "AU", "NZ", "ZA", "IE", "TH", "MY", "ID"}
