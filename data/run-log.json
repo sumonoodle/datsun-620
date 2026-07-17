@@ -1,10 +1,64 @@
 {
-  "date": "2026-07-16",
-  "started_at": "2026-07-16T07:32:52+00:00",
-  "sources": [],
+  "date": "2026-07-17",
+  "started_at": "2026-07-17T06:29:18+00:00",
+  "sources": [
+    {
+      "source": "ebay",
+      "ok": true,
+      "records": 166,
+      "note": "",
+      "consecutive_failures": 0
+    },
+    {
+      "source": "bringatrailer",
+      "ok": true,
+      "records": 1,
+      "note": "",
+      "consecutive_failures": 0
+    },
+    {
+      "source": "carsandbids",
+      "ok": false,
+      "records": 0,
+      "note": "HTTP 403 (bot protection / blocked)",
+      "consecutive_failures": 1
+    },
+    {
+      "source": "hemmings",
+      "ok": false,
+      "records": 0,
+      "note": "HTTP 403 (bot protection / blocked)",
+      "consecutive_failures": 1
+    },
+    {
+      "source": "goonet",
+      "ok": false,
+      "records": 0,
+      "note": "HTTP 404 (bot protection / blocked)",
+      "consecutive_failures": 1
+    },
+    {
+      "source": "yahoo_buyee",
+      "ok": false,
+      "records": 0,
+      "note": "HTTP 403 (bot protection / blocked)",
+      "consecutive_failures": 1
+    }
+  ],
   "totals": {
-    "active": 0,
-    "by_country": {},
-    "median_gbp": null
+    "active": 166,
+    "by_country": {
+      "US": 94,
+      "CA": 19,
+      "JP": 20,
+      "GB": 14,
+      "DE": 10,
+      "AU": 3,
+      "TH": 3,
+      "AE": 1,
+      "FR": 1,
+      "HK": 1
+    },
+    "median_gbp": 10.35
   }
 }
