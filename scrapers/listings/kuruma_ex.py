@@ -55,8 +55,11 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
             continue
         text = card.get_text(" ", strip=True)
         # Card text leads with maker + grade line, e.g.
-        # "日産 ダットサンピックアップトラック MT 支払総額 130.5万円 …"
-        title = " ".join(text.split("支払総額")[0].split())[:120]
+        # "日産 ダットサンピックアップトラック MT 支払総額 130.5万円 …".
+        # Cut at the first pricing/spec label so a 応談 (negotiable) card
+        # without 支払総額 doesn't swallow the whole spec table into the title.
+        title = re.split(r"支払総額|本体価格|応談|年式", text)[0]
+        title = " ".join(title.split())[:120]
 
         kc = king_cab.check(title, text[:300])
         if not kc["matched"]:

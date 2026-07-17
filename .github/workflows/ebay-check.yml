@@ -28,13 +28,9 @@ jobs:
         run: pip install -r scrapers/requirements.txt
       - name: Run tests
         run: |
-          python scrapers/tests/test_fx.py
-          python scrapers/tests/test_schema.py
-          python scrapers/tests/test_king_cab.py
-          python scrapers/tests/test_listings.py
-          python scrapers/tests/test_tier2.py
-          python scrapers/tests/test_japan.py
-          python scrapers/tests/test_isolation.py
+          for t in scrapers/tests/test_*.py; do
+            python "$t"
+          done
       - name: eBay credential self-test
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}

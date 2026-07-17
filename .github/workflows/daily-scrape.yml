@@ -37,15 +37,12 @@ jobs:
         run: pip install -r scrapers/requirements.txt
 
       - name: Run tests
+        # Glob, not a hardcoded list: the old list silently omitted the
+        # Thailand and deep-dive suites for two days.
         run: |
-          python scrapers/tests/test_fx.py
-          python scrapers/tests/test_schema.py
-          python scrapers/tests/test_king_cab.py
-          python scrapers/tests/test_listings.py
-          python scrapers/tests/test_tier2.py
-          python scrapers/tests/test_japan.py
-          python scrapers/tests/test_isolation.py
-          python scrapers/tests/test_digest.py
+          for t in scrapers/tests/test_*.py; do
+            python "$t"
+          done
 
       - name: Run daily pipeline
         env:

@@ -42,7 +42,14 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
             d = json.loads(m.group(1))
         except ValueError:
             continue
-        if not isinstance(d, dict) or d.get("@type") != "car":
+        # @type is "car" today; tolerate "Car" or list forms like
+        # ["Product", "Car"] so a schema.org cleanup doesn't silently
+        # zero the collector.
+        if not isinstance(d, dict):
+            continue
+        dtype = d.get("@type")
+        types = [dtype] if isinstance(dtype, str) else (dtype or [])
+        if not any(str(t).lower() == "car" for t in types):
             continue
         found_car_block = True
 
