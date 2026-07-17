@@ -30,20 +30,17 @@ HEADERS = {
 DATSUN_TRUCK_JA = "ダットサントラック"
 DATSUN_620_JA = "ダットサン 620"
 
-# Round 2: the round-1 Thai URLs were wrong (Truck2Hand needs /search/ with a
-# trailing slash and fills results client-side; Kaidee c12 is motorcycles,
-# cars are c11-auto-car). The _next/data route tests whether Truck2Hand's
-# server will hand the search JSON directly (buildId from round 1's page).
+# Round 3: Truck2Hand's server ignores search keywords entirely (round 2
+# proved SSR and the _next/data route both return the generic feed), so the
+# real search API must be hiding in the client bundle. Pull the search page
+# chunk and the app chunk to grep for the endpoint.
 PAGES = [
-    ("kaidee-car.html.gz",
-     "https://rod.kaidee.com/c11-auto-car?q=datsun"),
-    ("kaidee-changyiap.html.gz",
-     "https://rod.kaidee.com/c11-auto-car?q=" + quote("ช้างเหยียบ")),
-    ("truck2hand-slash.html.gz",
-     "https://www.truck2hand.com/search/?keyword=datsun"),
-    ("truck2hand-nextdata.json.gz",
-     "https://www.truck2hand.com/_next/data/da5ce712edb43b33a4a4641dd136a17ae9f2c3fd"
-     "/search.json?keyword=" + quote("datsun 620")),
+    ("t2h-chunk-search.js.gz",
+     "https://www.truck2hand.com/_next/static/chunks/pages/search-b032079d39a3479c.js"),
+    ("t2h-chunk-app.js.gz",
+     "https://www.truck2hand.com/_next/static/chunks/pages/_app-bb6bb48efc3ea868.js"),
+    ("t2h-chunk-main.js.gz",
+     "https://www.truck2hand.com/_next/static/chunks/main-74d0177e299a9876.js"),
 ]
 
 
