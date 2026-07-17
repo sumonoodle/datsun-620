@@ -31,7 +31,9 @@ SOURCE_NAMES = {
     "ebay": "eBay", "bringatrailer": "Bring a Trailer", "carsandbids": "Cars & Bids",
     "hemmings": "Hemmings", "goonet_exchange": "Goo-net Exchange",
     "carsensor": "Carsensor", "yahoo_auctions": "Yahoo Auctions JP",
-    "truck2hand": "Truck2Hand", "kaidee": "Kaidee",
+    "kaidee": "Kaidee", "classiccars": "ClassicCars.com", "kijiji": "Kijiji",
+    "barnfinds": "Barn Finds", "flex": "FLEX (JP)", "kuruma_ex": "Kuruma-EX",
+    "mercadolibre": "MercadoLibre MX", "justcars": "JUST CARS", "tokyocarz": "TokyoCarZ",
 }
 BROWN = "#3b2b1d"
 ORANGE = "#b04a1a"
@@ -41,7 +43,8 @@ MUTED = "#75634f"
 def _money(price: dict) -> str:
     if not price or price.get("amount") is None:
         return "no price shown"
-    sym = {"USD": "$", "GBP": "£", "EUR": "€", "JPY": "¥", "AUD": "A$", "ZAR": "R", "THB": "฿"}
+    sym = {"USD": "$", "GBP": "£", "EUR": "€", "JPY": "¥", "AUD": "A$", "ZAR": "R",
+           "THB": "฿", "CAD": "C$", "MXN": "MX$"}
     orig = f"{sym.get(price['currency'], price['currency'] + ' ')}{price['amount']:,.0f}"
     if price["currency"] == "GBP" or price.get("gbp") is None:
         return orig

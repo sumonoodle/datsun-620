@@ -49,18 +49,25 @@ const SOURCE_NAMES: Record<string, string> = {
   goonet_exchange: "Goo-net Exchange",
   carsensor: "Carsensor",
   yahoo_auctions: "Yahoo Auctions JP",
-  truck2hand: "Truck2Hand",
   kaidee: "Kaidee",
+  classiccars: "ClassicCars.com",
+  kijiji: "Kijiji",
+  barnfinds: "Barn Finds",
+  flex: "FLEX (JP)",
+  kuruma_ex: "Kuruma-EX",
+  mercadolibre: "MercadoLibre MX",
+  justcars: "JUST CARS",
+  tokyocarz: "TokyoCarZ",
 };
 const COUNTRY_NAMES: Record<string, string> = {
   US: "USA", GB: "UK", DE: "Germany", AU: "Australia", JP: "Japan",
-  TH: "Thailand", ZA: "South Africa", CA: "Canada", NL: "Netherlands",
-  XX: "location unknown",
+  TH: "Thailand", ZA: "South Africa", CA: "Canada", MX: "Mexico",
+  NZ: "New Zealand", NL: "Netherlands", XX: "location unknown",
 };
 
 function money(p: Price): string {
   if (p.amount == null) return "no price shown";
-  const sym: Record<string, string> = { USD: "$", GBP: "£", EUR: "€", JPY: "¥", AUD: "A$", ZAR: "R" };
+  const sym: Record<string, string> = { USD: "$", GBP: "£", EUR: "€", JPY: "¥", AUD: "A$", ZAR: "R", THB: "฿", CAD: "C$", MXN: "MX$" };
   const orig = `${sym[p.currency] ?? p.currency + " "}${p.amount.toLocaleString("en-GB")}`;
   if (p.currency === "GBP" || p.gbp == null) return orig;
   return `${orig} · £${Math.round(p.gbp).toLocaleString("en-GB")}`;

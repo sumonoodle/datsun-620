@@ -14,7 +14,7 @@
     },
     "source": {
       "type": "string",
-      "enum": ["ebay", "bringatrailer", "carsandbids", "hemmings", "goonet_exchange", "carsensor", "yahoo_auctions", "truck2hand", "kaidee"]
+      "enum": ["ebay", "bringatrailer", "carsandbids", "hemmings", "goonet_exchange", "carsensor", "yahoo_auctions", "kaidee", "classiccars", "kijiji", "barnfinds", "flex", "kuruma_ex", "mercadolibre", "justcars", "tokyocarz"]
     },
     "source_listing_id": { "type": "string" },
     "url": { "type": "string", "format": "uri" },

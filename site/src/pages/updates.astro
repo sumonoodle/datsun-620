@@ -39,12 +39,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const SOURCE_NAMES: Record<string, string> = {
   ebay: "eBay", bringatrailer: "Bring a Trailer", carsandbids: "Cars & Bids",
   hemmings: "Hemmings", goonet_exchange: "Goo-net Exchange", carsensor: "Carsensor",
-  yahoo_auctions: "Yahoo Auctions JP", truck2hand: "Truck2Hand", kaidee: "Kaidee",
+  yahoo_auctions: "Yahoo Auctions JP", kaidee: "Kaidee",
+  classiccars: "ClassicCars.com", kijiji: "Kijiji", barnfinds: "Barn Finds",
+  flex: "FLEX (JP)", kuruma_ex: "Kuruma-EX", mercadolibre: "MercadoLibre MX",
+  justcars: "JUST CARS", tokyocarz: "TokyoCarZ",
 };
 
 function money(p: Listing["price"]): string {
   if (!p || p.amount == null) return "no price shown";
-  const sym: Record<string, string> = { USD: "$", GBP: "£", EUR: "€", JPY: "¥", AUD: "A$", ZAR: "R" };
+  const sym: Record<string, string> = { USD: "$", GBP: "£", EUR: "€", JPY: "¥", AUD: "A$", ZAR: "R", THB: "฿", CAD: "C$", MXN: "MX$" };
   const orig = `${sym[p.currency] ?? p.currency + " "}${p.amount.toLocaleString("en-GB")}`;
   if (p.currency === "GBP" || p.gbp == null) return orig;
   return `${orig} · £${Math.round(p.gbp).toLocaleString("en-GB")}`;
