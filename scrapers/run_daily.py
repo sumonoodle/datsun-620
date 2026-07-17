@@ -142,6 +142,16 @@ def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None) -> int
     (data_dir / "changes-latest.json").write_text(json.dumps(changes, indent=2) + "\n")
     (data_dir / "run-log.json").write_text(json.dumps(run_log, indent=2) + "\n")
 
+    # Titles of new catches go to stdout so the Actions log answers "what
+    # did it find?" without opening the data files (the branch live-test
+    # workflow never commits them).
+    by_id = {l["id"]: l for l in listing_store["listings"]}
+    for new_id in changes["new"]:
+        l = by_id.get(new_id)
+        if l:
+            print(f"new: {new_id} | {l['title'][:90]} | "
+                  f"{l['price']['amount']} {l['price']['currency']} | {l['url']}")
+
     ok = sum(1 for s in source_results if s["ok"])
     print(
         f"run complete: fx {fx_day['date']}, sources ok {ok}/{len(source_results)}, "
