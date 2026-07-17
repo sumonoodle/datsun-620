@@ -219,7 +219,7 @@ def main() -> int:
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
     msg["From"] = user
-    msg["To"] = os.environ.get("DIGEST_TO", user)
+    msg["To"] = os.environ.get("DIGEST_TO") or user  # empty string falls back too
     msg.attach(MIMEText("Your mail client does not display HTML.", "plain"))
     msg.attach(MIMEText(html_out, "html"))
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=ssl.create_default_context()) as smtp:
