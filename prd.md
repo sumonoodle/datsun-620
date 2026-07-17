@@ -35,6 +35,12 @@ written, these notes override it where they conflict):**
   provide no live listings; see docs/japan-sources.md.
 - The site is installable as a web app (manifest, icon, offline fallback),
   an owner-requested addition beyond section 6.
+- Scope change (owner decision, July 2026): the tracker follows ALL Datsun
+  620 variants, not King Cabs only — the truck's rarity plus poorly-worded
+  listings made the strict King Cab gate too likely to filter out real King
+  Cabs. Confirmed King Cabs are highlighted (site chips, digest tags,
+  King Cab-first ordering, a body filter) rather than being the entry bar.
+  Section 4.2's filter is recorded per listing, not used to exclude.
 - Asia expansion (owner-requested, July 2026): the section 4.4 Japan
   experiments concluded and were replaced by working collectors — Goo-net
   Exchange, Carsensor and Yahoo Auctions direct (reachable from GitHub

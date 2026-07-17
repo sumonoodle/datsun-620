@@ -44,8 +44,6 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         if not re.search(r"\b620\b", title) or "datsun" not in title.lower():
             continue
         kc = king_cab.check(title)
-        if not kc["matched"]:
-            continue
 
         url = href if href.startswith("http") else f"https://www.hemmings.com{href}"
         slug = url.rstrip("/").rsplit("/", 1)[-1]

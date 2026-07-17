@@ -24,6 +24,7 @@ interface Listing {
   last_seen: string;
   history: { date: string; status: string }[];
   relist?: { possible: boolean; prior_id?: string | null };
+  king_cab?: { matched: boolean };
 }
 
 let listings: Listing[] = [];
@@ -86,7 +87,7 @@ function vehicleHref(l: Listing): string {
     ) : (
       <>
         <p class="supporting">
-          King Cab listings worldwide, refreshed daily.
+          Datsun 620 listings worldwide, King Cabs highlighted, refreshed daily.
           {" "}{active.length} active, {ended.length} ended. Updated {generated}.
         </p>
         <form class="filters" id="filters">
@@ -95,6 +96,11 @@ function vehicleHref(l: Listing): string {
             {countries.map((c) => (
               <option value={c}>{COUNTRY_NAMES[c] ?? c}</option>
             ))}
+          </select>
+          <select class="fchip" name="body" aria-label="Body style">
+            <option value="">All bodies</option>
+            <option value="kc">King Cab</option>
+            <option value="other">Unconfirmed / other</option>
           </select>
           <select class="fchip" name="drive" aria-label="Drive side">
             <option value="">LHD + RHD</option>
@@ -133,7 +139,8 @@ function vehicleHref(l: Listing): string {
         {active.map((l) => (
           <article class="card elevated listing" data-country={l.country} data-drive={l.drive_side}
                    data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}
-                   data-source={l.source} data-seen={l.first_seen}>
+                   data-source={l.source} data-seen={l.first_seen}
+                   data-kc={l.king_cab?.matched ? "1" : "0"}>
             {l.images[0] && (
               <a class="photo" href={vehicleHref(l)}>
                 <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.parentElement.style.display='none'" />
@@ -150,6 +157,7 @@ function vehicleHref(l: Listing): string {
               </p>
             </div>
             <div class="assist-row">
+              {l.king_cab?.matched && <span class="chip chip-primary">KING CAB</span>}
               {l.year && <span class="chip chip-outlined">{l.year}</span>}
               <span class="chip chip-outlined">{COUNTRY_NAMES[l.country] ?? l.country}</span>
               <span class="chip chip-outlined">{l.drive_side}</span>
@@ -166,7 +174,8 @@ function vehicleHref(l: Listing): string {
         {ended.map((l) => (
           <article class="card elevated listing ended" data-country={l.country} data-drive={l.drive_side}
                    data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}
-                   data-source={l.source} data-seen={l.first_seen} data-ended={l.last_seen}>
+                   data-source={l.source} data-seen={l.first_seen} data-ended={l.last_seen}
+                   data-kc={l.king_cab?.matched ? "1" : "0"}>
             {l.images[0] && (
               <a class="photo" href={vehicleHref(l)}>
                 <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.parentElement.style.display='none'" />
@@ -186,6 +195,7 @@ function vehicleHref(l: Listing): string {
               </p>
             </div>
             <div class="assist-row">
+              {l.king_cab?.matched && <span class="chip chip-primary">KING CAB</span>}
               {l.year && <span class="chip chip-outlined">{l.year}</span>}
               <span class="chip chip-outlined">{COUNTRY_NAMES[l.country] ?? l.country}</span>
               <span class="chip chip-outlined">{l.drive_side}</span>
@@ -223,6 +233,7 @@ function vehicleHref(l: Listing): string {
             if (!form) return;
             const data = new FormData(form);
             const country = data.get("country") as string;
+            const body = data.get("body") as string;
             const drive = data.get("drive") as string;
             const source = data.get("source") as string;
             const sort = data.get("sort") as string;
@@ -241,6 +252,7 @@ function vehicleHref(l: Listing): string {
               // filter is in use: "max £5000" must not surface no-price cards.
               const ok =
                 (!country || el.dataset.country === country) &&
+                (!body || (body === "kc" ? el.dataset.kc === "1" : el.dataset.kc !== "1")) &&
                 (!drive || el.dataset.drive === drive) &&
                 (!source || el.dataset.source === source) &&
                 (year === null ? !yearBound : year >= ymin && year <= ymax) &&

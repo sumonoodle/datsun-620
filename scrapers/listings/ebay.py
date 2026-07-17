@@ -76,12 +76,12 @@ def parse_items(payload: dict, marketplace_country: str, fx_day: dict) -> list[d
         desc = it.get("shortDescription", "")
         categories = [c.get("categoryName", "") for c in it.get("categories", [])]
 
+        # Owner decision 2026-07-17: ALL 620 variants are tracked (King Cab
+        # merely highlighted downstream) — rarity means poorly-worded King
+        # Cab listings must not be filtered away. kc is recorded, not gated.
         kc = king_cab.check(title, desc)
-        if not kc["matched"]:
-            continue
-        # This is a 620 tracker: the targeted "datsun king cab" query also
-        # surfaces 720-era trucks and memorabilia. Title only: a 720 listing's
-        # description may well mention the 620 it succeeded.
+        # Title only: a 720 listing's description may well mention the 620
+        # it succeeded.
         if not re.search(r"\b620\b", title):
             continue
         if _looks_like_part(title, categories):

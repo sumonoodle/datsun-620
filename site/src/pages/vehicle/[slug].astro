@@ -87,6 +87,7 @@ if (pricePoints.length >= 2) {
   <h1 class="vehicle-title">{title}</h1>
   {l.title_translated && <p class="original">{l.title}</p>}
   <p class="chips">
+    {l.king_cab?.matched && <span class="chip chip-primary">KING CAB</span>}
     <span class="chip chip-primary">{money(l.price)}</span>
     <span class={`chip status-chip-${l.status}`}>{l.status}</span>
   </p>

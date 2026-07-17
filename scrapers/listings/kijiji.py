@@ -56,8 +56,6 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         if not any(p in url for p in _VEHICLE_PATHS):
             continue  # toys, books and parts live under other paths
         kc = king_cab.check(title, desc)
-        if not kc["matched"]:
-            continue
         if not (_620_RE.search(title) or _620_RE.search(desc)):
             continue
 

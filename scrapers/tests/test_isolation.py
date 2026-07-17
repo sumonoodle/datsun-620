@@ -37,14 +37,14 @@ def test_crashing_source_never_fails_the_run():
 
         run_log = json.loads((data_dir / "run-log.json").read_text())
         by_source = {s["source"]: s for s in run_log["sources"]}
-        assert by_source["bringatrailer"]["ok"] and by_source["bringatrailer"]["records"] == 2
+        assert by_source["bringatrailer"]["ok"] and by_source["bringatrailer"]["records"] == 3
         assert not by_source["hemmings"]["ok"]
         assert "simulated source outage" in by_source["hemmings"]["note"]
         assert by_source["hemmings"]["consecutive_failures"] == 1
 
         # Healthy source's records made it into the store despite the crash.
         listings = json.loads((data_dir / "listings.json").read_text())["listings"]
-        assert len(listings) == 2
+        assert len(listings) == 3
 
         # Second run: failure counter must accumulate (drives the 7-day rule).
         rc = run_daily.run(

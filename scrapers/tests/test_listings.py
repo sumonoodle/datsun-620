@@ -27,7 +27,9 @@ def test_ebay_parser():
     records = ebay.parse_items(payload, "US", FX_DAY)
     ids = [r["id"] for r in records]
     assert "ebay:256001001001" in ids, "golden King Cab missed"
-    assert "ebay:256001001002" not in ids, "standard cab leaked through"
+    # All-620s policy (owner decision 2026-07-17): the standard cab is now
+    # tracked too, just not King Cab-flagged.
+    assert "ebay:256001001002" in ids, "standard cab 620 must be included"
     assert "ebay:256001001003" not in ids, "parts listing leaked through"
     assert "ebay:256001001004" in ids, "Kingcab spelling missed"
     # The 2026-07-17 memorabilia flood: ads, toys and non-620 trucks must not pass.
@@ -40,7 +42,12 @@ def test_ebay_parser():
     assert golden["year"] == 1978
     assert golden["drive_side"] == "LHD"
     assert golden["price"]["gbp"] == round(14500 / FX_DAY["rates"]["USD"], 2)
+    assert golden["king_cab"]["matched"] is True
     validate(_full(golden), "listing")
+
+    std = next(r for r in records if r["id"] == "ebay:256001001002")
+    assert std["king_cab"]["matched"] is False, "standard cab must not be KC-flagged"
+    validate(_full(std), "listing")
 
     rhd = next(r for r in records if r["id"] == "ebay:256001001004")
     assert rhd["drive_side"] == "RHD"
@@ -53,7 +60,11 @@ def test_bat_parser():
     html = (FIXTURES / "bat_page.html").read_text()
     records = bat.parse_page(html, FX_DAY)
     ids = [r["id"] for r in records]
-    assert ids == ["bringatrailer:1978-datsun-620-3", "bringatrailer:1977-datsun-620-kc"], ids
+    # All-620s policy: the 1974 standard cab is tracked too, unflagged.
+    assert ids == ["bringatrailer:1978-datsun-620-3",
+                   "bringatrailer:1974-datsun-620-8",
+                   "bringatrailer:1977-datsun-620-kc"], ids
+    assert [r["king_cab"]["matched"] for r in records] == [True, False, True]
     golden = records[0]
     assert golden["status"] == "sold"
     assert golden["year"] == 1978
@@ -66,7 +77,7 @@ def test_store_change_detection():
     day1 = bat.parse_page(html, FX_DAY)
     s = {"generated_at": "", "listings": []}
     s, changes = store.reconcile(s, copy.deepcopy(day1), {"bringatrailer"}, "2026-07-14")
-    assert len(changes["new"]) == 2
+    assert len(changes["new"]) == 3  # incl. the standard cab (all-620s policy)
 
     # Day 2: price moves on the active auction.
     day2 = copy.deepcopy(day1)

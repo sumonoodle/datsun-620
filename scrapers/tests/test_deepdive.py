@@ -25,9 +25,11 @@ def _full(rec, day="2026-07-14"):
 def test_classiccars_parser():
     records = classiccars.parse_page((FIXTURES / "classiccars_page.html").read_text(), FX_DAY)
     ids = [r["id"] for r in records]
-    # The real 1979 standard-cab 620 is excluded; the King Cab passes.
-    assert ids == ["classiccars:CC-9990001"], ids
-    golden = records[0]
+    # All-620s policy: the real 1979 standard cab is included (unflagged)
+    # alongside the King Cab.
+    assert ids == ["classiccars:CC-2079740", "classiccars:CC-9990001"], ids
+    assert records[0]["king_cab"]["matched"] is False
+    golden = records[1]
     assert golden["year"] == 1978
     assert golden["price"]["amount"] == 21500 and golden["price"]["currency"] == "USD"
     assert golden["region"] == "Portland Oregon"
@@ -55,9 +57,12 @@ def test_kijiji_parser():
 def test_barnfinds_parser():
     records = barnfinds.parse_feed((FIXTURES / "barnfinds_feed.xml").read_text(), FX_DAY)
     ids = [r["id"] for r in records]
-    # The two real posts (4x4 and standard work truck) fail the King Cab
-    # filter; the King Cab project post passes, with its asking price mined.
-    assert ids == ["barnfinds:king-cab-project-1977-datsun-620"], ids
+    # All-620s policy: every 620 write-up is tracked; only the King Cab
+    # project is flagged.
+    assert ids == ["barnfinds:king-cab-project-1977-datsun-620",
+                   "barnfinds:dealer-modified-1979-datsun-620-4x4-pickup",
+                   "barnfinds:compact-work-truck-1977-datsun-620"], ids
+    assert [r["king_cab"]["matched"] for r in records] == [True, False, False]
     golden = records[0]
     assert golden["title"] == "King Cab Project: 1977 Datsun 620"
     assert golden["year"] == 1977
