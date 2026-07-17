@@ -1,6 +1,6 @@
 {
   "date": "2026-07-17",
-  "started_at": "2026-07-17T17:06:40+00:00",
+  "started_at": "2026-07-17T21:21:25+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -21,14 +21,14 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 3
+      "consecutive_failures": 4
     },
     {
       "source": "hemmings",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 3
+      "consecutive_failures": 4
     },
     {
       "source": "goonet_exchange",
@@ -53,6 +53,41 @@
     },
     {
       "source": "kaidee",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0
+    },
+    {
+      "source": "classiccars",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0
+    },
+    {
+      "source": "kijiji",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0
+    },
+    {
+      "source": "barnfinds",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0
+    },
+    {
+      "source": "flex",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0
+    },
+    {
+      "source": "kuruma_ex",
       "ok": true,
       "records": 0,
       "note": "",
