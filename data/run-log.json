@@ -1,12 +1,12 @@
 {
   "date": "2026-07-17",
-  "started_at": "2026-07-17T08:44:23+00:00",
+  "started_at": "2026-07-17T17:06:40+00:00",
   "sources": [
     {
       "source": "ebay",
       "ok": true,
       "records": 0,
-      "note": "one vintage-ad record purged; fixed-price floor added",
+      "note": "",
       "consecutive_failures": 0
     },
     {
@@ -21,28 +21,42 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 2
+      "consecutive_failures": 3
     },
     {
       "source": "hemmings",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 2
+      "consecutive_failures": 3
     },
     {
-      "source": "goonet",
-      "ok": false,
+      "source": "goonet_exchange",
+      "ok": true,
       "records": 0,
-      "note": "HTTP 404 (bot protection / blocked)",
-      "consecutive_failures": 2
+      "note": "",
+      "consecutive_failures": 0
     },
     {
-      "source": "yahoo_buyee",
-      "ok": false,
+      "source": "carsensor",
+      "ok": true,
       "records": 0,
-      "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 2
+      "note": "",
+      "consecutive_failures": 0
+    },
+    {
+      "source": "yahoo_auctions",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0
+    },
+    {
+      "source": "kaidee",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0
     }
   ],
   "totals": {
