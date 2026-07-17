@@ -1,6 +1,13 @@
 {
   "date": "2026-07-17",
-  "new": [],
+  "new": [
+    "classiccars:CC-2079740",
+    "classiccars:CC-1920925",
+    "classiccars:CC-1995643",
+    "barnfinds:dealer-modified-1979-datsun-620-4x4-pickup",
+    "barnfinds:compact-work-truck-1977-datsun-620",
+    "kuruma_ex:ccVU3133320108"
+  ],
   "price_changed": [],
   "status_changed": [],
   "possible_relists": []

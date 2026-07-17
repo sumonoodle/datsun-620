@@ -1,6 +1,6 @@
 {
   "date": "2026-07-17",
-  "started_at": "2026-07-17T21:21:25+00:00",
+  "started_at": "2026-07-17T22:17:08+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -21,14 +21,14 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 4
+      "consecutive_failures": 5
     },
     {
       "source": "hemmings",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 4
+      "consecutive_failures": 5
     },
     {
       "source": "goonet_exchange",
@@ -61,7 +61,7 @@
     {
       "source": "classiccars",
       "ok": true,
-      "records": 0,
+      "records": 3,
       "note": "",
       "consecutive_failures": 0
     },
@@ -75,7 +75,7 @@
     {
       "source": "barnfinds",
       "ok": true,
-      "records": 0,
+      "records": 2,
       "note": "",
       "consecutive_failures": 0
     },
@@ -89,14 +89,17 @@
     {
       "source": "kuruma_ex",
       "ok": true,
-      "records": 0,
+      "records": 1,
       "note": "",
       "consecutive_failures": 0
     }
   ],
   "totals": {
-    "active": 0,
-    "by_country": {},
-    "median_gbp": null
+    "active": 6,
+    "by_country": {
+      "JP": 1,
+      "US": 5
+    },
+    "median_gbp": 20834.26
   }
 }
