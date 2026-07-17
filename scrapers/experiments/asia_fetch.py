@@ -30,21 +30,20 @@ HEADERS = {
 DATSUN_TRUCK_JA = "ダットサントラック"
 DATSUN_620_JA = "ダットサン 620"
 
+# Round 2: the round-1 Thai URLs were wrong (Truck2Hand needs /search/ with a
+# trailing slash and fills results client-side; Kaidee c12 is motorcycles,
+# cars are c11-auto-car). The _next/data route tests whether Truck2Hand's
+# server will hand the search JSON directly (buildId from round 1's page).
 PAGES = [
-    ("goonet-exchange.html.gz",
-     "https://www.goo-net-exchange.com/usedcars/NISSAN/DATSUN_TRUCK/"),
-    ("carsensor.html.gz",
-     f"https://www.carsensor.net/usedcar/freeword/{quote(DATSUN_TRUCK_JA)}/index.html"),
-    ("yahoo-open-truck.html.gz",
-     f"https://auctions.yahoo.co.jp/search/search?p={quote(DATSUN_TRUCK_JA)}"),
-    ("yahoo-open-620.html.gz",
-     f"https://auctions.yahoo.co.jp/search/search?p={quote(DATSUN_620_JA)}"),
-    ("yahoo-closed-620.html.gz",
-     f"https://auctions.yahoo.co.jp/closedsearch/closedsearch?p={quote(DATSUN_620_JA)}"),
-    ("truck2hand.html.gz",
-     "https://www.truck2hand.com/search?keyword=" + quote("datsun 620")),
-    ("kaidee.html.gz",
-     "https://rod.kaidee.com/c12-auto-pickup?q=datsun"),
+    ("kaidee-car.html.gz",
+     "https://rod.kaidee.com/c11-auto-car?q=datsun"),
+    ("kaidee-changyiap.html.gz",
+     "https://rod.kaidee.com/c11-auto-car?q=" + quote("ช้างเหยียบ")),
+    ("truck2hand-slash.html.gz",
+     "https://www.truck2hand.com/search/?keyword=datsun"),
+    ("truck2hand-nextdata.json.gz",
+     "https://www.truck2hand.com/_next/data/da5ce712edb43b33a4a4641dd136a17ae9f2c3fd"
+     "/search.json?keyword=" + quote("datsun 620")),
 ]
 
 
