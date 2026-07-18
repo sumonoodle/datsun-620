@@ -1,6 +1,55 @@
 {
-  "generated_at": "2026-07-17",
+  "generated_at": "2026-07-18",
   "listings": [
+    {
+      "id": "carsensor:AU6253091581",
+      "source": "carsensor",
+      "source_listing_id": "AU6253091581",
+      "url": "https://www.carsensor.net/usedcar/detail/AU6253091581/index.html",
+      "title": "ダットサン 1500 Wピックアップ コラム4速 UN521 J15エンジン 6人乗り",
+      "title_translated": "Datsun 1500 W pickup column 4 speed UN521 J15 engine 6 seats",
+      "description_snippet": null,
+      "year": 1971,
+      "country": "JP",
+      "region": "千葉県 千葉市花見川区",
+      "drive_side": "RHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 3500000.0,
+        "currency": "JPY",
+        "gbp": 16043.27,
+        "fx_rate": 218.16,
+        "fx_date": "2026-07-17"
+      },
+      "images": [
+        "https://ccsrpcma.carsensor.net/CSphoto/bkkn/378/369/U00048378369/U00048378369_002L.JPG"
+      ],
+      "status": "active",
+      "first_seen": "2026-07-18",
+      "last_seen": "2026-07-18",
+      "history": [
+        {
+          "date": "2026-07-18",
+          "status": "active",
+          "price": {
+            "amount": 3500000.0,
+            "currency": "JPY",
+            "gbp": 16043.27,
+            "fx_rate": 218.16,
+            "fx_date": "2026-07-17"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "kuruma_ex:ccVU3133320108",
       "source": "kuruma_ex",
@@ -30,7 +79,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17",
+      "last_seen": "2026-07-18",
       "history": [
         {
           "date": "2026-07-17",
@@ -79,7 +128,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17",
+      "last_seen": "2026-07-18",
       "history": [
         {
           "date": "2026-07-17",
@@ -128,7 +177,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17",
+      "last_seen": "2026-07-18",
       "history": [
         {
           "date": "2026-07-17",
@@ -177,7 +226,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17",
+      "last_seen": "2026-07-18",
       "history": [
         {
           "date": "2026-07-17",
@@ -226,7 +275,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17",
+      "last_seen": "2026-07-18",
       "history": [
         {
           "date": "2026-07-17",
@@ -275,7 +324,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17",
+      "last_seen": "2026-07-18",
       "history": [
         {
           "date": "2026-07-17",
@@ -326,7 +375,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-17",
+      "last_seen": "2026-07-18",
       "history": [
         {
           "date": "2026-07-04",

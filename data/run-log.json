@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-17",
-  "started_at": "2026-07-17T22:17:08+00:00",
+  "date": "2026-07-18",
+  "started_at": "2026-07-18T06:21:07+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -21,14 +21,14 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 5
+      "consecutive_failures": 6
     },
     {
       "source": "hemmings",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 5
+      "consecutive_failures": 6
     },
     {
       "source": "goonet_exchange",
@@ -40,7 +40,7 @@
     {
       "source": "carsensor",
       "ok": true,
-      "records": 0,
+      "records": 1,
       "note": "",
       "consecutive_failures": 0
     },
@@ -95,11 +95,11 @@
     }
   ],
   "totals": {
-    "active": 6,
+    "active": 7,
     "by_country": {
-      "JP": 1,
+      "JP": 2,
       "US": 5
     },
-    "median_gbp": 20834.26
+    "median_gbp": 18438.76
   }
 }
