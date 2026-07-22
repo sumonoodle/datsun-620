@@ -1,6 +1,55 @@
 {
-  "generated_at": "2026-07-21",
+  "generated_at": "2026-07-22",
   "listings": [
+    {
+      "id": "kaidee:371477592",
+      "source": "kaidee",
+      "source_listing_id": "371477592",
+      "url": "https://rod.kaidee.com/product-371477592",
+      "title": "ดัสสัน ช้างเหยียบ 4ขอ",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": null,
+      "country": "TH",
+      "region": "พาน เชียงราย",
+      "drive_side": "RHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 32000.0,
+        "currency": "THB",
+        "gbp": 709.31,
+        "fx_rate": 45.114,
+        "fx_date": "2026-07-21"
+      },
+      "images": [
+        "https://img.kaidee.com/prd/20260722/371477592/m/960a8b1c-a85e-43af-b54f-236967dac515.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-07-22",
+      "last_seen": "2026-07-22",
+      "history": [
+        {
+          "date": "2026-07-22",
+          "status": "active",
+          "price": {
+            "amount": 32000.0,
+            "currency": "THB",
+            "gbp": 709.31,
+            "fx_rate": 45.114,
+            "fx_date": "2026-07-21"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "carsensor:AU6253091581",
       "source": "carsensor",
@@ -21,16 +70,16 @@
       "price": {
         "amount": 3500000.0,
         "currency": "JPY",
-        "gbp": 16013.18,
-        "fx_rate": 218.57,
-        "fx_date": "2026-07-20"
+        "gbp": 16048.42,
+        "fx_rate": 218.09,
+        "fx_date": "2026-07-21"
       },
       "images": [
         "https://ccsrpcma.carsensor.net/CSphoto/bkkn/378/369/U00048378369/U00048378369_002L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-07-22",
       "history": [
         {
           "date": "2026-07-18",
@@ -71,15 +120,15 @@
         "amount": null,
         "currency": "JPY",
         "gbp": null,
-        "fx_rate": 218.57,
-        "fx_date": "2026-07-20"
+        "fx_rate": 218.09,
+        "fx_date": "2026-07-21"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/059/489/U00030059489/U00030059489_001L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-07-22",
       "history": [
         {
           "date": "2026-07-17",
@@ -119,16 +168,16 @@
       "price": {
         "amount": 27995.0,
         "currency": "USD",
-        "gbp": 20798.66,
-        "fx_rate": 1.346,
-        "fx_date": "2026-07-20"
+        "gbp": 20890.23,
+        "fx_rate": 1.3401,
+        "fx_date": "2026-07-21"
       },
       "images": [
         "https://photos.classiccars.com/cc-temp/listing/207/9740/59766614-1979-datsun-620-thumb.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-07-22",
       "history": [
         {
           "date": "2026-07-17",
@@ -168,16 +217,16 @@
       "price": {
         "amount": 10995.0,
         "currency": "USD",
-        "gbp": 8168.65,
-        "fx_rate": 1.346,
-        "fx_date": "2026-07-20"
+        "gbp": 8204.61,
+        "fx_rate": 1.3401,
+        "fx_date": "2026-07-21"
       },
       "images": [
         "https://photos.classiccars.com/cc-temp/listing/199/5643/54897854-1973-datsun-620-thumb.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-07-22",
       "history": [
         {
           "date": "2026-07-17",
@@ -217,16 +266,16 @@
       "price": {
         "amount": 29790.0,
         "currency": "USD",
-        "gbp": 22132.24,
-        "fx_rate": 1.346,
-        "fx_date": "2026-07-20"
+        "gbp": 22229.68,
+        "fx_rate": 1.3401,
+        "fx_date": "2026-07-21"
       },
       "images": [
         "https://photos.classiccars.com/cc-temp/listing/192/925/59935075-1975-datsun-620-thumb.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-07-22",
       "history": [
         {
           "date": "2026-07-17",
@@ -267,15 +316,15 @@
         "amount": null,
         "currency": "USD",
         "gbp": null,
-        "fx_rate": 1.346,
-        "fx_date": "2026-07-20"
+        "fx_rate": 1.3401,
+        "fx_date": "2026-07-21"
       },
       "images": [
         "https://barnfinds.com/wp-content/uploads/2024/04/1979-Datsun-620-4x4-Pickup-1-e1713582901931-630x390.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-07-22",
       "history": [
         {
           "date": "2026-07-17",
@@ -316,15 +365,15 @@
         "amount": null,
         "currency": "USD",
         "gbp": null,
-        "fx_rate": 1.346,
-        "fx_date": "2026-07-20"
+        "fx_rate": 1.3401,
+        "fx_date": "2026-07-21"
       },
       "images": [
         "https://barnfinds.com/wp-content/uploads/2023/10/1-25-630x390.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-07-22",
       "history": [
         {
           "date": "2026-07-17",
@@ -366,16 +415,16 @@
       "price": {
         "amount": 12500.0,
         "currency": "USD",
-        "gbp": 9286.78,
-        "fx_rate": 1.346,
-        "fx_date": "2026-07-20"
+        "gbp": 9327.66,
+        "fx_rate": 1.3401,
+        "fx_date": "2026-07-21"
       },
       "images": [
         "https://bringatrailer.com/wp-content/uploads/2026/06/20260508_225442411_iOS-copy-2026-06-12-7cj-98980-scaled.jpg?w=470&h=318&crop=1"
       ],
       "status": "sold",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-21",
+      "last_seen": "2026-07-22",
       "history": [
         {
           "date": "2026-07-04",
