@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-30",
-  "started_at": "2026-07-30T06:43:15+00:00",
+  "date": "2026-07-31",
+  "started_at": "2026-07-31T07:15:46+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -21,14 +21,14 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 18
+      "consecutive_failures": 19
     },
     {
       "source": "hemmings",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 18
+      "consecutive_failures": 19
     },
     {
       "source": "goonet_exchange",
@@ -61,7 +61,7 @@
     {
       "source": "classiccars",
       "ok": true,
-      "records": 3,
+      "records": 2,
       "note": "",
       "consecutive_failures": 0
     },
@@ -101,6 +101,6 @@
       "JP": 2,
       "US": 5
     },
-    "median_gbp": 16090.47
+    "median_gbp": 16044.01
   }
 }
