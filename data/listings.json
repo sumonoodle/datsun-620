@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01",
+  "generated_at": "2026-08-02",
   "listings": [
     {
       "id": "kuruma_ex:ccAU7214532395",
@@ -30,7 +30,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-02",
       "history": [
         {
           "date": "2026-08-01",
@@ -79,7 +79,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-22",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-02",
       "history": [
         {
           "date": "2026-07-22",
@@ -128,7 +128,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-02",
       "history": [
         {
           "date": "2026-07-18",
@@ -177,7 +177,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-02",
       "history": [
         {
           "date": "2026-07-17",
@@ -226,7 +226,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-02",
       "history": [
         {
           "date": "2026-07-17",
@@ -275,7 +275,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-02",
       "history": [
         {
           "date": "2026-07-17",
@@ -322,7 +322,7 @@
       "images": [
         "https://photos.classiccars.com/cc-temp/listing/192/925/59413313-1975-datsun-620-thumb.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-07-17",
       "last_seen": "2026-07-30",
       "history": [
@@ -336,6 +336,10 @@
             "fx_rate": 1.3437,
             "fx_date": "2026-07-17"
           }
+        },
+        {
+          "date": "2026-08-02",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -373,7 +377,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-02",
       "history": [
         {
           "date": "2026-07-17",
@@ -422,7 +426,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-02",
       "history": [
         {
           "date": "2026-07-17",
