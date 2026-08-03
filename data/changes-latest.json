@@ -1,13 +1,10 @@
 {
-  "date": "2026-08-02",
-  "new": [],
-  "price_changed": [],
-  "status_changed": [
-    {
-      "id": "classiccars:CC-1920925",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    }
+  "date": "2026-08-03",
+  "new": [
+    "kuruma_ex:ccAU7062177718",
+    "kuruma_ex:ccAU6253091581"
   ],
+  "price_changed": [],
+  "status_changed": [],
   "possible_relists": []
 }

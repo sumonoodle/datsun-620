@@ -1,6 +1,104 @@
 {
-  "generated_at": "2026-08-02",
+  "generated_at": "2026-08-03",
   "listings": [
+    {
+      "id": "kuruma_ex:ccAU7062177718",
+      "source": "kuruma_ex",
+      "source_listing_id": "ccAU7062177718",
+      "url": "https://kuruma-ex.jp/usedcar/detail/ccAU7062177718",
+      "title": "日産 ダットサンピックアップトラック コラムMT ベンチシート 6人乗り",
+      "title_translated": "Nissan Datsun Pickup Truck Column MT Bench Seat 6 Seaters",
+      "description_snippet": null,
+      "year": 1978,
+      "country": "JP",
+      "region": null,
+      "drive_side": "RHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 0.0,
+        "currency": "JPY",
+        "gbp": 0.0,
+        "fx_rate": 215.06,
+        "fx_date": "2026-07-31"
+      },
+      "images": [
+        "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/753/041/U00052753041/U00052753041_001L.JPG"
+      ],
+      "status": "active",
+      "first_seen": "2026-08-03",
+      "last_seen": "2026-08-03",
+      "history": [
+        {
+          "date": "2026-08-03",
+          "status": "active",
+          "price": {
+            "amount": 0.0,
+            "currency": "JPY",
+            "gbp": 0.0,
+            "fx_rate": 215.06,
+            "fx_date": "2026-07-31"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "kuruma_ex:ccAU6253091581",
+      "source": "kuruma_ex",
+      "source_listing_id": "ccAU6253091581",
+      "url": "https://kuruma-ex.jp/usedcar/detail/ccAU6253091581",
+      "title": "日産 ダットサン1500 Wピックアップ コラム4速 UN521 J15エンジン 6人乗り",
+      "title_translated": "Nissan Datsun 1500 W pickup column 4 speed UN521 J15 engine 6 seats",
+      "description_snippet": null,
+      "year": 1971,
+      "country": "JP",
+      "region": null,
+      "drive_side": "RHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 0.0,
+        "currency": "JPY",
+        "gbp": 0.0,
+        "fx_rate": 215.06,
+        "fx_date": "2026-07-31"
+      },
+      "images": [
+        "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/378/369/U00048378369/U00048378369_002L.JPG"
+      ],
+      "status": "active",
+      "first_seen": "2026-08-03",
+      "last_seen": "2026-08-03",
+      "history": [
+        {
+          "date": "2026-08-03",
+          "status": "active",
+          "price": {
+            "amount": 0.0,
+            "currency": "JPY",
+            "gbp": 0.0,
+            "fx_rate": 215.06,
+            "fx_date": "2026-07-31"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "kuruma_ex:ccAU7214532395",
       "source": "kuruma_ex",
@@ -30,7 +128,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-03",
       "history": [
         {
           "date": "2026-08-01",
@@ -79,7 +177,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-22",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-03",
       "history": [
         {
           "date": "2026-07-22",
@@ -128,7 +226,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-03",
       "history": [
         {
           "date": "2026-07-18",
@@ -177,7 +275,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-03",
       "history": [
         {
           "date": "2026-07-17",
@@ -226,7 +324,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-03",
       "history": [
         {
           "date": "2026-07-17",
@@ -275,7 +373,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-03",
       "history": [
         {
           "date": "2026-07-17",
@@ -377,7 +475,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-03",
       "history": [
         {
           "date": "2026-07-17",
@@ -426,7 +524,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-03",
       "history": [
         {
           "date": "2026-07-17",
