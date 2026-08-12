@@ -1,7 +1,25 @@
 {
-  "date": "2026-08-11",
-  "new": [],
+  "date": "2026-08-12",
+  "new": [
+    "carsensor:VU3133320108"
+  ],
   "price_changed": [],
-  "status_changed": [],
+  "status_changed": [
+    {
+      "id": "kuruma_ex:ccAU7062177718",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "kuruma_ex:ccAU6253091581",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "classiccars:CC-1995643",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    }
+  ],
   "possible_relists": []
 }

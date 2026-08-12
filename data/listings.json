@@ -1,6 +1,55 @@
 {
-  "generated_at": "2026-08-11",
+  "generated_at": "2026-08-12",
   "listings": [
+    {
+      "id": "carsensor:VU3133320108",
+      "source": "carsensor",
+      "source_listing_id": "VU3133320108",
+      "url": "https://www.carsensor.net/usedcar/detail/VU3133320108/index.html",
+      "title": "ダットサン 逆輸入 DATSUN620トラック SR20 5F DATSUN",
+      "title_translated": "Datsun re-imported DATSUN620 truck SR20 5F DATSUN",
+      "description_snippet": null,
+      "year": 1974,
+      "country": "JP",
+      "region": "岡山県 倉敷市",
+      "drive_side": "RHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": null,
+        "currency": "JPY",
+        "gbp": null,
+        "fx_rate": 214.92,
+        "fx_date": "2026-08-11"
+      },
+      "images": [
+        "https://ccsrpcma.carsensor.net/CSphoto/bkkn/059/489/U00030059489/U00030059489_001L.JPG"
+      ],
+      "status": "active",
+      "first_seen": "2026-08-12",
+      "last_seen": "2026-08-12",
+      "history": [
+        {
+          "date": "2026-08-12",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "JPY",
+            "gbp": null,
+            "fx_rate": 214.92,
+            "fx_date": "2026-08-11"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "kuruma_ex:ccAU7062177718",
       "source": "kuruma_ex",
@@ -28,7 +77,7 @@
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/753/041/U00052753041/U00052753041_001L.JPG"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-08-03",
       "last_seen": "2026-08-09",
       "history": [
@@ -42,6 +91,10 @@
             "fx_rate": 215.06,
             "fx_date": "2026-07-31"
           }
+        },
+        {
+          "date": "2026-08-12",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -77,7 +130,7 @@
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/378/369/U00048378369/U00048378369_002L.JPG"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-08-03",
       "last_seen": "2026-08-09",
       "history": [
@@ -91,6 +144,10 @@
             "fx_rate": 215.06,
             "fx_date": "2026-07-31"
           }
+        },
+        {
+          "date": "2026-08-12",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -120,15 +177,15 @@
         "amount": 0.0,
         "currency": "JPY",
         "gbp": 0.0,
-        "fx_rate": 214.23,
-        "fx_date": "2026-08-10"
+        "fx_rate": 214.92,
+        "fx_date": "2026-08-11"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/674/325/U00053674325/U00053674325_002L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-11",
+      "last_seen": "2026-08-12",
       "history": [
         {
           "date": "2026-08-01",
@@ -168,16 +225,16 @@
       "price": {
         "amount": 32000.0,
         "currency": "THB",
-        "gbp": 717.79,
-        "fx_rate": 44.581,
-        "fx_date": "2026-08-10"
+        "gbp": 716.03,
+        "fx_rate": 44.691,
+        "fx_date": "2026-08-11"
       },
       "images": [
         "https://img.kaidee.com/prd/20260722/371477592/m/960a8b1c-a85e-43af-b54f-236967dac515.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-22",
-      "last_seen": "2026-08-11",
+      "last_seen": "2026-08-12",
       "history": [
         {
           "date": "2026-07-22",
@@ -217,16 +274,16 @@
       "price": {
         "amount": 3500000.0,
         "currency": "JPY",
-        "gbp": 16337.58,
-        "fx_rate": 214.23,
-        "fx_date": "2026-08-10"
+        "gbp": 16285.13,
+        "fx_rate": 214.92,
+        "fx_date": "2026-08-11"
       },
       "images": [
         "https://ccsrpcma.carsensor.net/CSphoto/bkkn/378/369/U00048378369/U00048378369_002L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-08-11",
+      "last_seen": "2026-08-12",
       "history": [
         {
           "date": "2026-07-18",
@@ -267,15 +324,15 @@
         "amount": null,
         "currency": "JPY",
         "gbp": null,
-        "fx_rate": 214.23,
-        "fx_date": "2026-08-10"
+        "fx_rate": 214.92,
+        "fx_date": "2026-08-11"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/059/489/U00030059489/U00030059489_001L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-11",
+      "last_seen": "2026-08-12",
       "history": [
         {
           "date": "2026-07-17",
@@ -315,16 +372,16 @@
       "price": {
         "amount": 27995.0,
         "currency": "USD",
-        "gbp": 20730.89,
-        "fx_rate": 1.3504,
-        "fx_date": "2026-08-10"
+        "gbp": 20737.04,
+        "fx_rate": 1.35,
+        "fx_date": "2026-08-11"
       },
       "images": [
         "https://photos.classiccars.com/cc-temp/listing/207/9740/59766614-1979-datsun-620-thumb.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-11",
+      "last_seen": "2026-08-12",
       "history": [
         {
           "date": "2026-07-17",
@@ -371,7 +428,7 @@
       "images": [
         "https://photos.classiccars.com/cc-temp/listing/199/5643/54897854-1973-datsun-620-thumb.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-07-17",
       "last_seen": "2026-08-09",
       "history": [
@@ -385,6 +442,10 @@
             "fx_rate": 1.3437,
             "fx_date": "2026-07-17"
           }
+        },
+        {
+          "date": "2026-08-12",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -467,15 +528,15 @@
         "amount": null,
         "currency": "USD",
         "gbp": null,
-        "fx_rate": 1.3504,
-        "fx_date": "2026-08-10"
+        "fx_rate": 1.35,
+        "fx_date": "2026-08-11"
       },
       "images": [
         "https://barnfinds.com/wp-content/uploads/2024/04/1979-Datsun-620-4x4-Pickup-1-e1713582901931-630x390.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-11",
+      "last_seen": "2026-08-12",
       "history": [
         {
           "date": "2026-07-17",
@@ -516,15 +577,15 @@
         "amount": null,
         "currency": "USD",
         "gbp": null,
-        "fx_rate": 1.3504,
-        "fx_date": "2026-08-10"
+        "fx_rate": 1.35,
+        "fx_date": "2026-08-11"
       },
       "images": [
         "https://barnfinds.com/wp-content/uploads/2023/10/1-25-630x390.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-11",
+      "last_seen": "2026-08-12",
       "history": [
         {
           "date": "2026-07-17",
