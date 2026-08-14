@@ -26,7 +26,8 @@ from common import fx, store as store_mod, translate
 from common.schema import DATA_DIR, validate
 from listings import (barnfinds, bat, carsandbids, carsensor, classiccars,
                       ebay, flex, goonet_exchange, hemmings, kaidee, kijiji,
-                      kuruma_ex, yahoo_auctions)
+                      kleinanzeigen, kuruma_ex, pistonheads, ratsun,
+                      retrorides, trovit, yahoo_auctions)
 
 # (source_name, callable(fx_day) -> [listing records])
 SOURCES: list[tuple] = [
@@ -43,6 +44,11 @@ SOURCES: list[tuple] = [
     ("barnfinds", barnfinds.collect),
     ("flex", flex.collect),
     ("kuruma_ex", kuruma_ex.collect),
+    ("pistonheads", pistonheads.collect),
+    ("ratsun", ratsun.collect),
+    ("retrorides", retrorides.collect),
+    ("trovit", trovit.collect),
+    ("kleinanzeigen", kleinanzeigen.collect),
 ]
 
 

@@ -30,7 +30,8 @@ Prerequisites: `GMAIL_USER` and `GMAIL_APP_PASSWORD` secrets (set 2026-07-16).
 The digest's Source health section shows every source daily. Expected states:
 
 - **eBay, Bring a Trailer, Goo-net Exchange, Carsensor, Yahoo Auctions,
-  Kaidee, ClassicCars.com, Kijiji, Barn Finds, FLEX, Kuruma-EX**: normally
+  Kaidee, ClassicCars.com, Kijiji, Barn Finds, FLEX, Kuruma-EX,
+  PistonHeads, Ratsun, Retro Rides, Trovit, Kleinanzeigen**: normally
   green. A parse failure here usually means a site redesign; the fixture
   tests in `scrapers/tests/` pin the expected format, so ask Claude Code
   to refresh the fixture and parser.
