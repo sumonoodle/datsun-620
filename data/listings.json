@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13",
+  "generated_at": "2026-08-14",
   "listings": [
     {
       "id": "carsensor:VU3133320108",
@@ -22,15 +22,15 @@
         "amount": null,
         "currency": "JPY",
         "gbp": null,
-        "fx_rate": 215.18,
-        "fx_date": "2026-08-12"
+        "fx_rate": 214.96,
+        "fx_date": "2026-08-13"
       },
       "images": [
         "https://ccsrpcma.carsensor.net/CSphoto/bkkn/059/489/U00030059489/U00030059489_001L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "history": [
         {
           "date": "2026-08-12",
@@ -124,15 +124,15 @@
         "amount": 0.0,
         "currency": "JPY",
         "gbp": 0.0,
-        "fx_rate": 215.18,
-        "fx_date": "2026-08-12"
+        "fx_rate": 214.96,
+        "fx_date": "2026-08-13"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/378/369/U00048378369/U00048378369_002L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "history": [
         {
           "date": "2026-08-03",
@@ -188,15 +188,15 @@
         "amount": 0.0,
         "currency": "JPY",
         "gbp": 0.0,
-        "fx_rate": 215.18,
-        "fx_date": "2026-08-12"
+        "fx_rate": 214.96,
+        "fx_date": "2026-08-13"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/674/325/U00053674325/U00053674325_002L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "history": [
         {
           "date": "2026-08-01",
@@ -236,16 +236,16 @@
       "price": {
         "amount": 32000.0,
         "currency": "THB",
-        "gbp": 715.64,
-        "fx_rate": 44.715,
-        "fx_date": "2026-08-12"
+        "gbp": 715.92,
+        "fx_rate": 44.698,
+        "fx_date": "2026-08-13"
       },
       "images": [
         "https://img.kaidee.com/prd/20260722/371477592/m/960a8b1c-a85e-43af-b54f-236967dac515.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-22",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "history": [
         {
           "date": "2026-07-22",
@@ -285,16 +285,16 @@
       "price": {
         "amount": 3500000.0,
         "currency": "JPY",
-        "gbp": 16265.45,
-        "fx_rate": 215.18,
-        "fx_date": "2026-08-12"
+        "gbp": 16282.1,
+        "fx_rate": 214.96,
+        "fx_date": "2026-08-13"
       },
       "images": [
         "https://ccsrpcma.carsensor.net/CSphoto/bkkn/378/369/U00048378369/U00048378369_002L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "history": [
         {
           "date": "2026-07-18",
@@ -335,15 +335,15 @@
         "amount": null,
         "currency": "JPY",
         "gbp": null,
-        "fx_rate": 215.18,
-        "fx_date": "2026-08-12"
+        "fx_rate": 214.96,
+        "fx_date": "2026-08-13"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/059/489/U00030059489/U00030059489_001L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "history": [
         {
           "date": "2026-07-17",
@@ -383,16 +383,16 @@
       "price": {
         "amount": 27995.0,
         "currency": "USD",
-        "gbp": 20698.71,
-        "fx_rate": 1.3525,
-        "fx_date": "2026-08-12"
+        "gbp": 20749.33,
+        "fx_rate": 1.3492,
+        "fx_date": "2026-08-13"
       },
       "images": [
         "https://photos.classiccars.com/cc-temp/listing/207/9740/59766614-1979-datsun-620-thumb.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "history": [
         {
           "date": "2026-07-17",
@@ -539,15 +539,15 @@
         "amount": null,
         "currency": "USD",
         "gbp": null,
-        "fx_rate": 1.3525,
-        "fx_date": "2026-08-12"
+        "fx_rate": 1.3492,
+        "fx_date": "2026-08-13"
       },
       "images": [
         "https://barnfinds.com/wp-content/uploads/2024/04/1979-Datsun-620-4x4-Pickup-1-e1713582901931-630x390.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "history": [
         {
           "date": "2026-07-17",
@@ -588,15 +588,15 @@
         "amount": null,
         "currency": "USD",
         "gbp": null,
-        "fx_rate": 1.3525,
-        "fx_date": "2026-08-12"
+        "fx_rate": 1.3492,
+        "fx_date": "2026-08-13"
       },
       "images": [
         "https://barnfinds.com/wp-content/uploads/2023/10/1-25-630x390.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "history": [
         {
           "date": "2026-07-17",

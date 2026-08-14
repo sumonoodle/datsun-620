@@ -1,13 +1,7 @@
 {
-  "date": "2026-08-13",
+  "date": "2026-08-14",
   "new": [],
   "price_changed": [],
-  "status_changed": [
-    {
-      "id": "kuruma_ex:ccAU6253091581",
-      "old_status": "withdrawn",
-      "new_status": "active"
-    }
-  ],
+  "status_changed": [],
   "possible_relists": []
 }

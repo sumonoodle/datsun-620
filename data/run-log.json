@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-13",
-  "started_at": "2026-08-13T05:49:59+00:00",
+  "date": "2026-08-14",
+  "started_at": "2026-08-14T05:48:08+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -21,14 +21,14 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 32
+      "consecutive_failures": 33
     },
     {
       "source": "hemmings",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 32
+      "consecutive_failures": 33
     },
     {
       "source": "goonet_exchange",
@@ -101,6 +101,6 @@
       "TH": 1,
       "US": 3
     },
-    "median_gbp": 715.64
+    "median_gbp": 715.92
   }
 }
