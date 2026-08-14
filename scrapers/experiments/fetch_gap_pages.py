@@ -24,15 +24,35 @@ HEADERS = {
     "Accept-Language": "en-GB,en;q=0.9",
 }
 
+# Round 2: the sweep agents' candidates. Fetch doubles as reachability
+# probe — non-200s print their status and save nothing.
 PAGES = [
-    ("pistonheads-datsun.html.gz",
-     "https://www.pistonheads.com/buy/datsun"),
-    ("pistonheads-other.html.gz",
-     "https://www.pistonheads.com/buy/datsun/other-models"),
-    ("ccfs-620.html.gz",
-     "https://www.classiccarsforsale.co.uk/datsun/620"),
-    ("ccfs-datsun.html.gz",
-     "https://www.classiccarsforsale.co.uk/datsun"),
+    ("ratsun-classifieds.html.gz",
+     "https://ratsun.net/classifieds/category/5-datsun-vehicles/"),
+    ("nicoclub-classifieds.html.gz",
+     "https://forums.nicoclub.com/datsun-classified-ads.html"),
+    ("retrorides-board57.html.gz",
+     "https://forum.retro-rides.org/board/57/cars-sale-1985-older"),
+    ("donedeal-datsun.html.gz",
+     "https://www.donedeal.ie/all?words=datsun"),
+    ("honestjohn-pickups.html.gz",
+     "https://classics.honestjohn.co.uk/cars-for-sale/search/Datsun/shape-Pickup/?type=For+Sale"),
+    ("gumtree-datsun.html.gz",
+     "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+datsun"),
+    ("trovit-620.html.gz",
+     "https://cars.trovit.com/used-cars/datsun-620"),
+    ("gateway-620.html.gz",
+     "https://www.gatewayclassiccars.com/quick/Datsun+620"),
+    ("tradeuniquecars.html.gz",
+     "https://www.tradeuniquecars.com.au/search/make-datsun"),
+    ("carsguide-620ute.html.gz",
+     "https://www.carsguide.com.au/buy-a-car/datsun/620/ute"),
+    ("kleinanzeigen-pickup.html.gz",
+     "https://www.kleinanzeigen.de/s-autos/datsun-pickup/k0c216"),
+    ("classictrader-620.html.gz",
+     "https://www.classic-trader.com/uk/cars/search/datsun/620"),
+    ("my105-datsun.html.gz",
+     "https://www.my105.com/cars/datsun-for-sale"),
 ]
 
 
