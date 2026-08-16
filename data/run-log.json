@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-15",
-  "started_at": "2026-08-15T04:48:55+00:00",
+  "date": "2026-08-16",
+  "started_at": "2026-08-16T04:51:34+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -21,14 +21,14 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 34
+      "consecutive_failures": 35
     },
     {
       "source": "hemmings",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 34
+      "consecutive_failures": 35
     },
     {
       "source": "goonet_exchange",
