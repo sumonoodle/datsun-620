@@ -1,13 +1,9 @@
 {
-  "date": "2026-08-17",
-  "new": [],
-  "price_changed": [],
-  "status_changed": [
-    {
-      "id": "carsensor:VU3133320108",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    }
+  "date": "2026-08-18",
+  "new": [
+    "bringatrailer:1979-datsun-620"
   ],
+  "price_changed": [],
+  "status_changed": [],
   "possible_relists": []
 }
