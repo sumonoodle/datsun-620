@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18",
+  "generated_at": "2026-08-19",
   "listings": [
     {
       "id": "bringatrailer:1979-datsun-620",
@@ -21,16 +21,16 @@
       "price": {
         "amount": 6000.0,
         "currency": "USD",
-        "gbp": 4425.11,
-        "fx_rate": 1.3559,
-        "fx_date": "2026-08-17"
+        "gbp": 4435.9,
+        "fx_rate": 1.3526,
+        "fx_date": "2026-08-18"
       },
       "images": [
         "https://bringatrailer.com/wp-content/uploads/2026/07/DSCF2390-scaled-copy-2026-08-05-5f9-59503.jpg?w=470&h=318&crop=1"
       ],
       "status": "sold",
       "first_seen": "2026-08-18",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-19",
       "history": [
         {
           "date": "2026-08-18",
@@ -124,15 +124,15 @@
         "amount": 0.0,
         "currency": "JPY",
         "gbp": 0.0,
-        "fx_rate": 212.95,
-        "fx_date": "2026-08-07"
+        "fx_rate": 216.01,
+        "fx_date": "2026-08-18"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/753/041/U00052753041/U00052753041_001L.JPG"
       ],
-      "status": "withdrawn",
+      "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-08-09",
+      "last_seen": "2026-08-19",
       "history": [
         {
           "date": "2026-08-03",
@@ -148,6 +148,17 @@
         {
           "date": "2026-08-12",
           "status": "withdrawn"
+        },
+        {
+          "date": "2026-08-19",
+          "status": "active",
+          "price": {
+            "amount": 0.0,
+            "currency": "JPY",
+            "gbp": 0.0,
+            "fx_rate": 216.01,
+            "fx_date": "2026-08-18"
+          }
         }
       ],
       "relist": {
@@ -162,7 +173,7 @@
       "source_listing_id": "ccAU6253091581",
       "url": "https://kuruma-ex.jp/usedcar/detail/ccAU6253091581",
       "title": "日産 ダットサン1500 Wピックアップ コラム4速 UN521 J15エンジン 6人乗り",
-      "title_translated": "Nissan Datsun 1500 W pickup column 4-speed UN521 J15 engine 6-seater",
+      "title_translated": "Nissan Datsun 1500 W pickup column 4 speed UN521 J15 engine 6 seats",
       "description_snippet": null,
       "year": 1971,
       "country": "JP",
@@ -177,15 +188,15 @@
         "amount": 0.0,
         "currency": "JPY",
         "gbp": 0.0,
-        "fx_rate": 215.25,
-        "fx_date": "2026-08-14"
+        "fx_rate": 216.01,
+        "fx_date": "2026-08-18"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/378/369/U00048378369/U00048378369_002L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-08-16",
+      "last_seen": "2026-08-19",
       "history": [
         {
           "date": "2026-08-03",
@@ -241,15 +252,15 @@
         "amount": 0.0,
         "currency": "JPY",
         "gbp": 0.0,
-        "fx_rate": 215.89,
-        "fx_date": "2026-08-17"
+        "fx_rate": 216.01,
+        "fx_date": "2026-08-18"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/674/325/U00053674325/U00053674325_002L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-19",
       "history": [
         {
           "date": "2026-08-01",
@@ -289,16 +300,16 @@
       "price": {
         "amount": 32000.0,
         "currency": "THB",
-        "gbp": 714.62,
-        "fx_rate": 44.779,
-        "fx_date": "2026-08-17"
+        "gbp": 715.63,
+        "fx_rate": 44.716,
+        "fx_date": "2026-08-18"
       },
       "images": [
         "https://img.kaidee.com/prd/20260722/371477592/m/960a8b1c-a85e-43af-b54f-236967dac515.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-22",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-19",
       "history": [
         {
           "date": "2026-07-22",
@@ -338,16 +349,16 @@
       "price": {
         "amount": 3500000.0,
         "currency": "JPY",
-        "gbp": 16211.96,
-        "fx_rate": 215.89,
-        "fx_date": "2026-08-17"
+        "gbp": 16202.95,
+        "fx_rate": 216.01,
+        "fx_date": "2026-08-18"
       },
       "images": [
         "https://ccsrpcma.carsensor.net/CSphoto/bkkn/378/369/U00048378369/U00048378369_002L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-19",
       "history": [
         {
           "date": "2026-07-18",
@@ -388,15 +399,15 @@
         "amount": null,
         "currency": "JPY",
         "gbp": null,
-        "fx_rate": 215.89,
-        "fx_date": "2026-08-17"
+        "fx_rate": 216.01,
+        "fx_date": "2026-08-18"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/059/489/U00030059489/U00030059489_001L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-19",
       "history": [
         {
           "date": "2026-07-17",
@@ -436,16 +447,16 @@
       "price": {
         "amount": 27995.0,
         "currency": "USD",
-        "gbp": 20646.8,
-        "fx_rate": 1.3559,
-        "fx_date": "2026-08-17"
+        "gbp": 20697.18,
+        "fx_rate": 1.3526,
+        "fx_date": "2026-08-18"
       },
       "images": [
         "https://photos.classiccars.com/cc-temp/listing/207/9740/59766614-1979-datsun-620-thumb.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-19",
       "history": [
         {
           "date": "2026-07-17",
@@ -592,15 +603,15 @@
         "amount": null,
         "currency": "USD",
         "gbp": null,
-        "fx_rate": 1.3559,
-        "fx_date": "2026-08-17"
+        "fx_rate": 1.3526,
+        "fx_date": "2026-08-18"
       },
       "images": [
         "https://barnfinds.com/wp-content/uploads/2024/04/1979-Datsun-620-4x4-Pickup-1-e1713582901931-630x390.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-19",
       "history": [
         {
           "date": "2026-07-17",
@@ -641,15 +652,15 @@
         "amount": null,
         "currency": "USD",
         "gbp": null,
-        "fx_rate": 1.3559,
-        "fx_date": "2026-08-17"
+        "fx_rate": 1.3526,
+        "fx_date": "2026-08-18"
       },
       "images": [
         "https://barnfinds.com/wp-content/uploads/2023/10/1-25-630x390.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-19",
       "history": [
         {
           "date": "2026-07-17",

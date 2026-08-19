@@ -1,9 +1,13 @@
 {
-  "date": "2026-08-18",
-  "new": [
-    "bringatrailer:1979-datsun-620"
-  ],
+  "date": "2026-08-19",
+  "new": [],
   "price_changed": [],
-  "status_changed": [],
+  "status_changed": [
+    {
+      "id": "kuruma_ex:ccAU7062177718",
+      "old_status": "withdrawn",
+      "new_status": "active"
+    }
+  ],
   "possible_relists": []
 }
