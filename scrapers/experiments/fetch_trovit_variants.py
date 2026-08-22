@@ -24,12 +24,12 @@ HEADERS = {
 }
 
 PAGES = [
-    ("trovit-uk.html.gz", "https://cars.trovit.co.uk/used-cars/datsun-620"),
-    ("trovit-de.html.gz", "https://autos.trovit.de/gebrauchtwagen/datsun-620"),
-    ("trovit-es.html.gz", "https://coches.trovit.es/coches/datsun-620"),
-    ("trovit-au.html.gz", "https://cars.trovit.com.au/used-cars/datsun-620"),
-    ("hagerty-620.html.gz",
-     "https://www.hagerty.com/marketplace/search?q=datsun%20620"),
+    # Round 2: de.trovit.com/autos/gebrauchtwagen worked, so the canonical
+    # shape is {cc}.trovit.com/{localized-vertical}/{query}. Correcting the
+    # UK/ES/AU guesses to that shape.
+    ("trovit-uk.html.gz", "https://uk.trovit.com/cars/used-cars/datsun-620"),
+    ("trovit-es.html.gz", "https://es.trovit.com/coches/coches/datsun-620"),
+    ("trovit-au.html.gz", "https://au.trovit.com/cars/used-cars/datsun-620"),
 ]
 
 
