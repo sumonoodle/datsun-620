@@ -33,7 +33,8 @@ SOURCE_NAMES = {
     "carsensor": "Carsensor", "yahoo_auctions": "Yahoo Auctions JP",
     "kaidee": "Kaidee", "classiccars": "ClassicCars.com", "kijiji": "Kijiji",
     "barnfinds": "Barn Finds", "flex": "FLEX (JP)", "kuruma_ex": "Kuruma-EX",
-    "mercadolibre": "MercadoLibre MX", "justcars": "JUST CARS", "tokyocarz": "TokyoCarZ",
+    "pistonheads": "PistonHeads", "ratsun": "Ratsun", "retrorides": "Retro Rides",
+    "trovit": "Trovit", "kleinanzeigen": "Kleinanzeigen",
 }
 BROWN = "#3b2b1d"
 ORANGE = "#b04a1a"
