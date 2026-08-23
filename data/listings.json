@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22",
+  "generated_at": "2026-08-23",
   "listings": [
     {
       "id": "bringatrailer:1979-datsun-620",
@@ -30,7 +30,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-08-18",
-      "last_seen": "2026-08-22",
+      "last_seen": "2026-08-23",
       "history": [
         {
           "date": "2026-08-18",
@@ -124,15 +124,15 @@
         "amount": 0.0,
         "currency": "JPY",
         "gbp": 0.0,
-        "fx_rate": 215.66,
-        "fx_date": "2026-08-19"
+        "fx_rate": 216.72,
+        "fx_date": "2026-08-21"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/753/041/U00052753041/U00052753041_001L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-23",
       "history": [
         {
           "date": "2026-08-03",
@@ -188,15 +188,15 @@
         "amount": 0.0,
         "currency": "JPY",
         "gbp": 0.0,
-        "fx_rate": 215.66,
-        "fx_date": "2026-08-19"
+        "fx_rate": 216.72,
+        "fx_date": "2026-08-21"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/378/369/U00048378369/U00048378369_002L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-23",
       "history": [
         {
           "date": "2026-08-03",
@@ -260,7 +260,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-22",
+      "last_seen": "2026-08-23",
       "history": [
         {
           "date": "2026-08-01",
@@ -358,7 +358,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-08-22",
+      "last_seen": "2026-08-23",
       "history": [
         {
           "date": "2026-07-18",
@@ -407,7 +407,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-22",
+      "last_seen": "2026-08-23",
       "history": [
         {
           "date": "2026-07-17",
@@ -456,7 +456,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-22",
+      "last_seen": "2026-08-23",
       "history": [
         {
           "date": "2026-07-17",
@@ -611,7 +611,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-22",
+      "last_seen": "2026-08-23",
       "history": [
         {
           "date": "2026-07-17",
@@ -660,7 +660,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-22",
+      "last_seen": "2026-08-23",
       "history": [
         {
           "date": "2026-07-17",
