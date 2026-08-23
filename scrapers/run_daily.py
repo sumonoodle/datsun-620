@@ -104,11 +104,11 @@ def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None) -> int
                  "note": f"{dropped} invalid record(s) dropped" if dropped else "",
                  "consecutive_failures": 0}
             )
-            # Only sources that actually returned records drive withdrawal
-            # ageing: an empty-but-"successful" scrape is more likely a silent
-            # parser break than a genuinely emptied market.
-            if valid:
-                seen_sources.add(name)
+            # Every source that completes without raising drives withdrawal
+            # ageing, records or not: collectors raise on suspicious-empty
+            # pages themselves, and requiring >=1 record meant a source's
+            # LAST listing could never be withdrawn (2026-08-22 bug hunt).
+            seen_sources.add(name)
             all_records.extend(valid)
         except Exception as exc:  # per-source isolation: never fail the run
             traceback.print_exc()
@@ -117,16 +117,32 @@ def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None) -> int
                  "consecutive_failures": prev_failures + 1}
             )
 
-    # Translation pass: best-effort, per PRD never fatal and never blocking.
-    for rec in all_records:
-        if rec.get("title_translated") is None and translate.needs_translation(rec["title"]):
-            rec["title_translated"] = translate.translate(rec["title"])
-
+    # kuruma-ex aggregates the Carsensor feed with a 'cc'-prefixed copy of
+    # the same id, so the same physical truck arrived twice with clashing
+    # prices (2026-08-22 bug hunt: ccAU6253091581 at ¥0 next to
+    # AU6253091581 at ¥3.5M). Carsensor is the primary; its twin wins.
+    carsensor_ids = {r["source_listing_id"] for r in all_records if r["source"] == "carsensor"}
     listings_path = data_dir / "listings.json"
     if listings_path.exists():
         listing_store = json.loads(listings_path.read_text())
     else:
         listing_store = {"generated_at": today, "listings": []}
+    stored_carsensor = {l["source_listing_id"] for l in listing_store["listings"]
+                        if l["source"] == "carsensor" and l["status"] == "active"}
+    before = len(all_records)
+    all_records = [
+        r for r in all_records
+        if not (r["source"] == "kuruma_ex"
+                and r["source_listing_id"].startswith("cc")
+                and r["source_listing_id"][2:] in (carsensor_ids | stored_carsensor))
+    ]
+    if len(all_records) != before:
+        print(f"dedupe: dropped {before - len(all_records)} kuruma_ex twin(s) of carsensor listings")
+
+    # Translation pass: best-effort, per PRD never fatal and never blocking.
+    for rec in all_records:
+        if rec.get("title_translated") is None and translate.needs_translation(rec["title"]):
+            rec["title_translated"] = translate.translate(rec["title"])
 
     listing_store, changes = store_mod.reconcile(listing_store, all_records, seen_sources, today)
     validate(changes, "changes")
@@ -134,7 +150,9 @@ def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None) -> int
         validate(listing, "listing")
 
     active = [l for l in listing_store["listings"] if l["status"] == "active"]
-    gbp_prices = [l["price"]["gbp"] for l in active if l["price"]["gbp"] is not None]
+    # > 0, not just non-None: a zero price is always a parse artefact and a
+    # single one halved the published median for days (2026-08-22 bug hunt).
+    gbp_prices = [l["price"]["gbp"] for l in active if l["price"]["gbp"]]
     by_country: dict[str, int] = {}
     for l in active:
         by_country[l["country"]] = by_country.get(l["country"], 0) + 1

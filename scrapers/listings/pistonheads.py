@@ -21,6 +21,7 @@ import httpx
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
+from common.patterns import RE_620, RE_OTHER_GEN
 
 SOURCE = "pistonheads"
 URL = "https://www.pistonheads.com/buy/datsun"
@@ -32,8 +33,8 @@ HEADERS = {
 
 _NEXT_RE = re.compile(
     r'<script id="__NEXT_DATA__" type="application/json"[^>]*>(.*?)</script>', re.S)
-_620_RE = re.compile(r"(?<![\dA-Za-z])620(?!\d)")
-_OTHER_GEN_RE = re.compile(r"(?<!\d)(?:520|521|720)(?!\d)|D2[12]", re.I)
+_620_RE = RE_620
+_OTHER_GEN_RE = RE_OTHER_GEN
 
 
 def parse_page(html: str, fx_day: dict) -> list[dict]:

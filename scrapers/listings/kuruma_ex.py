@@ -69,8 +69,22 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
             continue  # D21/D22 trucks otherwise leak in
         seen.add(listing_id)
 
-        pm = _MAN_YEN_RE.search(text)
-        amount = float(pm.group(1).replace(",", "")) * 10_000 if pm else None
+        # 2026-08-22 bug: the price renders as split bold runs
+        # (<b>130.</b><b>5</b>万円), so a text-level regex saw "130. 5 万円"
+        # and captured only the digit touching 万円 — a ¥1,305,000 truck
+        # became ¥50,000 and any ".0" price became ¥0, poisoning a month of
+        # medians. The card carries the exact figure in the total-price-js
+        # value attribute; that is authoritative, and the regex fallback
+        # now strips whitespace first (same defence as carsensor).
+        amount = None
+        price_el = card.select_one(".total-price-js[value]")
+        if price_el and str(price_el.get("value", "")).isdigit():
+            amount = float(price_el["value"])
+        else:
+            pm = _MAN_YEN_RE.search(text.replace(" ", ""))
+            amount = float(pm.group(1).replace(",", "")) * 10_000 if pm else None
+        if amount == 0:
+            amount = None  # a free truck is a parse artefact, not a price
         img = card.find("img")
         image = (img.get("data-src") or img.get("src") or "") if img else ""
         if image.startswith("//"):

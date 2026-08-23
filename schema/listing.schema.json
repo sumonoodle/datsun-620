@@ -73,6 +73,11 @@
         }
       }
     },
+    "missed_runs": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Internal ageing counter: consecutive healthy runs of this listing's source in which the listing was absent. Removed when sighted or withdrawn."
+    },
     "relist": {
       "type": "object",
       "required": ["possible"],

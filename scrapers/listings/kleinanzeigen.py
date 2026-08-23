@@ -23,6 +23,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
+from common.patterns import RE_620, RE_OTHER_GEN
 
 SOURCE = "kleinanzeigen"
 BASE = "https://www.kleinanzeigen.de"
@@ -33,8 +34,8 @@ HEADERS = {
     "Accept-Language": "de,en;q=0.8",
 }
 
-_620_RE = re.compile(r"(?<![\dA-Za-z])620(?!\d)")
-_OTHER_GEN_RE = re.compile(r"(?<!\d)(?:520|521|720)(?!\d)|D2[12]|Y720", re.I)
+_620_RE = RE_620
+_OTHER_GEN_RE = RE_OTHER_GEN
 _EUR_RE = re.compile(r"([\d.]+)\s*€")
 
 

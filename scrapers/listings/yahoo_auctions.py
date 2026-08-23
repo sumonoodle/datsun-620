@@ -31,6 +31,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
+from common.patterns import RE_620, RE_OTHER_GEN
 
 SOURCE = "yahoo_auctions"
 OPEN_URL = "https://auctions.yahoo.co.jp/search/search?p={}"
@@ -51,11 +52,10 @@ HEADERS = {
 }
 
 # "620" not embedded in a longer number (part numbers, "1620", "S620x" SKUs).
-_620_RE = re.compile(r"(?<![\dA-Za-z])620(?!\d)")
-# A real 620 for sale never name-drops other truck generations; a title
-# spanning 520/521/720/D21/D22 is a part that fits many trucks. Caught live
-# on the first run: a 720 diff keyword-stuffed with "620 520 521 D21".
-_OTHER_GEN_RE = re.compile(r"(?<!\d)(?:520|521|720)(?!\d)|D2[12]", re.I)
+_620_RE = RE_620
+# Shared cross-generation rule (see common/patterns.py: currency/comma
+# guards, and SD22 — the 620's own diesel — survives D22).
+_OTHER_GEN_RE = RE_OTHER_GEN
 # Unscoped queries floor EVERY format, auctions included: the first
 # all-620s live run leaked a ¥6,666 slot car, a ¥631 diecast and a ¥1,650
 # oil seal, all auctions with titles the word list can't enumerate. Cheap

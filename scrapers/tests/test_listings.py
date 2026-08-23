@@ -91,7 +91,10 @@ def test_store_change_detection():
     stored = next(l for l in s["listings"] if l["id"] == active["id"])
     assert len(stored["history"]) == 2
 
-    # Day 5+: the active listing disappears from a healthy source -> withdrawn.
+    # Missing from three consecutive HEALTHY runs -> withdrawn (calendar
+    # days alone never age a listing since the 2026-08-22 fix).
+    s, _ = store.reconcile(s, [], {"bringatrailer"}, "2026-07-17")
+    s, _ = store.reconcile(s, [], {"bringatrailer"}, "2026-07-18")
     s, changes = store.reconcile(s, [], {"bringatrailer"}, "2026-07-19")
     assert any(c["new_status"] == "withdrawn" for c in changes["status_changed"])
 

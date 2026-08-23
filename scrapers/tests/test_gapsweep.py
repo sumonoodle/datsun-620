@@ -90,6 +90,23 @@ def test_trovit_parser():
     print("ok test_trovit_parser")
 
 
+def test_trovit_de_parser():
+    """German edition: same markup, EUR with dot-thousands, and a page
+    padded with unrelated cars when no Datsun matches (the real Dacia card
+    in the fixture is that padding)."""
+    records = trovit.parse_page((FIXTURES / "trovit_de_page.html").read_text(), FX_DAY,
+                                country="DE", currency="EUR")
+    ids = [r["id"] for r in records]
+    assert ids == ["trovit:de-synth-620kc"], ids
+    kc = records[0]
+    assert kc["price"]["amount"] == 13500 and kc["price"]["currency"] == "EUR"
+    assert kc["price"]["gbp"] == round(13500 / FX_DAY["rates"]["EUR"], 2)
+    assert kc["country"] == "DE"
+    assert kc["king_cab"]["matched"] is True
+    validate(_full(kc), "listing")
+    print("ok test_trovit_de_parser")
+
+
 def test_kleinanzeigen_parser():
     records = kleinanzeigen.parse_page((FIXTURES / "kleinanzeigen_page.html").read_text(), FX_DAY)
     ids = [r["id"] for r in records]
@@ -110,5 +127,6 @@ if __name__ == "__main__":
     test_ratsun_parser()
     test_retrorides_parser()
     test_trovit_parser()
+    test_trovit_de_parser()
     test_kleinanzeigen_parser()
     print("all gap-sweep tests passed")

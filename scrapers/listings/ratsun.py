@@ -21,6 +21,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
+from common.patterns import RE_620, RE_OTHER_GEN
 
 SOURCE = "ratsun"
 URL = "https://ratsun.net/classifieds/category/5-datsun-vehicles/"
@@ -31,8 +32,8 @@ HEADERS = {
 }
 
 _ITEM_RE = re.compile(r"/classifieds/item/(\d+)-[^/'\"]+/?")
-_620_RE = re.compile(r"(?<![\dA-Za-z])620(?!\d)")
-_OTHER_GEN_RE = re.compile(r"(?<!\d)(?:520|521|720)(?!\d)|D2[12]", re.I)
+_620_RE = RE_620
+_OTHER_GEN_RE = RE_OTHER_GEN
 _PRICE_RE = re.compile(r"\$\s*([\d,]+(?:\.\d{2})?)")
 
 
@@ -55,11 +56,19 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
             continue
         seen.add(item_id)
 
+        # Climb toward the card container, but never past the point where a
+        # SECOND listing's link enters the subtree: a priceless item (e.g. a
+        # trade listing) must not absorb a neighbour's price or COMPLETED
+        # badge from the shared list container (2026-08-22 bug).
         card = a
         for _ in range(5):
             parent = card.find_parent()
             if parent is None:
                 break
+            ids_within = {m.group(1) for el in parent.find_all("a", href=_ITEM_RE)
+                          for m in [_ITEM_RE.search(el["href"])]}
+            if len(ids_within) > 1:
+                break  # parent spans other listings: stop at current card
             card = parent
             if "$" in card.get_text() or "FOR SALE" in card.get_text():
                 break

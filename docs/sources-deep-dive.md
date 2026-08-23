@@ -159,3 +159,30 @@ absorbed), CCFS (unreachable on two probe rounds), AutoTempest
 (client-side meta-search), CarGurus (no classics vertical), GovDeals,
 Bilweb/Bytbil, subito.it, coches.net, seminuevos (NP300-era taxonomy
 noise), Adverts.ie (toys only).
+
+## Bug-hunt round + Trovit DE (2026-08-22)
+
+Three parallel audits (core pipeline, all 18 collectors, outputs/ops)
+against code AND a month of accumulated live data. Every confirmed finding
+is fixed with a pinned regression test in test_bughunt.py; headline items:
+
+- kuruma-ex's split-markup prices read as ¥0/¥50k and had poisoned the
+  published median for days (now read from the card's value attribute);
+  its records were also duplicating their Carsensor twins — deduped.
+- The eBay parts filter was killing real trucks by substring ("Manual"
+  transmission, "Toyota" swap, "consignment"); now word-bounded, and the
+  category gate understands localized (DE) category names.
+- Cross-generation rules fired on prices ("$6,520"), phone digits and the
+  620's own SD22 diesel; the 620 rule matched inside "6,620 miles" on a
+  720. One shared, guarded pattern set now lives in common/patterns.py.
+- Withdrawal ageing counted source-outage days (first scrape after an
+  outage could mass-withdraw); now a per-listing healthy-miss counter.
+- BaT only parsed COMPLETED auctions — live 620 auctions were invisible.
+- Workflow: a thrice-failed data push looked green (day silently lost);
+  a digest failure blocked the site deploy.
+
+Expansion: **Trovit DE** added as a second edition of the trovit collector
+(markup parity verified live; an edition with no Datsun matches pads with
+unrelated cars, which the title gate filters). Trovit UK/ES/AU have no
+probeable search paths (two rounds of 404s). **Hagerty confirmed
+client-rendered** (empty SSR payload) — stays on the alert route for good.

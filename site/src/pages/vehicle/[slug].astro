@@ -9,11 +9,21 @@ export function getStaticPaths() {
   } catch {
     /* no data yet: no vehicle pages */
   }
-  return listings.map((l) => ({
-    // ':' is awkward in URLs; '--' cannot appear in source names or ids.
+  const paths = listings.map((l) => ({
+    // ':' is awkward in URLs. Aggregator ids are arbitrary tokens, so two
+    // ids COULD collapse to one slug (e.g. "a--b" vs "a:b") — that must
+    // fail the build loudly, not silently render one truck over another.
     params: { slug: l.id.replaceAll(":", "--") },
     props: { listing: l, all: listings },
   }));
+  const seen = new Map<string, string>();
+  for (let i = 0; i < paths.length; i++) {
+    const slug = paths[i].params.slug;
+    const id = listings[i].id;
+    if (seen.has(slug)) throw new Error(`vehicle slug collision: ${seen.get(slug)} vs ${id}`);
+    seen.set(slug, id);
+  }
+  return paths;
 }
 
 const { listing: l, all } = Astro.props;

@@ -20,6 +20,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
+from common.patterns import RE_620, RE_OTHER_GEN
 
 SOURCE = "retrorides"
 BASE = "https://forum.retro-rides.org"
@@ -31,8 +32,8 @@ HEADERS = {
 }
 
 _THREAD_RE = re.compile(r"/thread/(\d+)/[^/'\"]*")
-_620_RE = re.compile(r"(?<![\dA-Za-z])620(?!\d)")
-_OTHER_GEN_RE = re.compile(r"(?<!\d)(?:520|521|720)(?!\d)|D2[12]", re.I)
+_620_RE = RE_620
+_OTHER_GEN_RE = RE_OTHER_GEN
 _DATSUN_RE = re.compile(r"datsun", re.I)
 # £8995, £8,995, £8.9k
 _GBP_RE = re.compile(r"£\s*([\d,]+(?:\.\d+)?)(k?)", re.I)
