@@ -1,9 +1,27 @@
 {
-  "date": "2026-08-28",
+  "date": "2026-08-29",
   "new": [
-    "goonet_exchange:700051085230260503001"
+    "kaidee:371534182"
   ],
-  "price_changed": [],
-  "status_changed": [],
+  "price_changed": [
+    {
+      "id": "goonet_exchange:700051085230260503001",
+      "old_gbp": 5498.18,
+      "new_gbp": 5901.61,
+      "pct": 7.3
+    }
+  ],
+  "status_changed": [
+    {
+      "id": "carsensor:VU3133320108",
+      "old_status": "withdrawn",
+      "new_status": "active"
+    },
+    {
+      "id": "kaidee:371477592",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    }
+  ],
   "possible_relists": []
 }

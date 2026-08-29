@@ -1,6 +1,55 @@
 {
-  "generated_at": "2026-08-28",
+  "generated_at": "2026-08-29",
   "listings": [
+    {
+      "id": "kaidee:371534182",
+      "source": "kaidee",
+      "source_listing_id": "371534182",
+      "url": "https://rod.kaidee.com/product-371534182",
+      "title": "ขาย DATSUN 620 ปี 1976 เดิม Vintage",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1976,
+      "country": "TH",
+      "region": "สันป่าตอง เชียงใหม่",
+      "drive_side": "RHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 99500.0,
+        "currency": "THB",
+        "gbp": 2222.87,
+        "fx_rate": 44.762,
+        "fx_date": "2026-08-28"
+      },
+      "images": [
+        "https://img.kaidee.com/prd/20260829/371534182/m/10de861e-b8fd-42e6-821a-ba740398f08f.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-08-29",
+      "last_seen": "2026-08-29",
+      "history": [
+        {
+          "date": "2026-08-29",
+          "status": "active",
+          "price": {
+            "amount": 99500.0,
+            "currency": "THB",
+            "gbp": 2222.87,
+            "fx_rate": 44.762,
+            "fx_date": "2026-08-28"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "goonet_exchange:700051085230260503001",
       "source": "goonet_exchange",
@@ -19,9 +68,9 @@
         "body_style_check": "unavailable"
       },
       "price": {
-        "amount": 1192500.0,
+        "amount": 1280000.0,
         "currency": "JPY",
-        "gbp": 5498.18,
+        "gbp": 5901.61,
         "fx_rate": 216.89,
         "fx_date": "2026-08-28"
       },
@@ -30,7 +79,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-28",
-      "last_seen": "2026-08-28",
+      "last_seen": "2026-08-29",
       "history": [
         {
           "date": "2026-08-28",
@@ -39,6 +88,17 @@
             "amount": 1192500.0,
             "currency": "JPY",
             "gbp": 5498.18,
+            "fx_rate": 216.89,
+            "fx_date": "2026-08-28"
+          }
+        },
+        {
+          "date": "2026-08-29",
+          "status": "active",
+          "price": {
+            "amount": 1280000.0,
+            "currency": "JPY",
+            "gbp": 5901.61,
             "fx_rate": 216.89,
             "fx_date": "2026-08-28"
           }
@@ -79,7 +139,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-08-18",
-      "last_seen": "2026-08-28",
+      "last_seen": "2026-08-29",
       "history": [
         {
           "date": "2026-08-18",
@@ -120,15 +180,15 @@
         "amount": null,
         "currency": "JPY",
         "gbp": null,
-        "fx_rate": 214.96,
-        "fx_date": "2026-08-13"
+        "fx_rate": 216.89,
+        "fx_date": "2026-08-28"
       },
       "images": [
         "https://ccsrpcma.carsensor.net/CSphoto/bkkn/059/489/U00030059489/U00030059489_001L.JPG"
       ],
-      "status": "withdrawn",
+      "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-08-14",
+      "last_seen": "2026-08-29",
       "history": [
         {
           "date": "2026-08-12",
@@ -144,6 +204,17 @@
         {
           "date": "2026-08-17",
           "status": "withdrawn"
+        },
+        {
+          "date": "2026-08-29",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "JPY",
+            "gbp": null,
+            "fx_rate": 216.89,
+            "fx_date": "2026-08-28"
+          }
         }
       ],
       "relist": {
@@ -309,7 +380,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-28",
+      "last_seen": "2026-08-29",
       "history": [
         {
           "date": "2026-08-01",
@@ -356,7 +427,7 @@
       "images": [
         "https://img.kaidee.com/prd/20260722/371477592/m/960a8b1c-a85e-43af-b54f-236967dac515.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-07-22",
       "last_seen": "2026-08-21",
       "history": [
@@ -370,6 +441,10 @@
             "fx_rate": 45.114,
             "fx_date": "2026-07-21"
           }
+        },
+        {
+          "date": "2026-08-29",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -407,7 +482,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-08-28",
+      "last_seen": "2026-08-29",
       "history": [
         {
           "date": "2026-07-18",
@@ -456,7 +531,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-28",
+      "last_seen": "2026-08-29",
       "history": [
         {
           "date": "2026-07-17",
@@ -505,7 +580,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-28",
+      "last_seen": "2026-08-29",
       "history": [
         {
           "date": "2026-07-17",
@@ -660,7 +735,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-28",
+      "last_seen": "2026-08-29",
       "history": [
         {
           "date": "2026-07-17",
@@ -709,7 +784,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-28",
+      "last_seen": "2026-08-29",
       "history": [
         {
           "date": "2026-07-17",
