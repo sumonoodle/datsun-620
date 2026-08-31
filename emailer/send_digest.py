@@ -33,7 +33,8 @@ SOURCE_NAMES = {
     "carsensor": "Carsensor", "yahoo_auctions": "Yahoo Auctions JP",
     "kaidee": "Kaidee", "classiccars": "ClassicCars.com", "kijiji": "Kijiji",
     "barnfinds": "Barn Finds", "flex": "FLEX (JP)", "kuruma_ex": "Kuruma-EX",
-    "mercadolibre": "MercadoLibre MX", "justcars": "JUST CARS", "tokyocarz": "TokyoCarZ",
+    "pistonheads": "PistonHeads", "ratsun": "Ratsun", "retrorides": "Retro Rides",
+    "trovit": "Trovit", "kleinanzeigen": "Kleinanzeigen",
 }
 BROWN = "#3b2b1d"
 ORANGE = "#b04a1a"
@@ -230,8 +231,13 @@ def main() -> int:
               f"(credentials {'set' if user and password else 'missing'}, DIGEST_LIVE={live})")
         return 0
 
-    n_new, n_price = len(changes["new"]), len(changes["price_changed"])
-    n_kc = sum(1 for i in changes["new"]
+    # Subject counts must match the body: a new listing that is also a
+    # possible relist renders under Relists, not New (2026-08-22 bug hunt:
+    # the subject once promised more new listings than the body showed).
+    relist_ids = {r["id"] for r in changes["possible_relists"]}
+    new_ids = [i for i in changes["new"] if i not in relist_ids]
+    n_new, n_price = len(new_ids), len(changes["price_changed"])
+    n_kc = sum(1 for i in new_ids
                if (listings_by_id.get(i, {}).get("king_cab") or {}).get("matched"))
     if n_kc:
         subject = (f"Datsun 620: {n_kc} KING CAB of {n_new} new, "

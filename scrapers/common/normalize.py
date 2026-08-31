@@ -66,11 +66,17 @@ def safe_url(url: str | None) -> str:
 
 
 def extract_year(title: str) -> int | None:
-    m = re.search(r"\b(19(?:7[0-9]|6[89]|80))\b", title or "")
-    if not m:
-        return None
-    year = int(m.group(1))
-    return year if 1971 <= year <= 1980 else None
+    """First IN-RANGE year in the text. 2026-08-22 bug hunt: the old code
+    range-checked only the first regex hit, so "Registered 1969, 1974
+    Datsun 620" yielded None; and "project £1975" parsed a price as a
+    year — currency-prefixed matches are now skipped."""
+    for m in re.finditer(r"\b(19(?:7[0-9]|6[89]|80))\b", title or ""):
+        if m.start() > 0 and title[m.start() - 1] in "£$€¥":
+            continue
+        year = int(m.group(1))
+        if 1971 <= year <= 1980:
+            return year
+    return None
 
 
 _SHOWA_RE = re.compile(r"昭和\s*(4[6-9]|5[0-5])年")

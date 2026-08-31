@@ -29,6 +29,7 @@ import httpx
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
+from common.patterns import RE_OTHER_GEN
 
 SOURCE = "kaidee"
 BASE = "https://rod.kaidee.com"
@@ -44,8 +45,12 @@ HEADERS = {
 _DATSUN_MARKERS = ["datsun", "ดัทสัน", "ดัทซัน", "ช้างเหยียบ"]
 # Digit boundaries matter: Buddhist Era years are everywhere in Thai titles
 # and "ปี 2520" (= 1977) must not trip the 520 exclusion.
-_OTHER_GEN_NUM_RE = re.compile(r"(?<!\d)(520|521|720)(?!\d)")
-_OTHER_GEN_WORDS = ["d21", "d22", "big m", "big-m", "navara", "frontier", "จูเนียร์"]
+_OTHER_GEN_NUM_RE = RE_OTHER_GEN  # shared rule: currency/comma guards, SD22-safe
+# 2026-08-22: "1300/1500" are also Bluebird/Sunny engine badges, so saloon
+# model names must be excluded or sedans enter as 620-family pickups.
+_OTHER_GEN_WORDS = ["big m", "big-m", "navara", "frontier", "จูเนียร์",
+                    "bluebird", "บลูเบิร์ด", "sunny", "ซันนี่", "sedan",
+                    "ซีดาน", "เก๋ง", "cedric", "laurel", "skyline", "fairlady"]
 # All 620 variants are tracked, so instead of the King Cab gate a TRUCK
 # marker separates 620-family pickups from Datsun saloons (Bluebird, Sunny,
 # 510...) that a bare "datsun" query also returns. Thai-built 620s were

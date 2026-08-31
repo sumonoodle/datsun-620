@@ -65,6 +65,9 @@ jobs:
         run: python emailer/send_digest.py
 
       - name: Commit data
+        # The retry loop must not swallow total failure: three failed pushes
+        # used to end on sleep's exit 0, so the run showed green while the
+        # day's data was silently discarded (2026-08-22 bug hunt).
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -73,13 +76,21 @@ jobs:
             echo "no data changes"
           else
             git commit -m "data: daily run $(date -u +%F)"
+            pushed=0
             # main may have advanced since checkout (manual commits, deploys)
             for i in 1 2 3; do
-              git pull --rebase origin main && git push && break
+              if git pull --rebase origin main && git push; then
+                pushed=1
+                break
+              fi
               git rebase --abort 2>/dev/null || true
               echo "push attempt $i failed, retrying"
               sleep $((i * 5))
             done
+            if [ "$pushed" != "1" ]; then
+              echo "::error::data commit could not be pushed after 3 attempts"
+              exit 1
+            fi
           fi
 
       # Dead-man's switch: healthchecks.io emails the owner if this ping goes
@@ -103,8 +114,12 @@ jobs:
 
   # Pushes made with GITHUB_TOKEN do not trigger other workflows, so the data
   # commit above would never kick off deploy.yml on its own. Call it directly.
+  # !cancelled(): the scrape job re-fails itself when only the DIGEST send
+  # failed, and the data commit lands before that — the site must still
+  # deploy that day's data (2026-08-22 bug hunt).
   deploy:
     needs: scrape
+    if: ${{ !cancelled() }}
     uses: ./.github/workflows/deploy.yml
     permissions:
       contents: read

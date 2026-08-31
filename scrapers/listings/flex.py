@@ -21,6 +21,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
+from common.patterns import RE_620, RE_OTHER_GEN
 
 SOURCE = "flex"
 URL = "https://www.flexnet.co.jp/search/freeword/" + quote("ダットサン")
@@ -33,7 +34,7 @@ HEADERS = {
 _ID_RE = re.compile(r"/detail/[^\"]*-used-(\d+)\.html")
 _YEAR_RE = re.compile(r"(19\d{2}|20\d{2})年")
 _MAN_YEN_RE = re.compile(r"([\d,]+(?:\.\d+)?)\s*万円")
-_620_RE = re.compile(r"(?<![\dA-Za-z])620(?!\d)")
+_620_RE = RE_620
 
 
 def parse_page(html: str, fx_day: dict) -> list[dict]:
@@ -64,16 +65,26 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         kc = king_cab.check(title, blurb)
         if not (_620_RE.search(text) or "ダットサントラック" in title):
             continue
-        # 年式 from the details table; the model year gate keeps later
-        # Datsun-badged trucks out, same reasoning as Carsensor.
-        ym = _YEAR_RE.search(card.get_text(" ", strip=True))
+        # 年式 strictly from the details table: a blurb like
+        # "2020年にフルレストア済!" (restored in 2020) must not read as the
+        # model year and silently veto a real 1978 truck (2026-08-22 bug).
+        detail = card.select_one(".usd_detailbox")
+        detail_text = detail.get_text(" ", strip=True) if detail else ""
+        ym = _YEAR_RE.search(detail_text)
         year = int(ym.group(1)) if ym else None
         if year is not None and not 1971 <= year <= 1980:
             continue
         seen.add(listing_id)
 
-        pm = _MAN_YEN_RE.search(card.get_text(" ", strip=True))
+        # Price from the card MINUS the blurb, so a restoration spend
+        # ("300万円かけてレストア") in the sales pitch can't become the price.
+        price_scope = card.get_text(" ", strip=True)
+        if blurb:
+            price_scope = price_scope.replace(blurb, " ")
+        pm = _MAN_YEN_RE.search(price_scope.replace(" ", ""))
         amount = float(pm.group(1).replace(",", "")) * 10_000 if pm else None
+        if amount == 0:
+            amount = None
         img = card.select_one(".usd_phbox img")
         image = (img.get("src") or img.get("data-src")) if img else None
         sold = "SOLD OUT" in card.get_text()
@@ -83,8 +94,11 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
             "source": SOURCE,
             "source_listing_id": listing_id,
             # Detail slugs contain Japanese; live hrefs come percent-encoded
-            # but the schema's uri format demands it either way.
-            "url": normalize.safe_url(quote(a["href"], safe=":/?&=%")),
+            # but the schema's uri format demands it either way. A relative
+            # href would otherwise become an empty url via safe_url.
+            "url": normalize.safe_url(quote(
+                ("https://www.flexnet.co.jp" + a["href"]) if a["href"].startswith("/") else a["href"],
+                safe=":/?&=%")),
             "title": title,
             "title_translated": None,
             "description_snippet": (blurb[:500] or None),

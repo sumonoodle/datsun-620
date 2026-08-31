@@ -19,6 +19,7 @@ import httpx
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
+from common.patterns import RE_620
 
 SOURCE = "carsandbids"
 API_URL = "https://carsandbids.com/v2/autos/auctions"
@@ -38,7 +39,7 @@ def parse_auctions(payload: dict, fx_day: dict) -> list[dict]:
     for a in auctions:
         title = a.get("title") or ""
         subtitle = a.get("sub_title") or a.get("subtitle") or ""
-        if not re.search(r"\b620\b", title):
+        if not RE_620.search(title):
             continue
         kc = king_cab.check(title, subtitle)
 

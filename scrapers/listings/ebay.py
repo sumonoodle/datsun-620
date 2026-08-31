@@ -16,6 +16,7 @@ import httpx
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
+from common.patterns import RE_620
 from listings.ebay_auth import mint_token
 
 SOURCE = "ebay"
@@ -35,36 +36,55 @@ LIMIT = 200
 
 # Titles matching King Cab terms but clearly not whole vehicles. The 2026-07-17
 # incident: 166 print ads, posters and Tomica toys ingested in one run.
-_PARTS_WORDS = [
-    "for datsun", "fits datsun", "fit datsun", "carburetor", "carb ", "fender",
-    "grille", "emblem", "badge", "decal", "sticker", "brochure", "manual",
-    "toy", "diecast", "die-cast", "1/64", "1/24", "1:24", "1:64", "model kit",
-    "keychain", "mug", "t-shirt", "shirt", "poster", "tail light", "taillight",
-    "headlight", "bumper", "mirror", "door handle", "weatherstrip", "seal kit",
-    "gasket", "bearing", "brake", "clutch", "radiator", "tailgate",
-    "print ad", "advertisement", "magazine", "photo", "blueprint", "promo",
-    "art", "man cave", "banner", "sign", "patch", "keyring", "tomica",
-    "tomytec", "hot wheels", "matchbox", "1/43", "1:43", "greenlight",
+# 2026-08-22 bug hunt: the original bare-substring matching was killing real
+# trucks — "manual" hit 4-Speed Manual transmissions, "toy" hit Toyota-swap
+# titles, "art" hit "partial restoration", "sign" hit "consignment". Terms
+# are now word-bounded regexes, "manual" means only the printed kind, and
+# service-item words real ads mention ("new brakes and clutch") are gone —
+# parts listings for those are categorized and the category gate holds them.
+_PARTS_TERMS = [
+    r"for datsun", r"fits datsun", r"fit datsun", r"carburetor", r"\bcarb\b",
+    r"fender", r"grille", r"emblem", r"badge", r"decal", r"sticker",
+    r"brochure", r"(?:owner'?s?|service|repair|shop|workshop|instruction)\s+manual",
+    r"\btoys?\b", r"diecast", r"die-cast", r"1/64", r"1/24", r"1:24", r"1:64",
+    r"model kit", r"keychain", r"\bmug\b", r"t-shirt", r"\bshirts?\b",
+    r"poster", r"tail light", r"taillight", r"headlight", r"door handle",
+    r"weatherstrip", r"seal kit", r"print ad", r"advertisement", r"magazine",
+    r"\bphoto\b", r"blueprint", r"\bpromo\b", r"\bart\b", r"man cave",
+    r"banner", r"\bsigns?\b", r"\bpatch\b", r"keyring", r"tomica", r"tomytec",
+    r"hot wheels", r"matchbox", r"1/43", r"1:43", r"greenlight",
 ]
+_PARTS_RE = re.compile("|".join(_PARTS_TERMS), re.I)
 
-# When eBay tells us the category, only vehicle categories count as trucks;
-# memorabilia lives in Collectibles / Art / Toys & Hobbies.
-_VEHICLE_CATEGORIES = ["cars & trucks", "classic cars", "automobiles", "other vehicles", "pickup"]
-
+# Category gate, per-name so a "Car & Truck Parts" node can never satisfy a
+# "truck" substring. Names are localized per marketplace (EBAY_DE says
+# "Autos" / "Automobile & Oldtimer"), so an UNRECOGNIZED category is not
+# proof of memorabilia: the explicit denylist holds the 2026-07-17 flood
+# (Collectibles/Art/Toys nodes) and anything else falls through to the
+# word list and price floor.
+_VEHICLE_CATEGORY_NAMES = {
+    "cars & trucks", "classic cars", "automobiles", "other vehicles", "cars",
+    "autos", "automobile", "automobile & oldtimer", "oldtimer", "fahrzeuge",
+    "pickup", "classic cars, trucks & motorcycles",
+}
+_NON_VEHICLE_CAT_RE = re.compile(
+    r"collectib|toys|diecast|die-cast|\bart\b|magazin|advertis|memorabilia|"
+    r"parts|accessor|zubeh|teile|apparel|merchandise", re.I)
 
 _AD_RE = re.compile(r"\bads?\b|\badvert\b", re.I)
 
 
 def _looks_like_part(title: str, categories: list[str]) -> bool:
     t = (title or "").lower()
-    if any(w in t for w in _PARTS_WORDS):
+    if _PARTS_RE.search(t):
         return True
     if _AD_RE.search(t):
         return True
-    if categories:
-        cats = " ".join(categories).lower()
-        # Not listed in any vehicle category => not a truck for sale.
-        return not any(v in cats for v in _VEHICLE_CATEGORIES)
+    names = [c.strip().lower() for c in categories if c]
+    if any(n in _VEHICLE_CATEGORY_NAMES for n in names):
+        return False
+    if any(_NON_VEHICLE_CAT_RE.search(n) for n in names):
+        return True
     return False
 
 
@@ -81,8 +101,9 @@ def parse_items(payload: dict, marketplace_country: str, fx_day: dict) -> list[d
         # Cab listings must not be filtered away. kc is recorded, not gated.
         kc = king_cab.check(title, desc)
         # Title only: a 720 listing's description may well mention the 620
-        # it succeeded.
-        if not re.search(r"\b620\b", title):
+        # it succeeded. RE_620's comma guard keeps "6,620 Original Miles"
+        # on a 720 from counting as a model reference.
+        if not RE_620.search(title):
             continue
         if _looks_like_part(title, categories):
             continue

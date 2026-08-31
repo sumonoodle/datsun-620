@@ -18,6 +18,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
+from common.patterns import RE_620
 
 SOURCE = "hemmings"
 URL = "https://www.hemmings.com/classifieds/cars-for-sale/datsun/620"
@@ -33,6 +34,12 @@ _PRICE_RE = re.compile(r"\$\s?([\d,]+)")
 
 def parse_page(html: str, fx_day: dict) -> list[dict]:
     soup = BeautifulSoup(html, "html.parser")
+    # Every collector needs a suspicious-empty guard or a markup change
+    # reads as "ok, empty market" forever (2026-08-22 bug hunt: this was
+    # the only collector without one). The model page always carries
+    # listing/search links in its chrome even with zero results.
+    if not soup.find("a", href=lambda h: h and ("/listing/" in h or "/cars-for-sale/" in h)):
+        raise ValueError("no listing links at all (page layout changed or blocked?)")
     records = []
     seen = set()
     for a in soup.find_all("a", href=True):
@@ -41,7 +48,7 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
             continue
         # Listing links carry the vehicle title; navigation links don't.
         title = a.get_text(" ", strip=True)
-        if not re.search(r"\b620\b", title) or "datsun" not in title.lower():
+        if not RE_620.search(title) or "datsun" not in title.lower():
             continue
         kc = king_cab.check(title)
 

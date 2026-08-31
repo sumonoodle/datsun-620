@@ -125,3 +125,64 @@ Duncan, carsales, Trade Me, The Parking, Prestige (JP dealer auctions),
 CFJ/BE FORWARD/One2car/MY/ID.
 That is every layer where a 620 realistically surfaces except Facebook,
 which stays manual by its terms.
+
+## Gap sweep (2026-08-14, owner-prompted by the PistonHeads catch)
+
+Two further research passes (UK/EU/aggregators; Americas/AU/forums) plus a
+fetch-probe round. Outcome:
+
+**Five new collectors shipped:** PistonHeads (Apollo cache, native GBP,
+structural era-Pickup rule), **Ratsun.net classifieds** (the Datsun truck
+community's own market — highest 620 density found anywhere), Retro Rides
+forum (a real £8,995 1978 620 was live on the board on build day), Trovit
+(aggregator safety net over sites we don't scrape; two King Cabs on its
+620 page on build day), Kleinanzeigen.de (real German 620s; Akamai risk
+accepted, degrades to its email alerts if blocked).
+
+**Added to the Phase C alert list:** DoneDeal.ie (blocked from runners;
+had a live EUR 9,000 620 during research), Gumtree UK (live GBP 12,995
+1977 620; toy-heavy search markup made blind scraping unwise), CarsGuide
+AU (dedicated 620 ute page + alerts; blocked), Classic Trader (native
+"notify me when a 620 lists" — set and forget), Gateway Classic Cars
+(arrival alerts), MercadoLibre AR/CL/PE/CO/EC (real 620s in every one,
+Peru's badged NL620; same bot wall as MX), Copart + IAAI (live 1976 620
+salvage lot found; hard walls, saved-search alerts exist), Trade Unique
+Cars AU.
+
+**Manual/watch:** NICOclub Datsun classifieds (estate-sale finds),
+datsun.co.nz forum, datsun1200.com, 510 Realm, ClassicZcars, OZDAT,
+my105, UK auction houses (Iconic — which sold a 521 pickup — Brightwells,
+SWVA, Mathewsons; Glenmarch and CLASSIC.COM cover their results).
+
+**Dead/skip:** Honest John Classics (redirects to drive.co.uk — site
+absorbed), CCFS (unreachable on two probe rounds), AutoTempest
+(client-side meta-search), CarGurus (no classics vertical), GovDeals,
+Bilweb/Bytbil, subito.it, coches.net, seminuevos (NP300-era taxonomy
+noise), Adverts.ie (toys only).
+
+## Bug-hunt round + Trovit DE (2026-08-22)
+
+Three parallel audits (core pipeline, all 18 collectors, outputs/ops)
+against code AND a month of accumulated live data. Every confirmed finding
+is fixed with a pinned regression test in test_bughunt.py; headline items:
+
+- kuruma-ex's split-markup prices read as ¥0/¥50k and had poisoned the
+  published median for days (now read from the card's value attribute);
+  its records were also duplicating their Carsensor twins — deduped.
+- The eBay parts filter was killing real trucks by substring ("Manual"
+  transmission, "Toyota" swap, "consignment"); now word-bounded, and the
+  category gate understands localized (DE) category names.
+- Cross-generation rules fired on prices ("$6,520"), phone digits and the
+  620's own SD22 diesel; the 620 rule matched inside "6,620 miles" on a
+  720. One shared, guarded pattern set now lives in common/patterns.py.
+- Withdrawal ageing counted source-outage days (first scrape after an
+  outage could mass-withdraw); now a per-listing healthy-miss counter.
+- BaT only parsed COMPLETED auctions — live 620 auctions were invisible.
+- Workflow: a thrice-failed data push looked green (day silently lost);
+  a digest failure blocked the site deploy.
+
+Expansion: **Trovit DE** added as a second edition of the trovit collector
+(markup parity verified live; an edition with no Datsun matches pads with
+unrelated cars, which the title gate filters). Trovit UK/ES/AU have no
+probeable search paths (two rounds of 404s). **Hagerty confirmed
+client-rendered** (empty SSR payload) — stays on the alert route for good.

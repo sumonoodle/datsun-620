@@ -18,6 +18,7 @@ import httpx
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
+from common.patterns import RE_620
 
 SOURCE = "bringatrailer"
 URL = "https://bringatrailer.com/datsun/"
@@ -25,16 +26,23 @@ UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15"
 
 
 def parse_page(html: str, fx_day: dict) -> list[dict]:
-    m = re.search(r"var auctionsCompletedInitialData = (\{.*?\});", html, re.S)
-    if not m:
+    # BaT embeds LIVE auctions and completed ones in separate blobs; parsing
+    # only the completed blob left running 620 auctions invisible until they
+    # ended (2026-08-22 bug hunt). Either blob may be absent on a given page
+    # build, but both missing means the layout changed.
+    blobs = re.findall(
+        r"var auctions(?:Completed|Current)InitialData = (\{.*?\});", html, re.S)
+    if not blobs:
         raise ValueError("auction JSON blob not found (page layout changed?)")
-    items = json.loads(m.group(1)).get("items", [])
+    items = []
+    for blob in blobs:
+        items.extend(json.loads(blob).get("items", []))
 
     records = []
     for it in items:
         title = it.get("title", "")
         excerpt = it.get("excerpt", "")
-        if not re.search(r"\b620\b", title):
+        if not RE_620.search(title):
             continue
         # All 620 variants tracked; kc recorded for highlighting, not gating.
         kc = king_cab.check(title, excerpt)

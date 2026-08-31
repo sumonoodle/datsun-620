@@ -20,6 +20,7 @@ import httpx
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
+from common.patterns import RE_620, RE_OTHER_GEN
 
 SOURCE = "kijiji"
 URL = "https://www.kijiji.ca/b-canada/datsun-620/k0l0"
@@ -32,7 +33,7 @@ HEADERS = {
 _NEXT_RE = re.compile(
     r'<script id="__NEXT_DATA__" type="application/json"[^>]*>(.*?)</script>', re.S)
 _VEHICLE_PATHS = ("/v-cars-trucks/", "/v-classic-cars/", "/v-autos-camions/")
-_620_RE = re.compile(r"(?<![\dA-Za-z])620(?!\d)")
+_620_RE = RE_620
 
 
 def parse_page(html: str, fx_day: dict) -> list[dict]:
