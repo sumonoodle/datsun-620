@@ -39,6 +39,14 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # 2026-09-01: the repo went private on 2026-08-31, which auto-disabled
+      # Pages (free plan) and 404'd every deploy. enablement: true re-enables
+      # Pages automatically as soon as the repo is public again, so a
+      # visibility change never needs a manual Pages settings visit.
+      - name: Ensure Pages is enabled
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
