@@ -1,6 +1,300 @@
 {
-  "generated_at": "2026-08-31",
+  "generated_at": "2026-09-01",
   "listings": [
+    {
+      "id": "trovit:n1h1J1lJY1-F",
+      "source": "trovit",
+      "source_listing_id": "n1h1J1lJY1-F",
+      "url": "https://rd.clk.thribee.com/id.n1h1J1lJY1-F/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.1852463trovit-web-8548578ffd-rscp76a969a493fa3a/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606a969a493f7467.23035507/pos.2/timestamp.1788254793/sign.RF7nWwCbnNbvyn2xEkk8Gw%3D%3D/",
+      "title": "1978 Datsun 620 Pickup Pro Street Blown Chevy Hot Rod",
+      "title_translated": null,
+      "description_snippet": "...you are looking for an attention getter whether at a cruise-in or just driving down the road, here is the car for youâ¦. This is a 1978 Datsun ...",
+      "year": 1978,
+      "country": "US",
+      "region": "83541, ID",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 15550.0,
+        "currency": "USD",
+        "gbp": 11485.34,
+        "fx_rate": 1.3539,
+        "fx_date": "2026-08-31"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/n1h1J1lJY1-F/n1h1J1lJY1-F.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-01",
+      "last_seen": "2026-09-01",
+      "history": [
+        {
+          "date": "2026-09-01",
+          "status": "active",
+          "price": {
+            "amount": 15550.0,
+            "currency": "USD",
+            "gbp": 11485.34,
+            "fx_rate": 1.3539,
+            "fx_date": "2026-08-31"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "trovit:fk81l151Gp1q",
+      "source": "trovit",
+      "source_listing_id": "fk81l151Gp1q",
+      "url": "https://rd.clk.thribee.com/id.fk81l151Gp1q/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.1852463trovit-web-8548578ffd-rscp76a969a493fa3a/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606a969a493f7467.23035507/pos.4/timestamp.1788254793/sign.lsptrgpuOImXN8d1I2NKkw%3D%3D/",
+      "title": "1979 Datsun 620 Pickup Grey RWD Manual kc",
+      "title_translated": null,
+      "description_snippet": "1979 Datsun 620 kc About this vehicleThis 1979 Datsun 620 is an original with updates to the exterior, interior and drivetrain. The owner has...",
+      "year": 1979,
+      "country": "US",
+      "region": "",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.3539,
+        "fx_date": "2026-08-31"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/fk81l151Gp1q/fk81l151Gp1q.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-01",
+      "last_seen": "2026-09-01",
+      "history": [
+        {
+          "date": "2026-09-01",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.3539,
+            "fx_date": "2026-08-31"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "trovit:1qw1Cizr1o1Z",
+      "source": "trovit",
+      "source_listing_id": "1qw1Cizr1o1Z",
+      "url": "https://rd.clk.thribee.com/id.1qw1Cizr1o1Z/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.1852463trovit-web-8548578ffd-rscp76a969a493fa3a/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606a969a493f7467.23035507/pos.1/timestamp.1788254793/sign.VC6PwAyib8V0e%2Fs1Fw3Q9w%3D%3D/",
+      "title": "1974 Datsun 620",
+      "title_translated": null,
+      "description_snippet": "For Sale is my 1974 Datsun 620 Pickup. It has had a beautiful frame off restoration done. This truck has only hauled fishing poles and lawn...",
+      "year": 1974,
+      "country": "US",
+      "region": "62480, Willow Hill, Jasper County, IL",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 14500.0,
+        "currency": "USD",
+        "gbp": 10709.8,
+        "fx_rate": 1.3539,
+        "fx_date": "2026-08-31"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/1qw1Cizr1o1Z/1qw1Cizr1o1Z.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-01",
+      "last_seen": "2026-09-01",
+      "history": [
+        {
+          "date": "2026-09-01",
+          "status": "active",
+          "price": {
+            "amount": 14500.0,
+            "currency": "USD",
+            "gbp": 10709.8,
+            "fx_rate": 1.3539,
+            "fx_date": "2026-08-31"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "trovit:1Mp1r1Jt1ZN1S",
+      "source": "trovit",
+      "source_listing_id": "1Mp1r1Jt1ZN1S",
+      "url": "https://rd.clk.thribee.com/id.1Mp1r1Jt1ZN1S/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.1852463trovit-web-8548578ffd-rscp76a969a493fa3a/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606a969a493f7467.23035507/pos.3/timestamp.1788254793/sign.pzNMZnLIG%2BwotksPvE8%2B9Q%3D%3D/",
+      "title": "1977 datsun 620 king cab custom built pickup",
+      "title_translated": null,
+      "description_snippet": "The truck has a small crack near bottom of glass, E-brake requires adjusting and to finish the project needs a better paint job. This truck has h",
+      "year": 1977,
+      "country": "US",
+      "region": "52776, West Liberty, Muscatine County, IA",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": true,
+        "matched_terms": [
+          "king cab"
+        ],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 9940.0,
+        "currency": "USD",
+        "gbp": 7341.75,
+        "fx_rate": 1.3539,
+        "fx_date": "2026-08-31"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/1Mp1r1Jt1ZN1S/1Mp1r1Jt1ZN1S.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-01",
+      "last_seen": "2026-09-01",
+      "history": [
+        {
+          "date": "2026-09-01",
+          "status": "active",
+          "price": {
+            "amount": 9940.0,
+            "currency": "USD",
+            "gbp": 7341.75,
+            "fx_rate": 1.3539,
+            "fx_date": "2026-08-31"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "trovit:191W1ig1ep1b",
+      "source": "trovit",
+      "source_listing_id": "191W1ig1ep1b",
+      "url": "https://rd.clk.thribee.com/id.191W1ig1ep1b/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.1852463trovit-web-8548578ffd-rscp76a969a493fa3a/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606a969a493f7467.23035507/pos.5/timestamp.1788254793/sign.MWsGtQ%2F66j3hlfcFnBaXoA%3D%3D/",
+      "title": "1972 Datsun 620 Pickup Brown RWD Manual PL620",
+      "title_translated": null,
+      "description_snippet": "1972 Datsun 620 PL620 Vehicle Details 1973 Datsun Pickup PL620 130,000 Miles Brakes are inoperable Emergency brakes are operating Coolant leak...",
+      "year": 1972,
+      "country": "US",
+      "region": "",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.3539,
+        "fx_date": "2026-08-31"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/191W1ig1ep1b/191W1ig1ep1b.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-01",
+      "last_seen": "2026-09-01",
+      "history": [
+        {
+          "date": "2026-09-01",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.3539,
+            "fx_date": "2026-08-31"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "retrorides:230448",
+      "source": "retrorides",
+      "source_listing_id": "230448",
+      "url": "https://forum.retro-rides.org/thread/230448/1978-datsun-pickup-long-sussex",
+      "title": "1978 Datsun 620 Pickup long bed. £8995 Sussex",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1978,
+      "country": "GB",
+      "region": null,
+      "drive_side": "RHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 8995.0,
+        "currency": "GBP",
+        "gbp": 8995.0,
+        "fx_rate": 1.0,
+        "fx_date": "2026-08-31"
+      },
+      "images": [],
+      "status": "active",
+      "first_seen": "2026-09-01",
+      "last_seen": "2026-09-01",
+      "history": [
+        {
+          "date": "2026-09-01",
+          "status": "active",
+          "price": {
+            "amount": 8995.0,
+            "currency": "GBP",
+            "gbp": 8995.0,
+            "fx_rate": 1.0,
+            "fx_date": "2026-08-31"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "kaidee:371534182",
       "source": "kaidee",
@@ -30,7 +324,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-29",
-      "last_seen": "2026-08-31",
+      "last_seen": "2026-09-01",
       "history": [
         {
           "date": "2026-08-29",
@@ -108,7 +402,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "bringatrailer:1979-datsun-620",
@@ -139,7 +434,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-08-18",
-      "last_seen": "2026-08-31",
+      "last_seen": "2026-09-01",
       "history": [
         {
           "date": "2026-08-18",
@@ -188,7 +483,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-08-31",
+      "last_seen": "2026-09-01",
       "history": [
         {
           "date": "2026-08-12",
@@ -285,7 +580,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "kuruma_ex:ccAU6253091581",
@@ -349,7 +645,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "kuruma_ex:ccAU7214532395",
@@ -369,18 +666,18 @@
         "body_style_check": "unavailable"
       },
       "price": {
-        "amount": 0.0,
+        "amount": 2850000.0,
         "currency": "JPY",
-        "gbp": 0.0,
-        "fx_rate": 216.89,
-        "fx_date": "2026-08-28"
+        "gbp": 13178.58,
+        "fx_rate": 216.26,
+        "fx_date": "2026-08-31"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/674/325/U00053674325/U00053674325_002L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-31",
+      "last_seen": "2026-09-01",
       "history": [
         {
           "date": "2026-08-01",
@@ -391,6 +688,17 @@
             "gbp": 0.0,
             "fx_rate": 215.06,
             "fx_date": "2026-07-31"
+          }
+        },
+        {
+          "date": "2026-09-01",
+          "status": "active",
+          "price": {
+            "amount": 2850000.0,
+            "currency": "JPY",
+            "gbp": 13178.58,
+            "fx_rate": 216.26,
+            "fx_date": "2026-08-31"
           }
         }
       ],
@@ -482,7 +790,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-08-31",
+      "last_seen": "2026-09-01",
       "history": [
         {
           "date": "2026-07-18",
@@ -549,7 +857,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "classiccars:CC-2079740",
@@ -580,7 +889,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-31",
+      "last_seen": "2026-09-01",
       "history": [
         {
           "date": "2026-07-17",
@@ -735,7 +1044,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-31",
+      "last_seen": "2026-09-01",
       "history": [
         {
           "date": "2026-07-17",
@@ -784,7 +1093,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-31",
+      "last_seen": "2026-09-01",
       "history": [
         {
           "date": "2026-07-17",

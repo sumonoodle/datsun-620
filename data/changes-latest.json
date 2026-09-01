@@ -1,7 +1,21 @@
 {
-  "date": "2026-08-31",
-  "new": [],
-  "price_changed": [],
+  "date": "2026-09-01",
+  "new": [
+    "retrorides:230448",
+    "trovit:1qw1Cizr1o1Z",
+    "trovit:n1h1J1lJY1-F",
+    "trovit:1Mp1r1Jt1ZN1S",
+    "trovit:fk81l151Gp1q",
+    "trovit:191W1ig1ep1b"
+  ],
+  "price_changed": [
+    {
+      "id": "kuruma_ex:ccAU7214532395",
+      "old_gbp": 0.0,
+      "new_gbp": 13178.58,
+      "pct": null
+    }
+  ],
   "status_changed": [],
   "possible_relists": []
 }

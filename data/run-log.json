@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-31",
-  "started_at": "2026-08-31T10:54:16+00:00",
+  "date": "2026-09-01",
+  "started_at": "2026-09-01T09:25:55+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -21,14 +21,14 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 50
+      "consecutive_failures": 51
     },
     {
       "source": "hemmings",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 50
+      "consecutive_failures": 51
     },
     {
       "source": "goonet_exchange",
@@ -92,15 +92,51 @@
       "records": 2,
       "note": "",
       "consecutive_failures": 0
+    },
+    {
+      "source": "pistonheads",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0
+    },
+    {
+      "source": "ratsun",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0
+    },
+    {
+      "source": "retrorides",
+      "ok": true,
+      "records": 1,
+      "note": "",
+      "consecutive_failures": 0
+    },
+    {
+      "source": "trovit",
+      "ok": true,
+      "records": 5,
+      "note": "",
+      "consecutive_failures": 0
+    },
+    {
+      "source": "kleinanzeigen",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0
     }
   ],
   "totals": {
-    "active": 11,
+    "active": 17,
     "by_country": {
+      "US": 8,
+      "GB": 1,
       "TH": 1,
-      "JP": 7,
-      "US": 3
+      "JP": 7
     },
-    "median_gbp": 2222.87
+    "median_gbp": 10709.8
   }
 }
