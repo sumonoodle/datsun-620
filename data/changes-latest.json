@@ -1,18 +1,17 @@
 {
-  "date": "2026-09-01",
+  "date": "2026-09-02",
   "new": [
-    "retrorides:230448",
-    "trovit:1qw1Cizr1o1Z",
-    "trovit:n1h1J1lJY1-F",
-    "trovit:1Mp1r1Jt1ZN1S",
-    "trovit:fk81l151Gp1q",
-    "trovit:191W1ig1ep1b"
+    "trovit:1wB1rBY1v11u",
+    "trovit:b1tX181M1R1cV",
+    "trovit:q1x1h131i1yU1U",
+    "trovit:191r1ikz71s1E",
+    "trovit:010L1h1w1p1M1x"
   ],
   "price_changed": [
     {
-      "id": "kuruma_ex:ccAU7214532395",
+      "id": "kuruma_ex:ccAU7062177718",
       "old_gbp": 0.0,
-      "new_gbp": 13178.58,
+      "new_gbp": 13150.61,
       "pct": null
     }
   ],
