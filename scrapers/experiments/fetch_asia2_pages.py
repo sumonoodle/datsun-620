@@ -26,23 +26,18 @@ HEADERS = {
     "Accept-Language": "en-GB,en;q=0.9,ja;q=0.8,th;q=0.7,vi;q=0.7",
 }
 
+# Round 2: the Thai finds. Truck2Hand's July "fully client-side" verdict
+# has aged out — Google now indexes its category and listing pages with
+# LIVE 620s on them; Chobrod has a dedicated /car-datsun-620 tree.
 PAGES = [
-    ("everycar.html.gz",
-     "https://www.everycar.jp/used-cars.php?make=nissan&model=datsun-truck"),
-    ("everycar-datsun.html.gz",
-     "https://www.everycar.jp/nissan/datsun/"),
-    ("nikkyo.html.gz",
-     "https://www.nikkyocars.com/m/stock/?maker=NISSAN&cars=DATSUN+PICKUP"),
-    ("carused.html.gz",
-     "https://carused.jp/car-list/nissan/datsun-pickup"),
-    ("carjunction.html.gz",
-     "https://www.carjunction.com/category/trucks.html"),
-    ("cardealpage.html.gz",
-     "https://www.cardealpage.com/nissan/datsun%20truck/"),
-    ("picknbuy24.html.gz",
-     "https://www.picknbuy24.com/usedcar/?maker=nissan&model=datsun+truck"),
-    ("jpauc-past.html.gz",
-     "https://jpauc.com/auction/past"),
+    ("truck2hand-datsun.html.gz",
+     "https://www.truck2hand.com/category/cat_pickup+brand_brand-384-datsun/"),
+    ("truck2hand-620.html.gz",
+     "https://www.truck2hand.com/category/cat_pickup+brand_brand-384-datsun+model_620/"),
+    ("truck2hand-listing.html.gz",
+     "https://www.truck2hand.com/listing/Y9l6V20mlb/"),
+    ("chobrod-620.html.gz",
+     "https://chobrod.com/car-datsun-620"),
 ]
 
 
