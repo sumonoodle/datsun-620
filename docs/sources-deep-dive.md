@@ -186,3 +186,32 @@ Expansion: **Trovit DE** added as a second edition of the trovit collector
 unrelated cars, which the title gate filters). Trovit UK/ES/AU have no
 probeable search paths (two rounds of 404s). **Hagerty confirmed
 client-rendered** (empty SSR payload) — stays on the alert route for good.
+
+## Asia round 2 (2026-09-02, owner-prompted: more TH/VN/JP coverage)
+
+**Truck2Hand is IN** — the July "fully client-side" verdict aged out: its
+category pages now ship complete listing data server-side, and the brand
+page carried FOUR live 620s on build day (฿35,500-฿180,000, two of them
+ช้างเหยียบ trucks with no model tag — which is why the brand page, not
+the 620 facet, is scraped). ปี years are garbage by observation (a 1974
+truck tagged ปี 2020) and stay unused; a ฿10k floor + Thai parts words
+keep the ฿450 mudguards out.
+
+**everycar.jp promoted from the bench** — its detail URLs carry model
+slug AND year (/nissan/datsun-truck/1978/id/), a clean structural filter;
+the model query pads with Civilians when empty, which the slug gate
+absorbs.
+
+**The rest of the JP bench is re-demoted with evidence:** carused and
+picknbuy24 return empty bodies, nikkyo and carjunction hold zero Datsun
+stock to pin a parser against, jpauc's past search needs a POST,
+cardealpage refused the runner. **Chobrod** (dedicated car-datsun-620
+tree, live Thai stock) refused the runner too — watch/alert candidate.
+**Taladrod**: dealer stock <15 years old, no 620s ever — skip. Thai
+forums (datsun-thailand.com SMF, ThaiScooter Datsun board) and the
+Facebook 520/620/720 group: manual list.
+
+**Vietnam is a researched dead end for the 620**: pre-1975 Datsun imports
+were sedans and taxis (Sunny B10s and Fairladys are what survives);
+Vietnamese searches for a Datsun pickup return only diecast. No collector
+built, on evidence rather than neglect.

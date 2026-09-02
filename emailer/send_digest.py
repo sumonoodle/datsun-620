@@ -31,7 +31,7 @@ SOURCE_NAMES = {
     "ebay": "eBay", "bringatrailer": "Bring a Trailer", "carsandbids": "Cars & Bids",
     "hemmings": "Hemmings", "goonet_exchange": "Goo-net Exchange",
     "carsensor": "Carsensor", "yahoo_auctions": "Yahoo Auctions JP",
-    "kaidee": "Kaidee", "classiccars": "ClassicCars.com", "kijiji": "Kijiji",
+    "kaidee": "Kaidee", "truck2hand": "Truck2Hand", "everycar": "EVERY (JP)", "classiccars": "ClassicCars.com", "kijiji": "Kijiji",
     "barnfinds": "Barn Finds", "flex": "FLEX (JP)", "kuruma_ex": "Kuruma-EX",
     "pistonheads": "PistonHeads", "ratsun": "Ratsun", "retrorides": "Retro Rides",
     "trovit": "Trovit", "kleinanzeigen": "Kleinanzeigen",

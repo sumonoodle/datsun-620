@@ -10,11 +10,11 @@
     "id": {
       "type": "string",
       "description": "Stable identifier: '<source>:<source_listing_id>'.",
-      "pattern": "^[a-z_]+:.+$"
+      "pattern": "^[a-z0-9_]+:.+$"
     },
     "source": {
       "type": "string",
-      "enum": ["ebay", "bringatrailer", "carsandbids", "hemmings", "goonet_exchange", "carsensor", "yahoo_auctions", "kaidee", "classiccars", "kijiji", "barnfinds", "flex", "kuruma_ex", "pistonheads", "ratsun", "retrorides", "trovit", "kleinanzeigen"]
+      "enum": ["ebay", "bringatrailer", "carsandbids", "hemmings", "goonet_exchange", "carsensor", "yahoo_auctions", "kaidee", "classiccars", "kijiji", "barnfinds", "flex", "kuruma_ex", "everycar", "truck2hand", "pistonheads", "ratsun", "retrorides", "trovit", "kleinanzeigen"]
     },
     "source_listing_id": { "type": "string" },
     "url": { "type": "string", "format": "uri" },
