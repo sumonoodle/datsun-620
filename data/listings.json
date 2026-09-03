@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02",
+  "generated_at": "2026-09-03",
   "listings": [
     {
       "id": "trovit:q1x1h131i1yU1U",
@@ -48,7 +48,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:b1tX181M1R1cV",
@@ -79,7 +80,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-02",
-      "last_seen": "2026-09-02",
+      "last_seen": "2026-09-03",
       "history": [
         {
           "date": "2026-09-02",
@@ -146,7 +147,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:191r1ikz71s1E",
@@ -177,7 +179,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-02",
-      "last_seen": "2026-09-02",
+      "last_seen": "2026-09-03",
       "history": [
         {
           "date": "2026-09-02",
@@ -244,7 +246,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:n1h1J1lJY1-F",
@@ -293,7 +296,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:fk81l151Gp1q",
@@ -343,7 +347,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:1qw1Cizr1o1Z",
@@ -392,7 +396,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:1Mp1r1Jt1ZN1S",
@@ -443,7 +448,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:191W1ig1ep1b",
@@ -493,7 +499,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "retrorides:230448",
@@ -522,7 +528,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-02",
+      "last_seen": "2026-09-03",
       "history": [
         {
           "date": "2026-09-01",
@@ -571,7 +577,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-29",
-      "last_seen": "2026-09-02",
+      "last_seen": "2026-09-03",
       "history": [
         {
           "date": "2026-08-29",
@@ -618,7 +624,7 @@
       "images": [
         "https://www.goo-net-exchange.com/common/assets/img/common/other/trusted_deaer_list.png"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-08-28",
       "last_seen": "2026-08-30",
       "history": [
@@ -643,14 +649,17 @@
             "fx_rate": 216.89,
             "fx_date": "2026-08-28"
           }
+        },
+        {
+          "date": "2026-09-03",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "bringatrailer:1979-datsun-620",
@@ -681,7 +690,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-08-18",
-      "last_seen": "2026-09-02",
+      "last_seen": "2026-09-03",
       "history": [
         {
           "date": "2026-08-18",
@@ -730,7 +739,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-09-02",
+      "last_seen": "2026-09-03",
       "history": [
         {
           "date": "2026-08-12",
@@ -838,7 +847,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "kuruma_ex:ccAU6253091581",
@@ -867,7 +877,7 @@
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/378/369/U00048378369/U00048378369_002L.JPG"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-08-03",
       "last_seen": "2026-08-30",
       "history": [
@@ -896,14 +906,17 @@
             "fx_rate": 215.18,
             "fx_date": "2026-08-12"
           }
+        },
+        {
+          "date": "2026-09-03",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "kuruma_ex:ccAU7214532395",
@@ -934,7 +947,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-09-02",
+      "last_seen": "2026-09-03",
       "history": [
         {
           "date": "2026-08-01",
@@ -1047,7 +1060,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-09-02",
+      "last_seen": "2026-09-03",
       "history": [
         {
           "date": "2026-07-18",
@@ -1094,7 +1107,7 @@
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/059/489/U00030059489/U00030059489_001L.JPG"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-07-17",
       "last_seen": "2026-08-31",
       "history": [
@@ -1108,14 +1121,17 @@
             "fx_rate": 218.16,
             "fx_date": "2026-07-17"
           }
+        },
+        {
+          "date": "2026-09-03",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "classiccars:CC-2079740",
@@ -1146,7 +1162,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-02",
+      "last_seen": "2026-09-03",
       "history": [
         {
           "date": "2026-07-17",
@@ -1301,7 +1317,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-02",
+      "last_seen": "2026-09-03",
       "history": [
         {
           "date": "2026-07-17",
@@ -1350,7 +1366,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-02",
+      "last_seen": "2026-09-03",
       "history": [
         {
           "date": "2026-07-17",

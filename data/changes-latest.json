@@ -1,20 +1,23 @@
 {
-  "date": "2026-09-02",
-  "new": [
-    "trovit:1wB1rBY1v11u",
-    "trovit:b1tX181M1R1cV",
-    "trovit:q1x1h131i1yU1U",
-    "trovit:191r1ikz71s1E",
-    "trovit:010L1h1w1p1M1x"
-  ],
-  "price_changed": [
+  "date": "2026-09-03",
+  "new": [],
+  "price_changed": [],
+  "status_changed": [
     {
-      "id": "kuruma_ex:ccAU7062177718",
-      "old_gbp": 0.0,
-      "new_gbp": 13150.61,
-      "pct": null
+      "id": "goonet_exchange:700051085230260503001",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "kuruma_ex:ccAU6253091581",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "kuruma_ex:ccVU3133320108",
+      "old_status": "active",
+      "new_status": "withdrawn"
     }
   ],
-  "status_changed": [],
   "possible_relists": []
 }
