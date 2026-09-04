@@ -1,23 +1,29 @@
 {
-  "date": "2026-09-03",
-  "new": [],
+  "date": "2026-09-04",
+  "new": [
+    "classiccars:CC-2104154"
+  ],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "goonet_exchange:700051085230260503001",
+      "id": "trovit:fk81l151Gp1q",
       "old_status": "active",
       "new_status": "withdrawn"
     },
     {
-      "id": "kuruma_ex:ccAU6253091581",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    },
-    {
-      "id": "kuruma_ex:ccVU3133320108",
+      "id": "trovit:191W1ig1ep1b",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
-  "possible_relists": []
+  "possible_relists": [
+    {
+      "id": "classiccars:CC-2104154",
+      "prior_id": "classiccars:CC-1995643",
+      "reasons": [
+        "title similarity 0.93",
+        "same country (US)"
+      ]
+    }
+  ]
 }

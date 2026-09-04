@@ -1,6 +1,58 @@
 {
-  "generated_at": "2026-09-03",
+  "generated_at": "2026-09-04",
   "listings": [
+    {
+      "id": "classiccars:CC-2104154",
+      "source": "classiccars",
+      "source_listing_id": "CC-2104154",
+      "url": "https://classiccars.com/listings/view/2104154/1972-datsun-620-for-sale-in-fredericksburg-texas-78624",
+      "title": "1972 Datsun 620",
+      "title_translated": null,
+      "description_snippet": "Welcome to Street Dreams as we celebrate our 28th year in the classic and muscle car business. The D",
+      "year": 1972,
+      "country": "US",
+      "region": "Fredericksburg Texas",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 0.0,
+        "currency": "USD",
+        "gbp": 0.0,
+        "fx_rate": 1.3497,
+        "fx_date": "2026-09-03"
+      },
+      "images": [
+        "https://photos.classiccars.com/cc-temp/listing/210/4154/61152604-1972-datsun-620-thumb.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-04",
+      "last_seen": "2026-09-04",
+      "history": [
+        {
+          "date": "2026-09-04",
+          "status": "active",
+          "price": {
+            "amount": 0.0,
+            "currency": "USD",
+            "gbp": 0.0,
+            "fx_rate": 1.3497,
+            "fx_date": "2026-09-03"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "classiccars:CC-1995643",
+        "reasons": [
+          "title similarity 0.93",
+          "same country (US)"
+        ]
+      }
+    },
     {
       "id": "trovit:q1x1h131i1yU1U",
       "source": "trovit",
@@ -49,7 +101,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:b1tX181M1R1cV",
@@ -98,7 +150,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:1wB1rBY1v11u",
@@ -148,7 +201,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:191r1ikz71s1E",
@@ -197,7 +250,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:010L1h1w1p1M1x",
@@ -247,7 +301,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:n1h1J1lJY1-F",
@@ -297,7 +351,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:fk81l151Gp1q",
@@ -326,7 +380,7 @@
       "images": [
         "https://img-us-2.trovit.com/fk81l151Gp1q/fk81l151Gp1q.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-01",
       "last_seen": "2026-09-01",
       "history": [
@@ -340,14 +394,17 @@
             "fx_rate": 1.3539,
             "fx_date": "2026-08-31"
           }
+        },
+        {
+          "date": "2026-09-04",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:1qw1Cizr1o1Z",
@@ -397,7 +454,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:1Mp1r1Jt1ZN1S",
@@ -449,7 +506,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:191W1ig1ep1b",
@@ -478,7 +535,7 @@
       "images": [
         "https://img-us-2.trovit.com/191W1ig1ep1b/191W1ig1ep1b.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-01",
       "last_seen": "2026-09-01",
       "history": [
@@ -492,14 +549,17 @@
             "fx_rate": 1.3539,
             "fx_date": "2026-08-31"
           }
+        },
+        {
+          "date": "2026-09-04",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "retrorides:230448",
@@ -528,7 +588,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-03",
+      "last_seen": "2026-09-04",
       "history": [
         {
           "date": "2026-09-01",
@@ -577,7 +637,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-29",
-      "last_seen": "2026-09-03",
+      "last_seen": "2026-09-04",
       "history": [
         {
           "date": "2026-08-29",
@@ -690,7 +750,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-08-18",
-      "last_seen": "2026-09-03",
+      "last_seen": "2026-09-04",
       "history": [
         {
           "date": "2026-08-18",
@@ -739,7 +799,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-09-03",
+      "last_seen": "2026-09-04",
       "history": [
         {
           "date": "2026-08-12",
@@ -803,7 +863,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-09-02",
+      "last_seen": "2026-09-04",
       "history": [
         {
           "date": "2026-08-03",
@@ -847,8 +907,7 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 1
+      }
     },
     {
       "id": "kuruma_ex:ccAU6253091581",
@@ -947,7 +1006,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-09-03",
+      "last_seen": "2026-09-04",
       "history": [
         {
           "date": "2026-08-01",
@@ -1060,7 +1119,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-09-03",
+      "last_seen": "2026-09-04",
       "history": [
         {
           "date": "2026-07-18",
@@ -1162,7 +1221,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-03",
+      "last_seen": "2026-09-04",
       "history": [
         {
           "date": "2026-07-17",
@@ -1317,7 +1376,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-03",
+      "last_seen": "2026-09-04",
       "history": [
         {
           "date": "2026-07-17",
@@ -1366,7 +1425,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-03",
+      "last_seen": "2026-09-04",
       "history": [
         {
           "date": "2026-07-17",
