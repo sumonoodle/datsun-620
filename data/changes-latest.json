@@ -1,29 +1,41 @@
 {
-  "date": "2026-09-04",
+  "date": "2026-09-05",
   "new": [
-    "classiccars:CC-2104154"
+    "trovit:1_1N1j61A12D1Z",
+    "trovit:N181Z1B1mU1R"
   ],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "trovit:fk81l151Gp1q",
+      "id": "trovit:q1x1h131i1yU1U",
       "old_status": "active",
       "new_status": "withdrawn"
     },
     {
-      "id": "trovit:191W1ig1ep1b",
+      "id": "trovit:1wB1rBY1v11u",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "trovit:010L1h1w1p1M1x",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "trovit:n1h1J1lJY1-F",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "trovit:1qw1Cizr1o1Z",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "trovit:1Mp1r1Jt1ZN1S",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
-  "possible_relists": [
-    {
-      "id": "classiccars:CC-2104154",
-      "prior_id": "classiccars:CC-1995643",
-      "reasons": [
-        "title similarity 0.93",
-        "same country (US)"
-      ]
-    }
-  ]
+  "possible_relists": []
 }

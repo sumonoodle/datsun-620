@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-04",
-  "started_at": "2026-09-04T08:52:15+00:00",
+  "date": "2026-09-05",
+  "started_at": "2026-09-05T08:22:40+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -21,14 +21,14 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 54
+      "consecutive_failures": 55
     },
     {
       "source": "hemmings",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 54
+      "consecutive_failures": 55
     },
     {
       "source": "goonet_exchange",
@@ -117,7 +117,7 @@
     {
       "source": "trovit",
       "ok": true,
-      "records": 0,
+      "records": 2,
       "note": "",
       "consecutive_failures": 0
     },
@@ -130,13 +130,13 @@
     }
   ],
   "totals": {
-    "active": 18,
+    "active": 14,
     "by_country": {
-      "US": 12,
+      "US": 8,
       "GB": 1,
       "TH": 1,
       "JP": 4
     },
-    "median_gbp": 11485.34
+    "median_gbp": 13164.6
   }
 }

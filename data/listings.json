@@ -1,6 +1,106 @@
 {
-  "generated_at": "2026-09-04",
+  "generated_at": "2026-09-05",
   "listings": [
+    {
+      "id": "trovit:N181Z1B1mU1R",
+      "source": "trovit",
+      "source_listing_id": "N181Z1B1mU1R",
+      "url": "https://rd.clk.thribee.com/id.N181Z1B1mU1R/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.2392646trovit-web-8548578ffd-l7h4j6a9bd17041b86/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.B/platform.web/cookieid.10202116a9bd170418ca2.18175319/pos.2/timestamp.1788596592/sign.0xd2fnlSYNVR%2BD8nEmujoA%3D%3D/",
+      "title": "1978 Datsun 620 King Cab Deluxe Pick Up 4 Cylinder OHV Sweet Little Truck",
+      "title_translated": null,
+      "description_snippet": "1978 Datsun 620 King Cab Sweet Little Blue Two Owner Datsun Selling my 1978 Datsun 620 . Two owner, Just over 101,000 original miles. Truck is...",
+      "year": 1978,
+      "country": "US",
+      "region": "",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": true,
+        "matched_terms": [
+          "king cab"
+        ],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.353,
+        "fx_date": "2026-09-04"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/N181Z1B1mU1R/N181Z1B1mU1R.1_10.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-05",
+      "last_seen": "2026-09-05",
+      "history": [
+        {
+          "date": "2026-09-05",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.353,
+            "fx_date": "2026-09-04"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "trovit:1_1N1j61A12D1Z",
+      "source": "trovit",
+      "source_listing_id": "1_1N1j61A12D1Z",
+      "url": "https://rd.clk.thribee.com/id.1_1N1j61A12D1Z/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.2392646trovit-web-8548578ffd-l7h4j6a9bd17041b86/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.B/platform.web/cookieid.10202116a9bd170418ca2.18175319/pos.1/timestamp.1788596592/sign.XqvfQghB4j8QWhPqBEpMrA%3D%3D/",
+      "title": "1977 Datsun 620 91- Miles Pick Up 4 Cylinder OHV 4 Speed Manual NO RESERVE",
+      "title_translated": null,
+      "description_snippet": "1977 Datsun 620 We are pleased to present a 1977 Datsun 620 pickup truck this truck has less than a hundred thousand original miles odometer...",
+      "year": 1977,
+      "country": "US",
+      "region": "",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.353,
+        "fx_date": "2026-09-04"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/1_1N1j61A12D1Z/1_1N1j61A12D1Z.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-05",
+      "last_seen": "2026-09-05",
+      "history": [
+        {
+          "date": "2026-09-05",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.353,
+            "fx_date": "2026-09-04"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "classiccars:CC-2104154",
       "source": "classiccars",
@@ -30,7 +130,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "history": [
         {
           "date": "2026-09-04",
@@ -80,7 +180,7 @@
       "images": [
         "https://img-us-2.trovit.com/q1x1h131i1yU1U/q1x1h131i1yU1U.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-02",
       "last_seen": "2026-09-02",
       "history": [
@@ -94,14 +194,17 @@
             "fx_rate": 1.3531,
             "fx_date": "2026-09-01"
           }
+        },
+        {
+          "date": "2026-09-05",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:b1tX181M1R1cV",
@@ -151,7 +254,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:1wB1rBY1v11u",
@@ -180,7 +283,7 @@
       "images": [
         "https://img-us-2.trovit.com/1wB1rBY1v11u/1wB1rBY1v11u.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-02",
       "last_seen": "2026-09-02",
       "history": [
@@ -194,14 +297,17 @@
             "fx_rate": 1.3531,
             "fx_date": "2026-09-01"
           }
+        },
+        {
+          "date": "2026-09-05",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:191r1ikz71s1E",
@@ -251,7 +357,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:010L1h1w1p1M1x",
@@ -280,7 +386,7 @@
       "images": [
         "https://img-us-2.trovit.com/010L1h1w1p1M1x/010L1h1w1p1M1x.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-02",
       "last_seen": "2026-09-02",
       "history": [
@@ -294,14 +400,17 @@
             "fx_rate": 1.3531,
             "fx_date": "2026-09-01"
           }
+        },
+        {
+          "date": "2026-09-05",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:n1h1J1lJY1-F",
@@ -330,7 +439,7 @@
       "images": [
         "https://img-us-2.trovit.com/n1h1J1lJY1-F/n1h1J1lJY1-F.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-01",
       "last_seen": "2026-09-02",
       "history": [
@@ -344,14 +453,17 @@
             "fx_rate": 1.3539,
             "fx_date": "2026-08-31"
           }
+        },
+        {
+          "date": "2026-09-05",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:fk81l151Gp1q",
@@ -433,7 +545,7 @@
       "images": [
         "https://img-us-2.trovit.com/1qw1Cizr1o1Z/1qw1Cizr1o1Z.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-01",
       "last_seen": "2026-09-02",
       "history": [
@@ -447,14 +559,17 @@
             "fx_rate": 1.3539,
             "fx_date": "2026-08-31"
           }
+        },
+        {
+          "date": "2026-09-05",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:1Mp1r1Jt1ZN1S",
@@ -485,7 +600,7 @@
       "images": [
         "https://img-us-2.trovit.com/1Mp1r1Jt1ZN1S/1Mp1r1Jt1ZN1S.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-01",
       "last_seen": "2026-09-02",
       "history": [
@@ -499,14 +614,17 @@
             "fx_rate": 1.3539,
             "fx_date": "2026-08-31"
           }
+        },
+        {
+          "date": "2026-09-05",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:191W1ig1ep1b",
@@ -588,7 +706,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "history": [
         {
           "date": "2026-09-01",
@@ -637,7 +755,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-29",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "history": [
         {
           "date": "2026-08-29",
@@ -750,7 +868,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-08-18",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "history": [
         {
           "date": "2026-08-18",
@@ -799,7 +917,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "history": [
         {
           "date": "2026-08-12",
@@ -863,7 +981,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "history": [
         {
           "date": "2026-08-03",
@@ -1006,7 +1124,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "history": [
         {
           "date": "2026-08-01",
@@ -1119,7 +1237,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "history": [
         {
           "date": "2026-07-18",
@@ -1221,7 +1339,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "history": [
         {
           "date": "2026-07-17",
@@ -1376,7 +1494,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "history": [
         {
           "date": "2026-07-17",
@@ -1425,7 +1543,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "history": [
         {
           "date": "2026-07-17",
