@@ -1,6 +1,57 @@
 {
-  "generated_at": "2026-09-05",
+  "generated_at": "2026-09-06",
   "listings": [
+    {
+      "id": "trovit:1V1W1m1Qa8jt",
+      "source": "trovit",
+      "source_listing_id": "1V1W1m1Qa8jt",
+      "url": "https://rd.clk.thribee.com/id.1V1W1m1Qa8jt/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.3242131trovit-web-8548578ffd-bzl4t6a9d2755158e3/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.B/platform.web/cookieid.10211606a9d2755156300.73972020/pos.1/timestamp.1788684117/sign.oLAZMBUHu8cGg098qwoYWA%3D%3D/",
+      "title": "1978 Datsun 620 King Cab Deluxe Pick Up 4 Cylinder OHV",
+      "title_translated": null,
+      "description_snippet": "1978 Datsun 620 King Cab... Re-listed due to buyer backing out of sale*selling my 1978 datsun 620 . Two owner, Just over 101,000 original miles...",
+      "year": 1978,
+      "country": "US",
+      "region": "",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": true,
+        "matched_terms": [
+          "king cab"
+        ],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.353,
+        "fx_date": "2026-09-04"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/1V1W1m1Qa8jt/1V1W1m1Qa8jt.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-06",
+      "last_seen": "2026-09-06",
+      "history": [
+        {
+          "date": "2026-09-06",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.353,
+            "fx_date": "2026-09-04"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "trovit:N181Z1B1mU1R",
       "source": "trovit",
@@ -50,7 +101,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:1_1N1j61A12D1Z",
@@ -99,7 +151,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "classiccars:CC-2104154",
@@ -119,18 +172,18 @@
         "body_style_check": "unavailable"
       },
       "price": {
-        "amount": 0.0,
+        "amount": 14950.0,
         "currency": "USD",
-        "gbp": 0.0,
-        "fx_rate": 1.3497,
-        "fx_date": "2026-09-03"
+        "gbp": 11049.52,
+        "fx_rate": 1.353,
+        "fx_date": "2026-09-04"
       },
       "images": [
         "https://photos.classiccars.com/cc-temp/listing/210/4154/61152604-1972-datsun-620-thumb.jpg"
       ],
       "status": "active",
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-05",
+      "last_seen": "2026-09-06",
       "history": [
         {
           "date": "2026-09-04",
@@ -141,6 +194,17 @@
             "gbp": 0.0,
             "fx_rate": 1.3497,
             "fx_date": "2026-09-03"
+          }
+        },
+        {
+          "date": "2026-09-06",
+          "status": "active",
+          "price": {
+            "amount": 14950.0,
+            "currency": "USD",
+            "gbp": 11049.52,
+            "fx_rate": 1.353,
+            "fx_date": "2026-09-04"
           }
         }
       ],
@@ -233,7 +297,7 @@
       "images": [
         "https://img-us-2.trovit.com/b1tX181M1R1cV/b1tX181M1R1cV.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-02",
       "last_seen": "2026-09-03",
       "history": [
@@ -247,14 +311,17 @@
             "fx_rate": 1.3531,
             "fx_date": "2026-09-01"
           }
+        },
+        {
+          "date": "2026-09-06",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:1wB1rBY1v11u",
@@ -336,7 +403,7 @@
       "images": [
         "https://img-us-2.trovit.com/191r1ikz71s1E/191r1ikz71s1E.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-02",
       "last_seen": "2026-09-03",
       "history": [
@@ -350,14 +417,17 @@
             "fx_rate": 1.3531,
             "fx_date": "2026-09-01"
           }
+        },
+        {
+          "date": "2026-09-06",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:010L1h1w1p1M1x",
@@ -706,7 +776,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-05",
+      "last_seen": "2026-09-06",
       "history": [
         {
           "date": "2026-09-01",
@@ -755,7 +825,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-29",
-      "last_seen": "2026-09-05",
+      "last_seen": "2026-09-06",
       "history": [
         {
           "date": "2026-08-29",
@@ -802,9 +872,9 @@
       "images": [
         "https://www.goo-net-exchange.com/common/assets/img/common/other/trusted_deaer_list.png"
       ],
-      "status": "withdrawn",
+      "status": "active",
       "first_seen": "2026-08-28",
-      "last_seen": "2026-08-30",
+      "last_seen": "2026-09-06",
       "history": [
         {
           "date": "2026-08-28",
@@ -831,6 +901,17 @@
         {
           "date": "2026-09-03",
           "status": "withdrawn"
+        },
+        {
+          "date": "2026-09-06",
+          "status": "active",
+          "price": {
+            "amount": 1280000.0,
+            "currency": "JPY",
+            "gbp": 6054.87,
+            "fx_rate": 211.4,
+            "fx_date": "2026-09-04"
+          }
         }
       ],
       "relist": {
@@ -868,7 +949,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-08-18",
-      "last_seen": "2026-09-05",
+      "last_seen": "2026-09-06",
       "history": [
         {
           "date": "2026-08-18",
@@ -917,7 +998,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-09-05",
+      "last_seen": "2026-09-06",
       "history": [
         {
           "date": "2026-08-12",
@@ -1025,7 +1106,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "kuruma_ex:ccAU6253091581",
@@ -1124,7 +1206,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-09-05",
+      "last_seen": "2026-09-06",
       "history": [
         {
           "date": "2026-08-01",
@@ -1237,7 +1319,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-09-05",
+      "last_seen": "2026-09-06",
       "history": [
         {
           "date": "2026-07-18",
@@ -1339,7 +1421,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-05",
+      "last_seen": "2026-09-06",
       "history": [
         {
           "date": "2026-07-17",
@@ -1494,7 +1576,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-05",
+      "last_seen": "2026-09-06",
       "history": [
         {
           "date": "2026-07-17",
@@ -1543,7 +1625,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-05",
+      "last_seen": "2026-09-06",
       "history": [
         {
           "date": "2026-07-17",
