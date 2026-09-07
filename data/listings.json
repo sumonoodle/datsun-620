@@ -1,6 +1,104 @@
 {
-  "generated_at": "2026-09-06",
+  "generated_at": "2026-09-07",
   "listings": [
+    {
+      "id": "trovit:1L41iB1f1Uf13",
+      "source": "trovit",
+      "source_listing_id": "1L41iB1f1Uf13",
+      "url": "https://rd.clk.thribee.com/id.1L41iB1f1Uf13/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.134030trovit-web-8548578ffd-5rl8n6a9e82d03a67c/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606a9e82d03a3f42.19460885/pos.2/timestamp.1788773072/sign.PbMdqQRGBCLjQVoOuTinmQ%3D%3D/",
+      "title": "1978 Datsun 620 pickup. Longbed with 5-speed transmission. Very low miles",
+      "title_translated": null,
+      "description_snippet": "1978 Datsun Other Great Running 1978 Datsun Longbed 5-speed 620 Pickup. I strongly believe in giving as accurate of a picture in a vehicle as...",
+      "year": 1978,
+      "country": "US",
+      "region": "",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.353,
+        "fx_date": "2026-09-04"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/1L41iB1f1Uf13/1L41iB1f1Uf13.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-07",
+      "last_seen": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.353,
+            "fx_date": "2026-09-04"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "goonet_exchange:700040377430260602001",
+      "source": "goonet_exchange",
+      "source_listing_id": "700040377430260602001",
+      "url": "https://www.goo-net-exchange.com/usedcars/NISSAN/DATSUN_TRUCK/700040377430260602001/",
+      "title": "NISSAN DATSUN TRUCK",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1978,
+      "country": "JP",
+      "region": "Ibaraki Japan",
+      "drive_side": "RHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 2875000.0,
+        "currency": "JPY",
+        "gbp": 13599.81,
+        "fx_rate": 211.4,
+        "fx_date": "2026-09-04"
+      },
+      "images": [
+        "https://www.goo-net-exchange.com/common/assets/img/common/other/trusted_deaer_list.png"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-07",
+      "last_seen": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "status": "active",
+          "price": {
+            "amount": 2875000.0,
+            "currency": "JPY",
+            "gbp": 13599.81,
+            "fx_rate": 211.4,
+            "fx_date": "2026-09-04"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "trovit:1V1W1m1Qa8jt",
       "source": "trovit",
@@ -32,7 +130,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-06",
-      "last_seen": "2026-09-06",
+      "last_seen": "2026-09-07",
       "history": [
         {
           "date": "2026-09-06",
@@ -102,7 +200,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:1_1N1j61A12D1Z",
@@ -152,7 +250,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "classiccars:CC-2104154",
@@ -183,7 +281,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-06",
+      "last_seen": "2026-09-07",
       "history": [
         {
           "date": "2026-09-04",
@@ -776,7 +874,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-06",
+      "last_seen": "2026-09-07",
       "history": [
         {
           "date": "2026-09-01",
@@ -825,7 +923,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-29",
-      "last_seen": "2026-09-06",
+      "last_seen": "2026-09-07",
       "history": [
         {
           "date": "2026-08-29",
@@ -918,7 +1016,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "bringatrailer:1979-datsun-620",
@@ -949,7 +1048,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-08-18",
-      "last_seen": "2026-09-06",
+      "last_seen": "2026-09-07",
       "history": [
         {
           "date": "2026-08-18",
@@ -998,7 +1097,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-09-06",
+      "last_seen": "2026-09-07",
       "history": [
         {
           "date": "2026-08-12",
@@ -1062,7 +1161,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-09-05",
+      "last_seen": "2026-09-07",
       "history": [
         {
           "date": "2026-08-03",
@@ -1106,8 +1205,7 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 1
+      }
     },
     {
       "id": "kuruma_ex:ccAU6253091581",
@@ -1206,7 +1304,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-09-06",
+      "last_seen": "2026-09-07",
       "history": [
         {
           "date": "2026-08-01",
@@ -1319,7 +1417,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-09-06",
+      "last_seen": "2026-09-07",
       "history": [
         {
           "date": "2026-07-18",
@@ -1421,7 +1519,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-06",
+      "last_seen": "2026-09-07",
       "history": [
         {
           "date": "2026-07-17",
@@ -1576,7 +1674,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-06",
+      "last_seen": "2026-09-07",
       "history": [
         {
           "date": "2026-07-17",
@@ -1625,7 +1723,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-06",
+      "last_seen": "2026-09-07",
       "history": [
         {
           "date": "2026-07-17",

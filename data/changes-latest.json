@@ -1,32 +1,10 @@
 {
-  "date": "2026-09-06",
+  "date": "2026-09-07",
   "new": [
-    "trovit:1V1W1m1Qa8jt"
+    "goonet_exchange:700040377430260602001",
+    "trovit:1L41iB1f1Uf13"
   ],
-  "price_changed": [
-    {
-      "id": "classiccars:CC-2104154",
-      "old_gbp": 0.0,
-      "new_gbp": 11049.52,
-      "pct": null
-    }
-  ],
-  "status_changed": [
-    {
-      "id": "goonet_exchange:700051085230260503001",
-      "old_status": "withdrawn",
-      "new_status": "active"
-    },
-    {
-      "id": "trovit:b1tX181M1R1cV",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    },
-    {
-      "id": "trovit:191r1ikz71s1E",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    }
-  ],
+  "price_changed": [],
+  "status_changed": [],
   "possible_relists": []
 }
