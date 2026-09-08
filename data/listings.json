@@ -1,6 +1,109 @@
 {
-  "generated_at": "2026-09-07",
+  "generated_at": "2026-09-08",
   "listings": [
+    {
+      "id": "trovit:r1v1i1Hp111t17",
+      "source": "trovit",
+      "source_listing_id": "r1v1i1Hp111t17",
+      "url": "https://rd.clk.thribee.com/id.r1v1i1Hp111t17/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.1012514trovit-web-8548578ffd-5rl8n6a9fcd2408cc4/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606a9fcd240899a4.54861627/pos.1/timestamp.1788857636/sign.bZ0qza0YeuLN8E8VzVZJGA%3D%3D/",
+      "title": "Datsun 620 manufactured 1974 fully original state!",
+      "title_translated": null,
+      "description_snippet": "1974 Datsun Pickup 620 This is our beloved Datsun . It was our grandfathers vehicle and then It passed to our father and now it is ours. We...",
+      "year": 1974,
+      "country": "US",
+      "region": "",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.3531,
+        "fx_date": "2026-09-07"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/r1v1i1Hp111t17/r1v1i1Hp111t17.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-08",
+      "last_seen": "2026-09-08",
+      "history": [
+        {
+          "date": "2026-09-08",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.3531,
+            "fx_date": "2026-09-07"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "trovit:11N10Y141Tfd",
+      "source": "trovit",
+      "source_listing_id": "11N10Y141Tfd",
+      "url": "https://rd.clk.thribee.com/id.11N10Y141Tfd/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.1012514trovit-web-8548578ffd-5rl8n6a9fcd2408cc4/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606a9fcd240899a4.54861627/pos.2/timestamp.1788857636/sign.NOGlvxxDK76WdbgwTia%2F4A%3D%3D/",
+      "title": "1977 datsun 620 king cab custom built pickup",
+      "title_translated": null,
+      "description_snippet": "1977 Datsun Pickup Up for sale is a one of a kind custom built Datsun 620 King Cab pickup. You will not find anything like this truck and the...",
+      "year": 1977,
+      "country": "US",
+      "region": "",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": true,
+        "matched_terms": [
+          "king cab"
+        ],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.3531,
+        "fx_date": "2026-09-07"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/11N10Y141Tfd/11N10Y141Tfd.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-08",
+      "last_seen": "2026-09-08",
+      "history": [
+        {
+          "date": "2026-09-08",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.3531,
+            "fx_date": "2026-09-07"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:1Mp1r1Jt1ZN1S",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)"
+        ]
+      }
+    },
     {
       "id": "trovit:1L41iB1f1Uf13",
       "source": "trovit",
@@ -30,7 +133,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-08",
       "history": [
         {
           "date": "2026-09-07",
@@ -79,7 +182,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-08",
       "history": [
         {
           "date": "2026-09-07",
@@ -148,7 +251,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:N181Z1B1mU1R",
@@ -179,7 +283,7 @@
       "images": [
         "https://img-us-2.trovit.com/N181Z1B1mU1R/N181Z1B1mU1R.1_10.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-05",
       "last_seen": "2026-09-05",
       "history": [
@@ -193,14 +297,17 @@
             "fx_rate": 1.353,
             "fx_date": "2026-09-04"
           }
+        },
+        {
+          "date": "2026-09-08",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:1_1N1j61A12D1Z",
@@ -229,7 +336,7 @@
       "images": [
         "https://img-us-2.trovit.com/1_1N1j61A12D1Z/1_1N1j61A12D1Z.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-05",
       "last_seen": "2026-09-05",
       "history": [
@@ -243,14 +350,17 @@
             "fx_rate": 1.353,
             "fx_date": "2026-09-04"
           }
+        },
+        {
+          "date": "2026-09-08",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "classiccars:CC-2104154",
@@ -281,7 +391,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-08",
       "history": [
         {
           "date": "2026-09-04",
@@ -874,7 +984,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-08",
       "history": [
         {
           "date": "2026-09-01",
@@ -923,7 +1033,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-29",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-08",
       "history": [
         {
           "date": "2026-08-29",
@@ -1017,7 +1127,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "bringatrailer:1979-datsun-620",
@@ -1048,7 +1158,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-08-18",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-08",
       "history": [
         {
           "date": "2026-08-18",
@@ -1097,7 +1207,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-08",
       "history": [
         {
           "date": "2026-08-12",
@@ -1161,7 +1271,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-08",
       "history": [
         {
           "date": "2026-08-03",
@@ -1304,7 +1414,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-08",
       "history": [
         {
           "date": "2026-08-01",
@@ -1417,7 +1527,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-08",
       "history": [
         {
           "date": "2026-07-18",
@@ -1519,7 +1629,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-08",
       "history": [
         {
           "date": "2026-07-17",
@@ -1674,7 +1784,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-08",
       "history": [
         {
           "date": "2026-07-17",
@@ -1723,7 +1833,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-08",
       "history": [
         {
           "date": "2026-07-17",
