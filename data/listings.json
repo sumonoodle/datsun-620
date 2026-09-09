@@ -1,6 +1,55 @@
 {
-  "generated_at": "2026-09-08",
+  "generated_at": "2026-09-09",
   "listings": [
+    {
+      "id": "kuruma_ex:ccAU7315534408",
+      "source": "kuruma_ex",
+      "source_listing_id": "ccAU7315534408",
+      "url": "https://kuruma-ex.jp/usedcar/detail/ccAU7315534408",
+      "title": "日産 ダットサンブルーバード1600 SSS",
+      "title_translated": "Nissan Datsun Bluebird 1600 SSS",
+      "description_snippet": null,
+      "year": 1972,
+      "country": "JP",
+      "region": null,
+      "drive_side": "RHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 3980000.0,
+        "currency": "JPY",
+        "gbp": 19043.06,
+        "fx_rate": 209.0,
+        "fx_date": "2026-09-08"
+      },
+      "images": [
+        "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/074/347/U00054074347/U00054074347_001L.JPG"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-09",
+      "last_seen": "2026-09-09",
+      "history": [
+        {
+          "date": "2026-09-09",
+          "status": "active",
+          "price": {
+            "amount": 3980000.0,
+            "currency": "JPY",
+            "gbp": 19043.06,
+            "fx_rate": 209.0,
+            "fx_date": "2026-09-08"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "trovit:r1v1i1Hp111t17",
       "source": "trovit",
@@ -30,7 +79,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-09-08",
@@ -81,7 +130,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-09-08",
@@ -133,7 +182,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-09-07",
@@ -182,7 +231,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-09-07",
@@ -252,7 +301,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:N181Z1B1mU1R",
@@ -391,7 +440,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-09-04",
@@ -984,7 +1033,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-09-01",
@@ -1033,7 +1082,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-29",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-08-29",
@@ -1082,7 +1131,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-28",
-      "last_seen": "2026-09-06",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-08-28",
@@ -1126,8 +1175,7 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "bringatrailer:1979-datsun-620",
@@ -1158,7 +1206,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-08-18",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-08-18",
@@ -1207,7 +1255,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-08-12",
@@ -1271,7 +1319,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-08-03",
@@ -1414,7 +1462,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-08-01",
@@ -1527,7 +1575,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-07-18",
@@ -1629,7 +1677,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-07-17",
@@ -1784,7 +1832,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-07-17",
@@ -1833,7 +1881,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "history": [
         {
           "date": "2026-07-17",
