@@ -1,9 +1,28 @@
 {
-  "date": "2026-09-09",
+  "date": "2026-09-10",
   "new": [
-    "kuruma_ex:ccAU7315534408"
+    "truck2hand:APNdadvglg",
+    "truck2hand:Y9l6V20mlb",
+    "truck2hand:d1RDEPwnNr",
+    "truck2hand:nol5D1pJNQ",
+    "classiccars:CC-2105396"
   ],
   "price_changed": [],
-  "status_changed": [],
-  "possible_relists": []
+  "status_changed": [
+    {
+      "id": "trovit:1V1W1m1Qa8jt",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    }
+  ],
+  "possible_relists": [
+    {
+      "id": "classiccars:CC-2105396",
+      "prior_id": "classiccars:CC-1995643",
+      "reasons": [
+        "title similarity 0.93",
+        "same country (US)"
+      ]
+    }
+  ]
 }
