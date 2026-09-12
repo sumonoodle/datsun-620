@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11",
+  "generated_at": "2026-09-12",
   "listings": [
     {
       "id": "truck2hand:nol5D1pJNQ",
@@ -30,7 +30,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-09-10",
@@ -79,7 +79,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-09-10",
@@ -128,7 +128,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-09-10",
@@ -177,7 +177,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-09-10",
@@ -226,7 +226,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-09-10",
@@ -296,7 +296,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:r1v1i1Hp111t17",
@@ -327,7 +328,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-09-08",
@@ -378,7 +379,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-09-08",
@@ -449,7 +450,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "goonet_exchange:700040377430260602001",
@@ -499,7 +500,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:1V1W1m1Qa8jt",
@@ -693,7 +694,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-09-04",
@@ -1286,7 +1287,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-09-01",
@@ -1335,7 +1336,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-29",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-08-29",
@@ -1384,7 +1385,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-28",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-08-28",
@@ -1459,7 +1460,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-08-18",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-08-18",
@@ -1508,7 +1509,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-08-12",
@@ -1616,7 +1617,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "kuruma_ex:ccAU6253091581",
@@ -1715,7 +1717,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-08-01",
@@ -1828,7 +1830,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-07-18",
@@ -1930,7 +1932,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-07-17",
@@ -2085,7 +2087,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-07-17",
@@ -2134,7 +2136,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "history": [
         {
           "date": "2026-07-17",

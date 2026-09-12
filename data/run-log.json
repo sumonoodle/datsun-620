@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-11",
-  "started_at": "2026-09-11T08:56:36+00:00",
+  "date": "2026-09-12",
+  "started_at": "2026-09-12T08:39:46+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -21,14 +21,14 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 61
+      "consecutive_failures": 62
     },
     {
       "source": "hemmings",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 61
+      "consecutive_failures": 62
     },
     {
       "source": "goonet_exchange",
@@ -96,7 +96,7 @@
     {
       "source": "kuruma_ex",
       "ok": true,
-      "records": 5,
+      "records": 2,
       "note": "",
       "consecutive_failures": 0
     },
@@ -104,8 +104,8 @@
       "source": "everycar",
       "ok": false,
       "records": 0,
-      "note": "timed out",
-      "consecutive_failures": 1
+      "note": "Client error '404 Not Found' for url 'https://www.everycar.jp/used-cars.php?make=nissan&model=datsun-truck'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+      "consecutive_failures": 2
     },
     {
       "source": "pistonheads",
