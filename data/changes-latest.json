@@ -1,7 +1,15 @@
 {
-  "date": "2026-09-12",
-  "new": [],
+  "date": "2026-09-13",
+  "new": [
+    "trovit:1Qr1cgQ1o0-"
+  ],
   "price_changed": [],
-  "status_changed": [],
+  "status_changed": [
+    {
+      "id": "trovit:1L41iB1f1Uf13",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    }
+  ],
   "possible_relists": []
 }
