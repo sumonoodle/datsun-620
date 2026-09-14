@@ -11,7 +11,11 @@ on:
       - scrapers/experiments/ebay_diagnose.py
       - scrapers/experiments/ebay_diagnose2.py
       - scrapers/experiments/ebay_diagnose3.py
+      - scrapers/experiments/ebay_diagnose4.py
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   diagnose:
@@ -29,4 +33,17 @@ jobs:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: |
-          python scrapers/experiments/ebay_diagnose3.py
+          python scrapers/experiments/ebay_diagnose4.py
+      - name: Commit findings
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/research/ebay-categories.json
+          git diff --cached --quiet && exit 0
+          git commit -m "research: eBay vehicle-category findings"
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep $((2 ** i))
+          done
+          exit 1
