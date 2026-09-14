@@ -215,3 +215,47 @@ Facebook 520/620/720 group: manual list.
 were sedans and taxis (Sunny B10s and Fairladys are what survives);
 Vietnamese searches for a Datsun pickup return only diecast. No collector
 built, on evidence rather than neglect.
+
+## eBay: the month of zeros, diagnosed (2026-09-14)
+
+The eBay collector had reported "ok, 0 records" every single day since it
+shipped. Four rounds of live probing (the sandbox has no egress, so each
+round ran on Actions against the real API) found the cause was the SHAPE
+of the query, twice over. The filters were innocent throughout.
+
+**Cause 1 — no category scoping.** `q="datsun 620"` unscoped matched
+~8,800 items on EBAY_US, and the Browse API caps a page at 200. Across
+four marketplaces and three queries, ~1,800 items were sampled and not
+one was a whole vehicle: bumpers, Hot Wheels cars, workshop manuals,
+1970s magazine adverts. Every rejection our filters made was a genuine
+part. No filter change could ever have helped — the trucks were never in
+the payload.
+
+**Cause 2 — the model code is not in the title.** Scoped to the vehicle
+category the payload is finally sane (28 Datsun vehicles on EBAY_US, 3 on
+EBAY_AU), but `q="datsun 620"` INSIDE that category returns total=0 on
+every marketplace. Motors composes a vehicle title from the seller's
+year/make/model fields, so a 620 arrives as "1978 Datsun Pickup" as
+readily as "1978 Datsun 620". The collector now queries the marque alone
+and admits, alongside explicit 620s, a Datsun pickup of 1971-1980 vintage
+whose title names no other model — consistent with the standing rule to
+show all 620 variants rather than risk filtering a real truck away.
+
+**Category ids are per-site** and are recorded in
+`data/research/ebay-categories.json`. US 6001 and AU 29690 returned whole
+cars and are proven; GB 9801 and DE 9801 are the sites' car nodes but
+held 0 and 3 Datsun items on the day, so they are unproven rather than
+wrong. The high-volume alternatives in that file (GB 31853, DE 29690) are
+traps: they scored well only because the probe's vehicle heuristic wanted
+a year-led title, which is exactly how sales brochures and Hot Wheels
+boxes are titled.
+
+**Honest scale of the win.** This fixes a structurally blind collector,
+but it is not the large recall gain the earlier notes implied: eBay
+US/GB/DE/AU held no 620 vehicle at all on diagnosis day, so the corrected
+collector still returns 0 today. What changes is that 0 now means "the
+market is empty", the canary fires if auth breaks or a category id moves,
+and the next 620 listed will actually be seen.
+
+**Ruled out for good:** the legacy Finding API (findItemsAdvanced), which
+historically carried Motors vehicles, answers HTTP 418.

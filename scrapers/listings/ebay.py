@@ -1,8 +1,14 @@
 """Collector: eBay Browse API across US, UK, DE and AU marketplaces.
 
-Searches broadly for "datsun 620", then applies the strict King Cab filter
-plus a parts/toys exclusion (category path and keyword based). Fetch and parse
-are split so tests can run the parser against saved fixture responses.
+Searches each marketplace's WHOLE-VEHICLE category for the marque, then
+filters locally for 620s. Fetch and parse are split so tests can run the
+parser against saved fixture responses.
+
+The category scoping is the load-bearing part — see MARKETPLACES for the
+2026-09-14 diagnosis of why an unscoped keyword search returned zero
+records every day for a month. Parts-era defences are kept for the
+unscoped path because the fixtures and regression tests still exercise
+it, and because an unscoped rescue query may return one day.
 """
 
 from __future__ import annotations
@@ -16,22 +22,42 @@ import httpx
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
-from common.patterns import RE_620
+from common.patterns import RE_620, RE_OTHER_GEN
 from listings.ebay_auth import mint_token
 
 SOURCE = "ebay"
 SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
+
+# (marketplace, country, whole-vehicle category id). The category is the
+# whole point: 2026-09-14 diagnosis found the collector had returned zero
+# records every day since it shipped because an UNSCOPED keyword search
+# drowns in parts — "datsun 620" matches ~8,800 items on EBAY_US and the
+# API caps a page at 200, every one of which was a bumper, a Hot Wheels
+# car or a vintage advert. Not one whole vehicle appeared in ~1,800 items
+# sampled across four marketplaces, so no filter change could ever have
+# helped: the trucks were never in the payload.
+#
+# Scoped to the vehicle category the picture is sane and small — 28 Datsun
+# vehicles on EBAY_US, 3 on EBAY_AU — which local filtering can handle.
+# Category ids are per-site and were verified live (data/research/
+# ebay-categories.json). US 6001 and AU 29690 returned whole cars and are
+# proven. GB 9801 and DE 9801 are the sites' car nodes but returned 0 and
+# 3 Datsun items respectively, so they are unproven rather than wrong —
+# do NOT "fix" them to the high-volume candidates the research file shows
+# (GB 31853, DE 29690): those scored well only because the round-4
+# vehicle heuristic wanted a year-led title, and sales brochures and Hot
+# Wheels boxes are titled exactly that way.
 MARKETPLACES = [
-    ("EBAY_US", "US"),
-    ("EBAY_GB", "GB"),
-    ("EBAY_DE", "DE"),
-    ("EBAY_AU", "AU"),
+    ("EBAY_US", "US", "6001"),
+    ("EBAY_GB", "GB", "9801"),
+    ("EBAY_DE", "DE", "9801"),
+    ("EBAY_AU", "AU", "29690"),
 ]
-# Broad query for coverage plus targeted queries for recall: the broad search
-# returns thousands of parts hits and the API caps a page at 200 results, so
-# a genuine King Cab vehicle could sit beyond the window. The targeted terms
-# put any real King Cab listing at the top of its own result set.
-QUERIES = ["datsun king cab", "datsun 620 king cab", "datsun 620"]
+# Broad marque queries inside the vehicle category. "datsun 620" is NOT
+# used: Motors titles are built from year/make/model and a 620 is often
+# titled "1978 Datsun Pickup", so the model code alone would miss it.
+# The category keeps the result set small enough to filter locally.
+QUERIES = ["datsun"]
 LIMIT = 200
 
 # Titles matching King Cab terms but clearly not whole vehicles. The 2026-07-17
@@ -73,6 +99,45 @@ _NON_VEHICLE_CAT_RE = re.compile(
 
 _AD_RE = re.compile(r"\bads?\b|\badvert\b", re.I)
 
+# --- vehicle-scoped admission ------------------------------------------
+# Motors builds a vehicle title from the seller's year/make/model fields,
+# so a 620 can reach us as "1978 Datsun Pickup" with no model code at all.
+# That is not theory: inside the vehicle category q="datsun 620" returned
+# total=0 on all four marketplaces while the category itself held real
+# Datsun cars ("1970 Datsun 521 Pickup"). Requiring "620" in the title
+# would therefore keep the collector half-blind even after the category
+# fix. Inside the category the entire marque is only ~30 listings
+# worldwide, so a model-less Datsun pickup of 620 vintage is admitted for
+# the owner to screen — the standing instruction since 2026-07-17 is to
+# show all 620 variants rather than risk filtering a real truck away.
+_PICKUP_RE = re.compile(r"pick[\s-]?up|\btrucks?\b|\butes?\b|pritsche", re.I)
+
+# Datsun nameplates that settle the question the other way: if the title
+# names one of these it is not an unidentified pickup. RE_OTHER_GEN
+# already covers the neighbouring truck generations (520/521/720/D21).
+_NOT_620_MODEL_RE = re.compile(
+    r"\b\d{3}ZX?\b|\b(?:510|610|710|810|910|1200|1300|1600|2000|240K"
+    r"|B1?[123]0|B210|B310)\b|bluebird|sunny|cedric|fairlady|roadster"
+    r"|skyline|violet|cherry|patrol|cabstar|urvan|homer|hardbody|navara"
+    r"|frontier|stanza|maxima|laurel|gloria|silvia|vanette|prairie", re.I)
+
+# 620 production ran 1972-1979; a year either side covers registration
+# dates and sellers who round. A Motors vehicle listing always carries a
+# year, so a pickup with no recognisable year is too vague to admit.
+_YEAR_MIN, _YEAR_MAX = 1971, 1980
+
+
+def _unidentified_620_pickup(title: str) -> bool:
+    """A Datsun pickup of 620 vintage whose title names no model at all."""
+    if not re.search(r"datsun|nissan", title, re.I):
+        return False
+    if not _PICKUP_RE.search(title):
+        return False
+    if _NOT_620_MODEL_RE.search(title):
+        return False
+    year = normalize.extract_year(title)
+    return year is not None and _YEAR_MIN <= year <= _YEAR_MAX
+
 
 def _looks_like_part(title: str, categories: list[str]) -> bool:
     t = (title or "").lower()
@@ -88,8 +153,16 @@ def _looks_like_part(title: str, categories: list[str]) -> bool:
     return False
 
 
-def parse_items(payload: dict, marketplace_country: str, fx_day: dict) -> list[dict]:
-    """Filter and normalise one marketplace's Browse search response."""
+def parse_items(payload: dict, marketplace_country: str, fx_day: dict,
+                vehicle_scoped: bool = False) -> list[dict]:
+    """Filter and normalise one marketplace's Browse search response.
+
+    vehicle_scoped: the request was restricted to the marketplace's whole-
+    vehicle category, so the parts word list and the price floor are
+    skipped — the category already did that work, and both would other-
+    wise cost real trucks ("...new fender flares", a £1 opening bid).
+    Same division of labour as the Yahoo Auctions collector.
+    """
     records = []
     for it in payload.get("itemSummaries", []):
         title = it.get("title", "")
@@ -103,9 +176,16 @@ def parse_items(payload: dict, marketplace_country: str, fx_day: dict) -> list[d
         # Title only: a 720 listing's description may well mention the 620
         # it succeeded. RE_620's comma guard keeps "6,620 Original Miles"
         # on a 720 from counting as a model reference.
-        if not RE_620.search(title):
+        if RE_OTHER_GEN.search(title):
             continue
-        if _looks_like_part(title, categories):
+        if not RE_620.search(title):
+            # Scoped searches may also admit a model-less pickup of the
+            # right vintage; unscoped ones never can, as the payload is
+            # overwhelmingly parts and "1978 Datsun Pickup" would then be
+            # a brochure cover as often as a truck.
+            if not (vehicle_scoped and _unidentified_620_pickup(title)):
+                continue
+        if not vehicle_scoped and _looks_like_part(title, categories):
             continue
 
         price_block = it.get("price") or {}
@@ -117,7 +197,7 @@ def parse_items(payload: dict, marketplace_country: str, fx_day: dict) -> list[d
         # an $11.99 'Vintage Ad' served without category data). Auctions are
         # exempt: real trucks legitimately start at low opening bids.
         buying = it.get("buyingOptions") or []
-        if "FIXED_PRICE" in buying and "AUCTION" not in buying \
+        if not vehicle_scoped and "FIXED_PRICE" in buying and "AUCTION" not in buying \
                 and amount is not None and amount < 500:
             continue
 
@@ -156,13 +236,14 @@ def collect(fx_day: dict) -> list[dict]:
     failures: list[str] = []
     raw_total = 0
     with httpx.Client(timeout=30) as client:
-        for marketplace, country in MARKETPLACES:
+        for marketplace, country, category in MARKETPLACES:
             # One failing marketplace must not take down the other three.
             try:
                 for query in QUERIES:
                     resp = client.get(
                         SEARCH_URL,
-                        params={"q": query, "limit": LIMIT},
+                        params={"q": query, "limit": LIMIT,
+                                "category_ids": category},
                         headers={
                             "Authorization": f"Bearer {token}",
                             "X-EBAY-C-MARKETPLACE-ID": marketplace,
@@ -171,7 +252,8 @@ def collect(fx_day: dict) -> list[dict]:
                     resp.raise_for_status()
                     payload = resp.json()
                     raw_total += len(payload.get("itemSummaries", []))
-                    for rec in parse_items(payload, country, fx_day):
+                    for rec in parse_items(payload, country, fx_day,
+                                           vehicle_scoped=True):
                         if rec["id"] not in seen:  # items repeat across queries/marketplaces
                             seen.add(rec["id"])
                             records.append(rec)
@@ -181,9 +263,13 @@ def collect(fx_day: dict) -> list[dict]:
         raise RuntimeError(f"all marketplaces failed ({failures[0]})")
     if failures:
         print(f"ebay: partial failure, continuing without {failures}")
-    # Canary: "datsun 620" always has thousands of parts hits, so zero raw
-    # items across every marketplace means the API or auth is broken in a way
-    # that would otherwise masquerade as "ok, no King Cabs today".
+    # Canary: the vehicle category always holds Datsun cars somewhere (28 on
+    # EBAY_US, 3 on EBAY_AU when measured), so zero raw items across EVERY
+    # marketplace means auth broke or a category id moved — the failure that
+    # masqueraded as "ok, no 620s today" for a month. Zero RECORDS is not an
+    # error: eBay genuinely had no 620 vehicle listed on diagnosis day.
     if raw_total == 0:
-        raise RuntimeError("canary: broad search returned zero raw items on all marketplaces")
+        raise RuntimeError(
+            "canary: vehicle-category search returned zero raw items on all "
+            "marketplaces (auth failure or category ids moved?)")
     return records

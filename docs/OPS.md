@@ -86,8 +86,12 @@ cd site && npm install && npm run dev     # http://localhost:4321/datsun-620
 
 ## Known limits
 
-- eBay Browse API results for vehicles vary by marketplace; a genuine King
-  Cab listing that the daily run misses should be reported so the query or
+- eBay is searched inside each marketplace's whole-vehicle category, and the
+  category id is per-site. If eBay ever reports zero RAW items across all
+  four marketplaces the run fails loudly on purpose: that means auth broke
+  or a category id moved, the failure that hid a month of zeros until
+  2026-09-14. Zero RECORDS is normal — eBay often has no 620 listed at all.
+  A genuine 620 the run misses should still be reported so the query or
   filter can be tuned (`scrapers/listings/ebay.py`).
 - Relist detection is a heuristic and always labelled "possible".
 - Withdrawn = missing from a healthy source for 3+ days; auction sites report
