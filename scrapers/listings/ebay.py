@@ -139,6 +139,17 @@ def _unidentified_620_pickup(title: str) -> bool:
     return year is not None and _YEAR_MIN <= year <= _YEAR_MAX
 
 
+def is_620_title(title: str, vehicle_scoped: bool = False) -> bool:
+    """The model-identity rule, shared by parse_items and the self-test."""
+    if RE_OTHER_GEN.search(title):
+        return False
+    if RE_620.search(title):
+        return True
+    # Model-less admission only inside the vehicle category: in an
+    # unscoped payload "1978 Datsun Pickup" is as likely a brochure cover.
+    return vehicle_scoped and _unidentified_620_pickup(title)
+
+
 def _looks_like_part(title: str, categories: list[str]) -> bool:
     t = (title or "").lower()
     if _PARTS_RE.search(t):
@@ -176,15 +187,8 @@ def parse_items(payload: dict, marketplace_country: str, fx_day: dict,
         # Title only: a 720 listing's description may well mention the 620
         # it succeeded. RE_620's comma guard keeps "6,620 Original Miles"
         # on a 720 from counting as a model reference.
-        if RE_OTHER_GEN.search(title):
+        if not is_620_title(title, vehicle_scoped):
             continue
-        if not RE_620.search(title):
-            # Scoped searches may also admit a model-less pickup of the
-            # right vintage; unscoped ones never can, as the payload is
-            # overwhelmingly parts and "1978 Datsun Pickup" would then be
-            # a brochure cover as often as a truck.
-            if not (vehicle_scoped and _unidentified_620_pickup(title)):
-                continue
         if not vehicle_scoped and _looks_like_part(title, categories):
             continue
 
