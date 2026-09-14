@@ -1,0 +1,29 @@
+# One-off: diagnose the eBay collector's month of zero records. Needs the
+# eBay secrets, so it runs on Actions rather than locally. Deleted once the
+# finding is acted on.
+name: ebay-diagnose
+
+on:
+  push:
+    branches:
+      - claude/datsun-620-kickoff-ah5cyw
+    paths:
+      - scrapers/experiments/ebay_diagnose.py
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r scrapers/requirements.txt
+      - name: Diagnose eBay
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: python scrapers/experiments/ebay_diagnose.py
