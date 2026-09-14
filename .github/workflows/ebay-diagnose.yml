@@ -9,6 +9,7 @@ on:
       - claude/datsun-620-kickoff-ah5cyw
     paths:
       - scrapers/experiments/ebay_diagnose.py
+      - scrapers/experiments/ebay_diagnose2.py
   workflow_dispatch:
 
 jobs:
@@ -26,4 +27,5 @@ jobs:
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
-        run: python scrapers/experiments/ebay_diagnose.py
+        run: |
+          python scrapers/experiments/ebay_diagnose2.py
