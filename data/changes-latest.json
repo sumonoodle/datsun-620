@@ -1,12 +1,15 @@
 {
-  "date": "2026-09-13",
-  "new": [
-    "trovit:1Qr1cgQ1o0-"
-  ],
+  "date": "2026-09-14",
+  "new": [],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "trovit:1L41iB1f1Uf13",
+      "id": "kuruma_ex:ccAU7315534408",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "kuruma_ex:ccAU7062177718",
       "old_status": "active",
       "new_status": "withdrawn"
     }
