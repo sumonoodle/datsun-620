@@ -93,6 +93,19 @@ cd site && npm install && npm run dev     # http://localhost:4321/datsun-620
   2026-09-14. Zero RECORDS is normal — eBay often has no 620 listed at all.
   A genuine 620 the run misses should still be reported so the query or
   filter can be tuned (`scrapers/listings/ebay.py`).
+- **Silent-source alert.** A source can report `ok` every day and still be
+  blind: eBay returned "ok, 0 listings" for a month while an unscoped query
+  drowned in parts, and only a hand-read log caught it. Each source now
+  carries `consecutive_zero_runs` in the run log — days in a row it
+  completed cleanly and found nothing. A failing run carries the count
+  forward rather than adding to it, so a broken source is not also counted
+  as a quiet one. The digest shows the streak inline from 5 days, and
+  raises a "Worth a look" section (and a subject-line suffix) at 21 days,
+  repeating weekly rather than daily. 21 days is longer than any legitimate
+  gap seen for a source that produces at all; a daily nag would be ignored,
+  which is the failure the alert exists to prevent. A long streak is a
+  prompt to check, not proof of a bug — most sources hold no 620 most
+  weeks. Tune the thresholds in `emailer/send_digest.py`.
 - Relist detection is a heuristic and always labelled "possible".
 - Withdrawn = missing from a healthy source for 3+ days; auction sites report
   sold explicitly.

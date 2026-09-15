@@ -20,7 +20,8 @@
           "ok": { "type": "boolean" },
           "records": { "type": "integer", "minimum": 0 },
           "note": { "type": "string", "description": "Why a source was skipped or failed. Empty when ok." },
-          "consecutive_failures": { "type": "integer", "minimum": 0, "description": "Days in a row this source has failed; drives the 7-day escalation rule for Japan sources." }
+          "consecutive_failures": { "type": "integer", "minimum": 0, "description": "Days in a row this source has failed; drives the 7-day escalation rule for Japan sources." },
+          "consecutive_zero_runs": { "type": "integer", "minimum": 0, "description": "Days in a row this source completed OK but returned no listings. A failing run carries the count forward unchanged rather than adding to it. Drives the silent-source alert: eBay reported ok/0 for a month before anyone noticed." }
         }
       }
     },

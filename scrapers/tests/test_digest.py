@@ -64,6 +64,64 @@ def test_digest_render():
     print("ok test_digest_render")
 
 
+def _src(name, streak, ok=True, records=0):
+    return {"source": name, "ok": ok, "records": records, "note": "",
+            "consecutive_failures": 0, "consecutive_zero_runs": streak}
+
+
+def test_quiet_alert_thresholds():
+    """The eBay failure mode: 'ok, 0 listings' forever, and nobody notices."""
+    A = send_digest.QUIET_RUNS_ALERT
+    fired = lambda srcs: [s["source"] for s in send_digest.quiet_alerts(srcs)]
+
+    # Below the threshold nothing fires: most sources hold no 620 most weeks
+    # and a daily cry-wolf is exactly what makes an alert stop being read.
+    assert fired([_src("ebay", A - 1)]) == []
+    assert fired([_src("ebay", A)]) == ["ebay"]
+
+    # Then weekly, not daily — a line that appears every morning is wallpaper.
+    R = send_digest.QUIET_REPEAT_EVERY
+    assert fired([_src("ebay", A + 1)]) == []
+    assert fired([_src("ebay", A + R)]) == ["ebay"]
+    assert fired([_src("ebay", A + R + 1)]) == []
+    assert fired([_src("ebay", A + 2 * R)]) == ["ebay"]
+
+    # A source that found something is not quiet, whatever its old streak.
+    assert fired([_src("trovit", 0, records=3)]) == []
+    # A FAILING source is already reported as failing; it must not also be
+    # dressed up as a silent one (everycar's five 404 days, 2026-09-15).
+    assert fired([_src("everycar", A + 99, ok=False)]) == []
+    print("ok test_quiet_alert_thresholds")
+
+
+def test_quiet_alert_in_digest():
+    changes = {"date": "2026-10-06", "new": [], "price_changed": [],
+               "status_changed": [], "possible_relists": []}
+    run_log = {
+        "date": "2026-10-06", "started_at": "2026-10-06T04:20:00+00:00",
+        "sources": [
+            _src("ebay", send_digest.QUIET_RUNS_ALERT),   # alerts
+            _src("kijiji", 6),                            # shows inline only
+            _src("trovit", 0, records=3),                 # healthy
+        ],
+        "totals": {"active": 3, "by_country": {"US": 3}, "median_gbp": 7000.0},
+    }
+    html = send_digest.build_html(changes, run_log, {}, "https://example.test")
+    assert "Worth a look" in html
+    assert f"no listings for {send_digest.QUIET_RUNS_ALERT} days running" in html
+    # The alert sits ABOVE source health — the failure being fixed is an "ok"
+    # nobody scrolls down to question.
+    assert html.index("Worth a look") < html.index("Source health")
+    # Sub-threshold streaks are still visible, just not alarming.
+    assert "quiet 6 days" in html
+    assert "Kijiji" in html and "Worth a look</h2>" in html
+    # Trovit found something today, so it carries no quiet note at all.
+    assert "Trovit: 3 listing(s)</li>" in html
+    print("ok test_quiet_alert_in_digest")
+
+
 if __name__ == "__main__":
     test_digest_render()
+    test_quiet_alert_thresholds()
+    test_quiet_alert_in_digest()
     print("all digest tests passed")
