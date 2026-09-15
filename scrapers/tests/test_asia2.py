@@ -55,7 +55,38 @@ def test_everycar_parser():
     print("ok test_everycar_parser")
 
 
+def test_everycar_model_slugs():
+    """2026-09-15: a 404 here means 'none in stock', not 'source broken'.
+
+    everycar builds facet URLs from live inventory, so model=datsun-truck
+    stopped resolving when the last one sold. The make page's own model
+    dropdown is the evidence, and it must be read rather than assumed.
+    """
+    html = (FIXTURES / "everycar_nissan_models.html").read_text()
+    slugs = everycar.model_slugs(html)
+    assert "ud-truck" in slugs and "civilian" in slugs, slugs
+    assert "" not in slugs, "placeholder 'All Models' option leaked in"
+    # The real page on diagnosis day: plenty of models, no Datsun. That is
+    # an empty market, and collect() returns [] rather than raising.
+    assert not [s for s in slugs if everycar._DATSUN_SLUG_RE.search(s)]
+
+    # A Datsun back in stock is found without a code change, whatever the
+    # slug is called — the facet name is never hardcoded again.
+    for slug in ["datsun-truck", "datsun-620", "datsun-pickup"]:
+        back = html.replace('<option value="atlas">ATLAS</option>',
+                            f'<option value="{slug}">DATSUN</option>')
+        found = [s for s in everycar.model_slugs(back)
+                 if everycar._DATSUN_SLUG_RE.search(s)]
+        assert found == [slug], found
+
+    # An unreadable dropdown is a real failure, not an empty market: the
+    # caller raises on this, so the two must stay distinguishable.
+    assert everycar.model_slugs("<html><body>nothing here</body></html>") == []
+    print("ok test_everycar_model_slugs")
+
+
 if __name__ == "__main__":
     test_truck2hand_parser()
     test_everycar_parser()
+    test_everycar_model_slugs()
     print("all asia2 tests passed")
