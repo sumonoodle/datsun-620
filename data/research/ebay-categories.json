@@ -1,0 +1,298 @@
+{
+  "EBAY_US": {
+    "6001": {
+      "total": 28,
+      "fetched": 28,
+      "vehicle_like": 27,
+      "sample_vehicles": [
+        "1978 Datsun 280Z 2 seater",
+        "1976 Datsun 280Z ",
+        "1973 Datsun 240Z ",
+        "1969 Datsun 2000 ",
+        "1969 Datsun Roadster "
+      ],
+      "six_twenties": []
+    },
+    "6000": {
+      "total": 114068,
+      "fetched": 100,
+      "vehicle_like": 14,
+      "sample_vehicles": [
+        "1979 Datsun 280ZX OEM Steering Wheel Column Switches Wiper Turn Signal",
+        "1979 Datsun 280ZX OEM Black Door Panel Interior Trim S130 2 Seater",
+        "1979 Datsun 280ZX OEM Interior Roof Header Trim Panel Black S130",
+        "1979 Datsun 280ZX OEM Relay Box Assembly 25230-P7100 S130 L28E Relays",
+        "1981-1982-1983 Datsun 280ZX wheel center caps pair 40343-P9500 OEM"
+      ],
+      "six_twenties": []
+    },
+    "174": {
+      "total": 191713,
+      "fetched": 100,
+      "vehicle_like": 16,
+      "sample_vehicles": [
+        "1979 Datsun 280ZX OEM Steering Wheel Column Switches Wiper Turn Signal",
+        "1979 Datsun 280ZX OEM Black Door Panel Interior Trim S130 2 Seater",
+        "1979 Datsun 280ZX OEM Interior Roof Header Trim Panel Black S130",
+        "1979 Datsun 280ZX OEM Relay Box Assembly 25230-P7100 S130 L28E Relays",
+        "1973 Datsun 240Z Service Shop Factory Repair Manual OEM S30 Series"
+      ],
+      "six_twenties": []
+    },
+    "_best_category": "6001",
+    "_queries": {
+      "datsun pickup": {
+        "total": 1,
+        "titles": [
+          "1970 Datsun 521 Pickup "
+        ]
+      },
+      "datsun truck": {
+        "total": 2,
+        "titles": [
+          "1973 Datsun 240Z ",
+          "1970 Datsun 521 Pickup "
+        ]
+      },
+      "datsun 620": {
+        "total": 0,
+        "titles": []
+      }
+    }
+  },
+  "EBAY_GB": {
+    "9801": {
+      "total": 0,
+      "fetched": 0,
+      "vehicle_like": 0,
+      "sample_vehicles": [],
+      "six_twenties": []
+    },
+    "31853": {
+      "total": 1900,
+      "fetched": 100,
+      "vehicle_like": 21,
+      "sample_vehicles": [
+        "1970 Datsun 1/2 ton pickup advertising brochure",
+        "1983 Isuzu pickup truck advertising brochure",
+        "1965 Datsun Four-Ten, SPL-310  Sales Brochure",
+        "1982 Datsun Accessories Sales Brochure",
+        "1981 Datsun Dealer Sales Brochure 280-ZX 210 310 510 200-SX 810 Pickup"
+      ],
+      "six_twenties": []
+    },
+    "131090": {
+      "total": 25419,
+      "fetched": 100,
+      "vehicle_like": 3,
+      "sample_vehicles": [
+        "1975 Datsun 140J & 160J sss Brochure Pub, No. 50M.2.75",
+        "1970's Datsun 100a  Service Shop Repair Manual Chassis & Body E10 Seri",
+        "1979 Datsun Violet Saloons & Hatchback Brochure Oct 1979. S24.25M/A304"
+      ],
+      "six_twenties": []
+    },
+    "9828": {
+      "total": 1902,
+      "fetched": 100,
+      "vehicle_like": 21,
+      "sample_vehicles": [
+        "1970 Datsun 1/2 ton pickup advertising brochure",
+        "1983 Isuzu pickup truck advertising brochure",
+        "1965 Datsun Four-Ten, SPL-310  Sales Brochure",
+        "1982 Datsun Accessories Sales Brochure",
+        "1981 Datsun Dealer Sales Brochure 280-ZX 210 310 510 200-SX 810 Pickup"
+      ],
+      "six_twenties": []
+    },
+    "_best_category": "31853",
+    "_queries": {
+      "datsun pickup": {
+        "total": 126,
+        "titles": [
+          "1970 Datsun 1/2 ton pickup advertising brochure",
+          "1983 Isuzu pickup truck advertising brochure",
+          "Datsun Nissan Pick-Up Brochure 1997 - JDM LF",
+          "The Datsun Cabstar Pick Up Chassis Cab Range Car Sales Info Brochure M",
+          "1981 Datsun Dealer Sales Brochure 280-ZX 210 310 510 200-SX 810 Pickup",
+          "1980 Datsun Pickup Truck 14-page Original Sales Brochure Catalog - Kin",
+          "1980 Datsun Pickup Truck 4x4  14-page Original Sales Brochure Catalog ",
+          "1981 GMC Caballero Vs Mini Pickups Datsun Toyota RAM Courier Sale Fold",
+          "1970 datsun pickup truck original sales brochure new old stock",
+          "Datsun Commercial Vehicles Range Brochure 1981 - Sunny  Urvan  Cabstar"
+        ]
+      },
+      "datsun truck": {
+        "total": 444,
+        "titles": [
+          "1983 Isuzu pickup truck advertising brochure",
+          "Hot Wheels Datsun 620 L Case 2020 HW Hot Trucks JDM",
+          "Hot Wheels Datsun Sunny Truck 1:64 Scale Diecast Car Ages 3+ Mattel HR",
+          "Hot Wheels Premium Car Culture Datsun Sunny Truck and Custom 93 Nissan",
+          "Hot Wheels 2025 1975 Datsun Sunny Truck Mainline B120 Short Card",
+          "Hotwheels Datsun 620 Hot Trucks 8/10",
+          "HOT WHEELS Premium Datsun SUNNY TRUCK & CUSTOM '93 NISSAN HARDBODY 2-P",
+          "2024 Hot Wheels Premium 2 Pack - Datsun Sunny Truck B120 / Nissan Hard",
+          "Tomica Limited Vintage 1:64 Datsun 1200 Truck Box LV-15",
+          "Hot Wheels Datsun 620 Orange Pickup Truck Compact Kings 128/250 1:64 U"
+        ]
+      },
+      "datsun 620": {
+        "total": 2549,
+        "titles": [
+          "Vintage Owner's Manuals: Include's 1974 Datsun Pick-Up Model 620 Serie",
+          "Hot Wheels 1:64 DATSUN 620 ORANGE 2026 H case",
+          "How To Keep Your Datsun Nissan L / Z Series Alive Manual 1968-1986 510",
+          "SHOP MANUAL SERVICE REPAIR BOOK DATSUN TRUCK 620",
+          "BRAKE HOSE 1 987 481 835 FOR NISSAN BIG/M/FRONTIER/Platform/Chassis DA",
+          "NEW STEEL REAR BUMPER 2PIECES FIT NISSAN DATSUN 520 521 620 TRUCK PICK",
+          "DELPHI LH7062 BRAKE HOSE FRONT OE REPLACEMENT NEW",
+          "BRAKE HOSE 1 987 481 835 FOR NISSAN BIG/FRONTIER/PLATFORM/CHASSIS DATS",
+          "Ignition Starter Switch No Lock Fits Datsun Nissan 620 Pickup 1972-79 ",
+          "MAIN BEARING SET NISSAN L20B FOR DATSUN 610 710 620 720 PICKUP 1974-86"
+        ]
+      }
+    }
+  },
+  "EBAY_DE": {
+    "9801": {
+      "total": 3,
+      "fetched": 3,
+      "vehicle_like": 0,
+      "sample_vehicles": [],
+      "six_twenties": []
+    },
+    "29690": {
+      "total": 135139,
+      "fetched": 100,
+      "vehicle_like": 4,
+      "sample_vehicles": [
+        "1972 Datsun 240Z Rally  *** Matchbox Collectors 966H 2026 1:64",
+        "2026 Hot Wheels Datsun 240Z in 1:64 # JJL53 HW Then and Now Nissan Yok",
+        "1970 Datsun 510   mint-torquoise **** M2 Machines Box 1:64",
+        "1975 Datsun Sunny B120 + 1993 Nissan Hardbody  ** Hot Wheels Premium 2"
+      ],
+      "six_twenties": []
+    },
+    "173": {
+      "total": 135163,
+      "fetched": 100,
+      "vehicle_like": 4,
+      "sample_vehicles": [
+        "1972 Datsun 240Z Rally  *** Matchbox Collectors 966H 2026 1:64",
+        "2026 Hot Wheels Datsun 240Z in 1:64 # JJL53 HW Then and Now Nissan Yok",
+        "1970 Datsun 510   mint-torquoise **** M2 Machines Box 1:64",
+        "1975 Datsun Sunny B120 + 1993 Nissan Hardbody  ** Hot Wheels Premium 2"
+      ],
+      "six_twenties": []
+    },
+    "16800": {
+      "total": 135163,
+      "fetched": 100,
+      "vehicle_like": 4,
+      "sample_vehicles": [
+        "1972 Datsun 240Z Rally  *** Matchbox Collectors 966H 2026 1:64",
+        "2026 Hot Wheels Datsun 240Z in 1:64 # JJL53 HW Then and Now Nissan Yok",
+        "1970 Datsun 510   mint-torquoise **** M2 Machines Box 1:64",
+        "1975 Datsun Sunny B120 + 1993 Nissan Hardbody  ** Hot Wheels Premium 2"
+      ],
+      "six_twenties": []
+    },
+    "_best_category": "29690",
+    "_queries": {
+      "datsun pickup": {
+        "total": 1375,
+        "titles": [
+          "Datsun Pickup Pick up Prospekt Blatt 1982",
+          "Kofferraumabdeckung aus Gummi für Schalthebel, passend für Datsun Pick",
+          "Vergaser 16010-B5200 für Nissan J15 Datsun Pick Up 1970-1981 Cabstar 7",
+          "For   A14 Sunny Sentra Datsun Pickup 16010-W5600/H6100 Carburetor #fb",
+          "Datsun Pickup Prospekt gelocht",
+          "Nissan Datsun Vanette Urvan Pickup Prospekt 1983",
+          "Datsun Pickup Pick up Prospekt Blatt",
+          "Hot Wheels Datsun 620 5/5 MOTUL 1:64 Modellauto Spielzeugauto Pickup V",
+          "1977 Datsun PickUp  Blue **** M2 Machines Auto-Thentics 1:64",
+          "Hot Wheels 2024 ZAMAC PICKUP SET VW CADDY CHEVY SILVERADO LUV MINI PIC"
+        ]
+      },
+      "datsun truck": {
+        "total": 982,
+        "titles": [
+          "Datsun Truck  ** Tomica Tomytec Vintage LV-194a  1:64",
+          "Hot Wheels ’75 Datsun Sunny Truck B120 – HW Hot Trucks 6/10 – Turquois",
+          "Hot Wheels Datsun Sunny Truck BRE #120 Premium Boulevard Lose",
+          "Datsun 1300 Truck + Figure  Cow *** Tomica Vintage Deluxe Box LV-195d ",
+          "Datsun Truck 4WD King Cab AD, Tomytec Tomica Limited Vintage Neo LV-N3",
+          "Hot Wheels 1975 Datsun Sunny Truck B120 Super Treasure Hunt STH 2025",
+          "Hot Wheels 1975 Datsun Sunny Truck HW Hot Trucks 6/10 #93 2025 - NEU &",
+          "Hotwheels Premium '75 Datsun Sunny Truck - Hyperhauler - NEU- OVP - 1:",
+          "Hot Wheels Boulevard 1975 Datsun Sunny Truck (B120) OVP",
+          "Hot Wheels Nissan Trucks 2 Pack Datsun Truck B120 Hardbody D21 1:64 Mo"
+        ]
+      },
+      "datsun 620": {
+        "total": 895,
+        "titles": [
+          "Hot Wheels Datsun 620 COMPACT KINGS 128/250 6/10 ovp nos",
+          "Nissan 620 1972 Vorne Kühlergrill DATSUN620 HCS29957",
+          "Lenksäulenblinkerschalter Blinker NOS Original passend für Datsun 620",
+          "Datsun Chrom Stoßstangenschrauben Set sechs Schrauben Datsun 620, Dats",
+          "Hot WHEELS DATSUN 620 NEU OVP",
+          "Hotwheels, Datsun 620, Historic Japan, Neu",
+          "HOT WHEELS • 2026 • verschiedene Modelle,  zum aussuchen",
+          "Hot Wheels Datsun 620 5/5 MOTUL 1:64 Modellauto Spielzeugauto Pickup V",
+          "Hot Wheels DATSUN 620 🇯🇵 - Compact Kings 2026  -1:64 Sammelauto JDM JP",
+          "☆HOT WHEELS - CUSTOM☆DATSUN 620☆UMBAU AUF REAL RIDER☆"
+        ]
+      }
+    }
+  },
+  "EBAY_AU": {
+    "9801": {
+      "total": 155731,
+      "fetched": 100,
+      "vehicle_like": 0,
+      "sample_vehicles": [],
+      "six_twenties": []
+    },
+    "29690": {
+      "total": 3,
+      "fetched": 3,
+      "vehicle_like": 2,
+      "sample_vehicles": [
+        "1971 Datsun 240Z CUSTOM",
+        "1975 Datsun 260C GL Sedan Car"
+      ],
+      "six_twenties": []
+    },
+    "131090": {
+      "total": 61511,
+      "fetched": 100,
+      "vehicle_like": 0,
+      "sample_vehicles": [],
+      "six_twenties": []
+    },
+    "18320": {
+      "total": 155731,
+      "fetched": 100,
+      "vehicle_like": 0,
+      "sample_vehicles": [],
+      "six_twenties": []
+    },
+    "_best_category": "29690",
+    "_queries": {
+      "datsun pickup": {
+        "total": 0,
+        "titles": []
+      },
+      "datsun truck": {
+        "total": 0,
+        "titles": []
+      },
+      "datsun 620": {
+        "total": 0,
+        "titles": []
+      }
+    }
+  }
+}

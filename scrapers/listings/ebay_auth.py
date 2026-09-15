@@ -1,9 +1,10 @@
 """eBay OAuth for the Browse API (client-credentials grant).
 
 Mints an application access token from EBAY_CLIENT_ID / EBAY_CLIENT_SECRET.
-Used by the M3 eBay collector; `--self-test` mints a token and makes one
-Browse API search to prove the credentials work, printing only statuses and
-counts (never the token or keys).
+Used by the M3 eBay collector; `--self-test` mints a token and walks the
+collector's own route — each marketplace's vehicle category — to prove both
+the credentials and the categories work, printing only statuses, counts and
+matched titles (never the token or keys).
 """
 
 from __future__ import annotations
@@ -11,8 +12,13 @@ from __future__ import annotations
 import base64
 import os
 import sys
+from pathlib import Path
 
 import httpx
+
+# Run as a script (`python scrapers/listings/ebay_auth.py --self-test`),
+# sys.path[0] is this directory, so the sibling package needs adding.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 BROWSE_SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
@@ -48,24 +54,45 @@ def mint_token(client: httpx.Client | None = None) -> str:
 
 
 def self_test() -> int:
+    """Prove the credentials AND the route the collector actually uses.
+
+    It used to search q="datsun 620" unscoped and report a healthy-looking
+    total of ~9,000 — every one of them a part. That reassuring number was
+    part of why the collector's month of zero records went unexamined, so
+    the self-test now walks each marketplace's vehicle category exactly as
+    collect() does and reports the count that matters.
+    """
+    from listings import ebay  # local: ebay imports mint_token from here
+
     token = mint_token()
     print("token mint: OK")
+    bad = 0
     with httpx.Client(timeout=20) as client:
-        resp = client.get(
-            BROWSE_SEARCH_URL,
-            params={"q": "datsun 620", "limit": 3},
-            headers={
-                "Authorization": f"Bearer {token}",
-                "X-EBAY-C-MARKETPLACE-ID": "EBAY_US",
-            },
-        )
-    print(f"browse search: HTTP {resp.status_code}")
-    if resp.status_code != 200:
-        print(resp.text[:500])
-        return 1
-    payload = resp.json()
-    print(f"browse search: total={payload.get('total', 0)} items for 'datsun 620' on EBAY_US")
-    return 0
+        for marketplace, _country, category in ebay.MARKETPLACES:
+            resp = client.get(
+                BROWSE_SEARCH_URL,
+                params={"q": ebay.QUERIES[0], "limit": 50,
+                        "category_ids": category},
+                headers={
+                    "Authorization": f"Bearer {token}",
+                    "X-EBAY-C-MARKETPLACE-ID": marketplace,
+                },
+            )
+            if resp.status_code != 200:
+                print(f"{marketplace} cat {category}: HTTP {resp.status_code} "
+                      f"{resp.text[:200]}")
+                bad += 1
+                continue
+            payload = resp.json()
+            items = payload.get("itemSummaries") or []
+            hits = [i for i in items
+                    if ebay.is_620_title(i.get("title", ""), vehicle_scoped=True)]
+            print(f"{marketplace} cat {category}: HTTP 200 "
+                  f"total={payload.get('total', 0)} fetched={len(items)} "
+                  f"620s={len(hits)}")
+            for hit in hits:
+                print(f"    {hit.get('title', '')[:70]}")
+    return 1 if bad == len(ebay.MARKETPLACES) else 0
 
 
 if __name__ == "__main__":
