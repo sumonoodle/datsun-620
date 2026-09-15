@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14",
+  "generated_at": "2026-09-15",
   "listings": [
     {
       "id": "trovit:1Qr1cgQ1o0-",
@@ -30,7 +30,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-13",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-09-13",
@@ -79,7 +79,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-09-10",
@@ -128,7 +128,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-09-10",
@@ -177,7 +177,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-09-10",
@@ -226,7 +226,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-09-10",
@@ -275,7 +275,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-09-10",
@@ -380,7 +380,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-09-08",
@@ -431,7 +431,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-09-08",
@@ -536,7 +536,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-09-07",
@@ -748,7 +748,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-09-04",
@@ -1341,7 +1341,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-09-01",
@@ -1390,7 +1390,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-29",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-08-29",
@@ -1439,7 +1439,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-28",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-08-28",
@@ -1514,7 +1514,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-08-18",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-08-18",
@@ -1563,7 +1563,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-08-12",
@@ -1625,9 +1625,9 @@
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/753/041/U00052753041/U00052753041_001L.JPG"
       ],
-      "status": "withdrawn",
+      "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-08-03",
@@ -1669,6 +1669,17 @@
         {
           "date": "2026-09-14",
           "status": "withdrawn"
+        },
+        {
+          "date": "2026-09-15",
+          "status": "active",
+          "price": {
+            "amount": 2850000.0,
+            "currency": "JPY",
+            "gbp": 13665.13,
+            "fx_rate": 208.56,
+            "fx_date": "2026-09-14"
+          }
         }
       ],
       "relist": {
@@ -1774,7 +1785,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-08-01",
@@ -1887,7 +1898,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-07-18",
@@ -1989,7 +2000,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-07-17",
@@ -2144,7 +2155,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-07-17",
@@ -2193,7 +2204,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-15",
       "history": [
         {
           "date": "2026-07-17",
