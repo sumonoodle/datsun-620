@@ -12,8 +12,13 @@ from __future__ import annotations
 import base64
 import os
 import sys
+from pathlib import Path
 
 import httpx
+
+# Run as a script (`python scrapers/listings/ebay_auth.py --self-test`),
+# sys.path[0] is this directory, so the sibling package needs adding.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 BROWSE_SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
