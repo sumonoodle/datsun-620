@@ -1,13 +1,28 @@
 """Collector: EVERY Co. (everycar.jp), Japan export portal, Datsun Truck feed.
 
 Deferred in the July deep dive as thin, promoted in September when the
-owner asked for more Japan coverage. The model-filtered stock query pads
-with unrelated Nissans (Civilians, Caravans) when no Datsun Truck is in
-stock, so the structural filter is the detail URL itself:
-/nissan/<model-slug>/<year>/<id>/ — the slug must be a Datsun model and
-the year must sit in the 620 era (everycar has sold 1963-1994 Datsuns, so
-era gating matters). Cards are li.listItem with a stock number, spec
-table and a USD FOB price.
+owner asked for more Japan coverage. The structural filter is the detail
+URL itself: /nissan/<model-slug>/<year>/<id>/ — the slug must be a Datsun
+model and the year must sit in the 620 era (everycar has sold 1963-1994
+Datsuns, so era gating matters). Cards are li.listItem with a stock
+number, spec table and a USD FOB price.
+
+The model slug is NOT hardcoded, and that is the whole lesson of the
+2026-09-15 diagnosis. everycar builds its facet URLs from live inventory:
+?make=nissan&model=datsun-truck answered 200 when this collector was
+written and began returning 404 five days later, when the last Datsun
+Truck sold. The site serves a real "Page Not Found" template for a facet
+with no stock, so the collector was raising on an ordinary market
+condition — "no Datsun in Japan this week" read as a broken source.
+
+So the make page's own <select name="model"> is consulted first. It lists
+only models actually in stock (25 for Nissan on diagnosis day: atlas,
+civilian, ud-truck, vanette-truck ... no Datsun anything, and Datsun is
+not one of the site's 50 makes either). No Datsun slug means an empty
+market and the collector returns nothing; an unreadable dropdown means
+the page really did change, and that still raises. Reading the slug
+rather than assuming it also means a future datsun-620 or datsun-pickup
+facet is picked up without a code change.
 """
 
 from __future__ import annotations
@@ -25,7 +40,10 @@ from common import king_cab, normalize
 from common.patterns import RE_OTHER_GEN
 
 SOURCE = "everycar"
-URL = "https://www.everycar.jp/used-cars.php?make=nissan&model=datsun-truck"
+BASE = "https://www.everycar.jp"
+# The live search form posts here (the legacy .php path still answers, but
+# this is what the site itself now uses).
+MAKE_URL = f"{BASE}/used-cars?make=nissan"
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                    "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"),
@@ -36,6 +54,18 @@ HEADERS = {
 _DETAIL_RE = re.compile(
     r"everycar\.jp/nissan/(datsun[a-z0-9-]*)/((?:19|20)\d{2})/(\d+)/")
 _USD_RE = re.compile(r"\$\s*([\d,]+)")
+_DATSUN_SLUG_RE = re.compile(r"datsun", re.I)
+
+
+def model_slugs(html: str) -> list[str]:
+    """Every model slug the make page currently offers (in-stock models)."""
+    soup = BeautifulSoup(html, "html.parser")
+    for sel in soup.find_all("select"):
+        if "model" in (sel.get("name") or "").lower():
+            return [(o.get("value") or "").strip()
+                    for o in sel.find_all("option")
+                    if (o.get("value") or "").strip()]
+    return []
 
 
 def parse_page(html: str, fx_day: dict) -> list[dict]:
@@ -92,6 +122,30 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
 
 
 def collect(fx_day: dict) -> list[dict]:
-    resp = httpx.get(URL, headers=HEADERS, timeout=30, follow_redirects=True)
-    resp.raise_for_status()
-    return parse_page(resp.text, fx_day)
+    records: list[dict] = []
+    seen: set[str] = set()
+    with httpx.Client(timeout=30, follow_redirects=True, headers=HEADERS) as client:
+        resp = client.get(MAKE_URL)
+        resp.raise_for_status()
+        offered = model_slugs(resp.text)
+        # Canary: the make page always offers models (25 on diagnosis day).
+        # An empty dropdown means the layout moved, which is a real failure
+        # and must not be mistaken for an empty market.
+        if not offered:
+            raise RuntimeError(
+                "make=nissan page offered no model dropdown (layout changed?)")
+        datsun = [s for s in offered if _DATSUN_SLUG_RE.search(s)]
+        if not datsun:
+            # Ordinary: everycar's stock is mostly modern commercial vehicles
+            # and a Datsun passes through rarely. Say so in the run log.
+            print(f"everycar: no Datsun model in stock "
+                  f"({len(offered)} Nissan models offered)")
+            return []
+        for slug in datsun:
+            resp = client.get(f"{BASE}/used-cars?make=nissan&model={slug}")
+            resp.raise_for_status()
+            for rec in parse_page(resp.text, fx_day):
+                if rec["id"] not in seen:
+                    seen.add(rec["id"])
+                    records.append(rec)
+    return records

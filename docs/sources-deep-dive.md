@@ -200,7 +200,9 @@ keep the ฿450 mudguards out.
 **everycar.jp promoted from the bench** — its detail URLs carry model
 slug AND year (/nissan/datsun-truck/1978/id/), a clean structural filter;
 the model query pads with Civilians when empty, which the slug gate
-absorbs.
+absorbs. (Corrected 2026-09-15: the model facet does not pad when empty,
+it 404s — the padding seen here came from the unfiltered make query. See
+the everycar entry below.)
 
 **The rest of the JP bench is re-demoted with evidence:** carused and
 picknbuy24 return empty bodies, nikkyo and carjunction hold zero Datsun
@@ -259,3 +261,40 @@ and the next 620 listed will actually be seen.
 
 **Ruled out for good:** the legacy Finding API (findItemsAdvanced), which
 historically carried Motors vehicles, answers HTTP 418.
+
+## everycar.jp: a 404 that meant "none in stock" (2026-09-15)
+
+everycar's collector had failed five consecutive daily runs on a 404 from
+`?make=nissan&model=datsun-truck`. Three probe rounds found the site had
+not moved at all:
+
+- `used-cars.php?make=nissan` still returns 200 with 25 cards, and the
+  detail-URL shape the parser keys on is unchanged
+  (`/nissan/ud-truck/2012/7958102/`).
+- Sibling slugs are formed exactly like ours — `ud-truck`,
+  `vanette-truck` — so a rename was never likely.
+- The make page's `<select name="model">` offers **25 slugs, all models
+  actually in stock** (atlas, civilian, condor, quon, ud-truck …) and no
+  Datsun anything. Datsun is not among the site's 50 makes either.
+- The 404 body is a plain "Page Not Found" template.
+
+So everycar builds its facet URLs from live inventory: the Datsun Truck
+facet answered 200 when the collector was written on 2 September and
+404'd once the last one sold. **The collector was treating an ordinary
+market condition — no Datsun in stock this week — as a hard failure.**
+
+The fix reads the make page's dropdown instead of assuming a slug. No
+Datsun slug offered means an empty market and the collector returns
+nothing quietly; an unreadable dropdown still raises, so a genuine layout
+change cannot hide behind the same silence. Reading rather than assuming
+also means a future `datsun-620` or `datsun-pickup` facet is picked up
+with no code change.
+
+`robots.txt` disallows `?keyword=`, `?page=`, `?sort=` and `?ipp=`, so
+keyword search and pagination are both off limits here — the model facet
+is the only polite way in, which is why its slug mattered so much.
+
+Worth keeping in proportion: everycar has contributed **zero** listings
+since promotion. This restores an unproven source rather than recovering
+lost coverage, and its 404 never failed the daily run — per-source
+isolation held.
