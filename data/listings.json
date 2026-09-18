@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17",
+  "generated_at": "2026-09-18",
   "listings": [
     {
       "id": "trovit:1Qr1cgQ1o0-",
@@ -30,7 +30,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-13",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-09-13",
@@ -79,7 +79,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-09-10",
@@ -128,7 +128,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-09-10",
@@ -177,7 +177,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-09-10",
@@ -226,7 +226,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-09-10",
@@ -275,7 +275,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-09-10",
@@ -380,7 +380,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-09-08",
@@ -431,7 +431,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-09-08",
@@ -534,7 +534,7 @@
       "images": [
         "https://www.goo-net-exchange.com/common/assets/img/common/other/trusted_deaer_list.png"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-07",
       "last_seen": "2026-09-15",
       "history": [
@@ -548,14 +548,17 @@
             "fx_rate": 211.4,
             "fx_date": "2026-09-04"
           }
+        },
+        {
+          "date": "2026-09-18",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:1V1W1m1Qa8jt",
@@ -749,7 +752,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-09-04",
@@ -1342,7 +1345,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-09-01",
@@ -1391,7 +1394,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-29",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-08-29",
@@ -1440,7 +1443,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-28",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-08-28",
@@ -1564,7 +1567,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-08-12",
@@ -1628,7 +1631,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-08-03",
@@ -1786,7 +1789,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-08-01",
@@ -1899,7 +1902,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-07-18",
@@ -1990,18 +1993,18 @@
         "body_style_check": "unavailable"
       },
       "price": {
-        "amount": 27995.0,
+        "amount": 22995.0,
         "currency": "USD",
-        "gbp": 20610.32,
-        "fx_rate": 1.3583,
-        "fx_date": "2026-08-28"
+        "gbp": 17191.24,
+        "fx_rate": 1.3376,
+        "fx_date": "2026-09-17"
       },
       "images": [
         "https://photos.classiccars.com/cc-temp/listing/207/9740/59766614-1979-datsun-620-thumb.jpg"
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-07-17",
@@ -2012,6 +2015,17 @@
             "gbp": 20834.26,
             "fx_rate": 1.3437,
             "fx_date": "2026-07-17"
+          }
+        },
+        {
+          "date": "2026-09-18",
+          "status": "active",
+          "price": {
+            "amount": 22995.0,
+            "currency": "USD",
+            "gbp": 17191.24,
+            "fx_rate": 1.3376,
+            "fx_date": "2026-09-17"
           }
         }
       ],
@@ -2156,7 +2170,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-07-17",
@@ -2205,7 +2219,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "history": [
         {
           "date": "2026-07-17",
