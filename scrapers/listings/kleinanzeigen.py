@@ -59,8 +59,14 @@ BASE = "https://www.kleinanzeigen.de"
 # with no "Pickup" in it never matched the old phrase search. The whole
 # marque is only ~28 cars nationwide, which the 620 gate handles easily.
 SEARCH = "/s-autos/datsun/k0c216"
-PAGE_SEARCH = "/s-autos/datsun/seite:{page}/k0c216"
+# "seite:N" sits between the category and the keyword. Putting it after the
+# keyword (the first guess here) redirect-loops, which the live branch test
+# caught; the shapes are probed in that order and the first that answers
+# with cards wins, so a future move costs page 2, never page 1.
+PAGE_SEARCH = ["/s-autos/seite:{page}/datsun/k0c216",
+               "/s-autos/datsun/k0c216/seite:{page}"]
 MAX_PAGES = 3  # 28 results at 25/page; a cap keeps a runaway paginator honest
+PER_PAGE = 25
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                    "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"),
@@ -192,22 +198,54 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
     return records
 
 
+def _fetch_page(client: httpx.Client, page: int) -> str | None:
+    """One results page, or None if this page number cannot be reached.
+
+    Page 1 has a single known URL. Later pages try the known pagination
+    shapes in turn: a wrong one redirect-loops rather than 404ing, so a
+    guess must never be fatal.
+    """
+    if page == 1:
+        resp = client.get(BASE + SEARCH)
+        resp.raise_for_status()
+        return resp.text
+    for shape in PAGE_SEARCH:
+        try:
+            resp = client.get(BASE + shape.format(page=page))
+            resp.raise_for_status()
+        except Exception:
+            continue
+        if BeautifulSoup(resp.text, "html.parser").select("article[data-adid]"):
+            return resp.text
+    return None
+
+
 def collect(fx_day: dict) -> list[dict]:
     records: list[dict] = []
     seen: set[str] = set()
-    with httpx.Client(timeout=30, follow_redirects=True, headers=HEADERS) as client:
+    # max_redirects low and explicit: a malformed pagination URL loops, and
+    # 20 pointless round-trips at someone else's expense is not acceptable.
+    with httpx.Client(timeout=30, follow_redirects=True, headers=HEADERS,
+                      max_redirects=5) as client:
         for page in range(1, MAX_PAGES + 1):
-            path = SEARCH if page == 1 else PAGE_SEARCH.format(page=page)
-            resp = client.get(BASE + path)
-            resp.raise_for_status()
-            page_records = parse_page(resp.text, fx_day)
-            soup = BeautifulSoup(resp.text, "html.parser")
-            cards = len(soup.select("article[data-adid]"))
-            for rec in page_records:
+            try:
+                html = _fetch_page(client, page)
+            except Exception:
+                if page == 1:
+                    raise  # page 1 failing IS the source failing
+                break
+            if html is None:
+                # Pagination unreachable. Page 1 holds 25 of ~28 results, so
+                # this is a small gap, not a failure — say so and keep them.
+                print(f"kleinanzeigen: page {page} unreachable, "
+                      f"continuing with {len(records)} record(s) from page 1")
+                break
+            for rec in parse_page(html, fx_day):
                 if rec["id"] not in seen:
                     seen.add(rec["id"])
                     records.append(rec)
             # A short page is the last page; nothing to paginate into.
-            if cards < 25:
+            if len(BeautifulSoup(html, "html.parser")
+                   .select("article[data-adid]")) < PER_PAGE:
                 break
     return records
