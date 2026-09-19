@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-18",
-  "started_at": "2026-09-18T09:01:51+00:00",
+  "date": "2026-09-19",
+  "started_at": "2026-09-19T08:49:43+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -21,19 +21,19 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 68
+      "consecutive_failures": 69
     },
     {
       "source": "hemmings",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 68
+      "consecutive_failures": 69
     },
     {
       "source": "goonet_exchange",
       "ok": true,
-      "records": 1,
+      "records": 0,
       "note": "",
       "consecutive_failures": 0
     },
@@ -102,10 +102,10 @@
     },
     {
       "source": "everycar",
-      "ok": true,
+      "ok": false,
       "records": 0,
-      "note": "",
-      "consecutive_failures": 0
+      "note": "timed out",
+      "consecutive_failures": 1
     },
     {
       "source": "pistonheads",

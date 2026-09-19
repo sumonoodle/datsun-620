@@ -1,20 +1,7 @@
 {
-  "date": "2026-09-18",
+  "date": "2026-09-19",
   "new": [],
-  "price_changed": [
-    {
-      "id": "classiccars:CC-2079740",
-      "old_gbp": 20610.32,
-      "new_gbp": 17191.24,
-      "pct": -16.6
-    }
-  ],
-  "status_changed": [
-    {
-      "id": "goonet_exchange:700040377430260602001",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    }
-  ],
+  "price_changed": [],
+  "status_changed": [],
   "possible_relists": []
 }
