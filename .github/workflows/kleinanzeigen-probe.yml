@@ -9,6 +9,7 @@ on:
       - claude/datsun-620-kickoff-ah5cyw
     paths:
       - scrapers/experiments/kleinanzeigen_probe.py
+      - scrapers/experiments/kleinanzeigen_probe2.py
   workflow_dispatch:
 
 permissions:
@@ -26,4 +27,4 @@ jobs:
       - name: Install dependencies
         run: pip install -r scrapers/requirements.txt
       - name: Probe Kleinanzeigen
-        run: python scrapers/experiments/kleinanzeigen_probe.py
+        run: python scrapers/experiments/kleinanzeigen_probe2.py
