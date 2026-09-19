@@ -298,3 +298,58 @@ Worth keeping in proportion: everycar has contributed **zero** listings
 since promotion. This restores an unproven source rather than recovering
 lost coverage, and its 404 never failed the daily run — per-source
 isolation held.
+
+## Kleinanzeigen: blind since the redesign (2026-09-19)
+
+Checked after a one-off 403 on 15 September. That block was a blip — four
+clean runs followed — but checking it exposed something worse: the
+collector had reported "ok, 0 listings" **every day of its life** while
+the results page carried real stock.
+
+Three probe rounds, in the order that mattered:
+
+**1. May we scrape it at all?** robots.txt contains a bare `Disallow: /`,
+which had to be resolved before any repair: if it bound us, the right
+answer was to retire the collector for Kleinanzeigen's Suchauftrag email
+alerts, not to fix a parser we should not run. It does not — that rule
+belongs to other named user-agents. For `*`, all the paths we fetch are
+ALLOWED, pagination included. (The first attempt at this check crashed:
+a hand-rolled matcher fed robots paths straight into `re`, and one rule
+contains regex metacharacters. The verdict now comes from
+`urllib.robotparser`, which is the right tool for a permission question.)
+
+**2. Empty market, or blind?** Blind. The page reads *"Autos 1 - 25 von
+**28** Gebrauchtwagen für „datsun“"* while `article.aditem` matches 0 and
+`.aditem-main` matches 0. Kleinanzeigen dropped the `aditem` class in a
+redesign; cards are now `<article data-adid>` with Tailwind utility
+classes and **no `<h2>` at all**, so every selector the parser used was
+dead. Worse, the emptiness guard could never fire: it raised only when
+the page held no ads AND no "datsun", but the search term is echoed in
+the page chrome. Exactly the eBay shape — success reported while seeing
+nothing.
+
+**3. What does the page ship now?** `article[data-adid]` and its
+`data-href` survived the redesign intact, and the page publishes an
+ld+json `ImageObject` per ad carrying the real title and description,
+joinable to each card by image id. The rewrite keys on those — semantic
+data the site maintains deliberately — and never on the utility classes,
+which will not survive the next restyle. `EZ 03/1978` gives a
+registration year better than any guess from a title.
+
+The new guard compares the heading's result count against the cards
+parsed: results promised but none parsed raises, a heading of zero
+results returns nothing. That is the everycar rule — "cannot see" and
+"nothing there" must never share an outcome.
+
+**A latent bug fell out of this.** `RE_620` guarded against comma-grouped
+figures ("6,620 miles", fixed 2026-08-22) but not dot-grouped ones, so in
+German "6.620 €" and "66.620 km" both read as model references.
+`RE_OTHER_GEN` already excluded a leading dot; `RE_620`'s guard was
+simply incomplete. It was latent only because this collector could not
+see — the first German source to actually return cards would have started
+ingesting any car priced 6.620 €. Now guarded and pinned.
+
+Query widened from the phrase `datsun-pickup` to the marque alone: a 620
+advertised as "Datsun 620" with no "Pickup" in it never matched the old
+search. The whole marque is ~28 cars nationwide, which the 620 gate
+handles comfortably.

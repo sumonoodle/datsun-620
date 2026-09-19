@@ -108,18 +108,65 @@ def test_trovit_de_parser():
 
 
 def test_kleinanzeigen_parser():
-    records = kleinanzeigen.parse_page((FIXTURES / "kleinanzeigen_page.html").read_text(), FX_DAY)
+    """Against the 2026-09-19 redesign markup: no <h2>, no 'aditem' class.
+
+    The old parser scored 0 on this page while 28 real Datsun cars sat in
+    the results, so every assertion here is about reading the page the
+    site actually serves now.
+    """
+    records = kleinanzeigen.parse_page(
+        (FIXTURES / "kleinanzeigen_page.html").read_text(), FX_DAY)
     ids = [r["id"] for r in records]
-    # The three real ads (incl. the live Y720 King Cab) are all excluded;
-    # only the synthetic 620 King Cab passes, in EUR.
-    assert ids == ["kleinanzeigen:9990000001"], ids
+    # The 280 ZX, the 240z and the Cherry are all real Datsun cars and all
+    # wrong; only the 620 King Cab belongs.
+    assert ids == ["kleinanzeigen:3510009911"], ids
     kc = records[0]
+    assert kc["title"] == "Datsun 620 King Cab Pick Up H-Zulassung"
     assert kc["king_cab"]["matched"] is True
-    assert kc["price"]["amount"] == 9500 and kc["price"]["currency"] == "EUR"
-    assert kc["price"]["gbp"] == round(9500 / FX_DAY["rates"]["EUR"], 2)
+    assert kc["price"]["amount"] == 18500 and kc["price"]["currency"] == "EUR"
+    assert kc["price"]["gbp"] == round(18500 / FX_DAY["rates"]["EUR"], 2)
     assert kc["country"] == "DE" and kc["drive_side"] == "LHD"
+    # "EZ 03/1978" is a registration date, and a better year than any
+    # guess from the title.
+    assert kc["year"] == 1978, kc["year"]
+    assert kc["region"] == "94072 Bad Füssing", kc["region"]
+    assert kc["url"].endswith("/3510009911-216-3312")
+    assert kc["images"] and kc["images"][0].startswith("https://img.kleinanzeigen.de/")
+    assert kc["description_snippet"].startswith("Seltener Datsun 620")
     validate(_full(kc), "listing")
     print("ok test_kleinanzeigen_parser")
+
+
+def test_kleinanzeigen_german_thousands_dot():
+    """A 6.620 € Cherry is not a 620 (the bug this rewrite uncovered)."""
+    records = kleinanzeigen.parse_page(
+        (FIXTURES / "kleinanzeigen_page.html").read_text(), FX_DAY)
+    assert "kleinanzeigen:3400000001" not in {r["id"] for r in records}, \
+        "German thousands dot read as a model reference"
+
+
+def test_kleinanzeigen_blindness_guard():
+    """A heading promising results with no cards parsed MUST raise.
+
+    The old guard only fired when the page held no ads AND no 'datsun' —
+    but the search term is echoed in the chrome, so an unreadable page
+    returned [] and reported success for months. Never again: 'cannot
+    see' and 'nothing there' must not share an outcome.
+    """
+    blind = ('<html><body><h1>Autos 1 - 25 von 28 Gebrauchtwagen für '
+             '„datsun“ in Deutschland</h1><div>datsun</div></body></html>')
+    try:
+        kleinanzeigen.parse_page(blind, FX_DAY)
+    except ValueError as exc:
+        assert "28" in str(exc)
+    else:
+        raise AssertionError("unreadable page returned quietly")
+
+    # A genuinely empty market is NOT an error: no cards, no claimed count.
+    empty = ('<html><body><h1>Autos: 0 Gebrauchtwagen für „datsun“</h1>'
+             '</body></html>')
+    assert kleinanzeigen.parse_page(empty, FX_DAY) == []
+    print("ok test_kleinanzeigen_blindness_guard")
 
 
 if __name__ == "__main__":
@@ -129,4 +176,6 @@ if __name__ == "__main__":
     test_trovit_parser()
     test_trovit_de_parser()
     test_kleinanzeigen_parser()
+    test_kleinanzeigen_german_thousands_dot()
+    test_kleinanzeigen_blindness_guard()
     print("all gap-sweep tests passed")
