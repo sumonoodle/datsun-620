@@ -33,6 +33,7 @@ from __future__ import annotations
 import re
 import sys
 from pathlib import Path
+from urllib import robotparser
 
 import httpx
 from bs4 import BeautifulSoup
@@ -71,18 +72,14 @@ def robots_groups(text: str) -> list[tuple[list[str], list[str]]]:
     return groups
 
 
-def allows(rules: list[str], path: str) -> bool:
-    """Longest-match Allow/Disallow, the standard precedence rule."""
-    best_len, best_allow = -1, True
-    for rule in rules:
-        field, _, value = rule.partition(":")
-        value = value.strip()
-        if field not in ("allow", "disallow") or not value:
-            continue
-        pattern = value.replace("*", ".*")
-        if re.match(pattern, path) and len(value) > best_len:
-            best_len, best_allow = len(value), field == "allow"
-    return best_allow
+# The verdict comes from the standard library's robots parser, not a
+# hand-rolled matcher: the first attempt at one crashed on a rule
+# containing regex metacharacters, and a permission check is exactly the
+# wrong place to trust my own parsing.
+def allows(robots_text: str, path: str, agent: str = "*") -> bool:
+    parser = robotparser.RobotFileParser()
+    parser.parse(robots_text.split("\n"))
+    return parser.can_fetch(agent, kz.BASE + path)
 
 
 def main() -> int:
@@ -98,14 +95,20 @@ def main() -> int:
             print(f"    user-agents={agents}  rules={len(rules)}{mark}")
             if "*" in agents:
                 star_rules = rules
-        print("\n  Rules for user-agent '*' (the group that binds us):")
-        if not star_rules:
-            print("    (no '*' group found)")
+        print(f"\n  Rules for user-agent '*' ({len(star_rules)} of them); "
+              f"the non-pagination ones:", flush=True)
         for rule in star_rules:
-            print(f"    {rule}")
-        print("\n  Verdict for the paths we fetch:")
+            # Hundreds of /*/seite:NN* pagination rules would bury the rest.
+            if re.search(r"seite:\d+", rule):
+                continue
+            print(f"    {rule}", flush=True)
+        print(f"    ({sum(1 for r in star_rules if re.search(r'seite:.d+', r))} "
+              f"pagination rules omitted)", flush=True)
+        print("\n  Verdict for the paths we fetch (stdlib robotparser):",
+              flush=True)
         for path in TARGET_PATHS:
-            print(f"    {path}: {'ALLOWED' if allows(star_rules, path) else 'DISALLOWED'}")
+            ok = allows(r.text, path)
+            print(f"    {path}: {'ALLOWED' if ok else 'DISALLOWED'}", flush=True)
 
         print("\n=== B. what the results page actually contains ===")
         url = f"{kz.BASE}/s-autos/datsun/k0c216"
