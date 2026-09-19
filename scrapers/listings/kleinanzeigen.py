@@ -223,6 +223,7 @@ def _fetch_page(client: httpx.Client, page: int) -> str | None:
 def collect(fx_day: dict) -> list[dict]:
     records: list[dict] = []
     seen: set[str] = set()
+    scanned = 0
     # max_redirects low and explicit: a malformed pagination URL loops, and
     # 20 pointless round-trips at someone else's expense is not acceptable.
     with httpx.Client(timeout=30, follow_redirects=True, headers=HEADERS,
@@ -244,8 +245,16 @@ def collect(fx_day: dict) -> list[dict]:
                 if rec["id"] not in seen:
                     seen.add(rec["id"])
                     records.append(rec)
+            cards = len(BeautifulSoup(html, "html.parser")
+                        .select("article[data-adid]"))
+            scanned += cards
             # A short page is the last page; nothing to paginate into.
-            if len(BeautifulSoup(html, "html.parser")
-                   .select("article[data-adid]")) < PER_PAGE:
+            if cards < PER_PAGE:
                 break
+    # Positive evidence in the run log. "0 records" is the same line whether
+    # the market is empty or the parser has gone blind again, and this
+    # collector spent months on the wrong side of that ambiguity — so say
+    # how many cards were actually read, not just how many survived.
+    print(f"kleinanzeigen: scanned {scanned} Datsun card(s), "
+          f"kept {len(records)} 620(s)")
     return records
