@@ -1,0 +1,29 @@
+# One-off: Kleinanzeigen has reported "ok, 0 listings" every day of its
+# life. The sandbox has no egress to the site, so the probe runs here.
+# Deleted once the finding is acted on.
+name: kleinanzeigen-probe
+
+on:
+  push:
+    branches:
+      - claude/datsun-620-kickoff-ah5cyw
+    paths:
+      - scrapers/experiments/kleinanzeigen_probe.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r scrapers/requirements.txt
+      - name: Probe Kleinanzeigen
+        run: python scrapers/experiments/kleinanzeigen_probe.py
