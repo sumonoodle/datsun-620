@@ -39,6 +39,37 @@ SOURCE_NAMES = {
 BROWN = "#3b2b1d"
 ORANGE = "#b04a1a"
 MUTED = "#75634f"
+WARN = "#8a3030"
+
+# Silent-source alert. eBay reported "ok, 0 listings" every day for a month
+# while an unscoped query drowned in parts, and the only reason it surfaced
+# was someone reading logs by hand (2026-09-14). A long quiet streak is not
+# proof of a bug — most sources hold no 620 most weeks — so this is phrased
+# as "worth a look", not "broken".
+#
+# 21 days: longer than any legitimate gap observed for a source that
+# produces at all, and it would have caught eBay nine days sooner. After the
+# first nudge it repeats weekly rather than daily, because a line that
+# appears every morning stops being read — which is the failure this alert
+# exists to prevent.
+QUIET_RUNS_ALERT = 21
+QUIET_REPEAT_EVERY = 7
+# Streaks shorter than the alert still show inline, so the number is visible
+# before it becomes a problem.
+QUIET_RUNS_SHOW = 5
+
+
+def quiet_alerts(sources: list[dict]) -> list[dict]:
+    """Sources quiet long enough to be worth checking today."""
+    out = []
+    for s in sources:
+        streak = s.get("consecutive_zero_runs", 0)
+        if not s.get("ok") or streak < QUIET_RUNS_ALERT:
+            continue
+        since = streak - QUIET_RUNS_ALERT
+        if since == 0 or since % QUIET_REPEAT_EVERY == 0:
+            out.append(s)
+    return out
 
 
 def _money(price: dict) -> str:
@@ -156,14 +187,34 @@ def build_html(changes: dict, run_log: dict, listings_by_id: dict, site_url: str
     if not parts:
         parts.append(f'<p style="font-size:15px;">No new or changed listings today.</p>')
 
+    # Above Source health on purpose: the whole failure mode being fixed is
+    # a true-but-useless "ok" that nobody scrolls down to question.
+    quiet = quiet_alerts(run_log["sources"])
+    if quiet:
+        rows = "".join(
+            f'<li style="margin:4px 0;"><b>{SOURCE_NAMES.get(s["source"], s["source"])}</b>'
+            f' — no listings for {s["consecutive_zero_runs"]} days running</li>'
+            for s in quiet)
+        parts.append(_section("Worth a look", (
+            f'<p style="font-size:14px;margin:0 0 8px;">These sources are '
+            f'reporting success but have found nothing for a long time. That '
+            f'may simply be an empty market — or a collector that has quietly '
+            f'stopped seeing listings, which is how eBay went a month without '
+            f'anyone noticing.</p>'
+            f'<ul style="padding-left:20px;font-size:14px;color:{WARN};">{rows}</ul>')))
+
     health_items = []
     if not run_log["sources"]:
         health_items.append('<li style="margin:4px 0;">no sources ran</li>')
     for s in run_log["sources"]:
         name = SOURCE_NAMES.get(s["source"], s["source"])
         if s["ok"]:
+            quiet = s.get("consecutive_zero_runs", 0)
+            quiet_txt = (f' <span style="color:{MUTED};">(quiet {quiet} days)</span>'
+                         if quiet >= QUIET_RUNS_SHOW else "")
             health_items.append(
-                f'<li style="margin:4px 0;">&#9989; {name}: {s["records"]} listing(s)</li>')
+                f'<li style="margin:4px 0;">&#9989; {name}: {s["records"]} listing(s)'
+                f'{quiet_txt}</li>')
         else:
             note = html.escape(s.get("note", ""))
             streak = s.get("consecutive_failures", 0)
@@ -246,6 +297,11 @@ def main() -> int:
         subject = f"Datsun 620: {n_new} new, {n_price} price change(s) — {changes['date']}"
     else:
         subject = f"Datsun 620 digest — {changes['date']}"
+    # An alert nobody opens the mail to see is not an alert. Same function as
+    # the body section, so the subject cannot promise what the body omits.
+    n_quiet = len(quiet_alerts(run_log["sources"]))
+    if n_quiet:
+        subject += f" — {n_quiet} source(s) quiet"
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject

@@ -157,7 +157,11 @@ const started = (runLog?.started_at ?? "").slice(11, 16);
                 <li>
                   <span class={`dot ${s.ok ? "dot-ok" : "dot-bad"}`} /> {SOURCE_NAMES[s.source] ?? s.source}
                   {s.ok
-                    ? <span class="supporting"> — {s.records} listing(s)</span>
+                    ? <span class="supporting"> — {s.records} listing(s)
+                        {/* A source can be "ok" and still be blind: eBay
+                            reported ok/0 for a month. Show the quiet streak
+                            so a long silence is visible here too. */}
+                        {s.consecutive_zero_runs >= 5 && ` (quiet ${s.consecutive_zero_runs} days)`}</span>
                     : <span class="supporting"> — {s.note}{s.consecutive_failures > 1 && ` (${s.consecutive_failures} days)`}</span>}
                 </li>
               ))}

@@ -59,6 +59,49 @@ def test_crashing_source_never_fails_the_run():
     print("ok test_crashing_source_never_fails_the_run")
 
 
+def _quiet(fx_day):
+    """Completes cleanly and finds nothing — eBay's month in one function."""
+    return []
+
+
+def test_quiet_streak_counts_and_resets():
+    with tempfile.TemporaryDirectory() as tmp:
+        data_dir = Path(tmp)
+        run = lambda srcs: run_daily.run(data_dir=data_dir,
+                                         fx_fetch=lambda: dict(FX_DAY), sources=srcs)
+
+        def streak(name):
+            log = json.loads((data_dir / "run-log.json").read_text())
+            return next(s for s in log["sources"]
+                        if s["source"] == name)["consecutive_zero_runs"]
+
+        # An "ok but empty" source accumulates a quiet streak; a producing
+        # one never does. This is the signal that did not exist while eBay
+        # reported ok/0 for a month.
+        for expected in (1, 2, 3):
+            assert run([("ebay", _quiet), ("bringatrailer", _healthy)]) == 0
+            assert streak("ebay") == expected
+            assert streak("bringatrailer") == 0
+
+        # One find clears it: the source is demonstrably still seeing stock.
+        assert run([("ebay", _healthy), ("bringatrailer", _healthy)]) == 0
+        assert streak("ebay") == 0
+
+        # A FAILING run carries the count forward rather than adding to it —
+        # everycar's five 404 days were a failure, not five quiet days, and
+        # conflating them would have double-counted one problem as two.
+        assert run([("ebay", _quiet), ("bringatrailer", _healthy)]) == 0
+        assert streak("ebay") == 1
+        for _ in range(3):
+            assert run([("ebay", _crashing), ("bringatrailer", _healthy)]) == 0
+            assert streak("ebay") == 1
+        # ...and resumes from where it left off once the source answers again.
+        assert run([("ebay", _quiet), ("bringatrailer", _healthy)]) == 0
+        assert streak("ebay") == 2
+    print("ok test_quiet_streak_counts_and_resets")
+
+
 if __name__ == "__main__":
     test_crashing_source_never_fails_the_run()
+    test_quiet_streak_counts_and_resets()
     print("all isolation tests passed")

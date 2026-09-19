@@ -87,6 +87,13 @@ def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None) -> int
 
     for name, collect in sources:
         prev_failures = prev_log.get(name, {}).get("consecutive_failures", 0)
+        # A source can be perfectly "ok" and still be broken: eBay reported
+        # ok/0 records every day for a MONTH while an unscoped query drowned
+        # in parts (2026-09-14). Nothing counted that, so nothing noticed.
+        # A run that fails does not add to the quiet streak — it is already
+        # flagged as failing, and everycar's five failing days should not
+        # have also read as five quiet ones.
+        prev_zero = prev_log.get(name, {}).get("consecutive_zero_runs", 0)
         try:
             records = collect(fx_day)
             # One malformed record must not discard the source's good ones.
@@ -104,7 +111,8 @@ def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None) -> int
             source_results.append(
                 {"source": name, "ok": True, "records": len(valid),
                  "note": f"{dropped} invalid record(s) dropped" if dropped else "",
-                 "consecutive_failures": 0}
+                 "consecutive_failures": 0,
+                 "consecutive_zero_runs": prev_zero + 1 if not valid else 0}
             )
             # Every source that completes without raising drives withdrawal
             # ageing, records or not: collectors raise on suspicious-empty
@@ -116,7 +124,8 @@ def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None) -> int
             traceback.print_exc()
             source_results.append(
                 {"source": name, "ok": False, "records": 0, "note": str(exc)[:200],
-                 "consecutive_failures": prev_failures + 1}
+                 "consecutive_failures": prev_failures + 1,
+                 "consecutive_zero_runs": prev_zero}
             )
 
     # kuruma-ex aggregates the Carsensor feed with a 'cc'-prefixed copy of
