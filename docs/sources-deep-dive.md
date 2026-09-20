@@ -353,3 +353,57 @@ Query widened from the phrase `datsun-pickup` to the marque alone: a 620
 advertised as "Datsun 620" with no "Pickup" in it never matched the old
 search. The whole marque is ~28 cars nationwide, which the 620 gate
 handles comfortably.
+
+## The two blocked US sources: settled (2026-09-20)
+
+Owner asked for results from Hemmings and Cars & Bids, both 403 for 70
+consecutive days. Three probe rounds, checking only public surfaces and
+obeying robots.txt via `urllib.robotparser`. No evasion was attempted:
+no UA spoofing, no proxies, no retry-until-through. **Every scraping
+route is closed.** Record it here so nobody spends another day on it.
+
+**Cars & Bids — IP-banned.** robots.txt answers 200, but the **homepage
+itself 403s**, as do the API, sitemap, search and past-auctions. When the
+front door is challenged there is no endpoint left to find. This is edge
+bot-protection against datacentre IPs, not a path rule — their robots.txt
+in fact ALLOWS every path we wanted.
+
+**classic.com — same wall**, and the biggest loss: one working
+aggregator there would have covered Cars & Bids, Hemmings, Mecum, RM and
+Barrett-Jackson at once.
+
+**Hemmings — static files pass, dynamic pages do not.** robots.txt and
+`/sitemap.xml` both return 200 with real content while every HTML page is
+challenged. That raised a real possibility: enumerate listings from the
+sitemap and link to them, since the owner's own browser is not blocked.
+It does not work. The sitemap tree carries only CATEGORY pages —
+`classic-cars-for-sale-alabama`, `metro-search/st-louis-mo`, and in
+`/sitemap_makes/datsun.xml`, make/model/year pages like
+`/classifieds/cars-for-sale/datsun/1200/1963`. No individual ads
+anywhere, and its newest `lastmod` is 2025-10-30, so the file is itself
+about a year stale. Every URL it does list is a page that 403s.
+
+**AutoTempest — client-rendered.** It looked like the find of the round:
+HTTP 200, 236 KB, robots ALLOWS `/results`, body mentioning datsun, 620,
+eBay, Craigslist, Cars.com, CarGurus, Autotrader and Hemmings. All of it
+chrome. The page contains `<h2>Javascript Required!</h2>`, zero listing
+containers by any selector, one price-like string on the whole page, and
+no `__NEXT_DATA__`, `window.__` or ld+json payload. The partner names
+come from its "Listing Sources" UI panel, and the "620" match was our own
+query echoed in the `<h1>`. A keyword hit is not evidence of data — the
+same trap as eBay's reassuring ~9,000 results.
+
+Also checked and dead: oldcaronline (404 on search), classiccarsforsale
+(no robots, 404), smartmotorguide (403 challenge).
+
+**So the route to these two is Phase C email alerts**, which is where the
+July research already placed them. Hemmings and Cars & Bids both offer
+saved-search emails, and CLASSIC.COM's per-model 620 alert covers both
+plus the traditional auction houses in a single subscription. That work
+is gated on the dedicated Gmail account, and is now the highest-value
+unblock in the project.
+
+**Keep it in proportion.** The US is not starved: it holds 9 of 21 active
+listings, the most of any country, through ClassicCars.com, Barn Finds,
+Trovit and Ratsun, with BaT and eBay live but empty on the day. Hemmings
+and Cars & Bids are additive, not foundational.
