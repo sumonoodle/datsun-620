@@ -23,9 +23,17 @@ from __future__ import annotations
 import re
 
 # The truck itself: "620" as a standalone model reference — not part of a
-# longer number ("6200"), part number ("B620", "A16205"), or comma-grouped
-# figure ("6,620 miles").
-RE_620 = re.compile(r"(?<![\dA-Za-z,])620(?!\d)")
+# longer number ("6200"), part number ("B620", "A16205"), or grouped
+# figure ("6,620 miles", "6.620 €").
+#
+# The DOT guard was added 2026-09-19, when the Kleinanzeigen rewrite first
+# gave us a German-language source that could actually see: Germany groups
+# thousands with a dot, so "6.620 €" and "66.620 km" both read as model
+# references here while RE_OTHER_GEN — which already excluded a leading
+# dot — was unaffected. Same bug as the 2026-08-22 comma guard, one
+# separator later. The lookbehind is (?<!\d\.) rather than (?<!\.) so that
+# a 620 after a sentence full stop still counts.
+RE_620 = re.compile(r"(?<![\dA-Za-z,])(?<!\d\.)620(?!\d)")
 
 # Other Datsun/Nissan truck generations. A real 620 for sale never
 # name-drops these; a title spanning several generations is a multi-fit

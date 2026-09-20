@@ -22,6 +22,13 @@ def test_shared_patterns():
     assert not RE_620.search("1984 Nissan 720 King Cab 6,620 Original Miles")
     assert not RE_620.search("only 76,620 km")
     assert RE_620.search("Datsun 620, restored")
+    # ...and the same in German, where a DOT groups thousands. Found
+    # 2026-09-19 when the Kleinanzeigen rewrite gave us a source that
+    # could finally see: a 6.620 € Cherry would have read as a 620.
+    for money in ["Preis 6.620 € VB", "66.620 km gelaufen", "16.620 EUR"]:
+        assert not RE_620.search(money), money
+    # A full stop before the model is still a model reference.
+    assert RE_620.search("Verkaufe. 620 Pickup")
     # Prices, phone digits and the 620's own SD22 diesel survive the
     # cross-generation rule; real other-generation names still trip it.
     for ok in ["1975 Datsun 620 - $6,520 obo", "spent £720 on new brakes",
