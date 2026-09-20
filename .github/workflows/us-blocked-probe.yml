@@ -1,0 +1,29 @@
+# One-off: Hemmings and Cars & Bids have 403'd for 70 days. Find out whether
+# any legitimate public route reaches them, or whether the runner IP is simply
+# banned and the answer is the email-alert route. Deleted once decided.
+name: us-blocked-probe
+
+on:
+  push:
+    branches:
+      - claude/datsun-620-kickoff-ah5cyw
+    paths:
+      - scrapers/experiments/us_blocked_probe.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r scrapers/requirements.txt
+      - name: Probe blocked US sources
+        run: python scrapers/experiments/us_blocked_probe.py
