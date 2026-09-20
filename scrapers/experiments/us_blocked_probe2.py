@@ -110,9 +110,11 @@ def main() -> int:
                   f"620={len(six20)}", flush=True)
             for sample in (six20 or datsun or locs)[:5]:
                 print(f"        {sample[:110]}", flush=True)
-            # Nested sitemap index? Follow one level for the makes file.
+            # Nested sitemap index? Follow one level from ANY sub-sitemap —
+            # the listing URLs could hang off the keyword or metro trees just
+            # as easily as the makes one, and guessing wrong wastes a round.
             nested = re.findall(r"<loc>([^<]*sitemap[^<]*)</loc>", body)
-            if nested and name == "sitemap_makes.xml":
+            if nested:
                 for n in nested[:3]:
                     r2, e2 = get(client, n, "application/xml")
                     if e2 or r2.status_code != 200:

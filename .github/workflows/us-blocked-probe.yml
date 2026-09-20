@@ -10,6 +10,10 @@ on:
     paths:
       - scrapers/experiments/us_blocked_probe.py
       - scrapers/experiments/us_blocked_probe2.py
+      # Editing this file must be able to fire it too: pointing the workflow
+      # at a new script changed only the workflow, matched no path, and
+      # silently ran nothing.
+      - .github/workflows/us-blocked-probe.yml
   workflow_dispatch:
 
 permissions:
