@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-20",
-  "started_at": "2026-09-20T09:18:48+00:00",
+  "date": "2026-09-21",
+  "started_at": "2026-09-21T09:59:00+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -8,7 +8,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 1
+      "consecutive_zero_runs": 2
     },
     {
       "source": "bringatrailer",
@@ -16,14 +16,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 1
+      "consecutive_zero_runs": 2
     },
     {
       "source": "carsandbids",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 70,
+      "consecutive_failures": 71,
       "consecutive_zero_runs": 0
     },
     {
@@ -31,7 +31,7 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 70,
+      "consecutive_failures": 71,
       "consecutive_zero_runs": 0
     },
     {
@@ -56,7 +56,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 1
+      "consecutive_zero_runs": 2
     },
     {
       "source": "kaidee",
@@ -88,7 +88,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 1
+      "consecutive_zero_runs": 2
     },
     {
       "source": "barnfinds",
@@ -104,7 +104,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 1
+      "consecutive_zero_runs": 2
     },
     {
       "source": "kuruma_ex",
@@ -120,7 +120,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 1
+      "consecutive_zero_runs": 2
     },
     {
       "source": "pistonheads",
@@ -128,7 +128,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 1
+      "consecutive_zero_runs": 2
     },
     {
       "source": "ratsun",
@@ -160,17 +160,17 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 1
+      "consecutive_zero_runs": 2
     }
   ],
   "totals": {
-    "active": 21,
+    "active": 20,
     "by_country": {
       "US": 9,
       "TH": 5,
-      "JP": 6,
+      "JP": 5,
       "GB": 1
     },
-    "median_gbp": 5901.61
+    "median_gbp": 7002.1
   }
 }

@@ -1,14 +1,12 @@
 {
-  "date": "2026-09-20",
-  "new": [
-    "ratsun:2463"
-  ],
+  "date": "2026-09-21",
+  "new": [],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "goonet_exchange:700040377430260602001",
-      "old_status": "withdrawn",
-      "new_status": "active"
+      "id": "goonet_exchange:700051085230260503001",
+      "old_status": "active",
+      "new_status": "withdrawn"
     }
   ],
   "possible_relists": []
