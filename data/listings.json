@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21",
+  "generated_at": "2026-09-22",
   "listings": [
     {
       "id": "ratsun:2463",
@@ -28,7 +28,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-20",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-09-20",
@@ -77,7 +77,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-13",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-09-13",
@@ -126,7 +126,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-09-10",
@@ -175,7 +175,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-09-10",
@@ -224,7 +224,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-09-10",
@@ -273,7 +273,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-09-10",
@@ -343,7 +343,8 @@
           "title similarity 0.93",
           "same country (US)"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "kuruma_ex:ccAU7315534408",
@@ -427,7 +428,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-09-08",
@@ -478,7 +479,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-09-08",
@@ -583,7 +584,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-09-07",
@@ -810,7 +811,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-09-04",
@@ -1403,7 +1404,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-09-01",
@@ -1627,7 +1628,7 @@
       "images": [
         "https://ccsrpcma.carsensor.net/CSphoto/bkkn/059/489/U00030059489/U00030059489_001L.JPG"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-08-12",
       "last_seen": "2026-09-19",
       "history": [
@@ -1656,14 +1657,17 @@
             "fx_rate": 216.89,
             "fx_date": "2026-08-28"
           }
+        },
+        {
+          "date": "2026-09-22",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "kuruma_ex:ccAU7062177718",
@@ -1694,7 +1698,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-08-03",
@@ -1852,7 +1856,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-08-01",
@@ -1965,7 +1969,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-07-18",
@@ -2096,7 +2100,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "classiccars:CC-1995643",
@@ -2233,7 +2238,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-07-17",
@@ -2282,7 +2287,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "history": [
         {
           "date": "2026-07-17",
