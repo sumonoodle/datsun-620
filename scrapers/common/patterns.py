@@ -43,3 +43,63 @@ RE_620 = re.compile(r"(?<![\dA-Za-z,])(?<!\d\.)620(?!\d)")
 # SD22 (the 620's diesel) must survive D22.
 RE_OTHER_GEN = re.compile(
     r"(?<![\d.,£$€¥])(?:520|521|720)(?!,?\d)|(?<![A-Za-z])D2[12](?!\d)", re.I)
+
+# Datsun/Nissan nameplates that are not this truck at all — saloons, coupes,
+# vans and later pickups. A "datsun" query returns these everywhere, and
+# era gating alone cannot tell them apart: a 1974 Bluebird sits inside the
+# 620 production window just as neatly as a 620 does.
+#
+# Added 2026-09-23 after the owner asked about two live false positives. The
+# Japanese collectors gated on registration year ONLY, with no model check
+# of any kind, which let in a UN521 (a 521-generation truck, admitted twice)
+# and a ダットサンブルーバード1600 saloon. Kaidee already carried this list
+# privately; it belongs here so thirteen collectors cannot drift again — the
+# same lesson as the 620 and cross-generation rules above.
+RE_NOT_620_MODEL = re.compile(
+    r"bluebird|ブルーバード|sunny|サニー|ซันนี่|cedric|セドリック|gloria"
+    r"|laurel|ローレル|skyline|スカイライン|fairlady|フェアレディ|violet"
+    r"|cherry|チェリー|stanza|maxima|silvia|シルビア|vanette|バネット"
+    r"|caravan|キャラバン|civilian|シビリアン|patrol|パトロール|safari"
+    r"|cabstar|キャブスター|homer|ホーマー|junior|ジュニア|navara|frontier"
+    r"|hardbody|big[ -]?m|atlas|アトラス|condor|コンドル|\bsedan\b|セダン"
+    r"|ซีดาน|เก๋ง|\d{3}ZX?\b|\bZ\d{3}\b|roadster|ロードスター", re.I)
+
+
+def is_other_generation(text: str) -> bool:
+    """Not a 620: a neighbouring truck generation, or a different model.
+
+    One call so a collector cannot remember the numeric rule and forget the
+    nameplate one, which is exactly how the UN521 and the Bluebird got in.
+    """
+    return bool(RE_OTHER_GEN.search(text) or RE_NOT_620_MODEL.search(text))
+
+
+# Accessories and parts sold FOR a 620 rather than a 620 itself. The live
+# case (2026-09-20, ratsun:2463) was "Datsun 620 Sunline Camper" at $500 —
+# a camper shell that mounts on a 620 bed, ingested as a truck.
+#
+# Deliberately conservative, because the standing rule since 2026-07-17 is
+# to show every 620 variant rather than risk filtering a real truck away.
+# All three conditions must hold: an accessory word, NO word implying a
+# whole vehicle, and a known price below the floor. An unpriced listing is
+# never dropped on suspicion — it goes through for the owner to screen.
+RE_ACCESSORY = re.compile(
+    r"\bcamper\b|\bcanopy\b|\btopper\b|\bshell\b|\bcap\b|bed liner|bedliner"
+    r"|\btailgate\b|\bbumper\b|\bfender\b|\bgrille\b|\bhood\b|\bbonnet\b"
+    r"|\bseats?\b|\bwheels?\b|\btyres?\b|\btires?\b|\bengine\b|\bgearbox\b"
+    r"|\btransmission\b|\bdiff\b|\baxle\b|\bmanual\b|\bbrochure\b|\bdecal\b",
+    re.I)
+RE_WHOLE_VEHICLE = re.compile(
+    r"pick[ -]?up|\btruck\b|\bute\b|\bcab\b|\bproject\b|\brunning\b|\bdrives?\b"
+    r"|\brestored\b|\brestoration\b|\bbarn find\b|\btitle\b|\bmiles\b|\bkm\b"
+    r"|\bregistered\b|\bmot\b|\btax\b|\bvehicle\b|\bcar\b", re.I)
+ACCESSORY_PRICE_FLOOR_GBP = 1500.0
+
+
+def looks_like_accessory(title: str, price_gbp: float | None) -> bool:
+    """A part sold for a 620, not a 620 — on all three signals, or not at all."""
+    if price_gbp is None or price_gbp >= ACCESSORY_PRICE_FLOOR_GBP:
+        return False
+    if RE_WHOLE_VEHICLE.search(title or ""):
+        return False
+    return bool(RE_ACCESSORY.search(title or ""))

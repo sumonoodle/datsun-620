@@ -21,7 +21,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
-from common.patterns import RE_620, RE_OTHER_GEN
+from common.patterns import RE_620, RE_OTHER_GEN, looks_like_accessory
 
 SOURCE = "ratsun"
 URL = "https://ratsun.net/classifieds/category/5-datsun-vehicles/"
@@ -83,6 +83,14 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         if url.startswith("/"):
             url = "https://ratsun.net" + url
 
+        # A camper shell or a set of seats is not a truck. Forum classifieds
+        # mix parts and vehicles freely, and ratsun:2463 ("Datsun 620 Sunline
+        # Camper", $500) was ingested as one. Needs all three signals, so an
+        # unpriced or vehicle-worded listing still goes through to be screened.
+        price = normalize.make_price(amount, "USD", fx_day)
+        if looks_like_accessory(title, price["gbp"]):
+            continue
+
         records.append({
             "id": f"ratsun:{item_id}",
             "source": SOURCE,
@@ -96,7 +104,7 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
             "region": None,
             "drive_side": normalize.infer_drive_side("US", title),
             "king_cab": king_cab.check(title),
-            "price": normalize.make_price(amount, "USD", fx_day),
+            "price": price,
             "images": [image] if image else [],
             "status": "sold" if sold else "active",
         })

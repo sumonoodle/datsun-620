@@ -318,6 +318,16 @@ def _model_sections(changes: dict, run_log: dict, listings_by_id: dict,
             health_items.append(
                 f'<li style="margin:4px 0;">&#9989; {name}: {s.get("records", 0)} listing(s)'
                 f'{quiet_txt}</li>')
+        elif s.get("expected_blocked"):
+            # Blocked by design, not broken by accident: an IP-level ban whose
+            # real route is the email alerts. The escalation below already
+            # fired for these and the decision was made — keep polling in case
+            # the ban lifts, but stop shouting about it every morning, because
+            # a banner that never changes stops being read.
+            streak = s.get("consecutive_failures", 0)
+            health_items.append(
+                f'<li style="margin:4px 0;color:{MUTED};">&#8212; {name}: '
+                f'blocked {streak} days (known — awaiting email-alert setup)</li>')
         else:
             note = html.escape(s.get("note", ""))
             streak = s.get("consecutive_failures", 0)

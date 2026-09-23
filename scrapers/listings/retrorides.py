@@ -20,7 +20,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
-from common.patterns import RE_620, RE_OTHER_GEN
+from common.patterns import RE_620, RE_OTHER_GEN, looks_like_accessory
 
 SOURCE = "retrorides"
 BASE = "https://forum.retro-rides.org"
@@ -73,6 +73,14 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         if url.startswith("/"):
             url = BASE + url
 
+        # A camper shell or a set of seats is not a truck. Forum boards mix
+        # parts and vehicles freely (ratsun:2463, "Datsun 620 Sunline Camper"
+        # at $500, was ingested as one). Needs all three signals, so an
+        # unpriced or vehicle-worded thread still goes through to be screened.
+        price = normalize.make_price(_price(title), "GBP", fx_day)
+        if looks_like_accessory(title, price["gbp"]):
+            continue
+
         records.append({
             "id": f"retrorides:{thread_id}",
             "source": SOURCE,
@@ -86,7 +94,7 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
             "region": None,
             "drive_side": normalize.infer_drive_side("GB", title),
             "king_cab": king_cab.check(title),
-            "price": normalize.make_price(_price(title), "GBP", fx_day),
+            "price": price,
             "images": [],
             "status": "sold" if re.search(r"\bSOLD\b", title, re.I) else "active",
         })

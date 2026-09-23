@@ -21,6 +21,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
+from common.patterns import is_other_generation
 
 SOURCE = "kuruma_ex"
 BASE = "https://kuruma-ex.jp"
@@ -67,6 +68,10 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         year = int(ym.group(1)) if ym else None
         if year is None or not 1971 <= year <= 1980:
             continue  # D21/D22 trucks otherwise leak in
+        # Era alone cannot tell a 620 from a Bluebird or a UN521: both
+        # sit inside the 620 production window. Shared rule, 2026-09-23.
+        if is_other_generation(title):
+            continue
         seen.add(listing_id)
 
         # 2026-08-22 bug: the price renders as split bold runs

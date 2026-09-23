@@ -126,14 +126,19 @@ const variantBits = (l: any) => [chassisCode(l), driveTrain(l)].filter(Boolean).
             <ul class="card health">
               {runLog.sources.map((s: any) => (
                 <li>
-                  <span class={`dot ${s.ok ? "dot-ok" : "dot-bad"}`} /> {sourceName(s.source)}
+                  <span class={`dot ${s.ok ? "dot-ok" : s.expected_blocked ? "dot-known" : "dot-bad"}`} /> {sourceName(s.source)}
                   {s.ok
                     ? <span class="supporting"> — {s.records} listing(s)
                         {/* A source can be "ok" and still be blind: eBay
                             reported ok/0 for a month. Show the quiet streak
                             so a long silence is visible here too. */}
                         {s.consecutive_zero_runs >= 5 && ` (quiet ${s.consecutive_zero_runs} days)`}</span>
-                    : <span class="supporting"> — {s.note}{s.consecutive_failures > 1 && ` (${s.consecutive_failures} days)`}</span>}
+                    : s.expected_blocked
+                      ? /* Blocked by design, not broken by accident: an IP-level
+                           ban whose route is the email alerts. Muted, because a
+                           red dot that never changes stops being read. */
+                        <span class="supporting"> — blocked {s.consecutive_failures} days (known, awaiting email alerts)</span>
+                      : <span class="supporting"> — {s.note}{s.consecutive_failures > 1 && ` (${s.consecutive_failures} days)`}</span>}
                 </li>
               ))}
             </ul>
@@ -223,6 +228,7 @@ const variantBits = (l: any) => [chassisCode(l), driveTrain(l)].filter(Boolean).
       border-radius: 50%;
       margin-right: 0.45rem;
     }
+    .dot-known { background: #b9a88f; }
     .dot-ok {
       background: var(--tertiary);
     }

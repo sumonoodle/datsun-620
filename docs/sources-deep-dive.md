@@ -407,3 +407,59 @@ unblock in the project.
 listings, the most of any country, through ClassicCars.com, Barn Finds,
 Trovit and Ratsun, with BaT and eBay live but empty on the day. Hemmings
 and Cars & Bids are additive, not foundational.
+
+## Kaidee: rebuilt as an SPA, no longer scrapeable (2026-09-23)
+
+Kaidee began failing on a missing `__NEXT_DATA__` payload. Three probe
+rounds, and the cause is not a block: the site was rebuilt. Every path on
+**both** `rod.kaidee.com` and `www.kaidee.com` now returns the identical
+5,077-byte Vite SPA shell — `<div id="app"></div>`, `/assets/index-*.js`,
+hashed CSS, Google Tag Manager — including the root, the old car-search
+path, `/search`, Thai-language queries, `/api/search`,
+`/_next/data/search.json` and **`/robots.txt` itself**. The single
+referenced JS bundle answers with 728 bytes and no API strings.
+
+Two things follow, and the second is the binding one.
+
+First, the old server-rendered route is gone permanently. The collector
+keyed on `pageProps.ads`, which no longer exists.
+
+Second — **there is no readable robots.txt on either host.** That rules
+out hunting for their XHR API: permission cannot be established, and
+guessing endpoints against a site whose robots file we cannot read is the
+same behaviour declined for Cars & Bids on 2026-09-20. Worth recording
+that round 1 of this probe reported "robots 200; search path allowed:
+True" and that was **meaningless** — `RobotFileParser` was handed the HTML
+shell, found no directives, and defaulted to permissive. A parser that
+cannot fail is not a check.
+
+Thailand is not lost: **Truck2Hand still works** and carries four live
+620s. Kaidee is one of two Thai sources, not the only one.
+
+Open decision for the owner: leave Kaidee failing loudly (so a reversal is
+noticed), mark it `expected_blocked` alongside Cars & Bids and Hemmings, or
+move it to the alert route if Kaidee offers saved-search email.
+
+## False positives fixed (2026-09-23, owner-prompted)
+
+**The Japanese collectors had no model check at all.** carsensor,
+goonet_exchange and kuruma_ex gated on registration year alone (1971-1980),
+which cannot separate a 620 from anything else built in those years. Two
+live consequences: a **UN521** (a 521-generation truck) was ingested
+twice, and a **ダットサンブルーバード1600 SSS** saloon once. Kaidee already
+carried a nameplate exclusion list privately; it is now shared in
+`common/patterns.py` as `RE_NOT_620_MODEL`, combined with the existing
+cross-generation rule behind one `is_other_generation()` call so a
+collector cannot remember one rule and forget the other. Verified against
+every stored Japanese title: drops exactly the three wrong records, keeps
+all five genuine 620s.
+
+**Forum classifieds had no accessory guard.** `ratsun:2463` — "Datsun 620
+Sunline Camper", $500 — is a camper shell that mounts on a 620 bed, stored
+as a truck. `looks_like_accessory()` requires all three of an accessory
+word, no whole-vehicle word, and a known price under £1,500. Deliberately
+conservative, because the standing rule since 2026-07-17 is to show every
+620 variant rather than risk filtering a real truck away: an **unpriced**
+listing is never dropped on suspicion, and "620 with camper, runs and
+drives" at £1,200 passes on the vehicle words. Applied to Ratsun and Retro
+Rides, the two board sources that mix parts with vehicles.
