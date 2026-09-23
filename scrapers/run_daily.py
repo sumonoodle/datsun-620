@@ -58,6 +58,22 @@ SOURCES: list[tuple] = [
     ("kleinanzeigen", kleinanzeigen.collect),
 ]
 
+# Sources that are blocked by design rather than broken by accident, and
+# whose real route is the Phase C email alerts the owner is setting up.
+#
+# 2026-09-20 probing established these are IP-level bans on datacentre
+# ranges, not path rules or bugs: Cars & Bids 403s its own HOMEPAGE, and
+# Hemmings challenges every dynamic page while serving only static files.
+# Both robots.txt files ALLOW the paths we ask for, so there is nothing to
+# fix and nothing to wait for — their block will not lift because we tried
+# again. See docs/sources-deep-dive.md.
+#
+# Owner decision 2026-09-23: keep running them, so a lifted block is still
+# noticed, but stop them reading as a fresh failure every morning. They are
+# reported separately and excluded from the "sources ok" headline, which
+# otherwise understated a healthy run by two every single day.
+EXPECTED_BLOCKED = {"carsandbids", "hemmings"}
+
 
 def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None,
         fx_path: Path | None = None) -> int:
@@ -134,7 +150,8 @@ def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None,
             source_results.append(
                 {"source": name, "ok": False, "records": 0, "note": str(exc)[:200],
                  "consecutive_failures": prev_failures + 1,
-                 "consecutive_zero_runs": prev_zero}
+                 "consecutive_zero_runs": prev_zero,
+                 "expected_blocked": name in EXPECTED_BLOCKED}
             )
 
     # kuruma-ex aggregates the Carsensor feed with a 'cc'-prefixed copy of
@@ -202,10 +219,16 @@ def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None,
             print(f"new: {new_id} | {l['title'][:90]} | "
                   f"{l['price']['amount']} {l['price']['currency']} | {l['url']}")
 
-    ok = sum(1 for s in source_results if s["ok"])
+    # The headline counts only sources that COULD have worked. Two permanent
+    # IP bans made every healthy run read as 18/20 and buried the days when
+    # something was genuinely wrong.
+    reachable = [s for s in source_results if not s.get("expected_blocked")]
+    ok = sum(1 for s in reachable if s["ok"])
+    blocked = len(source_results) - len(reachable)
+    blocked_note = f", {blocked} known blocked" if blocked else ""
     print(
-        f"run complete: fx {fx_day['date']}, sources ok {ok}/{len(source_results)}, "
-        f"active {len(active)}, new {len(changes['new'])}, "
+        f"run complete: fx {fx_day['date']}, sources ok {ok}/{len(reachable)}"
+        f"{blocked_note}, active {len(active)}, new {len(changes['new'])}, "
         f"price changes {len(changes['price_changed'])}"
     )
     return 0

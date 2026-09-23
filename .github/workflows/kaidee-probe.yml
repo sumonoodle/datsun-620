@@ -10,6 +10,7 @@ on:
     paths:
       - scrapers/experiments/kaidee_probe.py
       - scrapers/experiments/kaidee_probe2.py
+      - scrapers/experiments/kaidee_probe3.py
       # Editing this file must fire it too — a workflow repointed at a new
       # script changes only itself, matches no other path, and runs nothing.
       - .github/workflows/kaidee-probe.yml
@@ -30,4 +31,4 @@ jobs:
       - name: Install dependencies
         run: pip install -r scrapers/requirements.txt
       - name: Probe Kaidee
-        run: python scrapers/experiments/kaidee_probe2.py
+        run: python scrapers/experiments/kaidee_probe3.py
