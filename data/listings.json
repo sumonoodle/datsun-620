@@ -1,6 +1,167 @@
 {
-  "generated_at": "2026-09-22",
+  "generated_at": "2026-09-23",
   "listings": [
+    {
+      "id": "trovit:mB7wBFc1j",
+      "source": "trovit",
+      "source_listing_id": "mB7wBFc1j",
+      "url": "https://rd.clk.thribee.com/id.mB7wBFc1j/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.518143trovit-web-7745f64f-ssxvf6ab399f414958/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606ab399f41465e2.34114549/pos.1/timestamp.1790155252/sign.ouw4vUcTUvs9reHIvA3KDw%3D%3D/",
+      "title": "1974 Datsun 620",
+      "title_translated": null,
+      "description_snippet": "For Sale is my 1974 Datsun 620 Pickup. It has had a beautiful frame off restoration done. This truck has only hauled fishing poles and lawn...",
+      "year": 1974,
+      "country": "US",
+      "region": "12071, NY",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 14500.0,
+        "currency": "USD",
+        "gbp": 10850.86,
+        "fx_rate": 1.3363,
+        "fx_date": "2026-09-22"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/mB7wBFc1j/mB7wBFc1j.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-23",
+      "last_seen": "2026-09-23",
+      "history": [
+        {
+          "date": "2026-09-23",
+          "status": "active",
+          "price": {
+            "amount": 14500.0,
+            "currency": "USD",
+            "gbp": 10850.86,
+            "fx_rate": 1.3363,
+            "fx_date": "2026-09-22"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:1qw1Cizr1o1Z",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
+    {
+      "id": "trovit:Bp1Q1d121u1pl",
+      "source": "trovit",
+      "source_listing_id": "Bp1Q1d121u1pl",
+      "url": "https://rd.clk.thribee.com/id.Bp1Q1d121u1pl/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.518143trovit-web-7745f64f-ssxvf6ab399f414958/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606ab399f41465e2.34114549/pos.3/timestamp.1790155252/sign.JK9WqlKIW0%2FgiR0ukLBAng%3D%3D/",
+      "title": "1977 datsun 620 king cab custom built pickup",
+      "title_translated": null,
+      "description_snippet": "The truck has a small crack near bottom of glass, E-brake requires adjusting and to finish the project needs a better paint job. This truck has h",
+      "year": 1977,
+      "country": "US",
+      "region": "28650, Maiden, Catawba County, NC",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": true,
+        "matched_terms": [
+          "king cab"
+        ],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 9940.0,
+        "currency": "USD",
+        "gbp": 7438.45,
+        "fx_rate": 1.3363,
+        "fx_date": "2026-09-22"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/Bp1Q1d121u1pl/Bp1Q1d121u1pl.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-23",
+      "last_seen": "2026-09-23",
+      "history": [
+        {
+          "date": "2026-09-23",
+          "status": "active",
+          "price": {
+            "amount": 9940.0,
+            "currency": "USD",
+            "gbp": 7438.45,
+            "fx_rate": 1.3363,
+            "fx_date": "2026-09-22"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:1Mp1r1Jt1ZN1S",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
+    {
+      "id": "trovit:1tm10oa121o1e",
+      "source": "trovit",
+      "source_listing_id": "1tm10oa121o1e",
+      "url": "https://rd.clk.thribee.com/id.1tm10oa121o1e/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.518143trovit-web-7745f64f-ssxvf6ab399f414958/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606ab399f41465e2.34114549/pos.2/timestamp.1790155252/sign.d9Mq6G6c62L35wvbO4R%2Big%3D%3D/",
+      "title": "1978 Datsun 620 Pickup Pro Street Blown Chevy Hot Rod",
+      "title_translated": null,
+      "description_snippet": "...you are looking for an attention getter whether at a cruise-in or just driving down the road, here is the car for youâ¦. This is a 1978 Datsun ...",
+      "year": 1978,
+      "country": "US",
+      "region": "68462, Waverly, Lancaster County, NE",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 15550.0,
+        "currency": "USD",
+        "gbp": 11636.61,
+        "fx_rate": 1.3363,
+        "fx_date": "2026-09-22"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/1tm10oa121o1e/1tm10oa121o1e.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-23",
+      "last_seen": "2026-09-23",
+      "history": [
+        {
+          "date": "2026-09-23",
+          "status": "active",
+          "price": {
+            "amount": 15550.0,
+            "currency": "USD",
+            "gbp": 11636.61,
+            "fx_rate": 1.3363,
+            "fx_date": "2026-09-22"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:n1h1J1lJY1-F",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
     {
       "id": "ratsun:2463",
       "source": "ratsun",
@@ -28,7 +189,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-20",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-09-20",
@@ -77,7 +238,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-13",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-09-13",
@@ -126,7 +287,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-09-10",
@@ -175,7 +336,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-09-10",
@@ -224,7 +385,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-09-10",
@@ -273,7 +434,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-09-10",
@@ -322,7 +483,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-09-10",
@@ -343,8 +504,7 @@
           "title similarity 0.93",
           "same country (US)"
         ]
-      },
-      "missed_runs": 1
+      }
     },
     {
       "id": "kuruma_ex:ccAU7315534408",
@@ -428,7 +588,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-09-08",
@@ -479,7 +639,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-09-08",
@@ -584,7 +744,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-09-07",
@@ -811,7 +971,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-09-04",
@@ -1404,7 +1564,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-09-01",
@@ -1698,7 +1858,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-08-03",
@@ -1856,7 +2016,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-08-01",
@@ -1969,7 +2129,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-07-18",
@@ -2016,9 +2176,9 @@
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/059/489/U00030059489/U00030059489_001L.JPG"
       ],
-      "status": "withdrawn",
+      "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-31",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-07-17",
@@ -2034,6 +2194,17 @@
         {
           "date": "2026-09-03",
           "status": "withdrawn"
+        },
+        {
+          "date": "2026-09-23",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "JPY",
+            "gbp": null,
+            "fx_rate": 210.04,
+            "fx_date": "2026-09-22"
+          }
         }
       ],
       "relist": {
@@ -2071,7 +2242,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-07-17",
@@ -2100,8 +2271,7 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 1
+      }
     },
     {
       "id": "classiccars:CC-1995643",
@@ -2238,7 +2408,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-07-17",
@@ -2287,7 +2457,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-09-23",
       "history": [
         {
           "date": "2026-07-17",
