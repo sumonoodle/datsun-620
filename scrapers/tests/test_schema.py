@@ -64,7 +64,7 @@ def test_golden_listing_validates():
 
 def test_bad_listings_rejected():
     cases = {
-        "unknown source": ("source", "craigslist"),
+        "unknown source": ("source", "notasource"),
         "bad status": ("status", "pending"),
         "bad drive side": ("drive_side", "left"),
         "bad country": ("country", "USA"),

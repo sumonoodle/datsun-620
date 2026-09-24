@@ -1,14 +1,21 @@
 ---
+import { MODEL_LIST, base, modelFromPath, modelHref } from "../lib/trucks";
+
 interface Props {
   title: string;
 }
 const { title } = Astro.props;
-// BASE_URL has no trailing slash here; normalise so joins are always "<base>/x/".
-const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const path = Astro.url.pathname;
-const isActive = (p: string) => path.startsWith(`${base}/${p}`);
+// Which truck this page belongs to: the Datsun at the root, the Hilux under
+// /hilux/. Nav links stay inside the current truck.
+const model = modelFromPath(path);
+const root = `${base}${model.prefix}`;
+const isActive = (p: string) => path.startsWith(`${root}/${p}`);
 // Listings is the front page; vehicle pages belong to it.
-const isListings = path === `${base}/` || path === base || isActive("vehicle");
+const isListings = path === `${root}/` || path === root || isActive("vehicle");
+// The switcher keeps you on the same kind of page where the other truck has
+// one (Updates -> Updates); a vehicle page goes to the other truck's listings.
+const section = ["updates", "specs", "compare"].find((p) => isActive(p)) ?? "";
 ---
 
 <html lang="en">
@@ -33,19 +40,26 @@ const isListings = path === `${base}/` || path === base || isActive("vehicle");
   </head>
   <body>
     <header class="appbar">
-      <a class="brand" href={`${base}/`}>Datsun <b>620</b></a>
+      <a class="brand" href={`${root}/`}>{model.brandMake} <b>{model.brandModel}</b></a>
+      <nav class="model-switch" aria-label="Choose truck">
+        {MODEL_LIST.map((m) => (
+          <a class:list={["seg", { current: m.key === model.key }]}
+             href={modelHref(m, section)}
+             aria-current={m.key === model.key ? "page" : undefined}>{m.short}</a>
+        ))}
+      </nav>
     </header>
     <main>
       <slot />
     </main>
     <nav class="navbar" aria-label="Main">
-      <a class:list={["nav-item", { active: isListings }]} href={`${base}/`}>
+      <a class:list={["nav-item", { active: isListings }]} href={`${root}/`}>
         <span class="ind">🚚</span>Listings
       </a>
-      <a class:list={["nav-item", { active: isActive("updates") }]} href={`${base}/updates/`}>
+      <a class:list={["nav-item", { active: isActive("updates") }]} href={`${root}/updates/`}>
         <span class="ind">🗞️</span>Updates
       </a>
-      <a class:list={["nav-item", { active: isActive("specs") }]} href={`${base}/specs/`}>
+      <a class:list={["nav-item", { active: isActive("specs") }]} href={`${root}/specs/`}>
         <span class="ind">📋</span>Specs
       </a>
     </nav>
@@ -147,12 +161,49 @@ const isListings = path === `${base}/` || path === base || isActive("vehicle");
       .appbar {
         background: var(--surface-container);
         padding: 0.9rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+      /* Truck switcher: an M3 segmented button, thumb-sized at 390px. */
+      .model-switch {
+        display: flex;
+        flex: none;
+        border: 1px solid var(--outline);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .seg {
+        display: block;
+        padding: 0.45rem 0.85rem;
+        min-height: 40px;
+        line-height: 1.6;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--on-surface);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .seg + .seg {
+        border-left: 1px solid var(--outline);
+      }
+      .seg.current {
+        background: var(--secondary-container);
+        color: var(--on-secondary-container);
+      }
+      .seg.current::before {
+        content: "✓ ";
       }
       .brand {
         color: var(--on-surface);
         text-decoration: none;
         font-size: 1.35rem;
         font-weight: 400;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 0;
       }
       .brand b {
         font-weight: 500;
