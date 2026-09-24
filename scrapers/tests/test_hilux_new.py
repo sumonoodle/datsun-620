@@ -69,7 +69,7 @@ def test_gumtree_uk_guard():
     assert gumtree_uk.parse_page(page([], 0), FX_DAY) == []
     # robots.txt disallows /search (round-3 probe refused both /search
     # URLs): only the path-style /srpsearch+ form may be polled.
-    assert gumtree_uk.URLS[0] == "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux"
+    assert gumtree_uk.URLS[0] == "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux?sort=date"
     assert all("/search?" not in u and "/srpsearch+" in u for u in gumtree_uk.URLS)
     print("ok test_gumtree_uk_guard")
 

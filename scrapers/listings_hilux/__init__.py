@@ -9,7 +9,7 @@ digest share display names), so "ebay" here is eBay whichever truck.
 
 from . import (barnfinds, bat, carfromjapan, carsensor, classic_trader,
                classiccars, ebay, everycar, flex, goonet, goonet_exchange,
-               gumtree_za, hagerty, kijiji, kleinanzeigen, kuruma_ex,
+               gumtree_uk, gumtree_za, hagerty, kijiji, kleinanzeigen, kuruma_ex,
                marktplaats, pistonheads, retrorides, tcv, trovit, truck2hand,
                yahoo_auctions)
 
@@ -31,6 +31,7 @@ SOURCES: list[tuple] = [
     ("kuruma_ex", kuruma_ex.collect),
     ("everycar", everycar.collect),
     ("classic_trader", classic_trader.collect),
+    ("gumtree_uk", gumtree_uk.collect),
     ("gumtree_za", gumtree_za.collect),
     ("tcv", tcv.collect),
     ("carfromjapan", carfromjapan.collect),

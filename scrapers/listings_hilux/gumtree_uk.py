@@ -52,10 +52,18 @@ SOURCE = "gumtree_uk"
 BASE = "https://www.gumtree.com"
 # Never /search? -- robots.txt disallows it (round-3 probe).
 _SRP = f"{BASE}/cars-vans-motorbikes/uk/srpsearch+"
+# Round 4 (2026-09-24): on the allowed path form, ?sort=date IS applied
+# (page 1 ran 41 minutes to 4 hours old) while ?vehicle_fuel_type=petrol is
+# ignored (page 1 still all diesel). Relevance order showed the same modern
+# trucks day after day, so newest-first is the one view that can surface a
+# new classic ad. It sees only the newest ~26 ads (a few hours' worth), so
+# coverage is partial by design. The +rn30 / +classic keyword searches
+# returned only parts ads (roll bar, wind deflectors) and add nothing the
+# vehicle-path gate keeps, but a seller who puts RN30 in a car ad's title
+# lands there, so +rn30 stays at the cost of one request.
 URLS = [
-    f"{_SRP}toyota+hilux",          # round-1 probe: 200, robots-allowed
+    f"{_SRP}toyota+hilux?sort=date",
     f"{_SRP}toyota+hilux+rn30",
-    f"{_SRP}toyota+hilux+classic",
 ]
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
