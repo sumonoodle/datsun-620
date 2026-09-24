@@ -70,6 +70,12 @@ HILUX = {
     "ext_tag": "EXTENDED CAB (rare)", "ext_label": "extended cab", "ext_rare": True,
     # target_match = like the owner's reference truck (1980 RN30, 12R, 2WD).
     "target": True, "target_label": "MATCHES YOUR RN30 SPEC",
+    # Most Hilux sources hold no 1978-83 petrol truck for months (the
+    # Japanese and Thai portals are wall-to-wall modern diesels), so the
+    # 620's 21 days would nag weekly about a dozen healthy sources. The
+    # Hilux collectors also guard harder against blindness (year-cap and
+    # result-count checks raise), so the quiet alert is a later backstop.
+    "quiet_after": 60,
 }
 
 # Silent-source alert. eBay reported "ok, 0 listings" every day for a month
@@ -90,14 +96,14 @@ QUIET_REPEAT_EVERY = 7
 QUIET_RUNS_SHOW = 5
 
 
-def quiet_alerts(sources: list[dict]) -> list[dict]:
+def quiet_alerts(sources: list[dict], alert_after: int = QUIET_RUNS_ALERT) -> list[dict]:
     """Sources quiet long enough to be worth checking today."""
     out = []
     for s in sources:
         streak = s.get("consecutive_zero_runs", 0)
-        if not s.get("ok") or streak < QUIET_RUNS_ALERT:
+        if not s.get("ok") or streak < alert_after:
             continue
-        since = streak - QUIET_RUNS_ALERT
+        since = streak - alert_after
         if since == 0 or since % QUIET_REPEAT_EVERY == 0:
             out.append(s)
     return out
@@ -286,7 +292,7 @@ def _model_sections(changes: dict, run_log: dict, listings_by_id: dict,
 
     # Above Source health on purpose: the whole failure mode being fixed is
     # a true-but-useless "ok" that nobody scrolls down to question.
-    quiet = quiet_alerts(sources)
+    quiet = quiet_alerts(sources, model.get("quiet_after", QUIET_RUNS_ALERT))
     if quiet:
         rows = "".join(
             f'<li style="margin:4px 0;"><b>{html.escape(_source_name(s["source"]))}</b>'
@@ -434,7 +440,7 @@ def build_subject(changes: dict, run_log: dict, listings_by_id: dict,
         datsun = ""
 
     h_part = ""
-    sources = list(run_log.get("sources") or [])
+    n_quiet = len(quiet_alerts(list(run_log.get("sources") or [])))
     if hilux is not None:
         h = _news_counts(hilux.get("changes"), hilux.get("listings_by_id"))
         if h["new"] or h["price"]:
@@ -445,7 +451,8 @@ def build_subject(changes: dict, run_log: dict, listings_by_id: dict,
                 flags.append(f"{h['ext']} EXTENDED CAB")
             lead = f"{', '.join(flags)} of " if flags else ""
             h_part = f"Hilux: {lead}{h['new']} new, {h['price']} price change(s)"
-        sources += list((hilux.get("run_log") or {}).get("sources") or [])
+        n_quiet += len(quiet_alerts(list((hilux.get("run_log") or {}).get("sources") or []),
+                                    HILUX["quiet_after"]))
 
     news = [p for p in (datsun, h_part) if p]
     if news:
@@ -456,7 +463,6 @@ def build_subject(changes: dict, run_log: dict, listings_by_id: dict,
         subject = f"Datsun 620 digest — {date}"
     # An alert nobody opens the mail to see is not an alert. Same function as
     # the body section, so the subject cannot promise what the body omits.
-    n_quiet = len(quiet_alerts(sources))
     if n_quiet:
         subject += f" — {n_quiet} source(s) quiet"
     return subject

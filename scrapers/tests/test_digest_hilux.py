@@ -120,7 +120,13 @@ def test_subject_mentions_both():
     q = {"source": "x", "ok": True, "records": 0, "note": "", "consecutive_failures": 0,
          "consecutive_zero_runs": send_digest.QUIET_RUNS_ALERT}
     hq = {"changes": _changes(), "run_log": _run_log([q]), "listings_by_id": {}}
+    # 21 quiet days alerts for the 620 but not yet for the Hilux, whose
+    # sources are routinely empty for months (threshold 60).
     assert send_digest.build_subject(_changes(), _run_log([q]), {}, hilux=hq).endswith(
+        "— 1 source(s) quiet")
+    hq60 = {"changes": _changes(), "listings_by_id": {},
+            "run_log": _run_log([q | {"consecutive_zero_runs": send_digest.HILUX["quiet_after"]}])}
+    assert send_digest.build_subject(_changes(), _run_log([q]), {}, hilux=hq60).endswith(
         "— 2 source(s) quiet")
     print("ok test_subject_mentions_both")
 
