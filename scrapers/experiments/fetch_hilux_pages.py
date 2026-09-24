@@ -35,79 +35,37 @@ HILUX_TH = quote("ไฮลักซ์")
 
 # (file name, group, url). Group: "existing" = a source already scraped
 # for the 620; "new" = a candidate source for the Hilux.
+# Round 2 (2026-09-24): the pages the collector agents asked for after
+# building against round 1: year-capped and model-scoped variants, page-2
+# URL formats, and the Yahoo queries built exactly as the collector does.
+HILUX_JP_Q = quote("ハイラックス")
 PAGES = [
-    # --- existing sources, Hilux equivalents ---
-    ("bat-toyota.html", "existing", "https://bringatrailer.com/toyota/"),
-    ("bat-toyota-pickup.html", "existing", "https://bringatrailer.com/toyota/pickup/"),
-    ("bat-toyota-hilux.html", "existing", "https://bringatrailer.com/toyota/hilux/"),
-    ("classiccars-pickup.html", "existing", "https://classiccars.com/listings/find/1978-1984/toyota/pickup"),
-    ("classiccars-hilux.html", "existing", "https://classiccars.com/listings/find/all-years/toyota/hilux"),
-    ("hemmings-pickup.html", "existing", "https://www.hemmings.com/classifieds/cars-for-sale/toyota/pickup"),
-    ("carsandbids-search.html", "existing", "https://carsandbids.com/search/toyota%20pickup"),
-    ("goonet-exchange-hilux.html", "existing", "https://www.goo-net-exchange.com/usedcars/TOYOTA/HILUX/"),
-    ("carsensor-hilux.html", "existing", f"https://www.carsensor.net/usedcar/freeword/{HILUX_JP}/index.html"),
-    ("yahoo-open-hilux.html", "existing", f"https://auctions.yahoo.co.jp/search/search?p={HILUX_JP}&auccat=26360"),
-    ("yahoo-open-rn30.html", "existing", f"https://auctions.yahoo.co.jp/search/search?p={HILUX_JP}+RN30"),
-    ("yahoo-closed-hilux.html", "existing", f"https://auctions.yahoo.co.jp/closedsearch/closedsearch?p={HILUX_JP}+RN30"),
-    ("kaidee-hilux.html", "existing", "https://rod.kaidee.com/c11-auto-car?q=hilux"),
-    ("kaidee-hilux-th.html", "existing", f"https://rod.kaidee.com/c11-auto-car?q={HILUX_TH}"),
-    ("truck2hand-pickup.html", "existing", "https://www.truck2hand.com/category/cat_pickup/"),
-    ("truck2hand-search.html", "existing", "https://www.truck2hand.com/search?q=hilux"),
-    ("kijiji-pickup.html", "existing", "https://www.kijiji.ca/b-canada/toyota-pickup-1981/k0l0"),
-    ("kijiji-hilux.html", "existing", "https://www.kijiji.ca/b-canada/toyota-hilux/k0l0"),
-    ("barnfinds-pickup-feed.xml", "existing", "https://barnfinds.com/tag/toyota-pickup/feed/"),
-    ("barnfinds-hilux-feed.xml", "existing", "https://barnfinds.com/tag/toyota-hilux/feed/"),
-    ("barnfinds-toyota-feed.xml", "existing", "https://barnfinds.com/tag/toyota/feed/"),
-    ("flex-hilux.html", "existing", f"https://www.flexnet.co.jp/search/freeword/{HILUX_JP}"),
-    ("kuruma-ex-toyota.html", "existing", "https://kuruma-ex.jp/usedcar/search/result/maker/TO"),
-    ("everycar-toyota.html", "existing", "https://www.everycar.jp/used-cars?make=toyota"),
-    ("pistonheads-hilux.html", "existing", "https://www.pistonheads.com/buy/toyota/hilux"),
-    ("pistonheads-toyota.html", "existing", "https://www.pistonheads.com/buy/toyota"),
-    ("retrorides-board57.html", "existing", "https://forum.retro-rides.org/board/57/cars-sale-1985-older"),
-    ("trovit-us-hilux.html", "existing", "https://cars.trovit.com/used-cars/toyota-hilux"),
-    ("trovit-us-pickup.html", "existing", "https://cars.trovit.com/used-cars/toyota-pickup"),
-    ("trovit-de-hilux.html", "existing", "https://de.trovit.com/autos/gebrauchtwagen/toyota-hilux"),
-    ("trovit-uk-hilux.html", "new", "https://cars.trovit.co.uk/used-cars/toyota-hilux"),
-    ("trovit-au-hilux.html", "new", "https://cars.trovit.com.au/used-cars/toyota-hilux"),
-    ("trovit-za-hilux.html", "new", "https://cars.trovit.co.za/used-cars/toyota-hilux"),
-    ("kleinanzeigen-hilux.html", "existing", "https://www.kleinanzeigen.de/s-autos/hilux/k0c216"),
-    # --- new: UK ---
-    ("carandclassic-search.html", "new", "https://www.carandclassic.com/search?q=toyota+hilux"),
-    ("carandclassic-cat.html", "new", "https://www.carandclassic.com/cat/3/99/hilux/"),
-    ("gumtree-uk-hilux.html", "new", "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux"),
-    ("autotrader-uk-hilux.html", "new", "https://www.autotrader.co.uk/car-search?make=Toyota&model=Hilux&postcode=SP47DE&year-to=1985"),
-    ("classictrader-hilux.html", "new", "https://www.classic-trader.com/uk/cars/search/toyota/hilux"),
-    ("classiccarsforsale-uk-hilux.html", "new", "https://www.classiccarsforsale.co.uk/toyota/hilux"),
-    ("ebay-uk-web.html", "new", "https://www.ebay.co.uk/sch/i.html?_nkw=toyota+hilux+rn30&_sacat=9801"),
-    # --- new: Australia / NZ ---
-    ("gumtree-au-hilux.html", "new", "https://www.gumtree.com.au/s-cars-vans-utes/toyota/hilux/c18320"),
-    ("carsales-hilux.html", "new", "https://www.carsales.com.au/cars/toyota/hilux/"),
-    ("tradeuniquecars-hilux.html", "new", "https://www.tradeuniquecars.com.au/search/make-toyota/model-hilux"),
-    ("carsguide-hilux.html", "new", "https://www.carsguide.com.au/buy-a-car/toyota/hilux"),
-    ("justcars-hilux.html", "new", "https://www.justcars.com.au/cars-for-sale/toyota/hilux"),
-    ("trademe-hilux.html", "new", "https://www.trademe.co.nz/a/motors/cars/toyota/hilux"),
-    ("trademe-api-hilux.json", "new", "https://api.trademe.co.nz/v1/Search/Motors/Used.json?make=Toyota&model=Hilux&year_max=1984"),
-    # --- new: US / Canada ---
-    ("autotrader-classics-pickup.html", "new", "https://classics.autotrader.com/classic-cars-for-sale/toyota-pickup-for-sale"),
-    ("cars-com-pickup.html", "new", "https://www.cars.com/shopping/results/?makes[]=toyota&models[]=toyota-pickup&year_max=1984&stock_type=used"),
-    ("gateway-pickup.html", "new", "https://www.gatewayclassiccars.com/quick/Toyota+Pickup"),
-    ("craigslist-la.html", "new", "https://losangeles.craigslist.org/search/cta?query=toyota+pickup&max_auto_year=1984&min_auto_year=1978"),
-    ("craigslist-sfbay.html", "new", "https://sfbay.craigslist.org/search/cta?query=toyota+pickup&max_auto_year=1984&min_auto_year=1978"),
-    ("hagerty-toyota.html", "new", "https://www.hagerty.com/marketplace/search?make=Toyota&model=Pickup"),
-    ("mecum-toyota.html", "new", "https://www.mecum.com/lots/?search=toyota%20pickup"),
-    ("ih8mud-classifieds.html", "new", "https://forum.ih8mud.com/forums/vehicles-for-sale.121/"),
-    ("yotatech-classifieds.html", "new", "https://www.yotatech.com/forums/f68/"),
-    # --- new: Japan / Asia ---
-    ("goonet-jp-hilux.html", "new", "https://www.goo-net.com/usedcar/brand-TOYOTA/car-HILUX/"),
-    ("one2car-hilux.html", "new", "https://www.one2car.com/en/cars-for-sale/toyota/hilux?year_max=1984"),
-    ("carfromjapan-hilux.html", "new", "https://carfromjapan.com/cheap-used-toyota-hilux-for-sale"),
-    ("beforward-hilux.html", "new", "https://www.beforward.jp/stocklist/make=1/model=1224/sortkey=n"),
-    ("tcv-hilux.html", "new", "https://www.tc-v.com/used_car/toyota/hilux/"),
-    # --- new: South Africa / Europe ---
-    ("autotrader-za-hilux.html", "new", "https://www.autotrader.co.za/cars-for-sale/toyota/hilux?year=1978-to-1984"),
-    ("gumtree-za-hilux.html", "new", "https://www.gumtree.co.za/s-cars-bakkies/toyota+hilux/v1c9077q0p1"),
-    ("marktplaats-hilux.html", "new", "https://www.marktplaats.nl/q/toyota+hilux/"),
-    ("donedeal-hilux.html", "new", "https://www.donedeal.ie/cars/Toyota/Hilux"),
+    ("kijiji-cars-pickup.html", "r2", "https://www.kijiji.ca/b-cars-trucks/canada/toyota-pickup/k0c174l0"),
+    ("kijiji-cars-hilux.html", "r2", "https://www.kijiji.ca/b-cars-trucks/canada/toyota-hilux/k0c174l0"),
+    ("kijiji-classic-toyota.html", "r2", "https://www.kijiji.ca/b-classic-cars/canada/toyota/k0c122l0"),
+    ("pistonheads-hilux-yearto.html", "r2", "https://www.pistonheads.com/buy/toyota/hilux?yearTo=1984"),
+    ("pistonheads-classifieds-m586.html", "r2", "https://www.pistonheads.com/classifieds?Category=used-cars&M=586&YearTo=1984&ResultsPerPage=16"),
+    ("pistonheads-classifieds-toyota.html", "r2", "https://www.pistonheads.com/classifieds?Category=used-cars&MakeId=51&YearTo=1984"),
+    ("trovit-uk-hilux-maxyear.html", "r2", "https://cars.trovit.co.uk/used-cars/toyota-hilux?max_year=1984"),
+    ("kleinanzeigen-hilux-ez.html", "r2", "https://www.kleinanzeigen.de/s-autos/hilux/k0c216+autos.ez_i:1978,1984"),
+    ("kleinanzeigen-hilux-p2.html", "r2", "https://www.kleinanzeigen.de/s-autos/seite:2/hilux/k0c216"),
+    ("goonet-exchange-hilux-pickup.html", "r2", "https://www.goo-net-exchange.com/usedcars/TOYOTA/HILUX_PICK_UP/"),
+    ("carsensor-hilux-ymax.html", "r2", f"https://www.carsensor.net/usedcar/freeword/{HILUX_JP_Q}/index.html?YMAX=1989"),
+    ("carsensor-model-ymax.html", "r2", "https://www.carsensor.net/usedcar/bTO/s112/index.html?YMAX=1989"),
+    ("yahoo-rn30.html", "r2", f"https://auctions.yahoo.co.jp/search/search?p={HILUX_JP_Q}%20RN30"),
+    ("yahoo-12r.html", "r2", f"https://auctions.yahoo.co.jp/search/search?p={HILUX_JP_Q}%2012R"),
+    ("yahoo-kyusha-cat.html", "r2", f"https://auctions.yahoo.co.jp/search/search?p={HILUX_JP_Q}%20{quote('旧車')}&auccat=26360"),
+    ("yahoo-showa-cat.html", "r2", f"https://auctions.yahoo.co.jp/search/search?p={HILUX_JP_Q}%20{quote('昭和')}&auccat=26360"),
+    ("flex-hilux-sort4.html", "r2", f"https://www.flexnet.co.jp/search/freeword/{HILUX_JP_Q}?sort=4"),
+    ("kuruma-ex-s112-capped.html", "r2", "https://kuruma-ex.jp/usedcar/search/result/maker/TO/shashu/S112?year_max=1984"),
+    ("kuruma-ex-s112.html", "r2", "https://kuruma-ex.jp/usedcar/search/result/maker/TO/shashu/S112"),
+    ("everycar-hilux.html", "r2", "https://www.everycar.jp/used-cars?make=toyota&model=hilux"),
+    ("everycar-hilux-p2.html", "r2", "https://www.everycar.jp/used-cars?page=2&make=toyota&model=hilux"),
+    ("truck2hand-hilux-p2.html", "r2", "https://www.truck2hand.com/search/?q=hilux&page=2"),
+    ("truck2hand-hilux-th.html", "r2", f"https://www.truck2hand.com/search/?q={quote('ไฮลักซ์')}"),
+    ("kaidee-robots.txt", "r2", "https://www.kaidee.com/robots.txt"),
+    ("kaidee-api.js", "r2", "https://www.kaidee.com/assets/api-JDpYZ1q3.js"),
+    # NEW_SOURCES_R2
 ]
 
 
@@ -136,7 +94,8 @@ def main() -> int:
                 if not _robots_ok(client, url, robots):
                     entry["status"] = "robots-disallowed"
                 else:
-                    resp = client.get(url)
+                    jp = any(d in url for d in (".jp/", ".co.jp", "carsensor.net"))
+                    resp = client.get(url, headers={"Accept-Language": "ja,en;q=0.5"} if jp else None)
                     body = resp.content
                     low = body.lower()
                     entry.update({
