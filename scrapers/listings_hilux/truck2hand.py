@@ -1,4 +1,4 @@
-"""Hilux collector: Truck2Hand (Thailand), keyword search "hilux".
+"""Hilux collector: Truck2Hand (Thailand), keyword searches "hilux" and "ไฮลักซ์".
 
 Same __NEXT_DATA__ payload as the Datsun collector (listings/truck2hand.py:
 listingSections rows of items with hashId, title, "฿ 92,000" displayPrice
@@ -10,7 +10,8 @@ uses: the Toyota brand id is not discoverable offline. The Datsun slug
 (brand_brand-384-datsun) came from a live page, and neither 2026-09-24
 probe page (cat_pickup, search?q=hilux) carries brand facet links; they
 are built client-side. The keyword search is real and paginated
-(/search/?q=hilux&page=N, 332 ads over 4 pages on probe day), so it is
+(/search/?q=hilux&page=N, 332 ads over 4 pages on probe day; round 2
+confirmed page 2 in the same payload shape), so it is
 read in full up to MAX_PAGES.
 
 Probe-day content, for scale: every Hilux on both pages was a Revo, Vigo,
@@ -28,6 +29,7 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 import httpx
 
@@ -38,7 +40,10 @@ from listings.truck2hand import (BASE, HEADERS, _FLOOR_THB, _NEXT_RE, _PARTS_WOR
                                  _PRICE_RE, _iter_items)
 
 SOURCE = "truck2hand"
-SEARCH_URL = BASE + "/search/?q=hilux"
+# Latin and Thai spellings: the Thai search (ไฮลักซ์) returned 3 ads on the
+# round-2 probe, titled only in Thai ("ไฮลักซ์วีโก้"), which the Latin
+# search cannot match. One request, read to its own totalPages.
+QUERIES = ["hilux", "ไฮลักซ์"]
 MAX_PAGES = 8
 
 
@@ -107,15 +112,19 @@ def total_pages(html: str) -> int:
 def collect(fx_day: dict) -> list[dict]:
     records: list[dict] = []
     seen: set[str] = set()
+    pages: list[str] = []
     with httpx.Client(timeout=30, headers=HEADERS, follow_redirects=True) as client:
-        resp = client.get(SEARCH_URL)
-        resp.raise_for_status()
-        pages = [resp.text]
-        # totalPages comes from page 1's own payload (4 on probe day).
-        for n in range(2, min(total_pages(resp.text), MAX_PAGES) + 1):
-            r = client.get(f"{SEARCH_URL}&page={n}")
-            r.raise_for_status()
-            pages.append(r.text)
+        for query in QUERIES:
+            url = f"{BASE}/search/?q={quote(query)}"
+            resp = client.get(url)
+            resp.raise_for_status()
+            pages.append(resp.text)
+            # totalPages comes from page 1's own payload (4 for hilux on
+            # probe day, 1 for ไฮลักซ์).
+            for n in range(2, min(total_pages(resp.text), MAX_PAGES) + 1):
+                r = client.get(f"{url}&page={n}")
+                r.raise_for_status()
+                pages.append(r.text)
     for html in pages:
         for rec in parse_page(html, fx_day):
             if rec["id"] not in seen:

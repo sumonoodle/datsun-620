@@ -8,8 +8,9 @@ mostly Land Cruisers, Hilux Surfs, Jimnys and 2021-2023 Hilux diesels,
 across 9+ pages.
 
 So the collector asks for sort=4, the page's own 年式が古い順 (oldest
-first) option, taken verbatim from the probe page's sort dropdown. Any
-3rd-gen truck then leads page 1; one page is enough.
+first) option, taken verbatim from the probe page's sort dropdown. The
+round-2 probe confirmed it: 40 cards running 1994 upward (Prados, 80s,
+Surfs), so any 3rd-gen truck would lead page 1; one page is enough.
 
 Year comes strictly from the details table, never the blurb, for the
 reason the Datsun collector documents (a "restored in 2020" blurb must not
@@ -87,8 +88,7 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         detail_text = detail.get_text(" ", strip=True) if detail else ""
         ym = _YEAR_RE.search(detail_text)
         year = int(ym.group(1)) if ym else None
-        if year is not None and not hilux.YEAR_MIN <= year <= hilux.YEAR_SLOP:
-            continue  # structured 年式: a modern truck whatever the text says
+        # 年式 is structured: classify() rejects it when out of window.
         # The blurb is sales copy, so it joins the description (chassis
         # codes, ディーゼル) but classify() reads the title first.
         ident = hilux.classify(title, f"{blurb} {detail_text}", year=year)

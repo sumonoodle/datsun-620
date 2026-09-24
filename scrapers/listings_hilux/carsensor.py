@@ -8,10 +8,13 @@ pages of 30 cards, and page 1 was 2019-2026 Z / GR SPORT diesels and
 
 So the search is capped with YMAX, the same parameter the page's own
 panelForm submits (its 年式 dropdown bottoms out at 1989, hence 1989
-rather than 1984; classify() and the era gate below do the rest). The
-cap was not in the first probe round, so it is guarded: a card newer than
+rather than 1984; classify() does the rest). The round-2 probe confirmed
+the cap is honoured: 12 cards, all 1971-1989 (Surfs, a 1971 Deluxe, 1987
+and 1989 4th-gen trucks), no page 2. It stays guarded: a card newer than
 the cap means Carsensor ignored the parameter, and that raises instead of
-quietly returning page 1 of the modern market.
+quietly returning page 1 of the modern market. (The capped model page,
+bTO/s112, held only 3 cassettes, one of them a 2026 promoted card with no
+detail link; freeword finds more.)
 
 Freeword rather than the ハイラックス model page (bTO/s112, the page's
 canonical): a 1978-83 truck can be filed under a different Carsensor model
@@ -69,10 +72,8 @@ def parse_page(html: str, fx_day: dict, year_cap: int | None = YEAR_CAP) -> list
         year = _reg_year(card)
         if year_cap is not None and year is not None and year > year_cap:
             raise ValueError(f"card year {year} above YMAX={year_cap}: year filter ignored")
-        # 年式 is structured and reliable here; outside the window is out,
-        # whatever the title says (classify() alone would fall back to text).
-        if year is not None and not hilux.YEAR_MIN <= year <= hilux.YEAR_SLOP:
-            continue
+        # 年式 is structured and reliable here; classify() rejects it when
+        # out of window.
         spec = card.select_one(".specList")
         body = card.select_one(".carBodyInfoList")
         desc = " ".join(el.get_text(" ", strip=True) for el in (body, spec) if el)

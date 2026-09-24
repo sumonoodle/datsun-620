@@ -15,7 +15,9 @@ Each card's spec table carries Model Code (e.g. 3DF-GUN125, and for a
 3rd-gen truck an RN3x/RN4x code) and Fuel, and both go to classify() as
 description, so a diesel or a wrong-generation code rejects even when the
 title is just "TOYOTA HILUX". The model page is read in full (pages of 25,
-"?page=N"), up to MAX_PAGES.
+"?page=N"), up to MAX_PAGES. Round 2 confirmed both assumptions: page 1
+held 25 Hilux cards and ?page=2&make=toyota&model=hilux the last 10
+(1991-2023, including a 1991 LN107 diesel), nothing from 1978-84.
 """
 
 from __future__ import annotations
@@ -35,10 +37,15 @@ from listings.everycar import BASE, HEADERS, _USD_RE, model_slugs
 SOURCE = "everycar"
 MAKE_URL = f"{BASE}/used-cars?make=toyota"
 MAX_PAGES = 5
+PAGE_SIZE = 25
 
 _DETAIL_RE = re.compile(r"everycar\.jp/toyota/(hilux[a-z0-9-]*)/((?:19|20)\d{2})/(\d+)/")
 # Hilux-family slugs, minus the Surf (an SUV; a separate model everywhere).
 _HILUX_SLUG_RE = re.compile(r"^hilux(?!-surf)")
+_BADGE_RE = re.compile(r"^(?:EVERY Original\s+)?(?:Sale\s+)?")
+# Sold stock stays listed with this in place of a price (round-2 probe:
+# 5 of the 10 cards on page 2, among them a 1991 LN107).
+_SOLD_MARK = "SALES HISTORY"
 
 
 def _spec(card) -> dict[str, str]:
@@ -64,10 +71,11 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         year = int(year_s)
         if listing_id in seen:
             continue
-        if not hilux.YEAR_MIN <= year <= hilux.YEAR_SLOP:
-            continue  # the path year is structural; modern stock stops here
+        # The path year is structural; classify() rejects it out of window.
         name_el = card.select_one("h2.car_company")
-        title = " ".join(name_el.get_text(" ", strip=True).split()) if name_el else f"TOYOTA HILUX {year}"
+        title = " ".join(name_el.get_text(" ", strip=True).split()) if name_el else ""
+        # Badges lead the name: "EVERY Original", "Sale" (round-2 probe).
+        title = _BADGE_RE.sub("", title) or f"TOYOTA HILUX {year}"
         spec = _spec(card)
         desc = " ".join(f"{k} {v}" for k, v in spec.items()
                         if k in ("Model Code", "Engine CC", "Fuel", "Transmission"))
@@ -77,7 +85,8 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         seen.add(listing_id)
 
         text = card.get_text(" ", strip=True)
-        pm = _USD_RE.search(text)
+        sold = _SOLD_MARK in text
+        pm = None if sold else _USD_RE.search(text)
         amount = float(pm.group(1).replace(",", "")) if pm else None
         img = card.find("img")
         image = (img.get("data-src") or img.get("src")) if img else None
@@ -100,7 +109,7 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
             "variant": ident["variant"],
             "price": normalize.make_price(amount, "USD", fx_day),  # FOB prices are USD
             "images": [image] if image else [],
-            "status": "active",
+            "status": "sold" if sold else "active",
         })
     return records
 
@@ -140,4 +149,7 @@ def collect(fx_day: dict) -> list[dict]:
                 if not ids - paged:
                     break
                 paged |= ids
+                # A short page is the last one (round 2: 25 + 10 cards).
+                if len(ids) < PAGE_SIZE:
+                    break
     return records

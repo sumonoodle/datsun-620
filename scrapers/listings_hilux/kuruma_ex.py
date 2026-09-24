@@ -10,7 +10,10 @@ S113 = ハイラックスサーフ (320). 738 modern trucks is far too many to p
 through, so the search is capped with year_max=1984, a value taken from
 the same page's own 年式 dropdown (it offers years down to 1982).
 
-The capped URL was not in the first probe round, so it is guarded two ways:
+The round-2 probe confirmed the cap: ?year_max=1984 redirected to
+/S112/year_max/1984 and returned one card, a 1971 ハイラックスデラックス
+(1st gen), against 20 cards of 1990-2026 stock uncapped. It stays
+guarded two ways:
 a card newer than the cap means the parameter was ignored, which raises;
 and a card-less page counts as an ordinary empty day only while the
 search form is still on it (with the cap, zero results is the usual
@@ -32,8 +35,11 @@ from common import hilux, normalize
 from listings.kuruma_ex import BASE, HEADERS, _ID_RE, _MAN_YEN_RE, _YEAR_RE
 
 SOURCE = "kuruma_ex"
-YEAR_CAP = hilux.YEAR_SLOP
-URL = f"{BASE}/usedcar/search/result/maker/TO/shashu/S112?year_max={YEAR_CAP}"
+# 1989, not 1984: classify() accepts RN30/RN35/RN40/RN45 trucks registered
+# up to hilux.LATE_YEAR_MAX, and 1989 is on the site's own dropdown.
+YEAR_CAP = hilux.LATE_YEAR_MAX
+# The path form is the site's canonical: ?year_max=N redirects to it.
+URL = f"{BASE}/usedcar/search/result/maker/TO/shashu/S112/year_max/{YEAR_CAP}"
 
 
 def parse_page(html: str, fx_day: dict, year_cap: int | None = YEAR_CAP) -> list[dict]:
@@ -63,8 +69,6 @@ def parse_page(html: str, fx_day: dict, year_cap: int | None = YEAR_CAP) -> list
         year = int(ym.group(1)) if ym else None
         if year_cap is not None and year is not None and year > year_cap:
             raise ValueError(f"card year {year} above year_max={year_cap}: year filter ignored")
-        if year is not None and not hilux.YEAR_MIN <= year <= hilux.YEAR_SLOP:
-            continue
         # Model-scoped search, so the name may be missing from a grade line.
         ident = hilux.classify(title, text[:300], year=year, require_name=False)
         if ident is None:

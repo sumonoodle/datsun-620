@@ -9,11 +9,10 @@ differs is the model index and the era gate:
   RALLY diesel, newest first. A 1980 truck, if listed, would sit far down
   that index, so the Hilux name alone is not enough to find it.
 - The same page links a second model, /usedcars/TOYOTA/HILUX_PICK_UP/
-  (catalogue code 10104001, illustrated with a 1994 truck: the older
-  pickup line, where a 1978-83 truck is likelier to be filed). It is
-  fetched too; it was not in the first probe round, so its markup is
-  assumed to match the HILUX index (same site template) until a runner
-  fetch confirms it, and a mismatch raises rather than reading as empty.
+  (catalogue code 10104001), the older pickup line where a 1978-83 truck
+  is likelier to be filed. The round-2 probe (2026-09-24) confirmed the
+  identical ul.list-listview markup: 12 cards, 1990-1997 double and
+  single cabs, the whole index on one page. It is fetched too.
 
 The first detail cell is the registration date ("1980.03"), which on a
 Japanese export portal is structured and reliable. A year outside the
@@ -63,13 +62,8 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         title = " ".join(title_el.get_text(" ", strip=True).split()) if title_el else ""
         details = [" ".join(d.get_text(" ", strip=True).split()) for d in li.select("ul.details li")]
         year = _card_year(details)
-        # Structured registration year outside the window: a modern truck,
-        # whatever the title says. (classify() would fall back to the title
-        # text for an out-of-window year, which suits free-text sources but
-        # not this one.) No year at all is left to classify(), which then
-        # needs a chassis code.
-        if year is not None and not hilux.YEAR_MIN <= year <= hilux.YEAR_SLOP:
-            continue
+        # The registration date is structured: classify() rejects it when
+        # out of window (and knows which chassis codes were registered late).
         ident = hilux.classify(title, " ".join(details), year=year, require_name=False)
         if ident is None:
             continue
