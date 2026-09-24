@@ -14,7 +14,7 @@
     },
     "source": {
       "type": "string",
-      "enum": ["ebay", "bringatrailer", "carsandbids", "hemmings", "goonet_exchange", "carsensor", "yahoo_auctions", "kaidee", "classiccars", "kijiji", "barnfinds", "flex", "kuruma_ex", "everycar", "truck2hand", "pistonheads", "ratsun", "retrorides", "trovit", "kleinanzeigen"]
+      "enum": ["ebay", "bringatrailer", "carsandbids", "hemmings", "goonet_exchange", "carsensor", "yahoo_auctions", "kaidee", "classiccars", "kijiji", "barnfinds", "flex", "kuruma_ex", "everycar", "truck2hand", "pistonheads", "ratsun", "retrorides", "trovit", "kleinanzeigen", "gumtree_uk", "classic_trader", "gumtree_za", "marktplaats", "goonet", "carfromjapan", "tcv", "hagerty", "mecum", "craigslist", "ih8mud"]
     },
     "source_listing_id": { "type": "string" },
     "url": { "type": "string", "format": "uri" },
