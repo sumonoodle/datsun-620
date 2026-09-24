@@ -106,6 +106,12 @@ def test_code_table():
     assert hilux.classify("1978 Toyota Hilux", None) is not None
     # 22R-E is the 4th gen's injected engine.
     assert hilux.classify("1983 Toyota Pickup 22RE", None) is None
+    # Asia round (2026-09-24): sub-models, structured years, "1,600 cc".
+    assert hilux.classify("昭和58年 ハイラックスサーフ", None) is None
+    assert hilux.classify("1983 Toyota Hilux Hero", None) is None
+    assert hilux.classify("ハイラックス RN30 1980年", None, year=2021) is None
+    r = hilux.classify("1980 Toyota Hilux", "Engine CC 1,600 cc")
+    assert r["variant"]["target_reasons"] == ["1.6 litre engine"]
     print("ok test_code_table")
 
 

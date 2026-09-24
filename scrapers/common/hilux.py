@@ -62,13 +62,19 @@ RE_2WD = re.compile(r"2\s?wd|4\s?x\s?2|4×2|two[\s-]wheel[\s-]drive|二駆|2駆"
 # 12R is the 1.6 litre engine of the reference truck. "1600" and "1.6"
 # count only as displacements (not "£1,600", not "1600 miles").
 RE_12R = re.compile(r"(?<![A-Za-z0-9])12\s?-?R(?![A-Za-z0-9])", re.I)
-RE_16L = re.compile(r"(?<![\d.,£$€¥])(?:1\.6\s?(?:l\b|litre|liter|ltr)|1600\s?cc|1600(?=\s*(?:engine|motor)))", re.I)
+RE_16L = re.compile(r"(?<![\d.,£$€¥])(?:1\.6\s?(?:l\b|litre|liter|ltr)|1,?600\s?cc|1600(?=\s*(?:engine|motor)))", re.I)
 
 # Other Toyota trucks / later generations named in a title. A listing for
 # one of these that merely mentions "Hilux" is not our truck.
 RE_OTHER_MODEL = re.compile(
     r"4[\s-]?runner|tacoma|tundra|land\s?cruiser|hiace|dyna|stout|surf\b|"
-    r"\bT100\b|vigo|revo|\bmighty[\s-]?x|tiger\b|\bv6\b|\b3vz|\b22r-?e\b", re.I)
+    r"\bT100\b|\bv6\b|\b3vz|\b22r-?e\b", re.I)
+# Later Hilux sub-models that carry the Hilux name itself, so they reject
+# even when "Hilux" is in the title: the Surf (late 1983 on) and Thailand's
+# Hero/Mighty-X/Tiger/Sport Rider/Vigo/Champ/Revo line.
+RE_SUBMODEL = re.compile(
+    r"surf|サーフ|vigo|revo|\bchamp\b|\bmighty[\s-]?x|\btiger\b|\bhero\b|"
+    r"sport\s?rider|ไทเกอร์|วีโก้|รีโว่|ไมตี้|ฮีโร่", re.I)
 
 # Extended cab terms for the Hilux. Toyota's name was Xtracab; the others
 # are how sellers describe it. Checked through common.king_cab so the flag
@@ -139,6 +145,8 @@ def classify(title: str, description: str | None = None, *, year: int | None = N
     # routinely mention the Land Cruiser a seller also owns).
     if RE_OTHER_MODEL.search(title) and not RE_HILUX.search(title):
         return None
+    if RE_SUBMODEL.search(title):
+        return None
     # Codes from another generation and none from ours: wrong generation.
     if other_rn and not gen3_rn:
         return None
@@ -154,7 +162,11 @@ def classify(title: str, description: str | None = None, *, year: int | None = N
         return None
 
     year_max = LATE_YEAR_MAX if code in _LATE_CODES else YEAR_SLOP
-    if year is None or not (YEAR_MIN <= year <= year_max):
+    if year is not None and not (YEAR_MIN <= year <= year_max):
+        # A structured year from the source (Japanese 年式, a Motors year
+        # field) is more reliable than anything in the text.
+        return None
+    if year is None:
         title_year = _ANY_YEAR.search(title)
         if title_year and not (YEAR_MIN <= int(title_year.group(1)) <= year_max):
             # The title states the year and it's out of window: the
