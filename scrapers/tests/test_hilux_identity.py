@@ -76,9 +76,44 @@ def test_target_and_extended_cab():
     print("ok test_target_and_extended_cab")
 
 
+def test_real_misfires_2026_09_24():
+    # Real titles from the first Hilux fixtures that the first rules kept.
+    assert hilux.classify("1978 Toyota Hilux/Pickup (N20 1972-1978)", None) is None
+    assert hilux.classify("52k-Mile Survivor: 1990 Toyota Pickup 4×4",
+                          "a truck from the 1980s, bought new in 1980") is None
+    assert hilux.classify("1977-1983 Toyota Pickup Tail Light Lenses", None) is None
+    assert hilux.classify("1980 Toyota Hilux 'Minitrek' Hot Wheels", None) is None
+    assert hilux.extract_year("built in the 1980s") is None
+    # Still fine: a manual gearbox, and a decade-free description year.
+    assert hilux.classify("1980 Toyota Hilux manual 4 speed", None) is not None
+    assert hilux.classify("Toyota Hilux RN30", "first registered 1980")["year"] == 1980
+    print("ok test_real_misfires_2026_09_24")
+
+
+def test_code_table():
+    # Last digit 6/7/8 = 4WD, whatever the text says.
+    assert hilux.classify("1980 Toyota Hilux RN36", None)["variant"]["drive"] == "4WD"
+    assert hilux.classify("1982 Toyota Hilux RN41", None)["variant"]["drive"] == "2WD"
+    # Japan's 12R-J short body counts as the reference truck; the long
+    # body 1.6 (RN40) doesn't.
+    assert hilux.classify("ハイラックス RN35 1981", None)["variant"]["target_match"]
+    assert not hilux.classify("1980 Toyota Hilux RN40 1600", None)["variant"]["target_match"]
+    # Popular Series RN35 to 1988 in Japan; a codeless 1987 stays out.
+    assert hilux.classify("1987 ハイラックス RN35", None)["year"] == 1987
+    assert hilux.classify("1987 Toyota Hilux 1600", None) is None
+    # US model year 1978 is the 2nd gen; a Hilux-named 1978 is fine.
+    assert hilux.classify("1978 Toyota Pickup SR5", None) is None
+    assert hilux.classify("1978 Toyota Hilux", None) is not None
+    # 22R-E is the 4th gen's injected engine.
+    assert hilux.classify("1983 Toyota Pickup 22RE", None) is None
+    print("ok test_code_table")
+
+
 if __name__ == "__main__":
     test_reference_truck()
     test_us_naming()
     test_year_rules()
     test_diesel_and_other_models()
     test_target_and_extended_cab()
+    test_real_misfires_2026_09_24()
+    test_code_table()

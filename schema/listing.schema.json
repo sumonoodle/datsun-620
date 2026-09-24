@@ -25,8 +25,8 @@
     },
     "description_snippet": { "type": ["string", "null"], "maxLength": 500 },
     "year": {
-      "type": ["integer", "null"], "minimum": 1971, "maximum": 1984,
-      "description": "Year as the listing states it: 1971-1980 for the 620, 1978-1984 for the Hilux. Per-model windows are enforced by the collectors."
+      "type": ["integer", "null"], "minimum": 1971, "maximum": 1989,
+      "description": "Year as the listing states it: 1971-1980 for the 620; 1978-1984 for the Hilux, to 1989 only for codes Toyota kept selling (Japan's RN35/RN45, Thailand's RN30/RN40). Per-model windows are enforced by the collectors."
     },
     "country": {
       "type": "string",

@@ -33,10 +33,13 @@ _LD_RE = re.compile(r'<script type="application/ld\+json"[^>]*>(.*?)</script>', 
 _PLACE_RE = re.compile(r"-for-sale-in-([a-z-]+)-(\d{5})?$")
 
 
-def parse_page(html: str, fx_day: dict) -> list[dict]:
-    records = []
-    seen: set[str] = set()
-    found_car_block = False
+def car_blocks(html: str) -> list[dict]:
+    """Every JSON-LD car block on a search page, unfiltered.
+
+    Shared with the Hilux collector (listings_hilux/classiccars.py), which
+    reads the same search-page markup with its own identity gate.
+    """
+    blocks = []
     for m in _LD_RE.finditer(html):
         try:
             d = json.loads(m.group(1))
@@ -51,8 +54,16 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         types = [dtype] if isinstance(dtype, str) else (dtype or [])
         if not any(str(t).lower() == "car" for t in types):
             continue
-        found_car_block = True
+        blocks.append(d)
+    return blocks
 
+
+def parse_page(html: str, fx_day: dict) -> list[dict]:
+    records = []
+    seen: set[str] = set()
+    blocks = car_blocks(html)
+    found_car_block = bool(blocks)
+    for d in blocks:
         sku = d.get("sku", "")
         name = d.get("name", "")
         desc = d.get("description", "")

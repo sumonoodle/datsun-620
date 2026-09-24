@@ -42,9 +42,18 @@ RE_LN = re.compile(_CODE.format(p="LN"), re.I)
 
 # 3rd-gen petrol codes: RN30-RN49. RN2x is the 2nd gen, RN5x/RN6x the 4th.
 _GEN3 = range(30, 50)
-# 4WD codes of the 3rd generation (RN36 is ambiguous across sources and is
-# left to the text; the drive is only asserted from codes that are certain).
-_4WD_CODES = {"RN37", "RN38", "RN47", "RN48"}
+# The last digit carries engine and drive (docs/hilux-identification.md):
+# 0/3/5 = 12R 1.6 2WD (3 and 5 are Japan's 12R-J), 1 = 18R 2WD, 2 = 20R
+# 2WD, 4 = 22R 2WD, 6/7/8 = the 4WD versions. 3x is the short body on the
+# 2585 mm wheelbase, 4x the long one on 2800 mm.
+_4WD_CODES = {f"RN{b}{d}" for b in (3, 4) for d in (6, 7, 8)}
+# Short-body 1.6 12R codes: the owner's reference configuration.
+_TARGET_CODES = {"RN30", "RN33", "RN35"}
+# Codes sold past the 1983 generation change: Japan's 12R-J "Popular
+# Series" RN35/RN45 ran to 1988, and Thai RN30/RN40s are listed as
+# 1979-1989. With one of these codes, a later year is not a 4th gen.
+_LATE_CODES = {"RN30", "RN35", "RN40", "RN45"}
+LATE_YEAR_MAX = 1989
 
 RE_DIESEL = re.compile(r"diesel|ディーゼル|ดีเซล|\b2\.2\s*d\b|\b[23]L\s*(?:engine|motor)", re.I)
 RE_PETROL = re.compile(r"petrol|gasoline|\bgas\b|ガソリン|เบนซิน|benzin", re.I)
@@ -59,7 +68,7 @@ RE_16L = re.compile(r"(?<![\d.,£$€¥])(?:1\.6\s?(?:l\b|litre|liter|ltr)|1600\
 # one of these that merely mentions "Hilux" is not our truck.
 RE_OTHER_MODEL = re.compile(
     r"4[\s-]?runner|tacoma|tundra|land\s?cruiser|hiace|dyna|stout|surf\b|"
-    r"\bT100\b|vigo|revo|\bmighty[\s-]?x|tiger\b", re.I)
+    r"\bT100\b|vigo|revo|\bmighty[\s-]?x|tiger\b|\bv6\b|\b3vz|\b22r-?e\b", re.I)
 
 # Extended cab terms for the Hilux. Toyota's name was Xtracab; the others
 # are how sellers describe it. Checked through common.king_cab so the flag
@@ -67,13 +76,31 @@ RE_OTHER_MODEL = re.compile(
 EXT_CAB_TERMS = ["xtracab", "xtra cab", "xtra-cab", "extra cab", "extracab",
                  "extended cab", "king cab", "エクストラキャブ", "エクストラ キャブ"]
 
+# Toyota's generation codes. N30/N40 is ours; a title naming another
+# (2026-09-24 Trovit US: "1978 Toyota Hilux/Pickup (N20 1972-1978)") is a
+# different truck, or a fitment list.
+RE_OTHER_GEN = re.compile(r"(?<![A-Za-z0-9])N[1-26-9]0(?![0-9])")
+# Fitment year spans ("1977-1983 Toyota Pickup Tail Light Lenses", Kijiji
+# 2026-09-24) are parts, never a vehicle's own year.
+RE_YEAR_SPAN = re.compile(r"(?<!\d)(?:19|20)\d{2}\s*(?:-|–|to)\s*(?:19|20)?\d{2}(?!\d)")
+# Toys, models and parts that classify's name/year rules would otherwise
+# admit (Kijiji 2026-09-24: a 1980 Hilux "Minitrek" Hot Wheels car).
+RE_NOT_VEHICLE = re.compile(
+    r"hot\s?wheels|matchbox|die[\s-]?cast|tomica|\b1\s?[:/]\s?(?:18|24|43|64)\b|"
+    r"model\s?kit|brochure|\btail\s?lights?\b|\bheadlights?\b|\blenses\b|\bgrille\b|"
+    r"\bmanual\b(?!\s*(?:gear|trans|box|4|5))|\bposter\b|\bkeyring\b|\bemblems?\b|\bbadges?\b", re.I)
+# Any full year in the title, used to stop a title year outside the window
+# from being overridden by a description year.
+_ANY_YEAR = re.compile(r"(?<![\d£$€¥,.])(19[5-9]\d|20[0-2]\d)(?![\d'’]|s\b)")
+
 _SHOWA_RE = re.compile(r"昭和\s*(5[3-9])年")
 
 
 def extract_year(text: str | None) -> int | None:
     """First year in the Hilux window (1978-1984), skipping prices."""
     text = text or ""
-    for m in re.finditer(r"(?<!\d)(19(?:7[89]|8[0-4]))(?!\d)", text):
+    # Not a decade: "the 1980s" (Barn Finds 2026-09-24, on a 1990 truck).
+    for m in re.finditer(r"(?<!\d)(19(?:7[89]|8[0-9]))(?![\d'’]|s\b)", text):
         if m.start() > 0 and text[m.start() - 1] in "£$€¥,.":
             continue
         return int(m.group(1))
@@ -115,6 +142,8 @@ def classify(title: str, description: str | None = None, *, year: int | None = N
     # Codes from another generation and none from ours: wrong generation.
     if other_rn and not gen3_rn:
         return None
+    if RE_OTHER_GEN.search(title) or RE_YEAR_SPAN.search(title) or RE_NOT_VEHICLE.search(title):
+        return None
 
     # Diesel: an LN code with no RN code, or diesel named with no petrol
     # counter-signal and no RN code. A title-level diesel always rejects.
@@ -124,7 +153,14 @@ def classify(title: str, description: str | None = None, *, year: int | None = N
     if RE_DIESEL.search(title) and not RE_PETROL.search(title):
         return None
 
-    if year is None or not (YEAR_MIN <= year <= YEAR_SLOP):
+    year_max = LATE_YEAR_MAX if code in _LATE_CODES else YEAR_SLOP
+    if year is None or not (YEAR_MIN <= year <= year_max):
+        title_year = _ANY_YEAR.search(title)
+        if title_year and not (YEAR_MIN <= int(title_year.group(1)) <= year_max):
+            # The title states the year and it's out of window: the
+            # description can't overrule it (a 1990 truck whose write-up
+            # mentions "1980" must stay out).
+            return None
         year = extract_year(title) or extract_year(description)
     if year is None:
         # No year at all: only a 3rd-gen chassis code can vouch for it
@@ -133,24 +169,30 @@ def classify(title: str, description: str | None = None, *, year: int | None = N
             return None
     elif year == YEAR_SLOP and not code:
         return None
-    elif not (YEAR_MIN <= year <= YEAR_SLOP):
+    elif not (YEAR_MIN <= year <= year_max):
+        return None
+    elif year == YEAR_MIN and not code and not RE_HILUX.search(text):
+        # A US-named 1978 is the 2nd gen: North America's 3rd gen began
+        # with model year 1979.
         return None
 
     if code in _4WD_CODES or RE_4WD.search(text):
         drive = "4WD"
-    elif RE_2WD.search(text) or (code and code not in _4WD_CODES and code != "RN36"):
+    elif RE_2WD.search(text) or code:
         drive = "2WD"
     else:
         drive = "unknown"
 
     reasons = []
-    if code == "RN30":
-        reasons.append("chassis code RN30")
+    if code in _TARGET_CODES:
+        reasons.append(f"chassis code {code}")
     if RE_12R.search(text):
         reasons.append("12R engine")
     elif RE_16L.search(text):
         reasons.append("1.6 litre engine")
-    target = drive != "4WD" and ("chassis code RN30" in reasons or (
+    # A long-body code (RN40/43/45) is a 1.6 but not the short truck.
+    long_body = bool(code) and code[2] == "4"
+    target = drive != "4WD" and not long_body and (code in _TARGET_CODES or (
         bool(reasons) and not RE_DIESEL.search(text)))
 
     # Same text-plus-body-style logic as the 620's King Cab gate, with the

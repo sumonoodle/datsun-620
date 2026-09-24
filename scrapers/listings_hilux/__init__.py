@@ -7,8 +7,17 @@ Source names match the 620 side where the site is the same (the site and
 digest share display names), so "ebay" here is eBay whichever truck.
 """
 
-from . import ebay
+from . import (barnfinds, bat, classiccars, ebay, kijiji, kleinanzeigen,
+               pistonheads, retrorides, trovit)
 
 SOURCES: list[tuple] = [
     ("ebay", ebay.collect),
+    ("bringatrailer", bat.collect),
+    ("classiccars", classiccars.collect),
+    ("kijiji", kijiji.collect),
+    ("barnfinds", barnfinds.collect),
+    ("pistonheads", pistonheads.collect),
+    ("retrorides", retrorides.collect),
+    ("trovit", trovit.collect),
+    ("kleinanzeigen", kleinanzeigen.collect),
 ]
