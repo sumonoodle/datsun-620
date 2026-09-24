@@ -112,6 +112,9 @@ def test_code_table():
     assert hilux.classify("ハイラックス RN30 1980年", None, year=2021) is None
     r = hilux.classify("1980 Toyota Hilux", "Engine CC 1,600 cc")
     assert r["variant"]["target_reasons"] == ["1.6 litre engine"]
+    # Full-width Japanese forms (Goo-net).
+    r = hilux.classify("ハイラックス ＲＮ３０ 昭和５５年", None)
+    assert r["variant"]["chassis_code"] == "RN30" and r["year"] == 1980
     print("ok test_code_table")
 
 

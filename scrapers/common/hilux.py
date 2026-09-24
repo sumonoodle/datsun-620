@@ -17,6 +17,7 @@ cab, short bed. Listings that look like it are flagged `target_match`.
 from __future__ import annotations
 
 import re
+import unicodedata
 
 from . import king_cab
 
@@ -62,7 +63,7 @@ RE_2WD = re.compile(r"2\s?wd|4\s?x\s?2|4×2|two[\s-]wheel[\s-]drive|二駆|2駆"
 # 12R is the 1.6 litre engine of the reference truck. "1600" and "1.6"
 # count only as displacements (not "£1,600", not "1600 miles").
 RE_12R = re.compile(r"(?<![A-Za-z0-9])12\s?-?R(?![A-Za-z0-9])", re.I)
-RE_16L = re.compile(r"(?<![\d.,£$€¥])(?:1\.6\s?(?:l\b|litre|liter|ltr)|1,?600\s?cc|1600(?=\s*(?:engine|motor)))", re.I)
+RE_16L = re.compile(r"(?<![\d.,£$€¥])(?:1\.6\s?(?:l\b|litre|liter|ltr)|1,?600\s?cc|1\.6\s?(?:petrol|gas)|1600(?=\s*(?:engine|motor)))", re.I)
 
 # Other Toyota trucks / later generations named in a title. A listing for
 # one of these that merely mentions "Hilux" is not our truck.
@@ -130,7 +131,9 @@ def classify(title: str, description: str | None = None, *, year: int | None = N
     `require_name=False` is for sources whose search is already scoped to
     the Hilux model, where titles may omit the name.
     """
-    title = title or ""
+    # NFKC folds full-width forms (Goo-net writes ＲＮ３０, １２Ｒ, 昭和５５年).
+    title = unicodedata.normalize("NFKC", title or "")
+    description = unicodedata.normalize("NFKC", description) if description else description
     text = f"{title} {description or ''}"
 
     rn, ln = chassis_codes(text)
