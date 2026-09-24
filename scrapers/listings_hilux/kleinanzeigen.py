@@ -9,12 +9,18 @@ Differences from the Datsun search:
 - Size. "hilux" in c216 was 140 cars on 2026-09-24 (the whole Datsun
   marque is ~28), 25 a page, every car on page 1 registered 1989 or
   later. So up to MAX_PAGES pages are read, bounded by the
-  heading's own count. A year-filtered URL would make this one request;
-  it is waiting on a second probe round.
+  heading's own count. Page 2 (probe round 2, "seite:2" shape) came back
+  as results 26-50 of 140, confirming the pagination URL. The round-2
+  year-filtered URL (k0c216+autos.ez_i:1978,1984) returned "keine
+  Ergebnisse", which cannot be told apart from an unrecognised filter
+  (pages 1-2 held nothing older than EZ 1988 either way), so it is not
+  trusted in place of reading the pages.
 - Want-ads. Five of the 25 ads on the probe page were buyers, not
   sellers ("Suche einen Toyota Hilux Pick up", "Suche Alte Vw Taro oder
   Toyota Hilux", "✅ Suche Kaufe ... Mazda"), and a Suche ad carries an EZ
-  year like any other (EZ 04/1994 on "Suche Alte Vw Taro"). A title that opens with "Suche" is a buyer.
+  year like any other (EZ 04/1994 on "Suche Alte Vw Taro"). A title that
+  opens with "Suche"/"Suchen" is a buyer (page 2 of the probe added
+  "Suchen Toyota Hilux 2,4 diesel" and "Suche nach Hilux / Taro").
 
 robots.txt: same paths as the 620 collector (checked 2026-09-19).
 """
@@ -41,7 +47,7 @@ SEARCH = "/s-autos/hilux/k0c216"
 PAGE_SEARCH = ["/s-autos/seite:{page}/hilux/k0c216",
                "/s-autos/hilux/k0c216/seite:{page}"]
 MAX_PAGES = 6  # 140 results at 25/page on 2026-09-24; the cap stops a runaway
-_WANTED_RE = re.compile(r"^\W*suche\b", re.I)
+_WANTED_RE = re.compile(r"^\W*such(?:e|en)\b", re.I)
 
 
 def parse_page(html: str, fx_day: dict) -> list[dict]:

@@ -1,21 +1,26 @@
-"""Hilux collector: PistonHeads (UK), the Toyota Hilux model page.
+"""Hilux collector: PistonHeads (UK), the Hilux search capped at 1984.
 
-Same Next.js/Apollo page as the 620 collector (listings/pistonheads.py):
+Same Next.js/Apollo cache as the 620 collector (listings/pistonheads.py):
 Advert:<id> entities with headline, native GBP price, year and a
-specificationData block. /buy/toyota/hilux is scoped to the model
+specificationData block. The search is scoped to the Hilux model (M=586)
 server-side, so titles need not name it (require_name=False).
 
-The catch: the page shows 16 adverts of 293 (2026-09-24 probe), ordered
-by PistonHeads' own promotion, so a 1980 truck could sit on page 12. The
-same Apollo cache carries the refine panel's Year facet, which counts
-EVERY Hilux advert by year: on the probe day it started at 1992 (one
-advert), so no 3rd-gen truck was listed anywhere in the search. That
-facet is the guard. When it counts 1978-1984 adverts that page 1 does not
-hold, the collector raises rather than report "no trucks" while one sits
-on a later page; the fix is a year-filtered URL (second probe round).
+Why this URL (2026-09-24 probes):
+- /buy/toyota/hilux shows 16 of 293 adverts in PistonHeads' promotion
+  order, so a 1980 truck could sit on page 12. Its Year facet showed the
+  oldest Hilux was a 1992: no 3rd-gen listed that day.
+- /buy/toyota/hilux?yearTo=1984 came back byte-identical: ignored.
+- The legacy /classifieds?...&M=586&YearTo=1984 redirects to the URL used
+  here, whose cache entry is searchPage({... "makeModelIds": ["586"],
+  "yearMax": 1984}) with total 0, agreeing with the facet. The same form
+  without a model returned 1,217 adverts, none newer than 1978 on page 1
+  (Dinos, Bentleys, a 930 Turbo), so the year cap is really applied.
 
-The Toyota marque page (/buy/toyota) was also probed and is not polled:
-7,424 adverts, 16 a page, mostly GR Yaris.
+So every 1978-1984 Hilux in the UK index fits on page 1, and the guards
+are about that promise: the searchPage entry must be there with yearMax
+applied (else the filter was dropped and we would be reading the 293
+modern trucks), and its total must match the adverts on the page (else a
+truck sits on page 2, or the cards moved).
 """
 
 from __future__ import annotations
@@ -32,24 +37,22 @@ from common import hilux, normalize
 from listings.pistonheads import HEADERS, _NEXT_RE
 
 SOURCE = "pistonheads"
-URL = "https://www.pistonheads.com/buy/toyota/hilux"
 BASE = "https://www.pistonheads.com"
+URL = f"{BASE}/buy/search?M=586&year=1900&year=1984"
+YEAR_MAX = 1984
 
 
-def _era_facet_count(apollo: dict) -> int | None:
-    """Adverts dated 1978-1984 per the search's Year facet, or None if the
-    page carries no Year facet."""
+def _search_entry(apollo: dict) -> tuple[dict, dict]:
+    """(query input, result) of the page's searchPage cache entry."""
     root = apollo.get("ROOT_QUERY") or {}
     for key, val in root.items():
-        if not key.startswith("advertSearch") or not isinstance(val, dict):
-            continue
-        for facet in val.get("searchFacets") or []:
-            if facet.get("name") != "Year":
-                continue
-            return sum(v.get("value") or 0 for v in facet.get("values") or []
-                       if str(v.get("key", "")).isdigit()
-                       and hilux.YEAR_MIN <= int(v["key"]) <= hilux.YEAR_SLOP)
-    return None
+        if key.startswith("searchPage(") and isinstance(val, dict):
+            try:
+                args = json.loads(key[len("searchPage("):-1])
+            except ValueError:
+                args = {}
+            return args.get("input") or {}, val
+    raise ValueError("searchPage entry missing (page layout changed or blocked?)")
 
 
 def parse_page(html: str, fx_day: dict) -> list[dict]:
@@ -58,11 +61,18 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         raise ValueError("__NEXT_DATA__ missing (page layout changed or blocked?)")
     data = json.loads(m.group(1))
     apollo = (data.get("props", {}).get("pageProps", {}) or {}).get("__APOLLO_STATE__") or {}
-    adverts = [v for k, v in apollo.items() if k.startswith("Advert:")]
-    if not adverts and "hilux" not in html.lower():
-        raise ValueError("no adverts and page does not look like the Hilux search")
+    query, result = _search_entry(apollo)
+    if query.get("yearMax") != YEAR_MAX:
+        raise ValueError(f"search ran without the {YEAR_MAX} year cap ({query.get('yearMax')!r})")
 
-    era_on_page = 0
+    refs = [r.get("__ref") for r in (result.get("adverts") or []) if isinstance(r, dict)]
+    adverts = [apollo[r] for r in refs if r in apollo]
+    total = result.get("total")
+    if isinstance(total, int) and total != len(adverts):
+        raise ValueError(
+            f"search counts {total} Hilux advert(s) to {YEAR_MAX} but {len(adverts)} "
+            f"parsed: a truck is beyond page 1, or the advert cache moved")
+
     records = []
     for ad in adverts:
         ad_id = str(ad.get("id") or "")
@@ -72,8 +82,6 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         desc = ad.get("shortDescription") or ""
         spec = ad.get("specificationData") or {}
         year = ad.get("year") if isinstance(ad.get("year"), int) else None
-        if year is not None and hilux.YEAR_MIN <= year <= hilux.YEAR_SLOP:
-            era_on_page += 1
         # Structured fuel as text, for classify()'s diesel/petrol rules.
         fuel = f" fuel: {spec['fuelType']}" if spec.get("fuelType") else ""
         ident = hilux.classify(headline, desc + fuel, year=year, require_name=False)
@@ -104,12 +112,6 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
             "images": images,
             "status": "active",
         })
-
-    era_total = _era_facet_count(apollo)
-    if era_total and era_total > era_on_page:
-        raise ValueError(
-            f"Year facet counts {era_total} Hilux advert(s) from 1978-1984 but page 1 "
-            f"holds {era_on_page}: a 3rd-gen truck is listed beyond the polled page")
     return records
 
 

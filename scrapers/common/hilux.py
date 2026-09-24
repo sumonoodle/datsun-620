@@ -69,7 +69,10 @@ RE_16L = re.compile(r"(?<![\d.,£$€¥])(?:1\.6\s?(?:l\b|litre|liter|ltr)|1,?60
 # one of these that merely mentions "Hilux" is not our truck.
 RE_OTHER_MODEL = re.compile(
     r"4[\s-]?runner|tacoma|tundra|land\s?cruiser|hiace|dyna|stout|surf\b|"
-    r"\bT100\b|\bv6\b|\b3vz|\b22r-?e\b", re.I)
+    r"\bT100\b|\bv6\b|\b3vz|\b22r-?e\b|"
+    # Toyota cars that share the SR5 trim name (Kijiji 2026-09-24: a
+    # "1982 Toyota Corolla SR5" matched the US-name rule).
+    r"corolla|celica|corona|cressida|supra|camry|tercel|starlet|carina|crown", re.I)
 # Later Hilux sub-models that carry the Hilux name itself, so they reject
 # even when "Hilux" is in the title: the Surf (late 1983 on) and Thailand's
 # Hero/Mighty-X/Tiger/Sport Rider/Vigo/Champ/Revo line.

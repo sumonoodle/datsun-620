@@ -4,7 +4,8 @@ Trovit and Kleinanzeigen. Fixtures in fixtures/hilux/ are trimmed from
 the real pages the GitHub runner fetched on 2026-09-24
 (data/research/pages-hilux/). Where the real page held no 3rd-gen Hilux,
 one clearly-labelled synthetic golden card was added (see each fixture's
-header comment); BaT, ClassicCars, Barn Finds and Trovit US needed none.
+header comment); BaT, ClassicCars, Kijiji, Barn Finds and Trovit US
+needed none. Kijiji and PistonHeads use the probe-round-2 URLs.
 
 KNOWN_MISFIRES are real titles common.hilux.classify() keeps but should
 not (reported to the lead with a proposed rule). They are left out of the
@@ -96,24 +97,41 @@ def test_classiccars_parser():
 
 
 def test_kijiji_parser():
-    page = (HILUX / "kijiji_hilux.html").read_text()
-    records = kijiji.parse_page(page, FX_DAY)
-    # Only the synthetic 1981 (an AutosListing). Real rejections: ten trucks
-    # (2005 and 1989 diesels, 2004, Hilux Surfs, a Prado), and toys/parts
-    # that classify() alone would keep ("1980 Toyota Hilux 'Minitrek' ...
-    # Hot Wheels", "Matching pair 1977-1983 Toyota Pickup Tail Light
-    # Lenses"), which the /v-cars-trucks/ path gate drops.
-    assert _ids(records) == ["kijiji:9990000001"], _ids(records)
-    g = records[0]
-    assert g["year"] == 1981 and g["variant"]["chassis_code"] == "RN34"
-    assert g["price"]["amount"] == 29500.0 and g["price"]["currency"] == "CAD"  # cents
-    assert g["country"] == "CA" and g["region"] == "Abbotsford"
-    validate(_full(g), "listing")
+    pickup = kijiji.parse_page((HILUX / "kijiji_cars_pickup.html").read_text(), FX_DAY)
+    # Two real 3rd-gen trucks on page 1 of Cars & Trucks "toyota pickup".
+    # Rejected: 1990 and 1988 trucks, Tacomas, Tundras, a "Wanted" ad.
+    assert _ids(pickup) == ["kijiji:1743332103", "kijiji:1743242931"], _ids(pickup)
+    g = pickup[0]
+    assert g["title"] == "1982 Toyota 4X4 pickup project" and g["year"] == 1982
+    assert g["variant"]["drive"] == "4WD" and g["price"]["currency"] == "CAD"
+    assert g["country"] == "CA" and g["url"].startswith("https://www.kijiji.ca/v-cars-trucks/")
+    assert pickup[1]["year"] == 1983
+    for rec in pickup:
+        validate(_full(rec), "listing")
+
+    classic = kijiji.parse_page((HILUX / "kijiji_classic_toyota.html").read_text(), FX_DAY)
+    # The real "1980 toyota pickup" (seller filed it as a Tacoma) is kept;
+    # "1982 Toyota Corolla SR5" passes classify()'s US-name rule and is
+    # dropped by its carmodel. 1981/1984 Corollas, a 1984 Supra, a 1985
+    # 4Runner and a 1988 pickup are out too.
+    assert _ids(classic) == ["kijiji:1741948631"], _ids(classic)
+    assert classic[0]["year"] == 1980
+    validate(_full(classic[0]), "listing")
+
+    # Cars & Trucks "toyota hilux": the ten real trucks (diesels, Surfs,
+    # Prados, a 2004) are all rejected.
+    assert kijiji.parse_page((HILUX / "kijiji_cars_hilux.html").read_text(), FX_DAY) == []
+
     # A search that says it is empty is an empty market, not a failure...
     assert kijiji.parse_page((HILUX / "kijiji_pickup_empty.html").read_text(), FX_DAY) == []
     # ...but results promised with none readable is.
+    page = (HILUX / "kijiji_cars_pickup.html").read_text()
     gutted = page.replace('"AutosListing:', '"MovedListing:').replace('"StandardListing:', '"Moved2:')
     assert _raises(kijiji.parse_page, gutted, FX_DAY)
+    # The toys/parts path gate still holds: the same 1982 truck under a
+    # parts path is dropped.
+    parts = page.replace("/v-cars-trucks/calgary/", "/v-auto-body-parts/calgary/")
+    assert "kijiji:1743332103" not in _ids(kijiji.parse_page(parts, FX_DAY))
     print("ok test_kijiji_parser")
 
 
@@ -137,9 +155,9 @@ def test_barnfinds_parser():
 
 
 def test_pistonheads_parser():
-    page = (HILUX / "pistonheads_hilux.html").read_text()
+    page = (HILUX / "pistonheads_search_hilux.html").read_text()
     records = pistonheads.parse_page(page, FX_DAY)
-    # 16 real adverts, 2013-2023 diesels, all rejected; the synthetic 1980
+    # The real capped search held no advert (total 0); the synthetic 1980
     # RN30 is kept and matches the owner's reference truck.
     assert _ids(records) == ["pistonheads:99900001"], _ids(records)
     g = records[0]
@@ -147,19 +165,14 @@ def test_pistonheads_parser():
     assert g["price"]["amount"] == 12995 and g["price"]["currency"] == "GBP"
     assert g["country"] == "GB" and g["drive_side"] == "RHD"
     validate(_full(g), "listing")
-    # The real page as fetched (no synthetic advert, no 1978-84 facet
-    # entry): nothing to keep and nothing hidden.
-    data = json.loads(pistonheads._NEXT_RE.search(page).group(1))
-    apollo = data["props"]["pageProps"]["__APOLLO_STATE__"]
-    del apollo["Advert:99900001"]
-    facet_1980 = '{"__typename": "SearchFacetValue", "key": "1980", "value": 1}, '
-    real = page.replace(pistonheads._NEXT_RE.search(page).group(1),
-                        json.dumps(data, ensure_ascii=False)).replace(facet_1980, "")
-    assert facet_1980 not in real and pistonheads.parse_page(real, FX_DAY) == []
-    # Facet guard: the facet counts a 1980 Hilux that page 1 does not hold.
-    hidden = page.replace(pistonheads._NEXT_RE.search(page).group(1),
-                          json.dumps(data, ensure_ascii=False))
-    assert _raises(pistonheads.parse_page, hidden, FX_DAY)
+    # The real page as fetched: total 0, no adverts, nothing to keep.
+    real = page.replace('[{"__ref": "Advert:99900001"}]', "[]").replace('"total": 1', '"total": 0')
+    assert pistonheads.parse_page(real, FX_DAY) == []
+    # Guards: a truck counted but not on the page; the year cap dropped;
+    # no searchPage entry at all.
+    assert _raises(pistonheads.parse_page, page.replace('"total": 1', '"total": 2'), FX_DAY)
+    assert _raises(pistonheads.parse_page, page.replace('\\"yearMax\\":1984', '\\"yearMax\\":null'), FX_DAY)
+    assert _raises(pistonheads.parse_page, page.replace("searchPage(", "otherPage("), FX_DAY)
     print("ok test_pistonheads_parser")
 
 
@@ -212,9 +225,10 @@ def test_kleinanzeigen_parser():
     assert g["url"].startswith("https://www.kleinanzeigen.de/s-anzeige/")
     validate(_full(g), "listing")
     # A want-ad is skipped even when its EZ is in the window.
-    wanted = page.replace("Toyota Hilux RN30 Pritsche Benziner",
-                          "Suche Toyota Hilux RN30 Pritsche Benziner")
-    assert kleinanzeigen.parse_page(wanted, FX_DAY) == []
+    for verb in ("Suche", "Suchen"):  # both forms seen on the real pages
+        wanted = page.replace("Toyota Hilux RN30 Pritsche Benziner",
+                              f"{verb} Toyota Hilux RN30 Pritsche Benziner")
+        assert kleinanzeigen.parse_page(wanted, FX_DAY) == []
     # Heading promises 140 results; no card parsed must raise.
     assert _raises(kleinanzeigen.parse_page, page.replace("data-adid", "data-moved"), FX_DAY)
     print("ok test_kleinanzeigen_parser")

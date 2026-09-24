@@ -1,24 +1,32 @@
-"""Hilux collector: Kijiji (Canada), keyword search "toyota hilux".
+"""Hilux collector: Kijiji (Canada), three category-scoped searches.
 
 Same Next.js/Apollo page as the 620 collector (listings/kijiji.py), with
-one difference that matters: on the 2026-09-24 probe page every vehicle
-was an AutosListing:<id> entry, not StandardListing:<id>. StandardListing
-now holds only the toys, manuals and parts (20 Matchbox/Hot Wheels ads,
-a 1976 Hi-Lux shop manual, tail-light lenses); the ten real trucks under
-/v-cars-trucks/ were all AutosListing. Both types are read here.
-AutosListing prices are in cents like StandardListing's, and it carries
-structured attributes (caryear, carfueltype) that classify() uses.
+one difference that matters: on the 2026-09-24 probe pages every vehicle
+was an AutosListing:<id> entry, not StandardListing:<id> (which now holds
+toys, manuals and parts). Both types are read here. AutosListing prices
+are in cents like StandardListing's, and it carries structured attributes
+(caryear, carfueltype, carmodel) that are used below.
 
-The /v-cars-trucks/ path gate (from the 620 collector) is what keeps the
-toys out. classify() alone would keep "1980 Toyota Hilux 'Minitrek' 1981
-Hot Wheels" and "Matching pair 1977-1983 Toyota Pickup Tail Light
-Lenses", both on the probe page.
+Searches (second probe round, 2026-09-24; the first round's all-category
+keyword page was 30 of 40 toys and parts):
+- Cars & Trucks, "toyota hilux": the same 10 trucks as the all-category
+  search with none of the toys. No 3rd-gen on the day.
+- Cars & Trucks, "toyota pickup": 1,147 results, 46 a page, and page 1
+  held two real 3rd-gen trucks, "1982 Toyota 4X4 pickup project" and
+  "1983 Toyota 4x4 Pickup". Canada used the US name; this is the search
+  that finds them.
+- Classic Cars, "toyota": 46 results (all on one page) and a real "1980
+  toyota pickup", which Kijiji's model picker had filed as a Tacoma.
 
-The US-name probe, "toyota pickup 1981", returned "No results" on
-2026-09-24 (a 200 page with totalCount 0), so it is not polled; a broader
-US-name search is waiting on a second probe round.
+The /v-cars-trucks/ + /v-classic-cars/ path gate from the 620 collector
+stays, for toys and parts. A second structural gate uses the seller's
+model pick (carmodel): the classic page's "1982 Toyota Corolla SR5"
+satisfies classify()'s US-name rule ("Toyota ... SR5"), and carmodel
+"corolla" says what it is. The 3rd-gen trucks seen were filed as
+othrpkups (1982, 1983) and tacoma (1980); othrmdl and t100 are the
+other truck-plausible picks. A listing with no carmodel is not gated.
 
-The guard reads the search's own totalCount: zero is an empty market and
+The guard reads each search's own totalCount: zero is an empty market and
 returns nothing; results promised with no listing parsed raises.
 """
 
@@ -36,7 +44,14 @@ from common import hilux, normalize
 from listings.kijiji import HEADERS, _NEXT_RE, _VEHICLE_PATHS
 
 SOURCE = "kijiji"
-URL = "https://www.kijiji.ca/b-canada/toyota-hilux/k0l0"
+URLS = [
+    "https://www.kijiji.ca/b-cars-trucks/canada/toyota-hilux/k0c174l0",
+    "https://www.kijiji.ca/b-cars-trucks/canada/toyota-pickup/k0c174l0",
+    "https://www.kijiji.ca/b-classic-cars/canada/toyota/k0c122l0",
+]
+# Seller-picked models a 3rd-gen truck has been, or plausibly would be,
+# filed under (see the docstring for the evidence).
+_TRUCK_MODELS = {"othrpkups", "othrmdl", "tacoma", "t100"}
 _LISTING_TYPES = ("StandardListing:", "AutosListing:")
 
 
@@ -85,6 +100,8 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         if not any(p in url for p in _VEHICLE_PATHS):
             continue  # toys, books and parts live under other paths
         attrs = _attrs(l)
+        if attrs.get("carmodel") and attrs["carmodel"] not in _TRUCK_MODELS:
+            continue  # a Corolla SR5 is not a Toyota Pickup SR5
         year = int(attrs["caryear"]) if attrs.get("caryear", "").isdigit() else None
         # The structured fuel type goes to classify() as text so its diesel
         # rule sees it ("gas" is its petrol counter-signal).
@@ -122,6 +139,22 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
 
 
 def collect(fx_day: dict) -> list[dict]:
-    resp = httpx.get(URL, headers=HEADERS, timeout=30, follow_redirects=True)
-    resp.raise_for_status()
-    return parse_page(resp.text, fx_day)
+    records: list[dict] = []
+    seen: set[str] = set()
+    failures: list[str] = []
+    with httpx.Client(timeout=30, headers=HEADERS, follow_redirects=True) as client:
+        for url in URLS:
+            try:
+                resp = client.get(url)
+                resp.raise_for_status()
+                for rec in parse_page(resp.text, fx_day):
+                    if rec["id"] not in seen:  # a truck can match two searches
+                        seen.add(rec["id"])
+                        records.append(rec)
+            except Exception as exc:
+                failures.append(f"{url.split('/canada/', 1)[-1]}: {exc}")
+    if failures and len(failures) == len(URLS):
+        raise RuntimeError(f"all Kijiji searches failed ({failures[0]})")
+    if failures:
+        print(f"kijiji (hilux): partial failure, continuing without {failures}")
+    return records

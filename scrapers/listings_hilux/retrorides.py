@@ -1,8 +1,13 @@
-"""Hilux collector: Retro Rides forum (UK), the cars-for-sale boards.
+"""Hilux collector: Retro Rides forum (UK), the "1985 & older" sale board.
 
-The same ProBoards boards the 620 collector reads (listings/retrorides.py:
-board 57 "1985 & older", plus board 58 for misfiled posts), filtered for
-the Hilux instead. Board convention puts year, make, model, price and
+The same ProBoards markup the 620 collector reads (listings/retrorides.py),
+filtered for the Hilux instead. Board 57 only: a 1978-83 truck belongs
+there, and board 58 ("/board/58/cars-sale", which the 620 collector also
+polls for misfiled posts) parsed zero threads on the first live branch
+run while board 57 parsed fine. Both collectors share the parsing code
+and board 58 was never in a probe round, so that is a question about the
+board URL, not this module; see the report. Polling it here would only
+add a daily partial failure for a board that cannot hold our truck. Board convention puts year, make, model, price and
 place in the thread title ("1978 Datsun 620 Pickup long bed. £8995
 Sussex"), so the title is all classify() gets, and it must name the truck
 (require_name=True): the board is every make, and the 2026-09-24 page
@@ -24,9 +29,10 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import hilux, normalize
-from listings.retrorides import BASE, BOARDS, HEADERS, _THREAD_RE, _price
+from listings.retrorides import BASE, HEADERS, _THREAD_RE, _price
 
 SOURCE = "retrorides"
+BOARD = f"{BASE}/board/57/cars-sale-1985-older"
 
 
 def parse_page(html: str, fx_day: dict) -> list[dict]:
@@ -74,22 +80,7 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
 
 
 def collect(fx_day: dict) -> list[dict]:
-    records: list[dict] = []
-    seen: set[str] = set()
-    failures: list[str] = []
     with httpx.Client(timeout=30, headers=HEADERS, follow_redirects=True) as client:
-        for board in BOARDS:
-            try:
-                resp = client.get(board)
-                resp.raise_for_status()
-                for rec in parse_page(resp.text, fx_day):
-                    if rec["id"] not in seen:
-                        seen.add(rec["id"])
-                        records.append(rec)
-            except Exception as exc:
-                failures.append(f"{board.rsplit('/', 1)[-1]}: {exc}")
-    if failures and len(failures) == len(BOARDS):
-        raise RuntimeError(f"all Retro Rides boards failed ({failures[0]})")
-    if failures:
-        print(f"retrorides (hilux): partial failure, continuing without {failures}")
-    return records
+        resp = client.get(BOARD)
+        resp.raise_for_status()
+        return parse_page(resp.text, fx_day)

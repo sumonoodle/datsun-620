@@ -11,7 +11,8 @@ found per edition:
   /used-cars/toyota-pickup is a 404, so the Hilux page is the US page.
 - UK (cars.trovit.co.uk, new this round): 628 results, page 1 all
   current-shape diesels. Polled because it syndicates UK dealers we do
-  not scrape; a year-filtered URL is waiting on a second probe round.
+  not scrape. "?max_year=1984" (probe round 2) is ignored: same 628
+  results, same cards in the same order.
 - DE (de.trovit.com): no Hilux matched; the page was entirely padding
   (Skodas, Hyundais). Kept, as on the 620 side, because DE syndicates
   bot-walled EU sites and padding costs nothing: classify() drops it.
