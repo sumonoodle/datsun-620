@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://sumonoodle.github.io/datsun-620/schema/specs.schema.json",
   "title": "Specs database",
-  "description": "Curated Datsun 620 variant specs across markets, populated once in M2. Every variant carries at least one citation. Corrections are edits to this file.",
+  "description": "Curated variant specs across markets for one tracked truck: data/specs.json (Datsun 620) or data/hilux/specs.json (3rd-generation Hilux). Every variant carries at least one citation. Corrections are edits to this file.",
   "type": "object",
   "required": ["version", "markets"],
   "additionalProperties": false,

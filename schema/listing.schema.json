@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://sumonoodle.github.io/datsun-620/schema/listing.schema.json",
   "title": "Listing",
-  "description": "One Datsun 620 King Cab listing, normalised from any source. This is the contract every scraper, the site, and the emailer code against.",
+  "description": "One listing, normalised from any source: a Datsun 620 (data/listings.json) or a 3rd-generation petrol Toyota Hilux (data/hilux/listings.json). This is the contract every scraper, the site, and the emailer code against.",
   "type": "object",
   "required": ["id", "source", "url", "title", "price", "country", "drive_side", "king_cab", "status", "first_seen", "last_seen", "history"],
   "additionalProperties": false,
@@ -24,7 +24,10 @@
       "description": "English translation for Japanese listings; null if translation failed or not needed."
     },
     "description_snippet": { "type": ["string", "null"], "maxLength": 500 },
-    "year": { "type": ["integer", "null"], "minimum": 1971, "maximum": 1980 },
+    "year": {
+      "type": ["integer", "null"], "minimum": 1971, "maximum": 1984,
+      "description": "Year as the listing states it: 1971-1980 for the 620, 1978-1984 for the Hilux. Per-model windows are enforced by the collectors."
+    },
     "country": {
       "type": "string",
       "description": "ISO 3166-1 alpha-2, or 'XX' when the source gives no location.",
@@ -34,6 +37,7 @@
     "drive_side": { "type": "string", "enum": ["LHD", "RHD", "unknown"] },
     "king_cab": {
       "type": "object",
+      "description": "Extended-cab flag: the King Cab for the 620; any extended cab (Xtracab or similar) for the Hilux.",
       "required": ["matched", "matched_terms", "body_style_check"],
       "additionalProperties": false,
       "properties": {
@@ -71,6 +75,18 @@
           "status": { "type": "string", "enum": ["active", "sold", "withdrawn"] },
           "price": { "$ref": "#/$defs/price" }
         }
+      }
+    },
+    "variant": {
+      "type": "object",
+      "description": "Hilux only: what the listing says about the variant, and whether it resembles the owner's reference truck (1980 RN30, 12R 1.6 petrol, 2WD, short bed, single cab).",
+      "required": ["chassis_code", "drive", "target_match", "target_reasons"],
+      "additionalProperties": false,
+      "properties": {
+        "chassis_code": { "type": ["string", "null"], "pattern": "^RN[0-9]{2}$", "description": "Chassis code as the listing states it (e.g. RN30); null when not stated." },
+        "drive": { "type": "string", "enum": ["2WD", "4WD", "unknown"] },
+        "target_match": { "type": "boolean", "description": "True for a confirmed RN30, or a stated 12R / 1.6 petrol 2WD." },
+        "target_reasons": { "type": "array", "items": { "type": "string" } }
       }
     },
     "missed_runs": {

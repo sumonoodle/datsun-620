@@ -9,10 +9,15 @@ Sources by milestone: M3 eBay + Bring a Trailer; M4 Cars & Bids + Hemmings;
 M5 Goo-net + Yahoo/Buyee (both IP-blocked, retired); Asia expansion
 2026-07-17: Goo-net Exchange, Carsensor, Yahoo Auctions direct (supersedes
 Buyee) and Kaidee, per docs/asia-sources.md.
+
+Two trucks, one pipeline: `python run_daily.py` runs the Datsun 620 into
+data/; `python run_daily.py --model hilux` runs the 3rd-generation petrol
+Hilux (listings_hilux/) into data/hilux/. Both share data/fx-rates.json.
 """
 
 from __future__ import annotations
 
+import argparse
 import datetime as dt
 import json
 import statistics
@@ -54,16 +59,20 @@ SOURCES: list[tuple] = [
 ]
 
 
-def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None) -> int:
-    """Injectable for tests: fake FX, fake/crashing sources, temp data dir."""
+def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None,
+        fx_path: Path | None = None) -> int:
+    """Injectable for tests: fake FX, fake/crashing sources, temp data dir.
+    `fx_path` defaults to the data dir's own log; the Hilux run points it at
+    the shared data/fx-rates.json."""
     sources = SOURCES if sources is None else sources
+    data_dir.mkdir(parents=True, exist_ok=True)
     started_at = dt.datetime.now(dt.timezone.utc)
     today = started_at.date().isoformat()
 
     # FX must not be a single point of failure: on any fetch/parse problem,
     # fall back to the most recent cached rates (each listing stores the rate
     # it was converted at, so a stale day is accurate, just dated).
-    fx_path = data_dir / "fx-rates.json"
+    fx_path = fx_path or data_dir / "fx-rates.json"
     try:
         fx_day = fx_fetch()
         fx_log = fx.append_rates(fx_path, fx_day)
@@ -202,5 +211,16 @@ def run(data_dir: Path = DATA_DIR, fx_fetch=fx.fetch_rates, sources=None) -> int
     return 0
 
 
+def run_hilux() -> int:
+    """The Hilux run. It follows the Datsun run in the same workflow, so the
+    day's rates are normally already in the shared log; fetching again is
+    harmless (append_rates dedupes by date) and covers a standalone run."""
+    from listings_hilux import SOURCES as HILUX_SOURCES
+    return run(DATA_DIR / "hilux", sources=HILUX_SOURCES, fx_path=DATA_DIR / "fx-rates.json")
+
+
 if __name__ == "__main__":
-    raise SystemExit(run())
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model", choices=["datsun", "hilux"], default="datsun")
+    args = parser.parse_args()
+    raise SystemExit(run_hilux() if args.model == "hilux" else run())
