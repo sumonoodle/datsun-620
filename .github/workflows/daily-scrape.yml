@@ -1,4 +1,4 @@
-# Daily pipeline: FX fetch, listing scrapers (per-source isolation), change
+# Daily pipeline (Datsun 620, then the Hilux): FX fetch, listing scrapers (per-source isolation), change
 # detection, data commit, then site deploy. Digest send is added in M4.
 #
 # Cron timing: the digest must land before ~08:00 in Jersey (UTC+1 in summer,
@@ -64,6 +64,19 @@ jobs:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: python scrapers/run_daily.py
 
+      # The Hilux (3rd-gen petrol, 1978-83) runs second, into data/hilux/,
+      # reusing the rates the Datsun run just logged. continue-on-error so a
+      # Hilux crash can never cost the Datsun its data commit or digest; the
+      # last step re-fails the run so the failure is still emailed.
+      - name: Run Hilux pipeline
+        id: hilux
+        continue-on-error: true
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+        run: python scrapers/run_daily.py --model hilux
+
       # continue-on-error so a mail failure cannot discard the day's data
       # commit below; the last step re-fails the run so the owner still gets
       # GitHub's failure email (the PRD's alerting path for a dead digest).
@@ -118,6 +131,12 @@ jobs:
           else
             echo "no ping URL configured, skipping"
           fi
+
+      - name: Surface Hilux failure
+        if: steps.hilux.outcome == 'failure'
+        run: |
+          echo "Hilux pipeline failed; Datsun data was still committed. See the Hilux step log."
+          exit 1
 
       - name: Surface digest failure
         if: steps.digest.outcome == 'failure'
