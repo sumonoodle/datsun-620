@@ -54,12 +54,12 @@ docs/                ops notes, Japan source outcomes
 1. Cron fires; FX fetched once from Frankfurter (base GBP), logged.
 2. Six collectors run in isolation; a blocked or broken source is recorded,
    never fatal.
-3. The Hilux run follows (`run_daily.py --model hilux`) into `data/hilux/`,
-   isolated so a Hilux failure never costs the 620 its data.
-4. Results reconcile into `data/listings.json`: new listings, price moves,
+3. Results reconcile into `data/listings.json`: new listings, price moves,
    status changes, possible relists.
-5. One digest covers both trucks, rendered (and emailed once `DIGEST_LIVE=1`); data committed; site
-   rebuilt and deployed.
+4. The Hilux run follows (`run_daily.py --model hilux`) into `data/hilux/`,
+   isolated so a Hilux failure never costs the 620 its data.
+5. One digest covers both trucks, rendered (and emailed once
+   `DIGEST_LIVE=1`); data committed; site rebuilt and deployed.
 
 ## Working locally
 
