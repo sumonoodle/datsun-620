@@ -1,45 +1,7 @@
 {
-  "date": "2026-09-23",
-  "new": [
-    "trovit:mB7wBFc1j",
-    "trovit:1tm10oa121o1e",
-    "trovit:Bp1Q1d121u1pl"
-  ],
+  "date": "2026-09-24",
+  "new": [],
   "price_changed": [],
-  "status_changed": [
-    {
-      "id": "kuruma_ex:ccVU3133320108",
-      "old_status": "withdrawn",
-      "new_status": "active"
-    }
-  ],
-  "possible_relists": [
-    {
-      "id": "trovit:mB7wBFc1j",
-      "prior_id": "trovit:1qw1Cizr1o1Z",
-      "reasons": [
-        "title similarity 1.00",
-        "same country (US)",
-        "price within 0%"
-      ]
-    },
-    {
-      "id": "trovit:1tm10oa121o1e",
-      "prior_id": "trovit:n1h1J1lJY1-F",
-      "reasons": [
-        "title similarity 1.00",
-        "same country (US)",
-        "price within 0%"
-      ]
-    },
-    {
-      "id": "trovit:Bp1Q1d121u1pl",
-      "prior_id": "trovit:1Mp1r1Jt1ZN1S",
-      "reasons": [
-        "title similarity 1.00",
-        "same country (US)",
-        "price within 0%"
-      ]
-    }
-  ]
+  "status_changed": [],
+  "possible_relists": []
 }
