@@ -40,23 +40,13 @@ HILUX_TH = quote("ไฮลักซ์")
 # URL formats, and the Yahoo queries built exactly as the collector does.
 HILUX_JP_Q = quote("ハイラックス")
 PAGES = [
-    # Round 3: the new-source agent's filter/sort URLs.
-    ("gumtree-uk-petrol-date.html", "r3", "https://www.gumtree.com/search?search_category=cars-vans-motorbikes&search_location=uk&q=toyota+hilux&vehicle_fuel_type=petrol&sort=date"),
-    ("gumtree-uk-date.html", "r3", "https://www.gumtree.com/search?search_category=cars-vans-motorbikes&search_location=uk&q=toyota+hilux&sort=date"),
-    ("gumtree-za-petrol.html", "r3", "https://www.gumtree.co.za/s-cars-bakkies/toyota~hilux~petrol/v1c9077a3mamofup1"),
-    ("gumtree-za-petrol-p2.html", "r3", "https://www.gumtree.co.za/s-cars-bakkies/toyota~hilux~petrol/page-2/v1c9077a3mamofup2"),
-    ("tcv-hilux-years.html", "r3", "https://www.tc-v.com/used_car/toyota/hilux/?fid=1978&jid=1984"),
-    ("carfromjapan-oldest.html", "r3", "https://carfromjapan.com/cheap-used-toyota-hilux-for-sale?sortBy=registrationDate"),
-    ("carfromjapan-maxyear.html", "r3", "https://carfromjapan.com/cheap-used-toyota-hilux-for-sale?maxYear=1985"),
-    ("goonet-jp-other.html", "r3", "https://www.goo-net.com/usedcar/brand-TOYOTA/car-HILUX/model--1-10104114/"),
-    ("goonet-jp-pickup.html", "r3", "https://www.goo-net.com/usedcar/brand-TOYOTA/car-HILUX_PICK_UP/"),
-    ("classictrader-toyota.html", "r3", "https://www.classic-trader.com/uk/cars/search/toyota"),
-    ("marktplaats-autos-hilux.html", "r3", "https://www.marktplaats.nl/l/auto-s/q/toyota+hilux/"),
-    ("marktplaats-oldtimers-toyota.html", "r3", "https://www.marktplaats.nl/l/auto-s/oldtimers/q/toyota/"),
-    ("marktplaats-toyota-hilux.html", "r3", "https://www.marktplaats.nl/l/auto-s/toyota/q/hilux/"),
-    ("hagerty-toyota-make.html", "r3", "https://www.hagerty.com/marketplace/search?make=Toyota"),
-    ("hagerty-toyota-truck.html", "r3", "https://www.hagerty.com/marketplace/search?make=Toyota&model=Truck"),
-    ("ih8mud-home.html", "r3", "https://forum.ih8mud.com/"),
+    # Round 4: can Gumtree UK be filtered without /search (robots-disallowed)?
+    ("gumtree-uk-path-date.html", "r4", "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux?sort=date"),
+    ("gumtree-uk-path-petrol.html", "r4", "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux?vehicle_fuel_type=petrol"),
+    ("gumtree-uk-rn30.html", "r4", "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux+rn30"),
+    ("gumtree-uk-classic.html", "r4", "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux+classic"),
+    ("marktplaats-hilux-p2.html", "r4", "https://www.marktplaats.nl/l/auto-s/q/toyota+hilux/p/2/"),
+    ("kuruma-ex-s112-1989.html", "r4", "https://kuruma-ex.jp/usedcar/search/result/maker/TO/shashu/S112/year_max/1989"),
 ]
 
 

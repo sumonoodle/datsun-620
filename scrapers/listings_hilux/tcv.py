@@ -14,7 +14,11 @@ plus a 2001 and a 1994. The page's own search form has
 "Registration Year From/To" selects named fid/jid, and its "Older Model"
 link is /used_car/all/all/?jid=1989, so ?fid=1978&jid=1984 scopes the
 query server-side to the generation. That URL is the site's own filter
-but was not itself fetched yet; the guard makes a mismatch fail loudly.
+and round 3 (2026-09-24) confirmed it server-side: the page title reads
+"Toyota Hilux & Year 1978-1984" and the result-id list is empty (no
+1978-84 Hilux in TCV stock that day). Because every card would be
+rejected on its year anyway, a silently dropped filter would look just
+like an empty market, so collect() also requires that title echo.
 
 Guard: the page lists its result ids in data-search-car-ids-value. A
 missing attribute raises (layout change or block page); ids promised but
@@ -127,7 +131,12 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
     return records
 
 
+_FILTER_ECHO_RE = re.compile(r"<title>[^<]*Year 1978-1984", re.I)
+
+
 def collect(fx_day: dict) -> list[dict]:
     resp = httpx.get(URL, headers=HEADERS, timeout=30, follow_redirects=True)
     resp.raise_for_status()
+    if not _FILTER_ECHO_RE.search(resp.text):
+        raise ValueError("year filter not echoed in the page title (fid/jid ignored?)")
     return parse_page(resp.text, fx_day)

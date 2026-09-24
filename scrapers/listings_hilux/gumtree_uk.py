@@ -7,26 +7,26 @@ structured attributes list (vehicle_registration_year, vehicle_fuel_type,
 vehicle_make). The rendered HTML carries only three titles as <img alt>,
 so the JSON blob, not the markup, is what is parsed.
 
-Why these URLs and not the probed one. The 2026-09-24 probe fetched
+What it polls, and why it is weak. The 2026-09-24 probe fetched
 /cars-vans-motorbikes/uk/srpsearch+toyota+hilux: 379 ads in 16 pages,
 sorted by relevance, and page 1 was 26 cards of 2002-2025 D-4D diesels
-(plus a Ford Ranger and an L200 whose titles mention the Hilux). A 1980
-truck would sit pages deep and never be seen. The same payload lists the
-site's own filter links, and two of them fix it:
+(plus a Ford Ranger and an L200 whose titles mention the Hilux). The
+payload's own filter links (vehicle_fuel_type=petrol: 1 petrol ad against
+118 diesel; sortFilter "date": newest first) would fix that, but they all
+live under /search?, and robots.txt disallows /search for our user agent
+(round 3: both /search URLs were refused by the probe's robotparser and
+never fetched). So only path-style /srpsearch+<keywords> URLs are polled:
 
-- vehicle_fuel_type=petrol: the Hilux facet counted 118 diesel to 1
-  petrol in vans that day, so the petrol result set is a handful of ads
-  and a single page covers it (the 3rd-gen UK truck is 1.6/1.8 petrol).
-- sort=date ("Most recent first", from the page's sortFilter): the
-  all-fuels search newest first. Polled daily, it sees every new Hilux ad
-  on its first day, including a classic whose seller left fuel type blank
-  (a petrol-only query would never show that one).
+- the probed Hilux search itself (page 1, relevance order: a 1980 truck
+  appears only if Gumtree ranks it on page 1), and
+- narrow keyword variants, where a 3rd-gen truck's own words ("rn30",
+  "classic") are what the seller writes, so relevance works for us.
 
+The keyword variants share the robots-allowed /srpsearch+ path prefix
+but were not themselves fetched yet; a fuel/sort filter on the path form
+is on the round-4 list. Treat this source as best-effort until then.
 The registration-year facet cannot help: its lowest choice is "Before
-2007". Both URLs are the page's own filter links (the /search? form,
-category widened from vans to cars-vans-motorbikes so a classic filed
-under Cars is not missed) and still need a runner fetch to confirm them;
-until then the guard below makes a mismatch fail loudly.
+2007".
 
 Guard: clientData missing raises (layout change or block page). The
 search's own total (adsTitle.totalNumberOfAdsFound) is compared with the
@@ -50,11 +50,12 @@ from common import hilux, normalize
 
 SOURCE = "gumtree_uk"
 BASE = "https://www.gumtree.com"
-_SEARCH = (f"{BASE}/search?search_category=cars-vans-motorbikes&search_location=uk"
-           "&q=toyota+hilux")
+# Never /search? -- robots.txt disallows it (round-3 probe).
+_SRP = f"{BASE}/cars-vans-motorbikes/uk/srpsearch+"
 URLS = [
-    f"{_SEARCH}&vehicle_fuel_type=petrol&sort=date",
-    f"{_SEARCH}&sort=date",
+    f"{_SRP}toyota+hilux",          # round-1 probe: 200, robots-allowed
+    f"{_SRP}toyota+hilux+rn30",
+    f"{_SRP}toyota+hilux+classic",
 ]
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "

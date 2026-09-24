@@ -7,19 +7,24 @@ carUrl, registrationYear, fuelKey (PETROL/DIESEL), driveTypeKey,
 steeringKey, displacement, priceUSD and the JPY price, followed by the
 search's totalCount.
 
-Why oldest first. The 2026-09-24 probe of the plain model page held 538
+Why ?maxYear=1985. The 2026-09-24 probe of the plain model page held 538
 Hiluxes, 25 a page in 22 pages, in "Relevant" order; the oldest truck on
-page 1 was a 1989 and most were 2018-2026. The page's own sort select
-offers sortBy=registrationDate ("Year Old to New"), so the 25 oldest
-Hiluxes in stock sit on page 1 and a 1978-83 truck, if stocked, is first
-in line. (The site also has ?minYear=/?maxYear= links on its all-cars
-browse page, but only for the all-makes listing; the sort is the safer
-scope.) The sorted URL is the site's own option but not yet fetched by a
-runner; the guard makes a mismatch fail loudly.
+page 1 was a 1989 and most were 2018-2026. Round 3 tried two scopes:
+
+- ?sortBy=registrationDate ("Year Old to New" in the sort select) is NOT
+  applied server-side: the page came back with the same 25 ids in the
+  same order as the unsorted page (the sort is client-side).
+- ?maxYear=1985 IS applied server-side: the RSC payload shows the search
+  params sent to the API ({"limit":25,"maxYear":1985,"makeModelKey":
+  "toyota-hilux"}) and the cars array came back empty, which fits a stock
+  whose oldest Hilux is a 1989. That is the polled URL: when a 1978-84
+  truck is stocked it is the whole result set.
 
 Guard: no "cars" array in the payload raises (layout change or block
-page); a positive totalCount with an empty array raises; totalCount 0 is
-an empty market.
+page); a positive totalCount with an empty array raises. An empty array
+counts as an empty market only when the payload also echoes the maxYear
+search param (the filtered empty page carries no totalCount at all), so
+an empty array from some other page shape raises.
 """
 
 from __future__ import annotations
@@ -37,7 +42,7 @@ from common import hilux, normalize
 
 SOURCE = "carfromjapan"
 BASE = "https://carfromjapan.com"
-URL = f"{BASE}/cheap-used-toyota-hilux-for-sale?sortBy=registrationDate"
+URL = f"{BASE}/cheap-used-toyota-hilux-for-sale?maxYear=1985"
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                    "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"),
@@ -46,6 +51,7 @@ HEADERS = {
 
 _PUSH_RE = re.compile(r"self\.__next_f\.push\((\[.*?\])\)</script>", re.S)
 _TOTAL_RE = re.compile(r'"totalCount":(\d+)')
+_MAXYEAR_RE = re.compile(r'"maxYear":"?\d{4}')
 
 
 def _flight(html: str) -> str:
@@ -71,10 +77,13 @@ def _cars(flight: str) -> tuple[list[dict], int | None]:
 
 
 def parse_page(html: str, fx_day: dict) -> list[dict]:
-    cars, total = _cars(_flight(html))
+    flight = _flight(html)
+    cars, total = _cars(flight)
     if not cars:
         if total:
             raise ValueError(f"search reports {total} cars but none were parsed")
+        if total is None and not _MAXYEAR_RE.search(flight):
+            raise ValueError("empty cars array with no count and no year filter echo")
         return []
 
     records = []

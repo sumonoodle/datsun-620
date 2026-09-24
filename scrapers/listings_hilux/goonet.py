@@ -16,9 +16,12 @@ held 700 cars, 50 a page, and page 1 was all 120/220-series trucks from
 neither current series, about 38 cars, one page. That facet is where a
 1980 truck lives. The Goo-net Exchange index also links a separate
 HILUX_PICK_UP model (the older pickup line); its domestic twin,
-/usedcar/brand-TOYOTA/car-HILUX_PICK_UP/, is fetched too. Neither URL was
-in the first probe round (both are the site's own links); the guard makes
-a mismatch fail loudly, and one failing does not sink the other.
+/usedcar/brand-TOYOTA/car-HILUX_PICK_UP/, is fetched too. Round 3
+(2026-09-24) confirmed both with the same card markup: その他 held 7 cars
+(2023-24 120-series, 2003/2000/1996 trucks and a 1970 1st-gen 初代 at
+price ASK, proof that classic Hiluxes are filed there), and
+HILUX_PICK_UP held 12 1990-97 double cabs. One failing does not sink the
+other.
 
 Guard: the page's Product ld+json states offerCount. Cards promised but
 none parsed raises; a count of 0 returns nothing; a page with neither a

@@ -16,9 +16,14 @@ SR5 and a 1977 RN28 SR5, which is the site's Hilux history: roughly one
 old Hilux a year, a few of them 3rd-gen. Low volume, zero noise, and the
 UK/EU classic trade is exactly where the owner's kind of truck is sold.
 
-Only live ads become records. The live-ad state value has not been seen
-yet (every island on the probe page was "expired" or "sold"), so the
-dead states are listed and anything else is treated as live.
+Only live ads become records. Round-3 probe (the Toyota make page,
+/uk/cars/search/toyota: 41 offers, 15 on page 1) confirmed the live shape:
+state "published", a full canonicalUrl of the form
+/uk/cars/listing/<make>/<model>/<model-spec>/<year>/<id>, and the same
+ResultPageCarData island as the references. Each live ad is ALSO carried
+by a BookmarkAd island, so ads are de-duplicated by id. Dead states are
+listed rather than "published" required, so a new live-state name is
+still read (and a count with no live ad still raises).
 
 Guard: the search dialog island states searchResultsCount. Zero is an
 empty market. A positive count with no live ad parsed raises, so a live
@@ -102,17 +107,17 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
     if not islands:
         raise ValueError("no Astro islands (page layout changed or blocked?)")
     count = None
-    ads = []
+    ads: dict[str, dict] = {}
     for props in islands:
         if isinstance(props.get("searchResultsCount"), int):
             count = props["searchResultsCount"]
         ad = props.get("vehicleAd")
         if isinstance(ad, dict) and ad.get("id") is not None:
-            ads.append(ad)
+            ads.setdefault(str(ad["id"]), ad)
     if count is None:
         raise ValueError("searchResultsCount missing (search dialog moved?)")
 
-    live = [ad for ad in ads if str(ad.get("state") or "").lower() not in _DEAD_STATES]
+    live = [ad for ad in ads.values() if str(ad.get("state") or "").lower() not in _DEAD_STATES]
     if count and not live:
         raise ValueError(f"search reports {count} offers but no live ad was parsed")
 
@@ -123,6 +128,12 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         model = ((vehicle.get("model") or {}).get("label") or "")
         make = ((vehicle.get("make") or {}).get("label") or "")
         if make and make.lower() != "toyota":
+            continue
+        # Structural model gate: the Hilux URL is scoped server-side, but a
+        # make-wide page (Land Cruiser BJ42s, FJ45s on the round-3 Toyota
+        # page) must never reach classify() with require_name=False.
+        model_slug = ((vehicle.get("model") or {}).get("slug") or "hilux").lower()
+        if model_slug != "hilux":
             continue
         title_std = ad.get("title") or ""            # "1984 | Toyota Hilux"
         seller_title = ad.get("titleBySeller") or ""  # "Type pol N46"

@@ -17,8 +17,9 @@ v1c9077a3mamofup1. 73 results is four pages, so every petrol Hilux in the
 country is read each day. The year dropdown (1978, 1983 ... options) posts
 through a JS form and has no link on the page, so it is not used.
 
-The facet URL is the page's own link but was not itself fetched in the
-first probe round; the guard makes a mismatch fail loudly.
+Round 3 (2026-09-24) confirmed the facet server-side: "(73 results)",
+pages 1 and 2 each 20 cards, every card FuelType Petrol (1999-2020), same
+markup, and the /page-2/...p2 pagination shape. No 1978-84 truck listed.
 
 Guard: the heading's "(N results)" is compared with the cards parsed on
 page 1: results promised but no card read raises; zero results returns

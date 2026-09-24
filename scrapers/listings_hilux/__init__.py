@@ -7,9 +7,11 @@ Source names match the 620 side where the site is the same (the site and
 digest share display names), so "ebay" here is eBay whichever truck.
 """
 
-from . import (barnfinds, bat, carsensor, classic_trader, classiccars, ebay, everycar, flex,
-               goonet_exchange, kijiji, kleinanzeigen, kuruma_ex, pistonheads,
-               retrorides, trovit, truck2hand, yahoo_auctions)
+from . import (barnfinds, bat, carfromjapan, carsensor, classic_trader,
+               classiccars, ebay, everycar, flex, goonet, goonet_exchange,
+               gumtree_za, hagerty, kijiji, kleinanzeigen, kuruma_ex,
+               marktplaats, pistonheads, retrorides, tcv, trovit, truck2hand,
+               yahoo_auctions)
 
 SOURCES: list[tuple] = [
     ("ebay", ebay.collect),
@@ -29,4 +31,10 @@ SOURCES: list[tuple] = [
     ("kuruma_ex", kuruma_ex.collect),
     ("everycar", everycar.collect),
     ("classic_trader", classic_trader.collect),
+    ("gumtree_za", gumtree_za.collect),
+    ("tcv", tcv.collect),
+    ("carfromjapan", carfromjapan.collect),
+    ("goonet", goonet.collect),
+    ("marktplaats", marktplaats.collect),
+    ("hagerty", hagerty.collect),
 ]
