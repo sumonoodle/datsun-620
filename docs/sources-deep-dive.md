@@ -416,16 +416,27 @@ rounds, and the cause is not a block: the site was rebuilt. Every path on
 5,077-byte Vite SPA shell — `<div id="app"></div>`, `/assets/index-*.js`,
 hashed CSS, Google Tag Manager — including the root, the old car-search
 path, `/search`, Thai-language queries, `/api/search`,
-`/_next/data/search.json` and **`/robots.txt` itself**. The single
-referenced JS bundle answers with 728 bytes and no API strings.
+`/_next/data/search.json` and **`/robots.txt` itself**.
+
+Corrected 2026-09-25: this entry first said "the single referenced JS
+bundle answers with 728 bytes and no API strings", which was true of the
+file probed (`/assets/index-*.js`) but left a false impression that the
+assets are unreachable. The Hilux research captured a REAL Kaidee module
+(`data/research/pages-hilux/kaidee-api.js.gz`, 12 KB of Vue code calling
+relative paths like `profile/me`), so the asset layer does serve. The
+blocker is therefore not reachability — it is the robots.txt point
+below, and that one alone.
 
 Two things follow, and the second is the binding one.
 
 First, the old server-rendered route is gone permanently. The collector
 keyed on `pageProps.ads`, which no longer exists.
 
-Second — **there is no readable robots.txt on either host.** That rules
-out hunting for their XHR API: permission cannot be established, and
+Second — and this is the whole reason to stop — **there is no readable
+robots.txt on either host.** Independently corroborated: the Hilux
+research saved `kaidee-robots.txt.gz` and it too contains the SPA shell,
+not a robots file. That rules out hunting for their XHR API even though
+the API demonstrably exists: permission cannot be established, and
 guessing endpoints against a site whose robots file we cannot read is the
 same behaviour declined for Cars & Bids on 2026-09-20. Worth recording
 that round 1 of this probe reported "robots 200; search path allowed:
