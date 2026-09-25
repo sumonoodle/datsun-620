@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-24",
-  "started_at": "2026-09-24T04:52:28+00:00",
+  "date": "2026-09-25",
+  "started_at": "2026-09-25T04:58:33+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -8,7 +8,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "bringatrailer",
@@ -16,14 +16,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "carsandbids",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 74,
+      "consecutive_failures": 75,
       "consecutive_zero_runs": 0
     },
     {
@@ -31,7 +31,7 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 74,
+      "consecutive_failures": 75,
       "consecutive_zero_runs": 0
     },
     {
@@ -40,7 +40,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 1
+      "consecutive_zero_runs": 2
     },
     {
       "source": "carsensor",
@@ -56,14 +56,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "kaidee",
       "ok": false,
       "records": 0,
       "note": "all Kaidee queries failed (datsun: __NEXT_DATA__ missing (page layout changed or blocked?))",
-      "consecutive_failures": 3,
+      "consecutive_failures": 4,
       "consecutive_zero_runs": 0
     },
     {
@@ -88,7 +88,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "barnfinds",
@@ -104,12 +104,12 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "kuruma_ex",
       "ok": true,
-      "records": 2,
+      "records": 4,
       "note": "",
       "consecutive_failures": 0,
       "consecutive_zero_runs": 0
@@ -120,7 +120,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "pistonheads",
@@ -128,7 +128,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "ratsun",
@@ -160,7 +160,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     }
   ],
   "totals": {
