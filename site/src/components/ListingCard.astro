@@ -1,0 +1,172 @@
+---
+// One listing card on a listings page. Active and ended cards differ only in
+// the status badge, meta line and actions.
+import {
+  type TruckModel, chassisCode, countryName, driveTrain, isExtCab, isTarget,
+  money, sourceName, vehicleHref,
+} from "../lib/trucks";
+
+interface Props {
+  l: any;
+  model: TruckModel;
+  ended?: boolean;
+}
+const { l, model, ended = false } = Astro.props;
+const href = vehicleHref(model, l.id);
+const hilux = model.key === "hilux";
+const target = isTarget(l);
+const wd = driveTrain(l);
+const code = chassisCode(l);
+const reasons: string[] = l.variant?.target_reasons ?? [];
+// Hilux-only data attributes; the Datsun markup stays as it was.
+const hiluxData = hilux
+  ? { "data-target": target ? "1" : "0", "data-wd": l.variant?.drive ?? "unknown" }
+  : {};
+---
+
+<article class:list={["card elevated listing", { ended, target }]} data-country={l.country} data-drive={l.drive_side}
+         data-year={l.year ?? ""} data-gbp={l.price.gbp ?? ""}
+         data-source={l.source} data-seen={l.first_seen} data-ended={ended ? l.last_seen : undefined}
+         data-kc={l.king_cab?.matched ? "1" : "0"} {...hiluxData}>
+  {target && (
+    <div class="target-banner">
+      <b>★ {model.targetLabel}</b>
+      {reasons.length > 0 && <span>{reasons.join(" · ")}</span>}
+    </div>
+  )}
+  {l.images[0] && (
+    <a class="photo" href={href}>
+      <img src={l.images[0]} alt={l.title} loading="lazy" width="640" height="420" onerror="this.parentElement.style.display='none'" />
+      <span class="chip chip-primary price-badge">{money(l.price)}</span>
+      {ended && <span class={`chip status-badge status-${l.status}`}>{l.status}</span>}
+    </a>
+  )}
+  <div class="content">
+    <h3><a href={href}>{l.title_translated ?? l.title}</a></h3>
+    {!ended && l.title_translated && <p class="original">{l.title}</p>}
+    {!l.images[0] && (ended ? (
+      <p class="price-line">
+        {money(l.price)} <span class={`chip chip-tertiary`}>{l.status}</span>
+      </p>
+    ) : (
+      <p class="price-line">{money(l.price)}</p>
+    ))}
+    {ended ? (
+      <p class="meta supporting">
+        {sourceName(l.source)} · last seen {l.last_seen}
+      </p>
+    ) : (
+      <p class="meta supporting">
+        {sourceName(l.source)}
+        {l.region && ` · ${l.region}`}
+      </p>
+    )}
+  </div>
+  <div class="assist-row">
+    {isExtCab(l) && (
+      <span class="chip chip-primary">{model.extChip}{model.extRare && " · rare"}</span>
+    )}
+    {code && <span class="chip chip-tonal">{code}</span>}
+    {wd && <span class="chip chip-tonal">{wd}</span>}
+    {l.year && <span class="chip chip-outlined">{l.year}</span>}
+    <span class="chip chip-outlined">{countryName(l.country)}</span>
+    <span class="chip chip-outlined">{l.drive_side}</span>
+    {!ended && l.relist?.possible && <span class="chip chip-error">possible relist</span>}
+  </div>
+  {!ended && (
+    <div class="actions">
+      <a class="btn-text" href={l.url} rel="noopener">View on {sourceName(l.source)}</a>
+    </div>
+  )}
+</article>
+
+<style>
+  .listing {
+    margin: 0.9rem 0;
+  }
+  .listing.target {
+    outline: 2px solid var(--primary);
+  }
+  .target-banner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    background: var(--primary-container);
+    color: var(--on-primary-container);
+    padding: 0.6rem 1rem;
+    font-size: 0.82rem;
+  }
+  .target-banner b {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .photo {
+    position: relative;
+    display: block;
+  }
+  .photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .price-badge {
+    position: absolute;
+    left: 0.75rem;
+    bottom: 0.75rem;
+    font-size: 0.9rem;
+    box-shadow: var(--elev-1);
+  }
+  .status-badge {
+    position: absolute;
+    right: 0.75rem;
+    top: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.72rem;
+  }
+  .status-sold {
+    background: var(--tertiary-container);
+    color: var(--on-tertiary-container);
+  }
+  .status-withdrawn {
+    background: var(--error-container);
+    color: var(--on-error-container);
+  }
+  .content {
+    padding: 0.9rem 1rem 0.15rem;
+  }
+  .content h3 {
+    margin: 0 0 0.2rem;
+  }
+  .content h3 a {
+    color: var(--on-surface);
+    text-decoration: none;
+  }
+  .original {
+    color: var(--on-surface-variant);
+    font-size: 0.78rem;
+    margin: 0 0 0.3rem;
+  }
+  .price-line {
+    font-weight: 500;
+    margin: 0.25rem 0;
+  }
+  .meta {
+    margin: 0.1rem 0 0;
+    font-size: 0.82rem;
+  }
+  .assist-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0.55rem 1rem 0.4rem;
+  }
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 0.5rem 0.5rem;
+  }
+  .ended {
+    opacity: 0.85;
+  }
+</style>

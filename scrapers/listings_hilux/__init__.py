@@ -1,0 +1,41 @@
+"""Hilux collectors (3rd-generation petrol Toyota Hilux, 1978-1983).
+
+Each module exposes collect(fx_day) -> [listing records], exactly like
+listings/, and uses common.hilux for identity so every source applies the
+same rules. SOURCES is the registry run_daily.py --model hilux iterates.
+Source names match the 620 side where the site is the same (the site and
+digest share display names), so "ebay" here is eBay whichever truck.
+"""
+
+from . import (barnfinds, bat, carfromjapan, carsensor, classic_trader,
+               classiccars, ebay, everycar, flex, goonet, goonet_exchange,
+               gumtree_uk, gumtree_za, hagerty, kijiji, kleinanzeigen, kuruma_ex,
+               marktplaats, pistonheads, retrorides, tcv, trovit, truck2hand,
+               yahoo_auctions)
+
+SOURCES: list[tuple] = [
+    ("ebay", ebay.collect),
+    ("bringatrailer", bat.collect),
+    ("classiccars", classiccars.collect),
+    ("kijiji", kijiji.collect),
+    ("barnfinds", barnfinds.collect),
+    ("pistonheads", pistonheads.collect),
+    ("retrorides", retrorides.collect),
+    ("trovit", trovit.collect),
+    ("kleinanzeigen", kleinanzeigen.collect),
+    ("goonet_exchange", goonet_exchange.collect),
+    ("carsensor", carsensor.collect),
+    ("yahoo_auctions", yahoo_auctions.collect),
+    ("truck2hand", truck2hand.collect),
+    ("flex", flex.collect),
+    ("kuruma_ex", kuruma_ex.collect),
+    ("everycar", everycar.collect),
+    ("classic_trader", classic_trader.collect),
+    ("gumtree_uk", gumtree_uk.collect),
+    ("gumtree_za", gumtree_za.collect),
+    ("tcv", tcv.collect),
+    ("carfromjapan", carfromjapan.collect),
+    ("goonet", goonet.collect),
+    ("marktplaats", marktplaats.collect),
+    ("hagerty", hagerty.collect),
+]

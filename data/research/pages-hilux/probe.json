@@ -1,0 +1,62 @@
+[
+  {
+    "file": "gumtree-uk-path-date.html",
+    "group": "r4",
+    "url": "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux?sort=date",
+    "status": 200,
+    "final_url": "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux?sort=date",
+    "bytes": 945441,
+    "mentions_hilux": true,
+    "js_required": false
+  },
+  {
+    "file": "gumtree-uk-path-petrol.html",
+    "group": "r4",
+    "url": "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux?vehicle_fuel_type=petrol",
+    "status": 200,
+    "final_url": "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux?vehicle_fuel_type=petrol",
+    "bytes": 938504,
+    "mentions_hilux": true,
+    "js_required": false
+  },
+  {
+    "file": "gumtree-uk-rn30.html",
+    "group": "r4",
+    "url": "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux+rn30",
+    "status": 200,
+    "final_url": "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux+rn30",
+    "bytes": 437561,
+    "mentions_hilux": true,
+    "js_required": false
+  },
+  {
+    "file": "gumtree-uk-classic.html",
+    "group": "r4",
+    "url": "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux+classic",
+    "status": 200,
+    "final_url": "https://www.gumtree.com/cars-vans-motorbikes/uk/srpsearch+toyota+hilux+classic",
+    "bytes": 429144,
+    "mentions_hilux": true,
+    "js_required": false
+  },
+  {
+    "file": "marktplaats-hilux-p2.html",
+    "group": "r4",
+    "url": "https://www.marktplaats.nl/l/auto-s/q/toyota+hilux/p/2/",
+    "status": 200,
+    "final_url": "https://www.marktplaats.nl/l/auto-s/q/toyota+hilux/p/2/",
+    "bytes": 633124,
+    "mentions_hilux": true,
+    "js_required": false
+  },
+  {
+    "file": "kuruma-ex-s112-1989.html",
+    "group": "r4",
+    "url": "https://kuruma-ex.jp/usedcar/search/result/maker/TO/shashu/S112/year_max/1989",
+    "status": 200,
+    "final_url": "https://kuruma-ex.jp/usedcar/search/result/maker/TO/shashu/S112/year_max/1989",
+    "bytes": 324254,
+    "mentions_hilux": true,
+    "js_required": false
+  }
+]

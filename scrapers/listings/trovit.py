@@ -66,21 +66,48 @@ def _amount(text: str, currency: str) -> float | None:
         return None
 
 
-def parse_page(html: str, fx_day: dict, country: str = "US",
-               currency: str = "USD") -> list[dict]:
+def extract_cards(html: str) -> list[dict]:
+    """Every result card on a Trovit page, unfiltered, in page order.
+
+    Raises when the page holds no cards at all (layout change or block).
+    Shared with the Hilux collector (listings_hilux/trovit.py), which reads
+    the same markup with its own identity gate.
+    """
     soup = BeautifulSoup(html, "html.parser")
     items = soup.select("div.item.js-item")
     if not items:
         raise ValueError("zero items parsed (page layout changed or blocked?)")
+    cards = []
+    for it in items:
+        title_el = it.select_one(".item-title")
+        desc_el = it.select_one(".item-description-text")
+        price_el = it.select_one(".actual-price")
+        addr_el = it.select_one(".item-address")
+        a = it.find("a", href=True)
+        img = it.select_one("img.snippet-image")
+        image = img.get("src") if img else None
+        if image and image.startswith("//"):
+            image = "https:" + image
+        cards.append({
+            "id": it.get("data-id") or "",
+            "title": title_el.get_text(" ", strip=True) if title_el else "",
+            "desc": desc_el.get_text(" ", strip=True) if desc_el else "",
+            "price_text": price_el.get_text(strip=True) if price_el else None,
+            "region": addr_el.get_text(" ", strip=True) if addr_el else None,
+            "href": a["href"] if a else None,
+            "image": image,
+        })
+    return cards
 
+
+def parse_page(html: str, fx_day: dict, country: str = "US",
+               currency: str = "USD") -> list[dict]:
     records = []
     seen: set[str] = set()
-    for it in items:
-        item_id = it.get("data-id") or ""
-        title_el = it.select_one(".item-title")
-        title = title_el.get_text(" ", strip=True) if title_el else ""
-        desc_el = it.select_one(".item-description-text")
-        desc = desc_el.get_text(" ", strip=True) if desc_el else ""
+    for card in extract_cards(html):
+        item_id = card["id"]
+        title = card["title"]
+        desc = card["desc"]
         if not item_id or item_id in seen:
             continue
         # The page is 620-scoped, but aggregators drift: hold the line, and
@@ -93,27 +120,21 @@ def parse_page(html: str, fx_day: dict, country: str = "US",
             continue
         seen.add(item_id)
 
-        price_el = it.select_one(".actual-price")
-        amount = _amount(price_el.get_text(strip=True), currency) if price_el else None
-        addr_el = it.select_one(".item-address")
-        region = addr_el.get_text(" ", strip=True) if addr_el else None
-        a = it.find("a", href=True)
-        img = it.select_one("img.snippet-image")
-        image = img.get("src") if img else None
-        if image and image.startswith("//"):
-            image = "https:" + image
+        price_text = card["price_text"]
+        amount = _amount(price_text, currency) if price_text is not None else None
+        image = card["image"]
 
         records.append({
             "id": f"trovit:{item_id}",
             "source": SOURCE,
             "source_listing_id": item_id,
-            "url": normalize.safe_url(a["href"] if a else EDITIONS[0][3]),
+            "url": normalize.safe_url(card["href"] or EDITIONS[0][3]),
             "title": title,
             "title_translated": None,
             "description_snippet": (desc[:500] or None),
             "year": normalize.extract_year(f"{title} {desc}"),
             "country": country,
-            "region": region,
+            "region": card["region"],
             "drive_side": normalize.infer_drive_side(country, f"{title} {desc}"),
             "king_cab": king_cab.check(title, desc),
             "price": normalize.make_price(amount, currency, fx_day),

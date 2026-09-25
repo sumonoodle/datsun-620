@@ -1,0 +1,1910 @@
+{
+ "version": "1.0",
+ "updated": "2026-09-24",
+ "markets": [
+  {
+   "market": "US",
+   "name": "United States",
+   "notes": "In the US (and Canada) the third-generation Hilux was never badged Hilux: it was the 'Toyota Truck' or 'Toyota Pickup' (brochures say Toyota Truck; buyers and listings say 'Toyota Pickup', often with the trim 'SR5'). It was sold as model years 1979-1983; the redesign built from August 1983 was sold as MY1984 and is the next generation (RN5x/RN6x codes), so a US MY1984 is never third generation. Toyota USA's own newsroom files 1979-83 as the 'Fourth (4th) Generation' Toyota Truck because US numbering counts earlier Stout/Hilux models differently; LC Engineering calls it the '2nd generation' Pickup. Engines: 20R 2.2L for 1979-80, 22R 2.4L for 1981-83; a 2.2L L diesel (LN codes, out of scope) arrived for 1981/82. Chassis codes follow a clean pattern: 3x = short (standard) bed on the 2585 mm wheelbase, 4x = long bed on the 2800 mm wheelbase; last digit 2/7 = 20R 2WD/4WD, 4/8 = 22R 2WD/4WD. The 12R and 18R were never sold in the US. 4WD arrived for 1979 (US sources say January 1979, before the Japanese October 1979 launch), with a solid front axle and Land Cruiser-derived transfer case. Trim names seen in listings: Standard, Deluxe, SR5 (Sport Rally 5-speed package, 5-speed and bucket seats), 'Sport Truck' (the short-bed SR5 in 1979-80 brochures), 'Long Bed', 1983 'Mojave' special edition (RN44). No extended cab existed: the Xtracab arrived with the MY1984 redesign. Colour swatch hex values are approximations; codes are US-market factory codes.",
+   "unresolved": [
+    "4WD start: US sources (YotaTech, Wikipedia) date RN37 from January 1979, while Toyota Japan dates the first Hilux 4WD to October 1979; possibly North America got 4WD first, not reconciled",
+    "LC Engineering lists 22R-EC (EFI) against 1981-83 RN34/RN44; other sources put the first fuel-injected 22R-E in the MY1984 redesign. Treated as 22R carburetted only for 1981-83",
+    "Whether a 1-ton / cab-and-chassis long-bed variant (used under Sunrader/Chinook-style campers) carried a distinct code or was an RN42/RN44 with a different suffix is unconfirmed",
+    "Canada was not researched separately; assumed to mirror US codes"
+   ],
+   "variants": [
+    {
+     "id": "us-rn32-1979",
+     "name": "Toyota Truck / Pickup, standard (short) bed 2WD (incl. SR5 'Sport Truck')",
+     "years": {
+      "from": 1979,
+      "to": 1980
+     },
+     "body": "regular cab, short (standard) bed, 2WD",
+     "engine": {
+      "code": "20R",
+      "displacement_cc": 2189,
+      "power_hp": 90,
+      "power_note": "20R 2.2L SOHC, 90 hp (67 kW) at 4800 rpm, 122 lb-ft; Wikipedia figure. Some sale/auction copy quotes 95 hp (period SAE rating differences)"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2585,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual standard; 5-speed manual with SR5; 3-speed automatic optional on 2WD",
+     "notes": "Chassis code RN32. MY1979-80 only. The short-bed SR5 was marketed as the 'SR5 Sport Truck'. Wheelbase 101.77 in per factory manual.",
+     "confidence": "medium",
+     "unresolved": [
+      "Bed length: the US brochure figures for the short (standard) and long bed inner length were not reachable (importarchive/xr793 brochure PDF blocked); bed_length left null",
+      "Factory curb weight not sourced; only an owner-weighed 1981 4WD short bed at 2640 lb empty (YotaTech) surfaced",
+      "Overall length/width/height for US-spec trucks not sourced (US bumpers differ from AU-published figures), left null"
+     ],
+     "colors": [
+      {
+       "name": "White (1979)",
+       "code": "030",
+       "hex": "#f2f1ec"
+      },
+      {
+       "name": "White (1980)",
+       "code": "033",
+       "hex": "#f2f1ec"
+      },
+      {
+       "name": "Black",
+       "code": "202",
+       "hex": "#151515"
+      },
+      {
+       "name": "Beige",
+       "code": "489",
+       "hex": "#cdb893"
+      },
+      {
+       "name": "Yellow",
+       "code": "541",
+       "hex": "#e6c229"
+      },
+      {
+       "name": "Copper Metallic",
+       "code": "474",
+       "hex": "#8c5a32"
+      },
+      {
+       "name": "Orange (1979)",
+       "code": "358",
+       "hex": "#d8621f"
+      },
+      {
+       "name": "Red (1979-80)",
+       "code": "336",
+       "hex": "#b3241e"
+      }
+     ],
+     "citations": [
+      {
+       "ref": "https://www.lceperformance.com/tech-articles/chassis-codes/pickup/",
+       "note": "LC Engineering chassis-code table (US Pickup, which LCE numbers '2nd generation 1979-1983'): RN32 RWD S/B, RN42 RWD L/B, RN37 4WD S/B, RN47 4WD L/B (20R, 79-80); RN34, RN44, RN38, RN48 (22R, 81-83); LN40 diesel L/B (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f116/wiki-history-toyota-hilux-pickup-181613/",
+       "note": "YotaTech Hilux/Pickup history: code list RN30/31/32/34/36/37/38/40/41/42/44/46/47/48; RN37/RN47 4WD 20R Jan 1979-Aug 1980; RN38/RN48 4WD 22R Aug 1980-Jul 1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f114/79-83-wheelbase-measurements-lb-vs-sb-139200/",
+       "note": "Factory-manual wheelbases for 1979-83: short bed 101.77 in (2585 mm), long bed 110.24 in (2800 mm) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://en.wikipedia.org/wiki/Toyota_Hilux",
+       "note": "English Wikipedia Hilux article, third generation section: 20R 2189cc 90 hp (1978-80), 22R 2366cc 97 hp (1981-83), 12R 80 PS Japan spec (RN30/40), August 1983 redesign sold as MY1984 in North America introduced the Xtracab; N30/40 production stopped July 1983 with some RWD variants continuing in Japan (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://barnfinds.com/unrestored-survivor-1979-toyota-sr5-pickup/",
+       "note": "1979 SR5 pickup survivor; SR5 = Sport Rally 5-speed package with bucket seats and 5th gear (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://motorz.jp/feature/67016/",
+       "note": "Motorz feature on the 3rd-gen Hilux: 'HILUX CALIFORNIA' catalogue theme; 12R-J standard in Japan; SR5 Sport Truck with 20R for North America (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f114/toyota-truck-79-83-color-spec-chart-85018/",
+       "note": "US 1979-83 truck colour chart (from toyotareference): White 030/033/038, Black 202, Beige 489/4A8, Yellow 541, Gold Met 4C3, Copper Met 474, Brown Met 4B4, Orange 358, Red 336/391, Creme 557, Mojave Beige Met 4A6 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "us-rn42-1979",
+     "name": "Toyota Truck / Pickup Long Bed 2WD (incl. SR5 Long Bed, cab & chassis)",
+     "years": {
+      "from": 1979,
+      "to": 1980
+     },
+     "body": "regular cab, long bed, 2WD; also cab & chassis for camper/utility bodies",
+     "engine": {
+      "code": "20R",
+      "displacement_cc": 2189,
+      "power_hp": 90,
+      "power_note": "20R 2.2L SOHC, 90 hp (67 kW) at 4800 rpm, 122 lb-ft; Wikipedia figure. Some sale/auction copy quotes 95 hp (period SAE rating differences)"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2800,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual; 5-speed manual (SR5); 3-speed automatic optional",
+     "notes": "Chassis code RN42. Wheelbase 110.24 in per factory manual. A 1979 'Long Bed Pickup & Cab & Chassis' brochure exists.",
+     "confidence": "medium",
+     "unresolved": [
+      "Bed length: the US brochure figures for the short (standard) and long bed inner length were not reachable (importarchive/xr793 brochure PDF blocked); bed_length left null",
+      "Factory curb weight not sourced; only an owner-weighed 1981 4WD short bed at 2640 lb empty (YotaTech) surfaced",
+      "Overall length/width/height for US-spec trucks not sourced (US bumpers differ from AU-published figures), left null"
+     ],
+     "colors": [
+      {
+       "name": "White (1979)",
+       "code": "030",
+       "hex": "#f2f1ec"
+      },
+      {
+       "name": "White (1980)",
+       "code": "033",
+       "hex": "#f2f1ec"
+      },
+      {
+       "name": "Black",
+       "code": "202",
+       "hex": "#151515"
+      },
+      {
+       "name": "Beige",
+       "code": "489",
+       "hex": "#cdb893"
+      },
+      {
+       "name": "Yellow",
+       "code": "541",
+       "hex": "#e6c229"
+      },
+      {
+       "name": "Copper Metallic",
+       "code": "474",
+       "hex": "#8c5a32"
+      },
+      {
+       "name": "Orange (1979)",
+       "code": "358",
+       "hex": "#d8621f"
+      },
+      {
+       "name": "Red (1979-80)",
+       "code": "336",
+       "hex": "#b3241e"
+      }
+     ],
+     "citations": [
+      {
+       "ref": "https://www.lceperformance.com/tech-articles/chassis-codes/pickup/",
+       "note": "LC Engineering chassis-code table (US Pickup, which LCE numbers '2nd generation 1979-1983'): RN32 RWD S/B, RN42 RWD L/B, RN37 4WD S/B, RN47 4WD L/B (20R, 79-80); RN34, RN44, RN38, RN48 (22R, 81-83); LN40 diesel L/B (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f116/wiki-history-toyota-hilux-pickup-181613/",
+       "note": "YotaTech Hilux/Pickup history: code list RN30/31/32/34/36/37/38/40/41/42/44/46/47/48; RN37/RN47 4WD 20R Jan 1979-Aug 1980; RN38/RN48 4WD 22R Aug 1980-Jul 1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f114/79-83-wheelbase-measurements-lb-vs-sb-139200/",
+       "note": "Factory-manual wheelbases for 1979-83: short bed 101.77 in (2585 mm), long bed 110.24 in (2800 mm) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://en.wikipedia.org/wiki/Toyota_Hilux",
+       "note": "English Wikipedia Hilux article, third generation section: 20R 2189cc 90 hp (1978-80), 22R 2366cc 97 hp (1981-83), 12R 80 PS Japan spec (RN30/40), August 1983 redesign sold as MY1984 in North America introduced the Xtracab; N30/40 production stopped July 1983 with some RWD variants continuing in Japan (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f114/toyota-truck-79-83-color-spec-chart-85018/",
+       "note": "US 1979-83 truck colour chart (from toyotareference): White 030/033/038, Black 202, Beige 489/4A8, Yellow 541, Gold Met 4C3, Copper Met 474, Brown Met 4B4, Orange 358, Red 336/391, Creme 557, Mojave Beige Met 4A6 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "us-rn37-1979",
+     "name": "Toyota Truck / Pickup 4x4, short bed (incl. SR5 4x4 Sport Truck)",
+     "years": {
+      "from": 1979,
+      "to": 1980
+     },
+     "body": "regular cab, short bed, 4WD",
+     "engine": {
+      "code": "20R",
+      "displacement_cc": 2189,
+      "power_hp": 90,
+      "power_note": "20R 2.2L SOHC, 90 hp (67 kW) at 4800 rpm, 122 lb-ft; Wikipedia figure. Some sale/auction copy quotes 95 hp (period SAE rating differences)"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2585,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual with 2-speed transfer case (5-speed on some SR5)",
+     "notes": "Chassis code RN37 (January 1979 - August 1980 per YotaTech). Solid front axle, leaf springs.",
+     "confidence": "medium",
+     "unresolved": [
+      "Bed length: the US brochure figures for the short (standard) and long bed inner length were not reachable (importarchive/xr793 brochure PDF blocked); bed_length left null",
+      "Factory curb weight not sourced; only an owner-weighed 1981 4WD short bed at 2640 lb empty (YotaTech) surfaced",
+      "Overall length/width/height for US-spec trucks not sourced (US bumpers differ from AU-published figures), left null",
+      "Whether the 4WD wheelbase exactly matches the 2WD short bed (2585 mm) is inferred from the shared short-bed figure, not stated for 4WD"
+     ],
+     "colors": [
+      {
+       "name": "White (1979)",
+       "code": "030",
+       "hex": "#f2f1ec"
+      },
+      {
+       "name": "White (1980)",
+       "code": "033",
+       "hex": "#f2f1ec"
+      },
+      {
+       "name": "Black",
+       "code": "202",
+       "hex": "#151515"
+      },
+      {
+       "name": "Beige",
+       "code": "489",
+       "hex": "#cdb893"
+      },
+      {
+       "name": "Yellow",
+       "code": "541",
+       "hex": "#e6c229"
+      },
+      {
+       "name": "Copper Metallic",
+       "code": "474",
+       "hex": "#8c5a32"
+      },
+      {
+       "name": "Orange (1979)",
+       "code": "358",
+       "hex": "#d8621f"
+      },
+      {
+       "name": "Red (1979-80)",
+       "code": "336",
+       "hex": "#b3241e"
+      }
+     ],
+     "citations": [
+      {
+       "ref": "https://www.lceperformance.com/tech-articles/chassis-codes/pickup/",
+       "note": "LC Engineering chassis-code table (US Pickup, which LCE numbers '2nd generation 1979-1983'): RN32 RWD S/B, RN42 RWD L/B, RN37 4WD S/B, RN47 4WD L/B (20R, 79-80); RN34, RN44, RN38, RN48 (22R, 81-83); LN40 diesel L/B (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f116/wiki-history-toyota-hilux-pickup-181613/",
+       "note": "YotaTech Hilux/Pickup history: code list RN30/31/32/34/36/37/38/40/41/42/44/46/47/48; RN37/RN47 4WD 20R Jan 1979-Aug 1980; RN38/RN48 4WD 22R Aug 1980-Jul 1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f114/79-83-wheelbase-measurements-lb-vs-sb-139200/",
+       "note": "Factory-manual wheelbases for 1979-83: short bed 101.77 in (2585 mm), long bed 110.24 in (2800 mm) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://en.wikipedia.org/wiki/Toyota_Hilux",
+       "note": "English Wikipedia Hilux article, third generation section: 20R 2189cc 90 hp (1978-80), 22R 2366cc 97 hp (1981-83), 12R 80 PS Japan spec (RN30/40), August 1983 redesign sold as MY1984 in North America introduced the Xtracab; N30/40 production stopped July 1983 with some RWD variants continuing in Japan (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "us-rn47-1979",
+     "name": "Toyota Truck / Pickup 4x4 Long Bed",
+     "years": {
+      "from": 1979,
+      "to": 1980
+     },
+     "body": "regular cab, long bed, 4WD",
+     "engine": {
+      "code": "20R",
+      "displacement_cc": 2189,
+      "power_hp": 90,
+      "power_note": "20R 2.2L SOHC, 90 hp (67 kW) at 4800 rpm, 122 lb-ft; Wikipedia figure. Some sale/auction copy quotes 95 hp (period SAE rating differences)"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2800,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual with 2-speed transfer case",
+     "notes": "Chassis code RN47. automobile-catalog lists a 1980 Pickup 4WD Long Bed Deluxe (2189 cc, 90 hp) until Sept 1980.",
+     "confidence": "medium",
+     "unresolved": [
+      "Bed length: the US brochure figures for the short (standard) and long bed inner length were not reachable (importarchive/xr793 brochure PDF blocked); bed_length left null",
+      "Factory curb weight not sourced; only an owner-weighed 1981 4WD short bed at 2640 lb empty (YotaTech) surfaced",
+      "Overall length/width/height for US-spec trucks not sourced (US bumpers differ from AU-published figures), left null"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.lceperformance.com/tech-articles/chassis-codes/pickup/",
+       "note": "LC Engineering chassis-code table (US Pickup, which LCE numbers '2nd generation 1979-1983'): RN32 RWD S/B, RN42 RWD L/B, RN37 4WD S/B, RN47 4WD L/B (20R, 79-80); RN34, RN44, RN38, RN48 (22R, 81-83); LN40 diesel L/B (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f116/wiki-history-toyota-hilux-pickup-181613/",
+       "note": "YotaTech Hilux/Pickup history: code list RN30/31/32/34/36/37/38/40/41/42/44/46/47/48; RN37/RN47 4WD 20R Jan 1979-Aug 1980; RN38/RN48 4WD 22R Aug 1980-Jul 1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.automobile-catalog.com/car/1980/3610655/toyota_pickup_4wd_long_bed_deluxe.html",
+       "note": "1980 Toyota Pickup 4WD Long Bed Deluxe: 2189 cm3, 90 hp, until Sept 1980 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f114/79-83-wheelbase-measurements-lb-vs-sb-139200/",
+       "note": "Factory-manual wheelbases for 1979-83: short bed 101.77 in (2585 mm), long bed 110.24 in (2800 mm) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "us-rn34-1981",
+     "name": "Toyota Truck / Pickup, standard (short) bed 2WD (Standard, Deluxe, SR5)",
+     "years": {
+      "from": 1981,
+      "to": 1983
+     },
+     "body": "regular cab, short (standard) bed, 2WD",
+     "engine": {
+      "code": "22R",
+      "displacement_cc": 2366,
+      "power_hp": 97,
+      "power_note": "22R 2.4L SOHC carburetted, 96-97 hp (72 kW) at 4800 rpm, 129 lb-ft; automobile-catalog lists 100 hp for some 1981 4WD trims"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2585,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed or 5-speed manual; 3-speed automatic optional",
+     "notes": "Chassis code RN34; 17-digit VINs from MY1981 read JT4RN34...; the Megazip EPC lists RN34 for the U.S.A. region 1980-1983 (production from Aug/Sept 1980 for MY1981). Some web copy wrongly claims an 'RN34 Xtracab' - no Xtracab existed before MY1984.",
+     "confidence": "medium",
+     "unresolved": [
+      "Bed length: the US brochure figures for the short (standard) and long bed inner length were not reachable (importarchive/xr793 brochure PDF blocked); bed_length left null",
+      "Factory curb weight not sourced; only an owner-weighed 1981 4WD short bed at 2640 lb empty (YotaTech) surfaced",
+      "Overall length/width/height for US-spec trucks not sourced (US bumpers differ from AU-published figures), left null"
+     ],
+     "colors": [
+      {
+       "name": "White (1981-82)",
+       "code": "033",
+       "hex": "#f2f1ec"
+      },
+      {
+       "name": "White (1983)",
+       "code": "038",
+       "hex": "#f2f1ec"
+      },
+      {
+       "name": "Black",
+       "code": "202",
+       "hex": "#151515"
+      },
+      {
+       "name": "Beige (1981)",
+       "code": "489",
+       "hex": "#cdb893"
+      },
+      {
+       "name": "Beige (1982)",
+       "code": "4A8",
+       "hex": "#c9b28a"
+      },
+      {
+       "name": "Yellow (1981-82)",
+       "code": "541",
+       "hex": "#e6c229"
+      },
+      {
+       "name": "Copper Metallic (1981)",
+       "code": "474",
+       "hex": "#8c5a32"
+      },
+      {
+       "name": "Brown Metallic (1982-83)",
+       "code": "4B4",
+       "hex": "#5a3b25"
+      },
+      {
+       "name": "Red (1981-83)",
+       "code": "391",
+       "hex": "#b1221c"
+      },
+      {
+       "name": "Gold Metallic (1983)",
+       "code": "4C3",
+       "hex": "#b8963f"
+      },
+      {
+       "name": "Creme (1983)",
+       "code": "557",
+       "hex": "#ece0b8"
+      }
+     ],
+     "citations": [
+      {
+       "ref": "https://www.lceperformance.com/tech-articles/chassis-codes/pickup/",
+       "note": "LC Engineering chassis-code table (US Pickup, which LCE numbers '2nd generation 1979-1983'): RN32 RWD S/B, RN42 RWD L/B, RN37 4WD S/B, RN47 4WD L/B (20R, 79-80); RN34, RN44, RN38, RN48 (22R, 81-83); LN40 diesel L/B (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f116/wiki-history-toyota-hilux-pickup-181613/",
+       "note": "YotaTech Hilux/Pickup history: code list RN30/31/32/34/36/37/38/40/41/42/44/46/47/48; RN37/RN47 4WD 20R Jan 1979-Aug 1980; RN38/RN48 4WD 22R Aug 1980-Jul 1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.megazip.net/zapchasti-dlya-avtomobilej/toyota/pickup-38451/rn34-55900/rn34l-msa3-917513",
+       "note": "Toyota EPC via Megazip: 1980-1983 Toyota PICKUP RN34, U.S.A. sales region (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f114/79-83-wheelbase-measurements-lb-vs-sb-139200/",
+       "note": "Factory-manual wheelbases for 1979-83: short bed 101.77 in (2585 mm), long bed 110.24 in (2800 mm) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://en.wikipedia.org/wiki/Toyota_Hilux",
+       "note": "English Wikipedia Hilux article, third generation section: 20R 2189cc 90 hp (1978-80), 22R 2366cc 97 hp (1981-83), 12R 80 PS Japan spec (RN30/40), August 1983 redesign sold as MY1984 in North America introduced the Xtracab; N30/40 production stopped July 1983 with some RWD variants continuing in Japan (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.curbsideclassic.com/curbside-classics-asian/curbside-classic-diesel-pickup-1982-toyota-diesel-pickup/",
+       "note": "1982 US range: 22R 2.4L 97 hp petrol vs 2.2L L diesel 62 hp (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f114/toyota-truck-79-83-color-spec-chart-85018/",
+       "note": "US 1979-83 truck colour chart (from toyotareference): White 030/033/038, Black 202, Beige 489/4A8, Yellow 541, Gold Met 4C3, Copper Met 474, Brown Met 4B4, Orange 358, Red 336/391, Creme 557, Mojave Beige Met 4A6 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://importarchive.com/toyota/truck/1979-1983",
+       "note": "US-market Toyota Truck 1979-1983 colours and brochures; 1983 RN44 Mojave edition in exclusive Beige Metallic and Gold Metallic; white 033 vs 038 for 1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "us-rn44-1981",
+     "name": "Toyota Truck / Pickup Long Bed 2WD (Deluxe, SR5, 1983 Mojave)",
+     "years": {
+      "from": 1981,
+      "to": 1983
+     },
+     "body": "regular cab, long bed, 2WD; also cab & chassis",
+     "engine": {
+      "code": "22R",
+      "displacement_cc": 2366,
+      "power_hp": 97,
+      "power_note": "22R 2.4L SOHC carburetted, 96-97 hp (72 kW) at 4800 rpm, 129 lb-ft; automobile-catalog lists 100 hp for some 1981 4WD trims"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2800,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed or 5-speed manual; 3-speed automatic optional",
+     "notes": "Chassis code RN44. The 1983 Mojave special edition was an RN44 in exclusive Beige Metallic (4A6) or Gold Metallic.",
+     "confidence": "medium",
+     "unresolved": [
+      "Bed length: the US brochure figures for the short (standard) and long bed inner length were not reachable (importarchive/xr793 brochure PDF blocked); bed_length left null",
+      "Factory curb weight not sourced; only an owner-weighed 1981 4WD short bed at 2640 lb empty (YotaTech) surfaced",
+      "Overall length/width/height for US-spec trucks not sourced (US bumpers differ from AU-published figures), left null"
+     ],
+     "colors": [
+      {
+       "name": "White (1981-82)",
+       "code": "033",
+       "hex": "#f2f1ec"
+      },
+      {
+       "name": "White (1983)",
+       "code": "038",
+       "hex": "#f2f1ec"
+      },
+      {
+       "name": "Black",
+       "code": "202",
+       "hex": "#151515"
+      },
+      {
+       "name": "Beige (1981)",
+       "code": "489",
+       "hex": "#cdb893"
+      },
+      {
+       "name": "Beige (1982)",
+       "code": "4A8",
+       "hex": "#c9b28a"
+      },
+      {
+       "name": "Yellow (1981-82)",
+       "code": "541",
+       "hex": "#e6c229"
+      },
+      {
+       "name": "Copper Metallic (1981)",
+       "code": "474",
+       "hex": "#8c5a32"
+      },
+      {
+       "name": "Brown Metallic (1982-83)",
+       "code": "4B4",
+       "hex": "#5a3b25"
+      },
+      {
+       "name": "Red (1981-83)",
+       "code": "391",
+       "hex": "#b1221c"
+      },
+      {
+       "name": "Gold Metallic (1983)",
+       "code": "4C3",
+       "hex": "#b8963f"
+      },
+      {
+       "name": "Creme (1983)",
+       "code": "557",
+       "hex": "#ece0b8"
+      },
+      {
+       "name": "Beige Metallic (1983 Mojave only)",
+       "code": "4A6",
+       "hex": "#b99d72"
+      }
+     ],
+     "citations": [
+      {
+       "ref": "https://www.lceperformance.com/tech-articles/chassis-codes/pickup/",
+       "note": "LC Engineering chassis-code table (US Pickup, which LCE numbers '2nd generation 1979-1983'): RN32 RWD S/B, RN42 RWD L/B, RN37 4WD S/B, RN47 4WD L/B (20R, 79-80); RN34, RN44, RN38, RN48 (22R, 81-83); LN40 diesel L/B (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f116/wiki-history-toyota-hilux-pickup-181613/",
+       "note": "YotaTech Hilux/Pickup history: code list RN30/31/32/34/36/37/38/40/41/42/44/46/47/48; RN37/RN47 4WD 20R Jan 1979-Aug 1980; RN38/RN48 4WD 22R Aug 1980-Jul 1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f114/79-83-wheelbase-measurements-lb-vs-sb-139200/",
+       "note": "Factory-manual wheelbases for 1979-83: short bed 101.77 in (2585 mm), long bed 110.24 in (2800 mm) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://importarchive.com/toyota/truck/1979-1983",
+       "note": "US-market Toyota Truck 1979-1983 colours and brochures; 1983 RN44 Mojave edition in exclusive Beige Metallic and Gold Metallic; white 033 vs 038 for 1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f114/toyota-truck-79-83-color-spec-chart-85018/",
+       "note": "US 1979-83 truck colour chart (from toyotareference): White 030/033/038, Black 202, Beige 489/4A8, Yellow 541, Gold Met 4C3, Copper Met 474, Brown Met 4B4, Orange 358, Red 336/391, Creme 557, Mojave Beige Met 4A6 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "us-rn38-1981",
+     "name": "Toyota Truck / Pickup 4x4, short bed (Deluxe, SR5)",
+     "years": {
+      "from": 1981,
+      "to": 1983
+     },
+     "body": "regular cab, short bed, 4WD",
+     "engine": {
+      "code": "22R",
+      "displacement_cc": 2366,
+      "power_hp": 97,
+      "power_note": "22R 2.4L SOHC carburetted, 96-97 hp (72 kW) at 4800 rpm, 129 lb-ft; automobile-catalog lists 100 hp for some 1981 4WD trims"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2585,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed or 5-speed manual with 2-speed transfer case",
+     "notes": "Chassis code RN38 (August 1980 - July 1983).",
+     "confidence": "medium",
+     "unresolved": [
+      "Bed length: the US brochure figures for the short (standard) and long bed inner length were not reachable (importarchive/xr793 brochure PDF blocked); bed_length left null",
+      "Factory curb weight not sourced; only an owner-weighed 1981 4WD short bed at 2640 lb empty (YotaTech) surfaced",
+      "Overall length/width/height for US-spec trucks not sourced (US bumpers differ from AU-published figures), left null"
+     ],
+     "colors": [
+      {
+       "name": "White (1981-82)",
+       "code": "033",
+       "hex": "#f2f1ec"
+      },
+      {
+       "name": "White (1983)",
+       "code": "038",
+       "hex": "#f2f1ec"
+      },
+      {
+       "name": "Black",
+       "code": "202",
+       "hex": "#151515"
+      },
+      {
+       "name": "Beige (1981)",
+       "code": "489",
+       "hex": "#cdb893"
+      },
+      {
+       "name": "Beige (1982)",
+       "code": "4A8",
+       "hex": "#c9b28a"
+      },
+      {
+       "name": "Yellow (1981-82)",
+       "code": "541",
+       "hex": "#e6c229"
+      },
+      {
+       "name": "Copper Metallic (1981)",
+       "code": "474",
+       "hex": "#8c5a32"
+      },
+      {
+       "name": "Brown Metallic (1982-83)",
+       "code": "4B4",
+       "hex": "#5a3b25"
+      },
+      {
+       "name": "Red (1981-83)",
+       "code": "391",
+       "hex": "#b1221c"
+      },
+      {
+       "name": "Gold Metallic (1983)",
+       "code": "4C3",
+       "hex": "#b8963f"
+      },
+      {
+       "name": "Creme (1983)",
+       "code": "557",
+       "hex": "#ece0b8"
+      }
+     ],
+     "citations": [
+      {
+       "ref": "https://www.lceperformance.com/tech-articles/chassis-codes/pickup/",
+       "note": "LC Engineering chassis-code table (US Pickup, which LCE numbers '2nd generation 1979-1983'): RN32 RWD S/B, RN42 RWD L/B, RN37 4WD S/B, RN47 4WD L/B (20R, 79-80); RN34, RN44, RN38, RN48 (22R, 81-83); LN40 diesel L/B (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f116/wiki-history-toyota-hilux-pickup-181613/",
+       "note": "YotaTech Hilux/Pickup history: code list RN30/31/32/34/36/37/38/40/41/42/44/46/47/48; RN37/RN47 4WD 20R Jan 1979-Aug 1980; RN38/RN48 4WD 22R Aug 1980-Jul 1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f114/79-83-wheelbase-measurements-lb-vs-sb-139200/",
+       "note": "Factory-manual wheelbases for 1979-83: short bed 101.77 in (2585 mm), long bed 110.24 in (2800 mm) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://en.wikipedia.org/wiki/Toyota_Hilux",
+       "note": "English Wikipedia Hilux article, third generation section: 20R 2189cc 90 hp (1978-80), 22R 2366cc 97 hp (1981-83), 12R 80 PS Japan spec (RN30/40), August 1983 redesign sold as MY1984 in North America introduced the Xtracab; N30/40 production stopped July 1983 with some RWD variants continuing in Japan (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "us-rn48-1981",
+     "name": "Toyota Truck / Pickup 4x4 Long Bed (incl. SR5 Long Bed Sport Truck)",
+     "years": {
+      "from": 1981,
+      "to": 1983
+     },
+     "body": "regular cab, long bed, 4WD",
+     "engine": {
+      "code": "22R",
+      "displacement_cc": 2366,
+      "power_hp": 97,
+      "power_note": "22R 2.4L SOHC carburetted, 96-97 hp (72 kW) at 4800 rpm, 129 lb-ft; automobile-catalog lists 100 hp for some 1981 4WD trims"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2800,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed or 5-speed manual with 2-speed transfer case",
+     "notes": "Chassis code RN48. automobile-catalog: 1981 Truck 4WD SR5 Long Bed Sport Truck, since Sept 1980, 2367 cm3, 5-speed.",
+     "confidence": "medium",
+     "unresolved": [
+      "Bed length: the US brochure figures for the short (standard) and long bed inner length were not reachable (importarchive/xr793 brochure PDF blocked); bed_length left null",
+      "Factory curb weight not sourced; only an owner-weighed 1981 4WD short bed at 2640 lb empty (YotaTech) surfaced",
+      "Overall length/width/height for US-spec trucks not sourced (US bumpers differ from AU-published figures), left null"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.lceperformance.com/tech-articles/chassis-codes/pickup/",
+       "note": "LC Engineering chassis-code table (US Pickup, which LCE numbers '2nd generation 1979-1983'): RN32 RWD S/B, RN42 RWD L/B, RN37 4WD S/B, RN47 4WD L/B (20R, 79-80); RN34, RN44, RN38, RN48 (22R, 81-83); LN40 diesel L/B (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f116/wiki-history-toyota-hilux-pickup-181613/",
+       "note": "YotaTech Hilux/Pickup history: code list RN30/31/32/34/36/37/38/40/41/42/44/46/47/48; RN37/RN47 4WD 20R Jan 1979-Aug 1980; RN38/RN48 4WD 22R Aug 1980-Jul 1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.automobile-catalog.com/car/1981/3611060/toyota_truck_4wd_sr5_long_bed_sport_truck.html",
+       "note": "1981 Toyota Truck 4WD SR5 Long Bed Sport Truck, since Sept 1980 for North America: 2367 cm3, 100 hp, 5-speed manual (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.yotatech.com/forums/f114/79-83-wheelbase-measurements-lb-vs-sb-139200/",
+       "note": "Factory-manual wheelbases for 1979-83: short bed 101.77 in (2585 mm), long bed 110.24 in (2800 mm) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "market": "UK",
+   "name": "United Kingdom",
+   "notes": "Sold as the Toyota Hilux (period badging 'Hi-Lux') pick-up, right-hand drive, from 1979 to late 1983. Petrol UK trucks were the 1.6 (12R, RN30 short / RN40 long wheelbase, 2WD) and the 2.0 four-wheel drive (18R, RN46 long wheelbase per WheelsAge UK-spec; the 4WD launched in the UK in 1979 and quickly became the best-selling version). A 2.2 L diesel (LN codes) followed and is out of scope. Only single cabs were sold; no Xtracab or double cab is documented for the UK third generation. The owner's reference truck (1980 RN30, 12R, 2WD, single cab, short bed) is the base UK model. UK listings use registration year, so a late-registered 1984 ('A'-prefix) truck can still be a third-generation RN30/RN46 from runout stock; check the code or the round-headlight body. Many RN30s now in the UK are later imports from Thailand (Siam Imports), which were 12R RN30s built for the Thai market.",
+   "unresolved": [
+    "UK engine output: European TecDoc catalogues give the 12R as 67 hp (49 kW) and the 18R 4WD as 88 hp (65 kW); Japanese-spec 12R-J is quoted at 80 PS. No UK brochure figure found",
+    "Whether a 2WD 2.0 (RN31/RN41) was officially sold in the UK is unconfirmed; megazip lists RN41L for Europe (left-hand drive), not a UK RHD frame",
+    "Whether UK 4WD was ever the short-wheelbase RN36: Megazip lists an RN36R (RHD) frame for the Europe region 1979-81, and a UK-restored June 1980 4WD appears in Toyota UK's magazine without its code; WheelsAge labels the UK-spec 4WD RN46",
+    "UK colour charts for the 1979-83 Hilux not found",
+    "UK dimensions and kerb weight not found in a UK source; figures below are Australian-published RN30 figures on the same body"
+   ],
+   "variants": [
+    {
+     "id": "uk-rn30-1979",
+     "name": "Toyota Hilux 1.6 pick-up, short wheelbase 2WD",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab, short wheelbase pick-up (dropside/wellside), 2WD",
+     "engine": {
+      "code": "12R",
+      "displacement_cc": 1587,
+      "power_hp": 67,
+      "power_note": "12R 1587cc; 67 hp (49 kW) in European catalogues; Japanese 12R-J rated 80 PS gross"
+     },
+     "dimensions_mm": {
+      "length": 4305,
+      "width": 1610,
+      "height": 1570,
+      "wheelbase": 2585,
+      "bed_length": null
+     },
+     "weight_kg": 1075,
+     "transmission": "4-speed manual; 5-speed manual seen on UK examples",
+     "notes": "Chassis RN30 (RHD frames RN30R). This is the owner's reference configuration. Dimensions and kerb weight are the Australian-published RN30-body figures (drive.com.au), assumed equivalent.",
+     "confidence": "medium",
+     "unresolved": [
+      "Dimensions/weight borrowed from AU data",
+      "Whether 5-speed was standard or optional in the UK is unconfirmed (one 1979 UK example is 5-speed)"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.autodoc.parts/spares/toyota/hilux-pick-up/hilux-i-pickup-ln3-rn2-ln4-rn3/27386-1-6-rn40-rn30",
+       "note": "European (TecDoc) catalogue type: Hilux III Pickup (N30, N40) 1.6 (RN40, RN30), 12R, 67 hp, 1978-1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.carandclassic.com/car/C1398840",
+       "note": "UK classified: 1980 Toyota Hilux RN30 with original 12R engine, restored (Amesbury, UK) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.carandclassic.com/l/C1875118",
+       "note": "UK classified: 1979 Toyota Hilux, red, 5-speed manual, right-hand drive (Salisbury, UK) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.drive.com.au/showrooms/toyota/hilux/ca5f0bd163e1a572/",
+       "note": "1980 Toyota Hilux 1.6L Single Cab Ute RWD Manual (AU): 1587cc, 4-speed, wheelbase 2585 mm, kerb 1075 kg, length 4305, width 1610, height 1570 mm, ground clearance 195 mm, turning circle 11.4 m (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://mag.toyota.co.uk/history-toyota-hilux/",
+       "note": "Toyota UK magazine history: N30/40 on sale Sept 1978; Super Deluxe cab 90 mm longer than standard; first 4WD Oct 1979 with Land Cruiser 40-series transfer case and 2.0L R-series petrol; later double cab (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015540/index.html",
+       "note": "Toyota official 75-year history, Hilux 3rd: on sale September 1978, 12R-J 1.6L carried over, three standard-length and four long-body variants, torsion-bar front, front discs on Deluxe and above (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "uk-rn40-1979",
+     "name": "Toyota Hilux 1.6 pick-up, long wheelbase 2WD",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab, long wheelbase pick-up, 2WD",
+     "engine": {
+      "code": "12R",
+      "displacement_cc": 1587,
+      "power_hp": 67,
+      "power_note": "12R 1587cc; 67 hp (49 kW) in European catalogues"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2800,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual",
+     "notes": "Chassis RN40. European catalogues group RN30/RN40 as the 1.6 type; Europe was predominantly long-bed.",
+     "confidence": "low",
+     "unresolved": [
+      "No UK-specific source confirms an RHD RN40 was sold new in the UK; inferred from the European 1.6 (RN30, RN40) catalogue type"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.autodoc.parts/spares/toyota/hilux-pick-up/hilux-i-pickup-ln3-rn2-ln4-rn3/27386-1-6-rn40-rn30",
+       "note": "European (TecDoc) catalogue type: Hilux III Pickup (N30, N40) 1.6 (RN40, RN30), 12R, 67 hp, 1978-1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.megazip.net/zapchasti-dlya-avtomobilej/toyota/hilux-4runner-truck-42451/rn40-54793/rn40l-krp-924998",
+       "note": "Toyota EPC via Megazip: 1979-1983 HILUX RN40 (RN40L-KRP), Europe sales region (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://forum.buschtaxi.org/viewtopic.php?t=51279&start=15",
+       "note": "Buschtaxi (German Toyota 4x4 forum) 'Toyota Hilux RN30 Generelle Informationen': RN30 2WD, RN36 4WD short wheelbase (single cab only), RN46 4WD long wheelbase; 18R-J 98 PS / 152 Nm; short wheelbase 'extremely rare' in Europe; R = R-series petrol (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "uk-rn46-1979",
+     "name": "Toyota Hilux 4WD (2.0) pick-up",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab, long wheelbase pick-up, 4WD",
+     "engine": {
+      "code": "18R",
+      "displacement_cc": 1968,
+      "power_hp": 88,
+      "power_note": "18R 1968cc; 88 hp (65 kW) in European catalogues; Japanese 18R-J 98 PS"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2800,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual with 2-speed transfer case (Land Cruiser 40-series derived)",
+     "notes": "WheelsAge labels the UK-spec Hi-lux 4WD RN46 (1979-81 pre-facelift); the facelift ran to 1983. Toyota UK: 4WD launched in the UK in 1979 and soon became the most popular Hilux.",
+     "confidence": "medium",
+     "unresolved": [
+      "Short-wheelbase RN36 UK availability unresolved (see market notes)"
+     ],
+     "citations": [
+      {
+       "ref": "https://en.wheelsage.org/toyota/hilux/iii/pictures/zscs1p",
+       "note": "WheelsAge: Toyota Hi-lux 4WD [UK-spec] (RN46) 1979-81 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://mag.toyota.co.uk/in-focus-1979-toyota-hilux-4wd/",
+       "note": "Toyota UK magazine: UK launch of the 4WD third-gen Hilux in 1979, 18R engine, restored June 1980 example (Guy Nicholls collection) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://mag.toyota.co.uk/history-toyota-hilux/",
+       "note": "Toyota UK magazine history: N30/40 on sale Sept 1978; Super Deluxe cab 90 mm longer than standard; first 4WD Oct 1979 with Land Cruiser 40-series transfer case and 2.0L R-series petrol; later double cab (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.autodoc.parts/spares/toyota/hilux-pick-up/hilux-i-pickup-ln3-rn2-ln4-rn3/27462-2-0-4wd-rn46-rn36",
+       "note": "European (TecDoc) catalogue type: Hilux III 2.0 4WD (RN46, RN36), 18R, 88 hp, 1979-1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.amayama.com/en/genuine-catalogs/epc/toyota-europe/hilux/RN46L/8600/body",
+       "note": "Toyota Europe EPC via Amayama: Hilux RN46L-KRW, 01.1979-07.1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "market": "AU",
+   "name": "Australia",
+   "notes": "Sold as the Toyota HiLux (listings use 'Hilux', 'HiLux', 'Hi-Lux'), late 1978/1979 to late 1983, as single-cab utes (wellside 'tub') and cab-chassis (tray), with a dual cab added for 1982. Petrol engines: 1.6 12R (RN30 short / RN40 long) and 2.0 18R (RN31 short / RN41 long 2WD; RN36 short / RN46 long 4WD). The 20R/22R US engines were not sold new in Australia. SR5 was an Australian trim name too (SR5 2000 single cab ute RWD, 1979-82). The 4x4 arrived early 1979 and was predominantly the long-wheelbase RN46; the short-wheelbase RN36 4x4 was rare. Diesel LN models (L 2.2) followed about a year later and are out of scope. Australian registration dates can trail build dates, so an early-1984-registered HiLux may still be an N30/N40 runout.",
+   "unresolved": [
+    "Exact AU end date: the 4th generation arrived in Australia around late 1983; runout N30/N40 stock registered in 1984 is plausible but not documented",
+    "AU 4x4 wheelbase: CarsGuide gives the 1983 4x4 as 2800 mm / 4725 mm (RN46); an RN36 short-wheelbase 4x4 existed but numbers sold are unknown",
+    "Factory colours: no AU colour chart found in this round",
+    "Kerb weights for 2.0L, 4x4 and dual-cab variants were not visible in search snippets",
+    "Local assembly: not established whether the N30/N40 HiLux was locally assembled (AMI/Port Melbourne) or fully imported"
+   ],
+   "variants": [
+    {
+     "id": "au-rn30-1979",
+     "name": "Toyota HiLux 1.6 single cab ute RWD",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab ute (wellside), short wheelbase, 2WD",
+     "engine": {
+      "code": "12R",
+      "displacement_cc": 1587,
+      "power_hp": null,
+      "power_note": "12R 1587cc; AU power figure not found (Japanese 12R-J 80 PS gross; European 12R 67 hp)"
+     },
+     "dimensions_mm": {
+      "length": 4305,
+      "width": 1610,
+      "height": 1570,
+      "wheelbase": 2585,
+      "bed_length": null
+     },
+     "weight_kg": 1075,
+     "transmission": "4-speed manual",
+     "notes": "Chassis RN30 (long-wheelbase equivalent RN40). The base HiLux; closest AU match to the owner's reference truck.",
+     "confidence": "high",
+     "unresolved": [
+      "End year inferred from 1981+ listings and the global 1983 changeover; AU 1983 1.6 listing not seen"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.drive.com.au/showrooms/toyota/hilux/ca5f0bd163e1a572/",
+       "note": "1980 Toyota Hilux 1.6L Single Cab Ute RWD Manual (AU): 1587cc, 4-speed, wheelbase 2585 mm, kerb 1075 kg, length 4305, width 1610, height 1570 mm, ground clearance 195 mm, turning circle 11.4 m (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.drive.com.au/showrooms/toyota/hilux/0f51e8bd86ffd32b/",
+       "note": "1981 Toyota Hilux 1.6L Single Cab Ute RWD Manual listing (AU) - confirms the 1.6 continued after 1980 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.carsguide.com.au/toyota/hilux/price/1979",
+       "note": "CarsGuide 1979 HiLux: Single Cab 1.6L 4sp manual to Single Cab 2.0L 4sp manual; leaded petrol; price $2,640 to $4,730 (4X4) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.vmaxbrakes.com.au/rtype-slotted-fits-toyota-hilux-2wd-rn30-rn31-rn40",
+       "note": "AU parts fitment: Hilux 2WD RN30 RN31 RN40 RN41 1978-83 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.carsguide.com.au/toyota/hilux/car-dimensions/1983",
+       "note": "CarsGuide 1983 HiLux dimensions: base 2585 mm wheelbase / 4305 mm length; 4x4 2800 mm wheelbase / 4725 mm length; range 4305-4870 x 1610-1690 x 1535-1815 mm (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "au-rn31-1979",
+     "name": "Toyota HiLux 2.0 single cab ute RWD (incl. SR5 2000)",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab ute, short wheelbase, 2WD",
+     "engine": {
+      "code": "18R",
+      "displacement_cc": 1968,
+      "power_hp": null,
+      "power_note": "18R 1968cc; AU rating not found (65 kW in parts catalogues)"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2585,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual (SR5: 5-speed presumed from the SR5 name, not confirmed for AU)",
+     "notes": "Chassis RN31. Drive.com.au lists SR5 2000 / SR5 2.0L single cab ute RWD for 1979, 1980, 1981 and 1982.",
+     "confidence": "medium",
+     "unresolved": [
+      "Whether AU SR5 had the 5-speed as standard is unconfirmed"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.drive.com.au/showrooms/toyota/hilux/31b58f7ab2dda9f5/",
+       "note": "1979 Toyota Hilux SR5 2000 Single Cab Ute RWD Manual listing (AU); further SR5 2.0L listings exist for 1980, 1981 and 1982 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.drive.com.au/showrooms/toyota/hilux/0f51e5bd86ffce12/",
+       "note": "1981 Toyota Hilux 2.0L Single Cab Ute RWD Manual listing (AU) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.carsguide.com.au/toyota/hilux/price/1979",
+       "note": "CarsGuide 1979 HiLux: Single Cab 1.6L 4sp manual to Single Cab 2.0L 4sp manual; leaded petrol; price $2,640 to $4,730 (4X4) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.vmaxbrakes.com.au/rtype-slotted-fits-toyota-hilux-2wd-rn30-rn31-rn40",
+       "note": "AU parts fitment: Hilux 2WD RN30 RN31 RN40 RN41 1978-83 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.megazip.net/zapchasti-dlya-avtomobilej/toyota/hilux-4runner-truck-42451/rn31-56535/rn31r-kd-934362/oil-filter-18015194",
+       "note": "Toyota EPC via Megazip: 1978-1981 HILUX RN31 (RN31R-KD), General sales region (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "au-rn41-1979",
+     "name": "Toyota HiLux 2.0 long wheelbase RWD (ute / cab-chassis)",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab, long wheelbase ute or cab-chassis, 2WD",
+     "engine": {
+      "code": "18R",
+      "displacement_cc": 1968,
+      "power_hp": null,
+      "power_note": "18R 1968cc"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2800,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual",
+     "notes": "Chassis RN41 (07/1979-06/1983 per Toyota parts fit chart). A 1.6 long-wheelbase RN40 also existed.",
+     "confidence": "medium",
+     "unresolved": [
+      "Split of body styles (ute vs cab-chassis) on RN41 not documented"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.sparesbox.com.au/vehicle/toyota-hilux-2-0-rwd-rn41-ute-petrol-1979-1983",
+       "note": "AU parts catalogue vehicle: Toyota Hilux 2.0 RWD (RN41) Ute Petrol 1979-1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.newtowntoyota.parts/fitchart/rn41-rn46-07-1979-06-1983-18r/toyota/hilux/",
+       "note": "Toyota dealer parts fit chart: RN41 RN46 07/1979-06/1983 18R (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.vmaxbrakes.com.au/rtype-slotted-fits-toyota-hilux-2wd-rn30-rn31-rn40",
+       "note": "AU parts fitment: Hilux 2WD RN30 RN31 RN40 RN41 1978-83 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "au-rn41-dual-cab-1982",
+     "name": "Toyota HiLux 2.0 Dual Cab ute RWD",
+     "years": {
+      "from": 1982,
+      "to": 1983
+     },
+     "body": "dual cab (4-door) ute, 2WD",
+     "engine": {
+      "code": "18R",
+      "displacement_cc": 1968,
+      "power_hp": null,
+      "power_note": "18R 1968cc"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "manual",
+     "notes": "Chassis RN41 per Wikimedia Commons caption; Megazip's 1982-83 RN41R-KRPQ frame for the General region matches the dates. Dual cab arrived in Japan in October 1981.",
+     "confidence": "medium",
+     "unresolved": [
+      "Dimensions not found; the suffix-letter decoding (P = double cab) is inference"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.drive.com.au/showrooms/toyota/hilux/6b9d487c41ee0a94/",
+       "note": "1982 Toyota Hilux 2.0L Dual Cab Ute RWD Manual listing (AU); a 1983 listing also exists (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://commons.wikimedia.org/wiki/File:1982-1983_Toyota_HiLux_(RN41)_4-door_utility_(18479577169).jpg",
+       "note": "Wikimedia Commons photo captioned '1982-1983 Toyota HiLux (RN41) 4-door utility' (Australian dual cab) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.megazip.net/zapchasti-dlya-avtomobilej/toyota/hilux-4runner-truck-42451/rn41-56536/rn41r-krpq-934413",
+       "note": "Toyota EPC via Megazip: 1982-1983 HILUX RN41 (RN41R-KRPQ), General sales region (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A8%E3%82%BF%E3%83%BB%E3%83%8F%E3%82%A4%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9",
+       "note": "Japanese Wikipedia (also mirrored on weblio.jp): 3代目 30/40系 1978年-1988年; Sept 1978 launch; Oct 1979 4WD 18R-J; Dec 1979 L diesel; Oct 1981 double cab; Nov 1983 range cut to the budget 'Popular Series' which continued until Sept 1988 alongside the 4th gen (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "au-rn46-4x4-1979",
+     "name": "Toyota HiLux 2.0 4x4 single cab ute",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab ute / cab-chassis, long wheelbase, 4WD",
+     "engine": {
+      "code": "18R",
+      "displacement_cc": 1968,
+      "power_hp": null,
+      "power_note": "18R 1968cc (65 kW in parts catalogues)"
+     },
+     "dimensions_mm": {
+      "length": 4725,
+      "width": null,
+      "height": null,
+      "wheelbase": 2800,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual (L40) with 2-speed transfer case",
+     "notes": "Chassis RN46. Introduced early 1979; CarsGuide 1983 4x4: 2800 mm wheelbase, 4725 mm long.",
+     "confidence": "medium",
+     "unresolved": [
+      "Width/height/weight of the 4x4 not visible in snippets (range 1610-1690 wide, up to 1770+ high)"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.drive.com.au/showrooms/toyota/hilux/ca4e3ad163d3821c/",
+       "note": "1980 Toyota Hilux 2.0L Single Cab Ute 4X4 Manual listing (AU); matching 1979 ('4XD'), 1981 and 1982 listings exist (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.carsguide.com.au/toyota/hilux/car-dimensions/1983",
+       "note": "CarsGuide 1983 HiLux dimensions: base 2585 mm wheelbase / 4305 mm length; 4x4 2800 mm wheelbase / 4725 mm length; range 4305-4870 x 1610-1690 x 1535-1815 mm (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://outbacktravelaustralia.com.au/buyers-guide-utes-and-cab-chassis/toyota-hilux/",
+       "note": "HiLux 4x4 introduced to Australia early in 1979 as RN/LN models, initially 2.0L 18R petrol then a year later 2.2L L diesel; four-speed standard (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.sparesbox.com.au/vehicles/toyota/hilux/1980/2-0-4wd-rn46-rn36",
+       "note": "AU parts catalogue vehicle: 1980 Toyota Hilux 2.0 4WD (RN46, RN36) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.carsguide.com.au/toyota/hilux/price/1979",
+       "note": "CarsGuide 1979 HiLux: Single Cab 1.6L 4sp manual to Single Cab 2.0L 4sp manual; leaded petrol; price $2,640 to $4,730 (4X4) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "au-rn36-4x4-swb-1980",
+     "name": "Toyota HiLux 2.0 4x4 short wheelbase",
+     "years": {
+      "from": 1980,
+      "to": 1983
+     },
+     "body": "single cab ute, short wheelbase, 4WD",
+     "engine": {
+      "code": "18R",
+      "displacement_cc": 1968,
+      "power_hp": null,
+      "power_note": "18R 1968cc"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2585,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual with 2-speed transfer case",
+     "notes": "Chassis RN36. Rare in Australia; owner threads describe a 1980 example as one of the first 'shorties' in SA (South Australia).",
+     "confidence": "low",
+     "unresolved": [
+      "Official AU sale dates and volumes unknown; wheelbase inferred from the short-wheelbase family"
+     ],
+     "citations": [
+      {
+       "ref": "https://club.shannons.com.au/club/forum/general/1980-hilux-short-wheel-base-rn36-chasing-information/",
+       "note": "Owner thread on a 1980 short-wheelbase RN36 4x4 in Australia, described as rare / one of the first 'shorties' in South Australia (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.sparesbox.com.au/vehicles/toyota/hilux/1980/2-0-4wd-rn46-rn36",
+       "note": "AU parts catalogue vehicle: 1980 Toyota Hilux 2.0 4WD (RN46, RN36) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "market": "JP",
+   "name": "Japan",
+   "notes": "ハイラックス (Hilux) 3代目, the 30/40系 (N30/N40). Launched 1 September 1978 with the 'HILUX CALIFORNIA - Made in Japan, American Spirit' theme; three standard-body and four long-body variants; the top Super Deluxe had a cab 90 mm longer than standard (a longer single cab, not an extended/Xtracab body with rear space or jump seats). Home-market petrol engine was the 1.6 12R-J only for 2WD (the 20R/22R were export), with the 2.0 18R-J for the 4WD from October 1979. L diesel from December 1979 (out of scope). Double cab (ダブルキャブ) from October 1981. The 4th generation launched in November 1983, but the 2WD N30/N40 continued as the budget 'Popular Series' (ポピュラーシリーズ) with 12R-J until September 1988, so a Japanese RN35/RN45 dated 1984-1988 is still a third-generation body. Japanese code suffixes (from the EPC): 30 = standard body, 40 = long body; 12R-J went RN30/40 (Aug 1978-Dec 1979) -> RN33/43 (Dec 1979-Oct 1981) -> RN35/45 (Oct 1981-1988).",
+   "unresolved": [
+    "Home-market dimensions and weights: the Toyota 75-year spec table exists but its figures did not surface in snippets",
+    "JP 4WD code after the October 1981 facelift (WheelsAge has a 10.1981-11.1983 4WD page); RN36-KDW is documented only to Oct 1981",
+    "Some sources call RN36 'export-oriented' yet the Japan EPC lists RN36-KDW; whether RN36 was sold new in Japan in volume is unclear",
+    "Double cab petrol code: RN45-JDP is the likeliest (P suffix) but not confirmed",
+    "Factory colours not researched for JP"
+   ],
+   "variants": [
+    {
+     "id": "jp-rn30-1978",
+     "name": "ハイラックス 1600 standard body (Standard / Deluxe / Super Deluxe)",
+     "years": {
+      "from": 1978,
+      "to": 1979
+     },
+     "body": "single cab, standard body (short bed), 2WD; Super Deluxe with 90 mm longer cab",
+     "engine": {
+      "code": "12R",
+      "displacement_cc": 1587,
+      "power_hp": 79,
+      "power_note": "12R-J 1587cc, 80 PS (59 kW) at 5200 rpm, 12.5 kgm; JIS gross"
+     },
+     "dimensions_mm": {
+      "length": 4300,
+      "width": 1610,
+      "height": null,
+      "wheelbase": 2585,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual; 5-speed and 3-speed automatic available in the range",
+     "notes": "RN30 (e.g. RN30-JDSJ), Aug/Sept 1978 - Dec 1979. Length/width from the range-wide figures (4300-4690 x 1610).",
+     "confidence": "medium",
+     "unresolved": [
+      "Exact JP length/height for the standard body not confirmed"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015540/index.html",
+       "note": "Toyota official 75-year history, Hilux 3rd: on sale September 1978, 12R-J 1.6L carried over, three standard-length and four long-body variants, torsion-bar front, front discs on Deluxe and above (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A8%E3%82%BF%E3%83%BB%E3%83%8F%E3%82%A4%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9",
+       "note": "Japanese Wikipedia (also mirrored on weblio.jp): 3代目 30/40系 1978年-1988年; Sept 1978 launch; Oct 1979 4WD 18R-J; Dec 1979 L diesel; Oct 1981 double cab; Nov 1983 range cut to the budget 'Popular Series' which continued until Sept 1988 alongside the 4th gen (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.amayama.com/en/genuine-catalogs/epc/toyota-japan/hilux/RN30/166559",
+       "note": "Toyota Japan EPC via Amayama: RN30-JDSJ, 12RJ, Aug 1978-Dec 1979 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://motorz.jp/feature/67016/",
+       "note": "Motorz feature on the 3rd-gen Hilux: 'HILUX CALIFORNIA' catalogue theme; 12R-J standard in Japan; SR5 Sport Truck with 20R for North America (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://autodaybook.com/3658-toyota-hilux-n30-1978-1983-specifications-photos-and-overview/",
+       "note": "Range dimensions: length 4300-4690 mm, width 1610 mm, height 1560-1565 mm, wheelbase 2585-2800 mm; petrol 1.6-2.4L 80-97 hp; 4/5-speed manual or 3-speed auto (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://mag.toyota.co.uk/history-toyota-hilux/",
+       "note": "Toyota UK magazine history: N30/40 on sale Sept 1978; Super Deluxe cab 90 mm longer than standard; first 4WD Oct 1979 with Land Cruiser 40-series transfer case and 2.0L R-series petrol; later double cab (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "jp-rn40-1978",
+     "name": "ハイラックス 1600 long body",
+     "years": {
+      "from": 1978,
+      "to": 1979
+     },
+     "body": "single cab, long body, 2WD",
+     "engine": {
+      "code": "12R",
+      "displacement_cc": 1587,
+      "power_hp": 79,
+      "power_note": "12R-J 1587cc, 80 PS gross"
+     },
+     "dimensions_mm": {
+      "length": 4690,
+      "width": 1610,
+      "height": null,
+      "wheelbase": 2800,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual; 5-speed / 3-speed automatic available",
+     "notes": "RN40. Length 4690 is the top of the published range (long body).",
+     "confidence": "medium",
+     "citations": [
+      {
+       "ref": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015540/index.html",
+       "note": "Toyota official 75-year history, Hilux 3rd: on sale September 1978, 12R-J 1.6L carried over, three standard-length and four long-body variants, torsion-bar front, front discs on Deluxe and above (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A8%E3%82%BF%E3%83%BB%E3%83%8F%E3%82%A4%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9",
+       "note": "Japanese Wikipedia (also mirrored on weblio.jp): 3代目 30/40系 1978年-1988年; Sept 1978 launch; Oct 1979 4WD 18R-J; Dec 1979 L diesel; Oct 1981 double cab; Nov 1983 range cut to the budget 'Popular Series' which continued until Sept 1988 alongside the 4th gen (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://autodaybook.com/3658-toyota-hilux-n30-1978-1983-specifications-photos-and-overview/",
+       "note": "Range dimensions: length 4300-4690 mm, width 1610 mm, height 1560-1565 mm, wheelbase 2585-2800 mm; petrol 1.6-2.4L 80-97 hp; 4/5-speed manual or 3-speed auto (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "jp-rn33-rn43-1979",
+     "name": "ハイラックス 1600 (RN33 standard / RN43 long)",
+     "years": {
+      "from": 1979,
+      "to": 1981
+     },
+     "body": "single cab, standard (RN33) or long (RN43) body, 2WD",
+     "engine": {
+      "code": "12R",
+      "displacement_cc": 1587,
+      "power_hp": 79,
+      "power_note": "12R-J 1587cc",
+      "codes": [
+       "12R-J"
+      ]
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "manual (4H floor shift listed on RN33-JDSW)",
+     "notes": "Replaced RN30/RN40 in December 1979 (EPC RN33-JDSW and RN43-JFW, Dec 1979 - Oct 1981); probably an emissions/specification update.",
+     "confidence": "medium",
+     "unresolved": [
+      "Reason for the RN30->RN33 code change not documented"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.megazip.net/zapchasti-dlya-avtomobilej/toyota/hilux-4runner-truck-42451/rn33-54789/rn33-jdsw-910377",
+       "note": "Toyota EPC via Megazip: 1979-1981 HILUX RN33 (RN33-JDSW), Japan sales region; 12RJ, DLX, Dec 1979-Oct 1981 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://toyota.epc-data.com/hilux/rn43/141920/chassis/",
+       "note": "Toyota Japan EPC: Hilux RN43-JFW, 12RJ, Dec 1979-Oct 1981 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "jp-rn35-rn45-1981",
+     "name": "ハイラックス 1600 (RN35 standard / RN45 long), incl. Popular Series",
+     "years": {
+      "from": 1981,
+      "to": 1988
+     },
+     "body": "single cab, standard (RN35) or long (RN45) body, 2WD",
+     "engine": {
+      "code": "12R",
+      "displacement_cc": 1587,
+      "power_hp": 79,
+      "power_note": "12R-J 1587cc; later listings quote 79 hp",
+      "codes": [
+       "12R-J"
+      ]
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "manual",
+     "notes": "October 1981 facelift codes. From November 1983 sold as the budget Popular Series alongside the 4th gen until September 1988 (Megazip lists RN35-QRS 1985-1988, Japan region); later carries the L-RN35 emissions prefix.",
+     "confidence": "medium",
+     "unresolved": [
+      "Popular Series exterior changes after 1983 are 'modified' per ja.wikipedia but not described"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.megazip.net/zapchasti-dlya-avtomobilej/toyota/hilux-4runner-truck-42451/rn35-54790/rn35-qrs-910384",
+       "note": "Toyota EPC via Megazip: 1985-1988 HILUX RN35 (RN35-QRS), Japan sales region; a separate RN35-KDS frame is listed 1981-1985 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://toyota.epc-data.com/hilux/rn45/141925/",
+       "note": "Toyota Japan EPC: Hilux RN45-JDP complectation (RN45 frames also JDS3 etc.) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A8%E3%82%BF%E3%83%BB%E3%83%8F%E3%82%A4%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9",
+       "note": "Japanese Wikipedia (also mirrored on weblio.jp): 3代目 30/40系 1978年-1988年; Sept 1978 launch; Oct 1979 4WD 18R-J; Dec 1979 L diesel; Oct 1981 double cab; Nov 1983 range cut to the budget 'Popular Series' which continued until Sept 1988 alongside the 4th gen (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.weblio.jp/wkpja/content/%E3%83%88%E3%83%A8%E3%82%BF%E3%83%BB%E3%83%8F%E3%82%A4%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9_3%E4%BB%A3%E7%9B%AE+30/40%E7%B3%BB%EF%BC%881978%E5%B9%B4-1988%E5%B9%B4%EF%BC%89",
+       "note": "weblio mirror of ja.wikipedia 3代目 30/40系 section: Popular Series (ポピュラーシリーズ) with 12R-J continued to Sept 1988 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "jp-double-cab-1981",
+     "name": "ハイラックス ダブルキャブ (double cab)",
+     "years": {
+      "from": 1981,
+      "to": 1983
+     },
+     "body": "double cab (4-door, two rows), 2WD",
+     "engine": {
+      "code": "12R",
+      "displacement_cc": 1587,
+      "power_hp": 79,
+      "power_note": "12R-J petrol (diesel L also offered, out of scope)"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "manual",
+     "notes": "Added October 1981 for leisure use.",
+     "confidence": "low",
+     "unresolved": [
+      "Petrol double cab chassis code not confirmed (RN45-JDP suspected)",
+      "Whether the double cab continued in the Popular Series after 1983"
+     ],
+     "citations": [
+      {
+       "ref": "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A8%E3%82%BF%E3%83%BB%E3%83%8F%E3%82%A4%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9",
+       "note": "Japanese Wikipedia (also mirrored on weblio.jp): 3代目 30/40系 1978年-1988年; Sept 1978 launch; Oct 1979 4WD 18R-J; Dec 1979 L diesel; Oct 1981 double cab; Nov 1983 range cut to the budget 'Popular Series' which continued until Sept 1988 alongside the 4th gen (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://mag.toyota.co.uk/history-toyota-hilux/",
+       "note": "Toyota UK magazine history: N30/40 on sale Sept 1978; Super Deluxe cab 90 mm longer than standard; first 4WD Oct 1979 with Land Cruiser 40-series transfer case and 2.0L R-series petrol; later double cab (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://toyota.epc-data.com/hilux/rn45/141925/",
+       "note": "Toyota Japan EPC: Hilux RN45-JDP complectation (RN45 frames also JDS3 etc.) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "jp-rn36-4wd-1979",
+     "name": "ハイラックス 4WD 2000",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab, 4WD (short body RN36; long body RN46 in export markets)",
+     "engine": {
+      "code": "18R",
+      "displacement_cc": 1968,
+      "power_hp": 97,
+      "power_note": "18R-J 1968cc, 98 PS / 152 Nm (JIS gross)"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual with 2-speed transfer case",
+     "notes": "First Hilux 4WD, October 1979, Land Cruiser 40-derived driveline. EPC: RN36-KDW, 18RJ DLX, Oct 1979 - Oct 1981; post-facelift JDM 4WD to Nov 1983. Tamiya's RC model 'Hilux 4WD High-Lift (RN36)' made the code famous in Japan.",
+     "confidence": "medium",
+     "unresolved": [
+      "Post-Oct-1981 JDM 4WD code"
+     ],
+     "citations": [
+      {
+       "ref": "https://global.toyota/en/mobility/toyota-brand/features/hilux50th/history/evolution.html",
+       "note": "Toyota Hilux 50th anniversary history: 3rd gen on sale Sept 1978; first 4WD October 1979 with 2.0L 18R-J (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A8%E3%82%BF%E3%83%BB%E3%83%8F%E3%82%A4%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9",
+       "note": "Japanese Wikipedia (also mirrored on weblio.jp): 3代目 30/40系 1978年-1988年; Sept 1978 launch; Oct 1979 4WD 18R-J; Dec 1979 L diesel; Oct 1981 double cab; Nov 1983 range cut to the budget 'Popular Series' which continued until Sept 1988 alongside the 4th gen (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.amayama.com/en/genuine-catalogs/epc/toyota-japan/hilux/rn36/141903/engine/2301",
+       "note": "Toyota Japan EPC via Amayama: Hilux RN36 (RN36-KDW), 18RJ, DLX, manual, Oct 1979-Oct 1981 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://en.wheelsage.org/toyota/hilux/iii/1978-88/4wd_1",
+       "note": "WheelsAge: Toyota HILUX 4WD [Japan] (N30/N40) 10.1981-11.1983 (post-facelift JDM 4WD) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://offroadexpress.jp/old4x4/%E3%83%88%E3%83%A8%E3%82%BF-%E3%83%8F%E3%82%A4%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9-4wd-30%E7%B3%BB-1979-1983/",
+       "note": "Off Road Express: TOYOTA HILUX 4WD 30系 1979-1983; RN36 18R-J 1968cc (98 PS); describes RN36 as export-oriented (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://forum.buschtaxi.org/viewtopic.php?t=51279&start=15",
+       "note": "Buschtaxi (German Toyota 4x4 forum) 'Toyota Hilux RN30 Generelle Informationen': RN30 2WD, RN36 4WD short wheelbase (single cab only), RN46 4WD long wheelbase; 18R-J 98 PS / 152 Nm; short wheelbase 'extremely rare' in Europe; R = R-series petrol (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "market": "ZA",
+   "name": "South Africa",
+   "notes": "Sold as the Toyota Hilux bakkie. Toyota's Durban operation (Motor Assemblies Ltd from 1969; Prospecton plant producing Hilux since 1970, now Toyota South Africa Motors) handled the Hilux, and the third generation (N30/N40, 1978-83) brought four-wheel drive (2.0 18R) and diesel to SA buyers. SA-specific model codes, trims and dimensions were not found; variants below are inferred from the general-export range (1.6 12R, 2.0 18R, 2.0 18R 4x4) and SA classified evidence. SA classified dates are registration years; an 18R Hilux 4x4 dated 1984 appears on the SA classic market.",
+   "unresolved": [
+    "Whether the N30/N40 was CKD-assembled at Prospecton or imported built-up (sources conflict: one says SA manufacturing history 'begins in 1984' with the N50)",
+    "SA engine line-up not confirmed from an SA source; 12R 1.6 and 18R 2.0 assumed from general-export catalogues",
+    "A '1984 Toyota Hilux 2000 4x4' with 18R in SA could be a late-registered N30/N40 or an early 4th gen; not resolved",
+    "SA badging (e.g. 'Hilux 1600', 'Hilux 2000') not confirmed from a period brochure"
+   ],
+   "variants": [
+    {
+     "id": "za-hilux-1600-1979",
+     "name": "Toyota Hilux 1600 bakkie",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab bakkie, 2WD (short and long wheelbase)",
+     "engine": {
+      "code": "12R",
+      "displacement_cc": 1587,
+      "power_hp": null,
+      "power_note": "12R 1587cc assumed from general-export range"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2585,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual (assumed)",
+     "notes": "Codes RN30/RN40 in general-export form. Inferred variant.",
+     "confidence": "low",
+     "unresolved": [
+      "No SA-specific citation for the 1.6"
+     ],
+     "citations": [
+      {
+       "ref": "https://cmhtoyota.co.za/toyota-hilux-heritage/",
+       "note": "SA dealer heritage page: third-generation Hilux bakkie (N30, N40, from 1978) introduced diesel power and four-wheel drive to SA buyers (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.gumtree.co.za/s-cars-bakkies/1978+or+1979+or+1980+toyota+hilux/v1c9077q0p1",
+       "note": "SA classifieds carry 1978-1980 Toyota Hilux bakkies (market presence) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://en.wikipedia.org/wiki/Toyota_South_Africa_Motors",
+       "note": "Toyota South Africa Motors, Prospecton (Durban): Hilux production at Prospecton since 1970; earlier Motor Assemblies Ltd Durban from 1969 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.vmaxbrakes.com.au/rtype-slotted-fits-toyota-hilux-2wd-rn30-rn31-rn40",
+       "note": "AU parts fitment: Hilux 2WD RN30 RN31 RN40 RN41 1978-83 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "za-hilux-2000-1979",
+     "name": "Toyota Hilux 2000 bakkie (2WD)",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab bakkie, 2WD",
+     "engine": {
+      "code": "18R",
+      "displacement_cc": 1968,
+      "power_hp": null,
+      "power_note": "18R 1968cc assumed"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "manual",
+     "notes": "Codes RN31/RN41 (General region frames RN31R-KD, RN41R) in general-export form. Inferred variant.",
+     "confidence": "low",
+     "unresolved": [
+      "No SA-specific citation for a 2WD 2.0"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.megazip.net/zapchasti-dlya-avtomobilej/toyota/hilux-4runner-truck-42451/rn31-56535/rn31r-kd-934362/oil-filter-18015194",
+       "note": "Toyota EPC via Megazip: 1978-1981 HILUX RN31 (RN31R-KD), General sales region (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.megazip.net/zapchasti-dlya-avtomobilej/toyota/hilux-4runner-truck-42451/rn41-56536/rn41r-krpq-934413",
+       "note": "Toyota EPC via Megazip: 1982-1983 HILUX RN41 (RN41R-KRPQ), General sales region (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://cmhtoyota.co.za/toyota-hilux-heritage/",
+       "note": "SA dealer heritage page: third-generation Hilux bakkie (N30, N40, from 1978) introduced diesel power and four-wheel drive to SA buyers (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "za-hilux-4x4-1979",
+     "name": "Toyota Hilux 4x4 (2.0) bakkie",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab bakkie, 4WD",
+     "engine": {
+      "code": "18R",
+      "displacement_cc": 1968,
+      "power_hp": null,
+      "power_note": "18R 1968cc"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual with 2-speed transfer case",
+     "notes": "RN36/RN46 in general-export form (Megazip lists RN46R General region 1981-83). SA sources confirm 18R 4x4 bakkies.",
+     "confidence": "low",
+     "unresolved": [
+      "Wheelbase mix (RN36 vs RN46) in SA unknown"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.4x4community.co.za/forum/showthread.php/6391-The-History-of-The-Toyota-Hilux-models-since-the-beginning",
+       "note": "SA 4x4 forum Hilux history: 4WD from 1979 with 2.0L 18R; 4WD production stopped 1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://watswaaijy.co.za/cars/1984-toyota-hilux-4x4/",
+       "note": "SA classic dealer: restored '1984' Toyota Hilux 4x4 with 18R engine (a 1984 date on an 18R 4x4 bakkie in SA) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.megazip.net/zapchasti-dlya-avtomobilej/toyota/hilux-4runner-truck-42451/rn46-56537/rn46r-krn-934425",
+       "note": "Toyota EPC via Megazip: 1981-1983 HILUX RN46 (RN46R-KRN), General sales region (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://cmhtoyota.co.za/toyota-hilux-heritage/",
+       "note": "SA dealer heritage page: third-generation Hilux bakkie (N30, N40, from 1978) introduced diesel power and four-wheel drive to SA buyers (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "market": "EU",
+   "name": "Continental Europe",
+   "notes": "Imported from 1979 (German sources) as the Toyota Hilux pick-up (German: Pritsche/Pritschenwagen; Dutch/French: pick-up, 'plateau'), left-hand drive (EPC frames RN30L, RN40L, RN41L, RN46L). Petrol types in European catalogues: 1.6 (RN30/RN40, 12R, 67 hp) and 2.0 4WD (RN36/RN46, 18R, 88 hp); a 2.0 2WD RN41L frame also exists for the Europe region. Diesel 2.2 added from 1981 (out of scope). German clubs note the third generation was only a single cab, mostly long bed, the short wheelbase being 'extremely rare' in Europe; XtraCab and DoubleCab arrived in Europe with the 4th generation. Registration-year slop applies: a 1984 first registration can be an N30/N40 runout.",
+   "unresolved": [
+    "Per-country availability (DE/NL/FR/others) of each type not established",
+    "European dimensions/weights not found",
+    "European colours not found"
+   ],
+   "variants": [
+    {
+     "id": "eu-rn30-rn40-1979",
+     "name": "Toyota Hilux 1.6 pick-up (Pritsche), 2WD",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab pick-up, long (RN40) or rare short (RN30) wheelbase, 2WD",
+     "engine": {
+      "code": "12R",
+      "displacement_cc": 1587,
+      "power_hp": 67,
+      "power_note": "12R 1587cc, 67 hp (49 kW)"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": null,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual",
+     "notes": "EPC Europe frames RN30L-KDV (1981-83) and RN40L-KRP (1979-83).",
+     "confidence": "medium",
+     "citations": [
+      {
+       "ref": "https://www.autodoc.parts/spares/toyota/hilux-pick-up/hilux-i-pickup-ln3-rn2-ln4-rn3/27386-1-6-rn40-rn30",
+       "note": "European (TecDoc) catalogue type: Hilux III Pickup (N30, N40) 1.6 (RN40, RN30), 12R, 67 hp, 1978-1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.megazip.net/zapchasti-dlya-avtomobilej/toyota/hilux-4runner-truck-42451/rn30-54788/rn30l-kdv-924952/rear-body-side-panel-17903264",
+       "note": "Toyota EPC via Megazip: 1981-1983 HILUX RN30 (RN30L-KDV), Europe sales region (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.megazip.net/zapchasti-dlya-avtomobilej/toyota/hilux-4runner-truck-42451/rn40-54793/rn40l-krp-924998",
+       "note": "Toyota EPC via Megazip: 1979-1983 HILUX RN40 (RN40L-KRP), Europe sales region (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.stoapfaelzer-4wheelers.com/infos-rund-um-4x4/toyota-hilux-historie/",
+       "note": "German club history: European import from 1979; 2.2L diesel added from 1981; 3rd gen was always a single cab (long bed, short cab); the 4th gen (YN58 etc., 1983) introduced XtraCab and DoubleCab to Europe (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://forum.buschtaxi.org/viewtopic.php?t=51279&start=15",
+       "note": "Buschtaxi (German Toyota 4x4 forum) 'Toyota Hilux RN30 Generelle Informationen': RN30 2WD, RN36 4WD short wheelbase (single cab only), RN46 4WD long wheelbase; 18R-J 98 PS / 152 Nm; short wheelbase 'extremely rare' in Europe; R = R-series petrol (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "eu-rn41-1979",
+     "name": "Toyota Hilux 2.0 pick-up, 2WD",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab pick-up, long wheelbase, 2WD",
+     "engine": {
+      "code": "18R",
+      "displacement_cc": 1968,
+      "power_hp": null,
+      "power_note": "18R 1968cc"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2800,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "manual",
+     "notes": "EPC Europe frame RN41L-KD (1978-1983). Not listed as a separate type in the TecDoc catalogue.",
+     "confidence": "low",
+     "unresolved": [
+      "Which countries sold the 2WD 2.0"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.megazip.net/zapchasti-dlya-avtomobilej/toyota/hilux-4runner-truck-42451/rn41-56536/rn41l-kd-925020",
+       "note": "Toyota EPC via Megazip: 1978-1983 HILUX RN41 (RN41L-KD), Europe sales region (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "eu-rn46-4wd-1979",
+     "name": "Toyota Hilux 4WD 2.0 pick-up (Allrad)",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab pick-up, long wheelbase (RN46) or rare short (RN36), 4WD",
+     "engine": {
+      "code": "18R",
+      "displacement_cc": 1968,
+      "power_hp": 88,
+      "power_note": "18R 1968cc, 88 hp (65 kW)"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2800,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "4-speed manual with 2-speed transfer case",
+     "notes": "Toyota Europe EPC RN46L-KRW, 01.1979-07.1983.",
+     "confidence": "medium",
+     "unresolved": [
+      "German club sources claim 4WD was initially intended only for North America; European 4WD start date vs 01.1979 EPC date unreconciled"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.amayama.com/en/genuine-catalogs/epc/toyota-europe/hilux/RN46L/8600/body",
+       "note": "Toyota Europe EPC via Amayama: Hilux RN46L-KRW, 01.1979-07.1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.autodoc.parts/spares/toyota/hilux-pick-up/hilux-i-pickup-ln3-rn2-ln4-rn3/27462-2-0-4wd-rn46-rn36",
+       "note": "European (TecDoc) catalogue type: Hilux III 2.0 4WD (RN46, RN36), 18R, 88 hp, 1979-1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://forum.buschtaxi.org/viewtopic.php?t=51279&start=15",
+       "note": "Buschtaxi (German Toyota 4x4 forum) 'Toyota Hilux RN30 Generelle Informationen': RN30 2WD, RN36 4WD short wheelbase (single cab only), RN46 4WD long wheelbase; 18R-J 98 PS / 152 Nm; short wheelbase 'extremely rare' in Europe; R = R-series petrol (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.stoapfaelzer-4wheelers.com/infos-rund-um-4x4/toyota-hilux-historie/",
+       "note": "German club history: European import from 1979; 2.2L diesel added from 1981; 3rd gen was always a single cab (long bed, short cab); the 4th gen (YN58 etc., 1983) introduced XtraCab and DoubleCab to Europe (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.megazip.net/zapchasti-dlya-avtomobilej/toyota/hilux-4runner-truck-42451/rn36-54791/rn36r-krq3-924992/vacuum-piping-17903005",
+       "note": "Toyota EPC via Megazip: 1979-1981 HILUX RN36 (RN36R-KRQ3, right-hand drive), Europe sales region (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "market": "TH",
+   "name": "Thailand",
+   "notes": "In Thailand the third generation was the 'Hilux Super Star' (ไฮลักซ์ ซูเปอร์สตาร์), universally nicknamed 'ม้ากระโดด' (jumping horse). Toyota Motor Thailand has built Hilux at Samrong since the RN10. Thai trucks were 12R 1.6 petrol only, RN30 short bed ('4 ขอ', four rope hooks) and RN40 long bed ('5 ขอ'); diesel LN30/LN40 also existed (out of scope). Thai RN30s are exported to the UK today (e.g. Siam Imports), so a UK listing of a Thai-origin RN30 is a genuine match for the owner's truck.",
+   "unresolved": [
+    "Thai sales window: Thai parts shops label RN30-40 'ปี 1979-1989' while others say 1978-1983; whether Thai assembly continued after 1983 (like Japan's Popular Series) is unconfirmed",
+    "Thai specifications, dimensions and 4WD availability not found"
+   ],
+   "variants": [
+    {
+     "id": "th-rn30-1979",
+     "name": "Toyota Hilux Super Star 'ม้ากระโดด' RN30 (short bed, 4 ขอ)",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab, short bed, 2WD",
+     "engine": {
+      "code": "12R",
+      "displacement_cc": 1587,
+      "power_hp": null,
+      "power_note": "12R 1.6 petrol"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2585,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "manual",
+     "notes": "Same configuration as the owner's reference truck.",
+     "confidence": "low",
+     "unresolved": [
+      "End year (1983 vs later)"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.tjpshop.com/article/2/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A7%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A3%E0%B8%96%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B0%E0%B9%82%E0%B8%95%E0%B9%82%E0%B8%A2%E0%B8%95%E0%B9%89%E0%B8%B2%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99%E0%B9%80%E0%B8%81%E0%B9%88%E0%B8%B2-toyopet-rn10-%E0%B8%88%E0%B8%99%E0%B8%96%E0%B8%B6%E0%B8%87-toyota-hero-%E0%B8%AD%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B8%B4%E0%B8%87%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%99%E0%B8%B4%E0%B8%95%E0%B8%A3%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%A3%E0%B8%96%E0%B9%80%E0%B8%81%E0%B9%88%E0%B8%B2%E0%B8%9B%E0%B8%B52544-%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%94%E0%B8%B4%E0%B8%95-http-www-goldgearclub-com",
+       "note": "Thai history of Toyota pickups (RN10 to Hero): 1979 restyle called 'Hilux Super Star', RN30 short (4 ขอ) and RN40 long (5 ขอ), 12R only, popularly 'ม้ากระโดด' (jumping horse) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.tjpshop.com/category/29/toyota/toyota-rn30-40-%E0%B9%82%E0%B8%95%E0%B9%82%E0%B8%A2%E0%B8%95%E0%B9%89%E0%B8%B2-%E0%B8%A1%E0%B9%89%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%94%E0%B8%94-%E0%B8%9B%E0%B8%B5-1979-1989",
+       "note": "Thai parts shop category 'TOYOTA RN30-40 โตโยต้า ม้ากระโดด ปี 1979-1989' (parts-fitment range, not a verified sales window) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.bypartshop.com/product/4597/",
+       "note": "Thai parts listing: tail lamp TOYOTA LN30-40/RN30-40 (ม้ากระโดด) ปี1978-1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.blockdit.com/posts/601b6e045f8f040badfb4d42",
+       "note": "Thai owner post: car registered B.E. 2523 (1980); RN30/RN40 is the body that introduced 4-door and 4WD variants (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.facebook.com/siamimports/posts/new-stockcheap-rn301980-toyota-hilux-rn30all-original-running-gear-12r-1600cc-pe/1346524024147503/",
+       "note": "UK importer Siam Imports offering a 1980 Hilux RN30 with original 12R 1600cc running gear sourced from Thailand (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    },
+    {
+     "id": "th-rn40-1979",
+     "name": "Toyota Hilux Super Star 'ม้ากระโดด' RN40 (long bed, 5 ขอ)",
+     "years": {
+      "from": 1979,
+      "to": 1983
+     },
+     "body": "single cab, long bed, 2WD",
+     "engine": {
+      "code": "12R",
+      "displacement_cc": 1587,
+      "power_hp": null,
+      "power_note": "12R 1.6 petrol"
+     },
+     "dimensions_mm": {
+      "length": null,
+      "width": null,
+      "height": null,
+      "wheelbase": 2800,
+      "bed_length": null
+     },
+     "weight_kg": null,
+     "transmission": "manual",
+     "confidence": "low",
+     "unresolved": [
+      "End year (1983 vs later)"
+     ],
+     "citations": [
+      {
+       "ref": "https://www.tjpshop.com/article/2/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A7%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A3%E0%B8%96%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B0%E0%B9%82%E0%B8%95%E0%B9%82%E0%B8%A2%E0%B8%95%E0%B9%89%E0%B8%B2%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99%E0%B9%80%E0%B8%81%E0%B9%88%E0%B8%B2-toyopet-rn10-%E0%B8%88%E0%B8%99%E0%B8%96%E0%B8%B6%E0%B8%87-toyota-hero-%E0%B8%AD%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B8%B4%E0%B8%87%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%99%E0%B8%B4%E0%B8%95%E0%B8%A3%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%A3%E0%B8%96%E0%B9%80%E0%B8%81%E0%B9%88%E0%B8%B2%E0%B8%9B%E0%B8%B52544-%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%94%E0%B8%B4%E0%B8%95-http-www-goldgearclub-com",
+       "note": "Thai history of Toyota pickups (RN10 to Hero): 1979 restyle called 'Hilux Super Star', RN30 short (4 ขอ) and RN40 long (5 ขอ), 12R only, popularly 'ม้ากระโดด' (jumping horse) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.tjpshop.com/category/29/toyota/toyota-rn30-40-%E0%B9%82%E0%B8%95%E0%B9%82%E0%B8%A2%E0%B8%95%E0%B9%89%E0%B8%B2-%E0%B8%A1%E0%B9%89%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%94%E0%B8%94-%E0%B8%9B%E0%B8%B5-1979-1989",
+       "note": "Thai parts shop category 'TOYOTA RN30-40 โตโยต้า ม้ากระโดด ปี 1979-1989' (parts-fitment range, not a verified sales window) (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      },
+      {
+       "ref": "https://www.bypartshop.com/product/4597/",
+       "note": "Thai parts listing: tail lamp TOYOTA LN30-40/RN30-40 (ม้ากระโดด) ปี1978-1983 (read via search-result snippet; page fetch blocked by the sandbox egress proxy on 2026-09-24)"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

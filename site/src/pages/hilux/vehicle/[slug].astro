@@ -1,0 +1,11 @@
+---
+import VehiclePage from "../../../components/VehiclePage.astro";
+import { MODELS, vehiclePaths } from "../../../lib/trucks";
+
+export function getStaticPaths() {
+  return vehiclePaths(MODELS.hilux);
+}
+const { listing, all } = Astro.props;
+---
+
+<VehiclePage listing={listing} all={all} model={MODELS.hilux} />

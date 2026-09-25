@@ -46,6 +46,20 @@ A failing source NEVER fails the run; if the daily-scrape tick itself goes
 red, the problem is elsewhere (FX API, GitHub, or a code bug) and the Actions
 log for the failed step is the place to look.
 
+## The Hilux side
+
+- Runs as its own step after the 620 (`python scrapers/run_daily.py --model
+  hilux`), writing `data/hilux/`. If it fails, the 620 data is still
+  committed and the run goes red at the end so GitHub emails you.
+- Its sources and their state: `docs/hilux-sources.md`. Blocked ones (Car &
+  Classic, AutoTrader UK, Gumtree AU, carsales, Cars.com, Classics on
+  Autotrader) belong to the saved-search email route, like the 620's.
+- "Worth a look" fires after 60 quiet days for a Hilux source (21 for the
+  620): most Hilux sources hold no 1978-83 petrol truck for months.
+- A wrong catch or a missed truck is almost always an identity rule: fix it
+  in `scrapers/common/hilux.py` with a test in
+  `scrapers/tests/test_hilux_identity.py`, so every source benefits.
+
 ## Secrets inventory
 
 | Secret | Used by | Rotate how |
