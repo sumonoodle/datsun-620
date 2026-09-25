@@ -23,6 +23,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common import king_cab, normalize
+from common.patterns import is_other_generation
 
 SOURCE = "goonet_exchange"
 BASE = "https://www.goo-net-exchange.com"
@@ -65,6 +66,10 @@ def parse_page(html: str, fx_day: dict) -> list[dict]:
         kc = king_cab.check(title)
         if year is None or not 1971 <= year <= 1980:
             continue  # 620 era only; the model page runs to 2002 (D21/D22)
+        # Era alone cannot tell a 620 from a Bluebird or a UN521: both
+        # sit inside the 620 production window. Shared rule, 2026-09-23.
+        if is_other_generation(title):
+            continue
 
         price_el = li.select_one("p.price")
         m = _YEN_RE.search(price_el.get_text(strip=True)) if price_el else None

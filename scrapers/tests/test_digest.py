@@ -120,8 +120,41 @@ def test_quiet_alert_in_digest():
     print("ok test_quiet_alert_in_digest")
 
 
+def test_known_blocked_is_muted_not_escalated():
+    """Blocked by design must not read as broken by accident.
+
+    Cars & Bids and Hemmings are IP-banned; the 7-day escalation already
+    fired and the decision was made (email alerts). A banner that never
+    changes stops being read, so these render muted and stay out of the
+    'sources ok' headline.
+    """
+    changes = {"date": "2026-09-23", "new": [], "price_changed": [],
+               "status_changed": [], "possible_relists": []}
+    run_log = {
+        "date": "2026-09-23", "started_at": "2026-09-23T00:20:00+00:00",
+        "sources": [
+            {"source": "carsandbids", "ok": False, "records": 0,
+             "note": "HTTP 403 (bot protection / blocked)",
+             "consecutive_failures": 73, "consecutive_zero_runs": 0,
+             "expected_blocked": True},
+            {"source": "kaidee", "ok": False, "records": 0,
+             "note": "__NEXT_DATA__ missing", "consecutive_failures": 9,
+             "consecutive_zero_runs": 0},
+        ],
+        "totals": {"active": 23, "by_country": {"US": 12}, "median_gbp": 8995.0},
+    }
+    out = send_digest.build_html(changes, run_log, {}, "https://example.test")
+    assert "blocked 73 days (known" in out
+    # The escalation banner belongs to genuinely new breakage only.
+    assert "Blocked 73 days: decision needed" not in out
+    # A real, unexplained failure still shouts.
+    assert "Kaidee" in out and "skipped" in out
+    print("ok test_known_blocked_is_muted_not_escalated")
+
+
 if __name__ == "__main__":
     test_digest_render()
     test_quiet_alert_thresholds()
     test_quiet_alert_in_digest()
+    test_known_blocked_is_muted_not_escalated()
     print("all digest tests passed")
