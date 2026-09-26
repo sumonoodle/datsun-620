@@ -1,0 +1,1160 @@
+{
+  "generated_at": "2026-09-26",
+  "listings": [
+    {
+      "id": "trovit:ntA91Hm71p",
+      "source": "trovit",
+      "source_listing_id": "ntA91Hm71p",
+      "url": "https://rd.clk.thribee.com/id.ntA91Hm71p/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.2527917trovit-web-645997f54b-jxnh86ab751564603b/tracking.%7B%7D/what_d.toyota%20hilux/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606ab7515645c7d8.71699812/pos.14/timestamp.1790398806/sign.K%2FH3AJquTuwt42WNxTw4rQ%3D%3D/",
+      "title": "TOYOTA Pickup Hi Lux SR-5 1982 4X4 Truck",
+      "title_translated": null,
+      "description_snippet": "1982 Toyota Hi Lux SR-5 Excellent 1982 Toyota Hi Lux SR-5 Pickup! This truck gets lots of attention! Approximately 296,000 Miles, Approx...",
+      "year": 1982,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/ntA91Hm71p/ntA91Hm71p.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "trovit:k1H1z1C19121hk",
+      "source": "trovit",
+      "source_listing_id": "k1H1z1C19121hk",
+      "url": "https://rd.clk.thribee.com/id.k1H1z1C19121hk/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.2527917trovit-web-645997f54b-jxnh86ab751564603b/tracking.%7B%7D/what_d.toyota%20hilux/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606ab7515645c7d8.71699812/pos.12/timestamp.1790398806/sign.JDH1ZkfmWb2kXWXgDL36og%3D%3D/",
+      "title": "RARE 1982 Toyota Pickup Hilux SR5, 4x4, 141,000 Original Miles, 5 Speed",
+      "title_translated": null,
+      "description_snippet": "1982 Toyota Pickup Hilux 1982 Toyota Hilux 4x4 141,000 original miles Idaho classic Toyota has never seen salt Equipped with the original, low...",
+      "year": 1982,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/k1H1z1C19121hk/k1H1z1C19121hk.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "trovit:KoQ1j1D1S1Zw",
+      "source": "trovit",
+      "source_listing_id": "KoQ1j1D1S1Zw",
+      "url": "https://rd.clk.thribee.com/id.KoQ1j1D1S1Zw/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.2527917trovit-web-645997f54b-jxnh86ab751564603b/tracking.%7B%7D/what_d.toyota%20hilux/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606ab7515645c7d8.71699812/pos.5/timestamp.1790398806/sign.nVzxNiOKzud9SJ2YmEFJEg%3D%3D/",
+      "title": "1981 Toyota Hilux",
+      "title_translated": null,
+      "description_snippet": "...new arrivals. We sell nationwide and worldwide and can help with nationwide and international shipping! Call or text: 747-600-2212 1981 toyota ...",
+      "year": 1981,
+      "country": "US",
+      "region": "91203, Glendale, Los Angeles County, CA",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 19500.0,
+        "currency": "USD",
+        "gbp": 14714.76,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/KoQ1j1D1S1Zw/KoQ1j1D1S1Zw.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": 19500.0,
+            "currency": "USD",
+            "gbp": 14714.76,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "trovit:1o1_51LQaF8",
+      "source": "trovit",
+      "source_listing_id": "1o1_51LQaF8",
+      "url": "https://rd.clk.thribee.com/id.1o1_51LQaF8/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.2527917trovit-web-645997f54b-jxnh86ab751564603b/tracking.%7B%7D/what_d.toyota%20hilux/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606ab7515645c7d8.71699812/pos.2/timestamp.1790398806/sign.PykjoCR1BfW7QmRp0yfCRQ%3D%3D/",
+      "title": "1980 Toyota Hilux",
+      "title_translated": null,
+      "description_snippet": "This Toyota pickup is in mint condition.",
+      "year": 1980,
+      "country": "US",
+      "region": "33149, Miami-Dade County, FL",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 22141.0,
+        "currency": "USD",
+        "gbp": 16707.67,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/1o1_51LQaF8/1o1_51LQaF8.1_10.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16707.67,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "trovit:1m1H-D0v1KQ",
+      "source": "trovit",
+      "source_listing_id": "1m1H-D0v1KQ",
+      "url": "https://rd.clk.thribee.com/id.1m1H-D0v1KQ/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.2527917trovit-web-645997f54b-jxnh86ab751564603b/tracking.%7B%7D/what_d.toyota%20hilux/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606ab7515645c7d8.71699812/pos.4/timestamp.1790398806/sign.goHaTs66dpB1llHvBqiG6w%3D%3D/",
+      "title": "1981 Toyota Hilux SR5 Standard Cab Pickup 2-Door",
+      "title_translated": null,
+      "description_snippet": "1981 Toyota Hilux 4x4. Original 4 cylinder engine and 5 speed transmission. This truck is a head turner and gets compliments wherever it goes...",
+      "year": 1981,
+      "country": "US",
+      "region": "12828, Fort Edward, Washington County, NY",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 9000.0,
+        "currency": "USD",
+        "gbp": 6791.43,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/1m1H-D0v1KQ/1m1H-D0v1KQ.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": 9000.0,
+            "currency": "USD",
+            "gbp": 6791.43,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "trovit:1VX1QK1Z1AB1V",
+      "source": "trovit",
+      "source_listing_id": "1VX1QK1Z1AB1V",
+      "url": "https://rd.clk.thribee.com/id.1VX1QK1Z1AB1V/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.2527917trovit-web-645997f54b-jxnh86ab751564603b/tracking.%7B%7D/what_d.toyota%20hilux/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606ab7515645c7d8.71699812/pos.11/timestamp.1790398806/sign.n18eko%2FdT%2BtP9AAD7sDzKg%3D%3D/",
+      "title": "1980 TOYOTA 4X4 Pickup Truck Short Box Hilux",
+      "title_translated": null,
+      "description_snippet": "1980 Toyota Pickup 1980 Toyota Hilux Pickup. This is a great little truck. I think is has a 2'-3' lift on it. Runs nice. Lot of work done. A...",
+      "year": 1980,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/1VX1QK1Z1AB1V/1VX1QK1Z1AB1V.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "marktplaats:m2438531579",
+      "source": "marktplaats",
+      "source_listing_id": "m2438531579",
+      "url": "https://www.marktplaats.nl/v/auto-s/bestelauto-s/m2438531579-toyota-1981",
+      "title": "Toyota 1981",
+      "title_translated": null,
+      "description_snippet": "Gave zeldzame in orginele staat zijnde klassieker te koop, toyota hilux op benzine, dus nog overal welkom. Helaas, past niet in de parkeergarage en staat dus buiten. Heeft de nodige roestplekjes maar chassis is prima ingevoerd vanuit de usa. Taxatie ...",
+      "year": 1981,
+      "country": "NL",
+      "region": "Amsterdam",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": null,
+        "currency": "EUR",
+        "gbp": null,
+        "fx_rate": 1.1622,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/e5da32f8-877f-4b72-b857-6ce36c9da387?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "EUR",
+            "gbp": null,
+            "fx_rate": 1.1622,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "kijiji:1743332103",
+      "source": "kijiji",
+      "source_listing_id": "1743332103",
+      "url": "https://www.kijiji.ca/v-cars-trucks/calgary/1982-toyota-4x4-pickup-project/1743332103",
+      "title": "1982 Toyota 4X4 pickup project",
+      "title_translated": null,
+      "description_snippet": "1982 Toyota Long box 4X4 project for sale. Comes with brand new Toyota fiberglass bed and tailgate. Entire chassis has been redone. All new axles/birfield joints, brakes, bearings, seals, suspension, ...",
+      "year": 1982,
+      "country": "CA",
+      "region": "Calgary",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 8499.0,
+        "currency": "CAD",
+        "gbp": 4534.49,
+        "fx_rate": 1.8743,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/59/59d7207b-3ec5-45ed-b2b2-3de3fd631c7c?rule=kijijica-200-jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": 8499.0,
+            "currency": "CAD",
+            "gbp": 4534.49,
+            "fx_rate": 1.8743,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "kijiji:1743242931",
+      "source": "kijiji",
+      "source_listing_id": "1743242931",
+      "url": "https://www.kijiji.ca/v-cars-trucks/saskatoon/1983-toyota-4x4-pickup/1743242931",
+      "title": "1983 Toyota 4x4 Pickup",
+      "title_translated": null,
+      "description_snippet": "Built to be a rock crawler, but I've lost interest in working on it. Lots done and ready to go, but there are a lot of things I wanted to do and never finished. Currently Sask plated, and located in ...",
+      "year": 1983,
+      "country": "CA",
+      "region": "Saskatoon",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 16900.0,
+        "currency": "CAD",
+        "gbp": 9016.7,
+        "fx_rate": 1.8743,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/13/13bb25fe-0178-4174-944f-d9f16e885ec5?rule=kijijica-200-jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": 16900.0,
+            "currency": "CAD",
+            "gbp": 9016.7,
+            "fx_rate": 1.8743,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "kijiji:1741948631",
+      "source": "kijiji",
+      "source_listing_id": "1741948631",
+      "url": "https://www.kijiji.ca/v-classic-cars/london/1980-toyota-pickup/1741948631",
+      "title": "1980 toyota pickup",
+      "title_translated": null,
+      "description_snippet": "In search of a 1980 toyota pick up shortbox",
+      "year": 1980,
+      "country": "CA",
+      "region": "London",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": null,
+        "currency": "CAD",
+        "gbp": null,
+        "fx_rate": 1.8743,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/72/725d64b7-19ce-4c38-88fb-744f40d40385?rule=kijijica-200-jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "CAD",
+            "gbp": null,
+            "fx_rate": 1.8743,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "gumtree_za:10013617331451012962156709",
+      "source": "gumtree_za",
+      "source_listing_id": "10013617331451012962156709",
+      "url": "https://www.gumtree.co.za/a-cars-bakkies/queenstown/toyota-hilux/10013617331451012962156709",
+      "title": "Toyota  hilux",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1982,
+      "country": "ZA",
+      "region": "Queenstown",
+      "drive_side": "RHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 28000.0,
+        "currency": "ZAR",
+        "gbp": 1296.72,
+        "fx_rate": 21.593,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://gms.gumtree.co.za/v2/images/za_ads_129621567_260714_6a5688ac7a8b8a000a0c507f?size=l"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": 28000.0,
+            "currency": "ZAR",
+            "gbp": 1296.72,
+            "fx_rate": 21.593,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "ebay:257760157714",
+      "source": "ebay",
+      "source_listing_id": "257760157714",
+      "url": "https://www.ebay.com/itm/257760157714?_skw=1980+toyota+pickup&hash=item3c03b3e012:g:BOQAAeSwIvJqfAz8",
+      "title": "1980 Toyota SR5 4x4 Pick Up",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1980,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 72950.0,
+        "currency": "USD",
+        "gbp": 55048.29,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://i.ebayimg.com/images/g/BOQAAeSwIvJqfAz8/s-l225.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": 72950.0,
+            "currency": "USD",
+            "gbp": 55048.29,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "ebay:147583753600",
+      "source": "ebay",
+      "source_listing_id": "147583753600",
+      "url": "https://www.ebay.com/itm/147583753600?_skw=1980+toyota+pickup&hash=item225cad5d80:g:q10AAeSwdK5qm7jy",
+      "title": "1980 Toyota Pickup 4x4",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1980,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 32900.0,
+        "currency": "USD",
+        "gbp": 24826.44,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://i.ebayimg.com/images/g/q10AAeSwdK5qm7jy/s-l225.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": 32900.0,
+            "currency": "USD",
+            "gbp": 24826.44,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "ebay:128099177451",
+      "source": "ebay",
+      "source_listing_id": "128099177451",
+      "url": "https://www.ebay.com/itm/128099177451?_skw=1982+toyota+pickup&hash=item1dd34e53eb:g:1~QAAeSwykppsFuL",
+      "title": "1982 Toyota Pickup / Cab Chassis",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1982,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 36500.0,
+        "currency": "USD",
+        "gbp": 27543.01,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://i.ebayimg.com/images/g/1~QAAeSwykppsFuL/s-l225.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": 36500.0,
+            "currency": "USD",
+            "gbp": 27543.01,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "ebay:117380999708",
+      "source": "ebay",
+      "source_listing_id": "117380999708",
+      "url": "https://www.ebay.com/itm/117380999708?_skw=1982+toyota+pickup&hash=item1b5473ea1c:g:9V4AAeSwrj5qjOE-",
+      "title": "1982 Toyota Pickup RN48",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1982,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": "RN48",
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 17900.0,
+        "currency": "USD",
+        "gbp": 13507.4,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://i.ebayimg.com/images/g/9V4AAeSwrj5qjOE-/s-l225.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": 17900.0,
+            "currency": "USD",
+            "gbp": 13507.4,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "classiccars:CC-2104765",
+      "source": "classiccars",
+      "source_listing_id": "CC-2104765",
+      "url": "https://classiccars.com/listings/view/2104765/1980-toyota-pickup-for-sale-in-kentwood-michigan-49512",
+      "title": "1980 Toyota Pickup",
+      "title_translated": null,
+      "description_snippet": "We are pleased to offer this low-mileage, one-owner 1980 Toyota 4X4 Short Box Pickup, a wonderfully ",
+      "year": 1980,
+      "country": "US",
+      "region": "Kentwood Michigan",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 32900.0,
+        "currency": "USD",
+        "gbp": 24826.44,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://photos.classiccars.com/cc-temp/listing/210/4765/61183104-1980-toyota-pickup-thumb.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": 32900.0,
+            "currency": "USD",
+            "gbp": 24826.44,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "classiccars:CC-2104586",
+      "source": "classiccars",
+      "source_listing_id": "CC-2104586",
+      "url": "https://classiccars.com/listings/view/2104586/1980-toyota-pickup-for-sale-in-roseville-california-95678",
+      "title": "1980 Toyota Pickup",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1980,
+      "country": "US",
+      "region": "Roseville California",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 49995.0,
+        "currency": "USD",
+        "gbp": 37726.38,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://photos.classiccars.com/cc-temp/listing/210/4586/61173977-1980-toyota-pickup-thumb.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": 49995.0,
+            "currency": "USD",
+            "gbp": 37726.38,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "classiccars:CC-1767320",
+      "source": "classiccars",
+      "source_listing_id": "CC-1767320",
+      "url": "https://classiccars.com/listings/view/1767320/1982-toyota-pickup-for-sale-in-morgantown-pennsylvania-19543",
+      "title": "1982 Toyota Pickup",
+      "title_translated": null,
+      "description_snippet": "1982 Toyota Pickup In a world where Jeeps and Jeep-inspired 4x4s seem to dominate the off-road scene",
+      "year": 1982,
+      "country": "US",
+      "region": "Morgantown Pennsylvania",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 36500.0,
+        "currency": "USD",
+        "gbp": 27543.01,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://photos.classiccars.com/cc-temp/listing/176/7320/41559467-1982-toyota-pickup-thumb.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": 36500.0,
+            "currency": "USD",
+            "gbp": 27543.01,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "bringatrailer:1982-toyota-pickup-58",
+      "source": "bringatrailer",
+      "source_listing_id": "1982-toyota-pickup-58",
+      "url": "https://bringatrailer.com/listing/1982-toyota-pickup-58/",
+      "title": "1982 Toyota Pickup Deluxe 4×4 5-Speed",
+      "title_translated": null,
+      "description_snippet": "This 1982 Toyota Pickup Deluxe 4×4 was acquired out of California by the seller in 2025 following rebuilds of its 2.4-liter 22R inline-four and five-speed manual transmission as well as an overhaul of the suspension between 2021 and 2022. Cosmetic refurbishments carried out in 2025 comprised reupholstering the split bench seat in beige vinyl and…",
+      "year": 1982,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 23500.0,
+        "currency": "USD",
+        "gbp": 17733.17,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://bringatrailer.com/wp-content/uploads/2026/08/1982_toyota_pickup_1982_toyota_pickup_a137abf3-391b-41ed-8c12-dd22b79b0fd0-MxN93S-64432-64433-scaled-1-copy-2026-09-11-unu-67569.jpg?w=470&h=318&crop=1"
+      ],
+      "status": "sold",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "sold",
+          "price": {
+            "amount": 23500.0,
+            "currency": "USD",
+            "gbp": 17733.17,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "bringatrailer:1981-toyota-pickup-38",
+      "source": "bringatrailer",
+      "source_listing_id": "1981-toyota-pickup-38",
+      "url": "https://bringatrailer.com/listing/1981-toyota-pickup-38/",
+      "title": "1981 Toyota Pickup SR-5 4×4 5-Speed",
+      "title_translated": null,
+      "description_snippet": "This 1981 Toyota Pickup SR-5 4×4 remained registered in California until 2023, and it was purchased by the seller's spouse on BaT in May 2024. It is finished in black with multi-tone graphics over a color-coordinating vinyl and cloth interior, and power is provided by a 2.4-liter 22R inline-four linked with a five-speed manual transmission and a…",
+      "year": 1981,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 33250.0,
+        "currency": "USD",
+        "gbp": 25090.55,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://bringatrailer.com/wp-content/uploads/2026/09/20240707_103520_1-copy-2026-09-15-idc-90576.jpg?w=470&h=318&crop=1"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": 33250.0,
+            "currency": "USD",
+            "gbp": 25090.55,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "barnfinds:toy-story-tribute-1979-toyota-pickup",
+      "source": "barnfinds",
+      "source_listing_id": "toy-story-tribute-1979-toyota-pickup",
+      "url": "https://barnfinds.com/toy-story-tribute-1979-toyota-pickup/",
+      "title": "Toy Story Tribute: 1979 Toyota Pickup",
+      "title_translated": null,
+      "description_snippet": "If you’re familiar with the computer animation studio Pixar and its films, you’re likely acquainted with the yellow Pizza Planet delivery truck. This pickup made its first appearance in the company’s debut film Toy Story, and since then, it... Read More »",
+      "year": 1979,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://barnfinds.com/wp-content/uploads/2019/10/1979-Toyota-Pickup-2WD-Pizza-Planet-Tribute-Front-Quarter-e1572410806377-630x390.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-09-26",
+      "history": [
+        {
+          "date": "2026-09-26",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    }
+  ]
+}

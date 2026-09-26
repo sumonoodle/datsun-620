@@ -1,0 +1,208 @@
+{
+  "date": "2026-09-26",
+  "started_at": "2026-09-26T04:59:32+00:00",
+  "sources": [
+    {
+      "source": "ebay",
+      "ok": true,
+      "records": 4,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 0
+    },
+    {
+      "source": "bringatrailer",
+      "ok": true,
+      "records": 2,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 0
+    },
+    {
+      "source": "classiccars",
+      "ok": true,
+      "records": 3,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 0
+    },
+    {
+      "source": "kijiji",
+      "ok": true,
+      "records": 3,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 0
+    },
+    {
+      "source": "barnfinds",
+      "ok": true,
+      "records": 1,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 0
+    },
+    {
+      "source": "pistonheads",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "retrorides",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "trovit",
+      "ok": true,
+      "records": 6,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 0
+    },
+    {
+      "source": "kleinanzeigen",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "goonet_exchange",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "carsensor",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "yahoo_auctions",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "truck2hand",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "flex",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "kuruma_ex",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "everycar",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "classic_trader",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "gumtree_uk",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "gumtree_za",
+      "ok": true,
+      "records": 1,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 0
+    },
+    {
+      "source": "tcv",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "carfromjapan",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "goonet",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    },
+    {
+      "source": "marktplaats",
+      "ok": true,
+      "records": 1,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 0
+    },
+    {
+      "source": "hagerty",
+      "ok": true,
+      "records": 0,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 1
+    }
+  ],
+  "totals": {
+    "active": 20,
+    "by_country": {
+      "US": 15,
+      "NL": 1,
+      "CA": 3,
+      "ZA": 1
+    },
+    "median_gbp": 20767.06
+  }
+}

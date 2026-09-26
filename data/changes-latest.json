@@ -1,7 +1,25 @@
 {
-  "date": "2026-09-25",
+  "date": "2026-09-26",
   "new": [],
-  "price_changed": [],
-  "status_changed": [],
+  "price_changed": [
+    {
+      "id": "kuruma_ex:ccAU7214532395",
+      "old_gbp": 13178.58,
+      "new_gbp": 12928.56,
+      "pct": -1.9
+    }
+  ],
+  "status_changed": [
+    {
+      "id": "carsensor:VU3133320108",
+      "old_status": "withdrawn",
+      "new_status": "active"
+    },
+    {
+      "id": "goonet_exchange:700040377430260602001",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    }
+  ],
   "possible_relists": []
 }
