@@ -1,6 +1,116 @@
 {
-  "generated_at": "2026-09-26",
+  "generated_at": "2026-09-27",
   "listings": [
+    {
+      "id": "trovit:1K3EA1hXb1Q",
+      "source": "trovit",
+      "source_listing_id": "1K3EA1hXb1Q",
+      "url": "https://rd.clk.thribee.com/id.1K3EA1hXb1Q/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.3423133trovit-web-645997f54b-zswxw6ab8a7c327183/tracking.%7B%7D/what_d.toyota%20hilux/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606ab8a7c326f093.61176754/pos.2/timestamp.1790486467/sign.VKmItKuSkmgA4xt1fVtpgQ%3D%3D/",
+      "title": "1980 Toyota Hilux",
+      "title_translated": null,
+      "description_snippet": "This Toyota pickup is in mint condition.",
+      "year": 1980,
+      "country": "US",
+      "region": "33149, Miami-Dade County, FL",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 22141.0,
+        "currency": "USD",
+        "gbp": 16707.67,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/1K3EA1hXb1Q/1K3EA1hXb1Q.1_10.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "history": [
+        {
+          "date": "2026-09-27",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16707.67,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "ebay:147600082608",
+      "source": "ebay",
+      "source_listing_id": "147600082608",
+      "url": "https://www.ebay.com/itm/147600082608?_skw=1980+toyota+pickup&hash=item225da686b0:g:q10AAeSwdK5qm7jy",
+      "title": "1980 Toyota Pickup 4x4",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1980,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 32900.0,
+        "currency": "USD",
+        "gbp": 24826.44,
+        "fx_rate": 1.3252,
+        "fx_date": "2026-09-25"
+      },
+      "images": [
+        "https://i.ebayimg.com/images/g/q10AAeSwdK5qm7jy/s-l225.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "history": [
+        {
+          "date": "2026-09-27",
+          "status": "active",
+          "price": {
+            "amount": 32900.0,
+            "currency": "USD",
+            "gbp": 24826.44,
+            "fx_rate": 1.3252,
+            "fx_date": "2026-09-25"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "trovit:ntA91Hm71p",
       "source": "trovit",
@@ -36,7 +146,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -91,7 +201,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -146,7 +256,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -219,7 +329,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:1m1H-D0v1KQ",
@@ -256,7 +367,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -311,7 +422,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -366,7 +477,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -421,7 +532,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -476,7 +587,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -531,7 +642,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -586,7 +697,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -641,7 +752,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -714,7 +825,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "ebay:128099177451",
@@ -751,7 +863,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -824,7 +936,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "classiccars:CC-2104765",
@@ -861,7 +974,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -916,7 +1029,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -967,11 +1080,11 @@
         "fx_date": "2026-09-25"
       },
       "images": [
-        "https://photos.classiccars.com/cc-temp/listing/176/7320/41559467-1982-toyota-pickup-thumb.jpg"
+        "https://photos.classiccars.com/cc-temp/listing/176/7320/59228653-1982-toyota-pickup-thumb.jpg"
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -1026,7 +1139,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -1081,7 +1194,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -1136,7 +1249,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-26",
+      "last_seen": "2026-09-27",
       "history": [
         {
           "date": "2026-09-26",
