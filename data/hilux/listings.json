@@ -1,6 +1,65 @@
 {
-  "generated_at": "2026-09-29",
+  "generated_at": "2026-09-30",
   "listings": [
+    {
+      "id": "trovit:1B1t171d2I1G1r",
+      "source": "trovit",
+      "source_listing_id": "1B1t171d2I1G1r",
+      "url": "https://rd.clk.thribee.com/id.1B1t171d2I1G1r/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.2302566trovit-web-645997f54b-zswxw6abc9f88dbe7b/tracking.%7B%7D/what_d.toyota%20hilux/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606abc9f88dbb8b7.02227253/pos.2/timestamp.1790746504/sign.W9TsFBafNwz98uqtQEQgsQ%3D%3D/",
+      "title": "1980 Toyota Hilux",
+      "title_translated": null,
+      "description_snippet": "This Toyota pickup is in mint condition.",
+      "year": 1980,
+      "country": "US",
+      "region": "33149, Miami-Dade County, FL",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 22141.0,
+        "currency": "USD",
+        "gbp": 16713.97,
+        "fx_rate": 1.3247,
+        "fx_date": "2026-09-29"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/1B1t171d2I1G1r/1B1t171d2I1G1r.1_10.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-09-30",
+      "last_seen": "2026-09-30",
+      "history": [
+        {
+          "date": "2026-09-30",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16713.97,
+            "fx_rate": 1.3247,
+            "fx_date": "2026-09-29"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:1o1_51LQaF8",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
     {
       "id": "trovit:1H1I5121xm1U1V",
       "source": "trovit",
@@ -54,7 +113,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "bringatrailer:1980-toyota-pickup-18",
@@ -91,7 +151,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-29",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-29",
@@ -168,7 +228,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "kijiji:1744056689",
@@ -205,7 +265,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-28",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-28",
@@ -258,7 +318,7 @@
       "images": [
         "https://img-us-2.trovit.com/1K3EA1hXb1Q/1K3EA1hXb1Q.1_10.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-27",
       "last_seen": "2026-09-27",
       "history": [
@@ -272,14 +332,17 @@
             "fx_rate": 1.3252,
             "fx_date": "2026-09-25"
           }
+        },
+        {
+          "date": "2026-09-30",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "ebay:147600082608",
@@ -316,7 +379,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-27",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-27",
@@ -371,7 +434,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -426,7 +489,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -481,7 +544,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -595,7 +658,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -650,7 +713,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -705,7 +768,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -758,7 +821,7 @@
       "images": [
         "https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/59/59d7207b-3ec5-45ed-b2b2-3de3fd631c7c?rule=kijijica-200-jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-26",
       "last_seen": "2026-09-27",
       "history": [
@@ -772,14 +835,17 @@
             "fx_rate": 1.8743,
             "fx_date": "2026-09-25"
           }
+        },
+        {
+          "date": "2026-09-30",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "kijiji:1743242931",
@@ -816,7 +882,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -871,7 +937,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -926,7 +992,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -981,7 +1047,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -1095,7 +1161,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -1209,7 +1275,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -1262,7 +1328,7 @@
       "images": [
         "https://photos.classiccars.com/cc-temp/listing/210/4586/61173977-1980-toyota-pickup-thumb.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-26",
       "last_seen": "2026-09-27",
       "history": [
@@ -1276,14 +1342,17 @@
             "fx_rate": 1.3252,
             "fx_date": "2026-09-25"
           }
+        },
+        {
+          "date": "2026-09-30",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "classiccars:CC-1767320",
@@ -1320,7 +1389,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -1375,7 +1444,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -1419,18 +1488,18 @@
         "target_reasons": []
       },
       "price": {
-        "amount": 33250.0,
+        "amount": 35000.0,
         "currency": "USD",
-        "gbp": 25090.55,
-        "fx_rate": 1.3252,
-        "fx_date": "2026-09-25"
+        "gbp": 26421.08,
+        "fx_rate": 1.3247,
+        "fx_date": "2026-09-29"
       },
       "images": [
         "https://bringatrailer.com/wp-content/uploads/2026/09/20240707_103520_1-copy-2026-09-15-idc-90576.jpg?w=470&h=318&crop=1"
       ],
-      "status": "active",
+      "status": "sold",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -1441,6 +1510,17 @@
             "gbp": 25090.55,
             "fx_rate": 1.3252,
             "fx_date": "2026-09-25"
+          }
+        },
+        {
+          "date": "2026-09-30",
+          "status": "sold",
+          "price": {
+            "amount": 35000.0,
+            "currency": "USD",
+            "gbp": 26421.08,
+            "fx_rate": 1.3247,
+            "fx_date": "2026-09-29"
           }
         }
       ],
@@ -1485,7 +1565,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-09-30",
       "history": [
         {
           "date": "2026-09-26",

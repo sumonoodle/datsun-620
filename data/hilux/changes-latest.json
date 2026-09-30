@@ -1,34 +1,46 @@
 {
-  "date": "2026-09-29",
+  "date": "2026-09-30",
   "new": [
-    "bringatrailer:1980-toyota-pickup-18",
-    "trovit:1H1I5121xm1U1V"
+    "trovit:1B1t171d2I1G1r"
   ],
-  "price_changed": [],
+  "price_changed": [
+    {
+      "id": "bringatrailer:1981-toyota-pickup-38",
+      "old_gbp": 25090.55,
+      "new_gbp": 26421.08,
+      "pct": 5.3
+    }
+  ],
   "status_changed": [
     {
-      "id": "trovit:1o1_51LQaF8",
+      "id": "bringatrailer:1981-toyota-pickup-38",
+      "old_status": "active",
+      "new_status": "sold"
+    },
+    {
+      "id": "trovit:1K3EA1hXb1Q",
       "old_status": "active",
       "new_status": "withdrawn"
     },
     {
-      "id": "ebay:147583753600",
+      "id": "kijiji:1743332103",
       "old_status": "active",
       "new_status": "withdrawn"
     },
     {
-      "id": "ebay:117380999708",
+      "id": "classiccars:CC-2104586",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
   "possible_relists": [
     {
-      "id": "bringatrailer:1980-toyota-pickup-18",
-      "prior_id": "bringatrailer:1982-toyota-pickup-58",
+      "id": "trovit:1B1t171d2I1G1r",
+      "prior_id": "trovit:1o1_51LQaF8",
       "reasons": [
-        "title similarity 0.95",
-        "same country (US)"
+        "title similarity 1.00",
+        "same country (US)",
+        "price within 0%"
       ]
     }
   ]
