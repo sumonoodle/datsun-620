@@ -1,6 +1,233 @@
 {
-  "generated_at": "2026-09-30",
+  "generated_at": "2026-10-01",
   "listings": [
+    {
+      "id": "trovit:l1_t1y1x1Px1S",
+      "source": "trovit",
+      "source_listing_id": "l1_t1y1x1Px1S",
+      "url": "https://rd.clk.thribee.com/id.l1_t1y1x1Px1S/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.3112137trovit-web-645997f54b-qp4cq6abdf61876352/tracking.%7B%7D/what_d.toyota%20hilux/page.1/ab.1739381826/op.B/platform.web/cookieid.10211606abdf618760988.79636402/pos.3/timestamp.1790834200/sign.4pBNs4gfP4PL%2FsiFddV6Pg%3D%3D/",
+      "title": "1980 Toyota Hilux",
+      "title_translated": null,
+      "description_snippet": "This Toyota pickup is in mint condition.",
+      "year": 1980,
+      "country": "US",
+      "region": "33149, Miami-Dade County, FL",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 22141.0,
+        "currency": "USD",
+        "gbp": 16664.91,
+        "fx_rate": 1.3286,
+        "fx_date": "2026-09-30"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/l1_t1y1x1Px1S/l1_t1y1x1Px1S.1_10.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
+      "history": [
+        {
+          "date": "2026-10-01",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16664.91,
+            "fx_rate": 1.3286,
+            "fx_date": "2026-09-30"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:1K3EA1hXb1Q",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
+    {
+      "id": "kijiji:1744206933",
+      "source": "kijiji",
+      "source_listing_id": "1744206933",
+      "url": "https://www.kijiji.ca/v-cars-trucks/medicine-hat/1982-toyota-pickup/1744206933",
+      "title": "1982 Toyota Pickup",
+      "title_translated": null,
+      "description_snippet": "1982 Toyota Pickup. Comes with a spare 22R motor. Body is rusted out. Runs and drives and currently registered. Weber carb might need tuning. Message for questions or more pics. $4000 obo.",
+      "year": 1982,
+      "country": "CA",
+      "region": "Medicine Hat",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 4000.0,
+        "currency": "CAD",
+        "gbp": 2122.69,
+        "fx_rate": 1.8844,
+        "fx_date": "2026-09-30"
+      },
+      "images": [
+        "https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/7d/7d57cb80-e095-458d-bdc1-09771f39a85b?rule=kijijica-200-jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
+      "history": [
+        {
+          "date": "2026-10-01",
+          "status": "active",
+          "price": {
+            "amount": 4000.0,
+            "currency": "CAD",
+            "gbp": 2122.69,
+            "fx_rate": 1.8844,
+            "fx_date": "2026-09-30"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "kijiji:1743332103",
+        "reasons": [
+          "title similarity 0.75",
+          "same country (CA)"
+        ]
+      }
+    },
+    {
+      "id": "ebay:257774434980",
+      "source": "ebay",
+      "source_listing_id": "257774434980",
+      "url": "https://www.ebay.com/itm/257774434980?_skw=1980+toyota+pickup&hash=item3c048dbaa4:g:BOQAAeSwIvJqfAz8",
+      "title": "1980 Toyota SR5 4x4 Pick Up",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1980,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 72950.0,
+        "currency": "USD",
+        "gbp": 54907.42,
+        "fx_rate": 1.3286,
+        "fx_date": "2026-09-30"
+      },
+      "images": [
+        "https://i.ebayimg.com/images/g/BOQAAeSwIvJqfAz8/s-l225.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
+      "history": [
+        {
+          "date": "2026-10-01",
+          "status": "active",
+          "price": {
+            "amount": 72950.0,
+            "currency": "USD",
+            "gbp": 54907.42,
+            "fx_rate": 1.3286,
+            "fx_date": "2026-09-30"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "ebay:128108205864",
+      "source": "ebay",
+      "source_listing_id": "128108205864",
+      "url": "https://www.ebay.com/itm/128108205864?_skw=1982+toyota+pickup&hash=item1dd3d81728:g:1~QAAeSwykppsFuL",
+      "title": "1982 Toyota Pickup / Cab Chassis",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1982,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 36500.0,
+        "currency": "USD",
+        "gbp": 27472.53,
+        "fx_rate": 1.3286,
+        "fx_date": "2026-09-30"
+      },
+      "images": [
+        "https://i.ebayimg.com/images/g/1~QAAeSwykppsFuL/s-l225.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
+      "history": [
+        {
+          "date": "2026-10-01",
+          "status": "active",
+          "price": {
+            "amount": 36500.0,
+            "currency": "USD",
+            "gbp": 27472.53,
+            "fx_rate": 1.3286,
+            "fx_date": "2026-09-30"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "trovit:1B1t171d2I1G1r",
       "source": "trovit",
@@ -58,7 +285,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:1H1I5121xm1U1V",
@@ -114,7 +342,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "bringatrailer:1980-toyota-pickup-18",
@@ -140,18 +368,18 @@
         "target_reasons": []
       },
       "price": {
-        "amount": 18000.0,
+        "amount": 20000.0,
         "currency": "USD",
-        "gbp": 13571.59,
-        "fx_rate": 1.3263,
-        "fx_date": "2026-09-28"
+        "gbp": 15053.44,
+        "fx_rate": 1.3286,
+        "fx_date": "2026-09-30"
       },
       "images": [
         "https://bringatrailer.com/wp-content/uploads/2026/06/IMG_7342-scaled-copy-2026-09-28-u7c-12700.jpeg?w=470&h=318&crop=1"
       ],
       "status": "active",
       "first_seen": "2026-09-29",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-29",
@@ -162,6 +390,17 @@
             "gbp": 13571.59,
             "fx_rate": 1.3263,
             "fx_date": "2026-09-28"
+          }
+        },
+        {
+          "date": "2026-10-01",
+          "status": "active",
+          "price": {
+            "amount": 20000.0,
+            "currency": "USD",
+            "gbp": 15053.44,
+            "fx_rate": 1.3286,
+            "fx_date": "2026-09-30"
           }
         }
       ],
@@ -207,7 +446,7 @@
       "images": [
         "https://img-us-2.trovit.com/Z1a1-ox1oR13/Z1a1-ox1oR13.1_10.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-28",
       "last_seen": "2026-09-28",
       "history": [
@@ -221,14 +460,17 @@
             "fx_rate": 1.3252,
             "fx_date": "2026-09-25"
           }
+        },
+        {
+          "date": "2026-10-01",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "kijiji:1744056689",
@@ -265,7 +507,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-28",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-28",
@@ -379,7 +621,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-27",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-27",
@@ -434,7 +676,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-26",
@@ -489,7 +731,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-26",
@@ -544,7 +786,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-26",
@@ -658,7 +900,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-26",
@@ -713,7 +955,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-26",
@@ -768,7 +1010,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-26",
@@ -900,7 +1142,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "kijiji:1741948631",
@@ -937,7 +1180,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-26",
@@ -992,7 +1235,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-26",
@@ -1065,7 +1308,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "ebay:147583753600",
@@ -1179,7 +1423,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "ebay:117380999708",
@@ -1275,7 +1520,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-26",
@@ -1385,11 +1630,11 @@
         "fx_date": "2026-09-25"
       },
       "images": [
-        "https://photos.classiccars.com/cc-temp/listing/176/7320/59228653-1982-toyota-pickup-thumb.jpg"
+        "https://photos.classiccars.com/cc-temp/listing/176/7320/41559467-1982-toyota-pickup-thumb.jpg"
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-26",
@@ -1444,7 +1689,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-26",
@@ -1499,7 +1744,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-26",
@@ -1565,7 +1810,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-26",

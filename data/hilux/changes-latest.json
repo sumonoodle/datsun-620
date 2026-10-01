@@ -1,42 +1,38 @@
 {
-  "date": "2026-09-30",
+  "date": "2026-10-01",
   "new": [
-    "trovit:1B1t171d2I1G1r"
+    "ebay:257774434980",
+    "ebay:128108205864",
+    "kijiji:1744206933",
+    "trovit:l1_t1y1x1Px1S"
   ],
   "price_changed": [
     {
-      "id": "bringatrailer:1981-toyota-pickup-38",
-      "old_gbp": 25090.55,
-      "new_gbp": 26421.08,
-      "pct": 5.3
+      "id": "bringatrailer:1980-toyota-pickup-18",
+      "old_gbp": 13571.59,
+      "new_gbp": 15053.44,
+      "pct": 10.9
     }
   ],
   "status_changed": [
     {
-      "id": "bringatrailer:1981-toyota-pickup-38",
-      "old_status": "active",
-      "new_status": "sold"
-    },
-    {
-      "id": "trovit:1K3EA1hXb1Q",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    },
-    {
-      "id": "kijiji:1743332103",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    },
-    {
-      "id": "classiccars:CC-2104586",
+      "id": "trovit:Z1a1-ox1oR13",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
   "possible_relists": [
     {
-      "id": "trovit:1B1t171d2I1G1r",
-      "prior_id": "trovit:1o1_51LQaF8",
+      "id": "kijiji:1744206933",
+      "prior_id": "kijiji:1743332103",
+      "reasons": [
+        "title similarity 0.75",
+        "same country (CA)"
+      ]
+    },
+    {
+      "id": "trovit:l1_t1y1x1Px1S",
+      "prior_id": "trovit:1K3EA1hXb1Q",
       "reasons": [
         "title similarity 1.00",
         "same country (US)",

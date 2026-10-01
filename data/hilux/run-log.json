@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-30",
-  "started_at": "2026-09-30T05:34:31+00:00",
+  "date": "2026-10-01",
+  "started_at": "2026-10-01T05:56:04+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -48,7 +48,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "retrorides",
@@ -56,7 +56,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "trovit",
@@ -72,7 +72,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "goonet_exchange",
@@ -80,7 +80,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "carsensor",
@@ -88,16 +88,15 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "yahoo_auctions",
-      "ok": false,
+      "ok": true,
       "records": 0,
-      "note": "all Yahoo Hilux fetches failed (https://auctions.yahoo.co.jp/search/search?p=%E3%83%8F%E3%82%A4%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9%20RN30: Server error '500 Internal Server Error' for url 'https://au",
-      "consecutive_failures": 1,
-      "consecutive_zero_runs": 4,
-      "expected_blocked": false
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 5
     },
     {
       "source": "truck2hand",
@@ -105,7 +104,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "flex",
@@ -113,7 +112,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "kuruma_ex",
@@ -121,7 +120,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "everycar",
@@ -129,7 +128,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "classic_trader",
@@ -137,7 +136,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "gumtree_uk",
@@ -145,7 +144,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "gumtree_za",
@@ -161,7 +160,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "carfromjapan",
@@ -169,7 +168,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "goonet",
@@ -177,7 +176,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "marktplaats",
@@ -193,17 +192,17 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     }
   ],
   "totals": {
-    "active": 20,
+    "active": 23,
     "by_country": {
-      "US": 15,
-      "CA": 3,
+      "US": 17,
+      "CA": 4,
       "NL": 1,
       "ZA": 1
     },
-    "median_gbp": 16700.74
+    "median_gbp": 16693.81
   }
 }

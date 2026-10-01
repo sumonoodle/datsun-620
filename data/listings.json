@@ -1,6 +1,53 @@
 {
-  "generated_at": "2026-09-30",
+  "generated_at": "2026-10-01",
   "listings": [
+    {
+      "id": "ratsun:2472",
+      "source": "ratsun",
+      "source_listing_id": "2472",
+      "url": "https://ratsun.net/classifieds/item/2472-620-pickup-for-sale/",
+      "title": "620 Pickup for Sale",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": null,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 1800.0,
+        "currency": "USD",
+        "gbp": 1354.81,
+        "fx_rate": 1.3286,
+        "fx_date": "2026-09-30"
+      },
+      "images": [],
+      "status": "active",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
+      "history": [
+        {
+          "date": "2026-10-01",
+          "status": "active",
+          "price": {
+            "amount": 1800.0,
+            "currency": "USD",
+            "gbp": 1354.81,
+            "fx_rate": 1.3286,
+            "fx_date": "2026-09-30"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "trovit:mB7wBFc1j",
       "source": "trovit",
@@ -30,7 +77,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-23",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-23",
@@ -85,7 +132,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-23",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-23",
@@ -138,7 +185,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-23",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-23",
@@ -242,7 +289,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-13",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-13",
@@ -291,7 +338,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-10",
@@ -340,7 +387,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-10",
@@ -389,7 +436,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-10",
@@ -438,7 +485,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-10",
@@ -487,7 +534,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-10",
@@ -592,7 +639,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-08",
@@ -643,7 +690,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-08",
@@ -979,7 +1026,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-04",
@@ -1572,7 +1619,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-09-01",
@@ -1798,7 +1845,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-08-12",
@@ -1877,7 +1924,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-08-03",
@@ -2024,18 +2071,18 @@
         "body_style_check": "unavailable"
       },
       "price": {
-        "amount": 2700000.0,
+        "amount": 2480000.0,
         "currency": "JPY",
-        "gbp": 12928.56,
-        "fx_rate": 208.84,
-        "fx_date": "2026-09-25"
+        "gbp": 11889.35,
+        "fx_rate": 208.59,
+        "fx_date": "2026-09-30"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/674/325/U00053674325/U00053674325_002L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-08-01",
@@ -2068,6 +2115,17 @@
             "gbp": 12928.56,
             "fx_rate": 208.84,
             "fx_date": "2026-09-25"
+          }
+        },
+        {
+          "date": "2026-10-01",
+          "status": "active",
+          "price": {
+            "amount": 2480000.0,
+            "currency": "JPY",
+            "gbp": 11889.35,
+            "fx_rate": 208.59,
+            "fx_date": "2026-09-30"
           }
         }
       ],
@@ -2280,7 +2338,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-07-17",
@@ -2446,7 +2504,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-07-17",
@@ -2495,7 +2553,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "history": [
         {
           "date": "2026-07-17",
