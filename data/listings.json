@@ -1,6 +1,55 @@
 {
-  "generated_at": "2026-10-01",
+  "generated_at": "2026-10-02",
   "listings": [
+    {
+      "id": "trovit:HfUaCh1A1k",
+      "source": "trovit",
+      "source_listing_id": "HfUaCh1A1k",
+      "url": "https://rd.clk.thribee.com/id.HfUaCh1A1k/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.41773trovit-web-645997f54b-wchcr6abf437a5f6dc/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.B/platform.web/cookieid.10211606abf437a5f4044.86211124/pos.7/timestamp.1790919546/sign.fawJrYgB5hcpHmugIBy4Rg%3D%3D/",
+      "title": "1977 Datsun California Step Side 620 Custom Compact Pickup \"The Little Hustler\"",
+      "title_translated": null,
+      "description_snippet": "1977 Datsun Other Offered today is a1977 DATSUNCalifornia Step Side 620 Custom Compact Pickup'The Little Hustler', in Desert Gold #931. Just...",
+      "year": 1977,
+      "country": "US",
+      "region": "",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.3234,
+        "fx_date": "2026-10-01"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/HfUaCh1A1k/HfUaCh1A1k.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-02",
+      "last_seen": "2026-10-02",
+      "history": [
+        {
+          "date": "2026-10-02",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.3234,
+            "fx_date": "2026-10-01"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "ratsun:2472",
       "source": "ratsun",
@@ -28,7 +77,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-10-01",
@@ -77,7 +126,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-23",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-09-23",
@@ -132,7 +181,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-23",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-09-23",
@@ -185,7 +234,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-23",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-09-23",
@@ -289,7 +338,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-13",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-09-13",
@@ -338,7 +387,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-09-10",
@@ -387,7 +436,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-09-10",
@@ -436,7 +485,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-09-10",
@@ -485,7 +534,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-09-10",
@@ -534,7 +583,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-09-10",
@@ -639,7 +688,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-09-08",
@@ -690,7 +739,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-09-08",
@@ -1026,7 +1075,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-04",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-09-04",
@@ -1619,7 +1668,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-09-01",
@@ -1845,7 +1894,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-08-12",
@@ -1924,7 +1973,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-08-03",
@@ -2082,7 +2131,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-08-01",
@@ -2338,7 +2387,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-07-17",
@@ -2504,7 +2553,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-07-17",
@@ -2553,7 +2602,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "history": [
         {
           "date": "2026-07-17",
