@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-02",
-  "started_at": "2026-10-02T05:39:11+00:00",
+  "date": "2026-10-03",
+  "started_at": "2026-10-03T05:20:16+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -13,7 +13,7 @@
     {
       "source": "bringatrailer",
       "ok": true,
-      "records": 3,
+      "records": 2,
       "note": "",
       "consecutive_failures": 0,
       "consecutive_zero_runs": 0
@@ -48,7 +48,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     },
     {
       "source": "retrorides",
@@ -56,7 +56,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     },
     {
       "source": "trovit",
@@ -72,7 +72,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     },
     {
       "source": "goonet_exchange",
@@ -80,7 +80,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     },
     {
       "source": "carsensor",
@@ -88,7 +88,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     },
     {
       "source": "yahoo_auctions",
@@ -96,7 +96,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 6
+      "consecutive_zero_runs": 7
     },
     {
       "source": "truck2hand",
@@ -104,7 +104,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     },
     {
       "source": "flex",
@@ -112,7 +112,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     },
     {
       "source": "kuruma_ex",
@@ -120,7 +120,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     },
     {
       "source": "everycar",
@@ -128,7 +128,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     },
     {
       "source": "classic_trader",
@@ -136,7 +136,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     },
     {
       "source": "gumtree_uk",
@@ -144,7 +144,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     },
     {
       "source": "gumtree_za",
@@ -160,7 +160,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     },
     {
       "source": "carfromjapan",
@@ -168,7 +168,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     },
     {
       "source": "goonet",
@@ -176,7 +176,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     },
     {
       "source": "marktplaats",
@@ -192,17 +192,17 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 7
+      "consecutive_zero_runs": 8
     }
   ],
   "totals": {
-    "active": 23,
+    "active": 20,
     "by_country": {
-      "US": 17,
-      "CA": 4,
+      "US": 15,
+      "CA": 3,
       "NL": 1,
       "ZA": 1
     },
-    "median_gbp": 16713.97
+    "median_gbp": 16697.65
   }
 }
