@@ -1,62 +1,27 @@
 {
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "new": [
-    "ebay:128117370646",
-    "kijiji:1744408801",
-    "trovit:SyR1rG1-1U1V"
+    "trovit:1w1AB1A1O131-1F"
   ],
   "price_changed": [
     {
-      "id": "ebay:257774434980",
-      "old_gbp": 54907.42,
-      "new_gbp": 56672.97,
-      "pct": 3.2
-    },
-    {
-      "id": "bringatrailer:1980-toyota-pickup-18",
-      "old_gbp": 15053.44,
-      "new_gbp": 15500.95,
-      "pct": 3.0
+      "id": "kijiji:1744408801",
+      "old_gbp": 19894.95,
+      "new_gbp": 18500.9,
+      "pct": -7.0
     }
   ],
   "status_changed": [
     {
-      "id": "bringatrailer:1980-toyota-pickup-18",
-      "old_status": "active",
-      "new_status": "sold"
-    },
-    {
-      "id": "trovit:71i1pV1_q1Jo",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    },
-    {
-      "id": "ebay:147600082608",
+      "id": "trovit:j1-1R91QSuU",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
   "possible_relists": [
     {
-      "id": "ebay:128117370646",
-      "prior_id": "ebay:128099177451",
-      "reasons": [
-        "title similarity 1.00",
-        "same country (US)",
-        "price within 0%"
-      ]
-    },
-    {
-      "id": "kijiji:1744408801",
-      "prior_id": "kijiji:1743242931",
-      "reasons": [
-        "title similarity 0.85",
-        "same country (CA)"
-      ]
-    },
-    {
-      "id": "trovit:SyR1rG1-1U1V",
-      "prior_id": "trovit:1E11FW1Xubt",
+      "id": "trovit:1w1AB1A1O131-1F",
+      "prior_id": "trovit:71i1pV1_q1Jo",
       "reasons": [
         "title similarity 1.00",
         "same country (US)",

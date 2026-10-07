@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-06",
-  "started_at": "2026-10-06T06:22:06+00:00",
+  "date": "2026-10-07",
+  "started_at": "2026-10-07T06:01:11+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -8,7 +8,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 17
+      "consecutive_zero_runs": 18
     },
     {
       "source": "bringatrailer",
@@ -16,14 +16,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 17
+      "consecutive_zero_runs": 18
     },
     {
       "source": "carsandbids",
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 86,
+      "consecutive_failures": 87,
       "consecutive_zero_runs": 0,
       "expected_blocked": true
     },
@@ -32,7 +32,7 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 86,
+      "consecutive_failures": 87,
       "consecutive_zero_runs": 0,
       "expected_blocked": true
     },
@@ -42,15 +42,15 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "carsensor",
       "ok": true,
-      "records": 1,
+      "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 0
+      "consecutive_zero_runs": 1
     },
     {
       "source": "yahoo_auctions",
@@ -58,14 +58,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 17
+      "consecutive_zero_runs": 18
     },
     {
       "source": "kaidee",
       "ok": false,
       "records": 0,
       "note": "all Kaidee queries failed (datsun: __NEXT_DATA__ missing (page layout changed or blocked?))",
-      "consecutive_failures": 15,
+      "consecutive_failures": 16,
       "consecutive_zero_runs": 0,
       "expected_blocked": false
     },
@@ -91,7 +91,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 17
+      "consecutive_zero_runs": 18
     },
     {
       "source": "barnfinds",
@@ -107,12 +107,12 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 17
+      "consecutive_zero_runs": 18
     },
     {
       "source": "kuruma_ex",
       "ok": true,
-      "records": 3,
+      "records": 2,
       "note": "",
       "consecutive_failures": 0,
       "consecutive_zero_runs": 0
@@ -123,7 +123,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 17
+      "consecutive_zero_runs": 18
     },
     {
       "source": "pistonheads",
@@ -131,7 +131,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 17
+      "consecutive_zero_runs": 18
     },
     {
       "source": "ratsun",
@@ -152,7 +152,7 @@
     {
       "source": "trovit",
       "ok": true,
-      "records": 7,
+      "records": 4,
       "note": "",
       "consecutive_failures": 0,
       "consecutive_zero_runs": 0
@@ -163,7 +163,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 17
+      "consecutive_zero_runs": 18
     }
   ],
   "totals": {
