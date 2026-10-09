@@ -1,30 +1,18 @@
 {
-  "date": "2026-10-08",
-  "new": [
-    "ebay:257786984311"
-  ],
+  "date": "2026-10-09",
+  "new": [],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "ebay:128108205864",
+      "id": "trovit:SyR1rG1-1U1V",
       "old_status": "active",
       "new_status": "withdrawn"
     },
     {
-      "id": "trovit:Z1a1-ox1oR13",
+      "id": "trovit:1m1H-D0v1KQ",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
-  "possible_relists": [
-    {
-      "id": "ebay:257786984311",
-      "prior_id": "ebay:257760157714",
-      "reasons": [
-        "title similarity 1.00",
-        "same country (US)",
-        "price within 3%"
-      ]
-    }
-  ]
+  "possible_relists": []
 }

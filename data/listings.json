@@ -1,6 +1,58 @@
 {
-  "generated_at": "2026-10-08",
+  "generated_at": "2026-10-09",
   "listings": [
+    {
+      "id": "goonet_exchange:700060138330260829003",
+      "source": "goonet_exchange",
+      "source_listing_id": "700060138330260829003",
+      "url": "https://www.goo-net-exchange.com/usedcars/NISSAN/DATSUN_TRUCK/700060138330260829003/",
+      "title": "NISSAN DATSUN TRUCK DX",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1971,
+      "country": "JP",
+      "region": "Shizuoka Japan",
+      "drive_side": "RHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 1885000.0,
+        "currency": "JPY",
+        "gbp": 9017.41,
+        "fx_rate": 209.04,
+        "fx_date": "2026-10-08"
+      },
+      "images": [
+        "https://www.goo-net-exchange.com/common/assets/img/common/other/trusted_deaer_list.png"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-09",
+      "last_seen": "2026-10-09",
+      "history": [
+        {
+          "date": "2026-10-09",
+          "status": "active",
+          "price": {
+            "amount": 1885000.0,
+            "currency": "JPY",
+            "gbp": 9017.41,
+            "fx_rate": 209.04,
+            "fx_date": "2026-10-08"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "goonet_exchange:700040377430260602001",
+        "reasons": [
+          "title similarity 0.93",
+          "same country (JP)"
+        ]
+      }
+    },
     {
       "id": "trovit:HfUaCh1A1k",
       "source": "trovit",
@@ -30,7 +82,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-02",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-10-02",
@@ -77,7 +129,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-10-01",
@@ -124,7 +176,7 @@
       "images": [
         "https://img-us-2.trovit.com/mB7wBFc1j/mB7wBFc1j.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-23",
       "last_seen": "2026-10-06",
       "history": [
@@ -138,6 +190,10 @@
             "fx_rate": 1.3363,
             "fx_date": "2026-09-22"
           }
+        },
+        {
+          "date": "2026-10-09",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -148,8 +204,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:Bp1Q1d121u1pl",
@@ -180,7 +235,7 @@
       "images": [
         "https://img-us-2.trovit.com/Bp1Q1d121u1pl/Bp1Q1d121u1pl.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-23",
       "last_seen": "2026-10-06",
       "history": [
@@ -194,6 +249,10 @@
             "fx_rate": 1.3363,
             "fx_date": "2026-09-22"
           }
+        },
+        {
+          "date": "2026-10-09",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -204,8 +263,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:1tm10oa121o1e",
@@ -234,7 +292,7 @@
       "images": [
         "https://img-us-2.trovit.com/1tm10oa121o1e/1tm10oa121o1e.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-23",
       "last_seen": "2026-10-06",
       "history": [
@@ -248,6 +306,10 @@
             "fx_rate": 1.3363,
             "fx_date": "2026-09-22"
           }
+        },
+        {
+          "date": "2026-10-09",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -258,8 +320,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "ratsun:2463",
@@ -341,7 +402,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-13",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-09-13",
@@ -390,7 +451,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-09-10",
@@ -439,7 +500,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-09-10",
@@ -488,7 +549,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-09-10",
@@ -537,7 +598,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-09-10",
@@ -586,7 +647,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-09-10",
@@ -691,7 +752,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-09-08",
@@ -742,7 +803,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-08",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-09-08",
@@ -1110,7 +1171,8 @@
           "title similarity 0.93",
           "same country (US)"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:q1x1h131i1yU1U",
@@ -1671,7 +1733,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-09-01",
@@ -1897,7 +1959,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-10-06",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-08-12",
@@ -1945,8 +2007,7 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "kuruma_ex:ccAU7062177718",
@@ -1977,7 +2038,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-10-06",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-08-03",
@@ -2036,8 +2097,7 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "kuruma_ex:ccAU6253091581",
@@ -2136,7 +2196,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-08-01",
@@ -2392,7 +2452,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-07-17",
@@ -2558,7 +2618,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-07-17",
@@ -2607,7 +2667,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "history": [
         {
           "date": "2026-07-17",

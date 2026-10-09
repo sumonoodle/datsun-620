@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-08",
-  "started_at": "2026-10-08T06:06:02+00:00",
+  "date": "2026-10-09",
+  "started_at": "2026-10-09T06:10:28+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -48,7 +48,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "retrorides",
@@ -56,7 +56,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "trovit",
@@ -72,7 +72,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "goonet_exchange",
@@ -80,7 +80,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "carsensor",
@@ -88,7 +88,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "yahoo_auctions",
@@ -96,7 +96,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 12
+      "consecutive_zero_runs": 13
     },
     {
       "source": "truck2hand",
@@ -104,7 +104,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "flex",
@@ -112,7 +112,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "kuruma_ex",
@@ -120,7 +120,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "everycar",
@@ -128,7 +128,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "classic_trader",
@@ -136,7 +136,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "gumtree_uk",
@@ -144,16 +144,15 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "gumtree_za",
-      "ok": false,
-      "records": 0,
-      "note": "Server error '502 Bad Gateway' for url 'https://www.gumtree.co.za/s-cars-bakkies/toyota~hilux~petrol/v1c9077a3mamofup1'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St",
-      "consecutive_failures": 1,
-      "consecutive_zero_runs": 0,
-      "expected_blocked": false
+      "ok": true,
+      "records": 1,
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 0
     },
     {
       "source": "tcv",
@@ -161,7 +160,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "carfromjapan",
@@ -169,7 +168,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "goonet",
@@ -177,7 +176,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "marktplaats",
@@ -193,17 +192,17 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     }
   ],
   "totals": {
-    "active": 21,
+    "active": 19,
     "by_country": {
-      "US": 14,
+      "US": 12,
       "CA": 5,
       "NL": 1,
       "ZA": 1
     },
-    "median_gbp": 17621.34
+    "median_gbp": 21663.67
   }
 }
