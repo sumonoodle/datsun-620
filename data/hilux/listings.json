@@ -1,6 +1,64 @@
 {
-  "generated_at": "2026-10-09",
+  "generated_at": "2026-10-10",
   "listings": [
+    {
+      "id": "ebay:940001625076",
+      "source": "ebay",
+      "source_listing_id": "940001625076",
+      "url": "https://www.ebay.com/itm/940001625076?_skw=1982+toyota+pickup&hash=itemdadc7683f4:g:1jIAAeSwPpRqyT2S",
+      "title": "1982 Toyota Pickup / Cab Chassis 1/2 TON DLX",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1982,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 9900.0,
+        "currency": "USD",
+        "gbp": 7488.65,
+        "fx_rate": 1.322,
+        "fx_date": "2026-10-09"
+      },
+      "images": [
+        "https://i.ebayimg.com/images/g/1jIAAeSwPpRqyT2S/s-l225.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-10",
+      "last_seen": "2026-10-10",
+      "history": [
+        {
+          "date": "2026-10-10",
+          "status": "active",
+          "price": {
+            "amount": 9900.0,
+            "currency": "USD",
+            "gbp": 7488.65,
+            "fx_rate": 1.322,
+            "fx_date": "2026-10-09"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "ebay:128108205864",
+        "reasons": [
+          "title similarity 0.84",
+          "same country (US)"
+        ]
+      }
+    },
     {
       "id": "ebay:257786984311",
       "source": "ebay",
@@ -36,7 +94,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-10-08",
@@ -93,7 +151,7 @@
       "images": [
         "https://img-us-2.trovit.com/1w1AB1A1O131-1F/1w1AB1A1O131-1F.1_10.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-10-07",
       "last_seen": "2026-10-07",
       "history": [
@@ -107,6 +165,10 @@
             "fx_rate": 1.3276,
             "fx_date": "2026-10-06"
           }
+        },
+        {
+          "date": "2026-10-10",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -117,8 +179,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:SyR1rG1-1U1V",
@@ -218,7 +279,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-06",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-10-06",
@@ -287,7 +348,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-06",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-10-06",
@@ -346,7 +407,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-10-05",
@@ -464,7 +525,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-04",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-10-04",
@@ -712,7 +773,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-10-01",
@@ -768,7 +829,7 @@
       "images": [
         "https://i.ebayimg.com/images/g/BOQAAeSwIvJqfAz8/s-l225.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-10-01",
       "last_seen": "2026-10-07",
       "history": [
@@ -793,14 +854,17 @@
             "fx_rate": 1.3225,
             "fx_date": "2026-10-05"
           }
+        },
+        {
+          "date": "2026-10-10",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "ebay:128108205864",
@@ -1018,7 +1082,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-09-29",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-09-29",
@@ -1172,7 +1236,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-28",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-09-28",
@@ -1345,7 +1409,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-09-26",
@@ -1400,7 +1464,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-09-26",
@@ -1455,7 +1519,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-09-26",
@@ -1628,7 +1692,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-09-26",
@@ -1683,7 +1747,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-09-26",
@@ -1856,7 +1920,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-09-26",
@@ -1911,7 +1975,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-09-26",
@@ -2202,7 +2266,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-09-26",
@@ -2316,7 +2380,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-09-26",
@@ -2426,7 +2490,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-09-26",
@@ -2492,7 +2556,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "history": [
         {
           "date": "2026-09-26",
