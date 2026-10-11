@@ -1,6 +1,179 @@
 {
-  "generated_at": "2026-10-10",
+  "generated_at": "2026-10-11",
   "listings": [
+    {
+      "id": "ebay:147628975980",
+      "source": "ebay",
+      "source_listing_id": "147628975980",
+      "url": "https://www.ebay.com/itm/147628975980?_skw=1980+toyota+pickup&hash=item225f5f676c:g:q10AAeSwdK5qm7jy",
+      "title": "1980 Toyota Pickup 4x4",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1980,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 32900.0,
+        "currency": "USD",
+        "gbp": 24886.54,
+        "fx_rate": 1.322,
+        "fx_date": "2026-10-09"
+      },
+      "images": [
+        "https://i.ebayimg.com/images/g/q10AAeSwdK5qm7jy/s-l225.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-11",
+      "last_seen": "2026-10-11",
+      "history": [
+        {
+          "date": "2026-10-11",
+          "status": "active",
+          "price": {
+            "amount": 32900.0,
+            "currency": "USD",
+            "gbp": 24886.54,
+            "fx_rate": 1.322,
+            "fx_date": "2026-10-09"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "ebay:147600082608",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
+    {
+      "id": "ebay:128127804074",
+      "source": "ebay",
+      "source_listing_id": "128127804074",
+      "url": "https://www.ebay.com/itm/128127804074?_skw=1982+toyota+pickup&hash=item1dd50322aa:g:1~QAAeSwykppsFuL",
+      "title": "1982 Toyota Pickup / Cab Chassis",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1982,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 36500.0,
+        "currency": "USD",
+        "gbp": 27609.68,
+        "fx_rate": 1.322,
+        "fx_date": "2026-10-09"
+      },
+      "images": [
+        "https://i.ebayimg.com/images/g/1~QAAeSwykppsFuL/s-l225.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-11",
+      "last_seen": "2026-10-11",
+      "history": [
+        {
+          "date": "2026-10-11",
+          "status": "active",
+          "price": {
+            "amount": 36500.0,
+            "currency": "USD",
+            "gbp": 27609.68,
+            "fx_rate": 1.322,
+            "fx_date": "2026-10-09"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "ebay:128108205864",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
+    {
+      "id": "barnfinds:rare-mojave-edition-1983-toyota-pickup",
+      "source": "barnfinds",
+      "source_listing_id": "rare-mojave-edition-1983-toyota-pickup",
+      "url": "https://barnfinds.com/rare-mojave-edition-1983-toyota-pickup/",
+      "title": "Rare Mojave Edition: 1983 Toyota Pickup",
+      "title_translated": null,
+      "description_snippet": "While we sometimes talk down on cosmetic dress-up trims and other so-called limited edition models, there’s occasionally the case of a rare specimen that’s so obscure it has to be cool. That’s the box I’m checking with this unusual... Read More »",
+      "year": 1983,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.322,
+        "fx_date": "2026-10-09"
+      },
+      "images": [
+        "https://barnfinds.com/wp-content/uploads/2026/10/Toyota-Mojave-Pickup-front-e1791664788269-630x390.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-11",
+      "last_seen": "2026-10-11",
+      "history": [
+        {
+          "date": "2026-10-11",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.322,
+            "fx_date": "2026-10-09"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "ebay:940001625076",
       "source": "ebay",
@@ -36,7 +209,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-10",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-10-10",
@@ -94,7 +267,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-08",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-10-08",
@@ -311,7 +484,8 @@
           "title similarity 0.85",
           "same country (CA)"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "ebay:128117370646",
@@ -370,7 +544,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "kijiji:1744379521",
@@ -407,7 +582,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-05",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-10-05",
@@ -547,7 +722,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:71i1pV1_q1Jo",
@@ -794,7 +970,8 @@
           "title similarity 0.75",
           "same country (CA)"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "ebay:257774434980",
@@ -1082,7 +1259,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-09-29",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-09-29",
@@ -1254,7 +1431,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:1K3EA1hXb1Q",
@@ -1409,7 +1587,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-09-26",
@@ -1464,7 +1642,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-09-26",
@@ -1519,7 +1697,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-09-26",
@@ -1692,7 +1870,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-09-26",
@@ -1747,7 +1925,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-09-26",
@@ -1920,7 +2098,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-09-26",
@@ -1975,7 +2153,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-09-26",
@@ -2266,7 +2444,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-09-26",
@@ -2376,11 +2554,11 @@
         "fx_date": "2026-09-25"
       },
       "images": [
-        "https://photos.classiccars.com/cc-temp/listing/176/7320/41559467-1982-toyota-pickup-thumb.jpg"
+        "https://photos.classiccars.com/cc-temp/listing/176/7320/59228653-1982-toyota-pickup-thumb.jpg"
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-09-26",
@@ -2490,7 +2668,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-09-26",
@@ -2556,7 +2734,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-11",
       "history": [
         {
           "date": "2026-09-26",

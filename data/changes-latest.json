@@ -1,7 +1,13 @@
 {
-  "date": "2026-10-10",
+  "date": "2026-10-11",
   "new": [],
   "price_changed": [],
-  "status_changed": [],
+  "status_changed": [
+    {
+      "id": "classiccars:CC-2104154",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    }
+  ],
   "possible_relists": []
 }

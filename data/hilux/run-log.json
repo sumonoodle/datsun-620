@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-10",
-  "started_at": "2026-10-10T05:54:40+00:00",
+  "date": "2026-10-11",
+  "started_at": "2026-10-11T05:48:43+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -29,7 +29,7 @@
     {
       "source": "kijiji",
       "ok": true,
-      "records": 5,
+      "records": 2,
       "note": "",
       "consecutive_failures": 0,
       "consecutive_zero_runs": 0
@@ -37,7 +37,7 @@
     {
       "source": "barnfinds",
       "ok": true,
-      "records": 1,
+      "records": 2,
       "note": "",
       "consecutive_failures": 0,
       "consecutive_zero_runs": 0
@@ -48,7 +48,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     },
     {
       "source": "retrorides",
@@ -56,7 +56,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     },
     {
       "source": "trovit",
@@ -72,7 +72,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     },
     {
       "source": "goonet_exchange",
@@ -80,7 +80,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     },
     {
       "source": "carsensor",
@@ -88,7 +88,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     },
     {
       "source": "yahoo_auctions",
@@ -96,7 +96,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 14
+      "consecutive_zero_runs": 15
     },
     {
       "source": "truck2hand",
@@ -104,7 +104,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     },
     {
       "source": "flex",
@@ -112,7 +112,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     },
     {
       "source": "kuruma_ex",
@@ -120,7 +120,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     },
     {
       "source": "everycar",
@@ -128,7 +128,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     },
     {
       "source": "classic_trader",
@@ -136,7 +136,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     },
     {
       "source": "gumtree_uk",
@@ -144,7 +144,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     },
     {
       "source": "gumtree_za",
@@ -160,7 +160,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     },
     {
       "source": "carfromjapan",
@@ -168,7 +168,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     },
     {
       "source": "goonet",
@@ -176,7 +176,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     },
     {
       "source": "marktplaats",
@@ -192,17 +192,17 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 15
+      "consecutive_zero_runs": 16
     }
   ],
   "totals": {
-    "active": 18,
+    "active": 21,
     "by_country": {
-      "US": 11,
+      "US": 14,
       "CA": 5,
       "NL": 1,
       "ZA": 1
     },
-    "median_gbp": 18500.9
+    "median_gbp": 24826.44
   }
 }
