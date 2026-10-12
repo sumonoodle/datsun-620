@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11",
+  "generated_at": "2026-10-12",
   "listings": [
     {
       "id": "ebay:147628975980",
@@ -36,7 +36,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-10-11",
@@ -95,7 +95,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-10-11",
@@ -154,7 +154,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-10-11",
@@ -209,7 +209,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-10",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-10-10",
@@ -267,7 +267,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-08",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-10-08",
@@ -485,7 +485,7 @@
           "same country (CA)"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "ebay:128117370646",
@@ -545,7 +545,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "kijiji:1744379521",
@@ -582,7 +582,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-05",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-10-05",
@@ -723,7 +723,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:71i1pV1_q1Jo",
@@ -949,7 +949,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-10-01",
@@ -970,8 +970,7 @@
           "title similarity 0.75",
           "same country (CA)"
         ]
-      },
-      "missed_runs": 1
+      }
     },
     {
       "id": "ebay:257774434980",
@@ -1259,7 +1258,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-09-29",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-09-29",
@@ -1413,7 +1412,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-28",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-09-28",
@@ -1431,8 +1430,7 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 1
+      }
     },
     {
       "id": "trovit:1K3EA1hXb1Q",
@@ -1587,7 +1585,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-09-26",
@@ -1642,7 +1640,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-09-26",
@@ -1697,7 +1695,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-09-26",
@@ -1870,7 +1868,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-09-26",
@@ -1925,7 +1923,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-09-26",
@@ -2098,7 +2096,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-09-26",
@@ -2153,7 +2151,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-09-26",
@@ -2444,7 +2442,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-09-26",
@@ -2554,11 +2552,11 @@
         "fx_date": "2026-09-25"
       },
       "images": [
-        "https://photos.classiccars.com/cc-temp/listing/176/7320/59228653-1982-toyota-pickup-thumb.jpg"
+        "https://photos.classiccars.com/cc-temp/listing/176/7320/41559467-1982-toyota-pickup-thumb.jpg"
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-09-26",
@@ -2668,7 +2666,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-09-26",
@@ -2734,7 +2732,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-11",
+      "last_seen": "2026-10-12",
       "history": [
         {
           "date": "2026-09-26",

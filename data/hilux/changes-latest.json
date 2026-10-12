@@ -1,30 +1,7 @@
 {
-  "date": "2026-10-11",
-  "new": [
-    "ebay:147628975980",
-    "ebay:128127804074",
-    "barnfinds:rare-mojave-edition-1983-toyota-pickup"
-  ],
+  "date": "2026-10-12",
+  "new": [],
   "price_changed": [],
   "status_changed": [],
-  "possible_relists": [
-    {
-      "id": "ebay:147628975980",
-      "prior_id": "ebay:147600082608",
-      "reasons": [
-        "title similarity 1.00",
-        "same country (US)",
-        "price within 0%"
-      ]
-    },
-    {
-      "id": "ebay:128127804074",
-      "prior_id": "ebay:128108205864",
-      "reasons": [
-        "title similarity 1.00",
-        "same country (US)",
-        "price within 0%"
-      ]
-    }
-  ]
+  "possible_relists": []
 }
