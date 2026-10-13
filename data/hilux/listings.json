@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12",
+  "generated_at": "2026-10-13",
   "listings": [
     {
       "id": "ebay:147628975980",
@@ -36,7 +36,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-10-11",
@@ -95,7 +95,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-10-11",
@@ -154,7 +154,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-10-11",
@@ -209,7 +209,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-10",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-10-10",
@@ -267,7 +267,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-08",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-10-08",
@@ -450,7 +450,7 @@
       "images": [
         "https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/98/98125544-c714-45f1-9cc6-da295a9e99b1?rule=kijijica-200-jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-10-06",
       "last_seen": "2026-10-10",
       "history": [
@@ -475,6 +475,10 @@
             "fx_rate": 1.8918,
             "fx_date": "2026-10-06"
           }
+        },
+        {
+          "date": "2026-10-13",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -484,8 +488,7 @@
           "title similarity 0.85",
           "same country (CA)"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "ebay:128117370646",
@@ -520,7 +523,7 @@
       "images": [
         "https://i.ebayimg.com/images/g/1~QAAeSwykppsFuL/s-l225.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-10-06",
       "last_seen": "2026-10-10",
       "history": [
@@ -534,6 +537,10 @@
             "fx_rate": 1.3225,
             "fx_date": "2026-10-05"
           }
+        },
+        {
+          "date": "2026-10-13",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -544,8 +551,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "kijiji:1744379521",
@@ -582,7 +588,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-05",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-10-05",
@@ -698,7 +704,7 @@
       "images": [
         "https://i.ebayimg.com/images/g/q10AAeSwdK5qm7jy/s-l225.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-10-04",
       "last_seen": "2026-10-10",
       "history": [
@@ -712,6 +718,10 @@
             "fx_rate": 1.3201,
             "fx_date": "2026-10-02"
           }
+        },
+        {
+          "date": "2026-10-13",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -722,8 +732,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:71i1pV1_q1Jo",
@@ -949,7 +958,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-10-01",
@@ -1258,7 +1267,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-09-29",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-09-29",
@@ -1412,7 +1421,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-28",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-09-28",
@@ -1585,7 +1594,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-09-26",
@@ -1640,7 +1649,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-09-26",
@@ -1695,7 +1704,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-09-26",
@@ -1868,7 +1877,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-09-26",
@@ -1923,7 +1932,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-09-26",
@@ -2096,7 +2105,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-09-26",
@@ -2442,7 +2451,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-09-26",
@@ -2556,7 +2565,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-09-26",
@@ -2666,7 +2675,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-09-26",
@@ -2732,7 +2741,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-13",
       "history": [
         {
           "date": "2026-09-26",
