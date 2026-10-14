@@ -1,6 +1,120 @@
 {
-  "generated_at": "2026-10-13",
+  "generated_at": "2026-10-14",
   "listings": [
+    {
+      "id": "trovit:s151w1I1_1_h-",
+      "source": "trovit",
+      "source_listing_id": "s151w1I1_1_h-",
+      "url": "https://rd.clk.thribee.com/id.s151w1I1_1_h-/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.1946871trovit-web-6865f9df55-vn2kl6acf0b7150a1e/tracking.%7B%7D/what_d.toyota%20hilux/page.1/ab.1739381826/op.B/platform.web/cookieid.10211606acf0b71506f50.79494083/pos.3/timestamp.1791953777/sign.yz7dnx5eaXGlAsnGo2ypbw%3D%3D/",
+      "title": "1980 Toyota Hilux",
+      "title_translated": null,
+      "description_snippet": "This Toyota pickup is in mint condition.",
+      "year": 1980,
+      "country": "US",
+      "region": "33149, Miami-Dade County, FL",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 22141.0,
+        "currency": "USD",
+        "gbp": 16713.97,
+        "fx_rate": 1.3247,
+        "fx_date": "2026-10-13"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/s151w1I1_1_h-/s151w1I1_1_h-.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-14",
+      "last_seen": "2026-10-14",
+      "history": [
+        {
+          "date": "2026-10-14",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16713.97,
+            "fx_rate": 1.3247,
+            "fx_date": "2026-10-13"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:1w1AB1A1O131-1F",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
+    {
+      "id": "kleinanzeigen:3539878372",
+      "source": "kleinanzeigen",
+      "source_listing_id": "3539878372",
+      "url": "https://www.kleinanzeigen.de/s-anzeige/toyota-hilux-rn38-4wd-1983/3539878372-216-16355",
+      "title": "TOYOTA HILUX RN38 4WD 1983",
+      "title_translated": null,
+      "description_snippet": "TOYOTA HILUX RN38 4WD 1983\n\nEin Hilux der dritten Generation mit nachvollziehbarer Halterhistorie — und einer, den es so kaum noch gibt. Aus Lissabon kommend, steht der Wagen jetzt bei uns in München im Kundenauftrag zu verkaufen.\n\nExtrem lässige ...",
+      "year": 1983,
+      "country": "DE",
+      "region": "80799 Maxvorstadt",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": "RN38",
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 50000.0,
+        "currency": "EUR",
+        "gbp": 42229.73,
+        "fx_rate": 1.184,
+        "fx_date": "2026-10-13"
+      },
+      "images": [
+        "https://img.kleinanzeigen.de/api/v1/prod-ads/images/2f/2fa19af0-f34f-405c-9319-923e967259ec?rule=$_2.AUTO"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-14",
+      "last_seen": "2026-10-14",
+      "history": [
+        {
+          "date": "2026-10-14",
+          "status": "active",
+          "price": {
+            "amount": 50000.0,
+            "currency": "EUR",
+            "gbp": 42229.73,
+            "fx_rate": 1.184,
+            "fx_date": "2026-10-13"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "ebay:147628975980",
       "source": "ebay",
@@ -36,7 +150,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-10-11",
@@ -95,7 +209,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-10-11",
@@ -154,7 +268,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-10-11",
@@ -209,7 +323,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-10",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-10-10",
@@ -267,7 +381,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-08",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-10-08",
@@ -588,7 +702,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-05",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-10-05",
@@ -958,7 +1072,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-10-01",
@@ -1267,7 +1381,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-09-29",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-09-29",
@@ -1421,7 +1535,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-28",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-09-28",
@@ -1594,7 +1708,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-09-26",
@@ -1649,7 +1763,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-09-26",
@@ -1704,7 +1818,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-09-26",
@@ -1895,7 +2009,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "marktplaats:m2438531579",
@@ -1932,7 +2047,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-09-26",
@@ -2105,7 +2220,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-09-26",
@@ -2451,7 +2566,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-09-26",
@@ -2565,7 +2680,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-09-26",
@@ -2741,7 +2856,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-13",
+      "last_seen": "2026-10-14",
       "history": [
         {
           "date": "2026-09-26",
