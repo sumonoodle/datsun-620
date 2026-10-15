@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14",
+  "generated_at": "2026-10-15",
   "listings": [
     {
       "id": "goonet_exchange:700060138330260829003",
@@ -30,7 +30,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-09",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-10-09",
@@ -82,7 +82,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-02",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-10-02",
@@ -129,7 +129,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-10-01",
@@ -402,7 +402,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-13",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-09-13",
@@ -451,7 +451,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-09-10",
@@ -500,7 +500,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-09-10",
@@ -549,7 +549,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-09-10",
@@ -598,7 +598,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-09-10",
@@ -647,7 +647,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-09-10",
@@ -770,7 +770,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:11N10Y141Tfd",
@@ -824,7 +825,8 @@
           "title similarity 1.00",
           "same country (US)"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:1L41iB1f1Uf13",
@@ -1736,7 +1738,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-09-01",
@@ -1962,7 +1964,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-08-12",
@@ -2041,7 +2043,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-08-03",
@@ -2199,7 +2201,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-08-01",
@@ -2455,7 +2457,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-07-17",
@@ -2621,7 +2623,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-07-17",
@@ -2670,7 +2672,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-15",
       "history": [
         {
           "date": "2026-07-17",
