@@ -1,6 +1,124 @@
 {
-  "generated_at": "2026-10-15",
+  "generated_at": "2026-10-16",
   "listings": [
+    {
+      "id": "trovit:S1hsYdmJ1l",
+      "source": "trovit",
+      "source_listing_id": "S1hsYdmJ1l",
+      "url": "https://rd.clk.thribee.com/id.S1hsYdmJ1l/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.654210trovit-web-7dbd4df4ff-b72rh6ad1a95e5370b/tracking.%7B%7D/what_d.toyota%20hilux/page.1/ab.1739381826/op.B/platform.web/cookieid.10211606ad1a95e534300.71692071/pos.2/timestamp.1792125278/sign.tKh7hyk5bMtnObq2G7Fl4Q%3D%3D/",
+      "title": "1980 Toyota Hilux",
+      "title_translated": null,
+      "description_snippet": "This Toyota pickup is in mint condition.",
+      "year": 1980,
+      "country": "US",
+      "region": "33149, Miami-Dade County, FL",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 22141.0,
+        "currency": "USD",
+        "gbp": 16713.97,
+        "fx_rate": 1.3247,
+        "fx_date": "2026-10-15"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/S1hsYdmJ1l/S1hsYdmJ1l.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-16",
+      "last_seen": "2026-10-16",
+      "history": [
+        {
+          "date": "2026-10-16",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16713.97,
+            "fx_rate": 1.3247,
+            "fx_date": "2026-10-15"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:1w1AB1A1O131-1F",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
+    {
+      "id": "ebay:128137897829",
+      "source": "ebay",
+      "source_listing_id": "128137897829",
+      "url": "https://www.ebay.com/itm/128137897829?_skw=1982+toyota+pickup&hash=item1dd59d2765:g:1~QAAeSwykppsFuL",
+      "title": "1982 Toyota Pickup / Cab Chassis",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1982,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 36500.0,
+        "currency": "USD",
+        "gbp": 27553.41,
+        "fx_rate": 1.3247,
+        "fx_date": "2026-10-15"
+      },
+      "images": [
+        "https://i.ebayimg.com/images/g/1~QAAeSwykppsFuL/s-l225.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-16",
+      "last_seen": "2026-10-16",
+      "history": [
+        {
+          "date": "2026-10-16",
+          "status": "active",
+          "price": {
+            "amount": 36500.0,
+            "currency": "USD",
+            "gbp": 27553.41,
+            "fx_rate": 1.3247,
+            "fx_date": "2026-10-15"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "ebay:128117370646",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
     {
       "id": "trovit:12y1l1a1P1C1l1r",
       "source": "trovit",
@@ -58,7 +176,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "ebay:257797991272",
@@ -95,7 +214,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-15",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-10-15",
@@ -177,7 +296,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "kleinanzeigen:3539878372",
@@ -214,7 +333,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-14",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-10-14",
@@ -269,7 +388,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-10-11",
@@ -350,7 +469,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "barnfinds:rare-mojave-edition-1983-toyota-pickup",
@@ -387,7 +507,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-10-11",
@@ -442,7 +562,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-10",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-10-10",
@@ -523,7 +643,7 @@
           "price within 3%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:1w1AB1A1O131-1F",
@@ -822,7 +942,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-05",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-10-05",
@@ -1192,7 +1312,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-10-01",
@@ -1213,8 +1333,7 @@
           "title similarity 0.75",
           "same country (CA)"
         ]
-      },
-      "missed_runs": 1
+      }
     },
     {
       "id": "ebay:257774434980",
@@ -1502,7 +1621,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-09-29",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-09-29",
@@ -1656,7 +1775,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-28",
-      "last_seen": "2026-10-14",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-09-28",
@@ -1674,8 +1793,7 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 1
+      }
     },
     {
       "id": "trovit:1K3EA1hXb1Q",
@@ -1849,7 +1967,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:k1H1z1C19121hk",
@@ -1886,7 +2004,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-09-26",
@@ -1941,7 +2059,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-09-26",
@@ -2112,7 +2230,7 @@
       "images": [
         "https://img-us-2.trovit.com/1VX1QK1Z1AB1V/1VX1QK1Z1AB1V.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-26",
       "last_seen": "2026-10-13",
       "history": [
@@ -2126,14 +2244,17 @@
             "fx_rate": 1.3252,
             "fx_date": "2026-09-25"
           }
+        },
+        {
+          "date": "2026-10-16",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "marktplaats:m2438531579",
@@ -2170,7 +2291,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-09-26",
@@ -2343,7 +2464,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-09-26",
@@ -2689,7 +2810,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-09-26",
@@ -2803,7 +2924,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-09-26",
@@ -2979,7 +3100,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-16",
       "history": [
         {
           "date": "2026-09-26",
