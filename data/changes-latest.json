@@ -1,18 +1,24 @@
 {
-  "date": "2026-10-17",
-  "new": [],
+  "date": "2026-10-18",
+  "new": [
+    "bringatrailer:1973-datsun-620"
+  ],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "trovit:r1v1i1Hp111t17",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    },
-    {
-      "id": "trovit:11N10Y141Tfd",
+      "id": "goonet_exchange:700060138330260829003",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
-  "possible_relists": []
+  "possible_relists": [
+    {
+      "id": "bringatrailer:1973-datsun-620",
+      "prior_id": "bringatrailer:1979-datsun-620",
+      "reasons": [
+        "title similarity 0.77",
+        "same country (US)"
+      ]
+    }
+  ]
 }

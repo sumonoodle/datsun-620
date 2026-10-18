@@ -1,6 +1,58 @@
 {
-  "generated_at": "2026-10-17",
+  "generated_at": "2026-10-18",
   "listings": [
+    {
+      "id": "bringatrailer:1973-datsun-620",
+      "source": "bringatrailer",
+      "source_listing_id": "1973-datsun-620",
+      "url": "https://bringatrailer.com/listing/1973-datsun-620/",
+      "title": "KA24DE-Powered 1973 Datsun 620 Pickup 5-Speed",
+      "title_translated": null,
+      "description_snippet": "This 1973 Datsun 620 pickup was acquired in 2017 by the seller, who tells us that subsequent work involved repairing and modifying the body, repainting the truck in Dodge Go Mango, and retrofitting a 2.4-liter KA24DE inline-four and a five-speed manual transmission as well as installing a Grip Royal steering wheel, BRAUM Racing seats, Speedhut…",
+      "year": 1973,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 26666.0,
+        "currency": "USD",
+        "gbp": 19997.0,
+        "fx_rate": 1.3335,
+        "fx_date": "2026-10-16"
+      },
+      "images": [
+        "https://bringatrailer.com/wp-content/uploads/2026/08/1973_datsun_620_1973_datsun_620_ae8455aa-ca48-40cf-8ddb-8de2116818d3-nQT542-21023-21023-scaled.jpg?w=470&h=318&crop=1"
+      ],
+      "status": "sold",
+      "first_seen": "2026-10-18",
+      "last_seen": "2026-10-18",
+      "history": [
+        {
+          "date": "2026-10-18",
+          "status": "sold",
+          "price": {
+            "amount": 26666.0,
+            "currency": "USD",
+            "gbp": 19997.0,
+            "fx_rate": 1.3335,
+            "fx_date": "2026-10-16"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "bringatrailer:1979-datsun-620",
+        "reasons": [
+          "title similarity 0.77",
+          "same country (US)"
+        ]
+      }
+    },
     {
       "id": "goonet_exchange:700060138330260829003",
       "source": "goonet_exchange",
@@ -28,7 +80,7 @@
       "images": [
         "https://www.goo-net-exchange.com/common/assets/img/common/other/trusted_deaer_list.png"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-10-09",
       "last_seen": "2026-10-15",
       "history": [
@@ -42,6 +94,10 @@
             "fx_rate": 209.04,
             "fx_date": "2026-10-08"
           }
+        },
+        {
+          "date": "2026-10-18",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -51,8 +107,7 @@
           "title similarity 0.93",
           "same country (JP)"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:HfUaCh1A1k",
@@ -83,7 +138,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-02",
-      "last_seen": "2026-10-17",
+      "last_seen": "2026-10-18",
       "history": [
         {
           "date": "2026-10-02",
@@ -130,7 +185,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-10-17",
+      "last_seen": "2026-10-18",
       "history": [
         {
           "date": "2026-10-01",
@@ -421,7 +476,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "truck2hand:nol5D1pJNQ",
@@ -452,7 +508,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-17",
+      "last_seen": "2026-10-18",
       "history": [
         {
           "date": "2026-09-10",
@@ -501,7 +557,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-17",
+      "last_seen": "2026-10-18",
       "history": [
         {
           "date": "2026-09-10",
@@ -550,7 +606,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-17",
+      "last_seen": "2026-10-18",
       "history": [
         {
           "date": "2026-09-10",
@@ -599,7 +655,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-17",
+      "last_seen": "2026-10-18",
       "history": [
         {
           "date": "2026-09-10",
@@ -648,7 +704,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-17",
+      "last_seen": "2026-10-18",
       "history": [
         {
           "date": "2026-09-10",
@@ -1745,7 +1801,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-10-17",
+      "last_seen": "2026-10-18",
       "history": [
         {
           "date": "2026-09-01",
@@ -2050,7 +2106,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-10-17",
+      "last_seen": "2026-10-18",
       "history": [
         {
           "date": "2026-08-03",
@@ -2208,7 +2264,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-10-17",
+      "last_seen": "2026-10-18",
       "history": [
         {
           "date": "2026-08-01",
@@ -2464,7 +2520,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-17",
+      "last_seen": "2026-10-18",
       "history": [
         {
           "date": "2026-07-17",
@@ -2630,7 +2686,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-17",
+      "last_seen": "2026-10-18",
       "history": [
         {
           "date": "2026-07-17",
@@ -2679,7 +2735,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-17",
+      "last_seen": "2026-10-18",
       "history": [
         {
           "date": "2026-07-17",

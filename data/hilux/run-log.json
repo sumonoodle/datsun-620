@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-17",
-  "started_at": "2026-10-17T04:28:20+00:00",
+  "date": "2026-10-18",
+  "started_at": "2026-10-18T04:35:56+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -29,7 +29,7 @@
     {
       "source": "kijiji",
       "ok": true,
-      "records": 4,
+      "records": 5,
       "note": "",
       "consecutive_failures": 0,
       "consecutive_zero_runs": 0
@@ -48,7 +48,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 22
+      "consecutive_zero_runs": 23
     },
     {
       "source": "retrorides",
@@ -56,12 +56,12 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 22
+      "consecutive_zero_runs": 23
     },
     {
       "source": "trovit",
       "ok": true,
-      "records": 3,
+      "records": 2,
       "note": "",
       "consecutive_failures": 0,
       "consecutive_zero_runs": 0
@@ -80,15 +80,16 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 22
+      "consecutive_zero_runs": 23
     },
     {
       "source": "carsensor",
-      "ok": true,
+      "ok": false,
       "records": 0,
-      "note": "",
-      "consecutive_failures": 0,
-      "consecutive_zero_runs": 22
+      "note": "Server error '503 Service Temporarily Unavailable' for url 'https://www.carsensor.net/usedcar/freeword/%E3%83%8F%E3%82%A4%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9/index.html?YMAX=1989'\nFor more information",
+      "consecutive_failures": 1,
+      "consecutive_zero_runs": 22,
+      "expected_blocked": false
     },
     {
       "source": "yahoo_auctions",
@@ -96,7 +97,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 20
+      "consecutive_zero_runs": 21
     },
     {
       "source": "truck2hand",
@@ -104,7 +105,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 22
+      "consecutive_zero_runs": 23
     },
     {
       "source": "flex",
@@ -112,7 +113,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 22
+      "consecutive_zero_runs": 23
     },
     {
       "source": "kuruma_ex",
@@ -120,7 +121,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 22
+      "consecutive_zero_runs": 23
     },
     {
       "source": "everycar",
@@ -128,7 +129,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 22
+      "consecutive_zero_runs": 23
     },
     {
       "source": "classic_trader",
@@ -136,7 +137,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 22
+      "consecutive_zero_runs": 23
     },
     {
       "source": "gumtree_uk",
@@ -144,14 +145,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 22
+      "consecutive_zero_runs": 23
     },
     {
       "source": "gumtree_za",
       "ok": false,
       "records": 0,
-      "note": "The read operation timed out",
-      "consecutive_failures": 5,
+      "note": "srpAds results block missing (page layout changed or blocked?)",
+      "consecutive_failures": 6,
       "consecutive_zero_runs": 0,
       "expected_blocked": false
     },
@@ -161,7 +162,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 22
+      "consecutive_zero_runs": 23
     },
     {
       "source": "carfromjapan",
@@ -169,7 +170,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 22
+      "consecutive_zero_runs": 23
     },
     {
       "source": "goonet",
@@ -177,7 +178,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 22
+      "consecutive_zero_runs": 23
     },
     {
       "source": "marktplaats",
@@ -193,18 +194,18 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 22
+      "consecutive_zero_runs": 23
     }
   ],
   "totals": {
-    "active": 21,
+    "active": 22,
     "by_country": {
       "US": 14,
+      "CA": 5,
       "DE": 1,
-      "CA": 4,
       "NL": 1,
       "ZA": 1
     },
-    "median_gbp": 16772.21
+    "median_gbp": 17653.21
   }
 }
