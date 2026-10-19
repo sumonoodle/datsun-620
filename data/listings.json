@@ -1,6 +1,58 @@
 {
-  "generated_at": "2026-10-18",
+  "generated_at": "2026-10-19",
   "listings": [
+    {
+      "id": "trovit:1x1s1J1MSdi1r",
+      "source": "trovit",
+      "source_listing_id": "1x1s1J1MSdi1r",
+      "url": "https://rd.clk.thribee.com/id.1x1s1J1MSdi1r/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.4089160trovit-web-7dbd4df4ff-m8wbs6ad59fb064884/tracking.%7B%7D/what_d.datsun%20620/page.1/ab.1739381826/op.B/platform.web/cookieid.10211606ad59fb0642876.78637716/pos.1/timestamp.1792384944/sign.FTNnTJduu%2BbhmcKSMdlduQ%3D%3D/",
+      "title": "1978 datsun 620",
+      "title_translated": null,
+      "description_snippet": "1978 Datsun Pickup 1978 datsun 620 . Has lots of work done. Windshield has a crack finished. Floor pans have a bit of runst. Right now its a...",
+      "year": 1978,
+      "country": "US",
+      "region": "",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.3335,
+        "fx_date": "2026-10-16"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/1x1s1J1MSdi1r/1x1s1J1MSdi1r.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-19",
+      "last_seen": "2026-10-19",
+      "history": [
+        {
+          "date": "2026-10-19",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.3335,
+            "fx_date": "2026-10-16"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:mB7wBFc1j",
+        "reasons": [
+          "title similarity 0.93",
+          "same country (US)"
+        ]
+      }
+    },
     {
       "id": "bringatrailer:1973-datsun-620",
       "source": "bringatrailer",
@@ -30,7 +82,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-10-18",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "history": [
         {
           "date": "2026-10-18",
@@ -156,7 +208,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "ratsun:2472",
@@ -185,7 +238,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "history": [
         {
           "date": "2026-10-01",
@@ -477,7 +530,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "truck2hand:nol5D1pJNQ",
@@ -508,7 +561,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "history": [
         {
           "date": "2026-09-10",
@@ -557,7 +610,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "history": [
         {
           "date": "2026-09-10",
@@ -606,7 +659,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "history": [
         {
           "date": "2026-09-10",
@@ -655,7 +708,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "history": [
         {
           "date": "2026-09-10",
@@ -704,7 +757,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "history": [
         {
           "date": "2026-09-10",
@@ -1801,7 +1854,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "history": [
         {
           "date": "2026-09-01",
@@ -2106,7 +2159,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "history": [
         {
           "date": "2026-08-03",
@@ -2264,7 +2317,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "history": [
         {
           "date": "2026-08-01",
@@ -2520,7 +2573,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "history": [
         {
           "date": "2026-07-17",
@@ -2686,7 +2739,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "history": [
         {
           "date": "2026-07-17",
@@ -2735,7 +2788,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "history": [
         {
           "date": "2026-07-17",

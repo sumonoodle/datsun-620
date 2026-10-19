@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18",
-  "started_at": "2026-10-18T04:35:56+00:00",
+  "date": "2026-10-19",
+  "started_at": "2026-10-19T04:42:29+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -13,10 +13,10 @@
     {
       "source": "bringatrailer",
       "ok": true,
-      "records": 1,
+      "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 0
+      "consecutive_zero_runs": 1
     },
     {
       "source": "classiccars",
@@ -48,7 +48,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 23
+      "consecutive_zero_runs": 24
     },
     {
       "source": "retrorides",
@@ -56,12 +56,12 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 23
+      "consecutive_zero_runs": 24
     },
     {
       "source": "trovit",
       "ok": true,
-      "records": 2,
+      "records": 3,
       "note": "",
       "consecutive_failures": 0,
       "consecutive_zero_runs": 0
@@ -80,14 +80,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 23
+      "consecutive_zero_runs": 24
     },
     {
       "source": "carsensor",
       "ok": false,
       "records": 0,
       "note": "Server error '503 Service Temporarily Unavailable' for url 'https://www.carsensor.net/usedcar/freeword/%E3%83%8F%E3%82%A4%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9/index.html?YMAX=1989'\nFor more information",
-      "consecutive_failures": 1,
+      "consecutive_failures": 2,
       "consecutive_zero_runs": 22,
       "expected_blocked": false
     },
@@ -97,7 +97,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 21
+      "consecutive_zero_runs": 22
     },
     {
       "source": "truck2hand",
@@ -105,7 +105,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 23
+      "consecutive_zero_runs": 24
     },
     {
       "source": "flex",
@@ -113,7 +113,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 23
+      "consecutive_zero_runs": 24
     },
     {
       "source": "kuruma_ex",
@@ -121,7 +121,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 23
+      "consecutive_zero_runs": 24
     },
     {
       "source": "everycar",
@@ -129,7 +129,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 23
+      "consecutive_zero_runs": 24
     },
     {
       "source": "classic_trader",
@@ -137,7 +137,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 23
+      "consecutive_zero_runs": 24
     },
     {
       "source": "gumtree_uk",
@@ -145,14 +145,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 23
+      "consecutive_zero_runs": 24
     },
     {
       "source": "gumtree_za",
       "ok": false,
       "records": 0,
       "note": "srpAds results block missing (page layout changed or blocked?)",
-      "consecutive_failures": 6,
+      "consecutive_failures": 7,
       "consecutive_zero_runs": 0,
       "expected_blocked": false
     },
@@ -162,7 +162,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 23
+      "consecutive_zero_runs": 24
     },
     {
       "source": "carfromjapan",
@@ -170,15 +170,16 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 23
+      "consecutive_zero_runs": 24
     },
     {
       "source": "goonet",
-      "ok": true,
+      "ok": false,
       "records": 0,
-      "note": "",
-      "consecutive_failures": 0,
-      "consecutive_zero_runs": 23
+      "note": "all Goo-net Hilux pages failed (https://www.goo-net.com/usedcar/brand-TOYOTA/car-HILUX/model--1-10104114/: timed out)",
+      "consecutive_failures": 1,
+      "consecutive_zero_runs": 23,
+      "expected_blocked": false
     },
     {
       "source": "marktplaats",
@@ -194,13 +195,13 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 23
+      "consecutive_zero_runs": 24
     }
   ],
   "totals": {
-    "active": 22,
+    "active": 23,
     "by_country": {
-      "US": 14,
+      "US": 15,
       "CA": 5,
       "DE": 1,
       "NL": 1,
