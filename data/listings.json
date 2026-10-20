@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19",
+  "generated_at": "2026-10-20",
   "listings": [
     {
       "id": "trovit:1x1s1J1MSdi1r",
@@ -30,7 +30,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-19",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-20",
       "history": [
         {
           "date": "2026-10-19",
@@ -82,7 +82,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-10-18",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-20",
       "history": [
         {
           "date": "2026-10-18",
@@ -209,7 +209,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "ratsun:2472",
@@ -238,7 +238,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-20",
       "history": [
         {
           "date": "2026-10-01",
@@ -509,7 +509,7 @@
       "images": [
         "https://img-us-2.trovit.com/1Qr1cgQ1o0-/1Qr1cgQ1o0-.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-13",
       "last_seen": "2026-10-17",
       "history": [
@@ -523,14 +523,17 @@
             "fx_rate": 1.3508,
             "fx_date": "2026-09-11"
           }
+        },
+        {
+          "date": "2026-10-20",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "truck2hand:nol5D1pJNQ",
@@ -561,7 +564,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-20",
       "history": [
         {
           "date": "2026-09-10",
@@ -610,7 +613,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-20",
       "history": [
         {
           "date": "2026-09-10",
@@ -659,7 +662,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-20",
       "history": [
         {
           "date": "2026-09-10",
@@ -708,7 +711,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-20",
       "history": [
         {
           "date": "2026-09-10",
@@ -757,7 +760,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-20",
       "history": [
         {
           "date": "2026-09-10",
@@ -1854,7 +1857,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-20",
       "history": [
         {
           "date": "2026-09-01",
@@ -2218,7 +2221,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "kuruma_ex:ccAU6253091581",
@@ -2317,7 +2321,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-20",
       "history": [
         {
           "date": "2026-08-01",
@@ -2573,7 +2577,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-20",
       "history": [
         {
           "date": "2026-07-17",
@@ -2739,7 +2743,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-20",
       "history": [
         {
           "date": "2026-07-17",
@@ -2788,7 +2792,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-20",
       "history": [
         {
           "date": "2026-07-17",
