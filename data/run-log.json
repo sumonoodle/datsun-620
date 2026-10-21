@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-20",
-  "started_at": "2026-10-20T04:51:58+00:00",
+  "date": "2026-10-21",
+  "started_at": "2026-10-21T04:49:16+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -8,7 +8,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 31
+      "consecutive_zero_runs": 32
     },
     {
       "source": "bringatrailer",
@@ -23,7 +23,7 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 100,
+      "consecutive_failures": 101,
       "consecutive_zero_runs": 0,
       "expected_blocked": true
     },
@@ -32,7 +32,7 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 100,
+      "consecutive_failures": 101,
       "consecutive_zero_runs": 0,
       "expected_blocked": true
     },
@@ -42,14 +42,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 5
+      "consecutive_zero_runs": 6
     },
     {
       "source": "carsensor",
       "ok": false,
       "records": 0,
       "note": "Server error '503 Service Temporarily Unavailable' for url 'https://www.carsensor.net/usedcar/freeword/%E3%83%80%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF/index.html'\nFor",
-      "consecutive_failures": 3,
+      "consecutive_failures": 4,
       "consecutive_zero_runs": 0,
       "expected_blocked": false
     },
@@ -59,14 +59,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 31
+      "consecutive_zero_runs": 32
     },
     {
       "source": "kaidee",
       "ok": false,
       "records": 0,
       "note": "all Kaidee queries failed (datsun: __NEXT_DATA__ missing (page layout changed or blocked?))",
-      "consecutive_failures": 29,
+      "consecutive_failures": 30,
       "consecutive_zero_runs": 0,
       "expected_blocked": false
     },
@@ -92,7 +92,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 31
+      "consecutive_zero_runs": 32
     },
     {
       "source": "barnfinds",
@@ -108,24 +108,23 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 31
+      "consecutive_zero_runs": 32
     },
     {
       "source": "kuruma_ex",
       "ok": true,
-      "records": 2,
+      "records": 3,
       "note": "",
       "consecutive_failures": 0,
       "consecutive_zero_runs": 0
     },
     {
       "source": "everycar",
-      "ok": false,
+      "ok": true,
       "records": 0,
-      "note": "timed out",
-      "consecutive_failures": 1,
-      "consecutive_zero_runs": 30,
-      "expected_blocked": false
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 31
     },
     {
       "source": "pistonheads",
@@ -133,7 +132,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 31
+      "consecutive_zero_runs": 32
     },
     {
       "source": "ratsun",
@@ -165,13 +164,13 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 31
+      "consecutive_zero_runs": 32
     }
   ],
   "totals": {
-    "active": 16,
+    "active": 15,
     "by_country": {
-      "US": 7,
+      "US": 6,
       "TH": 5,
       "GB": 1,
       "JP": 3

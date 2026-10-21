@@ -1,10 +1,10 @@
 {
-  "date": "2026-10-20",
+  "date": "2026-10-21",
   "new": [],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "trovit:1Qr1cgQ1o0-",
+      "id": "trovit:HfUaCh1A1k",
       "old_status": "active",
       "new_status": "withdrawn"
     }
