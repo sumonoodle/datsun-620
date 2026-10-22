@@ -1,13 +1,7 @@
 {
-  "date": "2026-10-21",
+  "date": "2026-10-22",
   "new": [],
   "price_changed": [],
-  "status_changed": [
-    {
-      "id": "trovit:HfUaCh1A1k",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    }
-  ],
+  "status_changed": [],
   "possible_relists": []
 }
