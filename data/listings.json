@@ -1,6 +1,55 @@
 {
-  "generated_at": "2026-10-22",
+  "generated_at": "2026-10-23",
   "listings": [
+    {
+      "id": "yahoo_auctions:q1247574459",
+      "source": "yahoo_auctions",
+      "source_listing_id": "q1247574459",
+      "url": "https://auctions.yahoo.co.jp/jp/auction/q1247574459",
+      "title": "ダットサントラック 620 ショート ダットラ US仕様 DATSUN Li'l Hustler 北米 北海道札幌",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": null,
+      "country": "JP",
+      "region": null,
+      "drive_side": "RHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": 1200000.0,
+        "currency": "JPY",
+        "gbp": 5712.65,
+        "fx_rate": 210.06,
+        "fx_date": "2026-10-22"
+      },
+      "images": [
+        "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0210/user/dc6315b0ab590f4ca946a40d8adb8a1b5d88bc4d1dd940d10480f724a9feb23f/i-img1200x900-17914522079220hvslv2131651.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200"
+      ],
+      "status": "sold",
+      "first_seen": "2026-10-23",
+      "last_seen": "2026-10-23",
+      "history": [
+        {
+          "date": "2026-10-23",
+          "status": "sold",
+          "price": {
+            "amount": 1200000.0,
+            "currency": "JPY",
+            "gbp": 5712.65,
+            "fx_rate": 210.06,
+            "fx_date": "2026-10-22"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "trovit:1x1s1J1MSdi1r",
       "source": "trovit",
@@ -30,7 +79,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-19",
-      "last_seen": "2026-10-22",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-10-19",
@@ -82,7 +131,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-10-18",
-      "last_seen": "2026-10-22",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-10-18",
@@ -241,7 +290,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-10-22",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-10-01",
@@ -567,7 +616,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-22",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-09-10",
@@ -616,7 +665,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-22",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-09-10",
@@ -665,7 +714,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-22",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-09-10",
@@ -714,7 +763,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-22",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-09-10",
@@ -763,7 +812,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-22",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-09-10",
@@ -1860,7 +1909,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-10-22",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-09-01",
@@ -2086,7 +2135,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-10-22",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-08-12",
@@ -2165,7 +2214,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-10-21",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-08-03",
@@ -2224,8 +2273,7 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 1
+      }
     },
     {
       "id": "kuruma_ex:ccAU6253091581",
@@ -2324,7 +2372,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-10-22",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-08-01",
@@ -2580,7 +2628,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-22",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-07-17",
@@ -2746,7 +2794,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-22",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-07-17",
@@ -2795,7 +2843,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-22",
+      "last_seen": "2026-10-23",
       "history": [
         {
           "date": "2026-07-17",
