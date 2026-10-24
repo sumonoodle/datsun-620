@@ -1,30 +1,37 @@
 {
-  "date": "2026-10-23",
-  "new": [],
+  "date": "2026-10-24",
+  "new": [
+    "trovit:1B1rrj1512w1L"
+  ],
   "price_changed": [
     {
-      "id": "ebay:147639466494",
-      "old_gbp": 24671.92,
-      "new_gbp": 22353.47,
-      "pct": -9.4
+      "id": "classiccars:CC-2104765",
+      "old_gbp": 24826.44,
+      "new_gbp": 22366.85,
+      "pct": -9.9
     }
   ],
   "status_changed": [
     {
-      "id": "trovit:S1hsYdmJ1l",
-      "old_status": "withdrawn",
-      "new_status": "active"
-    },
-    {
-      "id": "trovit:_1U141W7F1P19",
+      "id": "trovit:eg1Wr61q1f16",
       "old_status": "active",
       "new_status": "withdrawn"
     },
     {
-      "id": "ebay:128137897829",
+      "id": "ebay:257797991272",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
-  "possible_relists": []
+  "possible_relists": [
+    {
+      "id": "trovit:1B1rrj1512w1L",
+      "prior_id": "trovit:_1U141W7F1P19",
+      "reasons": [
+        "title similarity 1.00",
+        "same country (US)",
+        "price within 0%"
+      ]
+    }
+  ]
 }
