@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26",
+  "generated_at": "2026-10-27",
   "listings": [
     {
       "id": "trovit:31yo6_1M6u",
@@ -58,7 +58,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "ebay:128156496785",
@@ -95,7 +96,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-26",
-      "last_seen": "2026-10-26",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-10-26",
@@ -154,7 +155,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-10-26",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-10-25",
@@ -209,7 +210,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-10-26",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-10-25",
@@ -264,7 +265,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-10-26",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-10-25",
@@ -319,7 +320,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-10-26",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-10-25",
@@ -401,7 +402,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:1lc1K161I1y2A",
@@ -501,7 +502,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-22",
-      "last_seen": "2026-10-26",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-10-22",
@@ -646,7 +647,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:_1U141W7F1P19",
@@ -746,7 +747,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-19",
-      "last_seen": "2026-10-26",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-10-19",
@@ -925,7 +926,7 @@
       "images": [
         "https://i.ebayimg.com/images/g/q10AAeSwdK5qm7jy/s-l225.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-10-18",
       "last_seen": "2026-10-24",
       "history": [
@@ -950,6 +951,10 @@
             "fx_rate": 1.3376,
             "fx_date": "2026-10-22"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -960,8 +965,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:S1hsYdmJ1l",
@@ -1326,7 +1330,7 @@
       "images": [
         "https://img.kleinanzeigen.de/api/v1/prod-ads/images/2f/2fa19af0-f34f-405c-9319-923e967259ec?rule=$_2.AUTO"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-10-14",
       "last_seen": "2026-10-24",
       "history": [
@@ -1340,14 +1344,17 @@
             "fx_rate": 1.184,
             "fx_date": "2026-10-13"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "ebay:147628975980",
@@ -1510,7 +1517,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-10-26",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-10-11",
@@ -1565,7 +1572,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-10",
-      "last_seen": "2026-10-26",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-10-10",
@@ -2348,7 +2355,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-10-25",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-10-01",
@@ -2369,8 +2376,7 @@
           "title similarity 0.75",
           "same country (CA)"
         ]
-      },
-      "missed_runs": 1
+      }
     },
     {
       "id": "ebay:257774434980",
@@ -2734,11 +2740,11 @@
         "fx_date": "2026-09-25"
       },
       "images": [
-        "https://img-us-2.trovit.com/Z1a1-ox1oR13/Z1a1-ox1oR13.1_10.jpg"
+        "https://img-us-2.trovit.com/Z1a1-ox1oR13/Z1a1-ox1oR13.1_11.jpg"
       ],
-      "status": "withdrawn",
+      "status": "active",
       "first_seen": "2026-09-28",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-09-28",
@@ -2784,6 +2790,17 @@
         {
           "date": "2026-10-22",
           "status": "withdrawn"
+        },
+        {
+          "date": "2026-10-27",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16587.5,
+            "fx_rate": 1.3348,
+            "fx_date": "2026-10-26"
+          }
         }
       ],
       "relist": {
@@ -2827,7 +2844,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-28",
-      "last_seen": "2026-10-25",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-09-28",
@@ -2845,8 +2862,7 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 1
+      }
     },
     {
       "id": "trovit:1K3EA1hXb1Q",
@@ -3119,7 +3135,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-26",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -3369,7 +3385,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "kijiji:1743332103",
@@ -3524,7 +3541,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-26",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -3870,7 +3887,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-26",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -3995,7 +4012,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-26",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -4171,7 +4188,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-26",
+      "last_seen": "2026-10-27",
       "history": [
         {
           "date": "2026-09-26",
