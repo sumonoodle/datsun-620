@@ -1,20 +1,20 @@
 {
-  "date": "2026-10-27",
+  "date": "2026-10-28",
   "new": [],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "trovit:Z1a1-ox1oR13",
+      "id": "trovit:1w1AB1A1O131-1F",
       "old_status": "withdrawn",
       "new_status": "active"
     },
     {
-      "id": "ebay:147639466494",
+      "id": "trovit:1B1rrj1512w1L",
       "old_status": "active",
       "new_status": "withdrawn"
     },
     {
-      "id": "kleinanzeigen:3539878372",
+      "id": "ebay:128147465082",
       "old_status": "active",
       "new_status": "withdrawn"
     }
