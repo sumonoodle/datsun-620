@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28",
+  "generated_at": "2026-10-29",
   "listings": [
     {
       "id": "yahoo_auctions:q1247574459",
@@ -79,7 +79,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-19",
-      "last_seen": "2026-10-28",
+      "last_seen": "2026-10-29",
       "history": [
         {
           "date": "2026-10-19",
@@ -131,7 +131,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-10-18",
-      "last_seen": "2026-10-28",
+      "last_seen": "2026-10-29",
       "history": [
         {
           "date": "2026-10-18",
@@ -290,7 +290,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-10-28",
+      "last_seen": "2026-10-29",
       "history": [
         {
           "date": "2026-10-01",
@@ -616,7 +616,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-28",
+      "last_seen": "2026-10-29",
       "history": [
         {
           "date": "2026-09-10",
@@ -665,7 +665,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-28",
+      "last_seen": "2026-10-29",
       "history": [
         {
           "date": "2026-09-10",
@@ -714,7 +714,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-28",
+      "last_seen": "2026-10-29",
       "history": [
         {
           "date": "2026-09-10",
@@ -763,7 +763,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-28",
+      "last_seen": "2026-10-29",
       "history": [
         {
           "date": "2026-09-10",
@@ -812,7 +812,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-28",
+      "last_seen": "2026-10-29",
       "history": [
         {
           "date": "2026-09-10",
@@ -1909,7 +1909,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-09-01",
-      "last_seen": "2026-10-28",
+      "last_seen": "2026-10-29",
       "history": [
         {
           "date": "2026-09-01",
@@ -2135,7 +2135,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-10-28",
+      "last_seen": "2026-10-29",
       "history": [
         {
           "date": "2026-08-12",
@@ -2214,7 +2214,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-10-28",
+      "last_seen": "2026-10-29",
       "history": [
         {
           "date": "2026-08-03",
@@ -2424,7 +2424,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "kaidee:371477592",
@@ -2629,7 +2629,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-28",
+      "last_seen": "2026-10-29",
       "history": [
         {
           "date": "2026-07-17",
@@ -2795,7 +2795,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-28",
+      "last_seen": "2026-10-29",
       "history": [
         {
           "date": "2026-07-17",
@@ -2844,7 +2844,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-10-28",
+      "last_seen": "2026-10-29",
       "history": [
         {
           "date": "2026-07-17",
