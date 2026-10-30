@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-29",
-  "started_at": "2026-10-29T05:49:44+00:00",
+  "date": "2026-10-30",
+  "started_at": "2026-10-30T05:50:35+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -8,7 +8,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 40
+      "consecutive_zero_runs": 41
     },
     {
       "source": "bringatrailer",
@@ -23,7 +23,7 @@
       "ok": false,
       "records": 0,
       "note": "no JSON API and no embedded state found (needs JS rendering?)",
-      "consecutive_failures": 109,
+      "consecutive_failures": 110,
       "consecutive_zero_runs": 0,
       "expected_blocked": true
     },
@@ -32,7 +32,7 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 109,
+      "consecutive_failures": 110,
       "consecutive_zero_runs": 0,
       "expected_blocked": true
     },
@@ -42,7 +42,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 13
+      "consecutive_zero_runs": 14
     },
     {
       "source": "carsensor",
@@ -58,14 +58,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 6
+      "consecutive_zero_runs": 7
     },
     {
       "source": "kaidee",
       "ok": false,
       "records": 0,
       "note": "all Kaidee queries failed (datsun: Client error '403 Forbidden' for url 'https://www.kaidee.com/c11-auto-car?q=datsun'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Sta",
-      "consecutive_failures": 38,
+      "consecutive_failures": 39,
       "consecutive_zero_runs": 0,
       "expected_blocked": false
     },
@@ -91,7 +91,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 40
+      "consecutive_zero_runs": 41
     },
     {
       "source": "barnfinds",
@@ -107,7 +107,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 40
+      "consecutive_zero_runs": 41
     },
     {
       "source": "kuruma_ex",
@@ -123,7 +123,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 39
+      "consecutive_zero_runs": 40
     },
     {
       "source": "pistonheads",
@@ -131,7 +131,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 40
+      "consecutive_zero_runs": 41
     },
     {
       "source": "ratsun",
@@ -163,17 +163,17 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 40
+      "consecutive_zero_runs": 41
     }
   ],
   "totals": {
-    "active": 15,
+    "active": 14,
     "by_country": {
       "US": 6,
       "TH": 5,
       "GB": 1,
-      "JP": 3
+      "JP": 2
     },
-    "median_gbp": 4036.33
+    "median_gbp": 3363.61
   }
 }

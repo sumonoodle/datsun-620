@@ -1,6 +1,64 @@
 {
-  "generated_at": "2026-10-29",
+  "generated_at": "2026-10-30",
   "listings": [
+    {
+      "id": "bringatrailer:1983-toyota-pickup-53",
+      "source": "bringatrailer",
+      "source_listing_id": "1983-toyota-pickup-53",
+      "url": "https://bringatrailer.com/listing/1983-toyota-pickup-53/",
+      "title": "1983 Toyota Pickup SR5 4×4 5-Speed",
+      "title_translated": null,
+      "description_snippet": "This 1983 Toyota Pickup SR5 4x4 is said to have remained in long-term storage prior to being acquired in 2023 by the seller, who subsequently commissioned a mechanical and cosmetic refurbishment. Work involved repainting the body in Dark Gray Metallic with gradient side graphics, retrimming the interior, rebuilding the 2.4-liter 22R long-block,…",
+      "year": 1983,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 19830.0,
+        "currency": "USD",
+        "gbp": 14890.74,
+        "fx_rate": 1.3317,
+        "fx_date": "2026-10-29"
+      },
+      "images": [
+        "https://bringatrailer.com/wp-content/uploads/2026/10/dji_mimo_20261017_113932_0347_1792263780085_photo-scaled-copy-2026-10-19-iad-f9d778eef28e97602519139cb60d73f8.jpg?w=470&h=318&crop=1"
+      ],
+      "status": "active",
+      "first_seen": "2026-10-30",
+      "last_seen": "2026-10-30",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "status": "active",
+          "price": {
+            "amount": 19830.0,
+            "currency": "USD",
+            "gbp": 14890.74,
+            "fx_rate": 1.3317,
+            "fx_date": "2026-10-29"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "bringatrailer:1981-toyota-pickup-38",
+        "reasons": [
+          "title similarity 0.96",
+          "same country (US)"
+        ]
+      }
+    },
     {
       "id": "trovit:101m1F1q1ou1D1g",
       "source": "trovit",
@@ -58,7 +116,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "ebay:257821430025",
@@ -95,7 +154,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-29",
-      "last_seen": "2026-10-29",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-10-29",
@@ -217,7 +276,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-26",
-      "last_seen": "2026-10-29",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-10-26",
@@ -276,7 +335,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-10-29",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-10-25",
@@ -349,7 +408,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "kijiji:1745251673",
@@ -386,7 +446,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-10-29",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-10-25",
@@ -441,7 +501,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-10-29",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-10-25",
@@ -649,7 +709,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:eg1Wr61q1f16",
@@ -875,7 +935,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-19",
-      "last_seen": "2026-10-29",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-10-19",
@@ -1645,7 +1705,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-10-29",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-10-11",
@@ -1700,7 +1760,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-10",
-      "last_seen": "2026-10-29",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-10-10",
@@ -1870,7 +1930,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:SyR1rG1-1U1V",
@@ -2367,9 +2427,9 @@
       "images": [
         "https://img-us-2.trovit.com/1E11FW1Xubt/1E11FW1Xubt.1_10.jpg"
       ],
-      "status": "withdrawn",
+      "status": "active",
       "first_seen": "2026-10-02",
-      "last_seen": "2026-10-02",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-10-02",
@@ -2385,6 +2445,17 @@
         {
           "date": "2026-10-05",
           "status": "withdrawn"
+        },
+        {
+          "date": "2026-10-30",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16626.12,
+            "fx_rate": 1.3317,
+            "fx_date": "2026-10-29"
+          }
         }
       ],
       "relist": {
@@ -2516,7 +2587,8 @@
           "title similarity 0.75",
           "same country (CA)"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "ebay:257774434980",
@@ -2882,7 +2954,7 @@
       "images": [
         "https://img-us-2.trovit.com/Z1a1-ox1oR13/Z1a1-ox1oR13.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-28",
       "last_seen": "2026-10-27",
       "history": [
@@ -2941,14 +3013,17 @@
             "fx_rate": 1.3348,
             "fx_date": "2026-10-26"
           }
+        },
+        {
+          "date": "2026-10-30",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "kijiji:1744056689",
@@ -2983,7 +3058,7 @@
       "images": [
         "https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/d5/d5d46198-5e3f-4230-8a5b-741171f07e5c?rule=kijijica-200-jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-09-28",
       "last_seen": "2026-10-27",
       "history": [
@@ -2997,14 +3072,17 @@
             "fx_rate": 1.8743,
             "fx_date": "2026-09-25"
           }
+        },
+        {
+          "date": "2026-10-30",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:1K3EA1hXb1Q",
@@ -3277,7 +3355,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-29",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -3509,7 +3587,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-29",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -3682,7 +3760,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-29",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -4028,7 +4106,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-29",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -4153,7 +4231,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-29",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-09-26",
@@ -4329,7 +4407,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-29",
+      "last_seen": "2026-10-30",
       "history": [
         {
           "date": "2026-09-26",
