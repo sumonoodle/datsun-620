@@ -1,33 +1,29 @@
 {
-  "date": "2026-10-30",
+  "date": "2026-10-31",
   "new": [
-    "bringatrailer:1983-toyota-pickup-53"
+    "trovit:1aSHuW-M1C"
   ],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "trovit:1E11FW1Xubt",
-      "old_status": "withdrawn",
-      "new_status": "active"
-    },
-    {
-      "id": "trovit:Z1a1-ox1oR13",
+      "id": "ebay:257809351931",
       "old_status": "active",
       "new_status": "withdrawn"
     },
     {
-      "id": "kijiji:1744056689",
+      "id": "trovit:1w1AB1A1O131-1F",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
   "possible_relists": [
     {
-      "id": "bringatrailer:1983-toyota-pickup-53",
-      "prior_id": "bringatrailer:1981-toyota-pickup-38",
+      "id": "trovit:1aSHuW-M1C",
+      "prior_id": "trovit:31yo6_1M6u",
       "reasons": [
-        "title similarity 0.96",
-        "same country (US)"
+        "title similarity 1.00",
+        "same country (US)",
+        "price within 0%"
       ]
     }
   ]
