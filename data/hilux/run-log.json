@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-31",
-  "started_at": "2026-10-31T05:43:11+00:00",
+  "date": "2026-11-01",
+  "started_at": "2026-11-01T06:07:24+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -13,7 +13,7 @@
     {
       "source": "bringatrailer",
       "ok": true,
-      "records": 1,
+      "records": 2,
       "note": "",
       "consecutive_failures": 0,
       "consecutive_zero_runs": 0
@@ -29,7 +29,7 @@
     {
       "source": "kijiji",
       "ok": true,
-      "records": 3,
+      "records": 2,
       "note": "",
       "consecutive_failures": 0,
       "consecutive_zero_runs": 0
@@ -48,15 +48,16 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 36
+      "consecutive_zero_runs": 37
     },
     {
       "source": "retrorides",
-      "ok": true,
+      "ok": false,
       "records": 0,
-      "note": "",
-      "consecutive_failures": 0,
-      "consecutive_zero_runs": 36
+      "note": "Client error '406 Not Acceptable' for url 'https://forum.retro-rides.org/board/57/cars-sale-1985-older'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/406",
+      "consecutive_failures": 1,
+      "consecutive_zero_runs": 36,
+      "expected_blocked": false
     },
     {
       "source": "trovit",
@@ -72,7 +73,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 2
+      "consecutive_zero_runs": 3
     },
     {
       "source": "goonet_exchange",
@@ -80,7 +81,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 35
+      "consecutive_zero_runs": 36
     },
     {
       "source": "carsensor",
@@ -88,7 +89,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 32
+      "consecutive_zero_runs": 33
     },
     {
       "source": "yahoo_auctions",
@@ -96,7 +97,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 34
+      "consecutive_zero_runs": 35
     },
     {
       "source": "truck2hand",
@@ -104,7 +105,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 36
+      "consecutive_zero_runs": 37
     },
     {
       "source": "flex",
@@ -112,7 +113,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 36
+      "consecutive_zero_runs": 37
     },
     {
       "source": "kuruma_ex",
@@ -120,7 +121,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 36
+      "consecutive_zero_runs": 37
     },
     {
       "source": "everycar",
@@ -128,7 +129,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 35
+      "consecutive_zero_runs": 36
     },
     {
       "source": "classic_trader",
@@ -136,7 +137,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 36
+      "consecutive_zero_runs": 37
     },
     {
       "source": "gumtree_uk",
@@ -144,14 +145,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 36
+      "consecutive_zero_runs": 37
     },
     {
       "source": "gumtree_za",
       "ok": false,
       "records": 0,
       "note": "Client error '403 Forbidden' for url 'https://www.gumtree.co.za/s-cars-bakkies/toyota~hilux~petrol/v1c9077a3mamofup1'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Stat",
-      "consecutive_failures": 19,
+      "consecutive_failures": 20,
       "consecutive_zero_runs": 0,
       "expected_blocked": false
     },
@@ -161,7 +162,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 36
+      "consecutive_zero_runs": 37
     },
     {
       "source": "carfromjapan",
@@ -169,14 +170,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 36
+      "consecutive_zero_runs": 37
     },
     {
       "source": "goonet",
       "ok": false,
       "records": 0,
       "note": "all Goo-net Hilux pages failed (https://www.goo-net.com/usedcar/brand-TOYOTA/car-HILUX/model--1-10104114/: timed out)",
-      "consecutive_failures": 13,
+      "consecutive_failures": 14,
       "consecutive_zero_runs": 23,
       "expected_blocked": false
     },
@@ -186,7 +187,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 1
+      "consecutive_zero_runs": 2
     },
     {
       "source": "hagerty",
@@ -194,18 +195,17 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 36
+      "consecutive_zero_runs": 37
     }
   ],
   "totals": {
-    "active": 21,
+    "active": 22,
     "by_country": {
-      "US": 15,
-      "DE": 1,
+      "US": 17,
       "CA": 3,
       "NL": 1,
       "ZA": 1
     },
-    "median_gbp": 16662.4
+    "median_gbp": 16524.37
   }
 }
