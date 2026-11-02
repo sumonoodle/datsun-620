@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-01",
-  "started_at": "2026-11-01T06:07:24+00:00",
+  "date": "2026-11-02",
+  "started_at": "2026-11-02T06:05:12+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -48,16 +48,15 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 37
+      "consecutive_zero_runs": 38
     },
     {
       "source": "retrorides",
-      "ok": false,
+      "ok": true,
       "records": 0,
-      "note": "Client error '406 Not Acceptable' for url 'https://forum.retro-rides.org/board/57/cars-sale-1985-older'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/406",
-      "consecutive_failures": 1,
-      "consecutive_zero_runs": 36,
-      "expected_blocked": false
+      "note": "",
+      "consecutive_failures": 0,
+      "consecutive_zero_runs": 37
     },
     {
       "source": "trovit",
@@ -73,7 +72,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 3
+      "consecutive_zero_runs": 4
     },
     {
       "source": "goonet_exchange",
@@ -81,7 +80,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 36
+      "consecutive_zero_runs": 37
     },
     {
       "source": "carsensor",
@@ -89,7 +88,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 33
+      "consecutive_zero_runs": 34
     },
     {
       "source": "yahoo_auctions",
@@ -97,7 +96,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 35
+      "consecutive_zero_runs": 36
     },
     {
       "source": "truck2hand",
@@ -105,7 +104,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 37
+      "consecutive_zero_runs": 38
     },
     {
       "source": "flex",
@@ -113,7 +112,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 37
+      "consecutive_zero_runs": 38
     },
     {
       "source": "kuruma_ex",
@@ -121,7 +120,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 37
+      "consecutive_zero_runs": 38
     },
     {
       "source": "everycar",
@@ -129,7 +128,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 36
+      "consecutive_zero_runs": 37
     },
     {
       "source": "classic_trader",
@@ -137,7 +136,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 37
+      "consecutive_zero_runs": 38
     },
     {
       "source": "gumtree_uk",
@@ -145,14 +144,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 37
+      "consecutive_zero_runs": 38
     },
     {
       "source": "gumtree_za",
       "ok": false,
       "records": 0,
       "note": "Client error '403 Forbidden' for url 'https://www.gumtree.co.za/s-cars-bakkies/toyota~hilux~petrol/v1c9077a3mamofup1'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Stat",
-      "consecutive_failures": 20,
+      "consecutive_failures": 21,
       "consecutive_zero_runs": 0,
       "expected_blocked": false
     },
@@ -162,7 +161,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 37
+      "consecutive_zero_runs": 38
     },
     {
       "source": "carfromjapan",
@@ -170,14 +169,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 37
+      "consecutive_zero_runs": 38
     },
     {
       "source": "goonet",
       "ok": false,
       "records": 0,
       "note": "all Goo-net Hilux pages failed (https://www.goo-net.com/usedcar/brand-TOYOTA/car-HILUX/model--1-10104114/: timed out)",
-      "consecutive_failures": 14,
+      "consecutive_failures": 15,
       "consecutive_zero_runs": 23,
       "expected_blocked": false
     },
@@ -187,7 +186,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 2
+      "consecutive_zero_runs": 3
     },
     {
       "source": "hagerty",
@@ -195,15 +194,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 37
+      "consecutive_zero_runs": 38
     }
   ],
   "totals": {
-    "active": 22,
+    "active": 20,
     "by_country": {
-      "US": 17,
+      "US": 16,
       "CA": 3,
-      "NL": 1,
       "ZA": 1
     },
     "median_gbp": 16524.37
