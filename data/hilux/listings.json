@@ -1,6 +1,124 @@
 {
-  "generated_at": "2026-11-02",
+  "generated_at": "2026-11-03",
   "listings": [
+    {
+      "id": "trovit:1W1olb1a1DzB",
+      "source": "trovit",
+      "source_listing_id": "1W1olb1a1DzB",
+      "url": "https://rd.clk.thribee.com/id.1W1olb1a1DzB/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.452941trovit-web-5db9f9574c-xq7xb6ae98415b0502/tracking.%7B%7D/what_d.toyota%20hilux/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606ae98415b02352.20800678/pos.3/timestamp.1793688597/sign.a6G7MO27AGeic5WLNbtGJg%3D%3D/",
+      "title": "1980 Toyota Hilux",
+      "title_translated": null,
+      "description_snippet": "This Toyota pickup is in mint condition.",
+      "year": 1980,
+      "country": "US",
+      "region": "33149, Miami-Dade County, FL",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 22141.0,
+        "currency": "USD",
+        "gbp": 16499.74,
+        "fx_rate": 1.3419,
+        "fx_date": "2026-11-02"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/1W1olb1a1DzB/1W1olb1a1DzB.1_10.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16499.74,
+            "fx_rate": 1.3419,
+            "fx_date": "2026-11-02"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:101m1F1q1ou1D1g",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
+    {
+      "id": "kleinanzeigen:3560271656",
+      "source": "kleinanzeigen",
+      "source_listing_id": "3560271656",
+      "url": "https://www.kleinanzeigen.de/s-anzeige/toyota-hilux-rn38-4wd-2-4-h-zulassung-1983/3560271656-216-16355",
+      "title": "TOYOTA HILUX RN38 4WD 2.4 H-ZULASSUNG 1983",
+      "title_translated": null,
+      "description_snippet": "TOYOTA HILUX RN38 4WD 1983\n\nEin Hilux der dritten Generation mit lückenlos nachvollziehbarer Geschichte von der US-Westküste über Maastricht, Mailand und Lissabon bis zu uns nach München. Luca und ich haben ihn selbst in Lissabon abgeholt und sind...",
+      "year": 1983,
+      "country": "DE",
+      "region": "80799 Maxvorstadt",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": "RN38",
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 50000.0,
+        "currency": "EUR",
+        "gbp": 41788.55,
+        "fx_rate": 1.1965,
+        "fx_date": "2026-11-02"
+      },
+      "images": [
+        "https://img.kleinanzeigen.de/api/v1/prod-ads/images/f6/f6472a5d-3c37-435e-ab7a-2a74e9ead8de?rule=$_2.AUTO"
+      ],
+      "status": "active",
+      "first_seen": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "status": "active",
+          "price": {
+            "amount": 50000.0,
+            "currency": "EUR",
+            "gbp": 41788.55,
+            "fx_rate": 1.1965,
+            "fx_date": "2026-11-02"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "kleinanzeigen:3550065938",
+        "reasons": [
+          "title similarity 0.76",
+          "same country (DE)",
+          "price within 0%"
+        ]
+      }
+    },
     {
       "id": "trovit:cV1HTx1s1ev",
       "source": "trovit",
@@ -58,7 +176,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:C151l1vU1G1R1J",
@@ -118,7 +237,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "ebay:147659153640",
@@ -155,7 +274,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-01",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-03",
       "history": [
         {
           "date": "2026-11-01",
@@ -214,7 +333,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-01",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-03",
       "history": [
         {
           "date": "2026-11-01",
@@ -281,7 +400,7 @@
       "images": [
         "https://img-us-2.trovit.com/1aSHuW-M1C/1aSHuW-M1C.1_10.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-10-31",
       "last_seen": "2026-10-31",
       "history": [
@@ -295,6 +414,10 @@
             "fx_rate": 1.3399,
             "fx_date": "2026-10-30"
           }
+        },
+        {
+          "date": "2026-11-03",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -305,8 +428,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "bringatrailer:1983-toyota-pickup-53",
@@ -343,7 +465,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-30",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-03",
       "history": [
         {
           "date": "2026-10-30",
@@ -464,7 +586,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-29",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-03",
       "history": [
         {
           "date": "2026-10-29",
@@ -649,7 +771,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-03",
       "history": [
         {
           "date": "2026-10-25",
@@ -763,7 +885,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-03",
       "history": [
         {
           "date": "2026-10-25",
@@ -816,7 +938,7 @@
       "images": [
         "https://i.ebayimg.com/images/g/q10AAeSwdK5qm7jy/s-l225.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-10-25",
       "last_seen": "2026-10-31",
       "history": [
@@ -830,6 +952,10 @@
             "fx_rate": 1.3368,
             "fx_date": "2026-10-23"
           }
+        },
+        {
+          "date": "2026-11-03",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -840,8 +966,7 @@
           "same country (US)",
           "price within 9%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:1B1rrj1512w1L",
@@ -1256,7 +1381,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-19",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-03",
       "history": [
         {
           "date": "2026-10-19",
@@ -2026,7 +2151,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-03",
       "history": [
         {
           "date": "2026-10-11",
@@ -2081,7 +2206,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-10",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-03",
       "history": [
         {
           "date": "2026-10-10",
@@ -2892,7 +3017,7 @@
       "images": [
         "https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/7d/7d57cb80-e095-458d-bdc1-09771f39a85b?rule=kijijica-200-jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-10-01",
       "last_seen": "2026-10-31",
       "history": [
@@ -2906,6 +3031,10 @@
             "fx_rate": 1.8844,
             "fx_date": "2026-09-30"
           }
+        },
+        {
+          "date": "2026-11-03",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -2915,8 +3044,7 @@
           "title similarity 0.75",
           "same country (CA)"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "ebay:257774434980",
@@ -3683,7 +3811,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-03",
       "history": [
         {
           "date": "2026-09-26",
@@ -4092,7 +4220,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-03",
       "history": [
         {
           "date": "2026-09-26",
@@ -4438,7 +4566,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-03",
       "history": [
         {
           "date": "2026-09-26",
@@ -4563,7 +4691,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-03",
       "history": [
         {
           "date": "2026-09-26",
@@ -4739,7 +4867,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-03",
       "history": [
         {
           "date": "2026-09-26",

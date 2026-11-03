@@ -1,40 +1,43 @@
 {
-  "date": "2026-11-02",
+  "date": "2026-11-03",
   "new": [
-    "trovit:cV1HTx1s1ev"
+    "trovit:1W1olb1a1DzB",
+    "kleinanzeigen:3560271656"
   ],
-  "price_changed": [
-    {
-      "id": "bringatrailer:1980-toyota-pickup-19",
-      "old_gbp": 1477.72,
-      "new_gbp": 3059.93,
-      "pct": 107.1
-    }
-  ],
+  "price_changed": [],
   "status_changed": [
     {
-      "id": "ebay:128156496785",
+      "id": "trovit:1aSHuW-M1C",
       "old_status": "active",
       "new_status": "withdrawn"
     },
     {
-      "id": "trovit:1E11FW1Xubt",
+      "id": "ebay:147649787999",
       "old_status": "active",
       "new_status": "withdrawn"
     },
     {
-      "id": "marktplaats:m2438531579",
+      "id": "kijiji:1744206933",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
   "possible_relists": [
     {
-      "id": "trovit:cV1HTx1s1ev",
+      "id": "trovit:1W1olb1a1DzB",
       "prior_id": "trovit:101m1F1q1ou1D1g",
       "reasons": [
         "title similarity 1.00",
         "same country (US)",
+        "price within 0%"
+      ]
+    },
+    {
+      "id": "kleinanzeigen:3560271656",
+      "prior_id": "kleinanzeigen:3550065938",
+      "reasons": [
+        "title similarity 0.76",
+        "same country (DE)",
         "price within 0%"
       ]
     }
