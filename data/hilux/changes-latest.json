@@ -1,43 +1,32 @@
 {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "new": [
-    "trovit:1W1olb1a1DzB",
-    "kleinanzeigen:3560271656"
+    "bringatrailer:1982-toyota-pickup-60",
+    "trovit:v8o1Ck1Fg1L"
   ],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "trovit:1aSHuW-M1C",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    },
-    {
-      "id": "ebay:147649787999",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    },
-    {
-      "id": "kijiji:1744206933",
+      "id": "trovit:C151l1vU1G1R1J",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
   "possible_relists": [
     {
-      "id": "trovit:1W1olb1a1DzB",
-      "prior_id": "trovit:101m1F1q1ou1D1g",
+      "id": "bringatrailer:1982-toyota-pickup-60",
+      "prior_id": "bringatrailer:1981-toyota-pickup-38",
       "reasons": [
-        "title similarity 1.00",
-        "same country (US)",
-        "price within 0%"
+        "title similarity 0.97",
+        "same country (US)"
       ]
     },
     {
-      "id": "kleinanzeigen:3560271656",
-      "prior_id": "kleinanzeigen:3550065938",
+      "id": "trovit:v8o1Ck1Fg1L",
+      "prior_id": "trovit:1aSHuW-M1C",
       "reasons": [
-        "title similarity 0.76",
-        "same country (DE)",
+        "title similarity 1.00",
+        "same country (US)",
         "price within 0%"
       ]
     }

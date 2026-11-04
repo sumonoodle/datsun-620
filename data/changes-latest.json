@@ -1,7 +1,13 @@
 {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "new": [],
   "price_changed": [],
-  "status_changed": [],
+  "status_changed": [
+    {
+      "id": "retrorides:230448",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    }
+  ],
   "possible_relists": []
 }
