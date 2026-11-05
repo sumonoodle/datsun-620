@@ -1,6 +1,124 @@
 {
-  "generated_at": "2026-11-04",
+  "generated_at": "2026-11-05",
   "listings": [
+    {
+      "id": "trovit:h1vg1L1BM_1R",
+      "source": "trovit",
+      "source_listing_id": "h1vg1L1BM_1R",
+      "url": "https://rd.clk.thribee.com/id.h1vg1L1BM_1R/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.1134913trovit-web-7997677f64-7pxsm6aec26b8daf9f/tracking.%7B%7D/what_d.toyota%20hilux/page.1/ab.1739381826/op.A/platform.web/cookieid.10211606aec26b8dac492.35923284/pos.3/timestamp.1793861304/sign.Y3Y%2Br3PX87XVdSL9pwDtzw%3D%3D/",
+      "title": "1980 Toyota Hilux",
+      "title_translated": null,
+      "description_snippet": "This Toyota pickup is in mint condition.",
+      "year": 1980,
+      "country": "US",
+      "region": "33149, Miami-Dade County, FL",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 22141.0,
+        "currency": "USD",
+        "gbp": 16400.74,
+        "fx_rate": 1.35,
+        "fx_date": "2026-11-04"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/h1vg1L1BM_1R/h1vg1L1BM_1R.1_10.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "history": [
+        {
+          "date": "2026-11-05",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16400.74,
+            "fx_rate": 1.35,
+            "fx_date": "2026-11-04"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:C151l1vU1G1R1J",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
+    {
+      "id": "ebay:257833866541",
+      "source": "ebay",
+      "source_listing_id": "257833866541",
+      "url": "https://www.ebay.com/itm/257833866541?_skw=1980+toyota+pickup&hash=item3c0818952d:g:BOQAAeSwIvJqfAz8",
+      "title": "1980 Toyota SR5 4x4 Pick Up",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1980,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 74950.0,
+        "currency": "USD",
+        "gbp": 55518.52,
+        "fx_rate": 1.35,
+        "fx_date": "2026-11-04"
+      },
+      "images": [
+        "https://i.ebayimg.com/images/g/BOQAAeSwIvJqfAz8/s-l225.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "history": [
+        {
+          "date": "2026-11-05",
+          "status": "active",
+          "price": {
+            "amount": 74950.0,
+            "currency": "USD",
+            "gbp": 55518.52,
+            "fx_rate": 1.35,
+            "fx_date": "2026-11-04"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "ebay:257809351931",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
     {
       "id": "trovit:v8o1Ck1Fg1L",
       "source": "trovit",
@@ -58,7 +176,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "bringatrailer:1982-toyota-pickup-60",
@@ -84,18 +203,18 @@
         "target_reasons": []
       },
       "price": {
-        "amount": 12000.0,
+        "amount": 13250.0,
         "currency": "USD",
-        "gbp": 8947.88,
-        "fx_rate": 1.3411,
-        "fx_date": "2026-11-03"
+        "gbp": 9814.81,
+        "fx_rate": 1.35,
+        "fx_date": "2026-11-04"
       },
       "images": [
         "https://bringatrailer.com/wp-content/uploads/2026/10/FullSizeRender-scaled-copy-2026-10-29-kdu-123bbd19e0ec451e8d7fdc5046dbb9d1.jpg?w=470&h=318&crop=1"
       ],
       "status": "active",
       "first_seen": "2026-11-04",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "history": [
         {
           "date": "2026-11-04",
@@ -106,6 +225,17 @@
             "gbp": 8947.88,
             "fx_rate": 1.3411,
             "fx_date": "2026-11-03"
+          }
+        },
+        {
+          "date": "2026-11-05",
+          "status": "active",
+          "price": {
+            "amount": 13250.0,
+            "currency": "USD",
+            "gbp": 9814.81,
+            "fx_rate": 1.35,
+            "fx_date": "2026-11-04"
           }
         }
       ],
@@ -176,7 +306,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "kleinanzeigen:3560271656",
@@ -213,7 +343,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-03",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "history": [
         {
           "date": "2026-11-03",
@@ -270,7 +400,7 @@
       "images": [
         "https://img-us-2.trovit.com/cV1HTx1s1ev/cV1HTx1s1ev.1_10.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-11-02",
       "last_seen": "2026-11-02",
       "history": [
@@ -284,6 +414,10 @@
             "fx_rate": 1.3399,
             "fx_date": "2026-10-30"
           }
+        },
+        {
+          "date": "2026-11-05",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -294,8 +428,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:C151l1vU1G1R1J",
@@ -417,7 +550,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "bringatrailer:1980-toyota-pickup-19",
@@ -454,7 +588,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-01",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "history": [
         {
           "date": "2026-11-01",
@@ -586,7 +720,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-30",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "history": [
         {
           "date": "2026-10-30",
@@ -729,7 +863,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:31yo6_1M6u",
@@ -892,7 +1027,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "history": [
         {
           "date": "2026-10-25",
@@ -1006,7 +1141,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "history": [
         {
           "date": "2026-10-25",
@@ -1502,7 +1637,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-19",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "history": [
         {
           "date": "2026-10-19",
@@ -2272,7 +2407,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "history": [
         {
           "date": "2026-10-11",
@@ -2327,7 +2462,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-10",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "history": [
         {
           "date": "2026-10-10",
@@ -3932,7 +4067,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "history": [
         {
           "date": "2026-09-26",
@@ -4341,7 +4476,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "history": [
         {
           "date": "2026-09-26",
@@ -4687,7 +4822,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "history": [
         {
           "date": "2026-09-26",
@@ -4812,7 +4947,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "history": [
         {
           "date": "2026-09-26",
@@ -4988,7 +5123,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "history": [
         {
           "date": "2026-09-26",
