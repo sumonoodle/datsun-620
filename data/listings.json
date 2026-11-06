@@ -1,6 +1,55 @@
 {
-  "generated_at": "2026-11-05",
+  "generated_at": "2026-11-06",
   "listings": [
+    {
+      "id": "trovit:F1t31HD1N111L",
+      "source": "trovit",
+      "source_listing_id": "F1t31HD1N111L",
+      "url": "https://rd.clk.thribee.com/id.F1t31HD1N111L/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.646677trovit-web-55659fbbd9-ncxr66aed780566d05/tracking.%7B%7D/what_d.datsun%20620/page.1/cookieid.10211606aed780566a428.68467917/pos.1/timestamp.1793947653/sign.avf1LP5tiVCCPBMsfxmKKQ%3D%3D/",
+      "title": "1977 datsun 620 custom pick up with a great history read the ad!",
+      "title_translated": null,
+      "description_snippet": "1977 Datsun 620 EXTRA CAB OK I purchased this truck in August of 2016 after I saw it at the barrett-jackson auction at mohegan sun I was no...",
+      "year": 1977,
+      "country": "US",
+      "region": "",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.3459,
+        "fx_date": "2026-11-05"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/F1t31HD1N111L/F1t31HD1N111L.1_10.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-11-06",
+      "last_seen": "2026-11-06",
+      "history": [
+        {
+          "date": "2026-11-06",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.3459,
+            "fx_date": "2026-11-05"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "yahoo_auctions:q1247574459",
       "source": "yahoo_auctions",
@@ -100,7 +149,8 @@
           "title similarity 0.93",
           "same country (US)"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "bringatrailer:1973-datsun-620",
@@ -131,7 +181,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-10-18",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-06",
       "history": [
         {
           "date": "2026-10-18",
@@ -290,7 +340,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-06",
       "history": [
         {
           "date": "2026-10-01",
@@ -616,7 +666,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-06",
       "history": [
         {
           "date": "2026-09-10",
@@ -665,7 +715,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-06",
       "history": [
         {
           "date": "2026-09-10",
@@ -714,7 +764,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-06",
       "history": [
         {
           "date": "2026-09-10",
@@ -763,7 +813,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-06",
       "history": [
         {
           "date": "2026-09-10",
@@ -812,7 +862,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-06",
       "history": [
         {
           "date": "2026-09-10",
@@ -2139,7 +2189,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-06",
       "history": [
         {
           "date": "2026-08-12",
@@ -2218,7 +2268,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-06",
       "history": [
         {
           "date": "2026-08-03",
@@ -2636,7 +2686,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-06",
       "history": [
         {
           "date": "2026-07-17",
@@ -2802,7 +2852,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-06",
       "history": [
         {
           "date": "2026-07-17",
@@ -2851,7 +2901,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-06",
       "history": [
         {
           "date": "2026-07-17",
