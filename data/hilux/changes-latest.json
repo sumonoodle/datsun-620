@@ -1,38 +1,48 @@
 {
-  "date": "2026-11-06",
+  "date": "2026-11-07",
   "new": [
-    "trovit:1451j1s1z1r1Re"
+    "ebay:128175953889"
   ],
   "price_changed": [
     {
       "id": "bringatrailer:1980-toyota-pickup-19",
-      "old_gbp": 3059.93,
-      "new_gbp": 3714.99,
-      "pct": 21.4
+      "old_gbp": 3714.99,
+      "new_gbp": 6873.37,
+      "pct": 85.0
     },
     {
       "id": "bringatrailer:1982-toyota-pickup-60",
-      "old_gbp": 9814.81,
-      "new_gbp": 10030.46,
-      "pct": 2.2
+      "old_gbp": 10030.46,
+      "new_gbp": 11206.57,
+      "pct": 11.7
     }
   ],
   "status_changed": [
     {
-      "id": "bringatrailer:1983-toyota-pickup-53",
-      "old_status": "active",
-      "new_status": "sold"
+      "id": "trovit:1B1rrj1512w1L",
+      "old_status": "withdrawn",
+      "new_status": "active"
     },
     {
-      "id": "trovit:1W1olb1a1DzB",
+      "id": "trovit:v8o1Ck1Fg1L",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "ebay:147659153640",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "ebay:257821430025",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
   "possible_relists": [
     {
-      "id": "trovit:1451j1s1z1r1Re",
-      "prior_id": "trovit:cV1HTx1s1ev",
+      "id": "ebay:128175953889",
+      "prior_id": "ebay:128156496785",
       "reasons": [
         "title similarity 1.00",
         "same country (US)",

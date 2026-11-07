@@ -1,9 +1,18 @@
 {
-  "date": "2026-11-06",
+  "date": "2026-11-07",
   "new": [
-    "trovit:F1t31HD1N111L"
+    "trovit:10131l1XPx1s1v"
   ],
   "price_changed": [],
   "status_changed": [],
-  "possible_relists": []
+  "possible_relists": [
+    {
+      "id": "trovit:10131l1XPx1s1v",
+      "prior_id": "trovit:1Qr1cgQ1o0-",
+      "reasons": [
+        "title similarity 0.76",
+        "same country (US)"
+      ]
+    }
+  ]
 }

@@ -1,6 +1,58 @@
 {
-  "generated_at": "2026-11-06",
+  "generated_at": "2026-11-07",
   "listings": [
+    {
+      "id": "trovit:10131l1XPx1s1v",
+      "source": "trovit",
+      "source_listing_id": "10131l1XPx1s1v",
+      "url": "https://rd.clk.thribee.com/id.10131l1XPx1s1v/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.1516629trovit-web-55659fbbd9-ncxr66aeebe3983a7b/tracking.%7B%7D/what_d.datsun%20620/page.1/cookieid.10211606aeebe398373f9.30392604/pos.1/timestamp.1794031161/sign.iGTWpLAuyJJMfsxHOOV2vg%3D%3D/",
+      "title": "Datsun 620 pickup",
+      "title_translated": null,
+      "description_snippet": "1974 Datsun pickup This is a real barn find gem! If you want the real deal this is it. Original condition. Even the paint is from the factory...",
+      "year": 1974,
+      "country": "US",
+      "region": "",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "gbp": null,
+        "fx_rate": 1.3385,
+        "fx_date": "2026-11-06"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/10131l1XPx1s1v/10131l1XPx1s1v.1_11.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-11-07",
+      "last_seen": "2026-11-07",
+      "history": [
+        {
+          "date": "2026-11-07",
+          "status": "active",
+          "price": {
+            "amount": null,
+            "currency": "USD",
+            "gbp": null,
+            "fx_rate": 1.3385,
+            "fx_date": "2026-11-06"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:1Qr1cgQ1o0-",
+        "reasons": [
+          "title similarity 0.76",
+          "same country (US)"
+        ]
+      }
+    },
     {
       "id": "trovit:F1t31HD1N111L",
       "source": "trovit",
@@ -26,11 +78,11 @@
         "fx_date": "2026-11-05"
       },
       "images": [
-        "https://img-us-2.trovit.com/F1t31HD1N111L/F1t31HD1N111L.1_10.jpg"
+        "https://img-us-2.trovit.com/F1t31HD1N111L/F1t31HD1N111L.1_11.jpg"
       ],
       "status": "active",
       "first_seen": "2026-11-06",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "history": [
         {
           "date": "2026-11-06",
@@ -150,7 +202,7 @@
           "same country (US)"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "bringatrailer:1973-datsun-620",
@@ -181,7 +233,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-10-18",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "history": [
         {
           "date": "2026-10-18",
@@ -340,7 +392,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "history": [
         {
           "date": "2026-10-01",
@@ -666,7 +718,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "history": [
         {
           "date": "2026-09-10",
@@ -715,7 +767,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "history": [
         {
           "date": "2026-09-10",
@@ -764,7 +816,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "history": [
         {
           "date": "2026-09-10",
@@ -813,7 +865,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "history": [
         {
           "date": "2026-09-10",
@@ -862,7 +914,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "history": [
         {
           "date": "2026-09-10",
@@ -2189,7 +2241,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "history": [
         {
           "date": "2026-08-12",
@@ -2268,7 +2320,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "history": [
         {
           "date": "2026-08-03",
@@ -2686,7 +2738,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "history": [
         {
           "date": "2026-07-17",
@@ -2852,7 +2904,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "history": [
         {
           "date": "2026-07-17",
@@ -2901,7 +2953,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "history": [
         {
           "date": "2026-07-17",
