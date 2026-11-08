@@ -1,18 +1,13 @@
 {
-  "date": "2026-11-07",
-  "new": [
-    "trovit:10131l1XPx1s1v"
-  ],
+  "date": "2026-11-08",
+  "new": [],
   "price_changed": [],
-  "status_changed": [],
-  "possible_relists": [
+  "status_changed": [
     {
-      "id": "trovit:10131l1XPx1s1v",
-      "prior_id": "trovit:1Qr1cgQ1o0-",
-      "reasons": [
-        "title similarity 0.76",
-        "same country (US)"
-      ]
+      "id": "trovit:1x1s1J1MSdi1r",
+      "old_status": "active",
+      "new_status": "withdrawn"
     }
-  ]
+  ],
+  "possible_relists": []
 }

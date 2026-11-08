@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07",
+  "generated_at": "2026-11-08",
   "listings": [
     {
       "id": "trovit:10131l1XPx1s1v",
@@ -30,7 +30,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-07",
-      "last_seen": "2026-11-07",
+      "last_seen": "2026-11-08",
       "history": [
         {
           "date": "2026-11-07",
@@ -82,7 +82,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-06",
-      "last_seen": "2026-11-07",
+      "last_seen": "2026-11-08",
       "history": [
         {
           "date": "2026-11-06",
@@ -178,7 +178,7 @@
       "images": [
         "https://img-us-2.trovit.com/1x1s1J1MSdi1r/1x1s1J1MSdi1r.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-10-19",
       "last_seen": "2026-11-05",
       "history": [
@@ -192,6 +192,10 @@
             "fx_rate": 1.3335,
             "fx_date": "2026-10-16"
           }
+        },
+        {
+          "date": "2026-11-08",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -201,8 +205,7 @@
           "title similarity 0.93",
           "same country (US)"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "bringatrailer:1973-datsun-620",
@@ -233,7 +236,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-10-18",
-      "last_seen": "2026-11-07",
+      "last_seen": "2026-11-08",
       "history": [
         {
           "date": "2026-10-18",
@@ -392,7 +395,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-11-07",
+      "last_seen": "2026-11-08",
       "history": [
         {
           "date": "2026-10-01",
@@ -718,7 +721,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-07",
+      "last_seen": "2026-11-08",
       "history": [
         {
           "date": "2026-09-10",
@@ -767,7 +770,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-07",
+      "last_seen": "2026-11-08",
       "history": [
         {
           "date": "2026-09-10",
@@ -816,7 +819,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-07",
+      "last_seen": "2026-11-08",
       "history": [
         {
           "date": "2026-09-10",
@@ -865,7 +868,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-07",
+      "last_seen": "2026-11-08",
       "history": [
         {
           "date": "2026-09-10",
@@ -914,7 +917,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-07",
+      "last_seen": "2026-11-08",
       "history": [
         {
           "date": "2026-09-10",
@@ -2241,7 +2244,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-11-07",
+      "last_seen": "2026-11-08",
       "history": [
         {
           "date": "2026-08-12",
@@ -2379,7 +2382,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "kuruma_ex:ccAU6253091581",
@@ -2738,7 +2742,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-07",
+      "last_seen": "2026-11-08",
       "history": [
         {
           "date": "2026-07-17",
@@ -2904,7 +2908,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-07",
+      "last_seen": "2026-11-08",
       "history": [
         {
           "date": "2026-07-17",
@@ -2953,7 +2957,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-07",
+      "last_seen": "2026-11-08",
       "history": [
         {
           "date": "2026-07-17",

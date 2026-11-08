@@ -1,48 +1,53 @@
 {
-  "date": "2026-11-07",
+  "date": "2026-11-08",
   "new": [
-    "ebay:128175953889"
+    "trovit:1d1n1k161T1Qc18"
   ],
   "price_changed": [
     {
-      "id": "bringatrailer:1980-toyota-pickup-19",
-      "old_gbp": 3714.99,
-      "new_gbp": 6873.37,
-      "pct": 85.0
+      "id": "bringatrailer:1982-toyota-pickup-60",
+      "old_gbp": 11206.57,
+      "new_gbp": 11580.13,
+      "pct": 3.3
     },
     {
-      "id": "bringatrailer:1982-toyota-pickup-60",
-      "old_gbp": 10030.46,
-      "new_gbp": 11206.57,
-      "pct": 11.7
+      "id": "bringatrailer:1980-toyota-pickup-19",
+      "old_gbp": 6873.37,
+      "new_gbp": 7657.83,
+      "pct": 11.4
     }
   ],
   "status_changed": [
     {
-      "id": "trovit:1B1rrj1512w1L",
-      "old_status": "withdrawn",
-      "new_status": "active"
+      "id": "bringatrailer:1980-toyota-pickup-19",
+      "old_status": "active",
+      "new_status": "sold"
     },
     {
-      "id": "trovit:v8o1Ck1Fg1L",
+      "id": "trovit:h1vg1L1BM_1R",
       "old_status": "active",
       "new_status": "withdrawn"
     },
     {
-      "id": "ebay:147659153640",
+      "id": "trovit:sy2a3151C1v",
       "old_status": "active",
       "new_status": "withdrawn"
     },
     {
-      "id": "ebay:257821430025",
+      "id": "trovit:1GK1xp1K7e4",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "classiccars:CC-2104765",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
   "possible_relists": [
     {
-      "id": "ebay:128175953889",
-      "prior_id": "ebay:128156496785",
+      "id": "trovit:1d1n1k161T1Qc18",
+      "prior_id": "trovit:v8o1Ck1Fg1L",
       "reasons": [
         "title similarity 1.00",
         "same country (US)",
