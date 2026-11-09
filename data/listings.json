@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08",
+  "generated_at": "2026-11-09",
   "listings": [
     {
       "id": "trovit:10131l1XPx1s1v",
@@ -30,7 +30,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-07",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "history": [
         {
           "date": "2026-11-07",
@@ -82,7 +82,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-06",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "history": [
         {
           "date": "2026-11-06",
@@ -236,7 +236,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-10-18",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "history": [
         {
           "date": "2026-10-18",
@@ -395,7 +395,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "history": [
         {
           "date": "2026-10-01",
@@ -721,7 +721,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "history": [
         {
           "date": "2026-09-10",
@@ -770,7 +770,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "history": [
         {
           "date": "2026-09-10",
@@ -819,7 +819,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "history": [
         {
           "date": "2026-09-10",
@@ -868,7 +868,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "history": [
         {
           "date": "2026-09-10",
@@ -917,7 +917,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "history": [
         {
           "date": "2026-09-10",
@@ -2244,7 +2244,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-12",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "history": [
         {
           "date": "2026-08-12",
@@ -2323,7 +2323,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-11-07",
+      "last_seen": "2026-11-09",
       "history": [
         {
           "date": "2026-08-03",
@@ -2382,8 +2382,7 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 1
+      }
     },
     {
       "id": "kuruma_ex:ccAU6253091581",
@@ -2742,7 +2741,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "history": [
         {
           "date": "2026-07-17",
@@ -2908,7 +2907,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "history": [
         {
           "date": "2026-07-17",
@@ -2957,7 +2956,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "history": [
         {
           "date": "2026-07-17",

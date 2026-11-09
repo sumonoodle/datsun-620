@@ -1,53 +1,30 @@
 {
-  "date": "2026-11-08",
+  "date": "2026-11-09",
   "new": [
-    "trovit:1d1n1k161T1Qc18"
+    "ebay:940076422885",
+    "barnfinds:corvette-powered-hilux-1982-toyota-pickup",
+    "trovit:zZE1f31Lg1x"
   ],
-  "price_changed": [
-    {
-      "id": "bringatrailer:1982-toyota-pickup-60",
-      "old_gbp": 11206.57,
-      "new_gbp": 11580.13,
-      "pct": 3.3
-    },
-    {
-      "id": "bringatrailer:1980-toyota-pickup-19",
-      "old_gbp": 6873.37,
-      "new_gbp": 7657.83,
-      "pct": 11.4
-    }
-  ],
+  "price_changed": [],
   "status_changed": [
     {
-      "id": "bringatrailer:1980-toyota-pickup-19",
-      "old_status": "active",
-      "new_status": "sold"
-    },
-    {
-      "id": "trovit:h1vg1L1BM_1R",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    },
-    {
-      "id": "trovit:sy2a3151C1v",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    },
-    {
-      "id": "trovit:1GK1xp1K7e4",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    },
-    {
-      "id": "classiccars:CC-2104765",
+      "id": "trovit:1451j1s1z1r1Re",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
   "possible_relists": [
     {
-      "id": "trovit:1d1n1k161T1Qc18",
-      "prior_id": "trovit:v8o1Ck1Fg1L",
+      "id": "ebay:940076422885",
+      "prior_id": "ebay:128156496785",
+      "reasons": [
+        "title similarity 0.84",
+        "same country (US)"
+      ]
+    },
+    {
+      "id": "trovit:zZE1f31Lg1x",
+      "prior_id": "trovit:h1vg1L1BM_1R",
       "reasons": [
         "title similarity 1.00",
         "same country (US)",
