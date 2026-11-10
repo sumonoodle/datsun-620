@@ -1,30 +1,30 @@
 {
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "new": [
-    "ebay:940076422885",
-    "barnfinds:corvette-powered-hilux-1982-toyota-pickup",
-    "trovit:zZE1f31Lg1x"
+    "ebay:128186026605",
+    "trovit:F1TZn_1G1z16"
   ],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "trovit:1451j1s1z1r1Re",
+      "id": "trovit:1B1rrj1512w1L",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
   "possible_relists": [
     {
-      "id": "ebay:940076422885",
+      "id": "ebay:128186026605",
       "prior_id": "ebay:128156496785",
       "reasons": [
-        "title similarity 0.84",
-        "same country (US)"
+        "title similarity 1.00",
+        "same country (US)",
+        "price within 0%"
       ]
     },
     {
-      "id": "trovit:zZE1f31Lg1x",
-      "prior_id": "trovit:h1vg1L1BM_1R",
+      "id": "trovit:F1TZn_1G1z16",
+      "prior_id": "trovit:1451j1s1z1r1Re",
       "reasons": [
         "title similarity 1.00",
         "same country (US)",
