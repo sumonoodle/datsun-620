@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11",
+  "generated_at": "2026-11-12",
   "listings": [
     {
       "id": "trovit:10131l1XPx1s1v",
@@ -30,7 +30,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-07",
-      "last_seen": "2026-11-11",
+      "last_seen": "2026-11-12",
       "history": [
         {
           "date": "2026-11-07",
@@ -100,7 +100,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "yahoo_auctions:q1247574459",
@@ -236,7 +237,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-10-18",
-      "last_seen": "2026-11-11",
+      "last_seen": "2026-11-12",
       "history": [
         {
           "date": "2026-10-18",
@@ -395,7 +396,7 @@
       "images": [],
       "status": "active",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-11-11",
+      "last_seen": "2026-11-12",
       "history": [
         {
           "date": "2026-10-01",
@@ -721,7 +722,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-11",
+      "last_seen": "2026-11-12",
       "history": [
         {
           "date": "2026-09-10",
@@ -770,7 +771,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-11",
+      "last_seen": "2026-11-12",
       "history": [
         {
           "date": "2026-09-10",
@@ -819,7 +820,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-11",
+      "last_seen": "2026-11-12",
       "history": [
         {
           "date": "2026-09-10",
@@ -868,7 +869,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-11",
+      "last_seen": "2026-11-12",
       "history": [
         {
           "date": "2026-09-10",
@@ -917,7 +918,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-11",
+      "last_seen": "2026-11-12",
       "history": [
         {
           "date": "2026-09-10",
@@ -2292,7 +2293,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "kuruma_ex:ccAU7062177718",
@@ -2323,7 +2325,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-11-11",
+      "last_seen": "2026-11-12",
       "history": [
         {
           "date": "2026-08-03",
@@ -2741,7 +2743,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-11",
+      "last_seen": "2026-11-12",
       "history": [
         {
           "date": "2026-07-17",
@@ -2907,7 +2909,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-11",
+      "last_seen": "2026-11-12",
       "history": [
         {
           "date": "2026-07-17",
@@ -2956,7 +2958,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-11",
+      "last_seen": "2026-11-12",
       "history": [
         {
           "date": "2026-07-17",
