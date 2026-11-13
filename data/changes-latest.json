@@ -1,7 +1,13 @@
 {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "new": [],
   "price_changed": [],
-  "status_changed": [],
+  "status_changed": [
+    {
+      "id": "ratsun:2472",
+      "old_status": "active",
+      "new_status": "sold"
+    }
+  ],
   "possible_relists": []
 }
