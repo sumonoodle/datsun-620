@@ -1,6 +1,124 @@
 {
-  "generated_at": "2026-11-13",
+  "generated_at": "2026-11-14",
   "listings": [
+    {
+      "id": "trovit:fO71cGC1Z1X",
+      "source": "trovit",
+      "source_listing_id": "fO71cGC1Z1X",
+      "url": "https://rd.clk.thribee.com/id.fO71cGC1Z1X/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.722011trovit-web-786bdf797b-7j4vh6af7fec554fbd/tracking.%7B%7D/what_d.toyota%20hilux/page.1/cookieid.10211606af7fec554bbf0.46136878/pos.2/timestamp.1794637509/sign.ucU3fOB02GYYBoa%2B%2BkVBzg%3D%3D/",
+      "title": "1980 Toyota Hilux",
+      "title_translated": null,
+      "description_snippet": "This Toyota pickup is in mint condition.",
+      "year": 1980,
+      "country": "US",
+      "region": "33149, Miami-Dade County, FL",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 22141.0,
+        "currency": "USD",
+        "gbp": 16739.25,
+        "fx_rate": 1.3227,
+        "fx_date": "2026-11-13"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/fO71cGC1Z1X/fO71cGC1Z1X.1_10.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-11-14",
+      "last_seen": "2026-11-14",
+      "history": [
+        {
+          "date": "2026-11-14",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16739.25,
+            "fx_rate": 1.3227,
+            "fx_date": "2026-11-13"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:zZE1f31Lg1x",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
+    {
+      "id": "bringatrailer:1982-toyota-pickup-62",
+      "source": "bringatrailer",
+      "source_listing_id": "1982-toyota-pickup-62",
+      "url": "https://bringatrailer.com/listing/1982-toyota-pickup-62/",
+      "title": "1982 Toyota Pickup SR5 4×4 5-Speed",
+      "title_translated": null,
+      "description_snippet": "This 1982 Toyota Pickup SR5 has spent the majority of its time in California, and it was refurbished in 2025. The 2.4-liter inline-four was replaced, the body was refinished in black with side graphics, and the cabin was refreshed with replacement gray cloth and vinyl seat upholstery. It was purchased by the seller on BaT in August 2025, and since…",
+      "year": 1982,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 25000.0,
+        "currency": "USD",
+        "gbp": 18900.73,
+        "fx_rate": 1.3227,
+        "fx_date": "2026-11-13"
+      },
+      "images": [
+        "https://bringatrailer.com/wp-content/uploads/2026/10/1982_toyota_hilux_1982_toyota_hilux_17f36749-6322-444c-9d30-156f3013db21-qPntTG-a21328f8c3638d4afd5fe69325b7cb35-b48872d74aabb9a8732bef0913ea7f16-scaled-1-18a3277708d1c688e770515e25b7e49f.jpg?w=470&h=318&crop=1"
+      ],
+      "status": "active",
+      "first_seen": "2026-11-14",
+      "last_seen": "2026-11-14",
+      "history": [
+        {
+          "date": "2026-11-14",
+          "status": "active",
+          "price": {
+            "amount": 25000.0,
+            "currency": "USD",
+            "gbp": 18900.73,
+            "fx_rate": 1.3227,
+            "fx_date": "2026-11-13"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "bringatrailer:1982-toyota-pickup-60",
+        "reasons": [
+          "title similarity 0.99",
+          "same country (US)",
+          "price within 14%"
+        ]
+      }
+    },
     {
       "id": "trovit:1Q1vf1VY1g1a1O",
       "source": "trovit",
@@ -58,7 +176,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "ebay:257846866551",
@@ -95,7 +214,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-12",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-11-12",
@@ -152,7 +271,7 @@
       "images": [
         "https://img-us-2.trovit.com/F1TZn_1G1z16/F1TZn_1G1z16.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-11-10",
       "last_seen": "2026-11-11",
       "history": [
@@ -166,6 +285,10 @@
             "fx_rate": 1.3416,
             "fx_date": "2026-11-09"
           }
+        },
+        {
+          "date": "2026-11-14",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -176,8 +299,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "ebay:128186026605",
@@ -214,7 +336,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-10",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-11-10",
@@ -336,7 +458,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-09",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-11-09",
@@ -394,7 +516,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-09",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-11-09",
@@ -699,7 +821,7 @@
       "images": [
         "https://i.ebayimg.com/images/g/BOQAAeSwIvJqfAz8/s-l225.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-11-05",
       "last_seen": "2026-11-11",
       "history": [
@@ -713,6 +835,10 @@
             "fx_rate": 1.35,
             "fx_date": "2026-11-04"
           }
+        },
+        {
+          "date": "2026-11-14",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -723,8 +849,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:v8o1Ck1Fg1L",
@@ -824,7 +949,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-11-04",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-11-04",
@@ -1000,7 +1125,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-03",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-11-03",
@@ -1248,7 +1373,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-11-01",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-11-01",
@@ -1413,7 +1538,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-10-30",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-10-30",
@@ -1852,7 +1977,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-10-25",
@@ -3137,7 +3262,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-10-11",
@@ -4801,7 +4926,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-09-26",
@@ -5210,7 +5335,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-09-26",
@@ -5681,11 +5806,11 @@
         "fx_date": "2026-09-25"
       },
       "images": [
-        "https://photos.classiccars.com/cc-temp/listing/176/7320/41559467-1982-toyota-pickup-thumb.jpg"
+        "https://photos.classiccars.com/cc-temp/listing/176/7320/59228653-1982-toyota-pickup-thumb.jpg"
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-09-26",
@@ -5861,7 +5986,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-09-26",

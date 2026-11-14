@@ -1,12 +1,17 @@
 {
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "new": [],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "ratsun:2472",
+      "id": "trovit:F1t31HD1N111L",
       "old_status": "active",
-      "new_status": "sold"
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "carsensor:VU3133320108",
+      "old_status": "active",
+      "new_status": "withdrawn"
     }
   ],
   "possible_relists": []

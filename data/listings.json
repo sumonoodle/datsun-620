@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13",
+  "generated_at": "2026-11-14",
   "listings": [
     {
       "id": "trovit:10131l1XPx1s1v",
@@ -30,7 +30,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-07",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-11-07",
@@ -80,7 +80,7 @@
       "images": [
         "https://img-us-2.trovit.com/F1t31HD1N111L/F1t31HD1N111L.1_11.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-11-06",
       "last_seen": "2026-11-11",
       "history": [
@@ -94,14 +94,17 @@
             "fx_rate": 1.3459,
             "fx_date": "2026-11-05"
           }
+        },
+        {
+          "date": "2026-11-14",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "yahoo_auctions:q1247574459",
@@ -237,7 +240,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-10-18",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-10-18",
@@ -396,7 +399,7 @@
       "images": [],
       "status": "sold",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-10-01",
@@ -733,7 +736,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-09-10",
@@ -782,7 +785,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-09-10",
@@ -831,7 +834,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-09-10",
@@ -880,7 +883,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-09-10",
@@ -929,7 +932,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-09-10",
@@ -2254,7 +2257,7 @@
       "images": [
         "https://ccsrpcma.carsensor.net/CSphoto/bkkn/059/489/U00030059489/U00030059489_001L.JPG"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-08-12",
       "last_seen": "2026-11-11",
       "history": [
@@ -2298,14 +2301,17 @@
             "fx_rate": 208.84,
             "fx_date": "2026-09-25"
           }
+        },
+        {
+          "date": "2026-11-14",
+          "status": "withdrawn"
         }
       ],
       "relist": {
         "possible": false,
         "prior_id": null,
         "reasons": []
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "kuruma_ex:ccAU7062177718",
@@ -2336,7 +2342,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-08-03",
@@ -2754,7 +2760,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-07-17",
@@ -2920,7 +2926,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-07-17",
@@ -2969,7 +2975,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "history": [
         {
           "date": "2026-07-17",

@@ -1,7 +1,40 @@
 {
-  "date": "2026-11-13",
-  "new": [],
+  "date": "2026-11-14",
+  "new": [
+    "bringatrailer:1982-toyota-pickup-62",
+    "trovit:fO71cGC1Z1X"
+  ],
   "price_changed": [],
-  "status_changed": [],
-  "possible_relists": []
+  "status_changed": [
+    {
+      "id": "trovit:F1TZn_1G1z16",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "ebay:257833866541",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    }
+  ],
+  "possible_relists": [
+    {
+      "id": "bringatrailer:1982-toyota-pickup-62",
+      "prior_id": "bringatrailer:1982-toyota-pickup-60",
+      "reasons": [
+        "title similarity 0.99",
+        "same country (US)",
+        "price within 14%"
+      ]
+    },
+    {
+      "id": "trovit:fO71cGC1Z1X",
+      "prior_id": "trovit:zZE1f31Lg1x",
+      "reasons": [
+        "title similarity 1.00",
+        "same country (US)",
+        "price within 0%"
+      ]
+    }
+  ]
 }
