@@ -1,17 +1,12 @@
 {
-  "date": "2026-11-14",
+  "date": "2026-11-15",
   "new": [],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "trovit:F1t31HD1N111L",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    },
-    {
-      "id": "carsensor:VU3133320108",
-      "old_status": "active",
-      "new_status": "withdrawn"
+      "id": "kuruma_ex:ccVU3133320108",
+      "old_status": "withdrawn",
+      "new_status": "active"
     }
   ],
   "possible_relists": []
