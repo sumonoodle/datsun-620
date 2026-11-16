@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15",
+  "generated_at": "2026-11-16",
   "listings": [
     {
       "id": "trovit:10131l1XPx1s1v",
@@ -30,7 +30,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-07",
-      "last_seen": "2026-11-15",
+      "last_seen": "2026-11-16",
       "history": [
         {
           "date": "2026-11-07",
@@ -240,7 +240,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-10-18",
-      "last_seen": "2026-11-15",
+      "last_seen": "2026-11-16",
       "history": [
         {
           "date": "2026-10-18",
@@ -399,7 +399,7 @@
       "images": [],
       "status": "sold",
       "first_seen": "2026-10-01",
-      "last_seen": "2026-11-15",
+      "last_seen": "2026-11-16",
       "history": [
         {
           "date": "2026-10-01",
@@ -736,7 +736,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-15",
+      "last_seen": "2026-11-16",
       "history": [
         {
           "date": "2026-09-10",
@@ -785,7 +785,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-15",
+      "last_seen": "2026-11-16",
       "history": [
         {
           "date": "2026-09-10",
@@ -834,7 +834,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-15",
+      "last_seen": "2026-11-16",
       "history": [
         {
           "date": "2026-09-10",
@@ -883,7 +883,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-15",
+      "last_seen": "2026-11-16",
       "history": [
         {
           "date": "2026-09-10",
@@ -932,7 +932,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-15",
+      "last_seen": "2026-11-16",
       "history": [
         {
           "date": "2026-09-10",
@@ -2342,7 +2342,7 @@
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-11-15",
+      "last_seen": "2026-11-16",
       "history": [
         {
           "date": "2026-08-03",
@@ -2692,7 +2692,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-15",
+      "last_seen": "2026-11-16",
       "history": [
         {
           "date": "2026-07-17",
@@ -2801,7 +2801,7 @@
         "prior_id": null,
         "reasons": []
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "classiccars:CC-1995643",
@@ -2938,7 +2938,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-15",
+      "last_seen": "2026-11-16",
       "history": [
         {
           "date": "2026-07-17",
@@ -2987,7 +2987,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-15",
+      "last_seen": "2026-11-16",
       "history": [
         {
           "date": "2026-07-17",
