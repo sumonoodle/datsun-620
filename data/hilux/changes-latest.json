@@ -1,32 +1,25 @@
 {
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "new": [
-    "trovit:911H1lLVGR"
+    "ebay:800927691057"
   ],
-  "price_changed": [
-    {
-      "id": "bringatrailer:1982-toyota-pickup-62",
-      "old_gbp": 19656.76,
-      "new_gbp": 20412.79,
-      "pct": 3.8
-    }
-  ],
+  "price_changed": [],
   "status_changed": [
     {
-      "id": "trovit:1Q1vf1VY1g1a1O",
+      "id": "trovit:1H1I5121xm1U1V",
+      "old_status": "withdrawn",
+      "new_status": "active"
+    },
+    {
+      "id": "trovit:fO71cGC1Z1X",
+      "old_status": "active",
+      "new_status": "withdrawn"
+    },
+    {
+      "id": "ebay:128186026605",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
-  "possible_relists": [
-    {
-      "id": "trovit:911H1lLVGR",
-      "prior_id": "trovit:F1TZn_1G1z16",
-      "reasons": [
-        "title similarity 1.00",
-        "same country (US)",
-        "price within 0%"
-      ]
-    }
-  ]
+  "possible_relists": []
 }
