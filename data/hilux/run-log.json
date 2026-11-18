@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-17",
-  "started_at": "2026-11-17T07:56:21+00:00",
+  "date": "2026-11-18",
+  "started_at": "2026-11-18T07:30:17+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -13,7 +13,7 @@
     {
       "source": "bringatrailer",
       "ok": true,
-      "records": 3,
+      "records": 2,
       "note": "",
       "consecutive_failures": 0,
       "consecutive_zero_runs": 0
@@ -48,14 +48,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 53
+      "consecutive_zero_runs": 54
     },
     {
       "source": "retrorides",
       "ok": false,
       "records": 0,
       "note": "zero threads parsed (board layout changed or blocked?)",
-      "consecutive_failures": 10,
+      "consecutive_failures": 11,
       "consecutive_zero_runs": 42,
       "expected_blocked": false
     },
@@ -73,7 +73,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 1
+      "consecutive_zero_runs": 2
     },
     {
       "source": "goonet_exchange",
@@ -81,7 +81,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 52
+      "consecutive_zero_runs": 53
     },
     {
       "source": "carsensor",
@@ -89,7 +89,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 49
+      "consecutive_zero_runs": 50
     },
     {
       "source": "yahoo_auctions",
@@ -97,7 +97,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 51
+      "consecutive_zero_runs": 52
     },
     {
       "source": "truck2hand",
@@ -105,7 +105,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 53
+      "consecutive_zero_runs": 54
     },
     {
       "source": "flex",
@@ -113,7 +113,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 53
+      "consecutive_zero_runs": 54
     },
     {
       "source": "kuruma_ex",
@@ -121,7 +121,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 53
+      "consecutive_zero_runs": 54
     },
     {
       "source": "everycar",
@@ -129,7 +129,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 52
+      "consecutive_zero_runs": 53
     },
     {
       "source": "classic_trader",
@@ -137,7 +137,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 53
+      "consecutive_zero_runs": 54
     },
     {
       "source": "gumtree_uk",
@@ -145,14 +145,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 53
+      "consecutive_zero_runs": 54
     },
     {
       "source": "gumtree_za",
       "ok": false,
       "records": 0,
       "note": "Client error '403 Forbidden' for url 'https://www.gumtree.co.za/s-cars-bakkies/toyota~hilux~petrol/v1c9077a3mamofup1'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Stat",
-      "consecutive_failures": 36,
+      "consecutive_failures": 37,
       "consecutive_zero_runs": 0,
       "expected_blocked": false
     },
@@ -162,7 +162,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 53
+      "consecutive_zero_runs": 54
     },
     {
       "source": "carfromjapan",
@@ -170,14 +170,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 53
+      "consecutive_zero_runs": 54
     },
     {
       "source": "goonet",
       "ok": false,
       "records": 0,
       "note": "all Goo-net Hilux pages failed (https://www.goo-net.com/usedcar/brand-TOYOTA/car-HILUX/model--1-10104114/: timed out)",
-      "consecutive_failures": 30,
+      "consecutive_failures": 31,
       "consecutive_zero_runs": 23,
       "expected_blocked": false
     },
@@ -187,7 +187,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 18
+      "consecutive_zero_runs": 19
     },
     {
       "source": "hagerty",
@@ -195,17 +195,17 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 53
+      "consecutive_zero_runs": 54
     }
   ],
   "totals": {
-    "active": 16,
+    "active": 17,
     "by_country": {
-      "US": 12,
+      "US": 13,
       "DE": 1,
       "CA": 2,
       "ZA": 1
     },
-    "median_gbp": 16716.53
+    "median_gbp": 16693.81
   }
 }
