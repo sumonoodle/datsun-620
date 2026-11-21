@@ -1,20 +1,7 @@
 {
-  "date": "2026-11-20",
+  "date": "2026-11-21",
   "new": [],
-  "price_changed": [
-    {
-      "id": "goonet_exchange:700040377430260602001",
-      "old_gbp": 13599.81,
-      "new_gbp": 12881.45,
-      "pct": -5.3
-    }
-  ],
-  "status_changed": [
-    {
-      "id": "goonet_exchange:700040377430260602001",
-      "old_status": "withdrawn",
-      "new_status": "active"
-    }
-  ],
+  "price_changed": [],
+  "status_changed": [],
   "possible_relists": []
 }
