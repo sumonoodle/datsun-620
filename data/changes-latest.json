@@ -1,7 +1,14 @@
 {
-  "date": "2026-11-21",
+  "date": "2026-11-22",
   "new": [],
-  "price_changed": [],
+  "price_changed": [
+    {
+      "id": "kuruma_ex:ccAU7062177718",
+      "old_gbp": 13150.61,
+      "new_gbp": 13207.18,
+      "pct": 0.4
+    }
+  ],
   "status_changed": [],
   "possible_relists": []
 }

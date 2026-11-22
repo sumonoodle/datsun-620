@@ -1,31 +1,19 @@
 {
-  "date": "2026-11-21",
+  "date": "2026-11-22",
   "new": [
-    "trovit:147Rp1_1n1zc"
+    "trovit:kF1op1Xwd1n"
   ],
-  "price_changed": [
-    {
-      "id": "bringatrailer:1982-toyota-pickup-62",
-      "old_gbp": 21719.35,
-      "new_gbp": 34049.52,
-      "pct": 56.8
-    }
-  ],
+  "price_changed": [],
   "status_changed": [
     {
-      "id": "bringatrailer:1982-toyota-pickup-62",
-      "old_status": "active",
-      "new_status": "sold"
-    },
-    {
-      "id": "trovit:1w1AB1A1O131-1F",
+      "id": "trovit:38i1P41bD19",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
   "possible_relists": [
     {
-      "id": "trovit:147Rp1_1n1zc",
+      "id": "trovit:kF1op1Xwd1n",
       "prior_id": "trovit:911H1lLVGR",
       "reasons": [
         "title similarity 1.00",

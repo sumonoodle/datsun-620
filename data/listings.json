@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21",
+  "generated_at": "2026-11-22",
   "listings": [
     {
       "id": "trovit:10131l1XPx1s1v",
@@ -30,7 +30,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-07",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "history": [
         {
           "date": "2026-11-07",
@@ -736,7 +736,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "history": [
         {
           "date": "2026-09-10",
@@ -785,7 +785,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "history": [
         {
           "date": "2026-09-10",
@@ -834,7 +834,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "history": [
         {
           "date": "2026-09-10",
@@ -883,7 +883,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "history": [
         {
           "date": "2026-09-10",
@@ -932,7 +932,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-10",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "history": [
         {
           "date": "2026-09-10",
@@ -1201,7 +1201,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-07",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "history": [
         {
           "date": "2026-09-07",
@@ -2342,18 +2342,18 @@
         "body_style_check": "unavailable"
       },
       "price": {
-        "amount": 2850000.0,
+        "amount": 2750000.0,
         "currency": "JPY",
-        "gbp": 13150.61,
-        "fx_rate": 216.72,
-        "fx_date": "2026-09-01"
+        "gbp": 13207.18,
+        "fx_rate": 208.22,
+        "fx_date": "2026-11-20"
       },
       "images": [
         "https://image.kuruma-ex.jp/kuruma/filter/?width=214&height=170&quality=100&url=https://ccsrpcma.carsensor.net/CSphoto/bkkn/753/041/U00052753041/U00052753041_001L.JPG"
       ],
       "status": "active",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "history": [
         {
           "date": "2026-08-03",
@@ -2405,6 +2405,17 @@
             "gbp": 13665.13,
             "fx_rate": 208.56,
             "fx_date": "2026-09-14"
+          }
+        },
+        {
+          "date": "2026-11-22",
+          "status": "active",
+          "price": {
+            "amount": 2750000.0,
+            "currency": "JPY",
+            "gbp": 13207.18,
+            "fx_rate": 208.22,
+            "fx_date": "2026-11-20"
           }
         }
       ],
@@ -2703,7 +2714,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "history": [
         {
           "date": "2026-07-17",
@@ -2952,7 +2963,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "history": [
         {
           "date": "2026-07-17",
@@ -3001,7 +3012,7 @@
       ],
       "status": "active",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "history": [
         {
           "date": "2026-07-17",
