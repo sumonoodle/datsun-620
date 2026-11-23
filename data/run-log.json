@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-22",
-  "started_at": "2026-11-22T06:49:01+00:00",
+  "date": "2026-11-23",
+  "started_at": "2026-11-23T07:40:01+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -8,7 +8,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 64
+      "consecutive_zero_runs": 65
     },
     {
       "source": "bringatrailer",
@@ -16,14 +16,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 3
+      "consecutive_zero_runs": 4
     },
     {
       "source": "carsandbids",
       "ok": false,
       "records": 0,
       "note": "no JSON API and no embedded state found (needs JS rendering?)",
-      "consecutive_failures": 133,
+      "consecutive_failures": 134,
       "consecutive_zero_runs": 0,
       "expected_blocked": true
     },
@@ -32,7 +32,7 @@
       "ok": false,
       "records": 0,
       "note": "HTTP 403 (bot protection / blocked)",
-      "consecutive_failures": 133,
+      "consecutive_failures": 134,
       "consecutive_zero_runs": 0,
       "expected_blocked": true
     },
@@ -50,7 +50,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 11
+      "consecutive_zero_runs": 12
     },
     {
       "source": "yahoo_auctions",
@@ -58,14 +58,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 30
+      "consecutive_zero_runs": 31
     },
     {
       "source": "kaidee",
       "ok": false,
       "records": 0,
       "note": "all Kaidee queries failed (datsun: __NEXT_DATA__ missing (page layout changed or blocked?))",
-      "consecutive_failures": 62,
+      "consecutive_failures": 63,
       "consecutive_zero_runs": 0,
       "expected_blocked": false
     },
@@ -91,7 +91,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 64
+      "consecutive_zero_runs": 65
     },
     {
       "source": "barnfinds",
@@ -106,7 +106,7 @@
       "ok": false,
       "records": 0,
       "note": "zero stock cards parsed (page layout changed or blocked?)",
-      "consecutive_failures": 19,
+      "consecutive_failures": 20,
       "consecutive_zero_runs": 45,
       "expected_blocked": false
     },
@@ -124,7 +124,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 63
+      "consecutive_zero_runs": 64
     },
     {
       "source": "pistonheads",
@@ -132,14 +132,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 64
+      "consecutive_zero_runs": 65
     },
     {
       "source": "ratsun",
       "ok": false,
       "records": 0,
       "note": "The read operation timed out",
-      "consecutive_failures": 1,
+      "consecutive_failures": 2,
       "consecutive_zero_runs": 0,
       "expected_blocked": false
     },
@@ -148,7 +148,7 @@
       "ok": false,
       "records": 0,
       "note": "all Retro Rides boards failed (cars-sale-1985-older: zero threads parsed (board layout changed or blocked?))",
-      "consecutive_failures": 15,
+      "consecutive_failures": 16,
       "consecutive_zero_runs": 6,
       "expected_blocked": false
     },
@@ -166,7 +166,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 64
+      "consecutive_zero_runs": 65
     }
   ],
   "totals": {

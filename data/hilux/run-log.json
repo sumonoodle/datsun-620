@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-22",
-  "started_at": "2026-11-22T06:50:08+00:00",
+  "date": "2026-11-23",
+  "started_at": "2026-11-23T07:40:59+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -13,7 +13,7 @@
     {
       "source": "bringatrailer",
       "ok": true,
-      "records": 2,
+      "records": 1,
       "note": "",
       "consecutive_failures": 0,
       "consecutive_zero_runs": 0
@@ -48,14 +48,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 58
+      "consecutive_zero_runs": 59
     },
     {
       "source": "retrorides",
       "ok": false,
       "records": 0,
       "note": "zero threads parsed (board layout changed or blocked?)",
-      "consecutive_failures": 15,
+      "consecutive_failures": 16,
       "consecutive_zero_runs": 42,
       "expected_blocked": false
     },
@@ -73,7 +73,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 6
+      "consecutive_zero_runs": 7
     },
     {
       "source": "goonet_exchange",
@@ -81,7 +81,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 57
+      "consecutive_zero_runs": 58
     },
     {
       "source": "carsensor",
@@ -89,7 +89,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 54
+      "consecutive_zero_runs": 55
     },
     {
       "source": "yahoo_auctions",
@@ -97,7 +97,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 56
+      "consecutive_zero_runs": 57
     },
     {
       "source": "truck2hand",
@@ -105,7 +105,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 58
+      "consecutive_zero_runs": 59
     },
     {
       "source": "flex",
@@ -113,7 +113,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 58
+      "consecutive_zero_runs": 59
     },
     {
       "source": "kuruma_ex",
@@ -121,7 +121,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 58
+      "consecutive_zero_runs": 59
     },
     {
       "source": "everycar",
@@ -129,15 +129,16 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 57
+      "consecutive_zero_runs": 58
     },
     {
       "source": "classic_trader",
-      "ok": true,
+      "ok": false,
       "records": 0,
-      "note": "",
-      "consecutive_failures": 0,
-      "consecutive_zero_runs": 58
+      "note": "searchResultsCount missing (search dialog moved?)",
+      "consecutive_failures": 1,
+      "consecutive_zero_runs": 58,
+      "expected_blocked": false
     },
     {
       "source": "gumtree_uk",
@@ -145,14 +146,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 58
+      "consecutive_zero_runs": 59
     },
     {
       "source": "gumtree_za",
       "ok": false,
       "records": 0,
       "note": "Client error '403 Forbidden' for url 'https://www.gumtree.co.za/s-cars-bakkies/toyota~hilux~petrol/v1c9077a3mamofup1'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Stat",
-      "consecutive_failures": 41,
+      "consecutive_failures": 42,
       "consecutive_zero_runs": 0,
       "expected_blocked": false
     },
@@ -162,7 +163,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 58
+      "consecutive_zero_runs": 59
     },
     {
       "source": "carfromjapan",
@@ -170,14 +171,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 58
+      "consecutive_zero_runs": 59
     },
     {
       "source": "goonet",
       "ok": false,
       "records": 0,
       "note": "all Goo-net Hilux pages failed (https://www.goo-net.com/usedcar/brand-TOYOTA/car-HILUX/model--1-10104114/: timed out)",
-      "consecutive_failures": 35,
+      "consecutive_failures": 36,
       "consecutive_zero_runs": 23,
       "expected_blocked": false
     },
@@ -187,7 +188,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 23
+      "consecutive_zero_runs": 24
     },
     {
       "source": "hagerty",
@@ -195,7 +196,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 58
+      "consecutive_zero_runs": 59
     }
   ],
   "totals": {
@@ -205,6 +206,6 @@
       "CA": 2,
       "ZA": 1
     },
-    "median_gbp": 16835.98
+    "median_gbp": 16524.37
   }
 }

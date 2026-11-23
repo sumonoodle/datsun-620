@@ -1,25 +1,18 @@
 {
-  "date": "2026-11-22",
-  "new": [
-    "trovit:kF1op1Xwd1n"
-  ],
+  "date": "2026-11-23",
+  "new": [],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "trovit:38i1P41bD19",
+      "id": "trovit:cV1HTx1s1ev",
+      "old_status": "withdrawn",
+      "new_status": "active"
+    },
+    {
+      "id": "trovit:g41q1bGCr17",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
-  "possible_relists": [
-    {
-      "id": "trovit:kF1op1Xwd1n",
-      "prior_id": "trovit:911H1lLVGR",
-      "reasons": [
-        "title similarity 1.00",
-        "same country (US)",
-        "price within 0%"
-      ]
-    }
-  ]
+  "possible_relists": []
 }

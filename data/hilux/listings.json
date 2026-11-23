@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22",
+  "generated_at": "2026-11-23",
   "listings": [
     {
       "id": "trovit:kF1op1Xwd1n",
@@ -58,7 +58,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:147Rp1_1n1zc",
@@ -118,7 +119,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:g41q1bGCr17",
@@ -153,7 +154,7 @@
       "images": [
         "https://img-us-2.trovit.com/g41q1bGCr17/g41q1bGCr17.1_10.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-11-20",
       "last_seen": "2026-11-20",
       "history": [
@@ -167,6 +168,10 @@
             "fx_rate": 1.3151,
             "fx_date": "2026-11-19"
           }
+        },
+        {
+          "date": "2026-11-23",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -177,8 +182,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:38i1P41bD19",
@@ -278,7 +282,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-19",
-      "last_seen": "2026-11-22",
+      "last_seen": "2026-11-23",
       "history": [
         {
           "date": "2026-11-19",
@@ -337,7 +341,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-18",
-      "last_seen": "2026-11-22",
+      "last_seen": "2026-11-23",
       "history": [
         {
           "date": "2026-11-18",
@@ -396,7 +400,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-17",
-      "last_seen": "2026-11-22",
+      "last_seen": "2026-11-23",
       "history": [
         {
           "date": "2026-11-17",
@@ -640,7 +644,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-11-14",
-      "last_seen": "2026-11-22",
+      "last_seen": "2026-11-23",
       "history": [
         {
           "date": "2026-11-14",
@@ -1058,7 +1062,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-09",
-      "last_seen": "2026-11-22",
+      "last_seen": "2026-11-23",
       "history": [
         {
           "date": "2026-11-09",
@@ -1127,7 +1131,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-09",
-      "last_seen": "2026-11-22",
+      "last_seen": "2026-11-23",
       "history": [
         {
           "date": "2026-11-09",
@@ -1797,9 +1801,9 @@
       "images": [
         "https://img-us-2.trovit.com/cV1HTx1s1ev/cV1HTx1s1ev.1_10.jpg"
       ],
-      "status": "withdrawn",
+      "status": "active",
       "first_seen": "2026-11-02",
-      "last_seen": "2026-11-02",
+      "last_seen": "2026-11-23",
       "history": [
         {
           "date": "2026-11-02",
@@ -1815,6 +1819,17 @@
         {
           "date": "2026-11-05",
           "status": "withdrawn"
+        },
+        {
+          "date": "2026-11-23",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16869.33,
+            "fx_rate": 1.3125,
+            "fx_date": "2026-11-20"
+          }
         }
       ],
       "relist": {
@@ -2592,7 +2607,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-22",
+      "last_seen": "2026-11-23",
       "history": [
         {
           "date": "2026-10-25",
@@ -3877,7 +3892,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-11-22",
+      "last_seen": "2026-11-23",
       "history": [
         {
           "date": "2026-10-11",
@@ -5571,7 +5586,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-22",
+      "last_seen": "2026-11-23",
       "history": [
         {
           "date": "2026-09-26",
@@ -5980,7 +5995,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-22",
+      "last_seen": "2026-11-23",
       "history": [
         {
           "date": "2026-09-26",
@@ -6455,7 +6470,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-22",
+      "last_seen": "2026-11-23",
       "history": [
         {
           "date": "2026-09-26",
@@ -6631,7 +6646,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-22",
+      "last_seen": "2026-11-23",
       "history": [
         {
           "date": "2026-09-26",
