@@ -1,6 +1,124 @@
 {
-  "generated_at": "2026-11-24",
+  "generated_at": "2026-11-25",
   "listings": [
+    {
+      "id": "trovit:1W1A1Nz151x1F1o",
+      "source": "trovit",
+      "source_listing_id": "1W1A1Nz151x1F1o",
+      "url": "https://rd.clk.thribee.com/id.1W1A1Nz151x1F1o/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.1575917trovit-web-74cdb74cff-wn4kn6b069df5638af/tracking.%7B%7D/what_d.toyota%20hilux/page.1/cookieid.10202116b069df5635a34.91964158/pos.3/timestamp.1795595765/sign.EjQuLkNS72AwoW0yZsWzgQ%3D%3D/",
+      "title": "1980 Toyota Hilux",
+      "title_translated": null,
+      "description_snippet": "This Toyota pickup is in mint condition.",
+      "year": 1980,
+      "country": "US",
+      "region": "33149, Miami-Dade County, FL",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 22141.0,
+        "currency": "USD",
+        "gbp": 16904.11,
+        "fx_rate": 1.3098,
+        "fx_date": "2026-11-24"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/1W1A1Nz151x1F1o/1W1A1Nz151x1F1o.1_10.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
+      "history": [
+        {
+          "date": "2026-11-25",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16904.11,
+            "fx_rate": 1.3098,
+            "fx_date": "2026-11-24"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:147Rp1_1n1zc",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
+    {
+      "id": "ebay:257871174235",
+      "source": "ebay",
+      "source_listing_id": "257871174235",
+      "url": "https://www.ebay.com/itm/257871174235?_skw=1980+toyota+pickup&hash=item3c0a51da5b:g:BOQAAeSwIvJqfAz8",
+      "title": "1980 Toyota SR5 4x4 Pick Up",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1980,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 74950.0,
+        "currency": "USD",
+        "gbp": 57222.48,
+        "fx_rate": 1.3098,
+        "fx_date": "2026-11-24"
+      },
+      "images": [
+        "https://i.ebayimg.com/images/g/BOQAAeSwIvJqfAz8/s-l225.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
+      "history": [
+        {
+          "date": "2026-11-25",
+          "status": "active",
+          "price": {
+            "amount": 74950.0,
+            "currency": "USD",
+            "gbp": 57222.48,
+            "fx_rate": 1.3098,
+            "fx_date": "2026-11-24"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "ebay:257846866551",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
     {
       "id": "trovit:ptFR1b1Nb1d",
       "source": "trovit",
@@ -58,7 +176,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "kleinanzeigen:3581055401",
@@ -95,7 +214,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-24",
-      "last_seen": "2026-11-24",
+      "last_seen": "2026-11-25",
       "history": [
         {
           "date": "2026-11-24",
@@ -154,7 +273,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-24",
-      "last_seen": "2026-11-24",
+      "last_seen": "2026-11-25",
       "history": [
         {
           "date": "2026-11-24",
@@ -211,7 +330,7 @@
       "images": [
         "https://img-us-2.trovit.com/kF1op1Xwd1n/kF1op1Xwd1n.1_10.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-11-22",
       "last_seen": "2026-11-22",
       "history": [
@@ -225,6 +344,10 @@
             "fx_rate": 1.3125,
             "fx_date": "2026-11-20"
           }
+        },
+        {
+          "date": "2026-11-25",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -235,8 +358,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:147Rp1_1n1zc",
@@ -485,7 +607,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "ebay:257858229925",
@@ -544,7 +666,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "ebay:800927691057",
@@ -581,7 +704,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-17",
-      "last_seen": "2026-11-24",
+      "last_seen": "2026-11-25",
       "history": [
         {
           "date": "2026-11-17",
@@ -825,7 +948,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-11-14",
-      "last_seen": "2026-11-24",
+      "last_seen": "2026-11-25",
       "history": [
         {
           "date": "2026-11-14",
@@ -1243,7 +1366,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-09",
-      "last_seen": "2026-11-24",
+      "last_seen": "2026-11-25",
       "history": [
         {
           "date": "2026-11-09",
@@ -1312,7 +1435,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-09",
-      "last_seen": "2026-11-24",
+      "last_seen": "2026-11-25",
       "history": [
         {
           "date": "2026-11-09",
@@ -2022,7 +2145,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "trovit:C151l1vU1G1R1J",
@@ -2789,7 +2912,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-24",
+      "last_seen": "2026-11-25",
       "history": [
         {
           "date": "2026-10-25",
@@ -4074,7 +4197,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-11-24",
+      "last_seen": "2026-11-25",
       "history": [
         {
           "date": "2026-10-11",
@@ -5768,7 +5891,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-24",
+      "last_seen": "2026-11-25",
       "history": [
         {
           "date": "2026-09-26",
@@ -6147,7 +6270,7 @@
       "source": "kijiji",
       "source_listing_id": "1741948631",
       "url": "https://www.kijiji.ca/v-classic-cars/london/1980-toyota-pickup/1741948631",
-      "title": "1980 toyota pickup",
+      "title": "1980 toyota pickup wanted",
       "title_translated": null,
       "description_snippet": "In search of a 1980 toyota pick up shortbox",
       "year": 1980,
@@ -6177,7 +6300,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-24",
+      "last_seen": "2026-11-25",
       "history": [
         {
           "date": "2026-09-26",
@@ -6652,7 +6775,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-24",
+      "last_seen": "2026-11-25",
       "history": [
         {
           "date": "2026-09-26",
@@ -6828,7 +6951,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-24",
+      "last_seen": "2026-11-25",
       "history": [
         {
           "date": "2026-09-26",
