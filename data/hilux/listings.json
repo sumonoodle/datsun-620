@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25",
+  "generated_at": "2026-11-26",
   "listings": [
     {
       "id": "trovit:1W1A1Nz151x1F1o",
@@ -58,7 +58,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "ebay:257871174235",
@@ -95,7 +96,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-25",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "history": [
         {
           "date": "2026-11-25",
@@ -177,7 +178,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "kleinanzeigen:3581055401",
@@ -214,7 +215,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-24",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "history": [
         {
           "date": "2026-11-24",
@@ -273,7 +274,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-24",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "history": [
         {
           "date": "2026-11-24",
@@ -582,7 +583,7 @@
       "images": [
         "https://i.ebayimg.com/images/g/1~QAAeSwykppsFuL/s-l225.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-11-19",
       "last_seen": "2026-11-23",
       "history": [
@@ -596,6 +597,10 @@
             "fx_rate": 1.3168,
             "fx_date": "2026-11-18"
           }
+        },
+        {
+          "date": "2026-11-26",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -606,8 +611,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "ebay:257858229925",
@@ -667,7 +671,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "ebay:800927691057",
@@ -704,7 +708,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-17",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "history": [
         {
           "date": "2026-11-17",
@@ -948,7 +952,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-11-14",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "history": [
         {
           "date": "2026-11-14",
@@ -1366,7 +1370,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-09",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "history": [
         {
           "date": "2026-11-09",
@@ -1435,7 +1439,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-09",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "history": [
         {
           "date": "2026-11-09",
@@ -2105,7 +2109,7 @@
       "images": [
         "https://img-us-2.trovit.com/cV1HTx1s1ev/cV1HTx1s1ev.1_10.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-11-02",
       "last_seen": "2026-11-23",
       "history": [
@@ -2134,6 +2138,10 @@
             "fx_rate": 1.3125,
             "fx_date": "2026-11-20"
           }
+        },
+        {
+          "date": "2026-11-26",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -2144,8 +2152,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "trovit:C151l1vU1G1R1J",
@@ -2912,7 +2919,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "history": [
         {
           "date": "2026-10-25",
@@ -3821,9 +3828,9 @@
       "images": [
         "https://img-us-2.trovit.com/12y1l1a1P1C1l1r/12y1l1a1P1C1l1r.1_10.jpg"
       ],
-      "status": "withdrawn",
+      "status": "active",
       "first_seen": "2026-10-15",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-11-26",
       "history": [
         {
           "date": "2026-10-15",
@@ -3839,6 +3846,17 @@
         {
           "date": "2026-10-18",
           "status": "withdrawn"
+        },
+        {
+          "date": "2026-11-26",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16953.29,
+            "fx_rate": 1.306,
+            "fx_date": "2026-11-25"
+          }
         }
       ],
       "relist": {
@@ -4197,7 +4215,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "history": [
         {
           "date": "2026-10-11",
@@ -5891,7 +5909,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "history": [
         {
           "date": "2026-09-26",
@@ -6300,7 +6318,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "history": [
         {
           "date": "2026-09-26",
@@ -6775,7 +6793,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "history": [
         {
           "date": "2026-09-26",
@@ -6951,7 +6969,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "history": [
         {
           "date": "2026-09-26",
