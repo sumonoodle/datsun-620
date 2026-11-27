@@ -1,6 +1,65 @@
 {
-  "generated_at": "2026-11-26",
+  "generated_at": "2026-11-27",
   "listings": [
+    {
+      "id": "trovit:spjT13-1e1v",
+      "source": "trovit",
+      "source_listing_id": "spjT13-1e1v",
+      "url": "https://rd.clk.thribee.com/id.spjT13-1e1v/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.852644trovit-web-679c5bcb7b-tswbb6b0940ffb1923/tracking.%7B%7D/what_d.toyota%20hilux/page.1/cookieid.10211606b0940ffb16716.42832931/pos.3/timestamp.1795768575/sign.mNw277uNalmRDMGLZa96LQ%3D%3D/",
+      "title": "1980 Toyota Hilux",
+      "title_translated": null,
+      "description_snippet": "This Toyota pickup is in mint condition.",
+      "year": 1980,
+      "country": "US",
+      "region": "33149, Miami-Dade County, FL",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 22141.0,
+        "currency": "USD",
+        "gbp": 16896.37,
+        "fx_rate": 1.3104,
+        "fx_date": "2026-11-26"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/spjT13-1e1v/spjT13-1e1v.1_10.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-11-27",
+      "last_seen": "2026-11-27",
+      "history": [
+        {
+          "date": "2026-11-27",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16896.37,
+            "fx_rate": 1.3104,
+            "fx_date": "2026-11-26"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:kF1op1Xwd1n",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
     {
       "id": "trovit:1W1A1Nz151x1F1o",
       "source": "trovit",
@@ -59,7 +118,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "ebay:257871174235",
@@ -96,7 +155,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-25",
-      "last_seen": "2026-11-26",
+      "last_seen": "2026-11-27",
       "history": [
         {
           "date": "2026-11-25",
@@ -153,7 +212,7 @@
       "images": [
         "https://img-us-2.trovit.com/ptFR1b1Nb1d/ptFR1b1Nb1d.1_10.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-11-24",
       "last_seen": "2026-11-24",
       "history": [
@@ -167,6 +226,10 @@
             "fx_rate": 1.3074,
             "fx_date": "2026-11-23"
           }
+        },
+        {
+          "date": "2026-11-27",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -177,8 +240,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "kleinanzeigen:3581055401",
@@ -215,7 +277,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-24",
-      "last_seen": "2026-11-26",
+      "last_seen": "2026-11-27",
       "history": [
         {
           "date": "2026-11-24",
@@ -274,7 +336,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-24",
-      "last_seen": "2026-11-26",
+      "last_seen": "2026-11-27",
       "history": [
         {
           "date": "2026-11-24",
@@ -646,7 +708,7 @@
       "images": [
         "https://i.ebayimg.com/images/g/BOQAAeSwIvJqfAz8/s-l225.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-11-18",
       "last_seen": "2026-11-24",
       "history": [
@@ -660,6 +722,10 @@
             "fx_rate": 1.3191,
             "fx_date": "2026-11-17"
           }
+        },
+        {
+          "date": "2026-11-27",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -670,8 +736,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "ebay:800927691057",
@@ -708,7 +773,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-17",
-      "last_seen": "2026-11-26",
+      "last_seen": "2026-11-27",
       "history": [
         {
           "date": "2026-11-17",
@@ -952,7 +1017,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-11-14",
-      "last_seen": "2026-11-26",
+      "last_seen": "2026-11-27",
       "history": [
         {
           "date": "2026-11-14",
@@ -1370,7 +1435,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-09",
-      "last_seen": "2026-11-26",
+      "last_seen": "2026-11-27",
       "history": [
         {
           "date": "2026-11-09",
@@ -1439,7 +1504,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-09",
-      "last_seen": "2026-11-26",
+      "last_seen": "2026-11-27",
       "history": [
         {
           "date": "2026-11-09",
@@ -2919,7 +2984,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-26",
+      "last_seen": "2026-11-27",
       "history": [
         {
           "date": "2026-10-25",
@@ -3867,7 +3932,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "ebay:257797991272",
@@ -4215,7 +4281,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-11-26",
+      "last_seen": "2026-11-27",
       "history": [
         {
           "date": "2026-10-11",
@@ -5909,7 +5975,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-26",
+      "last_seen": "2026-11-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -6318,7 +6384,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-26",
+      "last_seen": "2026-11-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -6793,7 +6859,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-26",
+      "last_seen": "2026-11-27",
       "history": [
         {
           "date": "2026-09-26",
@@ -6969,7 +7035,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-26",
+      "last_seen": "2026-11-27",
       "history": [
         {
           "date": "2026-09-26",

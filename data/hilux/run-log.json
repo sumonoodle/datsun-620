@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-26",
-  "started_at": "2026-11-26T08:18:54+00:00",
+  "date": "2026-11-27",
+  "started_at": "2026-11-27T08:35:41+00:00",
   "sources": [
     {
       "source": "ebay",
@@ -48,14 +48,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 62
+      "consecutive_zero_runs": 63
     },
     {
       "source": "retrorides",
       "ok": false,
       "records": 0,
       "note": "zero threads parsed (board layout changed or blocked?)",
-      "consecutive_failures": 19,
+      "consecutive_failures": 20,
       "consecutive_zero_runs": 42,
       "expected_blocked": false
     },
@@ -81,7 +81,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 61
+      "consecutive_zero_runs": 62
     },
     {
       "source": "carsensor",
@@ -89,7 +89,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 58
+      "consecutive_zero_runs": 59
     },
     {
       "source": "yahoo_auctions",
@@ -97,7 +97,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 60
+      "consecutive_zero_runs": 61
     },
     {
       "source": "truck2hand",
@@ -105,7 +105,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 62
+      "consecutive_zero_runs": 63
     },
     {
       "source": "flex",
@@ -113,7 +113,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 62
+      "consecutive_zero_runs": 63
     },
     {
       "source": "kuruma_ex",
@@ -121,7 +121,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 62
+      "consecutive_zero_runs": 63
     },
     {
       "source": "everycar",
@@ -129,7 +129,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 61
+      "consecutive_zero_runs": 62
     },
     {
       "source": "classic_trader",
@@ -137,7 +137,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 61
+      "consecutive_zero_runs": 62
     },
     {
       "source": "gumtree_uk",
@@ -145,14 +145,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 62
+      "consecutive_zero_runs": 63
     },
     {
       "source": "gumtree_za",
       "ok": false,
       "records": 0,
       "note": "Client error '403 Forbidden' for url 'https://www.gumtree.co.za/s-cars-bakkies/toyota~hilux~petrol/v1c9077a3mamofup1'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Stat",
-      "consecutive_failures": 45,
+      "consecutive_failures": 46,
       "consecutive_zero_runs": 0,
       "expected_blocked": false
     },
@@ -162,7 +162,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 62
+      "consecutive_zero_runs": 63
     },
     {
       "source": "carfromjapan",
@@ -170,14 +170,14 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 62
+      "consecutive_zero_runs": 63
     },
     {
       "source": "goonet",
       "ok": false,
       "records": 0,
       "note": "all Goo-net Hilux pages failed (https://www.goo-net.com/usedcar/brand-TOYOTA/car-HILUX/model--1-10104114/: timed out)",
-      "consecutive_failures": 39,
+      "consecutive_failures": 40,
       "consecutive_zero_runs": 23,
       "expected_blocked": false
     },
@@ -187,7 +187,7 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 27
+      "consecutive_zero_runs": 28
     },
     {
       "source": "hagerty",
@@ -195,17 +195,17 @@
       "records": 0,
       "note": "",
       "consecutive_failures": 0,
-      "consecutive_zero_runs": 62
+      "consecutive_zero_runs": 63
     }
   ],
   "totals": {
-    "active": 17,
+    "active": 16,
     "by_country": {
-      "US": 13,
+      "US": 12,
       "DE": 1,
       "CA": 2,
       "ZA": 1
     },
-    "median_gbp": 16904.11
+    "median_gbp": 16792.57
   }
 }
