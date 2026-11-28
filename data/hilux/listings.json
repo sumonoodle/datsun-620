@@ -1,6 +1,178 @@
 {
-  "generated_at": "2026-11-27",
+  "generated_at": "2026-11-28",
   "listings": [
+    {
+      "id": "trovit:YBdVY1z1e1W",
+      "source": "trovit",
+      "source_listing_id": "YBdVY1z1e1W",
+      "url": "https://rd.clk.thribee.com/id.YBdVY1z1e1W/origin.1/section.1/section_type.1/country.us/vertical.cars/iuid.1695314trovit-web-679c5bcb7b-64pj96b0a87f8b23e1/tracking.%7B%7D/what_d.toyota%20hilux/page.1/cookieid.10211606b0a87f8b20414.97238305/pos.3/timestamp.1795852280/sign.hCfHFIFYgviExAKblUoBzg%3D%3D/",
+      "title": "1980 Toyota Hilux",
+      "title_translated": null,
+      "description_snippet": "This Toyota pickup is in mint condition.",
+      "year": 1980,
+      "country": "US",
+      "region": "33149, Miami-Dade County, FL",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "unknown",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 22141.0,
+        "currency": "USD",
+        "gbp": 16873.19,
+        "fx_rate": 1.3122,
+        "fx_date": "2026-11-27"
+      },
+      "images": [
+        "https://img-us-2.trovit.com/YBdVY1z1e1W/YBdVY1z1e1W.1_10.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-11-28",
+      "last_seen": "2026-11-28",
+      "history": [
+        {
+          "date": "2026-11-28",
+          "status": "active",
+          "price": {
+            "amount": 22141.0,
+            "currency": "USD",
+            "gbp": 16873.19,
+            "fx_rate": 1.3122,
+            "fx_date": "2026-11-27"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "trovit:ptFR1b1Nb1d",
+        "reasons": [
+          "title similarity 1.00",
+          "same country (US)",
+          "price within 0%"
+        ]
+      }
+    },
+    {
+      "id": "kleinanzeigen:3583925177",
+      "source": "kleinanzeigen",
+      "source_listing_id": "3583925177",
+      "url": "https://www.kleinanzeigen.de/s-anzeige/toyota-hilux-rn46-1983/3583925177-216-26206",
+      "title": "Toyota Hilux RN46 1983",
+      "title_translated": null,
+      "description_snippet": "Zuverlässiges Fahrzeug aus Altersgründen abzugeben.\nFast alle Verschleißteile vorhanden da ich 2Stk davon hatte.",
+      "year": 1983,
+      "country": "DE",
+      "region": "50737 Weidenpesch",
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": "RN46",
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 14000.0,
+        "currency": "EUR",
+        "gbp": 11691.02,
+        "fx_rate": 1.1975,
+        "fx_date": "2026-11-27"
+      },
+      "images": [
+        "https://img.kleinanzeigen.de/api/v1/prod-ads/images/61/612468f2-bd56-4105-a9ab-56b6f436aa2b?rule=$_2.AUTO"
+      ],
+      "status": "active",
+      "first_seen": "2026-11-28",
+      "last_seen": "2026-11-28",
+      "history": [
+        {
+          "date": "2026-11-28",
+          "status": "active",
+          "price": {
+            "amount": 14000.0,
+            "currency": "EUR",
+            "gbp": 11691.02,
+            "fx_rate": 1.1975,
+            "fx_date": "2026-11-27"
+          }
+        }
+      ],
+      "relist": {
+        "possible": true,
+        "prior_id": "kleinanzeigen:3550065938",
+        "reasons": [
+          "title similarity 0.88",
+          "same country (DE)"
+        ]
+      }
+    },
+    {
+      "id": "ebay:800974448855",
+      "source": "ebay",
+      "source_listing_id": "800974448855",
+      "url": "https://www.ebay.com/itm/800974448855?_skw=1980+toyota+pickup&hash=itemba7dcc28d7:g:4dYAAeSw~hNq-6-N",
+      "title": "1980 Toyota Pickup Toyota Pickup Truck 4x4 Only 34k Miles",
+      "title_translated": null,
+      "description_snippet": null,
+      "year": 1980,
+      "country": "US",
+      "region": null,
+      "drive_side": "LHD",
+      "king_cab": {
+        "matched": false,
+        "matched_terms": [],
+        "body_style_check": "unavailable"
+      },
+      "variant": {
+        "chassis_code": null,
+        "drive": "4WD",
+        "target_match": false,
+        "target_reasons": []
+      },
+      "price": {
+        "amount": 34900.0,
+        "currency": "USD",
+        "gbp": 26596.56,
+        "fx_rate": 1.3122,
+        "fx_date": "2026-11-27"
+      },
+      "images": [
+        "https://i.ebayimg.com/images/g/4dYAAeSw~hNq-6-N/s-l225.jpg"
+      ],
+      "status": "active",
+      "first_seen": "2026-11-28",
+      "last_seen": "2026-11-28",
+      "history": [
+        {
+          "date": "2026-11-28",
+          "status": "active",
+          "price": {
+            "amount": 34900.0,
+            "currency": "USD",
+            "gbp": 26596.56,
+            "fx_rate": 1.3122,
+            "fx_date": "2026-11-27"
+          }
+        }
+      ],
+      "relist": {
+        "possible": false,
+        "prior_id": null,
+        "reasons": []
+      }
+    },
     {
       "id": "trovit:spjT13-1e1v",
       "source": "trovit",
@@ -58,7 +230,8 @@
           "same country (US)",
           "price within 0%"
         ]
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:1W1A1Nz151x1F1o",
@@ -93,7 +266,7 @@
       "images": [
         "https://img-us-2.trovit.com/1W1A1Nz151x1F1o/1W1A1Nz151x1F1o.1_10.jpg"
       ],
-      "status": "active",
+      "status": "withdrawn",
       "first_seen": "2026-11-25",
       "last_seen": "2026-11-25",
       "history": [
@@ -107,6 +280,10 @@
             "fx_rate": 1.3098,
             "fx_date": "2026-11-24"
           }
+        },
+        {
+          "date": "2026-11-28",
+          "status": "withdrawn"
         }
       ],
       "relist": {
@@ -117,8 +294,7 @@
           "same country (US)",
           "price within 0%"
         ]
-      },
-      "missed_runs": 2
+      }
     },
     {
       "id": "ebay:257871174235",
@@ -155,7 +331,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-25",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "history": [
         {
           "date": "2026-11-25",
@@ -277,7 +453,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-24",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "history": [
         {
           "date": "2026-11-24",
@@ -336,7 +512,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-24",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "history": [
         {
           "date": "2026-11-24",
@@ -791,7 +967,8 @@
         "possible": false,
         "prior_id": null,
         "reasons": []
-      }
+      },
+      "missed_runs": 1
     },
     {
       "id": "trovit:911H1lLVGR",
@@ -1017,7 +1194,7 @@
       ],
       "status": "sold",
       "first_seen": "2026-11-14",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "history": [
         {
           "date": "2026-11-14",
@@ -1435,7 +1612,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-09",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "history": [
         {
           "date": "2026-11-09",
@@ -1504,7 +1681,7 @@
       ],
       "status": "active",
       "first_seen": "2026-11-09",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "history": [
         {
           "date": "2026-11-09",
@@ -2984,7 +3161,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "history": [
         {
           "date": "2026-10-25",
@@ -3933,7 +4110,7 @@
           "price within 0%"
         ]
       },
-      "missed_runs": 1
+      "missed_runs": 2
     },
     {
       "id": "ebay:257797991272",
@@ -4281,7 +4458,7 @@
       ],
       "status": "active",
       "first_seen": "2026-10-11",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "history": [
         {
           "date": "2026-10-11",
@@ -5975,7 +6152,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "history": [
         {
           "date": "2026-09-26",
@@ -6384,7 +6561,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "history": [
         {
           "date": "2026-09-26",
@@ -6859,7 +7036,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "history": [
         {
           "date": "2026-09-26",
@@ -7035,7 +7212,7 @@
       ],
       "status": "active",
       "first_seen": "2026-09-26",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "history": [
         {
           "date": "2026-09-26",

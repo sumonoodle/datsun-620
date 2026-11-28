@@ -1,29 +1,34 @@
 {
-  "date": "2026-11-27",
+  "date": "2026-11-28",
   "new": [
-    "trovit:spjT13-1e1v"
+    "ebay:800974448855",
+    "trovit:YBdVY1z1e1W",
+    "kleinanzeigen:3583925177"
   ],
   "price_changed": [],
   "status_changed": [
     {
-      "id": "trovit:ptFR1b1Nb1d",
-      "old_status": "active",
-      "new_status": "withdrawn"
-    },
-    {
-      "id": "ebay:257858229925",
+      "id": "trovit:1W1A1Nz151x1F1o",
       "old_status": "active",
       "new_status": "withdrawn"
     }
   ],
   "possible_relists": [
     {
-      "id": "trovit:spjT13-1e1v",
-      "prior_id": "trovit:kF1op1Xwd1n",
+      "id": "trovit:YBdVY1z1e1W",
+      "prior_id": "trovit:ptFR1b1Nb1d",
       "reasons": [
         "title similarity 1.00",
         "same country (US)",
         "price within 0%"
+      ]
+    },
+    {
+      "id": "kleinanzeigen:3583925177",
+      "prior_id": "kleinanzeigen:3550065938",
+      "reasons": [
+        "title similarity 0.88",
+        "same country (DE)"
       ]
     }
   ]
